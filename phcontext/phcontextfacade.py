@@ -19,6 +19,7 @@ class PhContextFacade(object):
             cmd: the command that you want to process
             path: the directory that you want to process
     """
+
     def __init__(self, cmd, path):
         self.cmd = cmd
         self.path = path
@@ -43,18 +44,25 @@ class PhContextFacade(object):
         else:
             self.command_publish_exec()
 
+    def get_workspace_dir(self):
+        return os.getenv('PH_WORKSPACE')
+
+    def get_current_project_dir(self):
+        # return os.getenv('BP_Max_AutoJob')
+        return 'BP_Max_AutoJob'
+
     def get_destination_path(self):
-        self.job_path = os.getcwd() + "/" + self.job_prefix + "/" + self.name
-        self.combine_path = os.getcwd() + "/" + self.combine_prefix + "/" + self.name
-        self.dag_path = os.getcwd() + "/" + self.dag_prefix + "/"
+        self.job_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
+        self.combine_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.combine_prefix + "/" + self.name
+        self.dag_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.dag_prefix + "/"
         if self.cmd == "create":
-            return os.getcwd() + "/" + self.job_prefix + "/" + self.name
+            return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         elif self.cmd == "combine":
-            return os.getcwd() + "/" + self.combine_prefix + "/" + self.name
+            return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.combine_prefix + "/" + self.name
         elif self.cmd == "dag":
-            return os.getcwd() + "/" + self.combine_prefix + "/" + self.name
+            return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.combine_prefix + "/" + self.name
         elif self.cmd == "run":
-            return os.getcwd() + "/" + self.job_prefix + "/" + self.name
+            return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         else:
             raise Exception("Something goes wrong!!!")
 
