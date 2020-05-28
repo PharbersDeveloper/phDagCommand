@@ -29,3 +29,6 @@ class PhS3(object):
         for line in self.get_object_lines(bk_name, s3_path):
             f.write(line + "\n")
         f.close()
+
+
+s3 = PhS3()

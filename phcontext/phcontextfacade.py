@@ -8,7 +8,8 @@ from phexceptions.phexceptions import exception_file_already_exist, PhException,
     exception_function_not_implement
 from phconfig.phconfig import PhYAMLConfig
 import subprocess
-from phs3.phs3 import PhS3
+from phs3.phs3 import s3
+from phlogs.phlogs import phlogger
 
 
 class PhContextFacade(object):
@@ -28,7 +29,6 @@ class PhContextFacade(object):
         self.job_prefix = "phjobs"
         self.combine_prefix = "phcombines"
         self.dag_prefix = "phdags"
-        self.s3 = PhS3()
 
     def execute(self):
         self.check_dir()
@@ -74,16 +74,16 @@ class PhContextFacade(object):
                 if not os.path.exists(self.path):
                     raise exception_file_not_exist
         except PhException as e:
-            print(e.msg)
+            phlogger.info(e.msg)
             raise e
 
     def command_create_exec(self):
-        print("command create")
+        phlogger.info("command create")
         config = PhYAMLConfig(self.path)
         subprocess.call(["mkdir", "-p", self.path])
         subprocess.call(["touch", self.path + "/__init__.py"])
-        self.s3.copy_object_2_file("ph-cli-dag-template", "template/phjob.tmp", self.path + "/phjob.py")
-        self.s3.copy_object_2_file("ph-cli-dag-template", "template/phconf.yaml", self.path + "/phconf.yaml")
+        s3.copy_object_2_file("ph-cli-dag-template", "template/phjob.tmp", self.path + "/phjob.py")
+        s3.copy_object_2_file("ph-cli-dag-template", "template/phconf.yaml", self.path + "/phconf.yaml")
         config.load_yaml()
         w = open(self.path + "/phjob.py", "a")
         w.write("def execute(")
@@ -100,7 +100,7 @@ class PhContextFacade(object):
         w.close()
 
         e = open(self.path + "/phmain.py", "w")
-        f_lines = self.s3.get_object_lines("ph-cli-dag-template", "template/phmain.tmp")
+        f_lines = s3.get_object_lines("ph-cli-dag-template", "template/phmain.tmp")
 
         s = []
         for arg in config.spec.containers.args:
@@ -134,16 +134,16 @@ class PhContextFacade(object):
         e.close()
 
     def command_combine_exec(self):
-        print("command combine")
+        phlogger.info("command combine")
         subprocess.call(["mkdir", "-p", self.path])
-        self.s3.copy_object_2_file("ph-cli-dag-template", "template/phdag.yaml", self.path + "/phdag.yaml")
+        s3.copy_object_2_file("ph-cli-dag-template", "template/phdag.yaml", self.path + "/phdag.yaml")
 
     def command_publish_exec(self):
-        print("publish")
+        phlogger.info("publish")
         config = PhYAMLConfig(self.path)
 
     def command_run_exec(self):
-        print("run")
+        phlogger.info("run")
         config = PhYAMLConfig(self.job_path)
         config.load_yaml()
         if config.spec.containers.repository == "local":
@@ -158,14 +158,14 @@ class PhContextFacade(object):
             raise exception_function_not_implement
 
     def command_dag_exec(self):
-        print("command dag")
+        phlogger.info("command dag")
         config = PhYAMLConfig(self.combine_path, "/phdag.yaml")
         config.load_yaml()
         self.check_dag_dir(config.spec.dag_id)
 
         subprocess.call(["mkdir", "-p", self.dag_path])
         w = open(self.dag_path + "/ph_dag_" + config.spec.dag_id + ".py", "a")
-        f_lines = self.s3.get_object_lines("ph-cli-dag-template", "template/phgraphtemp.tmp")
+        f_lines = s3.get_object_lines("ph-cli-dag-template", "template/phgraphtemp.tmp")
         for line in f_lines:
             line = line + "\n"
             if line == "$alfred_import_jobs\n":
@@ -185,7 +185,7 @@ class PhContextFacade(object):
                         .replace("$alfred_dag_timeout", str(config.spec.dag_timeout)) \
                         .replace("$alfred_start_date", str(config.spec.start_date))
                 )
-        jf = self.s3.get_object_lines("ph-cli-dag-template", "template/phDagJob.tmp")
+        jf = s3.get_object_lines("ph-cli-dag-template", "template/phDagJob.tmp")
         for jt in config.spec.jobs:
             # jf.seek(0)
             for line in jf:
