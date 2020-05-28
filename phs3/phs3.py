@@ -23,13 +23,21 @@ class PhS3(object):
             Bucket=bk_name,
             Key=s3_path
         )
-        return string.split(response["Body"].read().decode(), "\n")
+        # return string.split(response["Body"].read().decode(), "\n")
+        return str.split(response["Body"].read().decode(), "\n")
 
     def copy_object_2_file(self, bk_name, s3_path, local_path):
         f = open(local_path, "w")
         for line in self.get_object_lines(bk_name, s3_path):
             f.write(line + "\n")
         f.close()
+
+    def put_object(self, bk_name, s3_path, local_path):
+        self.client.upload_file(
+            Bucket=bk_name,
+            Key=s3_path,
+            Filename=local_path
+        )
 
 
 s3 = PhS3()

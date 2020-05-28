@@ -10,6 +10,7 @@ from phconfig.phconfig import PhYAMLConfig
 import subprocess
 from phs3.phs3 import s3
 from phlogs.phlogs import phlogger
+import string
 
 
 class PhContextFacade(object):
@@ -63,6 +64,8 @@ class PhContextFacade(object):
             return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.combine_prefix + "/" + self.name
         elif self.cmd == "run":
             return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
+        elif self.cmd == "publish":
+            return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         else:
             raise Exception("Something goes wrong!!!")
 
@@ -78,6 +81,9 @@ class PhContextFacade(object):
             if (self.cmd == "create") | (self.cmd == "combine"):
                 if os.path.exists(self.path):
                     raise exception_file_already_exist
+            elif self.cmd == "publish":
+                if not os.path.exists(self.dag_path):
+                    raise exception_file_not_exist
             else:
                 if not os.path.exists(self.path):
                     raise exception_file_not_exist
@@ -147,8 +153,16 @@ class PhContextFacade(object):
         s3.copy_object_2_file("ph-cli-dag-template", "template/phdag.yaml", self.path + "/phdag.yaml")
 
     def command_publish_exec(self):
-        phlogger.info("publish")
-        config = PhYAMLConfig(self.path)
+        phlogger.info("command publish")
+        job_dir = self.job_path[0:self.job_path.rindex("/")]
+        for _, dirs, _ in os.walk(job_dir):
+            for key in dirs:
+                if (not key.startswith(".")) & (not key.startswith("__pycache__")):
+                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + ".py", job_dir + "/" + key + "/phjob.py")
+        for _, _, files in os.walk(self.dag_path):
+            for key in files:
+                if not key.startswith("."):
+                    s3.put_object("s3fs-ph-storage", "airflow/dags/" + key, self.dag_path + key)
 
     def command_run_exec(self):
         phlogger.info("run")
@@ -179,6 +193,7 @@ class PhContextFacade(object):
             if line == "$alfred_import_jobs\n":
                 for j in config.spec.jobs:
                     w.write("from phjobs." + j.name + ".phjob import execute as " + j.name + "\n")
+                    # w.write("from phjobs." + j.name + " import execute as " + j.name + "\n")
             else:
                 w.write(
                     line.replace("$alfred_dag_owner", str(config.spec.owner)) \
