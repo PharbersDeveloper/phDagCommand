@@ -5,7 +5,7 @@ with open("./README.md", "r") as fh:
 
 setuptools.setup(
     name="phcli",
-    version="0.0.3",
+    version="0.0.4",
     author="Alfred Yang",
     author_email="alfredyang@pharbers.com",
     description="pharbers dag scheduler config",

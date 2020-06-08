@@ -4,6 +4,7 @@
 This module document the YAML Job Args for Pharbers jobs
 """
 import boto3
+import pandas as pd
 import string
 
 
@@ -38,6 +39,9 @@ class PhS3(object):
             Key=s3_path,
             Filename=local_path
         )
+
+    def get_excel_from_s3(self, s3_path):
+        return pd.read_excel(s3_path)
 
 
 s3 = PhS3()
