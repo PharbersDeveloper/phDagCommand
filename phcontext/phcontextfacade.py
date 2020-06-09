@@ -27,10 +27,12 @@ class PhContextFacade(object):
         self.job_path = path
         self.combine_path = path
         self.dag_path = path
+        self.upload_path = path
         self.name = ""
         self.job_prefix = "phjobs"
         self.combine_prefix = "phcombines"
         self.dag_prefix = "phdags"
+        self.upload_prefix = "upload"
 
     def execute(self):
         self.check_dir()
@@ -42,6 +44,8 @@ class PhContextFacade(object):
             self.command_run_exec()
         elif self.cmd == "dag":
             self.command_dag_exec()
+        elif self.cmd == "submit":
+            self.command_submit_exec()
         else:
             self.command_publish_exec()
 
@@ -56,6 +60,7 @@ class PhContextFacade(object):
         self.job_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         self.combine_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.combine_prefix + "/" + self.name
         self.dag_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.dag_prefix + "/"
+        self.upload_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.upload_prefix+ "/"
         if self.cmd == "create":
             return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         elif self.cmd == "combine":
@@ -66,12 +71,17 @@ class PhContextFacade(object):
             return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         elif self.cmd == "publish":
             return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
+        elif self.cmd == "submit":
+            return self.path
         else:
             raise Exception("Something goes wrong!!!")
 
     def check_dag_dir(self, dag_id):
         if os.path.exists(self.dag_path + "/" + dag_id):
             raise exception_file_already_exist
+
+    def clean_dag_dir(self):
+        subprocess.call(["rm", "-rf", self.dag_path])
 
     def check_dir(self):
         if "/" not in self.path:
@@ -84,6 +94,8 @@ class PhContextFacade(object):
             elif self.cmd == "publish":
                 if not os.path.exists(self.dag_path):
                     raise exception_file_not_exist
+            elif self.cmd == "submit":
+                print("submit, do nothing")
             else:
                 if not os.path.exists(self.path):
                     raise exception_file_not_exist
@@ -154,15 +166,15 @@ class PhContextFacade(object):
 
     def command_publish_exec(self):
         phlogger.info("command publish")
-        job_dir = self.job_path[0:self.job_path.rindex("/")]
-        for _, dirs, _ in os.walk(job_dir):
+        for _, dirs, _ in os.walk(self.dag_path):
             for key in dirs:
                 if (not key.startswith(".")) & (not key.startswith("__pycache__")):
-                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + ".py", job_dir + "/" + key + "/phjob.py")
-        for _, _, files in os.walk(self.dag_path):
-            for key in files:
-                if not key.startswith("."):
-                    s3.put_object("s3fs-ph-storage", "airflow/dags/" + key, self.dag_path + key)
+                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phmain.py", self.dag_path + key + "/phmain.py")
+                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phjob.zip", self.dag_path + key + "/phjob.zip")
+                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/args.properties", self.dag_path + key + "/args.properties")
+        for key in os.listdir(self.dag_path):
+            if os.path.isfile(self.dag_path + key):
+                s3.put_object("s3fs-ph-storage", "airflow/dags/" + key, self.dag_path + key)
 
     def command_run_exec(self):
         phlogger.info("run")
@@ -181,6 +193,7 @@ class PhContextFacade(object):
 
     def command_dag_exec(self):
         phlogger.info("command dag")
+        self.clean_dag_dir()
         config = PhYAMLConfig(self.combine_path, "/phdag.yaml")
         config.load_yaml()
         self.check_dag_dir(config.spec.dag_id)
@@ -218,10 +231,51 @@ class PhContextFacade(object):
                         .replace("$alfred_job_path", str(self.job_path[0:self.job_path.rindex("/") + 1]))
                         .replace("$alfred_name", str(jt.name))
                 )
-            subprocess.call(["cp",
-                             self.job_path[0:self.job_path.rindex("/") + 1] + jt.name + "/phconf.yaml",
-                             self.dag_path + jt.name + ".yaml"])
+            subprocess.call(["cp", "-r",
+                             self.job_path[0:self.job_path.rindex("/") + 1] + jt.name,
+                             self.dag_path + jt.name])
+            subprocess.call(["zip", self.dag_path + jt.name + "/phjob.zip", self.dag_path + jt.name + "/phjob.py"])
+            self.yaml2args(self.dag_path + jt.name)
 
         w.write(config.spec.linkage)
         w.write("\n")
         w.close()
+
+    def command_submit_exec(self):
+        phlogger.info("submit command exec")
+        phlogger.info("submit command with Job name" + self.path)
+        submit_prefix = "s3a://s3fs-ph-storage/airflow/dags/phjobs/" + self.path + "/"
+        args = s3.get_object_lines("airflow/dag/phjobs/" + self.path + "/args.properties")
+        access_key = os.getenv("S3_ACCESS_KEY")
+        secret_key = os.getenv("S3_SECRET_KEY")
+        cmd_arr = ["spark-submit",
+                   "--master", "yarn",
+                   "--deploy-mode", "cluster",
+                   "--conf", "spark.driver.memory=2g",
+                   "--conf", "spark.driver.cores=2",
+                   "--conf", "spark.executor.memory=2g",
+                   "--conf", "spark.executor.cores=2",
+                   "--conf", "spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
+                   "--conf", "spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
+                   "--conf", "spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem",
+                   "--conf", "spark.hadoop.fs.s3a.access.key=" + access_key,
+                   "--conf", "spark.hadoop.fs.s3a.secret.key=" + secret_key,
+                   "--conf", "spark.hadoop.fs.s3a.endpoint=s3.cn-northwest-1.amazonaws.com.cn",
+                   "--num-executors", "2",
+                   "--jars", "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
+                   "--py-files", "s3a://s3fs-ph-storage/airflow/dags/phjobs/common/click.zip,s3a://s3fs-ph-storage/airflow/dags/phjobs/common/phcli.zip," + submit_prefix + "phjob.zip",
+                   submit_prefix + "phmain.py"]
+        for it in args:
+            cmd_arr.append(it)
+        subprocess.call(cmd_arr)
+
+    def yaml2args(self, path):
+        config = PhYAMLConfig(path)
+        config.load_yaml()
+        phlogger.info(config.spec.containers.args)
+
+        f = open(path + "/args.properties", "a")
+        for arg in config.spec.containers.args:
+            f.write("--" + arg.key + "\n")
+            f.write(str(arg.value) + "\n")
+        f.close()

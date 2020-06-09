@@ -16,7 +16,7 @@ class PhYAMLDAGSpec(object):
         self.email_on_failure = ""
         self.email_on_retry = ""
         self.retries = 1
-        self.retry_delay = "minutes=5",
+        self.retry_delay = "minutes=5"
         self.owner = ""
         self.linkage = ""
         self.dag_id = ""
