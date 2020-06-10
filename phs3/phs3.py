@@ -24,8 +24,8 @@ class PhS3(object):
             Bucket=bk_name,
             Key=s3_path
         )
-        # return string.split(response["Body"].read().decode(), "\n")
-        return str.split(response["Body"].read().decode(), "\n")
+        return string.split(response["Body"].read().decode(), "\n")
+        # return str.split(response["Body"].read().decode(), "\n")
 
     def copy_object_2_file(self, bk_name, s3_path, local_path):
         f = open(local_path, "w")
