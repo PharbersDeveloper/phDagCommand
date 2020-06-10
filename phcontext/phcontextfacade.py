@@ -95,7 +95,7 @@ class PhContextFacade(object):
                 if not os.path.exists(self.dag_path):
                     raise exception_file_not_exist
             elif self.cmd == "submit":
-                print("submit, do nothing")
+                phlogger.info("submit, do nothing")
             else:
                 if not os.path.exists(self.path):
                     raise exception_file_not_exist
@@ -170,7 +170,8 @@ class PhContextFacade(object):
             for key in dirs:
                 if (not key.startswith(".")) & (not key.startswith("__pycache__")):
                     s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phmain.py", self.dag_path + key + "/phmain.py")
-                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phjob.zip", self.dag_path + key + "/phjob.zip")
+                    # s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phjob.zip", self.dag_path + key + "/phjob.zip")
+                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phjob.py", self.dag_path + key + "/phjob.py")
                     s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/args.properties", self.dag_path + key + "/args.properties")
         for key in os.listdir(self.dag_path):
             if os.path.isfile(self.dag_path + key):
@@ -234,7 +235,7 @@ class PhContextFacade(object):
             subprocess.call(["cp", "-r",
                              self.job_path[0:self.job_path.rindex("/") + 1] + jt.name,
                              self.dag_path + jt.name])
-            subprocess.call(["zip", self.dag_path + jt.name + "/phjob.zip", self.dag_path + jt.name + "/phjob.py"])
+            # subprocess.call(["zip", self.dag_path + jt.name + "/phjob.zip", self.dag_path + jt.name + "/phjob.py"])
             self.yaml2args(self.dag_path + jt.name)
 
         w.write(config.spec.linkage)
@@ -245,7 +246,7 @@ class PhContextFacade(object):
         phlogger.info("submit command exec")
         phlogger.info("submit command with Job name" + self.path)
         submit_prefix = "s3a://s3fs-ph-storage/airflow/dags/phjobs/" + self.path + "/"
-        args = s3.get_object_lines("airflow/dag/phjobs/" + self.path + "/args.properties")
+        args = s3.get_object_lines("s3fs-ph-storage", "airflow/dags/phjobs/" + self.path + "/args.properties")
         access_key = os.getenv("S3_ACCESS_KEY")
         secret_key = os.getenv("S3_SECRET_KEY")
         cmd_arr = ["spark-submit",
@@ -263,10 +264,11 @@ class PhContextFacade(object):
                    "--conf", "spark.hadoop.fs.s3a.endpoint=s3.cn-northwest-1.amazonaws.com.cn",
                    "--num-executors", "2",
                    "--jars", "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
-                   "--py-files", "s3a://s3fs-ph-storage/airflow/dags/phjobs/common/click.zip,s3a://s3fs-ph-storage/airflow/dags/phjobs/common/phcli.zip," + submit_prefix + "phjob.zip",
+                   "--py-files", "s3a://s3fs-ph-storage/airflow/dags/phjobs/common/click.zip,s3a://s3fs-ph-storage/airflow/dags/phjobs/common/phcli.zip," + submit_prefix + "phjob.py",
                    submit_prefix + "phmain.py"]
         for it in args:
-            cmd_arr.append(it)
+            if it != "":
+                cmd_arr.append(it)
         subprocess.call(cmd_arr)
 
     def yaml2args(self, path):
