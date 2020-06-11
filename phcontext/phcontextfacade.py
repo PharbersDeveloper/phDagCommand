@@ -35,6 +35,7 @@ class PhContextFacade(object):
         self.upload_prefix = "upload"
 
     def execute(self):
+        ret = 0
         self.check_dir()
         if self.cmd == "create":
             self.command_create_exec()
@@ -45,9 +46,13 @@ class PhContextFacade(object):
         elif self.cmd == "dag":
             self.command_dag_exec()
         elif self.cmd == "submit":
-            self.command_submit_exec()
+            ret = self.command_submit_exec()
+        # elif self.cmd == "":
+        #     ret = self.command_status_exec()
         else:
             self.command_publish_exec()
+
+        return ret
 
     def get_workspace_dir(self):
         return os.getenv('PH_WORKSPACE')
@@ -95,7 +100,7 @@ class PhContextFacade(object):
                 if not os.path.exists(self.dag_path):
                     raise exception_file_not_exist
             elif self.cmd == "submit":
-                phlogger.info("submit, do nothing")
+                phlogger.info("command submit or status, do nothing")
             else:
                 if not os.path.exists(self.path):
                     raise exception_file_not_exist
@@ -230,6 +235,7 @@ class PhContextFacade(object):
                 w.write(
                     line.replace("$alfred_command", str(jt.command)) \
                         .replace("$alfred_job_path", str(self.job_path[0:self.job_path.rindex("/") + 1]))
+                        .replace("$alfred_dag_owner", str(config.spec.owner)) \
                         .replace("$alfred_name", str(jt.name))
                 )
             subprocess.call(["cp", "-r",
@@ -247,15 +253,20 @@ class PhContextFacade(object):
         phlogger.info("submit command with Job name" + self.path)
         submit_prefix = "s3a://s3fs-ph-storage/airflow/dags/phjobs/" + self.path + "/"
         args = s3.get_object_lines("s3fs-ph-storage", "airflow/dags/phjobs/" + self.path + "/args.properties")
-        access_key = os.getenv("S3_ACCESS_KEY")
-        secret_key = os.getenv("S3_SECRET_KEY")
+        access_key = os.getenv("AWS_ACCESS_KEY_ID")
+        secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+        current_user = os.getenv("HADOOP_PROXY_USER")
+        if current_user is None:
+            current_user = "airflow"
         cmd_arr = ["spark-submit",
                    "--master", "yarn",
                    "--deploy-mode", "cluster",
-                   "--conf", "spark.driver.memory=2g",
-                   "--conf", "spark.driver.cores=2",
+                   "--name", self.path,
+                   "--proxy-user", current_user,
+                   "--conf", "spark.driver.memory=1g",
+                   "--conf", "spark.driver.cores=1",
                    "--conf", "spark.executor.memory=2g",
-                   "--conf", "spark.executor.cores=2",
+                   "--conf", "spark.executor.cores=1",
                    "--conf", "spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
                    "--conf", "spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
                    "--conf", "spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem",
@@ -269,7 +280,7 @@ class PhContextFacade(object):
         for it in args:
             if it != "":
                 cmd_arr.append(it)
-        subprocess.call(cmd_arr)
+        return subprocess.call(cmd_arr)
 
     def yaml2args(self, path):
         config = PhYAMLConfig(path)
@@ -278,6 +289,7 @@ class PhContextFacade(object):
 
         f = open(path + "/args.properties", "a")
         for arg in config.spec.containers.args:
-            f.write("--" + arg.key + "\n")
-            f.write(str(arg.value) + "\n")
+            if arg.value is not "":
+                f.write("--" + arg.key + "\n")
+                f.write(str(arg.value) + "\n")
         f.close()

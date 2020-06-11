@@ -10,7 +10,7 @@ from phcontext.phcontextfacade import PhContextFacade
 
 @click.command()
 @click.option("--cmd", prompt="Your command is", help="The command that you want to process.",
-              type=click.Choice(["create", "combine", "dag", "publish", "run", "submit"]))
+              type=click.Choice(["create", "combine", "dag", "publish", "run", "submit", "status"]))
 @click.option("--path", prompt="Your config and python job file directory", help="The concert job you want the process.")
 def ph_command(cmd, path):
     """The Pharbers Max Job Command Line Interface (CLI)
@@ -24,4 +24,4 @@ def ph_command(cmd, path):
             the dictionary that specify the py and yaml file
     """
     context = PhContextFacade(cmd, path)
-    context.execute()
+    click.get_current_context().exit(context.execute())

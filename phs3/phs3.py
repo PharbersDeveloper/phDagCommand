@@ -6,7 +6,7 @@ This module document the YAML Job Args for Pharbers jobs
 import boto3
 import pandas as pd
 import string
-
+import sys
 
 class PhS3(object):
     def __init__(self):
@@ -24,8 +24,10 @@ class PhS3(object):
             Bucket=bk_name,
             Key=s3_path
         )
-        return string.split(response["Body"].read().decode(), "\n")
-        # return str.split(response["Body"].read().decode(), "\n")
+        if sys.version_info > (3, 0):
+            return str.split(response["Body"].read().decode(), "\n")
+        else:
+            return string.split(response["Body"].read().decode(), "\n")
 
     def copy_object_2_file(self, bk_name, s3_path, local_path):
         f = open(local_path, "w")

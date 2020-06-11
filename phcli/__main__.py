@@ -4,7 +4,7 @@ from command.phcommand import ph_command
 
 
 def main():
-    ph_command()
+    return ph_command()
 
 
 if __name__ == '__main__':
