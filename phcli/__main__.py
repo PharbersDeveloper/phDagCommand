@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
-from command.phcommand import ph_command
+from command.phcommand import phcli
 
 
 def main():
-    return ph_command()
+    return phcli()
 
 
 if __name__ == '__main__':

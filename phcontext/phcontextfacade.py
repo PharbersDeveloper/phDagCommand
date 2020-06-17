@@ -10,6 +10,7 @@ from phconfig.phconfig import PhYAMLConfig
 import subprocess
 from phs3.phs3 import s3
 from phlogs.phlogs import phlogger
+import ast
 import string
 
 
@@ -21,9 +22,11 @@ class PhContextFacade(object):
             path: the directory that you want to process
     """
 
-    def __init__(self, cmd, path):
+    def __init__(self, cmd, path, context=""):
         self.cmd = cmd
         self.path = path
+        # self.context = json.loads(context)
+        self.context = context
         self.job_path = path
         self.combine_path = path
         self.dag_path = path
@@ -65,7 +68,7 @@ class PhContextFacade(object):
         self.job_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         self.combine_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.combine_prefix + "/" + self.name
         self.dag_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.dag_prefix + "/"
-        self.upload_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.upload_prefix+ "/"
+        self.upload_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.upload_prefix + "/"
         if self.cmd == "create":
             return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         elif self.cmd == "combine":
@@ -174,10 +177,13 @@ class PhContextFacade(object):
         for _, dirs, _ in os.walk(self.dag_path):
             for key in dirs:
                 if (not key.startswith(".")) & (not key.startswith("__pycache__")):
-                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phmain.py", self.dag_path + key + "/phmain.py")
+                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phmain.py",
+                                  self.dag_path + key + "/phmain.py")
                     # s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phjob.zip", self.dag_path + key + "/phjob.zip")
-                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phjob.py", self.dag_path + key + "/phjob.py")
-                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/args.properties", self.dag_path + key + "/args.properties")
+                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phjob.py",
+                                  self.dag_path + key + "/phjob.py")
+                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/args.properties",
+                                  self.dag_path + key + "/args.properties")
         for key in os.listdir(self.dag_path):
             if os.path.isfile(self.dag_path + key):
                 s3.put_object("s3fs-ph-storage", "airflow/dags/" + key, self.dag_path + key)
@@ -250,7 +256,12 @@ class PhContextFacade(object):
 
     def command_submit_exec(self):
         phlogger.info("submit command exec")
-        phlogger.info("submit command with Job name" + self.path)
+        phlogger.info("submit command with Job name " + self.path)
+        phlogger.info("submit command with context " + self.context)
+        udags = {}
+        if self.context is not "":
+            udags = ast.literal_eval(self.context.replace(" ", ""))
+        phlogger.info(udags)
         submit_prefix = "s3a://s3fs-ph-storage/airflow/dags/phjobs/" + self.path + "/"
         args = s3.get_object_lines("s3fs-ph-storage", "airflow/dags/phjobs/" + self.path + "/args.properties")
         access_key = os.getenv("AWS_ACCESS_KEY_ID")
@@ -270,16 +281,28 @@ class PhContextFacade(object):
                    "--conf", "spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
                    "--conf", "spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
                    "--conf", "spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem",
-                   "--conf", "spark.hadoop.fs.s3a.access.key=" + access_key,
-                   "--conf", "spark.hadoop.fs.s3a.secret.key=" + secret_key,
+                   # "--conf", "spark.hadoop.fs.s3a.access.key=" + access_key,
+                   # "--conf", "spark.hadoop.fs.s3a.secret.key=" + secret_key,
                    "--conf", "spark.hadoop.fs.s3a.endpoint=s3.cn-northwest-1.amazonaws.com.cn",
                    "--num-executors", "2",
-                   "--jars", "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
-                   "--py-files", "s3a://s3fs-ph-storage/airflow/dags/phjobs/common/click.zip,s3a://s3fs-ph-storage/airflow/dags/phjobs/common/phcli.zip," + submit_prefix + "phjob.py",
+                   "--jars",
+                   "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
+                   "--py-files",
+                   "s3a://s3fs-ph-storage/airflow/dags/phjobs/common/click.zip,s3a://s3fs-ph-storage/airflow/dags/phjobs/common/phcli.zip," + submit_prefix + "phjob.py",
                    submit_prefix + "phmain.py"]
+
+        cur_key = ""
         for it in args:
+            if it[0:2] == "--":
+                cur_key = it[2:]
+            else:
+                if cur_key in udags.keys():
+                    it = udags[cur_key]
+
             if it != "":
                 cmd_arr.append(it)
+
+        phlogger.info(cmd_arr)
         return subprocess.call(cmd_arr)
 
     def yaml2args(self, path):
@@ -288,6 +311,7 @@ class PhContextFacade(object):
         phlogger.info(config.spec.containers.args)
 
         f = open(path + "/args.properties", "a")
+        tmp = config.spec.containers.args
         for arg in config.spec.containers.args:
             if arg.value is not "":
                 f.write("--" + arg.key + "\n")
