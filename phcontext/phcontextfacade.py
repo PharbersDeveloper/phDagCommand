@@ -204,7 +204,7 @@ class PhContextFacade(object):
                     else:
                         cb.append("--" + arg.key)
                         if type(arg.value) is unicode:
-                            cb.append(str.encode("gb18030"))
+                            cb.append(arg.value.encode("utf-8"))
                         else:
                             cb.append(str(arg.value))
                 subprocess.call(cb)
