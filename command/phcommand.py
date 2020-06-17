@@ -18,7 +18,7 @@ def phcli():
               type=click.Choice(["create", "combine", "dag", "publish", "run", "submit", "status"]))
 @click.option("-p", "--path", prompt="Your config and python job file directory",
               help="The concert job you want the process.")
-@click.option("-c", "--context", default="")
+@click.option("-c", "--context", default="{}")
 def maxauto(cmd, path, context):
     """The Pharbers Max Job Command Line Interface (CLI)
 
