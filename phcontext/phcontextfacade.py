@@ -4,6 +4,7 @@
 This module document the usage of class pharbers command context,
 """
 import os
+import sys
 from phexceptions.phexceptions import exception_file_already_exist, PhException, exception_file_not_exist, \
     exception_function_not_implement
 from phconfig.phconfig import PhYAMLConfig
@@ -198,7 +199,14 @@ class PhContextFacade(object):
                 entry_point = self.path + "/" + entry_point
                 cb = ["python", entry_point]
                 for arg in config.spec.containers.args:
-                    cb.append("--" + arg.key + "=" + str(arg.value))
+                    if sys.version_info > (3, 0):
+                        cb.append("--" + arg.key + "=" + str(arg.value))
+                    else:
+                        cb.append("--" + arg.key)
+                        if type(arg.value) is unicode:
+                            cb.append(str.encode("gb18030"))
+                        else:
+                            cb.append(str(arg.value))
                 subprocess.call(cb)
         else:
             raise exception_function_not_implement
