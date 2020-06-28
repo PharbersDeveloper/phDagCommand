@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+pipenv = "*"
+
+[packages]
+click = "*"
+boto3 = "*"
+pandas = "*"
+xlrd = "*"
+pyyaml = "*"
+
+[requires]
+python_version = "3.8"

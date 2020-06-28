@@ -1,11 +1,20 @@
 #!/usr/bin/python
+import click
+from command.phcommand import maxauto
+from phlmd.__main__ import lmd
 
-from command.phcommand import phcli
+
+CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
 
-def main():
-    return phcli()
+@click.group(context_settings=CONTEXT_SETTINGS)
+def phcli():
+    pass
+
+
+phcli.add_command(maxauto)
+phcli.add_command(lmd)
 
 
 if __name__ == '__main__':
-    main()
+    phcli()
