@@ -23,7 +23,7 @@ setuptools.setup(
     },
     entry_points={
         'console_scripts': [
-            'phcli = command.phcommand:phcli',
+            'phcli = phcli.__main__:phcli',
         ],
     }
 )

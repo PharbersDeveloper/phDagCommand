@@ -1,3 +1,8 @@
+.DS_Store
+*.pyc
+.idea
+.venv/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -132,4 +137,7 @@ phdags
 phcombines
 template
 phjobs
-.idea
+
+file/phlmd/python-lambda-example-code.zip
+file/phlmd/python-lambda-example-layer.zip
+.ph-lambda-deploy.yaml

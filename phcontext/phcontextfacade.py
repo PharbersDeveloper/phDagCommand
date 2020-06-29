@@ -12,7 +12,6 @@ import subprocess
 from phs3.phs3 import s3
 from phlogs.phlogs import phlogger
 import ast
-import string
 
 
 class PhContextFacade(object):
