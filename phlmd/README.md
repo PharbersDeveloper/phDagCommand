@@ -2,7 +2,7 @@
 用于快捷部署 AWS Lambda 的工具脚本
 
 # 一、安装方式
-进入 [https://github.com/PharbersDeveloper/aws_lambda_deploy/releases](https://github.com/PharbersDeveloper/aws_lambda_deploy/releases) 下载一个最新的 releases 版本的二进制文件。将其放到环境变量中即可。
+进入 [https://github.com/PharbersDeveloper/phDagCommand/releases](https://github.com/PharbersDeveloper/phDagCommand/releases) 下载一个最新的 releases 版本的二进制文件。将其放到环境变量中即可。
 
 # 二、使用方式
 ## 2.1 项目初始化
