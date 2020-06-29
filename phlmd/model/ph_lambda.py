@@ -1,5 +1,7 @@
 import boto3
-from phlmd.runtime import *
+from phlmd.runtime import python_rt
+from phlmd.runtime import nodejs_rt
+from phlmd.runtime import go_rt
 from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil
 from phlmd.model.ph_role import PhRole

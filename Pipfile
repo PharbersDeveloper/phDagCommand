@@ -6,6 +6,8 @@ verify_ssl = true
 [dev-packages]
 pytest = "*"
 pipenv = "*"
+pyinstaller = "*"
+setuptools = "==44.0.0"
 
 [packages]
 click = "*"

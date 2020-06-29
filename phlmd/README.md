@@ -10,7 +10,7 @@
 
 #### python
 ```$xslt
-aws_lambda_deploy init \
+phcli lmd deploy init \
     --name example \
     --runtime python3.8 \
     --desc 自动化发布 \
@@ -21,7 +21,7 @@ aws_lambda_deploy init \
 
 #### nodejs
 ```$xslt
-aws_lambda_deploy init \
+phcli lmd deploy init \
     --name example \
     --runtime nodejs10.x \
     --desc 自动化发布 \
@@ -34,28 +34,28 @@ aws_lambda_deploy init \
 ### 首次使用需要创建 AWS 的四种资源
 AWS Lambda 基于 role、layer、function、API Gateway 四种资源, 此操作需要一定的管理员权限，建议联系相关运维人员
 ```$xslt
-aws_lambda_deploy push -n example --all
+phcli lmd deploy push -n example --all
 ```
 
 ### 常用发布
 只发布当前代码并绑定到 API Gateway，可使用如下命令
 ```$xslt
-aws_lambda_deploy push -n example
+phcli lmd deploy push -n example
 ```
 
 ### 只更新当前代码，不绑定到 API Gateway
 ```$xslt
-aws_lambda_deploy push -n example --code
+phcli lmd deploy push -n example -o code
 ```
 
 ### lib 依赖库更新
 ```$xslt
-aws_lambda_deploy push -n example --lib
+phcli lmd deploy push -n example -o lib
 ```
 
 
 # 开发人员手册
 ## 二进制打包方式
 ```$xslt
-pyinstaller aws_lambda_deploy/__main__.py -F -n aws_lambda_deploy -p aws_lambda_deploy/
+pyinstaller phlmd/__main__.py -F -n phlmd -p .
 ```
