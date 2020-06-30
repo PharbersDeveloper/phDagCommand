@@ -5,7 +5,7 @@ import pandas as pd
 
 BUCKER_NAME = 'ph-origin-files'
 LOCAL_CACHE_FILE = r's3_primitive_data.yaml'
-filter_dir = ['OTHERS']
+filter_dir = ['OTHERS', 'CHC']
 
 KEEP_ROW_COUNT = 2
 
@@ -61,7 +61,7 @@ def load_cache_data():
 
      :return: cache_data_lst: 已经处理的文件信息
      """
-    with open(LOCAL_CACHE_FILE) as file:
+    with open(LOCAL_CACHE_FILE, encoding='UTF-8') as file:
         return yaml.load(file, Loader=yaml.FullLoader)
 
 
@@ -71,7 +71,7 @@ def append_cache_data(parse_file_lst):
 
     :param parse_file_lst: 解析成功的文件列表
     """
-    with open(LOCAL_CACHE_FILE, 'a') as file:
+    with open(LOCAL_CACHE_FILE, 'a', encoding='UTF-8') as file:
         yaml.dump(parse_file_lst, file, default_flow_style=False, encoding='utf-8', allow_unicode=True)
 
 
@@ -142,6 +142,6 @@ if __name__ == '__main__':
         print(increment_lst)
         print()
 
-    for obj in increment_lst[:3]:
+    for obj in increment_lst:
         print(f"开始解析 {obj['file']}")
         append_cache_data(parse_s3_execl(obj))
