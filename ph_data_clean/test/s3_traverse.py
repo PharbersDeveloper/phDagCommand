@@ -6,7 +6,7 @@ BUCKER_NAME = 'ph-origin-files'
 filter_dir = ['OTHERS']
 
 s3 = boto3.resource('s3')
-
+s3_client = boto3.client('s3')
 
 # 得到所有目录名+文件名
 def get_all_file_path():
@@ -40,7 +40,7 @@ def get_all_file_path():
             all_file_lst.append({
                 "source": repr(obj_key_lst[0]),
                 "company": repr(obj_key_lst[1]),
-                "file": repr(obj_key_lst[2]),
+                "file": obj_key,
             })
             continue
 
@@ -58,6 +58,15 @@ if len(filter_file_lst):
 if len(err_file_lst):
     print(f"存在无法解析路径的文件 {len(err_file_lst)} 个，信息如下：")
     print(err_file_lst)
+
+
+for obj in all_file_lst[:1]:
+    response = s3_client.get_object(
+        Bucket=BUCKER_NAME,
+        Key=obj["file"]
+    )
+
+    print(response)
 
 # for obj in bucket.objects.all():
 #     key = obj.key  # 读取所有excel文件名
