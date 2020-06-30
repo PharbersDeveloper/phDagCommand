@@ -57,5 +57,5 @@ phcli lmd deploy push -n example -o lib
 # 开发人员手册
 ## 二进制打包方式
 ```$xslt
-pyinstaller phlmd/__main__.py -F -n phlmd -p .
+pyinstaller phcli/__main__.py -F -n phcli -p .
 ```

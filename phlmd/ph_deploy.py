@@ -66,15 +66,17 @@ def init(name, runtime, desc, lib_path, code_path, handler):
         return
 
 
-def __check_version(deploy_conf) -> dict:
+def __check_max_version(deploy_conf) -> (dict, str):
+    def max_version(cur, max) -> str:
+        return cur if int(cur[1:]) > int(max[1:]) else max
+
     function_info = ph_lambda.PhLambda().get(deploy_conf["metadata"])
-    if function_info == {}:
-        last_version = "v0"
-    else:
-        last_version = function_info["Aliases"][0]["Name"]
-    new_version = f"v{int(last_version[1:]) + 1}"
-    deploy_conf["metadata"]["version"] = new_version
-    return deploy_conf
+    last_version = "v0"
+    if function_info != {}:
+        for alias in function_info["Aliases"]:
+            last_version = max_version(alias["Name"], last_version)
+
+    return deploy_conf, last_version
 
 
 def __write_conf(all_conf):
@@ -127,7 +129,7 @@ def __apply(deploy_conf):
         click.secho()
 
 
-def __clean_cache(self, deploy_conf):
+def __clean_cache(deploy_conf):
     click.secho("开始清理执行缓存", blink=True, bold=True)
 
     if "layer" in deploy_conf.keys():
@@ -136,8 +138,8 @@ def __clean_cache(self, deploy_conf):
 
         layer = ph_layer.PhLayer()
         layer_versions = layer.get({"name": deploy_conf["metadata"]["name"]})["LayerVersions"]
-        if len(layer_versions) > self._DEFAULT_MAX_INST:
-            for lv in layer_versions[self._DEFAULT_MAX_INST:]:
+        if len(layer_versions) > __DEFAULT_MAX_INST:
+            for lv in layer_versions[__DEFAULT_MAX_INST:]:
                 layer.delete({
                     "name": deploy_conf["metadata"]["name"],
                     "version": lv["Version"],
@@ -149,8 +151,8 @@ def __clean_cache(self, deploy_conf):
 
         lambda_function = ph_lambda.PhLambda()
         lambda_aliases = lambda_function.get({"name": deploy_conf["metadata"]["name"]})["Aliases"]
-        if len(lambda_aliases) > self._DEFAULT_MAX_INST:
-            for la in lambda_aliases[self._DEFAULT_MAX_INST:]:
+        if len(lambda_aliases) > __DEFAULT_MAX_INST:
+            for la in lambda_aliases[__DEFAULT_MAX_INST:]:
                 lambda_function.delete({
                     "name": deploy_conf["metadata"]["name"],
                     "version": la["Name"],
@@ -196,10 +198,16 @@ def push(name, oper):
 
     click.secho(f"开始部署 '{project_name}'", fg='green', blink=True, bold=True)
 
-    # check version and write back
-    deploy_conf = __check_version(all_conf[project_name])
-    all_conf[project_name] = deploy_conf
-    __write_conf(all_conf)
+    # check version and write back, tut the version is not updated when `api` is only released
+    deploy_conf, max_version = __check_max_version(all_conf[project_name])
+    if "api" == oper:
+        deploy_conf["metadata"]["version"] = max_version
+        all_conf[project_name] = deploy_conf
+        __write_conf(all_conf)
+    else:
+        deploy_conf["metadata"]["version"] = f"v{int(max_version[1:]) + 1}"
+        all_conf[project_name] = deploy_conf
+        __write_conf(all_conf)
 
     # filter operator
     all_operator = {"role": "role", "lib": "layer", "code": "lambda", "api": "gateway"}

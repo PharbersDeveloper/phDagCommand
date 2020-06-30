@@ -266,7 +266,7 @@ class PhContextFacade(object):
         phlogger.info("submit command with Job name " + self.path)
         phlogger.info("submit command with context " + self.context)
         udags = {}
-        if self.context is not "":
+        if self.context != "":
             udags = ast.literal_eval(self.context.replace(" ", ""))
         phlogger.info(udags)
         submit_prefix = "s3a://s3fs-ph-storage/airflow/dags/phjobs/" + self.path + "/"
@@ -320,7 +320,7 @@ class PhContextFacade(object):
         f = open(path + "/args.properties", "a")
         tmp = config.spec.containers.args
         for arg in config.spec.containers.args:
-            if arg.value is not "":
+            if arg.value != "":
                 f.write("--" + arg.key + "\n")
                 f.write(str(arg.value) + "\n")
         f.close()
