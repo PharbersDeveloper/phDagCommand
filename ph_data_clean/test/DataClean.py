@@ -1,4 +1,5 @@
 import mapping
+import test_data
 
 
 class MappingOne(object):
@@ -62,23 +63,7 @@ class DataClean(object):
         # print(specific_mapping)
 
     def get_raw_data(self):
-        raw_data = {"1#   省": "北京",
-                    "2#城市": "北京市",
-                    "3#年月": "201610",
-                    "4#医院编码": "100782",
-                    "5#竞品市场 ": "阿洛刻市场",
-                    "6#ATC码 ": "R06AE07 ",
-                    "7#药品名称 ": "西替利嗪 ",
-                    "9#商品名 ": "喜宁 ",
-                    "10#药品规格 ": "10MG ",
-                    "11#包装数量": "24",
-                    "12#金额（元）": "1814",
-                    "13#数量（支/片）": "2400",
-                    "14#剂型": "TAB",
-                    "15#给药途径": "OR",
-                    "16#集团": "宜昌长江药业有限公司",
-                    "17#包装": "H"
-                    }
+        raw_data = data
         return raw_data
 
 
@@ -106,9 +91,9 @@ class CpaDataClean(DataClean):
         Util.change_year(self, final_data)
 
 
-cpa = CpaDataClean()
-
-final_data = cpa.cleaning_process(cpa.get_mapping('Pfizer', 'CPA'), cpa.get_raw_data())
-cpa.change_year(final_data)
+if __name__ == '__main__':
+    cpa = CpaDataClean()
+    final_data = cpa.cleaning_process(cpa.get_mapping('Pfizer', 'CPA'), cpa.get_raw_data())
+    cpa.change_year(final_data)
 
 # MappingFactory().get_specific_mapping('Pfizer', 'CPA')
