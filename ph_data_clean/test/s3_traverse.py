@@ -144,4 +144,5 @@ if __name__ == '__main__':
 
     for obj in increment_lst:
         print(f"开始解析 {obj['file']}")
-        append_cache_data(parse_s3_execl(obj))
+        if len(parse_s3_execl(obj)):
+            append_cache_data(parse_s3_execl(obj))
