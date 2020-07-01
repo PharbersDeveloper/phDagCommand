@@ -1,0 +1,80 @@
+- company: Pfizer
+  file_name: CPA&GYC/Pfizer/201612 CPA&GYCX.xlsx
+  raw_data:
+    APP1_COD: 口服
+    APP2_COD: 片剂
+    BRAND_MKT: .nan
+    CITY: 安阳市
+    CORP_NAME: 浙江震元制药有限公司
+    HOSPITAL_CODE: 450731
+    MOLE_NAME: 制霉菌素
+    MONTH: 12
+    PACK_DES: 0.5 MIU
+    PACK_NUMBER: 100
+    PRODUCT_MKT: .nan
+    PRODUCT_NAME: 制霉菌素
+    STANDARD_UNIT: 2000
+    VALUE: 427
+    YEAR: 2016
+  sheet_name: Data
+  source: CPA&GYC
+- company: Pfizer
+  file_name: CPA&GYC/Pfizer/201612 CPA&GYCX.xlsx
+  raw_data:
+    APP1_COD: 口服
+    APP2_COD: 片剂
+    BRAND_MKT: .nan
+    CITY: 安阳市
+    CORP_NAME: 浙江震元制药有限公司
+    HOSPITAL_CODE: 450901
+    MOLE_NAME: 制霉菌素
+    MONTH: 12
+    PACK_DES: 0.5 MIU
+    PACK_NUMBER: 100
+    PRODUCT_MKT: .nan
+    PRODUCT_NAME: 制霉菌素
+    STANDARD_UNIT: 20000
+    VALUE: 6250
+    YEAR: 2016
+  sheet_name: Data
+  source: CPA&GYC
+- company: Pfizer
+  file_name: CPA&GYC/Pfizer/CPA_GYCX_201702.xlsx
+  raw_data:
+    APP1_COD: 口服
+    APP2_COD: 片剂
+    BRAND_MKT: .nan
+    CITY: 安阳市
+    CORP_NAME: 浙江震元制药有限公司
+    HOSPITAL_CODE: 450731
+    MOLE_NAME: 制霉菌素
+    MONTH: 2
+    PACK_DES: 0.5 MIU
+    PACK_NUMBER: 100
+    PRODUCT_MKT: .nan
+    PRODUCT_NAME: 制霉菌素
+    STANDARD_UNIT: 3000
+    VALUE: 641
+    YEAR: 2017
+  sheet_name: Data
+  source: CPA&GYC
+- company: Pfizer
+  file_name: CPA&GYC/Pfizer/CPA_GYCX_201702.xlsx
+  raw_data:
+    APP1_COD: 口服
+    APP2_COD: 片剂
+    BRAND_MKT: .nan
+    CITY: 北京市
+    CORP_NAME: 浙江震元制药有限公司
+    HOSPITAL_CODE: 100041
+    MOLE_NAME: 制霉菌素
+    MONTH: 2
+    PACK_DES: 0.5 MIU
+    PACK_NUMBER: 100
+    PRODUCT_MKT: .nan
+    PRODUCT_NAME: 制霉菌素
+    STANDARD_UNIT: 20000
+    VALUE: 5680
+    YEAR: 2017
+  sheet_name: Data
+  source: CPA&GYC
