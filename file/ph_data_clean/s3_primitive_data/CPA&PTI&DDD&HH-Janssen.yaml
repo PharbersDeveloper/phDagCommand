@@ -1,0 +1,252 @@
+- company: Janssen
+  data:
+    Hospital Level Sales & Units Data for Sustenna Market:
+      0: Through 2018M01 to 2020M02
+      1: .nan
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 10':
+      0: .nan
+      1: .nan
+    'Unnamed: 11':
+      0: .nan
+      1: .nan
+    'Unnamed: 12':
+      0: .nan
+      1: .nan
+    'Unnamed: 13':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    'Unnamed: 4':
+      0: .nan
+      1: .nan
+    'Unnamed: 5':
+      0: .nan
+      1: .nan
+    'Unnamed: 6':
+      0: .nan
+      1: .nan
+    'Unnamed: 7':
+      0: .nan
+      1: .nan
+    'Unnamed: 8':
+      0: .nan
+      1: .nan
+    'Unnamed: 9':
+      0: .nan
+      1: .nan
+  file: CPA&PTI&DDD&HH/Janssen/Hospital Data for Sustenna Market 201801-202002.xlsx
+  length: 109897
+  sheet: Sustenna Sales Data
+  source: CPA&PTI&DDD&HH
+- company: Janssen
+  data:
+    'Unnamed: 0':
+      0: .nan
+      1: .nan
+    'Unnamed: 1':
+      0: 'Zytiga Market Defination '
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+  file: CPA&PTI&DDD&HH/Janssen/Hospital Data for Zytiga Market 201801-201909.xlsx
+  length: 9
+  sheet: Market defination
+  source: CPA&PTI&DDD&HH
+- company: Janssen
+  data:
+    Hospital Level Sales & Units Data for Zytiga broad market without discount:
+      0: Through 2018M01 to 2019M09
+      1: .nan
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 10':
+      0: .nan
+      1: .nan
+    'Unnamed: 11':
+      0: .nan
+      1: .nan
+    'Unnamed: 12':
+      0: .nan
+      1: .nan
+    'Unnamed: 13':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    'Unnamed: 4':
+      0: .nan
+      1: .nan
+    'Unnamed: 5':
+      0: .nan
+      1: .nan
+    'Unnamed: 6':
+      0: .nan
+      1: .nan
+    'Unnamed: 7':
+      0: .nan
+      1: .nan
+    'Unnamed: 8':
+      0: .nan
+      1: .nan
+    'Unnamed: 9':
+      0: .nan
+      1: .nan
+  file: CPA&PTI&DDD&HH/Janssen/Hospital Data for Zytiga Market 201801-201909.xlsx
+  length: 133000
+  sheet: Zytiga Broad wo discount
+  source: CPA&PTI&DDD&HH
+- company: Janssen
+  data:
+    'Unnamed: 0':
+      0: .nan
+      1: .nan
+    'Unnamed: 1':
+      0: 'Zytiga Market Defination '
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+  file: CPA&PTI&DDD&HH/Janssen/Hospital Data for Zytiga Market 201801-202002.xlsx
+  length: 9
+  sheet: Market defination
+  source: CPA&PTI&DDD&HH
+- company: Janssen
+  data:
+    'Unnamed: 0':
+      0: .nan
+      1: .nan
+    'Unnamed: 1':
+      0: 'Sustenna Market Defination '
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+  file: CPA&PTI&DDD&HH/Janssen/Hospital Data for Sustenna Market 201801-202002.xlsx
+  length: 17
+  sheet: Market defination
+  source: CPA&PTI&DDD&HH
+- company: Janssen
+  data:
+    'Unnamed: 0':
+      0: .nan
+      1: .nan
+    'Unnamed: 1':
+      0: 'Sustenna Market Defination '
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+  file: CPA&PTI&DDD&HH/Janssen/Hospital Data for Sustenna Market 201801-201909.xlsx
+  length: 17
+  sheet: Market defination
+  source: CPA&PTI&DDD&HH
+- company: Janssen
+  data:
+    Hospital Level Sales & Units Data for Sustenna Market:
+      0: Through 2018M01 to 2019M09
+      1: .nan
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 10':
+      0: .nan
+      1: .nan
+    'Unnamed: 11':
+      0: .nan
+      1: .nan
+    'Unnamed: 12':
+      0: .nan
+      1: .nan
+    'Unnamed: 13':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    'Unnamed: 4':
+      0: .nan
+      1: .nan
+    'Unnamed: 5':
+      0: .nan
+      1: .nan
+    'Unnamed: 6':
+      0: .nan
+      1: .nan
+    'Unnamed: 7':
+      0: .nan
+      1: .nan
+    'Unnamed: 8':
+      0: .nan
+      1: .nan
+    'Unnamed: 9':
+      0: .nan
+      1: .nan
+  file: CPA&PTI&DDD&HH/Janssen/Hospital Data for Sustenna Market 201801-201909.xlsx
+  length: 84714
+  sheet: Sustenna Sales Data
+  source: CPA&PTI&DDD&HH
+- company: Janssen
+  data:
+    Hospital Level Sales & Units Data for Zytiga broad market without discount:
+      0: Through 2018M01 to 2020M02
+      1: .nan
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 10':
+      0: .nan
+      1: .nan
+    'Unnamed: 11':
+      0: .nan
+      1: .nan
+    'Unnamed: 12':
+      0: .nan
+      1: .nan
+    'Unnamed: 13':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    'Unnamed: 4':
+      0: .nan
+      1: .nan
+    'Unnamed: 5':
+      0: .nan
+      1: .nan
+    'Unnamed: 6':
+      0: .nan
+      1: .nan
+    'Unnamed: 7':
+      0: .nan
+      1: .nan
+    'Unnamed: 8':
+      0: .nan
+      1: .nan
+    'Unnamed: 9':
+      0: .nan
+      1: .nan
+  file: CPA&PTI&DDD&HH/Janssen/Hospital Data for Zytiga Market 201801-202002.xlsx
+  length: 165558
+  sheet: Zytiga Broad wo discount
+  source: CPA&PTI&DDD&HH

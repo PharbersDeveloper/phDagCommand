@@ -1,4 +1,4 @@
-from ph_data_clean.test.s3_traverse import load_cache_data, LOCAL_CACHE_FILE
+from ph_data_clean.script.s3_traverse import load_cache_data
 
 s3_data = [load_cache_data()[4], load_cache_data()[5], load_cache_data()[6]]
 

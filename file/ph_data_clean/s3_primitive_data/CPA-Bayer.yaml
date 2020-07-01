@@ -1,0 +1,222 @@
+- company: Bayer
+  data:
+    ADMINST:
+      0: OR
+      1: OR
+    ATC:
+      0: A10BA02
+      1: A10BF01
+    CITY:
+      0: 包头市
+      1: 包头市
+    CODE:
+      0: 10011
+      1: 10011
+    CORPORATIO:
+      0: 百时美施贵宝集团
+      1: 拜耳-先灵集团
+    FORM:
+      0: TAB
+      1: TAB
+    HOSPITAL:
+      0: .nan
+      1: .nan
+    LEVEL:
+      0: .nan
+      1: .nan
+    MARKET:
+      0: 中央市场
+      1: 中央市场
+    MOLECULE:
+      0: 二甲双胍
+      1: 阿卡波糖
+    MONTH:
+      0: 10
+      1: 10
+    PACK:
+      0: H
+      1: H
+    PRODUCT:
+      0: 格华止
+      1: 拜唐苹
+    PROVINCE:
+      0: 内蒙古自治区
+      1: 内蒙古自治区
+    QUANTITY:
+      0: 6000
+      1: 8100
+    QUARTER:
+      0: 4
+      1: 4
+    SIZE:
+      0: 20
+      1: 30
+    SPECIFICAT:
+      0: 500 MG
+      1: 50 MG
+    TA I:
+      0: DIA
+      1: DIA
+    TA II:
+      0: OAD
+      1: OAD
+    VALUE:
+      0: 7542
+      1: 16902
+    YEAR:
+      0: 2017
+      1: 2017
+    药品是否在大类中:
+      0: 是
+      1: 是
+  file: CPA/Bayer/OAD cpa PDT.xlsx
+  length: 325056
+  sheet: OAD_cpa_PDT
+  source: CPA
+- company: Bayer
+  data:
+    ADMINST:
+      0: .nan
+      1: .nan
+    ATC:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 太原市
+      1: 忻州市
+    CODE:
+      0: 30021
+      1: 30031
+    CORPORATIO:
+      0: .nan
+      1: .nan
+    FORM:
+      0: .nan
+      1: .nan
+    HOSPITAL:
+      0: .nan
+      1: .nan
+    LEVEL:
+      0: .nan
+      1: .nan
+    MARKET:
+      0: 中央市场
+      1: 中央市场
+    MOLECULE:
+      0: Total
+      1: Total
+    MONTH:
+      0: 10
+      1: 10
+    PACK:
+      0: .nan
+      1: .nan
+    PRODUCT:
+      0: .nan
+      1: .nan
+    PROVINCE:
+      0: 山西省
+      1: 山西省
+    QUANTITY:
+      0: 183050
+      1: 31780
+    QUARTER:
+      0: 4
+      1: 4
+    SIZE:
+      0: .nan
+      1: .nan
+    SPECIFICAT:
+      0: .nan
+      1: .nan
+    TA I:
+      0: DIA
+      1: DIA
+    TA II:
+      0: OAD
+      1: OAD
+    VALUE:
+      0: 272386
+      1: 30053
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Bayer/oad 12 cpa mkt.xlsx
+  length: 43446
+  sheet: oad_12_cpa_mkt
+  source: CPA
+- company: Bayer
+  data:
+    ADMINST:
+      0: OR
+      1: OR
+    ATC:
+      0: A10BA02
+      1: A10BF01
+    CITY:
+      0: 包头市
+      1: 包头市
+    CODE:
+      0: 10011
+      1: 10011
+    CORPORATIO:
+      0: 百时美施贵宝集团
+      1: 拜耳-先灵集团
+    FORM:
+      0: TAB
+      1: TAB
+    HOSPITAL:
+      0: .nan
+      1: .nan
+    LEVEL:
+      0: .nan
+      1: .nan
+    MARKET:
+      0: 中央市场
+      1: 中央市场
+    MOLECULE:
+      0: 二甲双胍
+      1: 阿卡波糖
+    MONTH:
+      0: 10
+      1: 10
+    PACK:
+      0: H
+      1: H
+    PRODUCT:
+      0: 格华止
+      1: 拜唐苹
+    PROVINCE:
+      0: 内蒙古自治区
+      1: 内蒙古自治区
+    QUANTITY:
+      0: 6000
+      1: 8100
+    QUARTER:
+      0: 4
+      1: 4
+    SIZE:
+      0: 20
+      1: 30
+    SPECIFICAT:
+      0: 500 MG
+      1: 50 MG
+    TA I:
+      0: DIA
+      1: DIA
+    TA II:
+      0: OAD
+      1: OAD
+    VALUE:
+      0: 7542
+      1: 16902
+    YEAR:
+      0: 2017
+      1: 2017
+    药品是否在大类中:
+      0: 是
+      1: 是
+  file: CPA/Bayer/oad 12 cpa pdt.xlsx
+  length: 358829
+  sheet: oad_12_cpa_pdt
+  source: CPA

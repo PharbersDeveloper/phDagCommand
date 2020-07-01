@@ -1,0 +1,203 @@
+- company: Lilly
+  data:
+    CITY_NAME:
+      0: 本溪市
+      1: 本溪市
+    CONTENT_TYPE:
+      0: SOLN
+      1: SOLN
+    KEY_BRAND:
+      0: 来得时
+      1: 诺和锐
+    LILLY_HSPTL_NAME:
+      0: 本溪市中心医院
+      1: 本溪市中心医院
+    MANUFACTUER_NAME:
+      0: 赛诺菲-安万特集团
+      1: 诺和诺德集团
+    MCL_NAME:
+      0: 甘精胰岛素
+      1: 门冬胰岛素30
+    PACKAGE_QTY:
+      0: 1
+      1: 1
+    PRODUCT_NAME:
+      0: 来得时
+      1: 诺和锐30
+    PROVINCE_NAME:
+      0: 辽宁省
+      1: 辽宁省
+    SALES_QTY:
+      0: 120
+      1: 2100
+    SALES_VALUE:
+      0: 22154.4
+      1: 145791.0
+    SKU:
+      0: 300
+      1: 300
+    TCIII:
+      0: Basal Analog
+      1: Mealtime Analog
+    TEAM:
+      0: Insulin
+      1: Insulin
+    VEEVA_CUSTOMER_ID:
+      0: 1062989
+      1: 1062989
+    YEARID:
+      0: 2018
+      1: 2018
+    YYYYMM:
+      0: 201805
+      1: 201805
+  file: CPA/Lilly/CPA_Insulin_2018_20190122.xlsx
+  length: 134041
+  sheet: Sheet1
+  source: CPA
+- company: Lilly
+  data:
+    ? "select g.province_name,\n         g.city_name,\n         t.yearid,\n      \
+      \   CONCAT(t.yearid, lpad(t.monthid, 2, '0')) AS YYYYMM,\n         c.veeva_customer_id,\n\
+      \         c.customer_name AS LILLY_HSPTL_NAME,\n         t.team,\n         t.tciii,\n\
+      \         t.mcl_name,\n         t.key_brand,\n         t.product_name,\n   \
+      \      t.content_type,\n         t.sku,\n         t.package_qty,\n         t.manufactuer_name,\n\
+      \         t.sales_value,\n         t.sales_qty\nfrom rpd_owner.stg_cpa t\nleft\
+      \ join rpd_owner.stg_m_cpa_hsptl s on s.cpa_hsptl_id=t.cpa_hsptl_id\nleft join\
+      \ rpd_owner.dim_intnl_customer c on c.customer_id=s.lilly_hsptl_id\nleft join\
+      \ rpd_owner.dim_geo g on g.city_id=c.city_id\nwhere  t.sales_value<>0 and t.team='Insulin'\n\
+      \   and t.yearid>=2019"
+    : {}
+  file: CPA/Lilly/Insulin_201901-09.xlsx
+  length: 0
+  sheet: SQL Statement
+  source: CPA
+- company: Lilly
+  data:
+    CITY_NAME:
+      0: 沈阳市
+      1: 沈阳市
+    CONTENT_TYPE:
+      0: SOLN
+      1: SOLN
+    KEY_BRAND:
+      0: 诺和锐
+      1: 长秀霖
+    LILLY_HSPTL_NAME:
+      0: 沈阳市精神卫生中心
+      1: 沈阳市精神卫生中心
+    MANUFACTUER_NAME:
+      0: 诺和诺德集团
+      1: 北京甘李
+    MCL_NAME:
+      0: 门冬胰岛素30
+      1: 甘精胰岛素
+    PACKAGE_QTY:
+      0: 1
+      1: 1
+    PRODUCT_NAME:
+      0: 诺和锐30
+      1: 长秀霖
+    PROVINCE_NAME:
+      0: 辽宁省
+      1: 辽宁省
+    SALES_QTY:
+      0: 30
+      1: 30
+    SALES_VALUE:
+      0: 2066
+      1: 4365
+    SKU:
+      0: 300
+      1: 300
+    TCIII:
+      0: Mealtime Analog
+      1: Basal Analog
+    TEAM:
+      0: Insulin
+      1: Insulin
+    VEEVA_CUSTOMER_ID:
+      0: 1062723
+      1: 1062723
+    YEARID:
+      0: 2018
+      1: 2018
+    YYYYMM:
+      0: 201812
+      1: 201812
+  file: CPA/Lilly/CPA_Insulin_201812.xlsx
+  length: 12717
+  sheet: Sheet1
+  source: CPA
+- company: Lilly
+  data: {}
+  file: CPA/Lilly/CPA_Insulin_2018_20190122.xlsx
+  length: 0
+  sheet: Sheet2
+  source: CPA
+- company: Lilly
+  data: {}
+  file: CPA/Lilly/CPA_Insulin_201812.xlsx
+  length: 0
+  sheet: Sheet2
+  source: CPA
+- company: Lilly
+  data:
+    CITY_NAME:
+      0: 长春市
+      1: 长春市
+    CONTENT_TYPE:
+      0: SOLN
+      1: SOLN
+    KEY_BRAND:
+      0: 诺和锐
+      1: 长秀霖
+    LILLY_HSPTL_NAME:
+      0: 德惠市人民医院
+      1: 德惠市人民医院
+    MANUFACTUER_NAME:
+      0: 诺和诺德集团
+      1: 北京甘李
+    MCL_NAME:
+      0: 门冬胰岛素30
+      1: 甘精胰岛素
+    PACKAGE_QTY:
+      0: 1
+      1: 1
+    PRODUCT_NAME:
+      0: 诺和锐30
+      1: 长秀霖
+    PROVINCE_NAME:
+      0: 吉林省
+      1: 吉林省
+    SALES_QTY:
+      0: 1200
+      1: 220
+    SALES_VALUE:
+      0: 82632
+      1: 32010
+    SKU:
+      0: 300
+      1: 300
+    TCIII:
+      0: Mealtime Analog
+      1: Basal Analog
+    TEAM:
+      0: Insulin
+      1: Insulin
+    VEEVA_CUSTOMER_ID:
+      0: 1072795
+      1: 1072795
+    YEARID:
+      0: 2019
+      1: 2019
+    YYYYMM:
+      0: 201909
+      1: 201909
+    id:
+      0: 1
+      1: 2
+  file: CPA/Lilly/Insulin_201901-09.xlsx
+  length: 116074
+  sheet: Select stg_cpa
+  source: CPA

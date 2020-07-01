@@ -1,10 +1,12 @@
 import boto3
-import yaml
 import copy
 import pandas as pd
 
+from ph_data_clean.util.yaml_utils import append_to_file, load_by_dir
+
+
 BUCKER_NAME = 'ph-origin-files'
-LOCAL_CACHE_FILE = r's3_primitive_data.yaml'
+LOCAL_CACHE_DIR = r'file/ph_data_clean/s3_primitive_data/'
 filter_dir = ['OTHERS', 'CHC']
 
 KEEP_ROW_COUNT = 2
@@ -43,9 +45,9 @@ def get_all_file_path():
         # 正常处理获取文件信息
         if len(obj_key_lst) == 3 and obj_key_lst[2].endswith(".xlsx") or obj_key_lst[2].endswith(".xls"):
             all_file_lst.append({
-                "source": repr(obj_key_lst[0]),
-                "company": repr(obj_key_lst[1]),
-                "file": obj_key,
+                "source": repr(obj_key_lst[0]).strip("'"),
+                "company": repr(obj_key_lst[1]).strip("'"),
+                "file": repr(obj_key).strip("'"),
             })
             continue
 
@@ -61,18 +63,17 @@ def load_cache_data():
 
      :return: cache_data_lst: 已经处理的文件信息
      """
-    with open(LOCAL_CACHE_FILE, encoding='UTF-8') as file:
-        return yaml.load(file, Loader=yaml.FullLoader)
+    return [i for k in load_by_dir(LOCAL_CACHE_DIR) for i in k]
 
 
-def append_cache_data(parse_file_lst):
+def append_cache_data(parse_sheet_lst):
     """
     向文件中追加新解析的文件信息
 
-    :param parse_file_lst: 解析成功的文件列表
+    :param parse_file_lst: 解析成功的页信息
     """
-    with open(LOCAL_CACHE_FILE, 'a', encoding='UTF-8') as file:
-        yaml.dump(parse_file_lst, file, default_flow_style=False, encoding='utf-8', allow_unicode=True)
+    if len(parse_sheet_lst):
+        append_to_file(parse_sheet_lst, f'''{LOCAL_CACHE_DIR}/{parse_sheet_lst[0]["source"]}-{parse_sheet_lst[0]["company"]}.yaml''')
 
 
 def get_s3_increment(cache_data_lst, s3_all_file_lst):
@@ -84,16 +85,40 @@ def get_s3_increment(cache_data_lst, s3_all_file_lst):
 
     :return: increment_file_lst: 增量文件列表
     """
-    # 利用 set 去重当前缓存的所有 file
-    cache_file_set = set()
+    # 利用 map 去重当前缓存的所有 file
+    cache_file_map = {}
     for cache_data in cache_data_lst:
-        cache_file_set.add(cache_data['file'])
+        source = cache_data['source']
+        company = cache_data['company']
 
+        # 记录 source
+        if source not in cache_file_map.keys():
+            cache_file_map[source] = {}
+
+        # 记录 company
+        if company not in cache_file_map[source].keys():
+            cache_file_map[source][company] = []
+
+        # 追加文件
+        if cache_data['file'] not in cache_file_map[source][company]:
+            lst = cache_file_map[source].get(company, [])
+            lst.append(cache_data['file'])
+            cache_file_map[source][company] = lst
+
+    increment_file_lst = []
     for s3_file in s3_all_file_lst:
-        if s3_file['file'] in cache_file_set:
-            s3_all_file_lst.remove(s3_file)
+        source = s3_file['source']
+        company = s3_file['company']
 
-    return s3_all_file_lst
+        if source not in cache_file_map.keys() or company not in cache_file_map[source].keys():
+            continue
+
+        if s3_file['file'] in cache_file_map[source][company]:
+            continue
+
+        increment_file_lst.append(s3_file)
+
+    return increment_file_lst
 
 
 def parse_s3_execl(obj):
@@ -108,6 +133,15 @@ def parse_s3_execl(obj):
         Key=obj["file"],
     )
     excel_data = pd.ExcelFile(response['Body'].read())
+
+    if not len(excel_data.sheet_names):
+        cp_obj = copy.deepcopy(obj)
+        cp_obj["length"] = 0
+        cp_obj["data"] = {}
+        cp_obj["err"] = 'sheet number is 0'
+        sheets_info.append(cp_obj)
+        del cp_obj
+        return sheets_info
 
     for sheet_name in excel_data.sheet_names:
         cp_obj = copy.deepcopy(obj)
@@ -128,21 +162,22 @@ if __name__ == '__main__':
     filter_file_lst, s3_all_file_lst, err_file_lst = get_all_file_path()
     if len(filter_file_lst):
         print(f"存在过滤掉的文件 {len(filter_file_lst)} 个，信息如下：")
-        print(filter_file_lst)
+        # print(filter_file_lst)
         print()
 
     if len(err_file_lst):
         print(f"存在无法解析路径或后缀的文件 {len(err_file_lst)} 个，信息如下：")
-        print(err_file_lst)
+        # print(err_file_lst)
         print()
 
     increment_lst = get_s3_increment(cache_data_lst, s3_all_file_lst)
     if len(increment_lst):
         print(f"存在增量文件 {len(increment_lst)} 个，信息如下：")
-        print(increment_lst)
+        # print(increment_lst)
         print()
+    else:
+        print(f"不存在新增文件")
 
     for obj in increment_lst:
         print(f"开始解析 {obj['file']}")
-        if len(parse_s3_execl(obj)):
-            append_cache_data(parse_s3_execl(obj))
+        append_cache_data(parse_s3_execl(obj))

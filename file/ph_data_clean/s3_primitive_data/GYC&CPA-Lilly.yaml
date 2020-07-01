@@ -1,0 +1,189 @@
+- company: Lilly
+  data: {}
+  file: GYC&CPA/Lilly/CPA+PHT2017.xlsx
+  length: 0
+  sheet: Sheet2
+  source: GYC&CPA
+- company: Lilly
+  data: {}
+  file: GYC&CPA/Lilly/CPA+PHT2015.xlsx
+  length: 0
+  sheet: Sheet2
+  source: GYC&CPA
+- company: Lilly
+  data:
+    veeva ID:
+      0: VEEVA_CUSTOMER_ID
+      1: 1069652
+    剂型:
+      0: CONTENT_TYPE
+      1: SOLN
+    包装数量:
+      0: PACKAGE_QTY
+      1: 1
+    医院名称:
+      0: LILLY_HSPTL_NAME
+      1: 中国人民武装警察部队江西省总队医院
+    品规:
+      0: PRODUCT_NAME
+      1: 优泌乐25
+    商品名:
+      0: KEY_BRAND
+      1: 优泌乐
+    城市:
+      0: CITY_NAME
+      1: 南昌市
+    市场定义:
+      0: TEAM
+      1: Insulin
+    市场定义.1:
+      0: TCIII
+      1: Mealtime Analog
+    年:
+      0: YEARID
+      1: 2015
+    年月:
+      0: YYYYMM
+      1: '201501'
+    生产厂家:
+      0: MANUFACTUER_NAME
+      1: 礼来集团
+    省份:
+      0: PROVINCE_NAME
+      1: 江西省
+    规格:
+      0: SKU
+      1: '300'
+    通用名:
+      0: MCL_NAME
+      1: 赖脯胰岛素
+    销售数量:
+      0: SALES_QTY
+      1: 40
+    销售金额:
+      0: SALES_VALUE
+      1: 2964
+  file: GYC&CPA/Lilly/CPA+PHT2015.xlsx
+  length: 114421
+  sheet: '2015'
+  source: GYC&CPA
+- company: Lilly
+  data:
+    veeva ID:
+      0: VEEVA_CUSTOMER_ID
+      1: 1131907
+    剂型:
+      0: CONTENT_TYPE
+      1: SOLN
+    包装数量:
+      0: PACKAGE_QTY
+      1: 1
+    医院名称:
+      0: LILLY_HSPTL_NAME
+      1: 黑龙江三精肾脏病专科医院
+    品规:
+      0: PRODUCT_NAME
+      1: 来得时
+    商品名:
+      0: KEY_BRAND
+      1: 来得时
+    城市:
+      0: CITY_NAME
+      1: 哈尔滨市
+    市场定义:
+      0: TEAM
+      1: Insulin
+    市场定义.1:
+      0: TCIII
+      1: Basal Analog
+    年:
+      0: YEARID
+      1: 2016
+    年月:
+      0: YYYYMM
+      1: '201601'
+    生产厂家:
+      0: MANUFACTUER_NAME
+      1: 赛诺菲-安万特集团
+    省份:
+      0: PROVINCE_NAME
+      1: 黑龙江省
+    规格:
+      0: SKU
+      1: '300'
+    通用名:
+      0: MCL_NAME
+      1: 甘精胰岛素
+    销售数量:
+      0: SALES_QTY
+      1: 15
+    销售金额:
+      0: SALES_VALUE
+      1: 3091
+  file: GYC&CPA/Lilly/CPA+PHT2016.xlsx
+  length: 124300
+  sheet: '2016'
+  source: GYC&CPA
+- company: Lilly
+  data: {}
+  file: GYC&CPA/Lilly/CPA+PHT2016.xlsx
+  length: 0
+  sheet: Sheet2
+  source: GYC&CPA
+- company: Lilly
+  data:
+    veeva ID:
+      0: VEEVA_CUSTOMER_ID
+      1: 1068966
+    剂型:
+      0: CONTENT_TYPE
+      1: SOLN
+    包装数量:
+      0: PACKAGE_QTY
+      1: 1
+    医院名称:
+      0: LILLY_HSPTL_NAME
+      1: 深圳华侨城医院
+    品规:
+      0: PRODUCT_NAME
+      1: 长秀霖
+    商品名:
+      0: KEY_BRAND
+      1: 长秀霖
+    城市:
+      0: CITY_NAME
+      1: 深圳市
+    市场定义:
+      0: TEAM
+      1: Insulin
+    市场定义.1:
+      0: TCIII
+      1: Basal Analog
+    年:
+      0: YEARID
+      1: 2017
+    年月:
+      0: YYYYMM
+      1: '201701'
+    生产厂家:
+      0: MANUFACTUER_NAME
+      1: 北京甘李
+    省份:
+      0: PROVINCE_NAME
+      1: 广东省
+    规格:
+      0: SKU
+      1: '300'
+    通用名:
+      0: MCL_NAME
+      1: 甘精胰岛素
+    销售数量:
+      0: SALES_QTY
+      1: 40
+    销售金额:
+      0: SALES_VALUE
+      1: 6145
+  file: GYC&CPA/Lilly/CPA+PHT2017.xlsx
+  length: 136418
+  sheet: '2017'
+  source: GYC&CPA
