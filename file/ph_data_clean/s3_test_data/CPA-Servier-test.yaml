@@ -1,7 +1,4 @@
-- company: Servier
-  file_name: CPA/Servier/20180228发送-201712补充样本数据.xlsx
-  raw_data:
-    ATC3编码: C10A
+- - ATC3编码: C10A
     ATC4编码: C10AA
     CORPORATION: 辉瑞制药集团
     City: 阿克苏市
@@ -19,12 +16,12 @@
     最小制剂单位数量: 33411
     通用名ATC编码: C10AA05
     金额: 316593
-  sheet_name: 201712补充
-  source: CPA
-- company: Servier
-  file_name: CPA/Servier/20180228发送-201712补充样本数据.xlsx
-  raw_data:
-    ATC3编码: C10A
+  - fileName: CPA/Servier/20180228发送-201712补充样本数据.xlsx
+    providers:
+    - Servier
+    - CPA
+    sheetName: 201712补充
+- - ATC3编码: C10A
     ATC4编码: C10AA
     CORPORATION: 斯洛文尼亚莱柯药品及化学制品有限公司
     City: 阿克苏市
@@ -42,12 +39,12 @@
     最小制剂单位数量: 10752
     通用名ATC编码: C10AA05
     金额: 37417
-  sheet_name: 201712补充
-  source: CPA
-- company: Servier
-  file_name: CPA/Servier/201909 施维雅补充样本.xlsx
-  raw_data:
-    ATC3编码: C08C
+  - fileName: CPA/Servier/20180228发送-201712补充样本数据.xlsx
+    providers:
+    - Servier
+    - CPA
+    sheetName: 201712补充
+- - ATC3编码: C08C
     ATC4编码: C08CA
     CORPORATION: 上海医药集团股份有限公司
     City: 合肥市
@@ -64,12 +61,12 @@
     最小制剂单位数量: 7000
     通用名ATC编码: C08CA05
     金额: 203
-  sheet_name: '201909'
-  source: CPA
-- company: Servier
-  file_name: CPA/Servier/201909 施维雅补充样本.xlsx
-  raw_data:
-    ATC3编码: A10B
+  - fileName: CPA/Servier/201909 施维雅补充样本.xlsx
+    providers:
+    - Servier
+    - CPA
+    sheetName: '201909'
+- - ATC3编码: A10B
     ATC4编码: A10BA
     CORPORATION: 江苏正大天晴药业股份有限公司
     City: 合肥市
@@ -86,5 +83,8 @@
     最小制剂单位数量: 300
     通用名ATC编码: A10BA02
     金额: 240
-  sheet_name: '201909'
-  source: CPA
+  - fileName: CPA/Servier/201909 施维雅补充样本.xlsx
+    providers:
+    - Servier
+    - CPA
+    sheetName: '201909'

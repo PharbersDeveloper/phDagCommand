@@ -1,7 +1,4 @@
-- company: 倍特
-  file_name: CPA/倍特/190513成都倍特1903检索.xls
-  raw_data:
-    ATC编码: C01AA07
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: H
     包装数量: 2
@@ -18,12 +15,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 9200
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190513成都倍特1903检索.xls
-  raw_data:
-    ATC编码: G02AD50
+  - fileName: CPA/倍特/190513成都倍特1903检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: G02AD50
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -40,12 +37,12 @@
     药品名称: 卡前列素氨丁三醇
     药品规格: 250 UG 1 ML
     金额（元）: 7724
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190813成都倍特-6月检索.xls
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/190513成都倍特1903检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -62,12 +59,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 246480
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190813成都倍特-6月检索.xls
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/190813成都倍特-6月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: H
     包装数量: 2
@@ -84,12 +81,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 15282
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190213成都倍特1812检索.xlsx
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/190813成都倍特-6月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -106,12 +103,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 6250
-  sheet_name: 1812数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190213成都倍特1812检索.xlsx
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/convert_190213成都倍特1812检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1812数据
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -128,12 +125,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 4780
-  sheet_name: 1812数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_181213成都倍特1810检索.xlsx
-  raw_data:
-    ATC编码: H01BB02
+  - fileName: CPA/倍特/convert_190213成都倍特1812检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1812数据
+- - ATC编码: H01BB02
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -150,12 +147,12 @@
     药品名称: 缩宫素
     药品规格: 5 U 1 ML
     金额（元）: 8720
-  sheet_name: 1810数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_181213成都倍特1810检索.xlsx
-  raw_data:
-    ATC编码: J05AF08
+  - fileName: CPA/倍特/convert_181213成都倍特1810检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1810数据
+- - ATC编码: J05AF08
     剂型: CAP
     包装: H
     包装数量: 20
@@ -172,12 +169,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额（元）: 7979
-  sheet_name: 1810数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
-  raw_data:
-    ATC编码: H01BB02
+  - fileName: CPA/倍特/convert_181213成都倍特1810检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1810数据
+- - ATC编码: H01BB02
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -194,12 +191,12 @@
     药品名称: 缩宫素
     药品规格: 10 U 1 ML
     金额（元）: 600
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
-  raw_data:
-    ATC编码: H01BB02
+  - fileName: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: H01BB02
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -216,12 +213,12 @@
     药品名称: 缩宫素
     药品规格: 5 U 1 ML
     金额（元）: 3186
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_181015成都倍特1808检索.xlsx
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -238,12 +235,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 16730
-  sheet_name: 1808数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_181015成都倍特1808检索.xlsx
-  raw_data:
-    ATC编码: J05AF05
+  - fileName: CPA/倍特/convert_181015成都倍特1808检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1808数据
+- - ATC编码: J05AF05
     剂型: TAB
     包装: H
     包装数量: 14
@@ -260,12 +257,12 @@
     药品名称: 拉米夫定
     药品规格: 100 MG
     金额（元）: 34642
-  sheet_name: 1808数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/181115成都倍特1809检索.xls
-  raw_data:
-    ATC编码: J05AF08
+  - fileName: CPA/倍特/convert_181015成都倍特1808检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1808数据
+- - ATC编码: J05AF08
     剂型: TAB
     包装: H
     包装数量: 14
@@ -282,12 +279,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额（元）: 24918
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/181115成都倍特1809检索.xls
-  raw_data:
-    ATC编码: J05AF08
+  - fileName: CPA/倍特/181115成都倍特1809检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: J05AF08
     剂型: CAP
     包装: H
     包装数量: 14
@@ -304,12 +301,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额（元）: 33510
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190816成都倍特-临时检索.xlsx
-  raw_data:
-    ATC编码: M01AE01
+  - fileName: CPA/倍特/181115成都倍特1809检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: M01AE01
     剂型: CAP
     包装: H
     包装数量: 24
@@ -326,12 +323,12 @@
     药品名称: 布洛芬
     药品规格: 300 MG
     金额（元）: 3264
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190816成都倍特-临时检索.xlsx
-  raw_data:
-    ATC编码: M01AE01
+  - fileName: CPA/倍特/convert_190816成都倍特-临时检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AE01
     剂型: SUPP
     包装: H
     包装数量: 5
@@ -348,12 +345,12 @@
     药品名称: 布洛芬
     药品规格: 50 MG
     金额（元）: 2404
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190613成都倍特1904检索.xlsx
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/convert_190816成都倍特-临时检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -370,12 +367,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 48000
-  sheet_name: 4月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190613成都倍特1904检索.xlsx
-  raw_data:
-    ATC编码: G02AD50
+  - fileName: CPA/倍特/convert_190613成都倍特1904检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 4月数据
+- - ATC编码: G02AD50
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -392,12 +389,12 @@
     药品名称: 卡前列素氨丁三醇
     药品规格: 250 UG 1 ML
     金额（元）: 18678
-  sheet_name: 4月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190412成都倍特1902检索.xlsx
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/convert_190613成都倍特1904检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 4月数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -414,12 +411,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 60000
-  sheet_name: 2月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190412成都倍特1902检索.xlsx
-  raw_data:
-    ATC编码: G02AD50
+  - fileName: CPA/倍特/convert_190412成都倍特1902检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 2月数据
+- - ATC编码: G02AD50
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -436,12 +433,12 @@
     药品名称: 卡前列素氨丁三醇
     药品规格: 250 UG 1 ML
     金额（元）: 9339
-  sheet_name: 2月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/191113成都倍特-9月检索.xls
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/convert_190412成都倍特1902检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 2月数据
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -458,12 +455,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 302400
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/191113成都倍特-9月检索.xls
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/191113成都倍特-9月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -480,12 +477,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 211680
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190313成都倍特1901检索.xls
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/倍特/191113成都倍特-9月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -494,12 +491,12 @@
     旧医院编码: 101
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2019年出版医院名单
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190313成都倍特1901检索.xls
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/倍特/190313成都倍特1901检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 2019年出版医院名单
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三丙
     地区: 内蒙古
@@ -508,12 +505,12 @@
     旧医院编码: 102
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2019年出版医院名单
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_200110成都倍特-11月检索.xlsx
-  raw_data:
-    ATC编码: M02AA19
+  - fileName: CPA/倍特/190313成都倍特1901检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 2019年出版医院名单
+- - ATC编码: M02AA19
     剂型: PATC
     包装: H
     包装数量: 6
@@ -530,12 +527,12 @@
     药品名称: 氟比洛芬
     药品规格: 40 MG
     金额（元）: 138888
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_200110成都倍特-11月检索.xlsx
-  raw_data:
-    ATC编码: M01AB15
+  - fileName: CPA/倍特/convert_200110成都倍特-11月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AB15
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -552,12 +549,12 @@
     药品名称: 酮咯酸氨丁三醇
     药品规格: 30 MG 1 ML
     金额（元）: 81450
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/181029成都倍特历史数据.xls
-  raw_data:
-    ATC码: C01AA07
+  - fileName: CPA/倍特/convert_200110成都倍特-11月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -574,12 +571,12 @@
     规格: 400 UG 2 ML
     途径: IJ
     金额（元）: 485
-  sheet_name: 1501-1808数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/181029成都倍特历史数据.xls
-  raw_data:
-    ATC码: C01AA07
+  - fileName: CPA/倍特/181029成都倍特历史数据.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1501-1808数据
+- - ATC码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -596,12 +593,12 @@
     规格: 400 UG 2 ML
     途径: IJ
     金额（元）: 626
-  sheet_name: 1501-1808数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/180925成都倍特1501-1807检索.xlsx
-  raw_data:
-    2015年: 是
+  - fileName: CPA/倍特/181029成都倍特历史数据.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1501-1808数据
+- - 2015年: 是
     2016年: 是
     2017年: 是
     2018年: 是
@@ -611,12 +608,12 @@
     地区: 安徽
     城市: 安庆市
     省: 安徽省
-  sheet_name: 2015年-2018年出版医院名单
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/180925成都倍特1501-1807检索.xlsx
-  raw_data:
-    2015年: 是
+  - fileName: CPA/倍特/180925成都倍特1501-1807检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 2015年-2018年出版医院名单
+- - 2015年: 是
     2016年: 是
     2017年: 是
     2018年: 是
@@ -626,12 +623,12 @@
     地区: 安徽
     城市: 合肥市
     省: 安徽省
-  sheet_name: 2015年-2018年出版医院名单
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190813成都倍特-6月检索.xlsx
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/180925成都倍特1501-1807检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 2015年-2018年出版医院名单
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -648,12 +645,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 3900
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190813成都倍特-6月检索.xlsx
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/convert_190813成都倍特-6月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -670,12 +667,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 3900
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/181115成都倍特1809检索.xls
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/convert_190813成都倍特-6月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -692,12 +689,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 4780
-  sheet_name: 1809数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/181115成都倍特1809检索.xls
-  raw_data:
-    ATC编码: J05AF10
+  - fileName: CPA/倍特/181115成都倍特1809检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1809数据
+- - ATC编码: J05AF10
     剂型: TAB
     包装: H
     包装数量: 7
@@ -714,12 +711,12 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额（元）: 39651
-  sheet_name: 1809数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190213成都倍特1812检索.xls
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/181115成都倍特1809检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1809数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: H
     包装数量: 2
@@ -736,12 +733,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 14850
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190213成都倍特1812检索.xls
-  raw_data:
-    ATC编码: J05AF10
+  - fileName: CPA/倍特/190213成都倍特1812检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: J05AF10
     剂型: TAB
     包装: H
     包装数量: 7
@@ -758,12 +755,12 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额（元）: 52584
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190513成都倍特1903检索.xlsx
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/190213成都倍特1812检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: H
     包装数量: 2
@@ -780,12 +777,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 9200
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190513成都倍特1903检索.xlsx
-  raw_data:
-    ATC编码: G02AD50
+  - fileName: CPA/倍特/convert_190513成都倍特1903检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: G02AD50
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -802,12 +799,12 @@
     药品名称: 卡前列素氨丁三醇
     药品规格: 250 UG 1 ML
     金额（元）: 7724
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190613成都倍特1904检索.xls
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/convert_190513成都倍特1903检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -824,12 +821,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 48000
-  sheet_name: 4月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190613成都倍特1904检索.xls
-  raw_data:
-    ATC编码: G02AD50
+  - fileName: CPA/倍特/190613成都倍特1904检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 4月数据
+- - ATC编码: G02AD50
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -846,12 +843,12 @@
     药品名称: 卡前列素氨丁三醇
     药品规格: 250 UG 1 ML
     金额（元）: 18678
-  sheet_name: 4月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_191014成都倍特-8月检索.xlsx
-  raw_data:
-    ATC编码: M01AE01
+  - fileName: CPA/倍特/190613成都倍特1904检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 4月数据
+- - ATC编码: M01AE01
     剂型: CAP
     包装: H
     包装数量: 24
@@ -868,12 +865,12 @@
     药品名称: 布洛芬
     药品规格: 300 MG
     金额（元）: 204
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_191014成都倍特-8月检索.xlsx
-  raw_data:
-    ATC编码: M01AE01
+  - fileName: CPA/倍特/convert_191014成都倍特-8月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AE01
     剂型: SUSP
     包装: P
     包装数量: 1
@@ -890,12 +887,12 @@
     药品名称: 布洛芬
     药品规格: 2 GM 100 ML
     金额（元）: 812
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190114成都倍特1811检索.xls
-  raw_data:
-    ATC编码: J05AF10
+  - fileName: CPA/倍特/convert_191014成都倍特-8月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: J05AF10
     剂型: TAB
     包装: H
     包装数量: 7
@@ -912,12 +909,12 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额（元）: 41738
-  sheet_name: 1811数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190114成都倍特1811检索.xls
-  raw_data:
-    ATC编码: J05AF10
+  - fileName: CPA/倍特/190114成都倍特1811检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1811数据
+- - ATC编码: J05AF10
     剂型: TAB
     包装: H
     包装数量: 7
@@ -934,12 +931,12 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额（元）: 20202
-  sheet_name: 1811数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/191113成都倍特-9月检索.xls
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/190114成都倍特1811检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1811数据
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -956,12 +953,12 @@
     药品名称: 地佐辛
     药品规格: 10 MG 1 ML
     金额（元）: 100800
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/191113成都倍特-9月检索.xls
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/191113成都倍特-9月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: H
     包装数量: 4
@@ -978,12 +975,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 508000
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/181213成都倍特1810检索.xls
-  raw_data:
-    ATC编码: H01BB02
+  - fileName: CPA/倍特/191113成都倍特-9月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: H01BB02
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1000,12 +997,12 @@
     药品名称: 缩宫素
     药品规格: 5 U 1 ML
     金额（元）: 8720
-  sheet_name: 1810数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/181213成都倍特1810检索.xls
-  raw_data:
-    ATC编码: J05AF08
+  - fileName: CPA/倍特/181213成都倍特1810检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1810数据
+- - ATC编码: J05AF08
     剂型: CAP
     包装: H
     包装数量: 20
@@ -1022,12 +1019,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额（元）: 7979
-  sheet_name: 1810数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/CPA镇痛市场4分子-1607-1905检索.xlsx
-  raw_data:
-    ATC编码: M01AE01
+  - fileName: CPA/倍特/181213成都倍特1810检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1810数据
+- - ATC编码: M01AE01
     剂型: TAB
     包装: P
     包装数量: 100
@@ -1044,12 +1041,12 @@
     药品名称: 布洛芬
     药品规格: 100 MG
     金额（元）: 73
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/CPA镇痛市场4分子-1607-1905检索.xlsx
-  raw_data:
-    ATC编码: M01AE01
+  - fileName: CPA/倍特/CPA镇痛市场4分子-1607-1905检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AE01
     剂型: SUSP
     包装: P
     包装数量: 1
@@ -1066,12 +1063,12 @@
     药品名称: 布洛芬
     药品规格: 2 GM 100 ML
     金额（元）: 2100
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190712成都倍特-5月检索.xls
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/CPA镇痛市场4分子-1607-1905检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1088,12 +1085,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 19500
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190712成都倍特-5月检索.xls
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/190712成都倍特-5月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1110,12 +1107,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 11700
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190912成都倍特-7月检索.xlsx
-  raw_data:
-    ATC编码: M02AA19
+  - fileName: CPA/倍特/190712成都倍特-5月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M02AA19
     剂型: PATC
     包装: H
     包装数量: 6
@@ -1132,12 +1129,12 @@
     药品名称: 氟比洛芬
     药品规格: 40 MG
     金额（元）: 81597
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190912成都倍特-7月检索.xlsx
-  raw_data:
-    ATC编码: M01AB15
+  - fileName: CPA/倍特/convert_190912成都倍特-7月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AB15
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1154,12 +1151,12 @@
     药品名称: 酮咯酸氨丁三醇
     药品规格: 30 MG 1 ML
     金额（元）: 54300
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/CPA镇痛市场4分子-1607-1905检索.xlsx
-  raw_data:
-    ATC码: M01AE01
+  - fileName: CPA/倍特/convert_190912成都倍特-7月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC码: M01AE01
     剂型: SUSP
     更新后生产企业: 翔宇药业股份有限公司
     生产企业: 山东翔宇健康制药有限公司
@@ -1169,12 +1166,12 @@
     : OR
     药品名称: 布洛芬
     规格: 1.2 GM 60 ML
-  sheet_name: Sheet3
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/CPA镇痛市场4分子-1607-1905检索.xlsx
-  raw_data:
-    ATC码: M01AE01
+  - fileName: CPA/倍特/CPA镇痛市场4分子-1607-1905检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: Sheet3
+- - ATC码: M01AE01
     剂型: SUSP
     更新后生产企业: 翔宇药业股份有限公司
     生产企业: 山东翔宇健康制药有限公司
@@ -1184,12 +1181,12 @@
     : OR
     药品名称: 布洛芬
     规格: 2 GM 100 ML
-  sheet_name: Sheet3
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190313成都倍特1901检索.xlsx
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/CPA镇痛市场4分子-1607-1905检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: Sheet3
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1206,12 +1203,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 48000
-  sheet_name: 1月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190313成都倍特1901检索.xlsx
-  raw_data:
-    ATC编码: H01BB02
+  - fileName: CPA/倍特/convert_190313成都倍特1901检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1月数据
+- - ATC编码: H01BB02
     剂型: SOLN
     包装: H
     包装数量: 10
@@ -1228,12 +1225,12 @@
     药品名称: 缩宫素
     药品规格: 10 U 1 ML
     金额（元）: 6240
-  sheet_name: 1月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_200214成都倍特-12月检索.xlsx
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/convert_190313成都倍特1901检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1月数据
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1250,12 +1247,12 @@
     药品名称: 地佐辛
     药品规格: 10 MG 1 ML
     金额（元）: 100800
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_200214成都倍特-12月检索.xlsx
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/convert_200214成都倍特-12月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: H
     包装数量: 4
@@ -1272,12 +1269,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 406400
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_200214成都倍特-12月检索.xlsx
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/convert_200214成都倍特-12月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1294,12 +1291,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 1843200
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_200214成都倍特-12月检索.xlsx
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/convert_200214成都倍特-12月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1316,12 +1313,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 50400
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190712成都倍特-5月检索.xlsx
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/convert_200214成都倍特-12月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1338,12 +1335,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 19500
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190712成都倍特-5月检索.xlsx
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/convert_190712成都倍特-5月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1360,12 +1357,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 11700
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/191014成都倍特-8月检索.xls
-  raw_data:
-    ATC编码: M01AE01
+  - fileName: CPA/倍特/convert_190712成都倍特-5月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AE01
     剂型: CAP
     包装: H
     包装数量: 24
@@ -1382,12 +1379,12 @@
     药品名称: 布洛芬
     药品规格: 300 MG
     金额（元）: 204
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/191014成都倍特-8月检索.xls
-  raw_data:
-    ATC编码: M01AE01
+  - fileName: CPA/倍特/191014成都倍特-8月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AE01
     剂型: SUSP
     包装: P
     包装数量: 1
@@ -1404,12 +1401,12 @@
     药品名称: 布洛芬
     药品规格: 2 GM 100 ML
     金额（元）: 812
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/180925成都倍特1501-1807检索.xlsx
-  raw_data:
-    ATC编码: H01BB02
+  - fileName: CPA/倍特/191014成都倍特-8月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: H01BB02
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1426,12 +1423,12 @@
     药品名称: 缩宫素
     药品规格: 10 U 1 ML
     金额（元）: 3900
-  sheet_name: 1501-1807数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/180925成都倍特1501-1807检索.xlsx
-  raw_data:
-    ATC编码: J05AF05
+  - fileName: CPA/倍特/180925成都倍特1501-1807检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1501-1807数据
+- - ATC编码: J05AF05
     剂型: TAB
     包装: H
     包装数量: 14
@@ -1448,12 +1445,12 @@
     药品名称: 拉米夫定
     药品规格: 100 MG
     金额（元）: 22499
-  sheet_name: 1501-1807数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190213成都倍特1812检索.xlsx
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/180925成都倍特1501-1807检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1501-1807数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: H
     包装数量: 2
@@ -1470,12 +1467,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 14850
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190213成都倍特1812检索.xlsx
-  raw_data:
-    ATC编码: J05AF10
+  - fileName: CPA/倍特/convert_190213成都倍特1812检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: J05AF10
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1492,12 +1489,12 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额（元）: 52584
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190213成都倍特1812检索.xls
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/convert_190213成都倍特1812检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1514,12 +1511,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 6250
-  sheet_name: 1812数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190213成都倍特1812检索.xls
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/190213成都倍特1812检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1812数据
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1536,12 +1533,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 4780
-  sheet_name: 1812数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
-  raw_data:
-    ATC编码: H01BB03
+  - fileName: CPA/倍特/190213成都倍特1812检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1812数据
+- - ATC编码: H01BB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1558,12 +1555,12 @@
     药品名称: 卡贝缩宫素
     药品规格: 100 UG 1 ML
     金额（元）: 43200
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1580,12 +1577,12 @@
     药品名称: 地佐辛
     药品规格: 10 MG 1 ML
     金额（元）: 302400
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_191113成都倍特-9月检索.xlsx
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1602,12 +1599,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 302400
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_191113成都倍特-9月检索.xlsx
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/convert_191113成都倍特-9月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1624,12 +1621,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 211680
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190513成都倍特1903检索.xls
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/convert_191113成都倍特-9月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1646,12 +1643,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 60000
-  sheet_name: 3月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190513成都倍特1903检索.xls
-  raw_data:
-    ATC编码: G02AD50
+  - fileName: CPA/倍特/190513成都倍特1903检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 3月数据
+- - ATC编码: G02AD50
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1668,12 +1665,12 @@
     药品名称: 卡前列素氨丁三醇
     药品规格: 250 UG 1 ML
     金额（元）: 9339
-  sheet_name: 3月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_191113成都倍特-9月检索.xlsx
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/190513成都倍特1903检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 3月数据
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1690,12 +1687,12 @@
     药品名称: 地佐辛
     药品规格: 10 MG 1 ML
     金额（元）: 100800
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_191113成都倍特-9月检索.xlsx
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/convert_191113成都倍特-9月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: H
     包装数量: 4
@@ -1712,12 +1709,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 508000
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190813成都倍特-6月检索.xlsx
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/convert_191113成都倍特-9月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1734,12 +1731,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 246480
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190813成都倍特-6月检索.xlsx
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/convert_190813成都倍特-6月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: H
     包装数量: 2
@@ -1756,12 +1753,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 15282
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190114成都倍特1811检索.xlsx
-  raw_data:
-    ATC编码: J05AF10
+  - fileName: CPA/倍特/convert_190813成都倍特-6月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: J05AF10
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1778,12 +1775,12 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额（元）: 41738
-  sheet_name: 1811数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190114成都倍特1811检索.xlsx
-  raw_data:
-    ATC编码: J05AF10
+  - fileName: CPA/倍特/convert_190114成都倍特1811检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1811数据
+- - ATC编码: J05AF10
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1800,12 +1797,12 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额（元）: 20202
-  sheet_name: 1811数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190813成都倍特-6月检索.xls
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/convert_190114成都倍特1811检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1811数据
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1822,12 +1819,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 3900
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190813成都倍特-6月检索.xls
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/190813成都倍特-6月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1844,12 +1841,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 3900
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190313成都倍特1901检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/倍特/190813成都倍特-6月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -1858,12 +1855,12 @@
     旧医院编码: 101
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2019年出版医院名单
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190313成都倍特1901检索.xlsx
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/倍特/convert_190313成都倍特1901检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 2019年出版医院名单
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三丙
     地区: 内蒙古
@@ -1872,12 +1869,12 @@
     旧医院编码: 102
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2019年出版医院名单
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190313成都倍特1901检索.xls
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/convert_190313成都倍特1901检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 2019年出版医院名单
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1894,12 +1891,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 48000
-  sheet_name: 1月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190313成都倍特1901检索.xls
-  raw_data:
-    ATC编码: H01BB02
+  - fileName: CPA/倍特/190313成都倍特1901检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1月数据
+- - ATC编码: H01BB02
     剂型: SOLN
     包装: H
     包装数量: 10
@@ -1916,12 +1913,12 @@
     药品名称: 缩宫素
     药品规格: 10 U 1 ML
     金额（元）: 6240
-  sheet_name: 1月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
-  raw_data:
-    ATC编码: H01BB02
+  - fileName: CPA/倍特/190313成都倍特1901检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1月数据
+- - ATC编码: H01BB02
     剂型: POWD
     历史药品规格: 10 IU
     商品名: 缩宫素
@@ -1929,12 +1926,12 @@
     生产企业: 南京新百药业有限公司
     给药途径: IJ
     药品名称: 缩宫素
-  sheet_name: 调整对照表
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
-  raw_data:
-    ATC编码: H01BB02
+  - fileName: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 调整对照表
+- - ATC编码: H01BB02
     剂型: POWD
     历史药品规格: 10 IU
     商品名: 缩宫素
@@ -1942,12 +1939,12 @@
     生产企业: 深圳市翰宇药业有限公司
     给药途径: IJ
     药品名称: 缩宫素
-  sheet_name: 调整对照表
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/200214成都倍特-12月检索.xls
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/CPA成都倍特-2020年1-3月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 调整对照表
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1964,12 +1961,12 @@
     药品名称: 地佐辛
     药品规格: 10 MG 1 ML
     金额（元）: 100800
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/200214成都倍特-12月检索.xls
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/200214成都倍特-12月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: H
     包装数量: 4
@@ -1986,12 +1983,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 406400
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190816成都倍特-临时检索.xls
-  raw_data:
-    ATC编码: M01AE01
+  - fileName: CPA/倍特/200214成都倍特-12月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AE01
     剂型: CAP
     包装: H
     包装数量: 24
@@ -2008,12 +2005,12 @@
     药品名称: 布洛芬
     药品规格: 300 MG
     金额（元）: 3264
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190816成都倍特-临时检索.xls
-  raw_data:
-    ATC编码: M01AE01
+  - fileName: CPA/倍特/190816成都倍特-临时检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AE01
     剂型: SUPP
     包装: H
     包装数量: 5
@@ -2030,12 +2027,12 @@
     药品名称: 布洛芬
     药品规格: 50 MG
     金额（元）: 2404
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_181115成都倍特1809检索.xlsx
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/190816成都倍特-临时检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2052,12 +2049,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 4780
-  sheet_name: 1809数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_181115成都倍特1809检索.xlsx
-  raw_data:
-    ATC编码: J05AF10
+  - fileName: CPA/倍特/convert_181115成都倍特1809检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1809数据
+- - ATC编码: J05AF10
     剂型: TAB
     包装: H
     包装数量: 7
@@ -2074,12 +2071,12 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额（元）: 39651
-  sheet_name: 1809数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/200110成都倍特-11月检索.xls
-  raw_data:
-    ATC编码: M02AA19
+  - fileName: CPA/倍特/convert_181115成都倍特1809检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1809数据
+- - ATC编码: M02AA19
     剂型: PATC
     包装: H
     包装数量: 6
@@ -2096,12 +2093,12 @@
     药品名称: 氟比洛芬
     药品规格: 40 MG
     金额（元）: 138888
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/200110成都倍特-11月检索.xls
-  raw_data:
-    ATC编码: M01AB15
+  - fileName: CPA/倍特/200110成都倍特-11月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AB15
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2118,12 +2115,12 @@
     药品名称: 酮咯酸氨丁三醇
     药品规格: 30 MG 1 ML
     金额（元）: 81450
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/191212成都倍特-10月检索.xls
-  raw_data:
-    ATC编码: M02AA19
+  - fileName: CPA/倍特/200110成都倍特-11月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M02AA19
     剂型: PATC
     包装: H
     包装数量: 6
@@ -2140,12 +2137,12 @@
     药品名称: 氟比洛芬
     药品规格: 40 MG
     金额（元）: 17361
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/191212成都倍特-10月检索.xls
-  raw_data:
-    ATC编码: M01AB15
+  - fileName: CPA/倍特/191212成都倍特-10月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AB15
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2162,12 +2159,12 @@
     药品名称: 酮咯酸氨丁三醇
     药品规格: 30 MG 1 ML
     金额（元）: 27150
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_181029成都倍特历史数据.xlsx
-  raw_data:
-    ATC码: C01AA07
+  - fileName: CPA/倍特/191212成都倍特-10月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2184,12 +2181,12 @@
     规格: 400 UG 2 ML
     途径: IJ
     金额（元）: 485
-  sheet_name: 1501-1808数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_181029成都倍特历史数据.xlsx
-  raw_data:
-    ATC码: C01AA07
+  - fileName: CPA/倍特/convert_181029成都倍特历史数据.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1501-1808数据
+- - ATC码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2206,12 +2203,12 @@
     规格: 400 UG 2 ML
     途径: IJ
     金额（元）: 626
-  sheet_name: 1501-1808数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190412成都倍特1902检索.xls
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/convert_181029成都倍特历史数据.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1501-1808数据
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2228,12 +2225,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 60000
-  sheet_name: 2月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190412成都倍特1902检索.xls
-  raw_data:
-    ATC编码: G02AD50
+  - fileName: CPA/倍特/190412成都倍特1902检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 2月数据
+- - ATC编码: G02AD50
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2250,12 +2247,12 @@
     药品名称: 卡前列素氨丁三醇
     药品规格: 250 UG 1 ML
     金额（元）: 9339
-  sheet_name: 2月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_191212成都倍特-10月检索.xlsx
-  raw_data:
-    ATC编码: M02AA19
+  - fileName: CPA/倍特/190412成都倍特1902检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 2月数据
+- - ATC编码: M02AA19
     剂型: PATC
     包装: H
     包装数量: 6
@@ -2272,12 +2269,12 @@
     药品名称: 氟比洛芬
     药品规格: 40 MG
     金额（元）: 17361
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_191212成都倍特-10月检索.xlsx
-  raw_data:
-    ATC编码: M01AB15
+  - fileName: CPA/倍特/convert_191212成都倍特-10月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AB15
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2294,12 +2291,12 @@
     药品名称: 酮咯酸氨丁三醇
     药品规格: 30 MG 1 ML
     金额（元）: 27150
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/200214成都倍特-12月检索.xls
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/convert_191212成都倍特-10月检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2316,12 +2313,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 1843200
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/200214成都倍特-12月检索.xls
-  raw_data:
-    ATC编码: N02AX03
+  - fileName: CPA/倍特/200214成都倍特-12月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: N02AX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2338,12 +2335,12 @@
     药品名称: 地佐辛
     药品规格: 5 MG 1 ML
     金额（元）: 50400
-  sheet_name: 替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190912成都倍特-7月检索.xls
-  raw_data:
-    ATC编码: M02AA19
+  - fileName: CPA/倍特/200214成都倍特-12月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: M02AA19
     剂型: PATC
     包装: H
     包装数量: 6
@@ -2360,12 +2357,12 @@
     药品名称: 氟比洛芬
     药品规格: 40 MG
     金额（元）: 81597
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/190912成都倍特-7月检索.xls
-  raw_data:
-    ATC编码: M01AB15
+  - fileName: CPA/倍特/190912成都倍特-7月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: M01AB15
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2382,12 +2379,12 @@
     药品名称: 酮咯酸氨丁三醇
     药品规格: 30 MG 1 ML
     金额（元）: 54300
-  sheet_name: 成都倍特
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190513成都倍特1903检索.xlsx
-  raw_data:
-    ATC编码: C01AA07
+  - fileName: CPA/倍特/190912成都倍特-7月检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 成都倍特
+- - ATC编码: C01AA07
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2404,12 +2401,12 @@
     药品名称: 去乙酰毛花苷
     药品规格: 400 UG 2 ML
     金额（元）: 60000
-  sheet_name: 3月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_190513成都倍特1903检索.xlsx
-  raw_data:
-    ATC编码: G02AD50
+  - fileName: CPA/倍特/convert_190513成都倍特1903检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 3月数据
+- - ATC编码: G02AD50
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2426,12 +2423,12 @@
     药品名称: 卡前列素氨丁三醇
     药品规格: 250 UG 1 ML
     金额（元）: 9339
-  sheet_name: 3月数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_181115成都倍特1809检索.xlsx
-  raw_data:
-    ATC编码: J05AF08
+  - fileName: CPA/倍特/convert_190513成都倍特1903检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 3月数据
+- - ATC编码: J05AF08
     剂型: TAB
     包装: H
     包装数量: 14
@@ -2448,12 +2445,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额（元）: 24918
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/convert_181115成都倍特1809检索.xlsx
-  raw_data:
-    ATC编码: J05AF08
+  - fileName: CPA/倍特/convert_181115成都倍特1809检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: J05AF08
     剂型: CAP
     包装: H
     包装数量: 14
@@ -2470,12 +2467,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额（元）: 33510
-  sheet_name: 需替换数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/181015成都倍特1808检索.xls
-  raw_data:
-    ATC编码: G02AB03
+  - fileName: CPA/倍特/convert_181115成都倍特1809检索.xlsx
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: G02AB03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -2492,12 +2489,12 @@
     药品名称: 麦角新碱
     药品规格: 200 UG 1 ML
     金额（元）: 16730
-  sheet_name: 1808数据
-  source: CPA
-- company: 倍特
-  file_name: CPA/倍特/181015成都倍特1808检索.xls
-  raw_data:
-    ATC编码: J05AF05
+  - fileName: CPA/倍特/181015成都倍特1808检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1808数据
+- - ATC编码: J05AF05
     剂型: TAB
     包装: H
     包装数量: 14
@@ -2514,5 +2511,8 @@
     药品名称: 拉米夫定
     药品规格: 100 MG
     金额（元）: 34642
-  sheet_name: 1808数据
-  source: CPA
+  - fileName: CPA/倍特/181015成都倍特1808检索.xls
+    providers:
+    - 倍特
+    - CPA
+    sheetName: 1808数据

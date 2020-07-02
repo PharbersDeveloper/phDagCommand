@@ -1,7 +1,4 @@
-- company: 泰德
-  file_name: CPA/泰德/200214华彬立成（七氟烷）-12月检索.xls
-  raw_data:
-    ATC编码: N01AB08
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -18,12 +15,12 @@
     规格: '  120 ML'
     途径: IN
     金额（元）: 167760
-  sheet_name: 12月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200214华彬立成（七氟烷）-12月检索.xls
-  raw_data:
-    ATC编码: N01AX10
+  - fileName: CPA/泰德/200214华彬立成（七氟烷）-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 12月数据
+- - ATC编码: N01AX10
     剂型: SOLN
     包装: P
     包装数量: 1
@@ -40,12 +37,12 @@
     规格: 500 MG 50 ML
     途径: IJ
     金额（元）: 80052
-  sheet_name: 12月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191113泰德-9月检索.xls
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/200214华彬立成（七氟烷）-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 12月数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -62,12 +59,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 27864
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191113泰德-9月检索.xls
-  raw_data:
-    ATC编码: A10BH01
+  - fileName: CPA/泰德/191113泰德-9月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: A10BH01
     剂型: TAB
     包装: H
     包装数量: 14
@@ -84,12 +81,12 @@
     药品名称: 西格列汀
     规格: 100 MG
     金额（元）: 123912
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200214华彬立成（七氟烷）-12月检索.xlsx
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/191113泰德-9月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -106,12 +103,12 @@
     规格: '  120 ML'
     途径: IN
     金额（元）: 167760
-  sheet_name: 12月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200214华彬立成（七氟烷）-12月检索.xlsx
-  raw_data:
-    ATC编码: N01AX10
+  - fileName: CPA/泰德/convert_200214华彬立成（七氟烷）-12月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 12月数据
+- - ATC编码: N01AX10
     剂型: SOLN
     包装: P
     包装数量: 1
@@ -128,12 +125,12 @@
     规格: 500 MG 50 ML
     途径: IJ
     金额（元）: 80052
-  sheet_name: 12月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200110华彬立成（七氟烷）-11月检索.xls
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/convert_200214华彬立成（七氟烷）-12月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 12月数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -150,12 +147,12 @@
     规格: '  120 ML'
     途径: IN
     金额（元）: 69900
-  sheet_name: 11月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200110华彬立成（七氟烷）-11月检索.xls
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/200110华彬立成（七氟烷）-11月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 11月数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -172,12 +169,12 @@
     规格: '  100 ML'
     途径: IN
     金额（元）: 122325
-  sheet_name: 11月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200213华彬立成（依托考昔）-12月检索.xls
-  raw_data:
-    ATC编码: M01AH01
+  - fileName: CPA/泰德/200110华彬立成（七氟烷）-11月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 11月数据
+- - ATC编码: M01AH01
     剂型: CAP
     包装: H
     包装数量: 6
@@ -194,12 +191,12 @@
     药品名称: 塞来昔布
     规格: 200 MG
     金额(元): 46973
-  sheet_name: 12月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200213华彬立成（依托考昔）-12月检索.xls
-  raw_data:
-    ATC编码: M01AH50
+  - fileName: CPA/泰德/200213华彬立成（依托考昔）-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 12月数据
+- - ATC编码: M01AH50
     剂型: TAB
     包装: H
     包装数量: 10
@@ -216,12 +213,12 @@
     药品名称: 艾瑞昔布
     规格: 100 MG
     金额(元): 75040
-  sheet_name: 12月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200110华彬立成（七氟烷）-11月检索.xlsx
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/200213华彬立成（依托考昔）-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 12月数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -238,12 +235,12 @@
     规格: '  120 ML'
     途径: IN
     金额（元）: 69900
-  sheet_name: 11月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200110华彬立成（七氟烷）-11月检索.xlsx
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/convert_200110华彬立成（七氟烷）-11月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 11月数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -260,12 +257,12 @@
     规格: '  100 ML'
     途径: IN
     金额（元）: 122325
-  sheet_name: 11月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191204华彬立成（七氟烷）-历史数据.xlsx
-  raw_data:
-    ATC编码: N01AX10
+  - fileName: CPA/泰德/convert_200110华彬立成（七氟烷）-11月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 11月数据
+- - ATC编码: N01AX10
     剂型: SOLN
     包装: P
     包装数量: 1
@@ -282,12 +279,12 @@
     药品名称: 丙泊酚
     规格: 200 MG 20 ML
     金额（元）: 46332
-  sheet_name: 1701-1909数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191204华彬立成（七氟烷）-历史数据.xlsx
-  raw_data:
-    ATC编码: N01AX10
+  - fileName: CPA/泰德/191204华彬立成（七氟烷）-历史数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 1701-1909数据
+- - ATC编码: N01AX10
     剂型: SOLN
     包装: P
     包装数量: 1
@@ -304,12 +301,12 @@
     药品名称: 丙泊酚
     规格: 1 GM 50 ML
     金额（元）: 138339
-  sheet_name: 1701-1909数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/190814泰德-1701-1906检索.xlsx
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/191204华彬立成（七氟烷）-历史数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 1701-1909数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -326,12 +323,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 127980
-  sheet_name: 1701-1906数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/190814泰德-1701-1906检索.xlsx
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/190814泰德-1701-1906检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 1701-1906数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: P
     包装数量: 1
@@ -348,12 +345,12 @@
     药品名称: 丹红注射液
     规格: ' CO 20 ML'
     金额（元）: 105370
-  sheet_name: 1701-1906数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/泰德2020M03需放大数据.xlsx
-  raw_data:
-    ATC编码: B01AC51
+  - fileName: CPA/泰德/190814泰德-1701-1906检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 1701-1906数据
+- - ATC编码: B01AC51
     剂型: TAB
     包装单位: H
     包装数量: 9
@@ -370,12 +367,12 @@
     药品名称: 沙格雷酯
     药品规格: 100 MG
     金额（元）: 4923
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/泰德2020M03需放大数据.xlsx
-  raw_data:
-    ATC编码: B03BA05
+  - fileName: CPA/泰德/泰德2020M03需放大数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: B03BA05
     剂型: TAB
     包装单位: H
     包装数量: 20
@@ -392,12 +389,12 @@
     药品名称: 甲钴胺
     药品规格: 500 UG
     金额（元）: 58653
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191113泰德-9月检索.xls
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/泰德2020M03需放大数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -414,12 +411,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 42660
-  sheet_name: 9月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191113泰德-9月检索.xls
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/191113泰德-9月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 9月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 20
@@ -436,12 +433,12 @@
     药品名称: 氯吡格雷
     规格: 25 MG
     金额（元）: 72934
-  sheet_name: 9月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_191212泰德-10月检索.xlsx
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/191113泰德-9月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 9月数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -458,12 +455,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 14220
-  sheet_name: 10月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_191212泰德-10月检索.xlsx
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/convert_191212泰德-10月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 10月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 20
@@ -480,12 +477,12 @@
     药品名称: 氯吡格雷
     规格: 25 MG
     金额（元）: 145869
-  sheet_name: 10月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200214华彬立成（七氟烷）-12月检索.xls
-  raw_data:
-    ATC编码: N01AX10
+  - fileName: CPA/泰德/convert_191212泰德-10月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 10月数据
+- - ATC编码: N01AX10
     剂型: SOLN
     包装: P
     包装数量: 1
@@ -502,12 +499,12 @@
     规格: 200 MG 20 ML
     途径: IJ
     金额（元）: 528
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200214华彬立成（七氟烷）-12月检索.xls
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/200214华彬立成（七氟烷）-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -524,12 +521,12 @@
     规格: '  120 ML'
     途径: IN
     金额（元）: 265612
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/190814泰德-1701-1906检索.xlsx
-  raw_data:
-    2017年: 是
+  - fileName: CPA/泰德/200214华彬立成（七氟烷）-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - 2017年: 是
     2018年: 是
     2019年: 是
     医院名称: 北京广外社区卫生服务中心
@@ -538,12 +535,12 @@
     地区: 北京
     城市: 北京市
     省: 北京市
-  sheet_name: 2017-2019年出版医院名单
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/190814泰德-1701-1906检索.xlsx
-  raw_data:
-    2017年: 是
+  - fileName: CPA/泰德/190814泰德-1701-1906检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 2017-2019年出版医院名单
+- - 2017年: 是
     2018年: 是
     2019年: 是
     医院名称: 内蒙古医学院第三附属医院
@@ -552,12 +549,12 @@
     地区: 内蒙古
     城市: 包头市
     省: 内蒙古自治区
-  sheet_name: 2017-2019年出版医院名单
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191204华彬立成（七氟烷）-历史数据.xlsx
-  raw_data:
-    2017年: 是
+  - fileName: CPA/泰德/190814泰德-1701-1906检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 2017-2019年出版医院名单
+- - 2017年: 是
     2018年: 是
     2019年: 是
     医院名称: 北京广外社区卫生服务中心
@@ -566,12 +563,12 @@
     地区: 北京
     城市: 北京市
     省: 北京市
-  sheet_name: 2017-2019年出版医院名单
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191204华彬立成（七氟烷）-历史数据.xlsx
-  raw_data:
-    2017年: 是
+  - fileName: CPA/泰德/191204华彬立成（七氟烷）-历史数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 2017-2019年出版医院名单
+- - 2017年: 是
     2018年: 是
     2019年: 是
     医院名称: 内蒙古医学院第三附属医院
@@ -580,12 +577,12 @@
     地区: 内蒙古
     城市: 包头市
     省: 内蒙古自治区
-  sheet_name: 2017-2019年出版医院名单
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/泰德2020M01需做放大的药品数据.xlsx
-  raw_data:
-    ATC编码: M01AH05
+  - fileName: CPA/泰德/191204华彬立成（七氟烷）-历史数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 2017-2019年出版医院名单
+- - ATC编码: M01AH05
     剂型: TAB
     包装单位: H
     包装数量: 5
@@ -603,12 +600,12 @@
     药品名称: 依托考昔
     药品规格: 60 MG
     金额(元): 10776
-  sheet_name: 泰德需放大数据(凯那+得百安+麻醉)定义市场
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/泰德2020M01需做放大的药品数据.xlsx
-  raw_data:
-    ATC编码: M01AH05
+  - fileName: CPA/泰德/泰德2020M01需做放大的药品数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 泰德需放大数据(凯那+得百安+麻醉)定义市场
+- - ATC编码: M01AH05
     剂型: TAB
     包装单位: H
     包装数量: 5
@@ -626,12 +623,12 @@
     药品名称: 依托考昔
     药品规格: 60 MG
     金额(元): 10776
-  sheet_name: 泰德需放大数据(凯那+得百安+麻醉)定义市场
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/泰德2020M03需放大数据.xlsx
-  raw_data:
-    ATC编码: M01AH50
+  - fileName: CPA/泰德/泰德2020M01需做放大的药品数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 泰德需放大数据(凯那+得百安+麻醉)定义市场
+- - ATC编码: M01AH50
     剂型: TAB
     包装单位: H
     包装数量: 6
@@ -650,12 +647,12 @@
     药品名称: 艾瑞昔布
     药品规格: 100 MG
     金额（元）: 5998
-  sheet_name: 需放大数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/泰德2020M03需放大数据.xlsx
-  raw_data:
-    ATC编码: M01AH50
+  - fileName: CPA/泰德/泰德2020M03需放大数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需放大数据
+- - ATC编码: M01AH50
     剂型: TAB
     包装单位: H
     包装数量: 6
@@ -674,12 +671,12 @@
     药品名称: 艾瑞昔布
     药品规格: 100 MG
     金额（元）: 48990
-  sheet_name: 需放大数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_191113泰德-9月检索.xlsx
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/泰德2020M03需放大数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需放大数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -696,12 +693,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 27864
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_191113泰德-9月检索.xlsx
-  raw_data:
-    ATC编码: A10BH01
+  - fileName: CPA/泰德/convert_191113泰德-9月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: A10BH01
     剂型: TAB
     包装: H
     包装数量: 14
@@ -718,12 +715,12 @@
     药品名称: 西格列汀
     规格: 100 MG
     金额（元）: 123912
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_191212华彬立成（七氟烷）-10月检索.xlsx
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/convert_191113泰德-9月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -740,12 +737,12 @@
     规格: '  120 ML'
     途径: IN
     金额（元）: 279600
-  sheet_name: 10月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_191212华彬立成（七氟烷）-10月检索.xlsx
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/convert_191212华彬立成（七氟烷）-10月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 10月数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -762,12 +759,12 @@
     规格: '  100 ML'
     途径: IN
     金额（元）: 122325
-  sheet_name: 10月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_191113泰德-9月检索.xlsx
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/convert_191212华彬立成（七氟烷）-10月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 10月数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -784,12 +781,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 42660
-  sheet_name: 9月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_191113泰德-9月检索.xlsx
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/convert_191113泰德-9月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 9月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 20
@@ -806,12 +803,12 @@
     药品名称: 氯吡格雷
     规格: 25 MG
     金额（元）: 72934
-  sheet_name: 9月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200213泰德-12月检索.xls
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/convert_191113泰德-9月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 9月数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -828,12 +825,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 14220
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200213泰德-12月检索.xls
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/200213泰德-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 7
@@ -850,12 +847,12 @@
     药品名称: 氯吡格雷
     规格: 75 MG
     金额（元）: 21100
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200213泰德-12月检索.xlsx
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/200213泰德-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -872,12 +869,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 14220
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200213泰德-12月检索.xlsx
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/convert_200213泰德-12月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 7
@@ -894,12 +891,12 @@
     药品名称: 氯吡格雷
     规格: 75 MG
     金额（元）: 21100
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191014泰德-8月检索.xlsx
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/convert_200213泰德-12月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -916,12 +913,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 71100
-  sheet_name: 8月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191014泰德-8月检索.xlsx
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/191014泰德-8月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 8月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 20
@@ -938,12 +935,12 @@
     药品名称: 氯吡格雷
     规格: 25 MG
     金额（元）: 156288
-  sheet_name: 8月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200213华彬立成（依托考昔）-12月检索.xls
-  raw_data:
-    ATC编码: B02BX56
+  - fileName: CPA/泰德/191014泰德-8月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 8月数据
+- - ATC编码: B02BX56
     剂型: AERO
     包装: S
     包装数量: 1
@@ -960,12 +957,12 @@
     药品名称: 云南白药
     规格: ' CO 50 GM'
     金额(元): 860
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200213华彬立成（依托考昔）-12月检索.xls
-  raw_data:
-    ATC编码: M01AB05
+  - fileName: CPA/泰德/200213华彬立成（依托考昔）-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: M01AB05
     剂型: TAB
     包装: H
     包装数量: 12
@@ -982,12 +979,12 @@
     药品名称: 双氯芬酸钠
     规格: 100 MG
     金额(元): 2760
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191212泰德-10月检索.xls
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/200213华彬立成（依托考昔）-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1004,12 +1001,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 14220
-  sheet_name: 10月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191212泰德-10月检索.xls
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/191212泰德-10月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 10月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 20
@@ -1026,12 +1023,12 @@
     药品名称: 氯吡格雷
     规格: 25 MG
     金额（元）: 145869
-  sheet_name: 10月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/泰德2020M02需放大数据.xlsx
-  raw_data:
-    ATC编码: N01AX10
+  - fileName: CPA/泰德/191212泰德-10月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 10月数据
+- - ATC编码: N01AX10
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -1050,12 +1047,12 @@
     药品名称: 丙泊酚
     药品规格: 100 MG 10 ML
     金额（元）: 96500
-  sheet_name: 泰德2020M02需放大数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/泰德2020M02需放大数据.xlsx
-  raw_data:
-    ATC编码: N01AX10
+  - fileName: CPA/泰德/泰德2020M02需放大数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 泰德2020M02需放大数据
+- - ATC编码: N01AX10
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -1074,12 +1071,12 @@
     药品名称: 丙泊酚
     药品规格: 100 MG 10 ML
     金额（元）: 19300
-  sheet_name: 泰德2020M02需放大数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200213泰德-12月检索.xls
-  raw_data:
-    ATC编码: A10BH01
+  - fileName: CPA/泰德/泰德2020M02需放大数据.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 泰德2020M02需放大数据
+- - ATC编码: A10BH01
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1096,12 +1093,12 @@
     药品名称: 西格列汀
     规格: 100 MG
     金额（元）: 23668
-  sheet_name: 12月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200213泰德-12月检索.xls
-  raw_data:
-    ATC编码: A10BH03
+  - fileName: CPA/泰德/200213泰德-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 12月数据
+- - ATC编码: A10BH03
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1118,12 +1115,12 @@
     药品名称: 沙格列汀
     规格: 5 MG
     金额（元）: 127197
-  sheet_name: 12月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200214华彬立成（七氟烷）-12月检索.xlsx
-  raw_data:
-    ATC编码: N01AX10
+  - fileName: CPA/泰德/200213泰德-12月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 12月数据
+- - ATC编码: N01AX10
     剂型: SOLN
     包装: P
     包装数量: 1
@@ -1140,12 +1137,12 @@
     规格: 200 MG 20 ML
     途径: IJ
     金额（元）: 528
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200214华彬立成（七氟烷）-12月检索.xlsx
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/convert_200214华彬立成（七氟烷）-12月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -1162,12 +1159,12 @@
     规格: '  120 ML'
     途径: IN
     金额（元）: 265612
-  sheet_name: 需替换数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_190912泰德-7月检索.xlsx
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/convert_200214华彬立成（七氟烷）-12月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 需替换数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1184,12 +1181,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 28440
-  sheet_name: 7月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_190912泰德-7月检索.xlsx
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/convert_190912泰德-7月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 7月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1206,12 +1203,12 @@
     药品名称: 氯吡格雷
     规格: 75 MG
     金额（元）: 434376
-  sheet_name: 7月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200110泰德-11月检索.xlsx
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/convert_190912泰德-7月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 7月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 20
@@ -1228,12 +1225,12 @@
     药品名称: 氯吡格雷
     规格: 25 MG
     金额（元）: 156288
-  sheet_name: 11月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200110泰德-11月检索.xlsx
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/convert_200110泰德-11月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 11月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1250,12 +1247,12 @@
     药品名称: 氯吡格雷
     规格: 75 MG
     金额（元）: 386112
-  sheet_name: 11月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200110泰德-11月检索.xls
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/convert_200110泰德-11月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 11月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 20
@@ -1272,12 +1269,12 @@
     药品名称: 氯吡格雷
     规格: 25 MG
     金额（元）: 156288
-  sheet_name: 11月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/200110泰德-11月检索.xls
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/200110泰德-11月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 11月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1294,12 +1291,12 @@
     药品名称: 氯吡格雷
     规格: 75 MG
     金额（元）: 386112
-  sheet_name: 11月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/190912泰德-7月检索.xls
-  raw_data:
-    ATC编码: .nan
+  - fileName: CPA/泰德/200110泰德-11月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 11月数据
+- - ATC编码: .nan
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -1316,12 +1313,12 @@
     药品名称: 丹红注射液
     规格: ' CO 10 ML'
     金额（元）: 28440
-  sheet_name: 7月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/190912泰德-7月检索.xls
-  raw_data:
-    ATC编码: B01AC04
+  - fileName: CPA/泰德/190912泰德-7月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 7月数据
+- - ATC编码: B01AC04
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1338,12 +1335,12 @@
     药品名称: 氯吡格雷
     规格: 75 MG
     金额（元）: 434376
-  sheet_name: 7月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200213泰德-12月检索.xlsx
-  raw_data:
-    ATC编码: A10BH01
+  - fileName: CPA/泰德/190912泰德-7月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 7月数据
+- - ATC编码: A10BH01
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1360,12 +1357,12 @@
     药品名称: 西格列汀
     规格: 100 MG
     金额（元）: 23668
-  sheet_name: 12月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/convert_200213泰德-12月检索.xlsx
-  raw_data:
-    ATC编码: A10BH03
+  - fileName: CPA/泰德/convert_200213泰德-12月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 12月数据
+- - ATC编码: A10BH03
     剂型: TAB
     包装: H
     包装数量: 7
@@ -1382,12 +1379,12 @@
     药品名称: 沙格列汀
     规格: 5 MG
     金额（元）: 127197
-  sheet_name: 12月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191212华彬立成（七氟烷）-10月检索.xls
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/convert_200213泰德-12月检索.xlsx
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 12月数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -1404,12 +1401,12 @@
     规格: '  120 ML'
     途径: IN
     金额（元）: 279600
-  sheet_name: 10月数据
-  source: CPA
-- company: 泰德
-  file_name: CPA/泰德/191212华彬立成（七氟烷）-10月检索.xls
-  raw_data:
-    ATC编码: N01AB08
+  - fileName: CPA/泰德/191212华彬立成（七氟烷）-10月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 10月数据
+- - ATC编码: N01AB08
     剂型: LIQD
     包装: P
     包装数量: 1
@@ -1426,5 +1423,8 @@
     规格: '  100 ML'
     途径: IN
     金额（元）: 122325
-  sheet_name: 10月数据
-  source: CPA
+  - fileName: CPA/泰德/191212华彬立成（七氟烷）-10月检索.xls
+    providers:
+    - 泰德
+    - CPA
+    sheetName: 10月数据

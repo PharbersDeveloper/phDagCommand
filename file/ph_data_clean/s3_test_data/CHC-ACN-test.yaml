@@ -1,7 +1,4 @@
-- company: ACN
-  file_name: CHC/ACN/XTDET项目交付表表-2001.xlsx
-  raw_data:
-    价格转换比: 12
+- - 价格转换比: 12
     剂型: 胶囊剂
     包装: 12粒/盒
     化学名: 托特罗定
@@ -23,12 +20,12 @@
     采购价格: 28.7
     采购数量: 150
     采购金额: 4305.0
-  sheet_name: 交付表
-  source: CHC
-- company: ACN
-  file_name: CHC/ACN/XTDET项目交付表表-2001.xlsx
-  raw_data:
-    价格转换比: 10
+  - fileName: CHC/ACN/XTDET项目交付表表-2001.xlsx
+    providers:
+    - ACN
+    - CHC
+    sheetName: 交付表
+- - 价格转换比: 10
     剂型: 薄膜衣片
     包装: 10片/盒
     化学名: 索利那新
@@ -50,12 +47,12 @@
     采购价格: 104.34
     采购数量: 20
     采购金额: 2086.8
-  sheet_name: 交付表
-  source: CHC
-- company: ACN
-  file_name: CHC/ACN/_____XTDFET___2018_6_______20191211.xlsx
-  raw_data:
-    价格转换比: 1
+  - fileName: CHC/ACN/XTDET项目交付表表-2001.xlsx
+    providers:
+    - ACN
+    - CHC
+    sheetName: 交付表
+- - 价格转换比: 1
     剂型: 小容量注射液
     包装: 1瓶/盒
     化学名: 多西他赛
@@ -77,12 +74,12 @@
     采购价格: 341.65
     采购数量: 10
     采购金额: 3416.5
-  sheet_name: 查询1
-  source: CHC
-- company: ACN
-  file_name: CHC/ACN/_____XTDFET___2018_6_______20191211.xlsx
-  raw_data:
-    价格转换比: 10
+  - fileName: CHC/ACN/_____XTDFET___2018_6_______20191211.xlsx
+    providers:
+    - ACN
+    - CHC
+    sheetName: 查询1
+- - 价格转换比: 10
     剂型: 素片
     包装: 10片/盒
     化学名: 苯溴马隆
@@ -104,5 +101,8 @@
     采购价格: 21.35
     采购数量: 20
     采购金额: 427.0
-  sheet_name: 查询1
-  source: CHC
+  - fileName: CHC/ACN/_____XTDFET___2018_6_______20191211.xlsx
+    providers:
+    - ACN
+    - CHC
+    sheetName: 查询1

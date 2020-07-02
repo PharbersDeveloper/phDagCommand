@@ -1,7 +1,4 @@
-- company: Astellas
-  file_name: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
-  raw_data:
-    ATC码: L01BC01
+- - ATC码: L01BC01
     剂型: POWD
     ? '包装
 
@@ -34,12 +31,12 @@
       (元)'
     : 53700
     集团: 中国医药集团总公司
-  sheet_name: 2019年未到补充数据
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
-  raw_data:
-    ATC码: L01BC01
+  - fileName: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 2019年未到补充数据
+- - ATC码: L01BC01
     剂型: POWD
     ? '包装
 
@@ -72,12 +69,12 @@
       (元)'
     : 23700
     集团: 中国医药集团总公司
-  sheet_name: 2019年未到补充数据
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/190215安斯泰来1-12月底层检索.xlsx
-  raw_data:
-    ATC码: G04CA03
+  - fileName: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 2019年未到补充数据
+- - ATC码: G04CA03
     剂型: TAB
     ? '包装
 
@@ -109,12 +106,12 @@
       (元)'
     : 2645
     集团: 北京赛科药业有限责任公司
-  sheet_name: 1-12月
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/190215安斯泰来1-12月底层检索.xlsx
-  raw_data:
-    ATC码: M04AA01
+  - fileName: CPA/Astellas/190215安斯泰来1-12月底层检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 1-12月
+- - ATC码: M04AA01
     剂型: CAP
     ? '包装
 
@@ -146,12 +143,12 @@
       (元)'
     : 1087
     集团: 黑龙江澳利达奈德制药有限公司
-  sheet_name: 1-12月
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
-  raw_data:
-    ATC码: J02AC02
+  - fileName: CPA/Astellas/190215安斯泰来1-12月底层检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 1-12月
+- - ATC码: J02AC02
     剂型: CAP
     ? '包装
 
@@ -183,12 +180,12 @@
       (元)'
     : 4720
     集团: 天津力生制药股份有限公司
-  sheet_name: 安斯泰来20年1-3月检索
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
-  raw_data:
-    ATC码: M04AA03
+  - fileName: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 安斯泰来20年1-3月检索
+- - ATC码: M04AA03
     剂型: TAB
     ? '包装
 
@@ -220,12 +217,12 @@
       (元)'
     : 51000
     集团: 江苏恒瑞医药股份有限公司
-  sheet_name: 安斯泰来20年1-3月检索
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/180211安斯泰来12月底层检索.xlsx
-  raw_data:
-    ATC码: M04AA03
+  - fileName: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 安斯泰来20年1-3月检索
+- - ATC码: M04AA03
     剂型: TAB
     ? '包
 
@@ -260,12 +257,12 @@
       （元）'
     : 14000
     集团: 江苏恒瑞医药股份有限公司
-  sheet_name: 1-12月
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/180211安斯泰来12月底层检索.xlsx
-  raw_data:
-    ATC码: M04AB03
+  - fileName: CPA/Astellas/180211安斯泰来12月底层检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 1-12月
+- - ATC码: M04AB03
     剂型: TAB
     ? '包
 
@@ -300,12 +297,12 @@
       （元）'
     : 8540
     集团: 宜昌长江药业有限公司
-  sheet_name: 1-12月
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
-  raw_data:
-    ATC码: M04AB03
+  - fileName: CPA/Astellas/180211安斯泰来12月底层检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 1-12月
+- - ATC码: M04AB03
     剂型: TAB
     ? '包装
 
@@ -337,12 +334,12 @@
       (元)'
     : 1849
     集团: 德国赫曼大药厂
-  sheet_name: 2019年替换数据
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
-  raw_data:
-    ATC码: R01AC08
+  - fileName: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 2019年替换数据
+- - ATC码: R01AC08
     剂型: TAB
     ? '包装
 
@@ -374,12 +371,12 @@
       (元)'
     : 10780
     集团: 北京四环科宝制药有限公司
-  sheet_name: 2019年替换数据
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/170215安斯泰来1-12月底层检索.xlsx
-  raw_data:
-    ATC码: G04CA03
+  - fileName: CPA/Astellas/200510安斯泰来-1-3月检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 2019年替换数据
+- - ATC码: G04CA03
     剂型: TAB
     ? '包
 
@@ -414,12 +411,12 @@
       （元）'
     : 7104
     集团: 雅培-基诺集团
-  sheet_name: 被替换数据
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/170215安斯泰来1-12月底层检索.xlsx
-  raw_data:
-    ATC码: G04CB02
+  - fileName: CPA/Astellas/170215安斯泰来1-12月底层检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 被替换数据
+- - ATC码: G04CB02
     剂型: CAP
     ? '包
 
@@ -454,12 +451,12 @@
       （元）'
     : 25542
     集团: 葛兰素-史克集团
-  sheet_name: 被替换数据
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/170215安斯泰来1-12月底层检索.xlsx
-  raw_data:
-    ATC码: R06AE07
+  - fileName: CPA/Astellas/170215安斯泰来1-12月底层检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 被替换数据
+- - ATC码: R06AE07
     剂型: TAB
     ? '包
 
@@ -494,12 +491,12 @@
       （元）'
     : 1814
     集团: 宜昌长江药业有限公司
-  sheet_name: 1-12月底层检索
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/170215安斯泰来1-12月底层检索.xlsx
-  raw_data:
-    ATC码: R06AX13
+  - fileName: CPA/Astellas/170215安斯泰来1-12月底层检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 1-12月底层检索
+- - ATC码: R06AX13
     剂型: SYRP
     ? '包
 
@@ -534,12 +531,12 @@
       （元）'
     : 4349
     集团: 上海先灵葆雅制药有限公司
-  sheet_name: 1-12月底层检索
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/CPA_2015源数据.xlsx
-  raw_data:
-    ATC码: G04BX08
+  - fileName: CPA/Astellas/170215安斯泰来1-12月底层检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 1-12月底层检索
+- - ATC码: G04BX08
     剂型: CAP
     包装: H
     包装数量: 10
@@ -555,12 +552,12 @@
     药品规格: 200 UG
     金额（元）: 59040
     集团: 安斯泰来制药集团
-  sheet_name: 2015安斯泰来01-12月检索
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/CPA_2015源数据.xlsx
-  raw_data:
-    ATC码: D07AB02
+  - fileName: CPA/Astellas/CPA_2015源数据.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 2015安斯泰来01-12月检索
+- - ATC码: D07AB02
     剂型: OINT
     包装: T
     包装数量: 1
@@ -576,12 +573,12 @@
     药品规格: 10 MG 10 GM
     金额（元）: 2312
     集团: 天津药业有限公司
-  sheet_name: 2015安斯泰来01-12月检索
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/191111安斯泰来-1-9月检索.xlsx
-  raw_data:
-    ATC码: M04AA03
+  - fileName: CPA/Astellas/CPA_2015源数据.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 2015安斯泰来01-12月检索
+- - ATC码: M04AA03
     剂型: TAB
     ? '包装
 
@@ -613,12 +610,12 @@
       (元)'
     : 17000
     集团: 江苏恒瑞医药股份有限公司
-  sheet_name: 1-9月
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/191111安斯泰来-1-9月检索.xlsx
-  raw_data:
-    ATC码: L02BB01
+  - fileName: CPA/Astellas/191111安斯泰来-1-9月检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 1-9月
+- - ATC码: L02BB01
     剂型: TAB
     ? '包装
 
@@ -650,12 +647,12 @@
       (元)'
     : 9511
     集团: 江苏天士力帝益药业有限公司
-  sheet_name: 1-9月
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/200213安斯泰来-1-12月检索.xlsx
-  raw_data:
-    ATC码: M04AA03
+  - fileName: CPA/Astellas/191111安斯泰来-1-9月检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 1-9月
+- - ATC码: M04AA03
     剂型: TAB
     ? '包装
 
@@ -687,12 +684,12 @@
       (元)'
     : 17000
     集团: 江苏恒瑞医药股份有限公司
-  sheet_name: 1-12月
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/200213安斯泰来-1-12月检索.xlsx
-  raw_data:
-    ATC码: L02BB01
+  - fileName: CPA/Astellas/200213安斯泰来-1-12月检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 1-12月
+- - ATC码: L02BB01
     剂型: TAB
     ? '包装
 
@@ -724,12 +721,12 @@
       (元)'
     : 9511
     集团: 江苏天士力帝益药业有限公司
-  sheet_name: 1-12月
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/CPA_2014源数据.xlsx
-  raw_data:
-    ATC码: G04BX08
+  - fileName: CPA/Astellas/200213安斯泰来-1-12月检索.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 1-12月
+- - ATC码: G04BX08
     剂型: CAP
     包装: H
     包装数量: 10
@@ -745,12 +742,12 @@
     药品规格: 200 UG
     金额（元）: 59050
     集团: 安斯泰来制药集团
-  sheet_name: 2014安斯泰来01-12月检索汇总
-  source: CPA
-- company: Astellas
-  file_name: CPA/Astellas/CPA_2014源数据.xlsx
-  raw_data:
-    ATC码: J02AC01
+  - fileName: CPA/Astellas/CPA_2014源数据.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 2014安斯泰来01-12月检索汇总
+- - ATC码: J02AC01
     剂型: CAP
     包装: H
     包装数量: 7
@@ -766,5 +763,8 @@
     药品规格: 50 MG
     金额（元）: 69149
     集团: 辉瑞制药集团
-  sheet_name: 2014安斯泰来01-12月检索汇总
-  source: CPA
+  - fileName: CPA/Astellas/CPA_2014源数据.xlsx
+    providers:
+    - Astellas
+    - CPA
+    sheetName: 2014安斯泰来01-12月检索汇总

@@ -1,7 +1,4 @@
-- company: 奥鸿
-  file_name: CPA/奥鸿/191113锦州奥鸿-1909检索.xls
-  raw_data:
-    ATC编码: B02BX03
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -18,12 +15,12 @@
     药品名称: 血凝酶
     药品规格: 2 U
     金额（元）: 32416
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/191113锦州奥鸿-1909检索.xls
-  raw_data:
-    ATC编码: S01AX54
+  - fileName: CPA/奥鸿/191113锦州奥鸿-1909检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: S01AX54
     剂型: GEL
     包装: T
     包装数量: 1
@@ -40,12 +37,12 @@
     药品名称: 小牛血去蛋白提取物
     药品规格: 1 GM 5 GM
     金额（元）: 20400
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/200328锦州奥鸿-2001检索.xls
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/191113锦州奥鸿-1909检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -62,12 +59,12 @@
     药品名称: 血凝酶
     药品规格: 1 KU
     金额（元）: 14255
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/200328锦州奥鸿-2001检索.xls
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/200328锦州奥鸿-2001检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: B02BX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -84,12 +81,12 @@
     药品名称: 血凝酶
     药品规格: 1 U 1 ML
     金额（元）: 10839
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/190530锦州奥鸿-历史数据检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/200328锦州奥鸿-2001检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -106,12 +103,12 @@
     药品名称: 血凝酶
     药品规格: 1 U
     金额（元）: 325800
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/190530锦州奥鸿-历史数据检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/190530锦州奥鸿-历史数据检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -128,12 +125,12 @@
     药品名称: 血凝酶
     药品规格: 0.5 KU
     金额（元）: 102192
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/191212锦州奥鸿-1910检索.xls
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/190530锦州奥鸿-历史数据检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -150,12 +147,12 @@
     药品名称: 血凝酶
     药品规格: 1 U
     金额（元）: 36360
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/191212锦州奥鸿-1910检索.xls
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/191212锦州奥鸿-1910检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -172,12 +169,12 @@
     药品名称: 血凝酶
     药品规格: 2 U
     金额（元）: 43436
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/190506锦州奥鸿-反馈.xlsx
-  raw_data:
-    ATC码: B02BX03
+  - fileName: CPA/奥鸿/191212锦州奥鸿-1910检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC码: B02BX03
     剂型: POWD
     ? '包装
 
@@ -209,12 +206,12 @@
     规格: 1 U
     进量: 4200
     金额: 155316
-  sheet_name: 奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/190506锦州奥鸿-反馈.xlsx
-  raw_data:
-    ATC码: B02BX03
+  - fileName: CPA/奥鸿/190506锦州奥鸿-反馈.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 奥鸿
+- - ATC码: B02BX03
     剂型: POWD
     ? '包装
 
@@ -246,12 +243,12 @@
     规格: 1 U
     进量: 720
     金额: 75125
-  sheet_name: 奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_190712锦州奥鸿-1905检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/190506锦州奥鸿-反馈.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 奥鸿
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -268,12 +265,12 @@
     药品名称: 血凝酶
     药品规格: 1 KU
     金额（元）: 22808
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_190712锦州奥鸿-1905检索.xlsx
-  raw_data:
-    ATC编码: N07XX50
+  - fileName: CPA/奥鸿/convert_190712锦州奥鸿-1905检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: N07XX50
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -290,12 +287,12 @@
     药品名称: 小牛血去蛋白提取物
     药品规格: 400 MG 10 ML
     金额（元）: 39565
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_200214锦州奥鸿-1912检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/convert_190712锦州奥鸿-1905检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: B02BX03
     剂型: POWD
     包装: H
     包装数量: 5
@@ -312,12 +309,12 @@
     药品名称: 血凝酶
     药品规格: 0.5 U
     金额（元）: 1700
-  sheet_name: 替换数据
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_200214锦州奥鸿-1912检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/convert_200214锦州奥鸿-1912检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -334,12 +331,12 @@
     药品名称: 血凝酶
     药品规格: 0.5 KU
     金额（元）: 435
-  sheet_name: 替换数据
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/200214锦州奥鸿-1912检索.xls
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/convert_200214锦州奥鸿-1912检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: B02BX03
     剂型: POWD
     包装: H
     包装数量: 5
@@ -356,12 +353,12 @@
     药品名称: 血凝酶
     药品规格: 0.5 U
     金额（元）: 1700
-  sheet_name: 替换数据
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/200214锦州奥鸿-1912检索.xls
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/200214锦州奥鸿-1912检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -378,12 +375,12 @@
     药品名称: 血凝酶
     药品规格: 0.5 KU
     金额（元）: 435
-  sheet_name: 替换数据
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/20200225发送--血凝酶2019M12.xlsx
-  raw_data:
-    剂型: 注射剂
+  - fileName: CPA/奥鸿/200214锦州奥鸿-1912检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 替换数据
+- - 剂型: 注射剂
     包装规格: 1
     医院名称: 首都医科大学附属北京地坛医院
     医院编码: 1100026
@@ -400,12 +397,12 @@
     规格: 1ml∶1U
     通用名: 蛇毒血凝酶
     金额: 25185.6
-  sheet_name: CPT血凝酶数据
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/20200225发送--血凝酶2019M12.xlsx
-  raw_data:
-    剂型: 注射剂
+  - fileName: CPA/奥鸿/20200225发送--血凝酶2019M12.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: CPT血凝酶数据
+- - 剂型: 注射剂
     包装规格: 1
     医院名称: 北京中医药大学东直门医院
     医院编码: 1100061
@@ -422,12 +419,12 @@
     规格: 1ml∶1U
     通用名: 蛇毒血凝酶
     金额: 16790.4
-  sheet_name: CPT血凝酶数据
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/190912锦州奥鸿-1907检索.xls
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/20200225发送--血凝酶2019M12.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: CPT血凝酶数据
+- - ATC编码: B02BX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -444,12 +441,12 @@
     药品名称: 血凝酶
     药品规格: 1 U 1 ML
     金额（元）: 99719
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/190912锦州奥鸿-1907检索.xls
-  raw_data:
-    ATC编码: S01AX54
+  - fileName: CPA/奥鸿/190912锦州奥鸿-1907检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: S01AX54
     剂型: GEL
     包装: T
     包装数量: 1
@@ -466,12 +463,12 @@
     药品名称: 小牛血去蛋白提取物
     药品规格: 1 GM 5 GM
     金额（元）: 20400
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_200214锦州奥鸿-1912检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/190912锦州奥鸿-1907检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -488,12 +485,12 @@
     药品名称: 血凝酶
     药品规格: 2 U
     金额（元）: 38898
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_200214锦州奥鸿-1912检索.xlsx
-  raw_data:
-    ATC编码: S01AX54
+  - fileName: CPA/奥鸿/convert_200214锦州奥鸿-1912检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: S01AX54
     剂型: GEL
     包装: T
     包装数量: 1
@@ -510,12 +507,12 @@
     药品名称: 小牛血去蛋白提取物
     药品规格: 1 GM 5 GM
     金额（元）: 26095
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/190530锦州奥鸿-历史数据检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/奥鸿/convert_200214锦州奥鸿-1912检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -523,12 +520,12 @@
     备注: .nan
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2019年出版医院名单
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/190530锦州奥鸿-历史数据检索.xlsx
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/奥鸿/190530锦州奥鸿-历史数据检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 2019年出版医院名单
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三丙
     地区: 内蒙古
@@ -536,12 +533,12 @@
     备注: 级别变更，原级别：三级
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2019年出版医院名单
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/190813锦州奥鸿-1906检索.xlsx
-  raw_data:
-    ATC编码: S01AX54
+  - fileName: CPA/奥鸿/190530锦州奥鸿-历史数据检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 2019年出版医院名单
+- - ATC编码: S01AX54
     剂型: GEL
     包装: T
     包装数量: 1
@@ -558,12 +555,12 @@
     药品名称: 小牛血去蛋白提取物
     药品规格: 1 GM 5 GM
     金额（元）: 10200
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/190813锦州奥鸿-1906检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/190813锦州奥鸿-1906检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -580,12 +577,12 @@
     药品名称: 血凝酶
     药品规格: 1 KU
     金额（元）: 17106
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/20200417CPT--2020M1-2奥鸿--4个凝血酶.xlsx
-  raw_data:
-    剂型: 冻干粉针剂
+  - fileName: CPA/奥鸿/190813锦州奥鸿-1906检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - 剂型: 冻干粉针剂
     包装规格: 5
     医院名称: 淮南市潘集区潘东医院
     医院编码: 3404015
@@ -602,12 +599,12 @@
     规格: 1U
     通用名: 血凝酶
     金额: 1700
-  sheet_name: '1'
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/20200417CPT--2020M1-2奥鸿--4个凝血酶.xlsx
-  raw_data:
-    剂型: 冻干粉针剂
+  - fileName: CPA/奥鸿/20200417CPT--2020M1-2奥鸿--4个凝血酶.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: '1'
+- - 剂型: 冻干粉针剂
     包装规格: 5
     医院名称: 淮南市潘集区潘东医院
     医院编码: 3404015
@@ -624,12 +621,12 @@
     规格: 1U
     通用名: 血凝酶
     金额: 850
-  sheet_name: '1'
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/200328锦州奥鸿-2001检索.xls
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/奥鸿/20200417CPT--2020M1-2奥鸿--4个凝血酶.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: '1'
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -637,12 +634,12 @@
     备注: .nan
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2020年出版医院名单
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/200328锦州奥鸿-2001检索.xls
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/奥鸿/200328锦州奥鸿-2001检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 2020年出版医院名单
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三丙
     地区: 内蒙古
@@ -650,12 +647,12 @@
     备注: .nan
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2020年出版医院名单
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_200328锦州奥鸿-2001检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/奥鸿/200328锦州奥鸿-2001检索.xls
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 2020年出版医院名单
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -663,12 +660,12 @@
     备注: .nan
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2020年出版医院名单
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_200328锦州奥鸿-2001检索.xlsx
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/奥鸿/convert_200328锦州奥鸿-2001检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 2020年出版医院名单
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三丙
     地区: 内蒙古
@@ -676,12 +673,12 @@
     备注: .nan
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2020年出版医院名单
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_191113锦州奥鸿-1909检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/convert_200328锦州奥鸿-2001检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 2020年出版医院名单
+- - ATC编码: B02BX03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -698,12 +695,12 @@
     药品名称: 血凝酶
     药品规格: 1 U 1 ML
     金额（元）: 15322
-  sheet_name: 替换数据
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_191113锦州奥鸿-1909检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/convert_191113锦州奥鸿-1909检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -720,12 +717,12 @@
     药品名称: 血凝酶
     药品规格: 1 U
     金额（元）: 267352
-  sheet_name: 替换数据
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_191212锦州奥鸿-1910检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/convert_191113锦州奥鸿-1909检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 替换数据
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -742,12 +739,12 @@
     药品名称: 血凝酶
     药品规格: 1 U
     金额（元）: 36360
-  sheet_name: 锦州奥鸿
-  source: CPA
-- company: 奥鸿
-  file_name: CPA/奥鸿/convert_191212锦州奥鸿-1910检索.xlsx
-  raw_data:
-    ATC编码: B02BX03
+  - fileName: CPA/奥鸿/convert_191212锦州奥鸿-1910检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿
+- - ATC编码: B02BX03
     剂型: POWD
     包装: V
     包装数量: 1
@@ -764,5 +761,8 @@
     药品名称: 血凝酶
     药品规格: 2 U
     金额（元）: 43436
-  sheet_name: 锦州奥鸿
-  source: CPA
+  - fileName: CPA/奥鸿/convert_191212锦州奥鸿-1910检索.xlsx
+    providers:
+    - 奥鸿
+    - CPA
+    sheetName: 锦州奥鸿

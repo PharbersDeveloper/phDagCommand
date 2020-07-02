@@ -1,7 +1,4 @@
-- company: Pfizer
-  file_name: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 黑河市
@@ -16,12 +13,12 @@
     STANDARD_UNIT: 16280
     VALUE: 18828
     YEAR: 2017
-  sheet_name: 2017年未到医院补充数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017年未到医院补充数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 黑河市
@@ -36,12 +33,12 @@
     STANDARD_UNIT: 300
     VALUE: 1286
     YEAR: 2017
-  sheet_name: 2017年未到医院补充数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017年未到医院补充数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 自贡市
@@ -56,12 +53,12 @@
     STANDARD_UNIT: 4800
     VALUE: 210
     YEAR: 2018
-  sheet_name: 2018年替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2018年替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 自贡市
@@ -76,34 +73,34 @@
     STANDARD_UNIT: 48000
     VALUE: 26848
     YEAR: 2018
-  sheet_name: 2018年替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161223辉瑞新增药品2013年历史数据检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2018年替换数据
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
     城市: 包头市
     省: 内蒙古自治区
-  sheet_name: 2013年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161223辉瑞新增药品2013年历史数据检索.xlsx
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/Pfizer/161223辉瑞新增药品2013年历史数据检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2013年出版医院名单
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三级
     地区: 内蒙古
     城市: 乌海市
     省: 内蒙古自治区
-  sheet_name: 2013年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/161223辉瑞新增药品2013年历史数据检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2013年出版医院名单
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -118,12 +115,12 @@
     STANDARD_UNIT: 28
     VALUE: 4494
     YEAR: 2018
-  sheet_name: 辉瑞（2）1901
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞（2）1901
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -138,12 +135,12 @@
     STANDARD_UNIT: 120
     VALUE: 61200
     YEAR: 2018
-  sheet_name: 辉瑞（2）1901
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞（2）1901
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 晋城市
@@ -158,12 +155,12 @@
     STANDARD_UNIT: 10000
     VALUE: 3250
     YEAR: 2017
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 晋城市
@@ -178,12 +175,12 @@
     STANDARD_UNIT: 7200
     VALUE: 8327
     YEAR: 2017
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215辉瑞临时检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 注射
     APP2_COD: 溶液剂（注射剂）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -198,12 +195,12 @@
     STANDARD_UNIT: 7000
     VALUE: 65870
     YEAR: 2017
-  sheet_name: 辉瑞新增1701-1812
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215辉瑞临时检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190215辉瑞临时检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞新增1701-1812
+- - APP1_COD: 注射
     APP2_COD: 溶液剂（注射剂）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -218,12 +215,12 @@
     STANDARD_UNIT: 3000
     VALUE: 7920
     YEAR: 2017
-  sheet_name: 辉瑞新增1701-1812
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170615辉瑞1704底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190215辉瑞临时检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞新增1701-1812
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -238,12 +235,12 @@
     STANDARD_UNIT: 2000
     VALUE: 524
     YEAR: 2017
-  sheet_name: 辉瑞1704
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170615辉瑞1704底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170615辉瑞1704底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1704
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -258,12 +255,12 @@
     STANDARD_UNIT: 500
     VALUE: 135
     YEAR: 2017
-  sheet_name: 辉瑞1704
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/Pfizer/170615辉瑞1704底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1704
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -271,12 +268,12 @@
     备注: Y
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2017年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017年出版医院名单
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三级
     地区: 内蒙古
@@ -284,12 +281,12 @@
     备注: Y
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2017年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017年出版医院名单
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 淮南市
@@ -304,12 +301,12 @@
     STANDARD_UNIT: 100
     VALUE: 1120
     YEAR: 2014
-  sheet_name: 底层2
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 底层2
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 淮南市
@@ -324,12 +321,12 @@
     STANDARD_UNIT: 100
     VALUE: 1120
     YEAR: 2014
-  sheet_name: 底层2
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/CPA缺失3分子2017.xlsx
-  raw_data:
-    APP1_COD: 阴道
+  - fileName: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 底层2
+- - APP1_COD: 阴道
     APP2_COD: 栓剂
     BRAND_MKT: .nan
     CITY: 晋城市
@@ -344,12 +341,12 @@
     STANDARD_UNIT: 550
     VALUE: 19206
     YEAR: 2017
-  sheet_name: 查询2
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/CPA缺失3分子2017.xlsx
-  raw_data:
-    APP1_COD: 阴道
+  - fileName: CPA/Pfizer/CPA缺失3分子2017.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 查询2
+- - APP1_COD: 阴道
     APP2_COD: 栓剂
     BRAND_MKT: .nan
     CITY: 晋城市
@@ -364,12 +361,12 @@
     STANDARD_UNIT: 1150
     VALUE: 40158
     YEAR: 2017
-  sheet_name: 查询2
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/CPA缺失3分子2017.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 查询2
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -384,12 +381,12 @@
     STANDARD_UNIT: 500
     VALUE: 122
     YEAR: 2018
-  sheet_name: 辉瑞1803
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1803
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -404,12 +401,12 @@
     STANDARD_UNIT: 500
     VALUE: 128
     YEAR: 2018
-  sheet_name: 辉瑞1803
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190613辉瑞1904底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1803
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 鞍山市
@@ -424,12 +421,12 @@
     STANDARD_UNIT: 50
     VALUE: 19800
     YEAR: 2019
-  sheet_name: 辉瑞1904
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190613辉瑞1904底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190613辉瑞1904底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1904
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -444,12 +441,12 @@
     STANDARD_UNIT: 200
     VALUE: 79000
     YEAR: 2019
-  sheet_name: 辉瑞1904
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190412辉瑞1902底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190613辉瑞1904底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1904
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 鞍山市
@@ -464,12 +461,12 @@
     STANDARD_UNIT: 50
     VALUE: 19800
     YEAR: 2019
-  sheet_name: 辉瑞1902
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190412辉瑞1902底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190412辉瑞1902底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1902
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -484,12 +481,12 @@
     STANDARD_UNIT: 400
     VALUE: 158000
     YEAR: 2019
-  sheet_name: 辉瑞1902
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190412辉瑞1902底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1902
+- - APP1_COD: 口服
     APP2_COD: 片剂
     CITY: 安阳市
     CORP_NAME: 浙江震元制药有限公司
@@ -502,12 +499,12 @@
     STANDARD_UNIT: 1000
     VALUE: 269
     YEAR: 2017
-  sheet_name: 辉瑞1706
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1706
+- - APP1_COD: 口服
     APP2_COD: 片剂
     CITY: 安阳市
     CORP_NAME: 浙江震元制药有限公司
@@ -520,12 +517,12 @@
     STANDARD_UNIT: 2000
     VALUE: 427
     YEAR: 2017
-  sheet_name: 辉瑞1706
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1706
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 海口市
@@ -540,12 +537,12 @@
     STANDARD_UNIT: 20
     VALUE: 7920
     YEAR: 2019
-  sheet_name: 2019年替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2019年替换数据
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 海口市
@@ -560,12 +557,12 @@
     STANDARD_UNIT: 240
     VALUE: 98042
     YEAR: 2019
-  sheet_name: 2019年替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2019年替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -580,12 +577,12 @@
     STANDARD_UNIT: 36000
     VALUE: 45702
     YEAR: 2017
-  sheet_name: 辉瑞1709
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1709
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -600,12 +597,12 @@
     STANDARD_UNIT: 2520
     VALUE: 6089
     YEAR: 2017
-  sheet_name: 辉瑞1709
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1709
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿勒泰市
@@ -620,12 +617,12 @@
     STANDARD_UNIT: 1000
     VALUE: 210
     YEAR: 2018
-  sheet_name: 辉瑞1801
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1801
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -640,12 +637,12 @@
     STANDARD_UNIT: 2000
     VALUE: 427
     YEAR: 2018
-  sheet_name: 辉瑞1801
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1801
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -660,12 +657,12 @@
     STANDARD_UNIT: 28
     VALUE: 4494
     YEAR: 2019
-  sheet_name: 辉瑞1903（2）
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1903（2）
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -680,12 +677,12 @@
     STANDARD_UNIT: 60
     VALUE: 30600
     YEAR: 2019
-  sheet_name: 辉瑞1903（2）
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
-  raw_data:
-    2017年出版: 是
+  - fileName: CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1903（2）
+- - 2017年出版: 是
     2018年出版: 是
     2019年出版: 是
     医院名称: 北京广外社区卫生服务中心
@@ -694,12 +691,12 @@
     地区: 北京
     城市: 北京市
     省: 北京市
-  sheet_name: 2017-2019年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
-  raw_data:
-    2017年出版: 是
+  - fileName: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017-2019年出版医院名单
+- - 2017年出版: 是
     2018年出版: 是
     2019年出版: 是
     医院名称: 内蒙古医学院第三附属医院
@@ -708,12 +705,12 @@
     地区: 内蒙古
     城市: 包头市
     省: 内蒙古自治区
-  sheet_name: 2017-2019年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191114辉瑞-9月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017-2019年出版医院名单
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 鞍山市
@@ -728,12 +725,12 @@
     STANDARD_UNIT: 50
     VALUE: 19800
     YEAR: 2019
-  sheet_name: 辉瑞-9月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191114辉瑞-9月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-9月
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -748,12 +745,12 @@
     STANDARD_UNIT: 400
     VALUE: 156000
     YEAR: 2019
-  sheet_name: 辉瑞-9月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215辉瑞临时检索.xlsx
-  raw_data:
-    医院名称: 北京广外社区卫生服务中心
+  - fileName: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-9月
+- - 医院名称: 北京广外社区卫生服务中心
     医院编码: 100782
     参考级别: 二级
     地区: 北京
@@ -761,12 +758,12 @@
     是否为2017年出版医院: 是
     是否为2018年出版医院: 是
     省: 北京市
-  sheet_name: 2017-2018年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215辉瑞临时检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/Pfizer/190215辉瑞临时检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017-2018年出版医院名单
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -774,12 +771,12 @@
     是否为2017年出版医院: 是
     是否为2018年出版医院: 是
     省: 内蒙古自治区
-  sheet_name: 2017-2018年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/Pfizer/190215辉瑞临时检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017-2018年出版医院名单
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -787,12 +784,12 @@
     备注: .nan
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2019年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2019年出版医院名单
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三丙
     地区: 内蒙古
@@ -800,36 +797,36 @@
     备注: 级别变更，原级别：三级
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2019年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2019年出版医院名单
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     CORP_NAME: 广东省药物研究所制药厂
     MOLE_NAME: 脑蛋白水解物
     PRODUCT_NAME: 舒瑞泰
     原PACK_DES: 206.05 MG
     更新后PACK_DES: 30.5 MG
-  sheet_name: 药品信息更新对照表
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 药品信息更新对照表
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     CORP_NAME: 哈尔滨三联药业有限公司
     MOLE_NAME: 脑蛋白水解物
     PRODUCT_NAME: 曲奥
     原PACK_DES: 410 MG
     更新后PACK_DES: 60 MG
-  sheet_name: 药品信息更新对照表
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
-  raw_data:
-    医院名称: 北京广外社区卫生服务中心
+  - fileName: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 药品信息更新对照表
+- - 医院名称: 北京广外社区卫生服务中心
     医院编码: 100782
     参考级别: 二级
     地区: 北京
@@ -837,12 +834,12 @@
     备注: .nan
     是否新增: 否
     省: 北京市
-  sheet_name: 2018年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2018年出版医院名单
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -850,12 +847,12 @@
     备注: .nan
     是否新增: 否
     省: 内蒙古自治区
-  sheet_name: 2018年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161223辉瑞新增药品2013年历史数据检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2018年出版医院名单
+- - APP1_COD: 注射
     APP2_COD: 溶液剂（注射剂）
     BRAND_MKT: .nan
     CITY: 乌海市
@@ -870,12 +867,12 @@
     STANDARD_UNIT: 2001
     VALUE: 157279
     YEAR: 2013
-  sheet_name: 辉瑞新增13年
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161223辉瑞新增药品2013年历史数据检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/161223辉瑞新增药品2013年历史数据检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞新增13年
+- - APP1_COD: 注射
     APP2_COD: 溶液剂（注射剂）
     BRAND_MKT: .nan
     CITY: 乌海市
@@ -890,12 +887,12 @@
     STANDARD_UNIT: 1502
     VALUE: 118057
     YEAR: 2013
-  sheet_name: 辉瑞新增13年
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170915辉瑞1707底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/161223辉瑞新增药品2013年历史数据检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞新增13年
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -910,12 +907,12 @@
     STANDARD_UNIT: 2000
     VALUE: 524
     YEAR: 2017
-  sheet_name: 辉瑞1707
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170915辉瑞1707底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170915辉瑞1707底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1707
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -930,12 +927,12 @@
     STANDARD_UNIT: 500
     VALUE: 131
     YEAR: 2017
-  sheet_name: 辉瑞1707
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170915辉瑞1707底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1707
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿勒泰市
@@ -950,12 +947,12 @@
     STANDARD_UNIT: 1000
     VALUE: 210
     YEAR: 2017
-  sheet_name: 辉瑞1701
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1701
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -970,12 +967,12 @@
     STANDARD_UNIT: 2000
     VALUE: 427
     YEAR: 2017
-  sheet_name: 辉瑞1701
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1701
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -990,12 +987,12 @@
     STANDARD_UNIT: 12000
     VALUE: 15000
     YEAR: 2011
-  sheet_name: 甲钴胺-四环医药1101-1705历史数据更新
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 甲钴胺-四环医药1101-1705历史数据更新
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1010,12 +1007,12 @@
     STANDARD_UNIT: 12000
     VALUE: 15000
     YEAR: 2011
-  sheet_name: 甲钴胺-四环医药1101-1705历史数据更新
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180615辉瑞1804底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 甲钴胺-四环医药1101-1705历史数据更新
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1030,12 +1027,12 @@
     STANDARD_UNIT: 3600
     VALUE: 943
     YEAR: 2018
-  sheet_name: 辉瑞1804
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180615辉瑞1804底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180615辉瑞1804底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1804
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1050,12 +1047,12 @@
     STANDARD_UNIT: 1000
     VALUE: 305
     YEAR: 2018
-  sheet_name: 辉瑞1804
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180713辉瑞1805底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180615辉瑞1804底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1804
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1070,12 +1067,12 @@
     STANDARD_UNIT: 2000
     VALUE: 427
     YEAR: 2018
-  sheet_name: 辉瑞1805
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180713辉瑞1805底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180713辉瑞1805底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1805
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1090,12 +1087,12 @@
     STANDARD_UNIT: 5000
     VALUE: 1174
     YEAR: 2018
-  sheet_name: 辉瑞1805
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180115辉瑞1711底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180713辉瑞1805底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1805
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿勒泰市
@@ -1110,12 +1107,12 @@
     STANDARD_UNIT: 1000
     VALUE: 210
     YEAR: 2017
-  sheet_name: 辉瑞1711
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180115辉瑞1711底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180115辉瑞1711底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1711
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1130,12 +1127,12 @@
     STANDARD_UNIT: 1000
     VALUE: 255
     YEAR: 2017
-  sheet_name: 辉瑞1711
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191014辉瑞-8月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/180115辉瑞1711底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1711
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 鞍山市
@@ -1150,12 +1147,12 @@
     STANDARD_UNIT: 30
     VALUE: 11880
     YEAR: 2019
-  sheet_name: 辉瑞-8月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191014辉瑞-8月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/191014辉瑞-8月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-8月
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -1170,12 +1167,12 @@
     STANDARD_UNIT: 200
     VALUE: 78000
     YEAR: 2019
-  sheet_name: 辉瑞-8月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190813辉瑞-6月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/191014辉瑞-8月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-8月
+- - APP1_COD: 注射
     APP2_COD: 溶液剂（注射剂）
     BRAND_MKT: .nan
     CITY: 青岛市
@@ -1190,12 +1187,12 @@
     STANDARD_UNIT: 1200
     VALUE: 75276
     YEAR: 2019
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190813辉瑞-6月检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190813辉瑞-6月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 青岛市
@@ -1210,12 +1207,12 @@
     STANDARD_UNIT: 30000
     VALUE: 8940
     YEAR: 2019
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190813辉瑞-6月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1230,12 +1227,12 @@
     STANDARD_UNIT: 2000
     VALUE: 510
     YEAR: 2018
-  sheet_name: 辉瑞1812
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1812
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1250,12 +1247,12 @@
     STANDARD_UNIT: 3000
     VALUE: 870
     YEAR: 2018
-  sheet_name: 辉瑞1812
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190712辉瑞-5月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1812
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -1270,12 +1267,12 @@
     STANDARD_UNIT: 107
     VALUE: 41730
     YEAR: 2019
-  sheet_name: 辉瑞-5月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190712辉瑞-5月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190712辉瑞-5月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-5月
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 白山市
@@ -1290,12 +1287,12 @@
     STANDARD_UNIT: 60
     VALUE: 25080
     YEAR: 2019
-  sheet_name: 辉瑞-5月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190712辉瑞-5月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-5月
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -1310,12 +1307,12 @@
     STANDARD_UNIT: 300
     VALUE: 118500
     YEAR: 2019
-  sheet_name: 辉瑞1903
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1903
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 白山市
@@ -1330,12 +1327,12 @@
     STANDARD_UNIT: 30
     VALUE: 12540
     YEAR: 2019
-  sheet_name: 辉瑞1903
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/171016辉瑞1708底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1903
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿勒泰市
@@ -1350,12 +1347,12 @@
     STANDARD_UNIT: 1000
     VALUE: 210
     YEAR: 2017
-  sheet_name: 辉瑞1708
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/171016辉瑞1708底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/171016辉瑞1708底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1708
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1370,12 +1367,12 @@
     STANDARD_UNIT: 3000
     VALUE: 641
     YEAR: 2017
-  sheet_name: 辉瑞1708
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215补充历史数据.xlsx
-  raw_data:
-    医院名称: 北京广外社区卫生服务中心
+  - fileName: CPA/Pfizer/171016辉瑞1708底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1708
+- - 医院名称: 北京广外社区卫生服务中心
     医院编码: 100782
     参考级别: 二级
     地区: 北京
@@ -1383,12 +1380,12 @@
     是否为2017年出版医院: 是
     是否为2018年出版医院: 是
     省: 北京市
-  sheet_name: 2017-2018年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215补充历史数据.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/Pfizer/190215补充历史数据.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017-2018年出版医院名单
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -1396,12 +1393,12 @@
     是否为2017年出版医院: 是
     是否为2018年出版医院: 是
     省: 内蒙古自治区
-  sheet_name: 2017-2018年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190422辉瑞-15个药品1701-1812检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190215补充历史数据.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017-2018年出版医院名单
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿勒泰市
@@ -1416,12 +1413,12 @@
     STANDARD_UNIT: 1000
     VALUE: 270
     YEAR: 2017
-  sheet_name: 辉瑞-15个药品1701-1812
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190422辉瑞-15个药品1701-1812检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190422辉瑞-15个药品1701-1812检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-15个药品1701-1812
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1436,12 +1433,12 @@
     STANDARD_UNIT: 6000
     VALUE: 1318
     YEAR: 2017
-  sheet_name: 辉瑞-15个药品1701-1812
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190422辉瑞-15个药品1701-1812检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-15个药品1701-1812
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 沈阳市
@@ -1456,12 +1453,12 @@
     STANDARD_UNIT: 9000
     VALUE: 3960
     YEAR: 2017
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 沈阳市
@@ -1476,12 +1473,12 @@
     STANDARD_UNIT: 420
     VALUE: 916
     YEAR: 2017
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/181213辉瑞1810底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿勒泰市
@@ -1496,12 +1493,12 @@
     STANDARD_UNIT: 1000
     VALUE: 310
     YEAR: 2018
-  sheet_name: 辉瑞1810
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/181213辉瑞1810底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/181213辉瑞1810底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1810
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安宁市
@@ -1516,12 +1513,12 @@
     STANDARD_UNIT: 1000
     VALUE: 302
     YEAR: 2018
-  sheet_name: 辉瑞1810
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180413辉瑞1802底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/181213辉瑞1810底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1810
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1536,12 +1533,12 @@
     STANDARD_UNIT: 3000
     VALUE: 641
     YEAR: 2018
-  sheet_name: 辉瑞1802
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180413辉瑞1802底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180413辉瑞1802底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1802
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 北京市
@@ -1556,12 +1553,12 @@
     STANDARD_UNIT: 4000
     VALUE: 1188
     YEAR: 2018
-  sheet_name: 辉瑞1802
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180413辉瑞1802底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1802
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1576,12 +1573,12 @@
     STANDARD_UNIT: 5000
     VALUE: 1310
     YEAR: 2017
-  sheet_name: 辉瑞1712
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1712
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1596,12 +1593,12 @@
     STANDARD_UNIT: 500
     VALUE: 120
     YEAR: 2017
-  sheet_name: 辉瑞1712
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
-  raw_data:
-    APP2_COD: .nan
+  - fileName: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1712
+- - APP2_COD: .nan
     CORP_NAME: 山东绿叶制药集团有限公司
     MOLE_NAME: 阿卡波糖
     PACK_DES: .nan
@@ -1609,12 +1606,12 @@
     原PRODUCT_NAME: 阿卡波糖
     更新后CORP_NAME: .nan
     更新后PRODUCT_NAME: 贝希
-  sheet_name: 商品名更新对照表
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
-  raw_data:
-    APP2_COD: .nan
+  - fileName: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 商品名更新对照表
+- - APP2_COD: .nan
     CORP_NAME: 昆明源瑞制药有限公司
     MOLE_NAME: 阿莫西林克拉维酸钾
     PACK_DES: .nan
@@ -1622,12 +1619,12 @@
     原PRODUCT_NAME: 阿莫西林克拉维酸钾
     更新后CORP_NAME: .nan
     更新后PRODUCT_NAME: 阿克诺
-  sheet_name: 商品名更新对照表
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170117补充13个.xlsx
-  raw_data:
-    医院名称: 北京广外社区卫生服务中心
+  - fileName: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 商品名更新对照表
+- - 医院名称: 北京广外社区卫生服务中心
     医院编码: 100782
     参考级别: 二级
     地区: 北京
@@ -1637,12 +1634,12 @@
     是否为2015年出版医院: 是
     是否为2016年出版医院: 是
     省: 北京市
-  sheet_name: 2013年-2016年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170117补充13个.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/Pfizer/170117补充13个.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2013年-2016年出版医院名单
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -1652,12 +1649,12 @@
     是否为2015年出版医院: 是
     是否为2016年出版医院: 是
     省: 内蒙古自治区
-  sheet_name: 2013年-2016年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
-  raw_data:
-    医院名称: 北京广外社区卫生服务中心
+  - fileName: CPA/Pfizer/170117补充13个.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2013年-2016年出版医院名单
+- - 医院名称: 北京广外社区卫生服务中心
     医院编码: 100782
     参考级别: 二级
     地区: 北京
@@ -1666,12 +1663,12 @@
     是否为2015年出版医院: 是
     是否为2016年出版医院: 是
     省: 北京市
-  sheet_name: 2014年-2016年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2014年-2016年出版医院名单
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -1680,12 +1677,12 @@
     是否为2015年出版医院: 是
     是否为2016年出版医院: 是
     省: 内蒙古自治区
-  sheet_name: 2014年-2016年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170117补充13个.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2014年-2016年出版医院名单
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -1700,12 +1697,12 @@
     STANDARD_UNIT: 4200
     VALUE: 16380
     YEAR: 2013
-  sheet_name: 辉瑞新增13个药品1301-1611
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170117补充13个.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170117补充13个.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞新增13个药品1301-1611
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -1720,12 +1717,12 @@
     STANDARD_UNIT: 1750
     VALUE: 6825
     YEAR: 2013
-  sheet_name: 辉瑞新增13个药品1301-1611
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/181015辉瑞1808底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170117补充13个.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞新增13个药品1301-1611
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1740,12 +1737,12 @@
     STANDARD_UNIT: 2000
     VALUE: 427
     YEAR: 2018
-  sheet_name: 辉瑞1808
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/181015辉瑞1808底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/181015辉瑞1808底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1808
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -1760,12 +1757,12 @@
     STANDARD_UNIT: 3000
     VALUE: 641
     YEAR: 2018
-  sheet_name: 辉瑞1808
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191114辉瑞-临时检索.xlsx
-  raw_data:
-    2017年出版医院: 是
+  - fileName: CPA/Pfizer/181015辉瑞1808底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1808
+- - 2017年出版医院: 是
     2018年出版医院: 是
     2019年出版医院: 是
     医院名称: 北京广外社区卫生服务中心
@@ -1774,12 +1771,12 @@
     地区: 北京
     城市: 北京市
     省: 北京市
-  sheet_name: 2017年-2019年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191114辉瑞-临时检索.xlsx
-  raw_data:
-    2017年出版医院: 是
+  - fileName: CPA/Pfizer/191114辉瑞-临时检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017年-2019年出版医院名单
+- - 2017年出版医院: 是
     2018年出版医院: 是
     2019年出版医院: 是
     医院名称: 内蒙古医学院第三附属医院
@@ -1788,12 +1785,12 @@
     地区: 内蒙古
     城市: 包头市
     省: 内蒙古自治区
-  sheet_name: 2017年-2019年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/191114辉瑞-临时检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017年-2019年出版医院名单
+- - APP1_COD: 口服
     APP2_COD: 胶囊剂（胶丸、滴丸）
     BRAND_MKT: .nan
     CITY: 潍坊市
@@ -1808,12 +1805,12 @@
     STANDARD_UNIT: 19200
     VALUE: 4000
     YEAR: 2018
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 潍坊市
@@ -1828,12 +1825,12 @@
     STANDARD_UNIT: 10800
     VALUE: 17806
     YEAR: 2018
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191114辉瑞-9月检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 襄阳市
@@ -1848,12 +1845,12 @@
     STANDARD_UNIT: 16800
     VALUE: 35568
     YEAR: 2019
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191114辉瑞-9月检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 襄阳市
@@ -1868,12 +1865,12 @@
     STANDARD_UNIT: 24000
     VALUE: 5400
     YEAR: 2019
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215补充历史数据.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 注射
     APP2_COD: 溶液剂（注射剂）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -1888,12 +1885,12 @@
     STANDARD_UNIT: 7000
     VALUE: 65870
     YEAR: 2017
-  sheet_name: 辉瑞新增1701-1812
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190215补充历史数据.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190215补充历史数据.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞新增1701-1812
+- - APP1_COD: 注射
     APP2_COD: 溶液剂（注射剂）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -1908,12 +1905,12 @@
     STANDARD_UNIT: 3000
     VALUE: 7920
     YEAR: 2017
-  sheet_name: 辉瑞新增1701-1812
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191114辉瑞-临时检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190215补充历史数据.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞新增1701-1812
+- - APP1_COD: 口服
     APP2_COD: 胶囊剂（胶丸、滴丸）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -1928,12 +1925,12 @@
     STANDARD_UNIT: 10000
     VALUE: 4200
     YEAR: 2017
-  sheet_name: 辉瑞新增1701-1909
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191114辉瑞-临时检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/191114辉瑞-临时检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞新增1701-1909
+- - APP1_COD: 口服
     APP2_COD: 胶囊剂（胶丸、滴丸）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -1948,12 +1945,12 @@
     STANDARD_UNIT: 10000
     VALUE: 4200
     YEAR: 2017
-  sheet_name: 辉瑞新增1701-1909
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/200213辉瑞-12月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/191114辉瑞-临时检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞新增1701-1909
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 上海市
@@ -1968,12 +1965,12 @@
     STANDARD_UNIT: 1400
     VALUE: 900662
     YEAR: 2018
-  sheet_name: 2018年补报数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/200213辉瑞-12月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/200213辉瑞-12月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2018年补报数据
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 上海市
@@ -1988,12 +1985,12 @@
     STANDARD_UNIT: 1200
     VALUE: 771996
     YEAR: 2018
-  sheet_name: 2018年补报数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/171128辉瑞-紫杉醇(白蛋白结合型)1707-1709底层检索(反馈).xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/200213辉瑞-12月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2018年补报数据
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -2008,12 +2005,12 @@
     STANDARD_UNIT: 30
     VALUE: 175500
     YEAR: 2017
-  sheet_name: 紫杉醇(白蛋白结合型)1707-1709
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/171128辉瑞-紫杉醇(白蛋白结合型)1707-1709底层检索(反馈).xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/171128辉瑞-紫杉醇(白蛋白结合型)1707-1709底层检索(反馈).xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 紫杉醇(白蛋白结合型)1707-1709
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -2028,12 +2025,12 @@
     STANDARD_UNIT: 12
     VALUE: 70200
     YEAR: 2017
-  sheet_name: 紫杉醇(白蛋白结合型)1707-1709
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/171128辉瑞-紫杉醇(白蛋白结合型)1707-1709底层检索(反馈).xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 紫杉醇(白蛋白结合型)1707-1709
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -2048,12 +2045,12 @@
     STANDARD_UNIT: 500
     VALUE: 128
     YEAR: 2018
-  sheet_name: 辉瑞1806
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1806
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -2068,12 +2065,12 @@
     STANDARD_UNIT: 2000
     VALUE: 427
     YEAR: 2018
-  sheet_name: 辉瑞1806
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1806
+- - APP1_COD: 注射
     APP2_COD: 溶液剂（注射剂）
     BRAND_MKT: .nan
     CITY: 安庆市
@@ -2088,12 +2085,12 @@
     STANDARD_UNIT: 900
     VALUE: 96264
     YEAR: 2015
-  sheet_name: 底层1
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 底层1
+- - APP1_COD: 注射
     APP2_COD: 溶液剂（注射剂）
     BRAND_MKT: .nan
     CITY: 安庆市
@@ -2108,12 +2105,12 @@
     STANDARD_UNIT: 1600
     VALUE: 165728
     YEAR: 2015
-  sheet_name: 底层1
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/200110辉瑞-11月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 底层1
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -2128,12 +2125,12 @@
     STANDARD_UNIT: 450
     VALUE: 175500
     YEAR: 2019
-  sheet_name: 辉瑞-11月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/200110辉瑞-11月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/200110辉瑞-11月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-11月
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 蚌埠市
@@ -2148,12 +2145,12 @@
     STANDARD_UNIT: 600
     VALUE: 228000
     YEAR: 2019
-  sheet_name: 辉瑞-11月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/cpa新增分子v1.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/200110辉瑞-11月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-11月
+- - APP1_COD: 口服
     APP2_COD: 胶囊剂（胶丸、滴丸）
     BRAND_MKT: .nan
     CITY: 安宁市
@@ -2170,12 +2167,12 @@
     VALUE: 10500
     YEAR: 2017
     min1: 庆迈胶囊剂（胶丸、滴丸）15 MG10重庆市庆余堂制药有限公司
-  sheet_name: Sheet 1
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/cpa新增分子v1.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/cpa新增分子v1.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: Sheet 1
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安庆市
@@ -2192,12 +2189,12 @@
     VALUE: 123462
     YEAR: 2017
     min1: 乐喜林片剂10 MG24昆山龙灯瑞迪制药有限公司
-  sheet_name: Sheet 1
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/cpa新增分子v1.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: Sheet 1
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -2212,12 +2209,12 @@
     STANDARD_UNIT: 3000
     VALUE: 765
     YEAR: 2018
-  sheet_name: 辉瑞1809
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1809
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -2232,12 +2229,12 @@
     STANDARD_UNIT: 3000
     VALUE: 870
     YEAR: 2018
-  sheet_name: 辉瑞1809
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1809
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -2252,12 +2249,12 @@
     STANDARD_UNIT: 3000
     VALUE: 1110
     YEAR: 2017
-  sheet_name: 辉瑞临时检索
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞临时检索
+- - APP1_COD: 口服
     APP2_COD: 胶囊剂（胶丸、滴丸）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -2272,12 +2269,12 @@
     STANDARD_UNIT: 3000
     VALUE: 3360
     YEAR: 2017
-  sheet_name: 辉瑞临时检索
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191114辉瑞-9月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞临时检索
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -2292,12 +2289,12 @@
     STANDARD_UNIT: 1200
     VALUE: 22860
     YEAR: 2019
-  sheet_name: 哌拉西林钠他唑巴坦钠1-8月更新数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191114辉瑞-9月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 哌拉西林钠他唑巴坦钠1-8月更新数据
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 阿克苏市
@@ -2312,12 +2309,12 @@
     STANDARD_UNIT: 1200
     VALUE: 33912
     YEAR: 2019
-  sheet_name: 哌拉西林钠他唑巴坦钠1-8月更新数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
-  raw_data:
-    2017年出版: 是
+  - fileName: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 哌拉西林钠他唑巴坦钠1-8月更新数据
+- - 2017年出版: 是
     2018年出版: 是
     2019年出版: 是
     医院名称: 北京广外社区卫生服务中心
@@ -2326,12 +2323,12 @@
     地区: 北京
     城市: 北京市
     省: 北京市
-  sheet_name: 2017-2019年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
-  raw_data:
-    2017年出版: 是
+  - fileName: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017-2019年出版医院名单
+- - 2017年出版: 是
     2018年出版: 是
     2019年出版: 是
     医院名称: 内蒙古医学院第三附属医院
@@ -2340,12 +2337,12 @@
     地区: 内蒙古
     城市: 包头市
     省: 内蒙古自治区
-  sheet_name: 2017-2019年出版医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170515辉瑞1703底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 2017-2019年出版医院名单
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿勒泰市
@@ -2360,12 +2357,12 @@
     STANDARD_UNIT: 2000
     VALUE: 540
     YEAR: 2017
-  sheet_name: 辉瑞1703
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170515辉瑞1703底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170515辉瑞1703底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1703
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 保定市
@@ -2380,12 +2377,12 @@
     STANDARD_UNIT: 500
     VALUE: 128
     YEAR: 2017
-  sheet_name: 辉瑞1703
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170515辉瑞1703底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1703
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 淮南市
@@ -2400,12 +2397,12 @@
     STANDARD_UNIT: 3000
     VALUE: 660
     YEAR: 2017
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 辛集市
@@ -2420,12 +2417,12 @@
     STANDARD_UNIT: 1000
     VALUE: 253
     YEAR: 2017
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -2440,12 +2437,12 @@
     STANDARD_UNIT: 5000
     VALUE: 1310
     YEAR: 2016
-  sheet_name: 辉瑞1610
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1610
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 北京市
@@ -2460,12 +2457,12 @@
     STANDARD_UNIT: 20000
     VALUE: 5680
     YEAR: 2016
-  sheet_name: 辉瑞1610
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/200213辉瑞-12月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1610
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 石嘴山市
@@ -2480,12 +2477,12 @@
     STANDARD_UNIT: 60
     VALUE: 22616
     YEAR: 2019
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/200213辉瑞-12月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/200213辉瑞-12月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 注射
     APP2_COD: 溶液剂（注射剂）
     BRAND_MKT: .nan
     CITY: 广州市
@@ -2500,12 +2497,12 @@
     STANDARD_UNIT: 3200
     VALUE: 149331
     YEAR: 2019
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191212辉瑞-10月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/200213辉瑞-12月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 鞍山市
@@ -2520,12 +2517,12 @@
     STANDARD_UNIT: 50
     VALUE: 19800
     YEAR: 2019
-  sheet_name: 辉瑞-10月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/191212辉瑞-10月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/191212辉瑞-10月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-10月
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 蚌埠市
@@ -2540,12 +2537,12 @@
     STANDARD_UNIT: 1200
     VALUE: 456000
     YEAR: 2019
-  sheet_name: 辉瑞-10月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180914辉瑞1807底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/191212辉瑞-10月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-10月
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 阿勒泰市
@@ -2560,12 +2557,12 @@
     STANDARD_UNIT: 1000
     VALUE: 210
     YEAR: 2018
-  sheet_name: 辉瑞1807
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180914辉瑞1807底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180914辉瑞1807底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1807
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 安阳市
@@ -2580,12 +2577,12 @@
     STANDARD_UNIT: 2000
     VALUE: 524
     YEAR: 2018
-  sheet_name: 辉瑞1807
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
-  raw_data:
-    APP1_COD: 直肠
+  - fileName: CPA/Pfizer/180914辉瑞1807底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1807
+- - APP1_COD: 直肠
     APP2_COD: 栓剂
     BRAND_MKT: .nan
     CITY: 上海市
@@ -2600,12 +2597,12 @@
     STANDARD_UNIT: 660
     VALUE: 2035
     YEAR: 2017
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
-  raw_data:
-    APP1_COD: 口服
+  - fileName: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - APP1_COD: 口服
     APP2_COD: 片剂
     BRAND_MKT: .nan
     CITY: 上海市
@@ -2620,36 +2617,36 @@
     STANDARD_UNIT: 50400
     VALUE: 63982
     YEAR: 2017
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
-  raw_data:
-    TA: AI
+  - fileName: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 替换数据
+- - TA: AI
     医院编码: 100782
     城市: 北京市
     年: 2016
     数量（支/片）: 2340
     月: 10
     金额（元）: 6963
-  sheet_name: TA-others1610
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
-  raw_data:
-    TA: AI
+  - fileName: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: TA-others1610
+- - TA: AI
     医院编码: 10011
     城市: 包头市
     年: 2016
     数量（支/片）: 104885
     月: 10
     金额（元）: 303557
-  sheet_name: TA-others1610
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: TA-others1610
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 鞍山市
@@ -2664,12 +2661,12 @@
     STANDARD_UNIT: 50
     VALUE: 19800
     YEAR: 2019
-  sheet_name: 辉瑞1901
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1901
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -2684,12 +2681,12 @@
     STANDARD_UNIT: 150
     VALUE: 59250
     YEAR: 2019
-  sheet_name: 辉瑞1901
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190912辉瑞-7月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞1901
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 鞍山市
@@ -2704,12 +2701,12 @@
     STANDARD_UNIT: 80
     VALUE: 31680
     YEAR: 2019
-  sheet_name: 辉瑞-7月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190912辉瑞-7月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190912辉瑞-7月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-7月
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 白山市
@@ -2724,12 +2721,12 @@
     STANDARD_UNIT: 100
     VALUE: 41800
     YEAR: 2019
-  sheet_name: 辉瑞-7月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190813辉瑞-6月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190912辉瑞-7月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-7月
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 巴彦淖尔市
@@ -2744,12 +2741,12 @@
     STANDARD_UNIT: 200
     VALUE: 78000
     YEAR: 2019
-  sheet_name: 辉瑞-6月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190813辉瑞-6月检索.xlsx
-  raw_data:
-    APP1_COD: 注射
+  - fileName: CPA/Pfizer/190813辉瑞-6月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-6月
+- - APP1_COD: 注射
     APP2_COD: 粉剂（粉剂针）
     BRAND_MKT: .nan
     CITY: 蚌埠市
@@ -2764,425 +2761,8 @@
     STANDARD_UNIT: 1000
     VALUE: 380000
     YEAR: 2019
-  sheet_name: 辉瑞-6月
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190613辉瑞1904底层检索（2）.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 阿勒泰市
-    CORP_NAME: 勃林格殷格翰集团
-    HOSPITAL_CODE: 830151
-    MOLE_NAME: 阿法替尼
-    MONTH: 4
-    PACK_DES: 30 MG
-    PACK_NUMBER: 7
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 吉泰瑞
-    STANDARD_UNIT: -84
-    VALUE: -14927
-    YEAR: 2019
-  sheet_name: 辉瑞1904（2）
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190613辉瑞1904底层检索（2）.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 阿勒泰市
-    CORP_NAME: 阿斯利康集团
-    HOSPITAL_CODE: 830151
-    MOLE_NAME: 奥希替尼
-    MONTH: 4
-    PACK_DES: 80 MG
-    PACK_NUMBER: 30
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 泰瑞沙
-    STANDARD_UNIT: 270
-    VALUE: 137700
-    YEAR: 2019
-  sheet_name: 辉瑞1904（2）
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180111辉瑞临时检索.xlsx
-  raw_data:
-    医院名称: 安庆市立医院
-    医院编码: 230151
-    参考级别: 三甲
-    地区: 安徽
-    城市: 安庆市
-    是否为2012年出版医院: 是
-    是否为2013年出版医院: 是
-    是否为2014年出版医院: 是
-    是否为2015年出版医院: 是
-    是否为2016年出版医院: 是
-    是否为2017年出版医院: 是
-    省: 安徽省
-  sheet_name: 2012-2017年医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180111辉瑞临时检索.xlsx
-  raw_data:
-    医院名称: 合肥市第一人民医院
-    医院编码: 230011
-    参考级别: 三甲
-    地区: 安徽
-    城市: 合肥市
-    是否为2012年出版医院: 是
-    是否为2013年出版医院: 是
-    是否为2014年出版医院: 是
-    是否为2015年出版医院: 是
-    是否为2016年出版医院: 是
-    是否为2017年出版医院: 是
-    省: 安徽省
-  sheet_name: 2012-2017年医院名单
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170714辉瑞1705底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 阿勒泰市
-    CORP_NAME: 浙江震元制药有限公司
-    HOSPITAL_CODE: 830151
-    MOLE_NAME: 制霉菌素
-    MONTH: 5
-    PACK_DES: 0.5 MIU
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 制霉菌素
-    STANDARD_UNIT: 1000
-    VALUE: 210
-    YEAR: 2017
-  sheet_name: 辉瑞1705
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170714辉瑞1705底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 安阳市
-    CORP_NAME: 浙江震元制药有限公司
-    HOSPITAL_CODE: 450241
-    MOLE_NAME: 制霉菌素
-    MONTH: 5
-    PACK_DES: 0.5 MIU
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 制霉菌素
-    STANDARD_UNIT: 2000
-    VALUE: 524
-    YEAR: 2017
-  sheet_name: 辉瑞1705
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 海口市
-    CORP_NAME: 勃林格殷格翰集团
-    HOSPITAL_CODE: 570051
-    MOLE_NAME: 阿法替尼
-    MONTH: 1
-    PACK_DES: 30 MG
-    PACK_NUMBER: 7
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 吉泰瑞
-    STANDARD_UNIT: 70
-    VALUE: 11235
-    YEAR: 2019
-  sheet_name: 2019年替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 海口市
-    CORP_NAME: 勃林格殷格翰集团
-    HOSPITAL_CODE: 570051
-    MOLE_NAME: 阿法替尼
-    MONTH: 1
-    PACK_DES: 40 MG
-    PACK_NUMBER: 7
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 吉泰瑞
-    STANDARD_UNIT: 140
-    VALUE: 28000
-    YEAR: 2019
-  sheet_name: 2019年替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/201611 CPA.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 安阳市
-    CORP_NAME: 浙江震元制药有限公司
-    HOSPITAL_CODE: 450731
-    MOLE_NAME: 制霉菌素
-    MONTH: 11
-    PACK_DES: 0.5 MIU
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 制霉菌素
-    STANDARD_UNIT: 3000
-    VALUE: 641
-    YEAR: 2016
-  sheet_name: 辉瑞1611
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/201611 CPA.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 安阳市
-    CORP_NAME: 浙江震元制药有限公司
-    HOSPITAL_CODE: 450901
-    MOLE_NAME: 制霉菌素
-    MONTH: 11
-    PACK_DES: 0.5 MIU
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 制霉菌素
-    STANDARD_UNIT: 17000
-    VALUE: 5313
-    YEAR: 2016
-  sheet_name: 辉瑞1611
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
-  raw_data:
-    PRODUCT_MKT: Zithromax IV_MKT:IV(G+F)
-    TA: AI
-    医院编码: 10021
-    城市: 乌海市
-    年: 2016
-    数量（支/片）: 1160
-    月: 10
-    金额（元）: 4467
-  sheet_name: Product-others1610
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
-  raw_data:
-    PRODUCT_MKT: Zithromax IV_MKT:IV(G+F)
-    TA: AI
-    医院编码: 10031
-    城市: 乌海市
-    年: 2016
-    数量（支/片）: 180
-    月: 10
-    金额（元）: 7099
-  sheet_name: Product-others1610
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190114辉瑞1811底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 安阳市
-    CORP_NAME: 浙江震元制药有限公司
-    HOSPITAL_CODE: 450901
-    MOLE_NAME: 制霉菌素
-    MONTH: 11
-    PACK_DES: 0.5 MIU
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 制霉菌素
-    STANDARD_UNIT: 20000
-    VALUE: 4696
-    YEAR: 2018
-  sheet_name: 辉瑞1811
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/190114辉瑞1811底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 北京市
-    CORP_NAME: 浙江震元制药有限公司
-    HOSPITAL_CODE: 100021
-    MOLE_NAME: 制霉菌素
-    MONTH: 11
-    PACK_DES: 0.5 MIU
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 制霉菌素
-    STANDARD_UNIT: 1000
-    VALUE: 297
-    YEAR: 2018
-  sheet_name: 辉瑞1811
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/171215辉瑞1710底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 安阳市
-    CORP_NAME: 浙江震元制药有限公司
-    HOSPITAL_CODE: 450721
-    MOLE_NAME: 制霉菌素
-    MONTH: 10
-    PACK_DES: 0.5 MIU
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 制霉菌素
-    STANDARD_UNIT: 1000
-    VALUE: 214
-    YEAR: 2017
-  sheet_name: 辉瑞1710
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/171215辉瑞1710底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 安阳市
-    CORP_NAME: 浙江震元制药有限公司
-    HOSPITAL_CODE: 450731
-    MOLE_NAME: 制霉菌素
-    MONTH: 10
-    PACK_DES: 0.5 MIU
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 制霉菌素
-    STANDARD_UNIT: 7000
-    VALUE: 1496
-    YEAR: 2017
-  sheet_name: 辉瑞1710
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 重庆市
-    CORP_NAME: 上海医药集团股份有限公司
-    HOSPITAL_CODE: 400421
-    MOLE_NAME: 柳氮磺吡啶
-    MONTH: 4
-    PACK_DES: 250 MG
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 柳氮磺吡啶
-    STANDARD_UNIT: 3000
-    VALUE: 848
-    YEAR: 2018
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 重庆市
-    CORP_NAME: 重庆科瑞制药（集团）有限公司
-    HOSPITAL_CODE: 400421
-    MOLE_NAME: 二甲双胍
-    MONTH: 1
-    PACK_DES: 500 MG
-    PACK_NUMBER: 30
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 德艾欣
-    STANDARD_UNIT: 6000
-    VALUE: 5180
-    YEAR: 2018
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170515辉瑞1703底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 北京市
-    CORP_NAME: 上海医药集团股份有限公司
-    HOSPITAL_CODE: 100441
-    MOLE_NAME: 制霉菌素
-    MONTH: 1
-    PACK_DES: 0.5 MIU
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 制霉菌素
-    STANDARD_UNIT: 4500
-    VALUE: 1278
-    YEAR: 2016
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/170515辉瑞1703底层检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 片剂
-    BRAND_MKT: .nan
-    CITY: 北京市
-    CORP_NAME: 上海医药集团股份有限公司
-    HOSPITAL_CODE: 100441
-    MOLE_NAME: 制霉菌素
-    MONTH: 3
-    PACK_DES: 0.5 MIU
-    PACK_NUMBER: 100
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 制霉菌素
-    STANDARD_UNIT: 13000
-    VALUE: 3692
-    YEAR: 2016
-  sheet_name: 替换数据
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180111辉瑞临时检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 胶囊剂（胶丸、滴丸）
-    BRAND_MKT: .nan
-    CITY: 阿勒泰市
-    CORP_NAME: 阿根廷TRB药厂
-    HOSPITAL_CODE: 830151
-    MOLE_NAME: 双醋瑞因
-    MONTH: 11
-    PACK_DES: 50 MG
-    PACK_NUMBER: 10
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 安必丁
-    STANDARD_UNIT: 30
-    VALUE: 148
-    YEAR: 2013
-  sheet_name: 新增药品1201-1711
-  source: CPA
-- company: Pfizer
-  file_name: CPA/Pfizer/180111辉瑞临时检索.xlsx
-  raw_data:
-    APP1_COD: 口服
-    APP2_COD: 胶囊剂（胶丸、滴丸）
-    BRAND_MKT: .nan
-    CITY: 阿勒泰市
-    CORP_NAME: 阿根廷TRB药厂
-    HOSPITAL_CODE: 830151
-    MOLE_NAME: 双醋瑞因
-    MONTH: 12
-    PACK_DES: 50 MG
-    PACK_NUMBER: 10
-    PRODUCT_MKT: .nan
-    PRODUCT_NAME: 安必丁
-    STANDARD_UNIT: 100
-    VALUE: 493
-    YEAR: 2013
-  sheet_name: 新增药品1201-1711
-  source: CPA
+  - fileName: CPA/Pfizer/190813辉瑞-6月检索.xlsx
+    providers:
+    - Pfizer
+    - CPA
+    sheetName: 辉瑞-6月
