@@ -24,7 +24,7 @@ class MappingFactory(object):
 
     def __load(self):
         """
-        持久化工厂内数据到 yaml 文件中
+        从 yaml 文件中加载 all_mapping
         """
         return self
 

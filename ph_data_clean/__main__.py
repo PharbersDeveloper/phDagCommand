@@ -8,4 +8,5 @@ if __name__ == '__main__':
     cleaner = CleanerFactory().get_specific_cleaner(source, company)
     mapping = MappingFactory().get_specific_mapping(source, company)
 
-    cleaner.cleaning_process(mapping, {'测试数据key': '测试数据value'})
+    result = cleaner.cleaning_process(mapping, {'测试数据key': '测试数据value'})
+    print(result)

@@ -14,7 +14,7 @@ class DataMapping(object):
     """
     对于指定源的指定公司的匹配规则
     """
-    def __init__(self, source: str, company: str, cols: list):
+    def __init__(self, source: str, company: str, cols: list[ColCharactor]):
         self.source = source
         self.company = company
         self.cols = cols

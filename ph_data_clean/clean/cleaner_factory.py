@@ -1,3 +1,4 @@
+from ph_data_clean.clean.data_clean import DataClean
 from ph_data_clean.clean.cpa_gyc_data_clean import CpaGycDataClean
 
 
@@ -10,7 +11,7 @@ class CleanerFactory(object):
         ('cpa', 'gyc'): CpaGycDataClean,
     }
 
-    def get_specific_cleaner(self, source, company='') -> CpaGycDataClean:
+    def get_specific_cleaner(self, source, company='') -> DataClean:
         """
         根据源和公司获取特定的清洗算法
 
@@ -28,3 +29,4 @@ class CleanerFactory(object):
             raise Exception("Find more Cleaner" + str(finded))
         else:
             raise Exception("Not find Cleaner")
+
