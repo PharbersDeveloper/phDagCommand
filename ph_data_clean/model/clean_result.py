@@ -1,7 +1,6 @@
 from enum import Enum
 
 
-# TODO  枚举
 class Tag(Enum):
     SUCCESS = 1
     ERROR = -1
