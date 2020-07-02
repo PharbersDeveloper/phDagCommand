@@ -22,6 +22,6 @@ if __name__ == '__main__':
     mapping_path = '../file/ph_data_clean/mapping_table/'
     test_file = '../file/ph_data_clean/s3_test_data/CPA-倍特-test.yaml'
     test_data = get_test_data(test_file)[0]
-    
+
     main(mapping_path, test_data)
 

@@ -29,5 +29,5 @@ class CleanerFactory(object):
         elif len(finded) > 1:
             raise Exception("Find more Cleaner" + str(finded))
         else:
-            raise Exception("Not find Cleaner")
+            raise Exception(f"Not find Cleaner, source={source}, company={company}")
 
