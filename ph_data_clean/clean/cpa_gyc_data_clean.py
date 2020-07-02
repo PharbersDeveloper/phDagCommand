@@ -8,6 +8,8 @@ class CpaGycDataClean(DataClean):
     """
 
     def cleaning_process(self, mapping: list, raw_data: dict) -> CleanResult:
+        print(mapping)
+        print(raw_data)
         # standardise colunm name
         new_key_name = {}
         for raw_data_key in raw_data.keys():
@@ -26,7 +28,7 @@ class CpaGycDataClean(DataClean):
                     final_data[m["col_name"]] = new_key_name[n]
                 elif m["col_name"] not in final_data.keys():
                     final_data[m["col_name"]] = None
-        return final_data
+        # return final_data
         # print(final_data)
 
         # check error

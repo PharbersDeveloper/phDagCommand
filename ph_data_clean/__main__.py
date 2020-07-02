@@ -18,6 +18,6 @@ if __name__ == '__main__':
     cleaner = CleanerFactory().get_specific_cleaner(source, company)
     mapping = MappingFactory(mapping_path).get_specific_mapping(source, company)
 
-    result = cleaner.cleaning_process([col.to_dict() for col in mapping.cols], {'测试数据key': '测试数据value'})
+    result = cleaner.cleaning_process([col.to_dict() for col in mapping.cols], test_data[0])
     print(result)
 

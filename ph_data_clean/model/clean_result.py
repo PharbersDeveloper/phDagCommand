@@ -1,5 +1,10 @@
-class Tag():
-    pass
+from enum import Enum
+
+
+# TODO  枚举
+class Tag(Enum):
+    SUCCESS = 1
+    ERROR = -1
 
 
 class CleanResult(object):
@@ -12,4 +17,3 @@ class CleanResult(object):
         self.metadata = metadata
         self.tag = tag
         self.err_msg = err_msg
-
