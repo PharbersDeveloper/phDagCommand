@@ -17,11 +17,15 @@ def get_s3_valid_data(s3_data):
     null_data_lst = []
     null_data_name = []
     s3_valid_data = []
+    ignore = False
 
     for data in s3_data:
-        if len(data['data']) <= 4:
+        for values in data['data'].values():
+            if len(values.keys()) <= 1:
+                ignore = True
+        if len(data['data']) <= 4 or ignore == True:
             null_data_name.append(data['file'])
-            null_data_name.append(data['sheet'])
+            # null_data_name.append(data['sheet'])
             null_data_lst.append(data)
             continue
         flag = True
@@ -82,7 +86,7 @@ def append_test_data(test_data_lst):
 if __name__ == '__main__':
     for sub in os.listdir(LOCAL_CACHE_DIR):
         file = LOCAL_CACHE_DIR + sub
-        print('解析：')
+        print('筛选：')
         print(file)
         test_file = TEST_CACHE_DIR + sub.split('.')[0] + '_test.yaml'
         print('存入：')
