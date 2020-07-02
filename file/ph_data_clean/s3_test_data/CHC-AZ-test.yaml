@@ -1,7 +1,4 @@
-- company: AZ
-  file_name: CHC/AZ/4、【AZ项目】北京市2018-交付版-20190428.xlsx
-  raw_data:
-    flag: AZ_CHC
+- - flag: AZ_CHC
     价格: 58.8
     价格转换比: 14
     剂型: 肠溶胶囊
@@ -23,12 +20,12 @@
     规格: 10mg
     通用名: 雷贝拉唑钠肠溶胶囊
     金额: 1176
-  sheet_name: Sheet 1
-  source: CHC
-- company: AZ
-  file_name: CHC/AZ/4、【AZ项目】北京市2018-交付版-20190428.xlsx
-  raw_data:
-    flag: AZ_CHC
+  - fileName: CHC/AZ/4、【AZ项目】北京市2018-交付版-20190428.xlsx
+    providers:
+    - AZ
+    - CHC
+    sheetName: Sheet 1
+- - flag: AZ_CHC
     价格: 31.2
     价格转换比: 1
     剂型: 冻干粉针剂
@@ -50,12 +47,12 @@
     规格: 80mg
     通用名: 注射用泮托拉唑钠
     金额: 59280
-  sheet_name: Sheet 1
-  source: CHC
-- company: AZ
-  file_name: CHC/AZ/2、【AZ项目】安徽省2018-交付版-20190428.xlsx
-  raw_data:
-    flag: AZ_CHC
+  - fileName: CHC/AZ/4、【AZ项目】北京市2018-交付版-20190428.xlsx
+    providers:
+    - AZ
+    - CHC
+    sheetName: Sheet 1
+- - flag: AZ_CHC
     价格: 42.8
     价格转换比: 10
     剂型: 片剂(肠溶片)
@@ -77,12 +74,12 @@
     规格: 20mg
     通用名: 雷贝拉唑钠肠溶片
     金额: 42800
-  sheet_name: Sheet 1
-  source: CHC
-- company: AZ
-  file_name: CHC/AZ/2、【AZ项目】安徽省2018-交付版-20190428.xlsx
-  raw_data:
-    flag: AZ_CHC
+  - fileName: CHC/AZ/2、【AZ项目】安徽省2018-交付版-20190428.xlsx
+    providers:
+    - AZ
+    - CHC
+    sheetName: Sheet 1
+- - flag: AZ_CHC
     价格: 42.8
     价格转换比: 10
     剂型: 片剂(肠溶片)
@@ -104,5 +101,8 @@
     规格: 20mg
     通用名: 雷贝拉唑钠肠溶片
     金额: 2140
-  sheet_name: Sheet 1
-  source: CHC
+  - fileName: CHC/AZ/2、【AZ项目】安徽省2018-交付版-20190428.xlsx
+    providers:
+    - AZ
+    - CHC
+    sheetName: Sheet 1

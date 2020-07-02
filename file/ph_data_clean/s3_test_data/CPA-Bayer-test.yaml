@@ -1,7 +1,4 @@
-- company: Bayer
-  file_name: CPA/Bayer/oad 12 cpa pdt.xlsx
-  raw_data:
-    ADMINST: OR
+- - ADMINST: OR
     ATC: A10BA02
     CITY: 包头市
     CODE: 10011
@@ -24,12 +21,12 @@
     VALUE: 7542
     YEAR: 2017
     药品是否在大类中: 是
-  sheet_name: oad_12_cpa_pdt
-  source: CPA
-- company: Bayer
-  file_name: CPA/Bayer/oad 12 cpa pdt.xlsx
-  raw_data:
-    ADMINST: OR
+  - fileName: CPA/Bayer/oad 12 cpa pdt.xlsx
+    providers:
+    - Bayer
+    - CPA
+    sheetName: oad_12_cpa_pdt
+- - ADMINST: OR
     ATC: A10BF01
     CITY: 包头市
     CODE: 10011
@@ -52,12 +49,12 @@
     VALUE: 16902
     YEAR: 2017
     药品是否在大类中: 是
-  sheet_name: oad_12_cpa_pdt
-  source: CPA
-- company: Bayer
-  file_name: CPA/Bayer/oad 12 cpa mkt.xlsx
-  raw_data:
-    ADMINST: .nan
+  - fileName: CPA/Bayer/oad 12 cpa pdt.xlsx
+    providers:
+    - Bayer
+    - CPA
+    sheetName: oad_12_cpa_pdt
+- - ADMINST: .nan
     ATC: .nan
     CITY: 太原市
     CODE: 30021
@@ -79,12 +76,12 @@
     TA II: OAD
     VALUE: 272386
     YEAR: 2017
-  sheet_name: oad_12_cpa_mkt
-  source: CPA
-- company: Bayer
-  file_name: CPA/Bayer/oad 12 cpa mkt.xlsx
-  raw_data:
-    ADMINST: .nan
+  - fileName: CPA/Bayer/oad 12 cpa mkt.xlsx
+    providers:
+    - Bayer
+    - CPA
+    sheetName: oad_12_cpa_mkt
+- - ADMINST: .nan
     ATC: .nan
     CITY: 忻州市
     CODE: 30031
@@ -106,12 +103,12 @@
     TA II: OAD
     VALUE: 30053
     YEAR: 2017
-  sheet_name: oad_12_cpa_mkt
-  source: CPA
-- company: Bayer
-  file_name: CPA/Bayer/OAD cpa PDT.xlsx
-  raw_data:
-    ADMINST: OR
+  - fileName: CPA/Bayer/oad 12 cpa mkt.xlsx
+    providers:
+    - Bayer
+    - CPA
+    sheetName: oad_12_cpa_mkt
+- - ADMINST: OR
     ATC: A10BA02
     CITY: 包头市
     CODE: 10011
@@ -134,12 +131,12 @@
     VALUE: 7542
     YEAR: 2017
     药品是否在大类中: 是
-  sheet_name: OAD_cpa_PDT
-  source: CPA
-- company: Bayer
-  file_name: CPA/Bayer/OAD cpa PDT.xlsx
-  raw_data:
-    ADMINST: OR
+  - fileName: CPA/Bayer/OAD cpa PDT.xlsx
+    providers:
+    - Bayer
+    - CPA
+    sheetName: OAD_cpa_PDT
+- - ADMINST: OR
     ATC: A10BF01
     CITY: 包头市
     CODE: 10011
@@ -162,5 +159,8 @@
     VALUE: 16902
     YEAR: 2017
     药品是否在大类中: 是
-  sheet_name: OAD_cpa_PDT
-  source: CPA
+  - fileName: CPA/Bayer/OAD cpa PDT.xlsx
+    providers:
+    - Bayer
+    - CPA
+    sheetName: OAD_cpa_PDT

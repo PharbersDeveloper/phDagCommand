@@ -1,29 +1,26 @@
-- company: UCB
-  file_name: CPA/UCB/200413优时比-2月检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
     城市: 包头市
     省: 内蒙古自治区
-  sheet_name: Sheet2
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/200413优时比-2月检索.xlsx
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/UCB/200413优时比-2月检索.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: Sheet2
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三丙
     地区: 内蒙古
     城市: 乌海市
     省: 内蒙古自治区
-  sheet_name: Sheet2
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/200413优时比-2月检索.xlsx
-  raw_data:
-    ATC编码: N04BX51
+  - fileName: CPA/UCB/200413优时比-2月检索.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: Sheet2
+- - ATC编码: N04BX51
     剂型: TAB
     包装: H
     包装数量: 40
@@ -40,12 +37,12 @@
     药品名称: 多巴丝肼
     药品规格: ' CO 250 MG'
     金额（元）: 5014
-  sheet_name: 1-2月
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/200413优时比-2月检索.xlsx
-  raw_data:
-    ATC编码: N03AF01
+  - fileName: CPA/UCB/200413优时比-2月检索.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: 1-2月
+- - ATC编码: N03AF01
     剂型: TAB
     包装: H
     包装数量: 30
@@ -62,12 +59,12 @@
     药品名称: 卡马西平
     药品规格: 200 MG
     金额（元）: 2722
-  sheet_name: 1-2月
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/CPA AED 201907.xlsx
-  raw_data:
-    ATC编码: N03AA02
+  - fileName: CPA/UCB/200413优时比-2月检索.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: 1-2月
+- - ATC编码: N03AA02
     剂型: TAB
     包装: P
     包装数量: 100
@@ -84,12 +81,12 @@
     药品名称: 苯巴比妥
     药品规格: 30 MG
     金额（元）: 575
-  sheet_name: Sheet1
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/CPA AED 201907.xlsx
-  raw_data:
-    ATC编码: N03AF01
+  - fileName: CPA/UCB/CPA AED 201907.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: Sheet1
+- - ATC编码: N03AF01
     剂型: TAB
     包装: P
     包装数量: 100
@@ -106,12 +103,12 @@
     药品名称: 卡马西平
     药品规格: 100 MG
     金额（元）: 1530
-  sheet_name: Sheet1
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/200413优时比-2月检索.xlsx
-  raw_data:
-    add: 3
+  - fileName: CPA/UCB/CPA AED 201907.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: Sheet1
+- - add: 3
     code: 卡马西平H200 MGTABOR北京诺华制药有限公司
     date: 202001
     name: TEGRETOL
@@ -132,12 +129,12 @@
     药品名称: 卡马西平
     药品规格: 200 MG
     金额（元）: 2722
-  sheet_name: Sheet1
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/200413优时比-2月检索.xlsx
-  raw_data:
-    add: 6
+  - fileName: CPA/UCB/200413优时比-2月检索.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: Sheet1
+- - add: 6
     code: 卡马西平P100 MGTABOR上海复旦复华药业有限公司
     date: 202001
     name: CBZ generic
@@ -158,12 +155,12 @@
     药品名称: 卡马西平
     药品规格: 100 MG
     金额（元）: 173
-  sheet_name: Sheet1
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/2019 data for MAX.xlsx
-  raw_data:
-    ATC编码: N03AF01
+  - fileName: CPA/UCB/200413优时比-2月检索.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: Sheet1
+- - ATC编码: N03AF01
     剂型: TAB
     包装: P
     包装数量: 100
@@ -180,12 +177,12 @@
     药品名称: 卡马西平
     药品规格: 100 MG
     金额（元）: 1530
-  sheet_name: Sheet1
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/2019 data for MAX.xlsx
-  raw_data:
-    ATC编码: N03AG01
+  - fileName: CPA/UCB/2019 data for MAX.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: Sheet1
+- - ATC编码: N03AG01
     剂型: POWD
     包装: V
     包装数量: 1
@@ -202,12 +199,12 @@
     药品名称: 丙戊酸钠
     药品规格: 400 MG
     金额（元）: 66000
-  sheet_name: Sheet1
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/190813优时比-6月检索 （2019年累加）.xlsx
-  raw_data:
-    ATC编码: B03AA06
+  - fileName: CPA/UCB/2019 data for MAX.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: Sheet1
+- - ATC编码: B03AA06
     剂型: TAB
     包装: H
     包装数量: 20
@@ -224,12 +221,12 @@
     药品名称: 琥珀酸亚铁
     药品规格: 100 MG
     金额（元）: 15432
-  sheet_name: 1-6月数据
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/190813优时比-6月检索 （2019年累加）.xlsx
-  raw_data:
-    ATC编码: B03AC50
+  - fileName: CPA/UCB/190813优时比-6月检索 （2019年累加）.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: 1-6月数据
+- - ATC编码: B03AC50
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -246,12 +243,12 @@
     药品名称: 蔗糖铁
     药品规格: 100 MG 5 ML
     金额（元）: 47520
-  sheet_name: 1-6月数据
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/CPA DATA 201801-201904.xlsx
-  raw_data:
-    ATC: N03AF02
+  - fileName: CPA/UCB/190813优时比-6月检索 （2019年累加）.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: 1-6月数据
+- - ATC: N03AF02
     City: 株洲市
     Form: TAB
     GeneName: 奥卡西平
@@ -274,12 +271,12 @@
     Value: 4652
     Year: 2018
     给药途径: OR
-  sheet_name: Sheet1
-  source: CPA
-- company: UCB
-  file_name: CPA/UCB/CPA DATA 201801-201904.xlsx
-  raw_data:
-    ATC: N03AG01
+  - fileName: CPA/UCB/CPA DATA 201801-201904.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: Sheet1
+- - ATC: N03AG01
     City: 株洲市
     Form: TAB
     GeneName: 丙戊酸钠
@@ -302,5 +299,8 @@
     Value: 384
     Year: 2018
     给药途径: OR
-  sheet_name: Sheet1
-  source: CPA
+  - fileName: CPA/UCB/CPA DATA 201801-201904.xlsx
+    providers:
+    - UCB
+    - CPA
+    sheetName: Sheet1

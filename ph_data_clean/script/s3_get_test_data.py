@@ -55,20 +55,16 @@ def get_test_data(s3_valid_data):
     :return: test_data_lst: 最终测试数据 type = list
     """
     test_data_lst = []
-    # print(s3_valid_data)
     for data in s3_valid_data:
-        # print(data)
         for i in (0, 1):
-            test_data = {'company': data['company'],
-                         'source': data['source'],
-                         'file_name': data['file'],
-                         'sheet_name': data['sheet'],
-                         'raw_data': {}}
+            test_data = [{},
+                         {'fileName': data['file'],
+                          'providers': [data['company'], data['source']],
+                          'sheetName': data['sheet']}]
             for key in data['data'].keys():
-                test_data['raw_data'][key] = data['data'][key][i]
+                test_data[0][key] = data['data'][key][i]
             test_data_lst.append(test_data)
     return test_data_lst
-    # print(test_data_lst)
 
 
 def append_test_data(test_data_lst):
@@ -78,7 +74,7 @@ def append_test_data(test_data_lst):
     :param test_data_lst: 拆开的可用数据
     """
     # print(os.listdir(TEST_CACHE_DIR))
-    if sub.split('.')[0] + '_test.yaml' not in os.listdir(TEST_CACHE_DIR):
+    if sub.split('.')[0] + '-test.yaml' not in os.listdir(TEST_CACHE_DIR):
         with open(test_file, 'a', encoding='UTF-8') as file:
             yaml.dump(test_data_lst, file, default_flow_style=False, encoding='utf-8', allow_unicode=True)
 
@@ -88,7 +84,7 @@ if __name__ == '__main__':
         file = LOCAL_CACHE_DIR + sub
         print('筛选：')
         print(file)
-        test_file = TEST_CACHE_DIR + sub.split('.')[0] + '_test.yaml'
+        test_file = TEST_CACHE_DIR + sub.split('.')[0] + '-test.yaml'
         print('存入：')
         print(test_file)
         file_lst = load_by_file(file)

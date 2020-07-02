@@ -1,7 +1,4 @@
-- company: BMS
-  file_name: CPA/BMS/convert_170414施贵宝1702检索.xlsx
-  raw_data:
-    医院编码: 230151
+- - 医院编码: 230151
     城市: 安庆市
     季度: 1
     年: 2017
@@ -10,12 +7,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 87696
-  sheet_name: others
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170414施贵宝1702检索.xlsx
-  raw_data:
-    医院编码: 230051
+  - fileName: CPA/BMS/convert_170414施贵宝1702检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: others
+- - 医院编码: 230051
     城市: 巢湖市
     季度: 1
     年: 2017
@@ -24,12 +21,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 6458
-  sheet_name: others
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170714施贵宝1705检索.xlsx
-  raw_data:
-    ATC码: J05AB04
+  - fileName: CPA/BMS/convert_170414施贵宝1702检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: others
+- - ATC码: J05AB04
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -46,12 +43,12 @@
     药品名称: 利巴韦林
     药品规格: 100 MG 1 ML
     金额(元): 4500
-  sheet_name: 施贵宝1705
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170714施贵宝1705检索.xlsx
-  raw_data:
-    ATC码: J05AF08
+  - fileName: CPA/BMS/convert_170714施贵宝1705检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1705
+- - ATC码: J05AF08
     剂型: CAP
     包装单位: H
     包装数量: 14
@@ -68,12 +65,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额(元): 28500
-  sheet_name: 施贵宝1705
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_160513施贵宝3月底层检索.xlsx
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/convert_170714施贵宝1705检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1705
+- - 医院编码: 230151
     城市: 安庆市
     季度: 1
     市场分类: CCB
@@ -82,12 +79,12 @@
     月: 3
     省: 安徽省
     金额: 127282
-  sheet_name: 施贵宝-2
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_160513施贵宝3月底层检索.xlsx
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/convert_160513施贵宝3月底层检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-2
+- - 医院编码: 230151
     城市: 安庆市
     季度: 1
     市场分类: ACEI
@@ -96,12 +93,12 @@
     月: 3
     省: 安徽省
     金额: 117495
-  sheet_name: 施贵宝-2
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_190813施贵宝-1906检索.xlsx
-  raw_data:
-    ATC码: C09AA05
+  - fileName: CPA/BMS/convert_160513施贵宝3月底层检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-2
+- - ATC码: C09AA05
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -118,12 +115,12 @@
     药品名称: 雷米普利
     药品规格: 5 MG
     金额(元): 12198
-  sheet_name: 2018年补充数据
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_190813施贵宝-1906检索.xlsx
-  raw_data:
-    ATC码: C09AA07
+  - fileName: CPA/BMS/convert_190813施贵宝-1906检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 2018年补充数据
+- - ATC码: C09AA07
     剂型: TAB
     包装单位: H
     包装数量: 10
@@ -140,12 +137,12 @@
     药品名称: 贝那普利
     药品规格: 10 MG
     金额(元): 15102
-  sheet_name: 2018年补充数据
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170321施贵宝1701检索.xlsx
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/BMS/convert_190813施贵宝-1906检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 2018年补充数据
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -154,12 +151,12 @@
     旧医院编码: 101
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2017年出版医院名单
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170321施贵宝1701检索.xlsx
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/BMS/convert_170321施贵宝1701检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 2017年出版医院名单
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三级
     地区: 内蒙古
@@ -168,12 +165,12 @@
     旧医院编码: 102
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2017年出版医院名单
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170215施贵宝12月底层检索.xls
-  raw_data:
-    ATC码: L03AB11
+  - fileName: CPA/BMS/convert_170321施贵宝1701检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 2017年出版医院名单
+- - ATC码: L03AB11
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -190,12 +187,12 @@
     药品名称: 聚乙二醇干扰素α-2a
     药品规格: 135 UG 0.5 ML
     金额(元): 7871
-  sheet_name: 商品名
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170215施贵宝12月底层检索.xls
-  raw_data:
-    ATC码: L03AB11
+  - fileName: CPA/BMS/170215施贵宝12月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 商品名
+- - ATC码: L03AB11
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -212,12 +209,12 @@
     药品名称: 聚乙二醇干扰素α-2a
     药品规格: 180 UG 0.5 ML
     金额(元): 11240
-  sheet_name: 商品名
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160615施贵宝4月底层检索.xls
-  raw_data:
-    ATC码: B01AF02
+  - fileName: CPA/BMS/170215施贵宝12月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 商品名
+- - ATC码: B01AF02
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -234,12 +231,12 @@
     药品名称: 阿哌沙班
     药品规格: 2.5 MG
     金额(元): 10134
-  sheet_name: 施贵宝-1
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160615施贵宝4月底层检索.xls
-  raw_data:
-    ATC码: B01AF02
+  - fileName: CPA/BMS/160615施贵宝4月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-1
+- - ATC码: B01AF02
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -256,12 +253,12 @@
     药品名称: 阿哌沙班
     药品规格: 2.5 MG
     金额(元): 27672
-  sheet_name: 施贵宝-1
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170113施贵宝11月底层检索.xls
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/160615施贵宝4月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-1
+- - 医院编码: 230151
     城市: 安庆市
     季度: 4
     市场分类: CCB
@@ -270,12 +267,12 @@
     月: 11
     省: 安徽省
     金额: 198693
-  sheet_name: 施贵宝-2
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170113施贵宝11月底层检索.xls
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/170113施贵宝11月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-2
+- - 医院编码: 230151
     城市: 安庆市
     季度: 4
     市场分类: ACEI
@@ -284,12 +281,12 @@
     月: 11
     省: 安徽省
     金额: 161703
-  sheet_name: 施贵宝-2
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/190326施贵宝1901检索.xlsx
-  raw_data:
-    ATC码: C09AA05
+  - fileName: CPA/BMS/170113施贵宝11月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-2
+- - ATC码: C09AA05
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -306,12 +303,12 @@
     药品名称: 雷米普利
     药品规格: 5 MG
     金额(元): 16056
-  sheet_name: 施贵宝1901
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/190326施贵宝1901检索.xlsx
-  raw_data:
-    ATC码: C09AA07
+  - fileName: CPA/BMS/190326施贵宝1901检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1901
+- - ATC码: C09AA07
     剂型: TAB
     包装单位: H
     包装数量: 10
@@ -328,12 +325,12 @@
     药品名称: 贝那普利
     药品规格: 10 MG
     金额(元): 5702
-  sheet_name: 施贵宝1901
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_161215施贵宝10月底层检索.xlsx
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/190326施贵宝1901检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1901
+- - 医院编码: 230151
     城市: 安庆市
     季度: 4
     年: 2016
@@ -342,12 +339,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 98460
-  sheet_name: others
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_161215施贵宝10月底层检索.xlsx
-  raw_data:
-    医院编码: 230011
+  - fileName: CPA/BMS/convert_161215施贵宝10月底层检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: others
+- - 医院编码: 230011
     城市: 合肥市
     季度: 4
     年: 2016
@@ -356,12 +353,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 32370
-  sheet_name: others
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170321施贵宝1701检索.xls
-  raw_data:
-    医院名称: 内蒙古医学院第三附属医院
+  - fileName: CPA/BMS/convert_161215施贵宝10月底层检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: others
+- - 医院名称: 内蒙古医学院第三附属医院
     医院编码: 10011
     参考级别: 三甲
     地区: 内蒙古
@@ -370,12 +367,12 @@
     旧医院编码: 101
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2017年出版医院名单
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170321施贵宝1701检索.xls
-  raw_data:
-    医院名称: 乌海市人民医院
+  - fileName: CPA/BMS/170321施贵宝1701检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 2017年出版医院名单
+- - 医院名称: 乌海市人民医院
     医院编码: 10021
     参考级别: 三级
     地区: 内蒙古
@@ -384,12 +381,12 @@
     旧医院编码: 102
     是否新增: .nan
     省: 内蒙古自治区
-  sheet_name: 2017年出版医院名单
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160513施贵宝3月底层检索.xls
-  raw_data:
-    ATC码: B01AF02
+  - fileName: CPA/BMS/170321施贵宝1701检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 2017年出版医院名单
+- - ATC码: B01AF02
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -406,12 +403,12 @@
     药品名称: 阿哌沙班
     药品规格: 2.5 MG
     金额(元): 5534
-  sheet_name: 施贵宝-1
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160513施贵宝3月底层检索.xls
-  raw_data:
-    ATC码: B01AF02
+  - fileName: CPA/BMS/160513施贵宝3月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-1
+- - ATC码: B01AF02
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -428,12 +425,12 @@
     药品名称: 阿哌沙班
     药品规格: 2.5 MG
     金额(元): 110872
-  sheet_name: 施贵宝-1
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/161115施贵宝9月底层检索.xls
-  raw_data:
-    ATC码: L03AB11
+  - fileName: CPA/BMS/160513施贵宝3月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-1
+- - ATC码: L03AB11
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -450,12 +447,12 @@
     药品名称: 聚乙二醇干扰素α-2a
     药品规格: 180 UG 0.5 ML
     金额(元): 22480
-  sheet_name: 商品名
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/161115施贵宝9月底层检索.xls
-  raw_data:
-    ATC码: L03AB11
+  - fileName: CPA/BMS/161115施贵宝9月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 商品名
+- - ATC码: L03AB11
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -472,12 +469,12 @@
     药品名称: 聚乙二醇干扰素α-2a
     药品规格: 135 UG 0.5 ML
     金额(元): 1776
-  sheet_name: 商品名
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170815施贵宝1706检索.xls
-  raw_data:
-    ATC码: J05AB04
+  - fileName: CPA/BMS/161115施贵宝9月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 商品名
+- - ATC码: J05AB04
     剂型: TAB
     包装单位: H
     包装数量: 24
@@ -494,12 +491,12 @@
     药品名称: 利巴韦林
     药品规格: 100 MG
     金额(元): 2326
-  sheet_name: 施贵宝1706
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170815施贵宝1706检索.xls
-  raw_data:
-    ATC码: J05AF10
+  - fileName: CPA/BMS/170815施贵宝1706检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1706
+- - ATC码: J05AF10
     剂型: CAP
     包装单位: H
     包装数量: 12
@@ -516,12 +513,12 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额(元): 188208
-  sheet_name: 施贵宝1706
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_180115施贵宝1711检索.xlsx
-  raw_data:
-    ATC码: J05AB04
+  - fileName: CPA/BMS/170815施贵宝1706检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1706
+- - ATC码: J05AB04
     剂型: TAB
     包装单位: H
     包装数量: 24
@@ -538,12 +535,12 @@
     药品名称: 利巴韦林
     药品规格: 100 MG
     金额(元): 2326
-  sheet_name: 施贵宝1711
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_180115施贵宝1711检索.xlsx
-  raw_data:
-    ATC码: J05AF08
+  - fileName: CPA/BMS/convert_180115施贵宝1711检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1711
+- - ATC码: J05AF08
     剂型: CAP
     包装单位: H
     包装数量: 14
@@ -560,12 +557,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额(元): 9500
-  sheet_name: 施贵宝1711
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160318施贵宝1月底层检索.xls
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/convert_180115施贵宝1711检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1711
+- - 医院编码: 230151
     城市: 安庆市
     季度: 1
     市场分类: 降压药市场
@@ -574,12 +571,12 @@
     月: 1
     省: 安徽省
     金额: 464932
-  sheet_name: 施贵宝-2
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160318施贵宝1月底层检索.xls
-  raw_data:
-    医院编码: 230461
+  - fileName: CPA/BMS/160318施贵宝1月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-2
+- - 医院编码: 230461
     城市: 蚌埠市
     季度: 1
     市场分类: 降压药市场
@@ -588,12 +585,12 @@
     月: 1
     省: 安徽省
     金额: 1085567
-  sheet_name: 施贵宝-2
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_171215施贵宝1710检索.xlsx
-  raw_data:
-    ATC码: B01AB05
+  - fileName: CPA/BMS/160318施贵宝1月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-2
+- - ATC码: B01AB05
     剂型: SOLN
     包装单位: H
     包装数量: 2
@@ -610,12 +607,12 @@
     药品名称: 依诺肝素钠
     药品规格: 4000 IU 0.4 ML
     金额(元): 78745
-  sheet_name: 施贵宝1710
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_171215施贵宝1710检索.xlsx
-  raw_data:
-    ATC码: B01AB50
+  - fileName: CPA/BMS/convert_171215施贵宝1710检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1710
+- - ATC码: B01AB50
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -632,12 +629,12 @@
     药品名称: 肝素钠
     药品规格: 0.0125 MIU 2 ML
     金额(元): 24600
-  sheet_name: 施贵宝1710
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170915施贵宝1707检索.xlsx
-  raw_data:
-    ATC码: B01AB05
+  - fileName: CPA/BMS/convert_171215施贵宝1710检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1710
+- - ATC码: B01AB05
     剂型: SOLN
     包装单位: H
     包装数量: 2
@@ -654,12 +651,12 @@
     药品名称: 依诺肝素钠
     药品规格: 4000 IU 0.4 ML
     金额(元): 67496
-  sheet_name: 施贵宝1707
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170915施贵宝1707检索.xlsx
-  raw_data:
-    ATC码: B01AB50
+  - fileName: CPA/BMS/convert_170915施贵宝1707检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1707
+- - ATC码: B01AB50
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -676,12 +673,12 @@
     药品名称: 肝素钠
     药品规格: 0.0125 MIU 2 ML
     金额(元): 24600
-  sheet_name: 施贵宝1707
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/180515施贵宝1803检索.xlsx
-  raw_data:
-    ATC码: C09AA07
+  - fileName: CPA/BMS/convert_170915施贵宝1707检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1707
+- - ATC码: C09AA07
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -698,12 +695,12 @@
     药品名称: 贝那普利
     药品规格: 5 MG
     金额(元): 7428
-  sheet_name: 施贵宝1803
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/180515施贵宝1803检索.xlsx
-  raw_data:
-    ATC码: J05AF08
+  - fileName: CPA/BMS/180515施贵宝1803检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1803
+- - ATC码: J05AF08
     剂型: CAP
     包装单位: H
     包装数量: 14
@@ -720,12 +717,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额(元): 9500
-  sheet_name: 施贵宝1803
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170815施贵宝1706检索.xls
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/180515施贵宝1803检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1803
+- - 医院编码: 230151
     城市: 安庆市
     季度: 2
     年: 2017
@@ -734,12 +731,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 86040
-  sheet_name: OTHERS
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170815施贵宝1706检索.xls
-  raw_data:
-    医院编码: 230051
+  - fileName: CPA/BMS/170815施贵宝1706检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: OTHERS
+- - 医院编码: 230051
     城市: 巢湖市
     季度: 2
     年: 2017
@@ -748,12 +745,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 7560
-  sheet_name: OTHERS
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170321施贵宝1701检索.xlsx
-  raw_data:
-    ATC码: J05AB04
+  - fileName: CPA/BMS/170815施贵宝1706检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: OTHERS
+- - ATC码: J05AB04
     剂型: TAB
     包装单位: H
     包装数量: 24
@@ -770,12 +767,12 @@
     药品名称: 利巴韦林
     药品规格: 100 MG
     金额(元): 3101
-  sheet_name: 施贵宝1701
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170321施贵宝1701检索.xlsx
-  raw_data:
-    ATC码: J05AF05
+  - fileName: CPA/BMS/convert_170321施贵宝1701检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1701
+- - ATC码: J05AF05
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -792,12 +789,12 @@
     药品名称: 拉米夫定
     药品规格: 100 MG
     金额(元): 22499
-  sheet_name: 施贵宝1701
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/171115施贵宝1709检索.xls
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/convert_170321施贵宝1701检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1701
+- - 医院编码: 230151
     城市: 安庆市
     季度: 3
     年: 2017
@@ -806,12 +803,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 76825
-  sheet_name: OTHERS
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/171115施贵宝1709检索.xls
-  raw_data:
-    医院编码: 230051
+  - fileName: CPA/BMS/171115施贵宝1709检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: OTHERS
+- - 医院编码: 230051
     城市: 巢湖市
     季度: 3
     年: 2017
@@ -820,12 +817,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 2160
-  sheet_name: OTHERS
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170113施贵宝11月底层检索.xlsx
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/171115施贵宝1709检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: OTHERS
+- - 医院编码: 230151
     城市: 安庆市
     季度: 4
     年: 2016
@@ -834,12 +831,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 79300
-  sheet_name: others
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170113施贵宝11月底层检索.xlsx
-  raw_data:
-    医院编码: 230051
+  - fileName: CPA/BMS/convert_170113施贵宝11月底层检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: others
+- - 医院编码: 230051
     城市: 巢湖市
     季度: 4
     年: 2016
@@ -848,12 +845,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 4320
-  sheet_name: others
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160913施贵宝7月底层检索.xls
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/convert_170113施贵宝11月底层检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: others
+- - 医院编码: 230151
     城市: 安庆市
     季度: 3
     市场分类: CCB
@@ -862,12 +859,12 @@
     月: 7
     省: 安徽省
     金额: 189603
-  sheet_name: 施贵宝-2
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160913施贵宝7月底层检索.xls
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/160913施贵宝7月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-2
+- - 医院编码: 230151
     城市: 安庆市
     季度: 3
     市场分类: ACEI
@@ -876,12 +873,12 @@
     月: 7
     省: 安徽省
     金额: 140165
-  sheet_name: 施贵宝-2
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170615施贵宝1704检索.xls
-  raw_data:
-    ATC码: J05AB04
+  - fileName: CPA/BMS/160913施贵宝7月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-2
+- - ATC码: J05AB04
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -898,12 +895,12 @@
     药品名称: 利巴韦林
     药品规格: 100 MG 1 ML
     金额(元): 3600
-  sheet_name: 施贵宝1704
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170615施贵宝1704检索.xls
-  raw_data:
-    ATC码: J05AF05
+  - fileName: CPA/BMS/170615施贵宝1704检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1704
+- - ATC码: J05AF05
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -920,12 +917,12 @@
     药品名称: 拉米夫定
     药品规格: 100 MG
     金额(元): 22499
-  sheet_name: 施贵宝1704
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_180211施贵宝1712检索.xlsx
-  raw_data:
-    ATC码: J05AF08
+  - fileName: CPA/BMS/170615施贵宝1704检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1704
+- - ATC码: J05AF08
     剂型: CAP
     包装单位: H
     包装数量: 20
@@ -942,12 +939,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额(元): 30000
-  sheet_name: 施贵宝1712
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_180211施贵宝1712检索.xlsx
-  raw_data:
-    ATC码: J05AF10
+  - fileName: CPA/BMS/convert_180211施贵宝1712检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1712
+- - ATC码: J05AF10
     剂型: TAB
     包装单位: H
     包装数量: 7
@@ -964,32 +961,32 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额(元): 31304
-  sheet_name: 施贵宝1712
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160913施贵宝7月底层检索.xls
-  raw_data:
-    flag: 1
+  - fileName: CPA/BMS/convert_180211施贵宝1712检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1712
+- - flag: 1
     id: 10071
     医院编码: 10071
     备注: .nan
     月份: 3、4、5、6、7
-  sheet_name: 1-7月未到医院名单
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160913施贵宝7月底层检索.xls
-  raw_data:
-    flag: 1
+  - fileName: CPA/BMS/160913施贵宝7月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 1-7月未到医院名单
+- - flag: 1
     id: 10111
     医院编码: 10111
     备注: .nan
     月份: 7
-  sheet_name: 1-7月未到医院名单
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_190412施贵宝1902检索.xlsx
-  raw_data:
-    ATC码: L01XC50
+  - fileName: CPA/BMS/160913施贵宝7月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 1-7月未到医院名单
+- - ATC码: L01XC50
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -1006,12 +1003,12 @@
     药品名称: 尼妥珠单抗
     药品规格: 50 MG 10 ML
     金额(元): 82915
-  sheet_name: 新增药品历史数据
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_190412施贵宝1902检索.xlsx
-  raw_data:
-    ATC码: L01XC50
+  - fileName: CPA/BMS/convert_190412施贵宝1902检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 新增药品历史数据
+- - ATC码: L01XC50
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -1028,12 +1025,12 @@
     药品名称: 尼妥珠单抗
     药品规格: 50 MG 10 ML
     金额(元): 14420
-  sheet_name: 新增药品历史数据
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160318施贵宝1月底层检索.xls
-  raw_data:
-    ATC码: B01AF02
+  - fileName: CPA/BMS/convert_190412施贵宝1902检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 新增药品历史数据
+- - ATC码: B01AF02
     剂型: TAB
     包装单位: H
     包装数量: 10
@@ -1050,12 +1047,12 @@
     药品名称: 阿哌沙班
     药品规格: 2.5 MG
     金额(元): 2393
-  sheet_name: 施贵宝-1
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160318施贵宝1月底层检索.xls
-  raw_data:
-    ATC码: B01AF02
+  - fileName: CPA/BMS/160318施贵宝1月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-1
+- - ATC码: B01AF02
     剂型: TAB
     包装单位: H
     包装数量: 10
@@ -1072,12 +1069,12 @@
     药品名称: 阿哌沙班
     药品规格: 2.5 MG
     金额(元): 16771
-  sheet_name: 施贵宝-1
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_160913施贵宝7月底层检索.xlsx
-  raw_data:
-    ATC码: B01AF02
+  - fileName: CPA/BMS/160318施贵宝1月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-1
+- - ATC码: B01AF02
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -1094,12 +1091,12 @@
     药品名称: 阿哌沙班
     药品规格: 2.5 MG
     金额(元): 2767
-  sheet_name: 施贵宝-1
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_160913施贵宝7月底层检索.xlsx
-  raw_data:
-    ATC码: B01AF02
+  - fileName: CPA/BMS/convert_160913施贵宝7月底层检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-1
+- - ATC码: B01AF02
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -1116,12 +1113,12 @@
     药品名称: 阿哌沙班
     药品规格: 2.5 MG
     金额(元): 2767
-  sheet_name: 施贵宝-1
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170321施贵宝1701检索.xls
-  raw_data:
-    ATC码: J05AB04
+  - fileName: CPA/BMS/convert_160913施贵宝7月底层检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-1
+- - ATC码: J05AB04
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -1138,12 +1135,12 @@
     药品名称: 利巴韦林
     药品规格: 100 MG 1 ML
     金额(元): 1320
-  sheet_name: 历史数据
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170321施贵宝1701检索.xls
-  raw_data:
-    ATC码: J05AB04
+  - fileName: CPA/BMS/170321施贵宝1701检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 历史数据
+- - ATC码: J05AB04
     剂型: TAB
     包装单位: H
     包装数量: 24
@@ -1160,12 +1157,12 @@
     药品名称: 利巴韦林
     药品规格: 100 MG
     金额(元): 969
-  sheet_name: 历史数据
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_171016施贵宝1708检索.xlsx
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/170321施贵宝1701检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 历史数据
+- - 医院编码: 230151
     城市: 安庆市
     季度: 3
     年: 2017
@@ -1174,12 +1171,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 66390
-  sheet_name: OTHERS
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_171016施贵宝1708检索.xlsx
-  raw_data:
-    医院编码: 230051
+  - fileName: CPA/BMS/convert_171016施贵宝1708检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: OTHERS
+- - 医院编码: 230051
     城市: 巢湖市
     季度: 3
     年: 2017
@@ -1188,12 +1185,12 @@
     省: 安徽省
     类别名称: 干扰素类
     金额: 5400
-  sheet_name: OTHERS
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/161014施贵宝8月底层检索.xls
-  raw_data:
-    ATC码: L03AB11
+  - fileName: CPA/BMS/convert_171016施贵宝1708检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: OTHERS
+- - ATC码: L03AB11
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -1210,12 +1207,12 @@
     药品名称: 聚乙二醇干扰素α-2a
     药品规格: 180 UG 0.5 ML
     金额(元): 11240
-  sheet_name: 商品名
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/161014施贵宝8月底层检索.xls
-  raw_data:
-    ATC码: L03AB11
+  - fileName: CPA/BMS/161014施贵宝8月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 商品名
+- - ATC码: L03AB11
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -1232,12 +1229,12 @@
     药品名称: 聚乙二醇干扰素α-2a
     药品规格: 135 UG 0.5 ML
     金额(元): 28890
-  sheet_name: 商品名
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/161014施贵宝8月底层检索.xls
-  raw_data:
-    ATC码: B01AF02
+  - fileName: CPA/BMS/161014施贵宝8月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 商品名
+- - ATC码: B01AF02
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -1254,12 +1251,12 @@
     药品名称: 阿哌沙班
     药品规格: 2.5 MG
     金额(元): 5534
-  sheet_name: 施贵宝-1
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/161014施贵宝8月底层检索.xls
-  raw_data:
-    ATC码: B01AF02
+  - fileName: CPA/BMS/161014施贵宝8月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-1
+- - ATC码: B01AF02
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -1276,12 +1273,12 @@
     药品名称: 阿哌沙班
     药品规格: 2.5 MG
     金额(元): 11069
-  sheet_name: 施贵宝-1
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170714施贵宝1705检索.xls
-  raw_data:
-    ATC码: J05AB04
+  - fileName: CPA/BMS/161014施贵宝8月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-1
+- - ATC码: J05AB04
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -1298,12 +1295,12 @@
     药品名称: 利巴韦林
     药品规格: 100 MG 1 ML
     金额(元): 4500
-  sheet_name: 施贵宝1705
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/170714施贵宝1705检索.xls
-  raw_data:
-    ATC码: J05AF08
+  - fileName: CPA/BMS/170714施贵宝1705检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1705
+- - ATC码: J05AF08
     剂型: CAP
     包装单位: H
     包装数量: 14
@@ -1320,12 +1317,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额(元): 28500
-  sheet_name: 施贵宝1705
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160913施贵宝7月底层检索.xls
-  raw_data:
-    ATC码: L03AB11
+  - fileName: CPA/BMS/170714施贵宝1705检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1705
+- - ATC码: L03AB11
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -1342,12 +1339,12 @@
     药品名称: 聚乙二醇干扰素α-2a
     药品规格: 180 UG 0.5 ML
     金额(元): 16860
-  sheet_name: 商品名
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/160913施贵宝7月底层检索.xls
-  raw_data:
-    ATC码: L03AB10
+  - fileName: CPA/BMS/160913施贵宝7月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 商品名
+- - ATC码: L03AB10
     剂型: POWD
     包装单位: V
     包装数量: 1
@@ -1364,12 +1361,12 @@
     药品名称: 聚乙二醇干扰素α-2b
     药品规格: 100 UG
     金额(元): 10452
-  sheet_name: 商品名
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_190114施贵宝1811检索.xlsx
-  raw_data:
-    ATC码: C09AA04
+  - fileName: CPA/BMS/160913施贵宝7月底层检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 商品名
+- - ATC码: C09AA04
     剂型: TAB
     包装单位: H
     包装数量: 30
@@ -1386,12 +1383,12 @@
     药品名称: 培哚普利
     药品规格: 4 MG
     金额(元): 3662
-  sheet_name: 施贵宝1811
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_190114施贵宝1811检索.xlsx
-  raw_data:
-    ATC码: C09AA07
+  - fileName: CPA/BMS/convert_190114施贵宝1811检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1811
+- - ATC码: C09AA07
     剂型: TAB
     包装单位: H
     包装数量: 10
@@ -1408,12 +1405,12 @@
     药品名称: 贝那普利
     药品规格: 10 MG
     金额(元): 11405
-  sheet_name: 施贵宝1811
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170615施贵宝1704检索.xlsx
-  raw_data:
-    ATC码: J05AB04
+  - fileName: CPA/BMS/convert_190114施贵宝1811检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1811
+- - ATC码: J05AB04
     剂型: SOLN
     包装单位: A
     包装数量: 1
@@ -1430,12 +1427,12 @@
     药品名称: 利巴韦林
     药品规格: 100 MG 1 ML
     金额(元): 3600
-  sheet_name: 施贵宝1704
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_170615施贵宝1704检索.xlsx
-  raw_data:
-    ATC码: J05AF05
+  - fileName: CPA/BMS/convert_170615施贵宝1704检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1704
+- - ATC码: J05AF05
     剂型: TAB
     包装单位: H
     包装数量: 14
@@ -1452,12 +1449,12 @@
     药品名称: 拉米夫定
     药品规格: 100 MG
     金额(元): 22499
-  sheet_name: 施贵宝1704
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_190517施贵宝新增药品检索.xlsx
-  raw_data:
-    ATC码: J05AF13
+  - fileName: CPA/BMS/convert_170615施贵宝1704检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1704
+- - ATC码: J05AF13
     剂型: TAB
     包装单位: H
     包装数量: 30
@@ -1474,12 +1471,12 @@
     药品名称: 丙酚替诺福韦
     药品规格: 25 MG
     金额(元): 436600
-  sheet_name: 1901-1903数据
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_190517施贵宝新增药品检索.xlsx
-  raw_data:
-    ATC码: J05AF13
+  - fileName: CPA/BMS/convert_190517施贵宝新增药品检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 1901-1903数据
+- - ATC码: J05AF13
     剂型: TAB
     包装单位: H
     包装数量: 30
@@ -1496,12 +1493,12 @@
     药品名称: 丙酚替诺福韦
     药品规格: 25 MG
     金额(元): 3540
-  sheet_name: 1901-1903数据
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_160913施贵宝7月底层检索.xlsx
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/convert_190517施贵宝新增药品检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 1901-1903数据
+- - 医院编码: 230151
     城市: 安庆市
     季度: 3
     市场分类: CCB
@@ -1510,12 +1507,12 @@
     月: 7
     省: 安徽省
     金额: 189603
-  sheet_name: 施贵宝-2
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/convert_160913施贵宝7月底层检索.xlsx
-  raw_data:
-    医院编码: 230151
+  - fileName: CPA/BMS/convert_160913施贵宝7月底层检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-2
+- - 医院编码: 230151
     城市: 安庆市
     季度: 3
     市场分类: ACEI
@@ -1524,12 +1521,12 @@
     月: 7
     省: 安徽省
     金额: 140165
-  sheet_name: 施贵宝-2
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/180211施贵宝1712检索.xls
-  raw_data:
-    ATC码: J05AF08
+  - fileName: CPA/BMS/convert_160913施贵宝7月底层检索.xlsx
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝-2
+- - ATC码: J05AF08
     剂型: CAP
     包装单位: H
     包装数量: 20
@@ -1546,12 +1543,12 @@
     药品名称: 阿德福韦酯
     药品规格: 10 MG
     金额(元): 30000
-  sheet_name: 施贵宝1712
-  source: CPA
-- company: BMS
-  file_name: CPA/BMS/180211施贵宝1712检索.xls
-  raw_data:
-    ATC码: J05AF10
+  - fileName: CPA/BMS/180211施贵宝1712检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1712
+- - ATC码: J05AF10
     剂型: TAB
     包装单位: H
     包装数量: 7
@@ -1568,5 +1565,8 @@
     药品名称: 恩替卡韦
     药品规格: 500 UG
     金额(元): 31304
-  sheet_name: 施贵宝1712
-  source: CPA
+  - fileName: CPA/BMS/180211施贵宝1712检索.xls
+    providers:
+    - BMS
+    - CPA
+    sheetName: 施贵宝1712

@@ -1,7 +1,4 @@
-- company: 恩华
-  file_name: CPA/恩华/200214江苏恩华-12月检索（2019年累加）.xlsx
-  raw_data:
-    ATC编码: N01AH03
+- - ATC编码: N01AH03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -18,12 +15,12 @@
     药品名称: 舒芬太尼
     规格: 50 UG 1 ML
     金额（元）: 240835
-  sheet_name: 1-12月数据
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/200214江苏恩华-12月检索（2019年累加）.xlsx
-  raw_data:
-    ATC编码: N01AH06
+  - fileName: CPA/恩华/200214江苏恩华-12月检索（2019年累加）.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 1-12月数据
+- - ATC编码: N01AH06
     剂型: POWD
     包装: V
     包装数量: 1
@@ -40,12 +37,12 @@
     药品名称: 瑞芬太尼
     规格: 1 MG
     金额（元）: 40480
-  sheet_name: 1-12月数据
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/180211恩华17年1-12月检索.xlsx
-  raw_data:
-    ATC码: N01AH03
+  - fileName: CPA/恩华/200214江苏恩华-12月检索（2019年累加）.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 1-12月数据
+- - ATC码: N01AH03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -62,12 +59,12 @@
     规格: 50 UG 1 ML
     途径: IJ
     金额（元）: 95331
-  sheet_name: 1-12月数据
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/180211恩华17年1-12月检索.xlsx
-  raw_data:
-    ATC码: N01AH06
+  - fileName: CPA/恩华/180211恩华17年1-12月检索.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 1-12月数据
+- - ATC码: N01AH06
     剂型: POWD
     包装: V
     包装数量: 1
@@ -84,12 +81,12 @@
     规格: 2 MG
     途径: IJ
     金额（元）: 8320
-  sheet_name: 1-12月数据
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/171228恩华2015年1月-2017年10月检索.xlsx
-  raw_data:
-    2015年: 是
+  - fileName: CPA/恩华/180211恩华17年1-12月检索.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 1-12月数据
+- - 2015年: 是
     2016年: 是
     2017年: 是
     医院名称: 安庆市立医院
@@ -98,12 +95,12 @@
     地区: 安徽
     城市: 安庆市
     省: 安徽省
-  sheet_name: 医院名单
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/171228恩华2015年1月-2017年10月检索.xlsx
-  raw_data:
-    2015年: 是
+  - fileName: CPA/恩华/171228恩华2015年1月-2017年10月检索.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 医院名单
+- - 2015年: 是
     2016年: 是
     2017年: 是
     医院名称: 合肥市第一人民医院
@@ -112,12 +109,12 @@
     地区: 安徽
     城市: 合肥市
     省: 安徽省
-  sheet_name: 医院名单
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/200513江苏恩华-2020年1-3月检索.xlsx
-  raw_data:
-    ATC编码: N05CM18
+  - fileName: CPA/恩华/171228恩华2015年1月-2017年10月检索.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 医院名单
+- - ATC编码: N05CM18
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -134,12 +131,12 @@
     药品名称: 右美托咪定
     规格: 200 UG 2 ML
     金额（元）: 13300
-  sheet_name: 恩华
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/200513江苏恩华-2020年1-3月检索.xlsx
-  raw_data:
-    ATC编码: N05CM18
+  - fileName: CPA/恩华/200513江苏恩华-2020年1-3月检索.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 恩华
+- - ATC编码: N05CM18
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -156,12 +153,12 @@
     药品名称: 右美托咪定
     规格: 200 UG 2 ML
     金额（元）: -8509
-  sheet_name: 恩华
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/190213恩华2018年1-12月检索.xlsx
-  raw_data:
-    ATC编码: N01AH03
+  - fileName: CPA/恩华/200513江苏恩华-2020年1-3月检索.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 恩华
+- - ATC编码: N01AH03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -178,12 +175,12 @@
     药品名称: 舒芬太尼
     规格: 50 UG 1 ML
     金额（元）: 150522
-  sheet_name: 1-12月数据
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/190213恩华2018年1-12月检索.xlsx
-  raw_data:
-    ATC编码: N01AH06
+  - fileName: CPA/恩华/190213恩华2018年1-12月检索.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 1-12月数据
+- - ATC编码: N01AH06
     剂型: POWD
     包装: V
     包装数量: 1
@@ -200,12 +197,12 @@
     药品名称: 瑞芬太尼
     规格: 2 MG
     金额（元）: 41601
-  sheet_name: 1-12月数据
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/191111江苏恩华-9月检索（2019年累加）.xlsx
-  raw_data:
-    ATC编码: N01AH03
+  - fileName: CPA/恩华/190213恩华2018年1-12月检索.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 1-12月数据
+- - ATC编码: N01AH03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -222,12 +219,12 @@
     药品名称: 舒芬太尼
     规格: 50 UG 1 ML
     金额（元）: 240835
-  sheet_name: 1-9月数据
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/191111江苏恩华-9月检索（2019年累加）.xlsx
-  raw_data:
-    ATC编码: N01AH06
+  - fileName: CPA/恩华/191111江苏恩华-9月检索（2019年累加）.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 1-9月数据
+- - ATC编码: N01AH06
     剂型: POWD
     包装: V
     包装数量: 1
@@ -244,12 +241,12 @@
     药品名称: 瑞芬太尼
     规格: 1 MG
     金额（元）: 40480
-  sheet_name: 1-9月数据
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/171228恩华2015年1月-2017年10月检索.xlsx
-  raw_data:
-    ATC编码: N01AH03
+  - fileName: CPA/恩华/191111江苏恩华-9月检索（2019年累加）.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 1-9月数据
+- - ATC编码: N01AH03
     剂型: SOLN
     包装: A
     包装数量: 1
@@ -266,12 +263,12 @@
     药品名称: 舒芬太尼
     规格: 50 UG 1 ML
     金额（元）: 17560
-  sheet_name: 恩华
-  source: CPA
-- company: 恩华
-  file_name: CPA/恩华/171228恩华2015年1月-2017年10月检索.xlsx
-  raw_data:
-    ATC编码: N01AH06
+  - fileName: CPA/恩华/171228恩华2015年1月-2017年10月检索.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 恩华
+- - ATC编码: N01AH06
     剂型: POWD
     包装: V
     包装数量: 1
@@ -288,5 +285,8 @@
     药品名称: 瑞芬太尼
     规格: 1 MG
     金额（元）: 86029
-  sheet_name: 恩华
-  source: CPA
+  - fileName: CPA/恩华/171228恩华2015年1月-2017年10月检索.xlsx
+    providers:
+    - 恩华
+    - CPA
+    sheetName: 恩华
