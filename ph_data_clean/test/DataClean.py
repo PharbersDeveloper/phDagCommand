@@ -2,18 +2,14 @@ import mapping
 import test_data
 
 
-class MappingOne(object):
-    def __init__(self):
-        self.company = 'Pfizer'
-        self.source = 'CPA'
+class Mapping(object):
+    def __init__(self, source, company):
+        self.company = company
+        self.source = source
         self.specific_mapping = mapping.cpa_mapping()
 
+    def append_to_mapping_lst:
 
-class MappingTwo(object):
-    def __init__(self):
-        self.company = 'Pfizer_2'
-        self.source = 'GYC'
-        self.specific_mapping = mapping.cpa_mapping_2()
 
 
 class MappingFactory(object):
