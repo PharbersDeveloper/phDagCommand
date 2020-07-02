@@ -1,7 +1,8 @@
 !!python/object:ph_data_clean.model.data_mapping.DataMapping
 cols:
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate: []
+  candidate:
+  - 生产企业
   col_name: COMPANY
   col_desc: 公司名称
   not_null: true
@@ -12,6 +13,12 @@ cols:
   col_name: SOURCE
   col_desc: 数据来源
   not_null: true
-  type: c
+  type: String
+- !!python/object:ph_data_clean.model.data_mapping.ColCharactor
+  candidate:
+  - 数据来源
+  col_name: YEAR
+  not_null: true
+  type: String
 company: 倍特
 source: CPA
