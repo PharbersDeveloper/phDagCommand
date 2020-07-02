@@ -3,8 +3,9 @@ class ColCharactor(object):
     对于每个单元格的匹配规则
     """
 
-    def __init__(self, col_name: str, candidate: list, type: str, not_null: bool):
+    def __init__(self, col_name: str, col_desc: str, candidate: list = [], type: str = 'String', not_null: bool = False):
         self.col_name = col_name
+        self.col_desc = col_desc
         self.candidate = candidate
         self.type = type
         self.not_null = not_null
