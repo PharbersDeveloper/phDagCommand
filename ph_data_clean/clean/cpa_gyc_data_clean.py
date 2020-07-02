@@ -7,7 +7,7 @@ class CpaGycDataClean(DataClean):
     CPA & GYC 等元数据的清洗规则
     """
 
-    def cleaning_process(self, mapping: dict, raw_data: dict) -> CleanResult:
+    def cleaning_process(self, mapping: list, raw_data: dict) -> CleanResult:
         print(mapping)
         print(raw_data)
         pass

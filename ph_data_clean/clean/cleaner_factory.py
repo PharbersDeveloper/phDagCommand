@@ -8,7 +8,7 @@ class CleanerFactory(object):
     """
 
     all_clean = {
-        ('cpa', 'gyc'): CpaGycDataClean,
+        ('CPA', 'GYC'): CpaGycDataClean,
     }
 
     def get_specific_cleaner(self, source, company='') -> DataClean:
@@ -21,7 +21,8 @@ class CleanerFactory(object):
         :return: [DataClean] 特定清洗算法
         """
 
-        finded = [clean for clean in self.all_clean.items() if source.lower() in clean[0]]
+        finded = [clean for clean in self.all_clean.items()
+                  if source.lower() in [item.lower() for item in clean[0]]]
 
         if len(finded) == 1:
             return finded[0][1]()

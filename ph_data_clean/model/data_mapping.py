@@ -9,12 +9,19 @@ class ColCharactor(object):
         self.type = type
         self.not_null = not_null
 
+    def to_dict(self) -> dict:
+        return self.__dict__
+
 
 class DataMapping(object):
     """
     对于指定源的指定公司的匹配规则
     """
-    def __init__(self, source: str, company: str, cols: list[ColCharactor]):
+    def __init__(self, source: str, company: str, cols: list):
         self.source = source
         self.company = company
         self.cols = cols
+
+    def to_dict(self) -> dict:
+        self.__dict__['cols'] = [col.to_dict() for col in self.cols]
+        return self.__dict__

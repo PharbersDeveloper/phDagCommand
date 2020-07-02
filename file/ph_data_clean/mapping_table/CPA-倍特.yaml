@@ -1,0 +1,10 @@
+!!python/object:ph_data_clean.model.data_mapping.DataMapping
+cols:
+- !!python/object:ph_data_clean.model.data_mapping.ColCharactor
+  candidate:
+  - b
+  col_name: a
+  not_null: true
+  type: c
+company: 倍特
+source: CPA

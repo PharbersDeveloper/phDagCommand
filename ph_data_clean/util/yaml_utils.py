@@ -19,6 +19,14 @@ def append_to_file(obj, file):
         yaml.dump(obj, file, default_flow_style=False, encoding='utf-8', allow_unicode=True)
 
 
+def override_to_file(obj, file):
+    """
+    覆盖写入 yaml 文件
+    """
+    with open(file, 'w', encoding='UTF-8') as file:
+        yaml.dump(obj, file, default_flow_style=False, encoding='utf-8', allow_unicode=True)
+
+
 def load_by_dir(dir):
     """
     从目录加载多个 yaml 文件

@@ -1,15 +1,21 @@
+from ph_data_clean.model.data_mapping import ColCharactor
+from ph_data_clean.model.data_mapping import DataMapping
+from ph_data_clean.util.yaml_utils import load_by_dir, override_to_file
+
+
 class MappingFactory(object):
     """
     匹配规则的生成工厂
     """
 
-    all_mapping = {}
+    all_mapping = []
 
-    def __init__(self):
+    def __init__(self, mapping_path):
         """
         初始化 all_mapping
         """
-        pass
+        self.mapping_path = mapping_path
+        self.all_mapping = self.__load()
 
     def get_specific_mapping(self, source, company) -> dict:
         """
@@ -20,33 +26,31 @@ class MappingFactory(object):
 
         :return: [dict] 返回指定的匹配规则
         """
-        pass
+
+        finded = [mapping for mapping in self.all_mapping
+                  if source.lower() == mapping.source.lower()
+                  and company.lower() == mapping.company.lower()]
+
+        if len(finded) == 1:
+            return finded[0]
+        elif len(finded) > 1:
+            raise Exception("Find more Mapping" + str(finded))
+        else:
+            raise Exception("Not find Mapping")
 
     def __load(self):
         """
         从 yaml 文件中加载 all_mapping
         """
-        return self
+        return load_by_dir(self.mapping_path)
 
     def parsist_to_yaml(self):
         """
         持久化工厂内数据到 yaml 文件中
         """
-        pass
+        if not self.mapping_path.endswith("/"):
+            self.mapping_path = self.mapping_path + '/'
 
-# class A(object):
-#     def __init__(self):
-#         self.a = 1
-#         self.b = 2
-#
-#     def get(self):
-#         return self.a + self.b
-#
-#
-# # append_to_file(A(), "test.yaml")
-#
-# a = load_by_file('test.yaml')
-# print(a)
-# print(a.a)
-# print(a.b)
-# print(a.get())
+        for mapping in self.all_mapping:
+            path = f'{self.mapping_path}{mapping.source}-{mapping.company}.yaml'
+            override_to_file(mapping, path)
