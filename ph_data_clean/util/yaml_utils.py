@@ -40,20 +40,3 @@ def load_by_dir(dir):
         lst.append(load_by_file(file))
 
     return lst
-
-class A(object):
-    def __init__(self):
-        self.a = 1
-        self.b = 2
-
-    def get(self):
-        return self.a + self.b
-
-
-# append_to_file(A(), "test.yaml")
-
-a = load_by_file('test.yaml')
-print(a)
-print(a.a)
-print(a.b)
-print(a.get())
