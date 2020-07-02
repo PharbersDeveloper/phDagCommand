@@ -176,39 +176,8 @@ def cpa_mapping():
             "NotNull": True
         }
     ]
-
-def cpa_mapping_2():
-    return [
-        {
-            "ColName": "COMPANY",
-            "ColDesc": "数据公司",
-            "Type": "String",
-            "Candidate": [],
-            "NotNull": True
-        },
-        {
-            "ColName": "SOURCE",
-            "ColDesc": "数据来源",
-            "Type": "String",
-            "Candidate": ["数据来源"],
-            "NotNull": True
-        },
-        {
-            "ColName": "YEAR",
-            "ColDesc": "年份",
-            "Type": "String",
-            "Candidate": ["年月", 'year', 'YEAR', '年'],
-        },
-        {
-            "ColName": "MONTH",
-            "ColDesc": "月份",
-            "Type": "String",
-            "Candidate": ["月", 'month', 'MONTH'],
-        },
-        {
-            "ColName": "PROVINCE_NAME",
-            "ColDesc": "省份名",
-            "Type": "String",
-            "Candidate": ["省", "省份", "省/自治区/直辖市", "PROVINCE", "PROVINCES",
-                          "PROVINCE_NAME"],
-        }]
+for item in cpa_mapping():
+    print(item)
+    if item['NotNull']:
+        print(1)
+print(cpa_mapping())

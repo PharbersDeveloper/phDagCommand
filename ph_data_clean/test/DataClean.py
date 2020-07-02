@@ -2,15 +2,6 @@ import mapping
 import test_data
 
 
-class Mapping(object):
-    def __init__(self, source, company):
-        self.company = company
-        self.source = source
-        self.specific_mapping = mapping.cpa_mapping()
-
-    def append_to_mapping_lst:
-
-
 
 class MappingFactory(object):
     def __init__(self):
