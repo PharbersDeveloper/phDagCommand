@@ -36,7 +36,7 @@ class MappingFactory(object):
         elif len(finded) > 1:
             raise Exception("Find more Mapping" + str(finded))
         else:
-            raise Exception("Not find Mapping")
+            raise Exception(f"Not find Mapping, source={source}, company={company}")
 
     def __load(self):
         """

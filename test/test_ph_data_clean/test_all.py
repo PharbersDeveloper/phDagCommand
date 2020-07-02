@@ -1,15 +1,16 @@
 import os
-import ph_data_clean
+from ph_data_clean.__main__ import main as clean_main
+from ph_data_clean.util.yaml_utils import load_by_dir, load_by_file
 
 
-def test_go_rt_pkg_layer_pipenv():
-    print("abc")
-    ph_data_clean.init()
-    # args = {
-    #     "package_name": "test_go_rt_layer_pipenv.zip",
-    #     "is_pipenv": True,
-    # }
-    #
-    # go_rt.pkg_layer(args)
-    # assert os.path.exists(args["package_name"])
-    # os.remove(args["package_name"])
+def get_test_data(path):
+    return [k for i in load_by_dir(path) for k in i]
+
+
+def test_all():
+    mapping_path = 'file/ph_data_clean/mapping_table/'
+    test_file = 'file/ph_data_clean/s3_test_data/'
+    test_datas = get_test_data(test_file)
+    for test_data in test_datas:
+        result = clean_main(mapping_path, test_data)
+        assert result.tag == 1
