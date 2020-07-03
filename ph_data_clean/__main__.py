@@ -17,7 +17,7 @@ def main(mp, td):
     result = cleaner.cleaning_process([col.to_dict() for col in mapping.cols], td[0])
     print(result)
     print(result.data)
-    print(result.metadata)
+    # print(result.metadata)
     print(result.tag)
     print(result.err_msg)
 
