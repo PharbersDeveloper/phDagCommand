@@ -12,12 +12,8 @@ class CpaGycDataClean(DataClean):
         new_key_name = {}
         for raw_data_key in raw_data.keys():
             old_key = raw_data_key.split("#")[-1].strip()  # remove unwanted symbols
-            # print(old_key)
             for m in mapping:
-                # print(m["candidate"])
-                # new_key_name[new_key] = None
                 if old_key in m["candidate"]:
-                    # print(1)
                     new_key = m["col_name"]
                     new_key_name[new_key] = raw_data[raw_data_key]  # write new key name into dict
 
@@ -31,11 +27,24 @@ class CpaGycDataClean(DataClean):
                     final_data[m["col_name"]] = None
 
         # define tag
-        for maps in mapping:
-            if maps['not_null']:
-                if final_data[maps['col_name']] is None:
-                    # print(maps['col_name'])
-                    tag_value = Tag.ERROR
+        if final_data == {}:  # 若最终字典没有内容
+            tag_value = Tag.EMPTY_DICT
+            error_msg = 'Error message: return empty final dict'
 
-        return CleanResult(final_data, {}, tag_value)
+        else:
+            error_msg_flag = False
+            error_msg = f'Error message: column missing - '
+            for maps in mapping:
+                # print(maps)
+                # 若某些必须有的列缺失数据
+                if (maps['not_null']) and (final_data[maps['col_name']] is None):
+                    error_msg_flag = True
+                    tag_value = Tag.MISSING_COL
+                    error_msg += ' / ' + maps['col_name']
+                    continue
 
+            if not error_msg_flag:
+                tag_value = Tag.SUCCESS
+                error_msg = 'Success'
+
+        return CleanResult(final_data, {}, tag_value, error_msg)

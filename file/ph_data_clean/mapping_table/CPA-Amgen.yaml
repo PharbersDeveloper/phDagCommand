@@ -91,7 +91,7 @@ cols:
   candidate: []
   col_desc: 通用名
   col_name: KEY_BRAND
-  not_null: true
+  not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
@@ -160,13 +160,13 @@ cols:
   candidate: []
   col_desc: 所属市场
   col_name: MKT
-  not_null: true
+  not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate: []
   col_desc: 文件标识
   col_name: TAG
-  not_null: false #TODO
+  not_null: false
   type: String
-company: 倍特
+company: Amgen
 source: CPA

@@ -8,7 +8,7 @@ class CleanerFactory(object):
     """
 
     all_clean = {
-        ('CPA', 'GYC'): CpaGycDataClean,
+        ('CPA', 'GYC', 'CPA&GYC', 'GYC&CPA'): CpaGycDataClean,
     }
 
     def get_specific_cleaner(self, source, company='') -> DataClean:

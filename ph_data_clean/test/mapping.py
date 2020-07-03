@@ -1,183 +1,179 @@
-def cpa_mapping():
+def cpa_gyc_mapping():
     return [
         {
-            "ColName": "COMPANY",
-            "ColDesc": "数据公司",
-            "Type": "String",
-            "Candidate": [],
-            "NotNull": True
+            "col_name": "COMPANY",
+            "col_desc": "数据公司",
+            "type": "String",
+            "candidate": [],
+            "not_null": True
         },
         {
-            "ColName": "SOURCE",
-            "ColDesc": "数据来源",
-            "Type": "String",
-            "Candidate": ["数据来源"],
-            "NotNull": True
+            "col_name": "SOURCE",
+            "col_desc": "数据来源",
+            "type": "String",
+            "candidate": [],
+            "not_null": True
         },
         {
-            "ColName": "YEAR",
-            "ColDesc": "年份",
-            "Type": "String",
-            "Candidate": ["年月", 'year', 'YEAR', '年'],
+            "col_name": "PROVINCE_NAME",
+            "col_desc": "省份名",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "MONTH",
-            "ColDesc": "月份",
-            "Type": "String",
-            "Candidate": ["月", 'month', 'MONTH'],
+            "col_name": "CITY_NAME",
+            "col_desc": "城市名",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "PROVINCE_NAME",
-            "ColDesc": "省份名",
-            "Type": "String",
-            "Candidate": ["省", "省份", "省/自治区/直辖市", "PROVINCE", "PROVINCES",
-                          "PROVINCE_NAME"],
+            "col_name": "PREFECTURE_NAME",
+            "col_desc": "区县名",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "CITY_NAME",
-            "ColDesc": "市名",
-            "Type": "String",
-            "Candidate": ["市", "城市", "city"],
+            "col_name": "YEAR",
+            "col_desc": "年份",
+            "type": "String",
+            "candidate": [],
+            "not_null": True
         },
         {
-            "ColName": "PREFECTURE_NAME",
-            "ColDesc": "区县名",
-            "Type": "String",
-            "Candidate": ["区县"]
+            "col_name": "QUARTER",
+            "col_desc": "季度",
+            "type": "String",  # "Integer", TODO 月份里有个是2018Q1
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "HOSP_NAME",
-            "ColDesc": "医院名",
-            "Type": "String",
-            "Candidate": ["LILLY_HSPTL_NAME", "医院名称", "HOSPITAL NAME", "HOSPITAL",
-                          "HOSPITAL.NAME", "HOSNAME", "HOSPITAL_NAME", "医院"],
-            # "NotNull": True
+            "col_name": "MONTH",
+            "col_desc": "月份",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "HOSP_CODE",
-            "ColDesc": "医院编码",
-            "Type": "String",
-            "Candidate": ["医院编码", "VEEVA_CUSTOMER_ID", "HOSP_ID", "HOSPITAL CODE", "CODE",
-                          "HOSPITAL.CODE", "HOSPITAL_CODE", "医院.代码", "UCBHOSCODE",
-                          "HOSCODE", "医院.编码", "ID", "DSCN医院编码", "BI_CODE"]
+            "col_name": "HOSP_NAME",
+            "col_desc": "医院名",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "HOSP_LEVEL",
-            "ColDesc": "医院等级",
-            "Type": "String",
-            "Candidate": ["医院等级", "HOSPITAL DEGREE", "LEVEL", "级别", "等级", "医院级别"]
+            "col_name": "HOSP_CODE",
+            "col_desc": "医院编码",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "ATC",
-            "ColDesc": "ATC编码",
-            "Type": "String",
-            "Candidate": ["ATC编码", "ATC码", "通用名ATC编码", "ATC", "ATC_CODE", "ATC3编码",
-                          "ATC3_CODE", "ATC3名称"]
+            "col_name": "HOSP_LEVEL",
+            "col_desc": "医院等级",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "MOLE_NAME",
-            "ColDesc": "分子名",
-            "Type": "String",
-            "Candidate": ["MOLECULENAME", "MOLECULE NAME", "MOLECULE_NAME", "MCL_NAME", "药品名",
-                          "分子名", "药品名称", "类别名称", "MOLECULE", "MOLECULE",
-                          "MOLE_NAME", "MOLECULE.NAME", "化学名", "通用名", "KEY_BRAND"],
-            "NotNull": True
+            "col_name": "ATC",
+            "col_desc": "ATC编码",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "KEY_BRAND",
-            "ColDesc": "通用名",
-            "Type": "String",
-            "Candidate": []
+            "col_name": "MOLE_NAME",
+            "col_desc": "分子名",
+            "type": "String",
+            "candidate": [],
+            "not_null": True
         },
         {
-            "ColName": "PRODUCT_NAME",
-            "ColDesc": "商品名",
-            "Type": "String",
-            "Candidate": ["商品名", "药品商品名", "PRODUCT", "PRODUCT_NAME",
-                          "PRODUCT.NAME", "PRODUCTNAME", "商品名称"],
-            "NotNull": True
+            "col_name": "KEY_BRAND",
+            "col_desc": "通用名",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "PACK",
-            "ColDesc": "包装",
-            "Type": "String",
-            "Candidate": ["包装", "包装单位", "PACKAGE", "包装.单位", "包.装"],
-            # "NotNull": True
+            "col_name": "PRODUCT_NAME",
+            "col_desc": "商品名",
+            "type": "String",
+            "candidate": [],
+            "not_null": True
         },
         {
-            "ColName": "SPEC",
-            "ColDesc": "规格",
-            "Type": "String",
-            "Candidate": ["药品规格", "包装规格", "规格", "统一规格", "SPECIFICAT", "PACK_DES", "品规",
-                          "PACK_DESCRIPTION", "PACK", "SKU"],
-            "NotNull": True  # TODO: 需要决策树
+            "col_name": "PACK",
+            "col_desc": "包装",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "DOSAGE",
-            "ColDesc": "剂型",
-            "Type": "String",
-            "Candidate": ["剂型", "FORM", "DOSAGE", "FORMULATION_NAME", "CONTENT_TYPE", "CONTENTTYPE", "APP2_COD"],
-            "NotNull": True
+            "col_name": "SPEC",
+            "col_desc": "规格",
+            "type": "String",
+            "candidate": [],
+            "not_null": True # TODO: 需要决策树
         },
         {
-            "ColName": "PACK_QTY",
-            "ColDesc": "包装数量",
-            "Type": "String",
-            "Candidate": ["包装数量", "PACKAGE_QTY", "PACK_NUMBER", "PACKNUMBER", "数量.（支/片）",
-                          "数量支/片", "数量(支/片)", "数量.(支/片)",
-                          "数量.支/片", "包装.数量", "SIZE"],
-            # "NotNull": True
+            "col_name": "DOSAGE",
+            "col_desc": "剂型",
+            "type": "String",
+            "candidate": [],
+            "not_null": True
         },
         {
-            "ColName": "SALES_QTY",
-            "ColDesc": "销量",
-            "Type": "Double",
-            "Candidate": ["数量", "STANDARD_UNIT", "最小包装单位数量", "最小制剂单位数量", "QUANTITY",
-                          "销售数量", "TOTAL_UNITS", "UNIT", "SALES_QTY", "数量（支/片）",],
-            # "NotNull": True
+            "col_name": "PACK_QTY",
+            "col_desc": "包装数量",
+            "type": "String",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "SALES_VALUE",
-            "ColDesc": "销售额",
-            "Type": "Double",
-            "Candidate": ["金额", "金额元", "金额(元)", "金额（元）", "金额.元", "销售金AM", "VALUE", "SALES",
-                          "SALES VALUE (RMB)", "SALES VALUERMB", "SALESVALUERMB", "SALES_VALUE",
-                          "销售金额", "金额.（元）", "金额.(元)"],
-            "NotNull": True
-        },
-
-        {
-            "ColName": "DELIVERY_WAY",
-            "ColDesc": "给药途径",
-            "Type": "String",
-            "Candidate": ["给药途径", "ROAD", "途径", "ADMINST", "DELIVERY_WAY", "给药.途径"]
+            "col_name": "SALES_QTY",
+            "col_desc": "销量",
+            "type": "Double",
+            "candidate": [],
+            "not_null": False
         },
         {
-            "ColName": "MANUFACTURER_NAME",
-            "ColDesc": "生产厂商",
-            "Type": "String",
-            "Candidate": ["生产厂商", "生产厂家", "企业名称", "CORP_NAME", "生产企业",
-                          "CORPORATIO", "MANUFACTUER_NAME", "CORPORATION", "MANUFACTUER",
-                          "药厂名称", "集团名称", "COMPANY_NAME", "集团"],
-            "NotNull": True
+            "col_name": "SALES_VALUE",
+            "col_desc": "销售额",
+            "type": "Double",
+            "candidate": [],
+            "not_null": True
         },
         {
-            "ColName": "MKT",
-            "ColDesc": "所属市场",
-            "Type": "String",
-            "Candidate": ["竞品市场", "MARKET", "定义市场", "市场定义", "市场"],
-            # "NotNull": True
+            "col_name": "DELIVERY_WAY",
+            "col_desc": "给药途径",
+            "type": "String",
+            "candidate": [],
+            "NotNull": False
         },
         {
-            "ColName": "TAG",
-            "ColDesc": "文件标识",
-            "Type": "String",
-            "Candidate": ["_TAG"],
-            "NotNull": True
+            "col_name": "MANUFACTURER_NAME",
+            "col_desc": "生产厂商",
+            "type": "String",
+            "candidate": [],
+            "not_null": True
+        },
+        {
+            "col_name": "MKT",
+            "col_desc": "所属市场",
+            "type": "String",
+            "candidate": [],
+            "NotNull": False
+        },
+        {
+            "col_name": "TAG",
+            "col_desc": "文件标识",
+            "type": "String",
+            "candidate": [],
+            "not_null": True
         }
     ]
-for item in cpa_mapping():
-    print(item)
-    if item['NotNull']:
-        print(1)
-print(cpa_mapping())
+

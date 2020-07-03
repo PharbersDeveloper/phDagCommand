@@ -3,7 +3,8 @@ from enum import Enum
 
 class Tag(Enum):
     SUCCESS = 1
-    ERROR = -1
+    MISSING_COL = -1
+    EMPTY_DICT = 0
 
 
 class CleanResult(object):

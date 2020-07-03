@@ -19,6 +19,7 @@ def main(mp, td):
     print(result.data)
     print(result.metadata)
     print(result.tag)
+    print(result.err_msg)
 
 
 if __name__ == '__main__':
