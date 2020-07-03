@@ -109,7 +109,7 @@ cols:
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - 药品规格
+  - 规格
   col_desc: 规格
   col_name: SPEC
   not_null: true

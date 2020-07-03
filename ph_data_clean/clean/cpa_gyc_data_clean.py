@@ -11,7 +11,7 @@ class CpaGycDataClean(DataClean):
         # standardise colunm name
         new_key_name = {}
         for raw_data_key in raw_data.keys():
-            old_key = raw_data_key.split("#")[-1].strip()  # remove unwanted symbols
+            old_key = raw_data_key.split("#")[-1].replace('\n', '').strip()  # remove unwanted symbols
             for m in mapping:
                 if old_key in m["candidate"]:
                     new_key = m["col_name"]

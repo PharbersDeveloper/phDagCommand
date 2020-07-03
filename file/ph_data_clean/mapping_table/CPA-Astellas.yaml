@@ -60,7 +60,7 @@ cols:
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - 医院\n编码
+  - 医院编码
   col_desc: 医院编码
   col_name: HOSP_CODE
   not_null: false
@@ -100,7 +100,7 @@ cols:
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - 包装\n单位
+  - 包装单位
   col_desc: 包装
   col_name: PACK
   not_null: false
@@ -121,21 +121,21 @@ cols:
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - '包装\n数量'
+  - 包装数量
   col_desc: 包装数量
   col_name: PACK_QTY
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - 数量\n（支/片）
+  - 数量(支/片)
   col_desc: 销量
   col_name: SALES_QTY
   not_null: false
   type: Double
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - 金额
+  - 金额(元)
   col_desc: 销售额
   col_name: SALES_VALUE
   not_null: true
