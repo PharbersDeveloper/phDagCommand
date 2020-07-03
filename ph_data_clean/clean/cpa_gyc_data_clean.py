@@ -35,7 +35,6 @@ class CpaGycDataClean(DataClean):
             error_msg_flag = False
             error_msg = f'Error message: column missing - '
             for maps in mapping:
-                # print(maps)
                 # 若某些必须有的列缺失数据
                 if (maps['not_null']) and (final_data[maps['col_name']] is None):
                     error_msg_flag = True

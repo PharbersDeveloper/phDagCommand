@@ -161,7 +161,7 @@ cols:
   candidate: []
   col_desc: 文件标识
   col_name: TAG
-  not_null: true
+  not_null: false
   type: String
 company: Pfizer
 source: CPA&GYC
