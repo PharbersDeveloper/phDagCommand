@@ -13,14 +13,15 @@ cols:
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate: []
+  candidate:
+  - Province
   col_desc: 省份名
   col_name: PROVINCE_NAME
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - CITY
+  - City
   col_desc: 城市名
   col_name: CITY_NAME
   not_null: false
@@ -33,7 +34,7 @@ cols:
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - YEAR
+  - Period
   col_desc: 年份
   col_name: YEAR
   not_null: true
@@ -45,40 +46,42 @@ cols:
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate:
-  - MONTH
+  candidate: []
   col_desc: 月份
   col_name: MONTH
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate: []
+  candidate:
+  - Hospital Name
   col_desc: 医院名
   col_name: HOSP_NAME
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - HOSPITAL_CODE
+  - Hospital Code
   col_desc: 医院编码
   col_name: HOSP_CODE
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate: []
+  candidate:
+  - Hospital Degree
   col_desc: 医院等级
   col_name: HOSP_LEVEL
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate: []
+  candidate:
+  - 通用名ATC编码
   col_desc: ATC编码
   col_name: ATC
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - MOLE_NAME
+  - Molecule Name
   col_desc: 分子名
   col_name: MOLE_NAME
   not_null: true
@@ -91,67 +94,68 @@ cols:
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - PRODUCT_NAME
+  - Product Name
   col_desc: 商品名
   col_name: PRODUCT_NAME
   not_null: true
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate: []
+  candidate:
+  - Pack
   col_desc: 包装
   col_name: PACK
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate:
-  - PACK_DES
+  candidate: []
   col_desc: 规格
   col_name: SPEC
   not_null: true
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - APP2_COD
+  - Dosage
   col_desc: 剂型
   col_name: DOSAGE
   not_null: true
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - PACK_NUMBER
+  - PackNumber
   col_desc: 包装数量
   col_name: PACK_QTY
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate: []
+  candidate:
+  - 最小制剂单位数量
   col_desc: 销量
   col_name: SALES_QTY
   not_null: false
   type: Double
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - VALUE
+  - 金额
   col_desc: 销售额
   col_name: SALES_VALUE
   not_null: true
   type: Double
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate: []
+  candidate:
+  - ROAD
   col_desc: 给药途径
   col_name: DELIVERY_WAY
   not_null: false
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - CORP_NAME
+  - 生产企业
   col_desc: 生产厂商
   col_name: MANUFACTURER_NAME
   not_null: true
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate:
-  - BRAND_MKT
+  candidate: []
   col_desc: 所属市场
   col_name: MKT
   not_null: false
@@ -160,7 +164,7 @@ cols:
   candidate: []
   col_desc: 文件标识
   col_name: TAG
-  not_null: false
+  not_null: false #TODO
   type: String
-company: Pfizer
-source: CPA&GYC
+company: Servier
+source: CPA
