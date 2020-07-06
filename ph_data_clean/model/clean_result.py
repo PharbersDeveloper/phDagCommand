@@ -4,8 +4,9 @@ from enum import Enum
 
 class Tag(Enum):
     SUCCESS = 1
-    MISSING_COL = -1
     EMPTY_DICT = 0
+    MISSING_COL = -1
+    PH_ERR = -9999
 
 
 class CleanResult(object):

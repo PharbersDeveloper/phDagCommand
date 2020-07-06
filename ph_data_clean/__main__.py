@@ -2,9 +2,10 @@ import sys
 import os
 import json
 import click
+from pherrs.ph_err import PhError
 from ph_data_clean.clean.cleaner_factory import CleanerFactory
 from ph_data_clean.model.mapping_factory import MappingFactory
-
+from ph_data_clean.model.clean_result import CleanResult, Tag
 
 def block_print():
     sys.stdout = open(os.devnull, 'w')
@@ -42,8 +43,12 @@ def main(mapping_path, raw_data):
     Python 实现的数据清洗，并根据 Source 和 Company 选择清洗算法和清洗结构，以此同源数据的 Schema 统一
     """
     block_print()
-    result = clean(mapping_path, json.loads(raw_data))
-    enable_print()
+    try:
+        result = clean(mapping_path, json.loads(raw_data))
+        enable_print()
+    except PhError as err:
+        result = CleanResult(data={}, metadata={}, tag=Tag.PH_ERR, err_msg=str(err))
+
     sys.stdout.write(str(result))
     sys.stdout.flush()
 
