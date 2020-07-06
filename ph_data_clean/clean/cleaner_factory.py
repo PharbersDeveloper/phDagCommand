@@ -1,5 +1,6 @@
 from ph_data_clean.clean.data_clean import DataClean
 from ph_data_clean.clean.cpa_gyc_data_clean import CpaGycDataClean
+from pherrs.ph_err import PhError
 
 
 class CleanerFactory(object):
@@ -27,7 +28,7 @@ class CleanerFactory(object):
         if len(finded) == 1:
             return finded[0][1]()
         elif len(finded) > 1:
-            raise Exception("Find more Cleaner" + str(finded))
+            raise PhError("Find more Cleaner" + str(finded))
         else:
-            raise Exception(f"Not find Cleaner, source={source}, company={company}")
+            raise PhError(f"Not find Cleaner, source={source}, company={company}")
 

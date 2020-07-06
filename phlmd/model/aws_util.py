@@ -1,4 +1,5 @@
 import boto3
+from pherrs.ph_err import PhError
 
 
 class AWSUtil(object):
@@ -29,7 +30,7 @@ class AWSUtil(object):
         :return: [bucket_name, file_path]
         """
         if not isinstance(path, str):
-            raise TypeError('Expected an str')
+            raise PhError('Expected an str')
 
         if path.startswith("https://") or path.startswith("http://"):
             url = path.split("://")[1]
@@ -42,7 +43,7 @@ class AWSUtil(object):
             file_path = "/".join(url.split("/")[1:])
             return [bucket_name, file_path]
         else:
-            raise Exception("The url is wrong")
+            raise PhError("The url is wrong")
 
     def sync_local_s3_file(self, path: str, bucket_name: str, dir_name: str, version: str) -> [str, str]:
         """

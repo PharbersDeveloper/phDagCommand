@@ -1,6 +1,7 @@
 from ph_data_clean.model.data_mapping import ColCharactor
 from ph_data_clean.model.data_mapping import DataMapping
 from ph_data_clean.util.yaml_utils import load_by_dir, override_to_file
+from pherrs.ph_err import PhError
 
 
 class MappingFactory(object):
@@ -34,9 +35,9 @@ class MappingFactory(object):
         if len(finded) == 1:
             return finded[0]
         elif len(finded) > 1:
-            raise Exception("Find more Mapping" + str(finded))
+            raise PhError("Find more Mapping" + str(finded))
         else:
-            raise Exception(f"Not find Mapping, source={source}, company={company}")
+            raise PhError(f"Not find Mapping, source={source}, company={company}")
 
     def __load(self):
         """
