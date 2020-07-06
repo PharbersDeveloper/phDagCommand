@@ -5,6 +5,7 @@ from phlmd.model import ph_role
 from phlmd.model import ph_layer
 from phlmd.model import ph_lambda
 from phlmd.model import ph_gateway
+from pherrs.ph_err import PhError
 
 
 @click.group('model', short_help='专项部署特定资源[功能关闭]')
@@ -69,7 +70,7 @@ def fineness_func(operator, model, argv):
         elif oper == "delete":
             return model_inst.delete
         else:
-            raise Exception("Invalid operator")
+            raise PhError("Invalid operator")
 
     try:
         opts, args = getopt.getopt(argv, "h",

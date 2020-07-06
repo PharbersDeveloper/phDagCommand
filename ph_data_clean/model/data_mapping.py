@@ -26,3 +26,6 @@ class DataMapping(object):
     def to_dict(self) -> dict:
         self.__dict__['cols'] = [col.to_dict() for col in self.cols]
         return self.__dict__
+
+    def get_metadata(self) -> list:
+        return [{'key': col.col_name, 'type': col.type} for col in self.cols]

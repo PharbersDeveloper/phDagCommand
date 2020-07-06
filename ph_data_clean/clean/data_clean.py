@@ -10,4 +10,3 @@ class DataClean(object, metaclass=ABCMeta):
     @abstractmethod
     def cleaning_process(self, mapping: list, raw_data: dict) -> CleanResult:
         pass
-

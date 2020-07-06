@@ -1,6 +1,8 @@
+import os
 from ph_data_clean.model.data_mapping import ColCharactor
 from ph_data_clean.model.data_mapping import DataMapping
-from ph_data_clean.util.yaml_utils import load_by_dir, override_to_file
+from ph_data_clean.util.yaml_utils import load_by_dir, override_to_file, load_by_file
+from pherrs.ph_err import PhError
 
 
 class MappingFactory(object):
@@ -26,7 +28,6 @@ class MappingFactory(object):
 
         :return: [dict] 返回指定的匹配规则
         """
-
         finded = [mapping for mapping in self.all_mapping
                   if source.lower() == mapping.source.lower()
                   and company.lower() == mapping.company.lower()]
@@ -34,15 +35,18 @@ class MappingFactory(object):
         if len(finded) == 1:
             return finded[0]
         elif len(finded) > 1:
-            raise Exception("Find more Mapping" + str(finded))
+            raise PhError("Find more Mapping" + str(finded))
         else:
-            raise Exception(f"Not find Mapping, source={source}, company={company}")
+            raise PhError(f"Not find Mapping, source={source}, company={company}")
 
     def __load(self):
         """
         从 yaml 文件中加载 all_mapping
         """
-        return load_by_dir(self.mapping_path)
+        if os.path.isdir(self.mapping_path):
+            return load_by_dir(self.mapping_path)
+        else:
+            return load_by_file(self.mapping_path)
 
     def parsist_to_yaml(self):
         """

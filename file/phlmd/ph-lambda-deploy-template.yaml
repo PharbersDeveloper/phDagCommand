@@ -9,9 +9,10 @@
     arpd_path: s3://ph-api-lambda/template/role/trust-policy-template.json
     policys_arn:
       - arn:aws-cn:iam::aws:policy/service-role/AWSLambdaRole
+      - arn:aws-cn:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
       - arn:aws-cn:iam::aws:policy/AWSLambdaExecute
-      - arn:aws-cn:iam::444603803904:policy/AWSKmsDecrypt
       - arn:aws-cn:iam::aws:policy/AmazonAPIGatewayInvokeFullAccess
+      - arn:aws-cn:iam::444603803904:policy/AWSKmsDecrypt
   layer:
     lib_path: #lib_path#
     package_name: #name#-layer.zip

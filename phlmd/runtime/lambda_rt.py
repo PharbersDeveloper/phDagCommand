@@ -1,6 +1,7 @@
 import os
 from abc import ABCMeta, abstractmethod
 import click
+from pherrs.ph_err import PhError
 
 
 class LambdaRuntime(metaclass=ABCMeta):
@@ -26,7 +27,7 @@ class LambdaRuntime(metaclass=ABCMeta):
         """
 
         if not isinstance(self._package_cmds, list):
-            raise TypeError('Expected an list')
+            raise PhError('Expected an list')
 
         self._package_cmds.extend([
             "mv package.zip %s" % package_name,

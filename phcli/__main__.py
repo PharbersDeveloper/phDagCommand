@@ -2,6 +2,7 @@
 import click
 from command.phcommand import maxauto
 from phlmd.__main__ import main as phlam_main
+from ph_data_clean.__main__ import main as clean_main
 
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
@@ -14,6 +15,7 @@ def phcli():
 
 phcli.add_command(maxauto)
 phcli.add_command(phlam_main)
+phcli.add_command(clean_main)
 
 
 if __name__ == '__main__':

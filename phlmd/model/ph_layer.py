@@ -4,6 +4,7 @@ from phlmd.runtime import nodejs_rt
 from phlmd.runtime import go_rt
 from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil
+from pherrs.ph_err import PhError
 
 
 class PhLayer(AWSOperator):
@@ -31,7 +32,7 @@ class PhLayer(AWSOperator):
         elif "go" in data["runtime"]:
             runtime_inst = go_rt.GoRT()
         else:
-            raise Exception("Invalid runtime")
+            raise PhError("Invalid runtime")
 
         return runtime_inst.pkg_layer(data)
 
