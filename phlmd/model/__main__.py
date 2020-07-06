@@ -79,7 +79,7 @@ def fineness_func(operator, model, argv):
                                                   "layer_path=",  # layer oper args
                                     "lambda_path=", "lambda_handler=", "lambda_layers=", # lambda oper args
                                     "lambda_timeout=", "lambda_memory_size=", "lambda_concurrent=", # lambda oper args
-                                    "lambda_desc=", "lambda_env=", "lambda_tag=", # lambda oper args
+                                    "lambda_desc=", "lambda_env=", "lambda_tag=", "vpc_config=", # lambda oper args
                                     "rest_api_id=", "api_template=", "lambda_name=", "role_name=", # apigateway oper args
                                     ])
     except getopt.GetoptError:
