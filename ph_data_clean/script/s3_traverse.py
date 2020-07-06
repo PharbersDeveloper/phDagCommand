@@ -63,7 +63,7 @@ def load_cache_data():
 
      :return: cache_data_lst: 已经处理的文件信息
      """
-    return [i for k in load_by_dir(LOCAL_CACHE_DIR) for i in k]
+    return load_by_dir(LOCAL_CACHE_DIR)
 
 
 def append_cache_data(parse_sheet_lst):

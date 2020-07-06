@@ -1,5 +1,6 @@
 import os
 import yaml
+from pherrs.ph_err import PhError
 
 
 def load_by_file(file):
@@ -34,7 +35,7 @@ def load_by_dir(dir):
     """
     # 参数不是目录，直接返回
     if not os.path.isdir(dir):
-        return []
+        raise PhError("args not is dir")
 
     if not dir.endswith("/"):
         dir = dir + "/"
@@ -45,6 +46,10 @@ def load_by_dir(dir):
         if not (os.path.isfile(file) or file.endswith('.yaml')):
             continue
 
-        lst.append(load_by_file(file))
+        obj = load_by_file(file)
+        if isinstance(obj, list):
+            lst += obj
+        else:
+            lst.append(obj)
 
     return lst
