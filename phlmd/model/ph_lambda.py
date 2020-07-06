@@ -1,7 +1,4 @@
 import boto3
-from phlmd.runtime import python_rt
-from phlmd.runtime import nodejs_rt
-from phlmd.runtime import go_rt
 from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil
 from phlmd.model.ph_role import PhRole
@@ -24,16 +21,7 @@ class PhLambda(AWSOperator):
             :arg code_path: lambda 代码位置
             :arg package_name 打包的名称
         """
-
-        if "python" in data["runtime"]:
-            runtime_inst = python_rt.PythonRT()
-        elif "nodejs" in data["runtime"]:
-            runtime_inst = nodejs_rt.NodejsRT()
-        elif "go" in data["runtime"]:
-            runtime_inst = go_rt.GoRT()
-        else:
-            raise Exception("Invalid runtime")
-
+        runtime_inst = self.aws_util.get_rt_inst(data['runtime'])
         return runtime_inst.pkg_code(data)
 
     def create(self, data):

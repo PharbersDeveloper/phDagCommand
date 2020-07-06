@@ -1,7 +1,4 @@
 import boto3
-from phlmd.runtime import python_rt
-from phlmd.runtime import nodejs_rt
-from phlmd.runtime import go_rt
 from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil
 
@@ -23,16 +20,7 @@ class PhLayer(AWSOperator):
             :arg package_name 打包的名称
             :arg is_pipenv: 是否使用的 pipenv 构建的项目，默认为 True
         """
-
-        if "python" in data["runtime"]:
-            runtime_inst = python_rt.PythonRT()
-        elif "nodejs" in data["runtime"]:
-            runtime_inst = nodejs_rt.NodejsRT()
-        elif "go" in data["runtime"]:
-            runtime_inst = go_rt.GoRT()
-        else:
-            raise Exception("Invalid runtime")
-
+        runtime_inst = self.aws_util.get_rt_inst(data['runtime'])
         return runtime_inst.pkg_layer(data)
 
     def create(self, data):
