@@ -16,10 +16,9 @@ def enable_print():
     sys.stdout = sys.__stdout__
 
 
-def clean(mp, rd):
+def clean(rd):
     """
     选择清洗算法和匹配表，并对结果进行包装
-    :param mp: 匹配表位置
     :param rd: 原始数据，数据格式为 [{rawdata},{metadata}]
     :return: CleanResult
     """
@@ -27,27 +26,25 @@ def clean(mp, rd):
     company = rd[1]['providers'][0]
 
     cleaner = CleanerFactory().get_specific_cleaner(source, company)
-    mapping = MappingFactory(mp).get_specific_mapping(source, company)
+    mapping = MappingFactory().get_specific_mapping(source, company)
 
-    result = cleaner.cleaning_process([col.to_dict() for col in mapping.cols], rd[0])
+    result = cleaner.cleaning_process(mapping, rd[0])
     if result.tag.value > 0:
         result.data['SOURCE'] = source
         result.data['COMPANY'] = company
-        result.metadata = mapping.get_metadata()
 
     return result
 
 
 @click.command("clean", short_help='源数据清洗与 Schema 统一')
-@click.option('-m', '--mapping_path', default=r'file/ph_data_clean/mapping_table/', type=click.Path(exists=True))
 @click.argument("raw_data")
-def main(mapping_path, raw_data):
+def main(raw_data):
     """
     Python 实现的数据清洗，并根据 Source 和 Company 选择清洗算法和清洗结构，以此同源数据的 Schema 统一
     """
-    block_print()
+    # block_print()
     try:
-        result = clean(mapping_path, json.loads(raw_data))
+        result = clean(json.loads(raw_data))
         enable_print()
     except PhError as err:
         result = CleanResult(data={}, metadata={}, tag=Tag.PH_ERR, err_msg=str(err))
