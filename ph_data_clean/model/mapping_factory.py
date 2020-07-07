@@ -19,7 +19,7 @@ class MappingFactory(object):
         self.mapping_path = mapping_path
         self.all_mapping = self.__load()
 
-    def get_specific_mapping(self, source, company) -> dict:
+    def get_specific_mapping(self, source, company) -> DataMapping:
         """
         根据源和公司获取特定的匹配规则
 
