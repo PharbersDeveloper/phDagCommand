@@ -26,6 +26,19 @@ class CpaGycDataClean(DataClean):
                 elif m["col_name"] not in final_data.keys():
                     final_data[m["col_name"]] = None
 
+        # 当字典不为空时 change year and month
+        if final_data:
+            if len(final_data['YEAR']) == 6:
+                final_data['MONTH'] = int(final_data['YEAR']) % 100  # month
+                final_data['YEAR'] = (int(final_data['YEAR']) - final_data['MONTH']) // 100  # year
+            elif len(final_data['YEAR']) == 8:
+                date = int(final_data['YEAR']) % 100  # date
+                year_month = (int(final_data['YEAR']) - date) // 100  # year+month
+                final_data['MONTH'] = year_month % 100  # month
+                final_data['YEAR'] = (year_month - final_data['MONTH']) // 100  # year
+            else:
+                pass
+
         # define tag
         if final_data == {}:  # 若最终字典没有内容
             tag_value = Tag.EMPTY_DICT
