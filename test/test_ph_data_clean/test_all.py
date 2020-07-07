@@ -16,10 +16,10 @@ chdir()
 
 
 def test_all():
-    mapping_path = 'file/ph_data_clean/mapping_table/'
-    test_file = 'file/ph_data_clean/s3_test_data/'
-    test_datas = load_by_dir(test_file)
+    test_files = 'file/ph_data_clean/s3_test_data/'
+    test_datas = load_by_dir(test_files)
     for test_data in test_datas:
-        result = clean(mapping_path, test_data)
-        assert result.tag == Tag.SUCCESS
+        result = clean(test_data)
+        if result.tag != Tag.SUCCESS:
+            print(str(result))
 test_all()

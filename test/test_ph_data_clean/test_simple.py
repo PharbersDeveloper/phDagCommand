@@ -16,10 +16,10 @@ chdir()
 
 
 def test_all():
-    mapping_path = r'file/ph_data_clean/mapping_table/'
-    test_file = r'file/ph_data_clean/s3_test_data/CPA&GYC-Pfizer-test.yaml'
+    test_file = r'file/ph_data_clean/s3_test_data/CPA-倍特-test.yaml'
     test_datas = load_by_file(test_file)
     for test_data in test_datas:
-        result = clean(mapping_path, test_data)
-        assert result.tag == Tag.SUCCESS
+        result = clean(test_data)
+        if result.tag != Tag.SUCCESS:
+            print(str(result))
 test_all()
