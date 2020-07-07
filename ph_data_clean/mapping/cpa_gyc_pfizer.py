@@ -122,7 +122,7 @@ def mapping():
         {
             "col_name": "SALES_QTY",
             "col_desc": "销量",
-            "candidate": ["最小制剂单位数量"],
+            "candidate": ["STANDARD_UNIT"],
             "type": "String",
             "not_null": True,
         },

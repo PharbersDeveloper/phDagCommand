@@ -101,7 +101,7 @@ def mapping():
         {
             "col_name": "SPEC",
             "col_desc": "规格",
-            "candidate": ['规格'],
+            "candidate": ['规格', '药品规格'],
             "type": "String",
             "not_null": True,
         },
@@ -122,14 +122,14 @@ def mapping():
         {
             "col_name": "SALES_QTY",
             "col_desc": "销量",
-            "candidate": ['数量（支/片）'],
+            "candidate": ['数量（支/片）', '数量(支/片)'],
             "type": "Double",
             "not_null": True,
         },
         {
             "col_name": "SALES_VALUE",
             "col_desc": "销售额",
-            "candidate": ['金额（元）'],
+            "candidate": ['金额（元）', '金额(元)'],
             "type": "Double",
             "not_null": True,
         },

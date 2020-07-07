@@ -38,7 +38,7 @@ def mapping():
         {
             "col_name": "YEAR",
             "col_desc": "年份",
-            "candidate": ["YYYYMM"],
+            "candidate": ["YEAR"],
             "type": "String",
             "not_null": True,
         },
@@ -143,7 +143,7 @@ def mapping():
         {
             "col_name": "MANUFACTURER_NAME",
             "col_desc": "生产厂商",
-            "candidate": ["生产企业"],
+            "candidate": ["CORP_NAME"],
             "type": "String",
             "not_null": True,
         },

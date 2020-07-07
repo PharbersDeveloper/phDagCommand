@@ -101,7 +101,7 @@ def mapping():
         {
             "col_name": "SPEC",
             "col_desc": "规格",
-            "candidate": ['药品规格'],
+            "candidate": ['药品规格', '规格'],
             "type": "String",
             "not_null": True,
         },

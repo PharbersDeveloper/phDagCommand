@@ -143,7 +143,7 @@ def mapping():
         {
             "col_name": "MANUFACTURER_NAME",
             "col_desc": "生产厂商",
-            "candidate": ["生产企业"],
+            "candidate": ["CORPORATION"],
             "type": "String",
             "not_null": True,
         },

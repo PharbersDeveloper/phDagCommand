@@ -122,7 +122,7 @@ def mapping():
         {
             "col_name": "SALES_QTY",
             "col_desc": "销量",
-            "candidate": ['数量（支/片）'],
+            "candidate": ['数量（支/片）', '数量(支/片)'],
             "type": "Double",
             "not_null": True,
         },

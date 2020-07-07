@@ -37,8 +37,8 @@ def mapping():
         },
         {
             "col_name": "YEAR",
-            "col_desc": "YYYYMM",
-            "candidate": ["年"],
+            "col_desc": "年份",
+            "candidate": ["YYYYMM"],
             "type": "String",
             "not_null": True,
         },
