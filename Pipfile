@@ -8,13 +8,13 @@ pytest = "*"
 pipenv = "*"
 pyinstaller = "*"
 setuptools = "==44.0.0"
-pandas = "*"
-xlrd = "*"
 
 [packages]
 click = "*"
 boto3 = "*"
 pyyaml = "*"
+pandas = "*"
+xlrd = "*"
 
 [requires]
 python_version = "3.8"

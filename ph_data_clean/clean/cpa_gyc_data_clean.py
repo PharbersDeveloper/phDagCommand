@@ -9,7 +9,6 @@ class CpaGycDataClean(DataClean):
 
     def cleaning_process(self, mapping: list, raw_data: dict) -> CleanResult:
         # standardise colunm name
-        # print(raw_data)
         new_key_name = {}
         for raw_data_key in raw_data.keys():
             old_key = raw_data_key.split("#")[-1].replace('\n', '').strip()  # remove unwanted symbols
@@ -28,7 +27,6 @@ class CpaGycDataClean(DataClean):
                     final_data[m["col_name"]] = None
 
         # 当字典不为空时 change year and month
-        # print(final_data)
         if final_data and final_data['YEAR']:
             if len(final_data['YEAR']) == 6:
                 final_data['MONTH'] = int(final_data['YEAR']) % 100  # month

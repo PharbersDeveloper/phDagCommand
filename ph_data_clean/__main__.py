@@ -31,6 +31,8 @@ def clean(mp, rd):
 
     result = cleaner.cleaning_process([col.to_dict() for col in mapping.cols], rd[0])
     if result.tag.value > 0:
+        result.data['SOURCE'] = source
+        result.data['COMPANY'] = company
         result.metadata = mapping.get_metadata()
 
     return result
@@ -43,14 +45,12 @@ def main(mapping_path, raw_data):
     """
     Python 实现的数据清洗，并根据 Source 和 Company 选择清洗算法和清洗结构，以此同源数据的 Schema 统一
     """
-    # block_print()
+    block_print()
     try:
         result = clean(mapping_path, json.loads(raw_data))
         enable_print()
     except PhError as err:
         result = CleanResult(data={}, metadata={}, tag=Tag.PH_ERR, err_msg=str(err))
-
-
 
     sys.stdout.write(str(result))
     sys.stdout.flush()
