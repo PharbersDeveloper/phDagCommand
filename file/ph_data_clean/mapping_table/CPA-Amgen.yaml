@@ -51,7 +51,7 @@ cols:
   - 月
   col_desc: 月份
   col_name: MONTH
-  not_null: false
+  not_null: true
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate: []
@@ -64,7 +64,7 @@ cols:
   - 医院编码
   col_desc: 医院编码
   col_name: HOSP_CODE
-  not_null: false
+  not_null: true
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate: []

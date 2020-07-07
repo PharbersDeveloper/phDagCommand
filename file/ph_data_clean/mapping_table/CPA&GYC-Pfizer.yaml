@@ -14,7 +14,7 @@ cols:
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-    - 省/自治区/直辖市
+  - 省/自治区/直辖市
   col_desc: 省份名
   col_name: PROVINCE_NAME
   not_null: false
@@ -53,7 +53,7 @@ cols:
   - 月
   col_desc: 月份
   col_name: MONTH
-  not_null: false
+  not_null: true
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate: []
@@ -86,14 +86,7 @@ cols:
   - MOLE_NAME
   col_desc: 分子名
   col_name: MOLE_NAME
-  not_null: false #todo
-  type: String
-- !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate:
-  - 通用名
-  col_desc: 通用名
-  col_name: KEY_BRAND
-  not_null: false
+  not_null: true
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
@@ -105,17 +98,10 @@ cols:
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
-  - 包装
-  col_desc: 包装
-  col_name: PACK
-  not_null: false
-  type: String
-- !!python/object:ph_data_clean.model.data_mapping.ColCharactor
-  candidate:
   - PACK_DES
   col_desc: 规格
   col_name: SPEC
-  not_null: false #TODO
+  not_null: true
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
@@ -131,14 +117,14 @@ cols:
   - 包装数量
   col_desc: 包装数量
   col_name: PACK_QTY
-  not_null: false
+  not_null: true
   type: String
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:
   - 最小制剂单位数量
   col_desc: 销量
   col_name: SALES_QTY
-  not_null: false
+  not_null: true
   type: Double
 - !!python/object:ph_data_clean.model.data_mapping.ColCharactor
   candidate:

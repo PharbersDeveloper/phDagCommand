@@ -12,7 +12,7 @@ class MappingFactory(object):
 
         :return: [dict] 返回指定的匹配规则
         """
-        ipt_module = __import__(f'ph_data_clean.mapping.{source.lower()}-{company.lower()}')
+        ipt_module = __import__(f'ph_data_clean.mapping.{source.lower()}_{company.lower()}')
         mapping_pkg = getattr(ipt_module, 'mapping')
         mapping_file = getattr(mapping_pkg, f'{source.lower()}-{company.lower()}')
         mapping_table = getattr(mapping_file, 'mapping')
