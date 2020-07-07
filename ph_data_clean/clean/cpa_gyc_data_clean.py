@@ -9,6 +9,7 @@ class CpaGycDataClean(DataClean):
 
     def cleaning_process(self, mapping: list, raw_data: dict) -> CleanResult:
         # standardise colunm name
+        # print(raw_data)
         new_key_name = {}
         for raw_data_key in raw_data.keys():
             old_key = raw_data_key.split("#")[-1].replace('\n', '').strip()  # remove unwanted symbols
@@ -27,7 +28,8 @@ class CpaGycDataClean(DataClean):
                     final_data[m["col_name"]] = None
 
         # 当字典不为空时 change year and month
-        if final_data:
+        # print(final_data)
+        if final_data and final_data['YEAR']:
             if len(final_data['YEAR']) == 6:
                 final_data['MONTH'] = int(final_data['YEAR']) % 100  # month
                 final_data['YEAR'] = (int(final_data['YEAR']) - final_data['MONTH']) // 100  # year
@@ -39,10 +41,13 @@ class CpaGycDataClean(DataClean):
             else:
                 pass
 
-        # define tag
-        if final_data == {}:  # 若最终字典没有内容
+        # define tag and error message
+        if raw_data == {}:  # 若原始数据为空
             tag_value = Tag.EMPTY_DICT
-            error_msg = 'Error message: return empty final dict'
+            error_msg = 'Error message: empty raw_data'
+        elif final_data == {}:  # 若最终字典没有内容
+            tag_value = Tag.EMPTY_DICT
+            error_msg = 'Error message: no mapping found'
 
         else:
             error_msg_flag = False
