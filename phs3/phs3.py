@@ -27,7 +27,8 @@ class PhS3(object):
         if sys.version_info > (3, 0):
             return str.split(response["Body"].read().decode(), "\n")
         else:
-            return string.split(response["Body"].read().decode(), "\n")
+            res = response["Body"].read()
+            return string.split(res, "\n")
 
     def copy_object_2_file(self, bk_name, s3_path, local_path):
         f = open(local_path, "w")
