@@ -8,6 +8,7 @@ import pandas as pd
 import string
 import sys
 
+
 class PhS3(object):
     def __init__(self):
         self.client = boto3.client('s3')
