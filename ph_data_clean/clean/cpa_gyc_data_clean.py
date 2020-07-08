@@ -1,5 +1,12 @@
+from enum import Enum
 from ph_data_clean.clean.data_clean import DataClean
 from ph_data_clean.model.clean_result import CleanResult, Tag
+
+
+class SalesQtyTag(Enum):
+    GRAIN = 'GRAIN'
+    BOX = 'BOX'
+    FULL = 'FULL'
 
 
 class CpaGycDataClean(DataClean):
@@ -13,7 +20,7 @@ class CpaGycDataClean(DataClean):
         for raw_data_key in raw_data.keys():
             old_key = raw_data_key.split("#")[-1].replace('\n', '').strip()  # remove unwanted symbols
             for m in mapping:
-                if old_key in m["candidate"]:
+                if old_key.lower() in [key.lower() for key in m["candidate"]]:
                     new_key = m["col_name"]
                     new_key_name[new_key] = raw_data[raw_data_key]  # write new key name into dict
 
@@ -44,6 +51,11 @@ class CpaGycDataClean(DataClean):
                 final_data['YEAR'] = (year_month - final_data['MONTH']) // 100  # year
             else:
                 pass
+
+        # 整理销量情况
+        if final_data['SALES_QTY_GRAIN'] is not None:
+            final_data['SALES_QTY_BOX'] = final_data['SALES_QTY_GRAIN']
+            final_data['SALES_QTY_TAG'] = SalesQtyTag.GRAIN.value
 
         # define tag and error message
         if raw_data == {}:  # 若原始数据为空

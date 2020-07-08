@@ -15,6 +15,13 @@ def mapping():
             "not_null": False,
         },
         {
+            "col_name": "TAG",
+            "col_desc": "文件标识",
+            "candidate": ['_TAG'],
+            "type": "String",
+            "not_null": True,
+        },
+        {
             "col_name": "PROVINCE_NAME",
             "col_desc": "省份名",
             "candidate": ["省"],
@@ -120,9 +127,23 @@ def mapping():
             "not_null": True,
         },
         {
-            "col_name": "SALES_QTY",
-            "col_desc": "销量",
+            "col_name": "SALES_QTY_GRAIN",
+            "col_desc": "粒度销量",
             "candidate": ["数量(支/片)"],
+            "type": "String",
+            "not_null": True,
+        },
+        {
+            "col_name": "SALES_QTY_BOX",
+            "col_desc": "盒装销量",
+            "candidate": [],
+            "type": "String",
+            "not_null": True,
+        },
+        {
+            "col_name": "SALES_QTY_TAG",
+            "col_desc": "销量标识(GRAIN \ BOX \ FULL)",
+            "candidate": [],
             "type": "String",
             "not_null": True,
         },
@@ -150,13 +171,6 @@ def mapping():
         {
             "col_name": "MKT",
             "col_desc": "所属市场",
-            "candidate": [],
-            "type": "String",
-            "not_null": False,
-        },
-        {
-            "col_name": "TAG",
-            "col_desc": "文件标识",
             "candidate": [],
             "type": "String",
             "not_null": False,
