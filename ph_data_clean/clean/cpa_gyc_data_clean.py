@@ -27,13 +27,19 @@ class CpaGycDataClean(DataClean):
                     final_data[m["col_name"]] = None
 
         # 当字典不为空时 change year and month
-        if final_data and final_data['YEAR']:
-            if len(str(final_data['YEAR'])) == 6:
-                final_data['MONTH'] = int(final_data['YEAR']) % 100  # month
-                final_data['YEAR'] = (int(final_data['YEAR']) - final_data['MONTH']) // 100  # year
-            elif len(str(final_data['YEAR'])) == 8:
-                date = int(final_data['YEAR']) % 100  # date
-                year_month = (int(final_data['YEAR']) - date) // 100  # year+month
+        try:
+            final_data_year = int(final_data['YEAR'])
+        except:
+            isinstance(final_data['YEAR'], str) and final_data == {}
+            final_data_year = None
+
+        if final_data and isinstance(final_data_year, int):
+            if len(str(final_data_year)) == 6:
+                final_data['MONTH'] = int(final_data_year) % 100  # month
+                final_data['YEAR'] = (int(final_data_year) - final_data['MONTH']) // 100  # year
+            elif len(str(final_data_year)) == 8:
+                date = int(final_data_year) % 100  # date
+                year_month = (int(final_data_year) - date) // 100  # year+month
                 final_data['MONTH'] = year_month % 100  # month
                 final_data['YEAR'] = (year_month - final_data['MONTH']) // 100  # year
             else:

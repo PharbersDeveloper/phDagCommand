@@ -87,7 +87,7 @@ def mapping():
         {
             "col_name": "MOLE_NAME",
             "col_desc": "分子名",
-            "candidate": ['MOLE_NAME'],
+            "candidate": ['MOLE_NAME', '通用名'],
             "type": "String",
             "not_null": True,
         },
@@ -101,7 +101,7 @@ def mapping():
         {
             "col_name": "SPEC",
             "col_desc": "规格",
-            "candidate": ['PACK_DES'],
+            "candidate": ['PACK_DES', '规格'],
             "type": "String",
             "not_null": True,
         },
@@ -115,7 +115,7 @@ def mapping():
         {
             "col_name": "PACK_QTY",
             "col_desc": "包装数量",
-            "candidate": ['PACK_NUMBER', '包装数量'],
+            "candidate": ['PACK_NUMBER', '包装数量', '最小包装数量'],
             "type": "String",
             "not_null": True,
         },
@@ -143,7 +143,7 @@ def mapping():
         {
             "col_name": "MANUFACTURER_NAME",
             "col_desc": "生产厂商",
-            "candidate": ['生产企业', 'CORP_NAME'],
+            "candidate": ['生产企业', 'CORP_NAME', '生产厂家'],
             "type": "String",
             "not_null": True,
         },
