@@ -1,0 +1,346 @@
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "石嘴山市", "CORP_NAME": "上海中信国健药业有限公司", "HOSPITAL_CODE": 750051, "MOLE_NAME":
+    "重组人Ⅱ型肿瘤坏死因子受体-抗体融合蛋白", "MONTH": 9, "PACK_DES": "12.5 MG", "PACK_NUMBER":
+    1, "PRODUCT_MKT": "", "PRODUCT_NAME": "益赛普", "STANDARD_UNIT": 60, "VALUE":
+    22616, "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/200213辉瑞-12月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "替换数据"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "溶液剂（注射剂）", "BRAND_MKT": "", "CITY":
+    "广州市", "CORP_NAME": "中国医药集团总公司", "HOSPITAL_CODE": 510031, "MOLE_NAME":
+    "奥曲肽", "MONTH": 10, "PACK_DES": "150 UG 1 ML", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "力尔宁", "STANDARD_UNIT": 3200, "VALUE": 149331, "YEAR":
+    2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/200213辉瑞-12月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "替换数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "巴彦淖尔市", "CORP_NAME": "新和成控股集团有限公司", "HOSPITAL_CODE": 10081, "MOLE_NAME":
+    "氯沙坦钾氢氯噻嗪", "MONTH": 3, "PACK_DES": " CO 62.5 MG", "PACK_NUMBER": 7,
+    "PRODUCT_MKT": "", "PRODUCT_NAME": "奈迪亚", "STANDARD_UNIT": 4200, "VALUE":
+    16380, "YEAR": 2013, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/170117补充13个.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞新增13个药品1301-1611"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "巴彦淖尔市", "CORP_NAME": "新和成控股集团有限公司", "HOSPITAL_CODE": 10081, "MOLE_NAME":
+    "氯沙坦钾氢氯噻嗪", "MONTH": 5, "PACK_DES": " CO 62.5 MG", "PACK_NUMBER": 7,
+    "PRODUCT_MKT": "", "PRODUCT_NAME": "奈迪亚", "STANDARD_UNIT": 1750, "VALUE":
+    6825, "YEAR": 2013, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/170117补充13个.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞新增13个药品1301-1611"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "黑河市", "CORP_NAME": "百时美施贵宝集团", "HOSPITAL_CODE": 150621, "MOLE_NAME":
+    "二甲双胍", "MONTH": 6, "PACK_DES": "500 MG", "PACK_NUMBER": 20, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "格华止", "STANDARD_UNIT": 16280, "VALUE": 18828, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/180815辉瑞1806底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "2017年未到医院补充数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "黑河市", "CORP_NAME": "赛诺菲-安万特集团", "HOSPITAL_CODE": 150621, "MOLE_NAME":
+    "格列美脲", "MONTH": 6, "PACK_DES": "2 MG", "PACK_NUMBER": 15, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "亚莫利", "STANDARD_UNIT": 300, "VALUE": 1286, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/180815辉瑞1806底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "2017年未到医院补充数据"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "海口市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 570051, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 1, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 20, "VALUE": 7920, "YEAR":
+    2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190513辉瑞1903底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "2019年替换数据"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "海口市", "CORP_NAME": "上海中信国健药业有限公司", "HOSPITAL_CODE": 570051, "MOLE_NAME":
+    "重组人Ⅱ型肿瘤坏死因子受体-抗体融合蛋白", "MONTH": 1, "PACK_DES": "12.5 MG", "PACK_NUMBER":
+    1, "PRODUCT_MKT": "", "PRODUCT_NAME": "益赛普", "STANDARD_UNIT": 240, "VALUE":
+    98042, "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190513辉瑞1903底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "2019年替换数据"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "鞍山市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 110411, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 1, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 50, "VALUE": 19800,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190313辉瑞1901底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1901"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "巴彦淖尔市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 10081, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 1, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 150, "VALUE": 59250,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190313辉瑞1901底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1901"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "鞍山市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 110411, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 4, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 50, "VALUE": 19800,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190613辉瑞1904底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1904"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "巴彦淖尔市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 10081, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 4, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 200, "VALUE": 79000,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190613辉瑞1904底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1904"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "上海市", "CORP_NAME": "上海中信国健药业有限公司", "HOSPITAL_CODE": 200341, "MOLE_NAME":
+    "重组人Ⅱ型肿瘤坏死因子受体-抗体融合蛋白", "MONTH": 10, "PACK_DES": "25 MG", "PACK_NUMBER":
+    1, "PRODUCT_MKT": "", "PRODUCT_NAME": "益赛普", "STANDARD_UNIT": 1400, "VALUE":
+    900662, "YEAR": 2018, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/200213辉瑞-12月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "2018年补报数据"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "上海市", "CORP_NAME": "上海中信国健药业有限公司", "HOSPITAL_CODE": 200341, "MOLE_NAME":
+    "重组人Ⅱ型肿瘤坏死因子受体-抗体融合蛋白", "MONTH": 11, "PACK_DES": "25 MG", "PACK_NUMBER":
+    1, "PRODUCT_MKT": "", "PRODUCT_NAME": "益赛普", "STANDARD_UNIT": 1200, "VALUE":
+    771996, "YEAR": 2018, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/200213辉瑞-12月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "2018年补报数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "海口市", "CORP_NAME": "勃林格殷格翰集团", "HOSPITAL_CODE": 570051, "MOLE_NAME":
+    "阿法替尼", "MONTH": 1, "PACK_DES": "30 MG", "PACK_NUMBER": 7, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "吉泰瑞", "STANDARD_UNIT": 70, "VALUE": 11235, "YEAR":
+    2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx", "providers":
+    ["Pfizer", "CPA"], "sheetName": "2019年替换数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "海口市", "CORP_NAME": "勃林格殷格翰集团", "HOSPITAL_CODE": 570051, "MOLE_NAME":
+    "阿法替尼", "MONTH": 1, "PACK_DES": "40 MG", "PACK_NUMBER": 7, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "吉泰瑞", "STANDARD_UNIT": 140, "VALUE": 28000, "YEAR":
+    2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx", "providers":
+    ["Pfizer", "CPA"], "sheetName": "2019年替换数据"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "阿克苏市", "CORP_NAME": "Abraxis BioScience, LLC （US）", "HOSPITAL_CODE":
+    830051, "MOLE_NAME": "紫杉醇(白蛋白结合型)", "MONTH": 7, "PACK_DES": "100 MG",
+    "PACK_NUMBER": 1, "PRODUCT_MKT": "", "PRODUCT_NAME": "紫杉醇(白蛋白结合型)", "STANDARD_UNIT":
+    30, "VALUE": 175500, "YEAR": 2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/171128辉瑞-紫杉醇(白蛋白结合型)1707-1709底层检索(反馈).xlsx",
+    "providers": ["Pfizer", "CPA"], "sheetName": "紫杉醇(白蛋白结合型)1707-1709"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "阿克苏市", "CORP_NAME": "Abraxis BioScience, LLC （US）", "HOSPITAL_CODE":
+    830051, "MOLE_NAME": "紫杉醇(白蛋白结合型)", "MONTH": 8, "PACK_DES": "100 MG",
+    "PACK_NUMBER": 1, "PRODUCT_MKT": "", "PRODUCT_NAME": "紫杉醇(白蛋白结合型)", "STANDARD_UNIT":
+    12, "VALUE": 70200, "YEAR": 2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/171128辉瑞-紫杉醇(白蛋白结合型)1707-1709底层检索(反馈).xlsx",
+    "providers": ["Pfizer", "CPA"], "sheetName": "紫杉醇(白蛋白结合型)1707-1709"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "鞍山市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 110411, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 10, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 50, "VALUE": 19800,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/191212辉瑞-10月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞-10月"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "蚌埠市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 230461, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 10, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 1200, "VALUE": 456000,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/191212辉瑞-10月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞-10月"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "自贡市", "CORP_NAME": "山东力诺科峰制药有限公司", "HOSPITAL_CODE": 610311, "MOLE_NAME":
+    "二甲双胍", "MONTH": 2, "PACK_DES": "250 MG", "PACK_NUMBER": 48, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "二甲双胍", "STANDARD_UNIT": 4800, "VALUE": 210, "YEAR":
+    2018, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/180815辉瑞1806底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "2018年替换数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "自贡市", "CORP_NAME": "悦康药业集团有限公司", "HOSPITAL_CODE": 610311, "MOLE_NAME":
+    "二甲双胍", "MONTH": 2, "PACK_DES": "500 MG", "PACK_NUMBER": 30, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "二甲双胍", "STANDARD_UNIT": 48000, "VALUE": 26848, "YEAR":
+    2018, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/180815辉瑞1806底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "2018年替换数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "北京市", "CORP_NAME": "上海医药集团股份有限公司", "HOSPITAL_CODE": 100441, "MOLE_NAME":
+    "制霉菌素", "MONTH": 1, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 4500, "VALUE": 1278, "YEAR":
+    2016, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/170515辉瑞1703底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "替换数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "北京市", "CORP_NAME": "上海医药集团股份有限公司", "HOSPITAL_CODE": 100441, "MOLE_NAME":
+    "制霉菌素", "MONTH": 3, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 13000, "VALUE": 3692, "YEAR":
+    2016, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/170515辉瑞1703底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "替换数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "安阳市", "CORP_NAME": "浙江震元制药有限公司", "HOSPITAL_CODE": 450731, "MOLE_NAME":
+    "制霉菌素", "MONTH": 11, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 3000, "VALUE": 641, "YEAR":
+    2016, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/201611 CPA.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1611"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "安阳市", "CORP_NAME": "浙江震元制药有限公司", "HOSPITAL_CODE": 450901, "MOLE_NAME":
+    "制霉菌素", "MONTH": 11, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 17000, "VALUE": 5313, "YEAR":
+    2016, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/201611 CPA.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1611"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "阿勒泰市", "CORP_NAME": "浙江震元制药有限公司", "HOSPITAL_CODE": 830151, "MOLE_NAME":
+    "制霉菌素", "MONTH": 1, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 1000, "VALUE": 210, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/170323辉瑞1701底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1701"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "安阳市", "CORP_NAME": "浙江震元制药有限公司", "HOSPITAL_CODE": 450721, "MOLE_NAME":
+    "制霉菌素", "MONTH": 1, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 2000, "VALUE": 427, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/170323辉瑞1701底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1701"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "阿克苏市", "CORP_NAME": "勃林格殷格翰集团", "HOSPITAL_CODE": 830051, "MOLE_NAME":
+    "阿法替尼", "MONTH": 3, "PACK_DES": "30 MG", "PACK_NUMBER": 7, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "吉泰瑞", "STANDARD_UNIT": 28, "VALUE": 4494, "YEAR":
+    2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx", "providers":
+    ["Pfizer", "CPA"], "sheetName": "辉瑞1903（2）"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "阿克苏市", "CORP_NAME": "阿斯利康集团", "HOSPITAL_CODE": 830051, "MOLE_NAME":
+    "奥希替尼", "MONTH": 3, "PACK_DES": "80 MG", "PACK_NUMBER": 30, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "泰瑞沙", "STANDARD_UNIT": 60, "VALUE": 30600, "YEAR":
+    2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx", "providers":
+    ["Pfizer", "CPA"], "sheetName": "辉瑞1903（2）"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "安阳市", "CORP_NAME": "浙江震元制药有限公司", "HOSPITAL_CODE": 450241, "MOLE_NAME":
+    "制霉菌素", "MONTH": 4, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 2000, "VALUE": 524, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/170615辉瑞1704底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1704"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "安阳市", "CORP_NAME": "浙江震元制药有限公司", "HOSPITAL_CODE": 450661, "MOLE_NAME":
+    "制霉菌素", "MONTH": 4, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 500, "VALUE": 135, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/170615辉瑞1704底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1704"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "安阳市", "CORP_NAME": "浙江震元制药有限公司", "HOSPITAL_CODE": 450721, "MOLE_NAME":
+    "制霉菌素", "MONTH": 10, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 1000, "VALUE": 214, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/171215辉瑞1710底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1710"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "安阳市", "CORP_NAME": "浙江震元制药有限公司", "HOSPITAL_CODE": 450731, "MOLE_NAME":
+    "制霉菌素", "MONTH": 10, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 7000, "VALUE": 1496, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/171215辉瑞1710底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1710"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "阿克苏市", "CORP_NAME": "瑞阳制药有限公司", "HOSPITAL_CODE": 830051, "MOLE_NAME":
+    "哌拉西林钠他唑巴坦钠", "MONTH": 8, "PACK_DES": " CO 1.125 GM", "PACK_NUMBER":
+    1, "PRODUCT_MKT": "", "PRODUCT_NAME": "哌拉西林钠他唑巴坦钠", "STANDARD_UNIT":
+    1200, "VALUE": 22860, "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/191114辉瑞-9月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "哌拉西林钠他唑巴坦钠1-8月更新数据"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "阿克苏市", "CORP_NAME": "瑞阳制药有限公司", "HOSPITAL_CODE": 830051, "MOLE_NAME":
+    "哌拉西林钠他唑巴坦钠", "MONTH": 8, "PACK_DES": " CO 2.25 GM", "PACK_NUMBER":
+    1, "PRODUCT_MKT": "", "PRODUCT_NAME": "哌拉西林钠他唑巴坦钠", "STANDARD_UNIT":
+    1200, "VALUE": 33912, "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/191114辉瑞-9月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "哌拉西林钠他唑巴坦钠1-8月更新数据"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "巴彦淖尔市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 10081, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 11, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 450, "VALUE": 175500,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/200110辉瑞-11月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞-11月"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "蚌埠市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 230461, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 11, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 600, "VALUE": 228000,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/200110辉瑞-11月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞-11月"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "鞍山市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 110411, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 7, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 80, "VALUE": 31680,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190912辉瑞-7月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞-7月"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "白山市", "CORP_NAME": "上海莱士血液制品股份有限公司", "HOSPITAL_CODE": 130361, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 7, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "海莫莱士", "STANDARD_UNIT": 100, "VALUE": 41800, "YEAR":
+    2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190912辉瑞-7月检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞-7月"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "溶液剂（注射剂）", "BRAND_MKT": "", "CITY":
+    "阿克苏市", "CORP_NAME": "河北天成药业有限公司", "HOSPITAL_CODE": 830051, "MOLE_NAME":
+    "硫酸镁", "MONTH": 11, "PACK_DES": "2.5 GM 10 ML", "PACK_NUMBER": 5, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "硫酸镁", "STANDARD_UNIT": 7000, "VALUE": 65870, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190215补充历史数据.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞新增1701-1812"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "溶液剂（注射剂）", "BRAND_MKT": "", "CITY":
+    "阿克苏市", "CORP_NAME": "河北天成药业有限公司", "HOSPITAL_CODE": 830051, "MOLE_NAME":
+    "硫酸镁", "MONTH": 1, "PACK_DES": "2.5 GM 10 ML", "PACK_NUMBER": 5, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "硫酸镁", "STANDARD_UNIT": 3000, "VALUE": 7920, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190215补充历史数据.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞新增1701-1812"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "鞍山市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 110411, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 2, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 50, "VALUE": 19800,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190412辉瑞1902底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1902"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "巴彦淖尔市", "CORP_NAME": "山东泰邦生物制品有限公司", "HOSPITAL_CODE": 10081, "MOLE_NAME":
+    "冻干人凝血因子Ⅷ", "MONTH": 2, "PACK_DES": "200 IU", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "冻干人凝血因子Ⅷ", "STANDARD_UNIT": 400, "VALUE": 158000,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/190412辉瑞1902底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1902"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "淮南市", "CORP_NAME": "四环医药集团", "HOSPITAL_CODE": 230291, "MOLE_NAME":
+    "脑蛋白水解物", "MONTH": 1, "PACK_DES": "205 MG", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "韦司平", "STANDARD_UNIT": 100, "VALUE": 1120, "YEAR":
+    2014, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx", "providers":
+    ["Pfizer", "CPA"], "sheetName": "底层2"}'
+- data: '{"APP1_COD": "注射", "APP2_COD": "粉剂（粉剂针）", "BRAND_MKT": "", "CITY":
+    "淮南市", "CORP_NAME": "四环医药集团", "HOSPITAL_CODE": 230311, "MOLE_NAME":
+    "脑蛋白水解物", "MONTH": 1, "PACK_DES": "205 MG", "PACK_NUMBER": 1, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "韦司平", "STANDARD_UNIT": 100, "VALUE": 1120, "YEAR":
+    2014, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx", "providers":
+    ["Pfizer", "CPA"], "sheetName": "底层2"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "安阳市", "CORP_NAME": "浙江震元制药有限公司", "HOSPITAL_CODE": 450731, "MOLE_NAME":
+    "制霉菌素", "MONTH": 5, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 2000, "VALUE": 427, "YEAR":
+    2018, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/180713辉瑞1805底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1805"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "安阳市", "CORP_NAME": "浙江震元制药有限公司", "HOSPITAL_CODE": 450901, "MOLE_NAME":
+    "制霉菌素", "MONTH": 5, "PACK_DES": "0.5 MIU", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "制霉菌素", "STANDARD_UNIT": 5000, "VALUE": 1174, "YEAR":
+    2018, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/180713辉瑞1805底层检索.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "辉瑞1805"}'
+- data: '{"医院名称": "北京广外社区卫生服务中心", "医院编码": 100782, "参考级别": "二级", "地区":
+    "北京", "城市": "北京市", "是否为2013年出版医院": "", "是否为2014年出版医院": "是", "是否为2015年出版医院":
+    "是", "是否为2016年出版医院": "是", "省": "北京市", "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/170117补充13个.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "2013年-2016年出版医院名单"}'
+- data: '{"医院名称": "内蒙古医学院第三附属医院", "医院编码": 10011, "参考级别": "三甲", "地区": "内蒙古",
+    "城市": "包头市", "是否为2013年出版医院": "是", "是否为2014年出版医院": "是", "是否为2015年出版医院":
+    "是", "是否为2016年出版医院": "是", "省": "内蒙古自治区", "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Pfizer/170117补充13个.xlsx", "providers": ["Pfizer",
+    "CPA"], "sheetName": "2013年-2016年出版医院名单"}'

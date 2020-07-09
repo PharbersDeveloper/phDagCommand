@@ -1,0 +1,16 @@
+- data: '{"CITY_NAME": "本溪市", "CONTENT_TYPE": "SOLN", "KEY_BRAND": "来得时",
+    "LILLY_HSPTL_NAME": "本溪市中心医院", "MANUFACTUER_NAME": "赛诺菲-安万特集团", "MCL_NAME":
+    "甘精胰岛素", "PACKAGE_QTY": 1, "PRODUCT_NAME": "来得时", "PROVINCE_NAME": "辽宁省",
+    "SALES_QTY": 120, "SALES_VALUE": 22154.4, "SKU": 300, "TCIII": "Basal
+    Analog", "TEAM": "Insulin", "VEEVA_CUSTOMER_ID": 1062989, "YEARID": 2018,
+    "YYYYMM": 201805, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Lilly/CPA_Insulin_2018_20190122.xlsx", "providers":
+    ["Lilly", "CPA"], "sheetName": "Sheet1"}'
+- data: '{"CITY_NAME": "本溪市", "CONTENT_TYPE": "SOLN", "KEY_BRAND": "诺和锐",
+    "LILLY_HSPTL_NAME": "本溪市中心医院", "MANUFACTUER_NAME": "诺和诺德集团", "MCL_NAME":
+    "门冬胰岛素30", "PACKAGE_QTY": 1, "PRODUCT_NAME": "诺和锐30", "PROVINCE_NAME":
+    "辽宁省", "SALES_QTY": 2100, "SALES_VALUE": 145791.0, "SKU": 300, "TCIII":
+    "Mealtime Analog", "TEAM": "Insulin", "VEEVA_CUSTOMER_ID": 1062989, "YEARID":
+    2018, "YYYYMM": 201805, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Lilly/CPA_Insulin_2018_20190122.xlsx", "providers":
+    ["Lilly", "CPA"], "sheetName": "Sheet1"}'

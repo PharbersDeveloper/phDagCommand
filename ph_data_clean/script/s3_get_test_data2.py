@@ -91,7 +91,7 @@ def append_test_data(test_data_lst):
 
 if __name__ == '__main__':
     #     for sub in os.listdir(LOCAL_CACHE_DIR):
-    sub = 'CPA-BMS.yaml'
+    sub = 'GYC&CPA-Sankyo.yaml'
     file = LOCAL_CACHE_DIR + sub
     print('筛选：')
     print(file)
