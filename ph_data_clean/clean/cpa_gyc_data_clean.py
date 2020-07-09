@@ -37,7 +37,7 @@ class CpaGycDataClean(DataClean):
         try:
             final_data_year = int(final_data['YEAR'])
         except:
-            isinstance(final_data['YEAR'], str) and final_data == {}
+            # isinstance(final_data['YEAR'], str) and final_data == {}
             final_data_year = None
 
         if final_data and isinstance(final_data_year, int):
@@ -52,7 +52,7 @@ class CpaGycDataClean(DataClean):
             else:
                 pass
 
-        # 整理销量情况
+        # TODO 整理销量情况
         if final_data['SALES_QTY_GRAIN'] is not None:
             final_data['SALES_QTY_BOX'] = final_data['SALES_QTY_GRAIN']
             final_data['SALES_QTY_TAG'] = SalesQtyTag.GRAIN.value

@@ -142,7 +142,7 @@ def mapping():
         },
         {
             "col_name": "SALES_QTY_TAG",
-            "col_desc": "销量标识(GRAIN \ BOX \ FULL)",
+            "col_desc": r"销量标识(GRAIN\BOX\FULL)",
             "candidate": [],
             "type": "String",
             "not_null": True,
