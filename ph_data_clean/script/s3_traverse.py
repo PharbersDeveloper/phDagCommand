@@ -110,10 +110,9 @@ def get_s3_increment(cache_data_lst, s3_all_file_lst):
         source = s3_file['source']
         company = s3_file['company']
 
-        if source not in cache_file_map.keys() or company not in cache_file_map[source].keys():
-            continue
-
-        if s3_file['file'] in cache_file_map[source][company]:
+        if source in cache_file_map.keys() \
+                and company in cache_file_map[source].keys() \
+                and s3_file['file'] in cache_file_map[source][company]:
             continue
 
         increment_file_lst.append(s3_file)
@@ -160,24 +159,24 @@ if __name__ == '__main__':
     print()
 
     filter_file_lst, s3_all_file_lst, err_file_lst = get_all_file_path()
-    if len(filter_file_lst):
-        print(f"存在过滤掉的文件 {len(filter_file_lst)} 个，信息如下：")
+    if filter_file_lst_len := len(filter_file_lst):
+        print(f"存在过滤掉的文件 {filter_file_lst_len} 个，信息如下：")
         # print(filter_file_lst)
         print()
 
-    if len(err_file_lst):
-        print(f"存在无法解析路径或后缀的文件 {len(err_file_lst)} 个，信息如下：")
+    if err_file_lst_len := len(err_file_lst):
+        print(f"存在无法解析路径或后缀的文件 {err_file_lst_len} 个，信息如下：")
         # print(err_file_lst)
         print()
 
     increment_lst = get_s3_increment(cache_data_lst, s3_all_file_lst)
-    if len(increment_lst):
-        print(f"存在增量文件 {len(increment_lst)} 个，信息如下：")
+    if increment_lst_len := len(increment_lst):
+        print(f"存在增量文件 {increment_lst_len} 个，信息如下：")
         # print(increment_lst)
         print()
     else:
         print(f"不存在新增文件")
 
-    for obj in increment_lst:
-        print(f"开始解析 {obj['file']}")
+    for index, obj in enumerate(increment_lst, 1):
+        print(f"{index}/{increment_lst_len} 开始解析 {obj['file']}")
         append_cache_data(parse_s3_execl(obj))

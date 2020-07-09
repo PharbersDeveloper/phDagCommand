@@ -1,0 +1,216 @@
+- company: Bayer
+  data:
+    ATC:
+      0: A10BF01
+      1: A10BX02
+    Adminst:
+      0: 口服
+      1: 口服
+    City:
+      0: 牡丹江市
+      1: 莱芜市
+    Code:
+      0: 2310013
+      1: 3712002
+    Corporatio:
+      0: 杭州中美华东制药有限公司
+      1: 江苏豪森药业股份有限公司
+    Form:
+      0: 片剂
+      1: 片剂
+    Hospital:
+      0: .nan
+      1: .nan
+    Level:
+      0: .nan
+      1: .nan
+    Market:
+      0: 中央市场
+      1: 中央市场
+    Molecule:
+      0: 阿卡波糖
+      1: 瑞格列奈
+    Month:
+      0: 10
+      1: 1
+    Pack:
+      0: .nan
+      1: .nan
+    Product:
+      0: 卡博平
+      1: 孚来迪
+    Province:
+      0: 黑龙江省
+      1: 山东省
+    Quantity:
+      0: 750
+      1: 18000
+    Quarter:
+      0: 4
+      1: 1
+    Size:
+      0: 15
+      1: 30
+    Specificat:
+      0: 50mg
+      1: 1mg
+    TA I:
+      0: DIA
+      1: DIA
+    TA II:
+      0: OAD
+      1: OAD
+    Value:
+      0: 3211.5
+      1: 39300.0
+    Year:
+      0: 2018
+      1: 2017
+  file: GYC/Bayer/OAD PDT CHA.xlsx
+  length: 120569
+  sheet: OAD_PDT_CHA
+  source: GYC
+- company: Bayer
+  data:
+    ATC:
+      0: .nan
+      1: .nan
+    Adminst:
+      0: 口服
+      1: 口服
+    City:
+      0: 福州市
+      1: 福州市
+    Code:
+      0: 3501010
+      1: 3501012
+    Corporatio:
+      0: .nan
+      1: .nan
+    Form:
+      0: .nan
+      1: .nan
+    Hospital:
+      0: .nan
+      1: .nan
+    Level:
+      0: .nan
+      1: .nan
+    Market:
+      0: 策略市场
+      1: 策略市场
+    Molecule:
+      0: .nan
+      1: .nan
+    Month:
+      0: 1
+      1: 1
+    Pack:
+      0: .nan
+      1: .nan
+    Product:
+      0: .nan
+      1: .nan
+    Province:
+      0: 福建省
+      1: 福建省
+    Quantity:
+      0: 351840
+      1: 198500
+    Quarter:
+      0: 1
+      1: 1
+    Size:
+      0: .nan
+      1: .nan
+    Specificat:
+      0: .nan
+      1: .nan
+    TA I:
+      0: DIA
+      1: DIA
+    TA II:
+      0: OAD
+      1: OAD
+    Value:
+      0: 551916.25
+      1: 180650.6
+    Year:
+      0: 2017
+      1: 2017
+  file: GYC/Bayer/Oad 12 cha MKT.xlsx
+  length: 20074
+  sheet: Oad_12_cha_MKT
+  source: GYC
+- company: Bayer
+  data:
+    ATC:
+      0: A10BF01
+      1: A10BX02
+    Adminst:
+      0: 口服
+      1: 口服
+    City:
+      0: 牡丹江市
+      1: 莱芜市
+    Code:
+      0: 2310013
+      1: 3712002
+    Corporatio:
+      0: 杭州中美华东制药有限公司
+      1: 江苏豪森药业股份有限公司
+    Form:
+      0: 片剂
+      1: 片剂
+    Hospital:
+      0: .nan
+      1: .nan
+    Level:
+      0: .nan
+      1: .nan
+    Market:
+      0: 中央市场
+      1: 中央市场
+    Molecule:
+      0: 阿卡波糖
+      1: 瑞格列奈
+    Month:
+      0: 10
+      1: 1
+    Pack:
+      0: .nan
+      1: .nan
+    Product:
+      0: 卡博平
+      1: 孚来迪
+    Province:
+      0: 黑龙江省
+      1: 山东省
+    Quantity:
+      0: 750
+      1: 18000
+    Quarter:
+      0: 4
+      1: 1
+    Size:
+      0: 15
+      1: 30
+    Specificat:
+      0: 50mg
+      1: 1mg
+    TA I:
+      0: DIA
+      1: DIA
+    TA II:
+      0: OAD
+      1: OAD
+    Value:
+      0: 3211.5
+      1: 39300.0
+    Year:
+      0: 2018
+      1: 2017
+  file: GYC/Bayer/oad 12 cha pdt.xlsx
+  length: 132948
+  sheet: oad_12_cha_pdt
+  source: GYC
