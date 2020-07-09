@@ -86,7 +86,7 @@ def __write_conf(all_conf):
 
 def __apply(deploy_conf):
     if "role" in deploy_conf.keys():
-        role = ph_role.Ph_Role()
+        role = ph_role.PhRole()
         try:
             role.apply(dict(**{"name": deploy_conf["metadata"]["name"] + "-lambda-role"}, **deploy_conf["role"]))
             click.secho(f"Role 更新完成", fg='green', blink=True, bold=True)
