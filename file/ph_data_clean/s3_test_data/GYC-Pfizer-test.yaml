@@ -1,0 +1,251 @@
+- data: '{"DOI": "Sulperazon_1M", "DOIE": "Sulperazon_1M", "Date": 201501,
+    "HOSP_ID": "PHA0020185", "Hosp_name": "中国医学科学院阜外心血管病医院", "ID": 1100004,
+    "Prod_CNAME": "特治星粉针剂CO4.5G1惠氏制药集团", "Prod_Name": "特治星粉针剂CO4.5G1惠氏制药集团",
+    "Sales": 43044, "Strength": "特治星粉针剂CO4.5G1惠氏制药集团", "Units": 300, "_Tag":
+    "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2015年辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "Sheet1"}'
+- data: '{"DOI": "Sulperazon_1M", "DOIE": "Sulperazon_1M", "Date": 201501,
+    "HOSP_ID": "PHA0000804", "Hosp_name": "北京电力医院", "ID": 1100019, "Prod_CNAME":
+    "北元哌强粉针剂CO2.5G1华北制药集团", "Prod_Name": "北元哌强粉针剂CO2.5G1华北制药集团", "Sales":
+    346500, "Strength": "北元哌强粉针剂CO2.5G1华北制药集团", "Units": 3300, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2015年辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "Sheet1"}'
+- data: '{"剂型": "注射剂", "包装规格": 1, "医院编码": 3401002, "城市": "合肥市", "年":
+    2016, "最小制剂单位数量": 2, "月": 11, "生产企业": "Abbott Laboratories Inc.", "给药途径":
+    "注射", "药品商品名": "修美乐", "规格": "0.8ml∶40mg", "通用名": "阿达木单抗", "金额":
+    15800, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/201611 GYCX.xlsx", "providers": ["Pfizer",
+    "GYC"], "sheetName": "2016年11月辉瑞337个通用名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3401002, "城市": "合肥市", "年":
+    2016, "最小制剂单位数量": 330000, "月": 11, "生产企业": "杭州中美华东制药有限公司", "给药途径": "口服",
+    "药品商品名": "卡博平", "规格": "50mg", "通用名": "阿卡波糖", "金额": 489500, "_Tag":
+    "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/201611 GYCX.xlsx", "providers": ["Pfizer",
+    "GYC"], "sheetName": "2016年11月辉瑞337个通用名产品数据"}'
+- data: '{"Market": "LD", "Market2": "LD", "min1": "阿乐片剂10mg7北京嘉林药业股份有限公司",
+    "min2": "阿乐片剂10MG7北京嘉林药业股份有限公司", "剂型": "片剂", "包装规格": 7, "商品名": "阿乐",
+    "生产企业": "北京嘉林药业股份有限公司", "规格": "10mg", "通用名": "阿托伐他汀", "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2016年辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "16年GYC31个问题分子"}'
+- data: '{"Market": "LD", "Market2": "LD", "min1": "立普妥片剂20mg7辉瑞制药有限公司",
+    "min2": "立普妥片剂20MG7辉瑞制药有限公司", "剂型": "片剂", "包装规格": 7, "商品名": "立普妥",
+    "生产企业": "辉瑞制药有限公司", "规格": "20mg", "通用名": "阿托伐他汀", "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2016年辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "16年GYC31个问题分子"}'
+- data: '{"剂型": "片剂", "包装规格": 100, "医院编码": 3606001, "城市": "鹰潭市", "年":
+    2017, "最小制剂单位数量": 6000, "月": 12, "生产企业": "湖南千金协力药业有限公司", "省/自治区/直辖市":
+    "江西省", "给药途径": "口服", "药品商品名": "雷公藤总甙", "规格": "10mg", "通用名": "雷公藤总甙",
+    "金额": 672, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017-2018辉瑞15个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017-2018辉瑞15个通用名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 100, "医院编码": 3606001, "城市": "鹰潭市", "年":
+    2018, "最小制剂单位数量": 3000, "月": 11, "生产企业": "湖南千金协力药业有限公司", "省/自治区/直辖市":
+    "江西省", "给药途径": "口服", "药品商品名": "雷公藤总甙", "规格": "10mg", "通用名": "雷公藤总甙",
+    "金额": 336, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017-2018辉瑞15个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017-2018辉瑞15个通用名产品数据"}'
+- data: '{"剂型": "注射剂", "包装规格": 1, "医院编码": 3402002, "城市": "芜湖市", "年":
+    2017, "最小制剂单位数量": 1, "月": 10, "生产企业": "Abbott Laboratories Inc.", "省/自治区/直辖市":
+    "安徽省", "给药途径": "注射", "药品商品名": "修美乐", "规格": "0.8ml∶40mg", "通用名":
+    "阿达木单抗", "金额": 7900, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年10-12月辉瑞339个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年10-12月辉瑞339个通用名产品数据"}'
+- data: '{"剂型": "注射剂", "包装规格": 1, "医院编码": 1100001, "城市": "北京市", "年":
+    2017, "最小制剂单位数量": 20, "月": 10, "生产企业": "Abbott Laboratories Inc.", "省/自治区/直辖市":
+    "北京市", "给药途径": "注射", "药品商品名": "修美乐", "规格": "0.8ml∶40mg", "通用名":
+    "阿达木单抗", "金额": 152000, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年10-12月辉瑞339个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年10-12月辉瑞339个通用名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3401002, "城市": "合肥市", "年":
+    2017, "最小制剂单位数量": 6000, "月": 1, "生产企业": "山东鲁南贝特制药有限公司", "省/自治区/直辖市":
+    "安徽省", "给药途径": "口服", "药品商品名": "维平", "规格": "2.5mg", "通用名": "阿夫唑嗪",
+    "金额": 8006.0, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年1月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年1月辉瑞337个通用名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3401002, "城市": "合肥市", "年":
+    2017, "最小制剂单位数量": 16200, "月": 1, "生产企业": "Bayer Health Care AG", "省/自治区/直辖市":
+    "安徽省", "给药途径": "口服", "药品商品名": "拜唐苹", "规格": "50mg", "通用名": "阿卡波糖",
+    "金额": 34840.8, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年1月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年1月辉瑞337个通用名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3403001, "城市": "蚌埠市", "年":
+    2017, "最小制剂单位数量": 24300, "月": 3, "生产企业": "Bayer Health Care AG", "给药途径":
+    "口服", "药品商品名": "拜唐苹", "规格": "0.1g", "通用名": "阿卡波糖", "金额": 52261.2,
+    "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年3月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年3月辉瑞337个通用名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3403001, "城市": "蚌埠市", "年":
+    2017, "最小制剂单位数量": 18000, "月": 3, "生产企业": "杭州中美华东制药有限公司", "给药途径": "口服",
+    "药品商品名": "卡博平", "规格": "50mg", "通用名": "阿卡波糖", "金额": 26700.0, "_Tag":
+    "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年3月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年3月辉瑞337个通用名产品数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "干混悬剂", "BRAND_MKT": "", "CITY":
+    "蚌埠市", "CORP_NAME": "上海现代制药股份有限公司", "HOSPITAL_CODE": 3403001, "MOLE_NAME":
+    "阿奇霉素", "MONTH": 5, "PACK_DES": "0.1g", "PACK_NUMBER": 6, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "阿奇霉素", "STANDARD_UNIT": 3600, "VALUE": 3336.0, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年5月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年5月辉瑞337个通用名产品数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "肠溶片", "BRAND_MKT": "", "CITY":
+    "蚌埠市", "CORP_NAME": "华北制药股份有限公司", "HOSPITAL_CODE": 3403001, "MOLE_NAME":
+    "阿奇霉素", "MONTH": 5, "PACK_DES": "0.25g", "PACK_NUMBER": 12, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "华必达", "STANDARD_UNIT": 6480, "VALUE": 13386.6, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年5月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年5月辉瑞337个通用名产品数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "CITY": "蚌埠市", "CORP_NAME":
+    "Bayer Health Care AG", "HOSPITAL_CODE": 3403001, "MOLE_NAME": "阿卡波糖",
+    "MONTH": 6, "PACK_DES": "50mg", "PACK_NUMBER": 30, "PRODUCT_NAME": "拜唐苹",
+    "STANDARD_UNIT": 32400, "VALUE": 69681.6, "YEAR": 2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年6月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年6月辉瑞337个通用名产品数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "CITY": "蚌埠市", "CORP_NAME":
+    "杭州中美华东制药有限公司", "HOSPITAL_CODE": 3403001, "MOLE_NAME": "阿卡波糖", "MONTH":
+    6, "PACK_DES": "50mg", "PACK_NUMBER": 30, "PRODUCT_NAME": "卡博平", "STANDARD_UNIT":
+    24000, "VALUE": 35600.0, "YEAR": 2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年6月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年6月辉瑞337个通用名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3403001, "城市": "蚌埠市", "年":
+    2017, "最小制剂单位数量": 40500, "月": 7, "生产企业": "Bayer Health Care AG", "省/自治区/直辖市":
+    "安徽省", "给药途径": "口服", "药品商品名": "拜唐苹", "规格": "50mg", "通用名": "阿卡波糖",
+    "金额": 87102, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年7月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年7月辉瑞337个通用名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3403001, "城市": "蚌埠市", "年":
+    2017, "最小制剂单位数量": 24000, "月": 7, "生产企业": "杭州中美华东制药有限公司", "省/自治区/直辖市":
+    "安徽省", "给药途径": "口服", "药品商品名": "卡博平", "规格": "50mg", "通用名": "阿卡波糖",
+    "金额": 35600, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年7月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年7月辉瑞337个通用名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3403001, "城市": "蚌埠市", "年":
+    2017, "最小制剂单位数量": 32400, "月": 8, "生产企业": "Bayer Health Care AG", "省/自治区/直辖市":
+    "安徽省", "给药途径": "口服", "药品商品名": "拜唐苹", "规格": "50mg", "通用名": "阿卡波糖",
+    "金额": 69681.6, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年8月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年8月辉瑞337个通用名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3403001, "城市": "蚌埠市", "年":
+    2017, "最小制剂单位数量": 6000, "月": 8, "生产企业": "杭州中美华东制药有限公司", "省/自治区/直辖市":
+    "安徽省", "给药途径": "口服", "药品商品名": "卡博平", "规格": "50mg", "通用名": "阿卡波糖",
+    "金额": 8900.0, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年8月辉瑞337个通用名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2017年8月辉瑞337个通用名产品数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "蚌埠市", "CORP_NAME": "Bayer Health Care AG", "HOSPITAL_CODE": 3403001,
+    "MOLE_NAME": "阿卡波糖", "MONTH": 9, "PACK_DES": "50mg", "PACK_NUMBER":
+    30, "PRODUCT_MKT": "", "PRODUCT_NAME": "拜唐苹", "STANDARD_UNIT": 40500,
+    "VALUE": 87102, "YEAR": 2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年9月数据_337通用名.xlsx", "providers": ["Pfizer",
+    "GYC"], "sheetName": "2017年9月辉瑞337个通用名产品数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "蚌埠市", "CORP_NAME": "杭州中美华东制药有限公司", "HOSPITAL_CODE": 3403001, "MOLE_NAME":
+    "阿卡波糖", "MONTH": 9, "PACK_DES": "50mg", "PACK_NUMBER": 30, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "卡博平", "STANDARD_UNIT": 24000, "VALUE": 35600, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2017年9月数据_337通用名.xlsx", "providers": ["Pfizer",
+    "GYC"], "sheetName": "2017年9月辉瑞337个通用名产品数据"}'
+- data: '{"剂型": "注射剂", "包装规格": 1, "医院编码": 1100002, "城市": "北京市", "年":
+    2019, "最小制剂单位数量": 6, "月": 1, "生产企业": "Abbott Laboratories Inc.", "省/自治区/直辖市":
+    "北京市", "给药途径": "注射", "药品商品名": "修美乐", "规格": "0.8ml∶40mg", "通用名":
+    "阿达木单抗", "金额": 45600, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2019年1-4月辉瑞381个通用名4个商品名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2019年1-4月辉瑞381个通用名4个商品名产品数据"}'
+- data: '{"剂型": "注射剂", "包装规格": 1, "医院编码": 1100005, "城市": "北京市", "年":
+    2019, "最小制剂单位数量": 20, "月": 1, "生产企业": "Abbott Laboratories Inc.", "省/自治区/直辖市":
+    "北京市", "给药途径": "注射", "药品商品名": "修美乐", "规格": "0.8ml∶40mg", "通用名":
+    "阿达木单抗", "金额": 152000, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2019年1-4月辉瑞381个通用名4个商品名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2019年1-4月辉瑞381个通用名4个商品名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3403001, "城市": "蚌埠市", "年":
+    2019, "最小制剂单位数量": 40500, "月": 5, "生产企业": "拜耳医药保健有限公司", "省/自治区/直辖市":
+    "安徽省", "给药途径": "口服", "药品商品名": "拜唐苹", "规格": "50mg", "通用名": "阿卡波糖",
+    "金额": 87102, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2019年5-8月辉瑞381个通用名4个商品名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2019年5-8月辉瑞381个通用名4个商品名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3403001, "城市": "蚌埠市", "年":
+    2019, "最小制剂单位数量": 24000, "月": 5, "生产企业": "杭州中美华东制药有限公司", "省/自治区/直辖市":
+    "安徽省", "给药途径": "口服", "药品商品名": "卡博平", "规格": "50mg", "通用名": "阿卡波糖",
+    "金额": 32800, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2019年5-8月辉瑞381个通用名4个商品名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2019年5-8月辉瑞381个通用名4个商品名产品数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "蚌埠市", "CORP_NAME": "上海勃林格殷格翰药业有限公司", "HOSPITAL_CODE": 3403001, "MOLE_NAME":
+    "阿法替尼", "MONTH": 9, "PACK_DES": "40mg", "PACK_NUMBER": 7, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "吉泰瑞", "Province": "", "STANDARD_UNIT": 140, "VALUE":
+    28000.0, "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2019年9-12月辉瑞382个通用名4个商品名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "sheet"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "蚌埠市", "CORP_NAME": "拜耳医药保健有限公司", "HOSPITAL_CODE": 3403001, "MOLE_NAME":
+    "阿卡波糖", "MONTH": 9, "PACK_DES": "50mg", "PACK_NUMBER": 30, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "拜唐苹", "Province": "", "STANDARD_UNIT": 48600, "VALUE":
+    104522.4, "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2019年9-12月辉瑞382个通用名4个商品名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "sheet"}'
+- data: '{"剂型": "片剂", "包装规格": 7, "医院编码": 3403001, "城市": "蚌埠市", "年":
+    2019, "最小制剂单位数量": 140, "月": 9, "生产企业": "上海勃林格殷格翰药业有限公司", "省/自治区/直辖市":
+    "安徽省", "给药途径": "口服", "药品商品名": "吉泰瑞", "规格": "40mg", "通用名": "阿法替尼",
+    "金额": 28000.0, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2019年9月辉瑞381个通用名4个商品名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2019年9月辉瑞381个通用名4个商品名产品数据"}'
+- data: '{"剂型": "片剂", "包装规格": 30, "医院编码": 3403001, "城市": "蚌埠市", "年":
+    2019, "最小制剂单位数量": 48600, "月": 9, "生产企业": "拜耳医药保健有限公司", "省/自治区/直辖市":
+    "安徽省", "给药途径": "口服", "药品商品名": "拜唐苹", "规格": "50mg", "通用名": "阿卡波糖",
+    "金额": 104522.4, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/2019年9月辉瑞381个通用名4个商品名产品数据.xlsx", "providers":
+    ["Pfizer", "GYC"], "sheetName": "2019年9月辉瑞381个通用名4个商品名产品数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "蚌埠市", "CORP_NAME": "拜耳医药保健有限公司", "HOSPITAL_CODE": 3403001, "MOLE_NAME":
+    "阿卡波糖", "MONTH": 1, "PACK_DES": "50mg", "PACK_NUMBER": 30, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "拜唐苹", "STANDARD_UNIT": 16200, "VALUE": 34840.8,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/GYCX_201901-201902YTD_0424UPDATE 四个替尼.xlsx",
+    "providers": ["Pfizer", "GYC"], "sheetName": "2019年1-2月辉瑞346个通用名产品数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "蚌埠市", "CORP_NAME": "杭州中美华东制药有限公司", "HOSPITAL_CODE": 3403001, "MOLE_NAME":
+    "阿卡波糖", "MONTH": 1, "PACK_DES": "50mg", "PACK_NUMBER": 30, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "卡博平", "STANDARD_UNIT": 24000, "VALUE": 32800.0,
+    "YEAR": 2019, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/GYCX_201901-201902YTD_0424UPDATE 四个替尼.xlsx",
+    "providers": ["Pfizer", "GYC"], "sheetName": "2019年1-2月辉瑞346个通用名产品数据"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "北京市", "CORP_NAME": "山东齐都药业有限公司", "HOSPITAL_CODE": 1100052, "MOLE_NAME":
+    "尼麦角林", "MONTH": 4, "PACK_DES": "10mg", "PACK_NUMBER": 30, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "尼麦角林", "STANDARD_UNIT": -600, "VALUE": -800.0, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/GYCX_201901_14Molecule(201701-201812).xlsx",
+    "providers": ["Pfizer", "GYC"], "sheetName": "Data"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "牡丹江市", "CORP_NAME": "常州四药制药有限公司", "HOSPITAL_CODE": 2310008, "MOLE_NAME":
+    "普萘洛尔", "MONTH": 3, "PACK_DES": "10mg", "PACK_NUMBER": 100, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "普萘洛尔", "STANDARD_UNIT": 500, "VALUE": 74.75, "YEAR":
+    2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/GYCX_201901_14Molecule(201701-201812).xlsx",
+    "providers": ["Pfizer", "GYC"], "sheetName": "Data"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "合肥市", "CORP_NAME": "AstraZeneca AB", "HOSPITAL_CODE": 3401001, "MOLE_NAME":
+    "奥希替尼", "MONTH": 10, "PACK_DES": "80mg", "PACK_NUMBER": 30, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "泰瑞沙", "STANDARD_UNIT": 90, "VALUE": 45900, "YEAR":
+    2018, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/GYCX_201902_4Molecule(201705-201812).xlsx",
+    "providers": ["Pfizer", "GYC"], "sheetName": "Data"}'
+- data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
+    "合肥市", "CORP_NAME": "AstraZeneca AB", "HOSPITAL_CODE": 3401001, "MOLE_NAME":
+    "奥希替尼", "MONTH": 11, "PACK_DES": "80mg", "PACK_NUMBER": 30, "PRODUCT_MKT":
+    "", "PRODUCT_NAME": "泰瑞沙", "STANDARD_UNIT": 120, "VALUE": 61200, "YEAR":
+    2018, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/GYCX_201902_4Molecule(201705-201812).xlsx",
+    "providers": ["Pfizer", "GYC"], "sheetName": "Data"}'
+- data: '{"Date": 201701, "min1": "达菲林注射剂3.75mg1Ipsen Pharma Biotech", "剂型":
+    "注射剂", "包装规格": 1, "医院编码": 3401002, "城市": "合肥市", "年": 2017, "最小制剂单位数量":
+    100, "月": 1, "生产企业": "Ipsen Pharma Biotech", "给药途径": "注射", "药品商品名":
+    "达菲林", "规格": "3.75mg", "通用名": "曲普瑞林", "金额": 177400, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/gyc新增分子v1.xlsx", "providers": ["Pfizer",
+    "GYC"], "sheetName": "Sheet 1"}'
+- data: '{"Date": 201701, "min1": "达必佳注射剂3.75mg1Ferring GmbH", "剂型": "注射剂",
+    "包装规格": 1, "医院编码": 3401004, "城市": "合肥市", "年": 2017, "最小制剂单位数量": 10,
+    "月": 1, "生产企业": "Ferring GmbH", "给药途径": "注射", "药品商品名": "达必佳", "规格":
+    "3.75mg", "通用名": "曲普瑞林", "金额": 17890, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Pfizer/gyc新增分子v1.xlsx", "providers": ["Pfizer",
+    "GYC"], "sheetName": "Sheet 1"}'

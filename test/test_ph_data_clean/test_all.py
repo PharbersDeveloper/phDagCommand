@@ -22,4 +22,6 @@ def test_all():
         result = clean(test_data)
         if result.tag != Tag.SUCCESS:
             print(str(result))
+        else:
+            print('success')
 test_all()

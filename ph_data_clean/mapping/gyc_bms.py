@@ -129,7 +129,7 @@ def mapping():
         {
             "col_name": "SALES_QTY_GRAIN",
             "col_desc": "粒度销量",
-            "candidate": ["数量(支/片)", "最小制剂单位数量"],
+            "candidate": ["数量(支/片)", "数量_支/片_", "最小制剂单位数量"],
             "type": "String",
             "not_null": True,
         },
@@ -150,7 +150,7 @@ def mapping():
         {
             "col_name": "SALES_VALUE",
             "col_desc": "销售额",
-            "candidate": ["金额(元)", "金额"],
+            "candidate": ["金额_元_", "金额(元)", "金额_元_"],
             "type": "String",
             "not_null": True,
         },

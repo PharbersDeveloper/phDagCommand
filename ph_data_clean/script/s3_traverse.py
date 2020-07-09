@@ -6,7 +6,7 @@ from ph_data_clean.util.yaml_utils import append_to_file, load_by_dir
 
 
 BUCKER_NAME = 'ph-origin-files'
-LOCAL_CACHE_DIR = r'file/ph_data_clean/s3_primitive_data/'
+LOCAL_CACHE_DIR = r'../../file/ph_data_clean/s3_primitive_data/'
 filter_dir = ['OTHERS', 'CHC']
 
 KEEP_ROW_COUNT = 2
@@ -101,9 +101,10 @@ def get_s3_increment(cache_data_lst, s3_all_file_lst):
 
         # 追加文件
         if cache_data['file'] not in cache_file_map[source][company]:
+            # 看source里面是否存在对应company信息，若有返回对应value（即文件名.xlsx）,否则返回空list
             lst = cache_file_map[source].get(company, [])
             lst.append(cache_data['file'])
-            cache_file_map[source][company] = lst
+            cache_file_map[source][company] = lst  # 所有文件名储存在list里面，这个list是cache_file_map[source][company]的value
 
     increment_file_lst = []
     for s3_file in s3_all_file_lst:
@@ -116,8 +117,6 @@ def get_s3_increment(cache_data_lst, s3_all_file_lst):
             continue
 
         increment_file_lst.append(s3_file)
-
-    return increment_file_lst
 
 
 def parse_s3_execl(obj):
@@ -154,29 +153,29 @@ def parse_s3_execl(obj):
 
 
 if __name__ == '__main__':
-    cache_data_lst = load_cache_data()
+    cache_data_lst = load_cache_data()  # 本地已缓存的文件信息
     print(f"当前缓存了 {len(cache_data_lst)} 条数据（包含 sheet）")
     print()
 
     filter_file_lst, s3_all_file_lst, err_file_lst = get_all_file_path()
-    if filter_file_lst_len := len(filter_file_lst):
-        print(f"存在过滤掉的文件 {filter_file_lst_len} 个，信息如下：")
-        # print(filter_file_lst)
-        print()
-
-    if err_file_lst_len := len(err_file_lst):
-        print(f"存在无法解析路径或后缀的文件 {err_file_lst_len} 个，信息如下：")
-        # print(err_file_lst)
-        print()
-
-    increment_lst = get_s3_increment(cache_data_lst, s3_all_file_lst)
-    if increment_lst_len := len(increment_lst):
-        print(f"存在增量文件 {increment_lst_len} 个，信息如下：")
-        # print(increment_lst)
-        print()
-    else:
-        print(f"不存在新增文件")
-
-    for index, obj in enumerate(increment_lst, 1):
-        print(f"{index}/{increment_lst_len} 开始解析 {obj['file']}")
-        append_cache_data(parse_s3_execl(obj))
+    # if filter_file_lst_len := len(filter_file_lst):
+    #     print(f"存在过滤掉的文件 {filter_file_lst_len} 个，信息如下：")
+    #     # print(filter_file_lst)
+    #     print()
+    #
+    # if err_file_lst_len := len(err_file_lst):
+    #     print(f"存在无法解析路径或后缀的文件 {err_file_lst_len} 个，信息如下：")
+    #     # print(err_file_lst)
+    #     print()
+    #
+    # increment_lst = get_s3_increment(cache_data_lst, s3_all_file_lst)
+    # if increment_lst_len := len(increment_lst):
+    #     print(f"存在增量文件 {increment_lst_len} 个，信息如下：")
+    #     # print(increment_lst)
+    #     print()
+    # else:
+    #     print(f"不存在新增文件")
+    #
+    # for index, obj in enumerate(increment_lst, 1):
+    #     print(f"{index}/{increment_lst_len} 开始解析 {obj['file']}")
+    #     append_cache_data(parse_s3_execl(obj))

@@ -1,0 +1,48 @@
+- data: '{"ATC": "A10BF01", "Adminst": "口服", "City": "牡丹江市", "Code":
+    2310013, "Corporatio": "杭州中美华东制药有限公司", "Form": "片剂", "Hospital": "",
+    "Level": "", "Market": "中央市场", "Molecule": "阿卡波糖", "Month": 10, "Pack":
+    "", "Product": "卡博平", "Province": "黑龙江省", "Quantity": 750, "Quarter":
+    4, "Size": 15, "Specificat": "50mg", "TA I": "DIA", "TA II": "OAD",
+    "Value": 3211.5, "Year": 2018, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Bayer/OAD PDT CHA.xlsx", "providers": ["Bayer",
+    "GYC"], "sheetName": "OAD_PDT_CHA"}'
+- data: '{"ATC": "A10BX02", "Adminst": "口服", "City": "莱芜市", "Code":
+    3712002, "Corporatio": "江苏豪森药业股份有限公司", "Form": "片剂", "Hospital": "",
+    "Level": "", "Market": "中央市场", "Molecule": "瑞格列奈", "Month": 1, "Pack":
+    "", "Product": "孚来迪", "Province": "山东省", "Quantity": 18000, "Quarter":
+    1, "Size": 30, "Specificat": "1mg", "TA I": "DIA", "TA II": "OAD",
+    "Value": 39300.0, "Year": 2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Bayer/OAD PDT CHA.xlsx", "providers": ["Bayer",
+    "GYC"], "sheetName": "OAD_PDT_CHA"}'
+- data: '{"ATC": "", "Adminst": "口服", "City": "福州市", "Code": 3501010,
+    "Corporatio": "", "Form": "", "Hospital": "", "Level": "", "Market":
+    "策略市场", "Molecule": "", "Month": 1, "Pack": "", "Product": "", "Province":
+    "福建省", "Quantity": 351840, "Quarter": 1, "Size": "", "Specificat":
+    "", "TA I": "DIA", "TA II": "OAD", "Value": 551916.25, "Year": 2017,
+    "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Bayer/Oad 12 cha MKT.xlsx", "providers": ["Bayer",
+    "GYC"], "sheetName": "Oad_12_cha_MKT"}'
+- data: '{"ATC": "", "Adminst": "口服", "City": "福州市", "Code": 3501012,
+    "Corporatio": "", "Form": "", "Hospital": "", "Level": "", "Market":
+    "策略市场", "Molecule": "", "Month": 1, "Pack": "", "Product": "", "Province":
+    "福建省", "Quantity": 198500, "Quarter": 1, "Size": "", "Specificat":
+    "", "TA I": "DIA", "TA II": "OAD", "Value": 180650.6, "Year": 2017,
+    "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Bayer/Oad 12 cha MKT.xlsx", "providers": ["Bayer",
+    "GYC"], "sheetName": "Oad_12_cha_MKT"}'
+- data: '{"ATC": "A10BF01", "Adminst": "口服", "City": "牡丹江市", "Code":
+    2310013, "Corporatio": "杭州中美华东制药有限公司", "Form": "片剂", "Hospital": "",
+    "Level": "", "Market": "中央市场", "Molecule": "阿卡波糖", "Month": 10, "Pack":
+    "", "Product": "卡博平", "Province": "黑龙江省", "Quantity": 750, "Quarter":
+    4, "Size": 15, "Specificat": "50mg", "TA I": "DIA", "TA II": "OAD",
+    "Value": 3211.5, "Year": 2018, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Bayer/oad 12 cha pdt.xlsx", "providers": ["Bayer",
+    "GYC"], "sheetName": "oad_12_cha_pdt"}'
+- data: '{"ATC": "A10BX02", "Adminst": "口服", "City": "莱芜市", "Code":
+    3712002, "Corporatio": "江苏豪森药业股份有限公司", "Form": "片剂", "Hospital": "",
+    "Level": "", "Market": "中央市场", "Molecule": "瑞格列奈", "Month": 1, "Pack":
+    "", "Product": "孚来迪", "Province": "山东省", "Quantity": 18000, "Quarter":
+    1, "Size": 30, "Specificat": "1mg", "TA I": "DIA", "TA II": "OAD",
+    "Value": 39300.0, "Year": 2017, "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC/Bayer/oad 12 cha pdt.xlsx", "providers": ["Bayer",
+    "GYC"], "sheetName": "oad_12_cha_pdt"}'

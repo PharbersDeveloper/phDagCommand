@@ -24,7 +24,7 @@ def mapping():
         {
             "col_name": "PROVINCE_NAME",
             "col_desc": "省份名",
-            "candidate": ['省'],
+            "candidate": ['省份', "省/自治区/直辖市"],
             "type": "String",
             "not_null": False,
         },
@@ -59,14 +59,14 @@ def mapping():
         {
             "col_name": "MONTH",
             "col_desc": "月份",
-            "candidate": ['月'],
+            "candidate": ['年月', '月'],
             "type": "String",
             "not_null": True,
         },
         {
             "col_name": "HOSP_NAME",
             "col_desc": "医院名",
-            "candidate": [],
+            "candidate": ["医院名称"],
             "type": "String",
             "not_null": False,
         },
@@ -94,14 +94,14 @@ def mapping():
         {
             "col_name": "MOLE_NAME",
             "col_desc": "分子名",
-            "candidate": ['药品名称'],
+            "candidate": ['通用名'],
             "type": "String",
             "not_null": True,
         },
         {
             "col_name": "PRODUCT_NAME",
             "col_desc": "商品名",
-            "candidate": ['商品名'],
+            "candidate": ['药品商品名', "商品名"],
             "type": "String",
             "not_null": True,
         },
@@ -122,14 +122,14 @@ def mapping():
         {
             "col_name": "PACK_QTY",
             "col_desc": "包装数量",
-            "candidate": ['包装数量'],
+            "candidate": ['包装规格', "规格"],
             "type": "String",
             "not_null": True,
         },
         {
             "col_name": "SALES_QTY_GRAIN",
             "col_desc": "粒度销量",
-            "candidate": ['数量（支/片）', '数量(支/片)', '数量_支/片_'],
+            "candidate": ['最小制剂单位包装数量', "最小制剂单位数量"],
             "type": "Double",
             "not_null": True,
         },
@@ -150,7 +150,7 @@ def mapping():
         {
             "col_name": "SALES_VALUE",
             "col_desc": "销售额",
-            "candidate": ['金额（元）'],
+            "candidate": ['金额'],
             "type": "Double",
             "not_null": True,
         },
@@ -164,7 +164,7 @@ def mapping():
         {
             "col_name": "MANUFACTURER_NAME",
             "col_desc": "生产厂商",
-            "candidate": ['生产企业'],
+            "candidate": ['生产企业', '生产厂家'],
             "type": "String",
             "not_null": True,
         },
