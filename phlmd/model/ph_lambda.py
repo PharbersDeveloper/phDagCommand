@@ -3,6 +3,7 @@ from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil
 from phlmd.model.ph_role import PhRole
 from phlmd.model.ph_layer import PhLayer
+from pherrs.ph_err import PhError
 
 
 class PhLambda(AWSOperator):

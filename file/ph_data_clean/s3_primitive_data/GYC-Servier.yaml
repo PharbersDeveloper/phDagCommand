@@ -1,0 +1,963 @@
+- company: Servier
+  data:
+    ATC3编码:
+      0: C10A
+      1: C10A
+    ATC4编码:
+      0: C10AA
+      1: C10AA
+    CORPORATION:
+      0: 北京嘉林药业股份有限公司
+      1: 北京嘉林药业股份有限公司
+    City:
+      0: 蚌埠市
+      1: 合肥市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Code:
+      0: 3403001
+      1: 3401001
+    Hospital Degree:
+      0: 三级
+      1: 三级
+    Hospital Name:
+      0: 蚌埠医学院附属医院
+      1: 安徽省立医院
+    Molecule Name:
+      0: 阿托伐他汀
+      1: 阿托伐他汀
+    Pack:
+      0: 10mg
+      1: 10mg
+    PackNumber:
+      0: 7
+      1: 7
+    Period:
+      0: 201710
+      1: 201710
+    Product Name:
+      0: 阿乐
+      1: 阿乐
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 38640
+      1: 48720
+    通用名ATC编码:
+      0: C10AA05
+      1: C10AA05
+    金额:
+      0: 141201.6
+      1: 178036.8
+  file: GYC/Servier/20171219发送-SWY201710 汇总.xlsx
+  length: 411784
+  sheet: 2017年50个通用名
+  source: GYC
+- company: Servier
+  data:
+    ATC3编码:
+      0: A10B
+      1: A10B
+    ATC4编码:
+      0: A10BF
+      1: A10BF
+    CORPORATION:
+      0: 拜耳医药保健有限公司
+      1: 杭州中美华东制药有限公司
+    City:
+      0: 合肥市
+      1: 合肥市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Code:
+      0: 3401001
+      1: 3401001
+    Hospital Degree:
+      0: 三级
+      1: 三级
+    Hospital Name:
+      0: 安徽省立医院
+      1: 安徽省立医院
+    Molecule Name:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    Pack:
+      0: 50mg
+      1: 50mg
+    PackNumber:
+      0: 30
+      1: 30
+    Period:
+      0: 201510
+      1: 201510
+    Product Name:
+      0: 拜唐苹
+      1: 卡博平
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 32400
+      1: 120000
+    通用名ATC编码:
+      0: A10BF01
+      1: A10BF01
+    金额:
+      0: 69120
+      1: 178000
+  file: GYC/Servier/20171219发送-SWY201710 汇总.xlsx
+  length: 658749
+  sheet: 2015 2016年50个通用名
+  source: GYC
+- company: Servier
+  data:
+    CORPORATION:
+      0: 拜耳-先灵集团
+      1: 杭州华东医药集团有限公司
+    City:
+      0: 合肥市
+      1: 合肥市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Degree:
+      0: 二甲
+      1: 二甲
+    Hospital Name:
+      0: 安徽省第二人民医院黄山路院区
+      1: 安徽省第二人民医院黄山路院区
+    Molecule Name:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    Pack:
+      0: 100 MG
+      1: 50 MG
+    PackNumber:
+      0: 30
+      1: 30
+    Period:
+      0: 201510
+      1: 201510
+    Product Name:
+      0: 拜唐苹
+      1: 卡博平
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 3000
+      1: 18000
+    金额:
+      0: 10956
+      1: 26700
+  file: GYC/Servier/2017M10补充样本.xlsx
+  length: 259072
+  sheet: '201710'
+  source: GYC
+- company: Servier
+  data:
+    2017年1-12月8个ATC分类金额:
+      0: 省/自治区/直辖市
+      1: 安徽省
+    'Unnamed: 1':
+      0: 城市
+      1: 淮南市
+    'Unnamed: 10':
+      0: 通用名
+      1: 月见草油
+    'Unnamed: 11':
+      0: 剂型
+      1: 软胶囊(胶丸)
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 金额
+      1: 920
+    'Unnamed: 2':
+      0: 年
+      1: '2017'
+    'Unnamed: 3':
+      0: 年季
+      1: '1'
+    'Unnamed: 4':
+      0: 年月
+      1: '1'
+    'Unnamed: 5':
+      0: 医院名称
+      1: '3404012'
+    'Unnamed: 6':
+      0: 医院编码
+      1: 淮南东方医院集团新庄孜医院
+    'Unnamed: 7':
+      0: 医院等级
+      1: 二级
+    'Unnamed: 8':
+      0: ATC3编码
+      1: C10A
+    'Unnamed: 9':
+      0: ATC3名称
+      1: 单方调节血脂药
+  file: GYC/Servier/2017年1-12月8个ATC分类金额.xlsx
+  length: 126789
+  sheet: 2017年1-12月8个ATC分类金额
+  source: GYC
+- company: Servier
+  data:
+    ATC3编码:
+      0: C10A
+      1: C10A
+    ATC4编码:
+      0: C10AA
+      1: C10AA
+    CORPORATION:
+      0: 北京嘉林药业股份有限公司
+      1: 北京嘉林药业股份有限公司
+    City:
+      0: 蚌埠市
+      1: 合肥市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Code:
+      0: 3403001
+      1: 3401001
+    Hospital Degree:
+      0: 三级
+      1: 三级
+    Hospital Name:
+      0: 蚌埠医学院附属医院
+      1: 安徽省立医院
+    Molecule Name:
+      0: 阿托伐他汀
+      1: 阿托伐他汀
+    Pack:
+      0: 10mg
+      1: 10mg
+    PackNumber:
+      0: 7
+      1: 7
+    Period:
+      0: 201710
+      1: 201710
+    Product Name:
+      0: 阿乐
+      1: 阿乐
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 38640
+      1: 48720
+    通用名ATC编码:
+      0: C10AA05
+      1: C10AA05
+    金额:
+      0: 141201.6
+      1: 178036.8
+  file: GYC/Servier/2017年1-12月8个ATC分类金额.xlsx
+  length: 15
+  sheet: 购药数据格式
+  source: GYC
+- company: Servier
+  data:
+    ATC3编码:
+      0: C10A
+      1: C10A
+    ATC4编码:
+      0: C10AA
+      1: C10AA
+    CORPORATION:
+      0: 北京嘉林药业股份有限公司
+      1: 辉瑞制药有限公司
+    City:
+      0: 北京市
+      1: 北京市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Code:
+      0: 1100001
+      1: 1100001
+    Hospital Degree:
+      0: 三级
+      1: 三级
+    Hospital Name:
+      0: 北京协和医院
+      1: 北京协和医院
+    Molecule Name:
+      0: 阿托伐他汀
+      1: 阿托伐他汀
+    Pack:
+      0: 10mg
+      1: 10mg
+    PackNumber:
+      0: 7
+      1: 7
+    Period:
+      0: 201801
+      1: 201801
+    Product Name:
+      0: 阿乐
+      1: 立普妥
+    Province:
+      0: 北京市
+      1: 北京市
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 45360
+      1: 28
+    通用名ATC编码:
+      0: C10AA05
+      1: C10AA05
+    金额:
+      0: 150595.2
+      1: 173.6
+  file: GYC/Servier/2018年12月 施维雅产品数据.xlsx
+  length: 508971
+  sheet: '201812'
+  source: GYC
+- company: Servier
+  data:
+    ATC3编码:
+      0: A10B
+      1: A10B
+    ATC4编码:
+      0: A10BF
+      1: A10BF
+    CORPORATION:
+      0: 山东绿叶制药集团有限公司
+      1: 拜耳-先灵集团
+    City:
+      0: 合肥市
+      1: 合肥市
+    Dosage:
+      0: 胶囊剂（胶丸、滴丸）
+      1: 片剂
+    Hospital Degree:
+      0: 三甲
+      1: 三甲
+    Hospital Name:
+      0: 安徽省第二人民医院
+      1: 安徽省第二人民医院
+    Molecule Name:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    Pack:
+      0: 50 MG
+      1: 50 MG
+    PackNumber:
+      0: 30
+      1: 30
+    Period:
+      0: 201801
+      1: 201801
+    Product Name:
+      0: 阿卡波糖
+      1: 拜唐苹
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 0
+      1: 600
+    通用名ATC编码:
+      0: A10BF01
+      1: A10BF01
+    金额:
+      0: 0
+      1: 1290
+  file: GYC/Servier/2018年12月 施维雅补充样本产品数据.xlsx
+  length: 192022
+  sheet: '201812'
+  source: GYC
+- company: Servier
+  data:
+    ATC3编码:
+      0: C01A
+      1: C01A
+    ATC4编码:
+      0: C01AA
+      1: C01AA
+    CORPORATION:
+      0: 成都倍特药业有限公司
+      1: 上海旭东海普药业有限公司
+    City:
+      0: 蚌埠市
+      1: 合肥市
+    Dosage:
+      0: 注射剂
+      1: 注射剂
+    Hospital Code:
+      0: 3403001
+      1: 3401001
+    Hospital Degree:
+      0: 三级
+      1: 三级
+    Hospital Name:
+      0: 蚌埠医学院附属医院
+      1: 安徽省立医院
+    Molecule Name:
+      0: 去乙酰毛花苷
+      1: 去乙酰毛花苷
+    Pack:
+      0: 2ml∶0.4mg
+      1: 2ml∶0.4mg
+    PackNumber:
+      0: 1
+      1: 1
+    Period:
+      0: 201909
+      1: 201909
+    Product Name:
+      0: 去乙酰毛花苷
+      1: 去乙酰毛花苷
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 注射
+      1: 注射
+    最小制剂单位数量:
+      0: 240
+      1: 1200
+    通用名ATC编码:
+      0: C01AA07
+      1: C01AA07
+    金额:
+      0: 20400
+      1: 88200
+  file: GYC/Servier/20191112发送--施维雅2019M1-9产品信息.xlsx
+  length: 434004
+  sheet: Sheet1
+  source: GYC
+- company: Servier
+  data:
+    ATC3名称:
+      0: 单方调节血脂药
+      1: 口服降血糖药，不含胰岛素类
+    ATC3编码:
+      0: C10A
+      1: A10B
+    剂型:
+      0: 分散片
+      1: 片剂
+    医院名称:
+      0: 蚌埠医学院附属医院
+      1: 蚌埠医学院附属医院
+    医院等级:
+      0: 三级
+      1: 三级
+    医院编码:
+      0: 3403001
+      1: 3403001
+    城市:
+      0: 蚌埠市
+      1: 蚌埠市
+    季度:
+      0: 1
+      1: 1
+    年:
+      0: 2019
+      1: 2019
+    月:
+      0: 2
+      1: 2
+    省/自治区/直辖市:
+      0: 安徽省
+      1: 安徽省
+    给药途径:
+      0: 口服
+      1: 口服
+    通用名:
+      0: 苯扎贝特
+      1: 吡格列酮
+    金额:
+      0: 7966
+      1: 13400
+  file: GYC/Servier/20191114发送--2019M1-9ATC分类数据.xlsx
+  length: 109400
+  sheet: Sheet2
+  source: GYC
+- company: Servier
+  data:
+    CORPORATION:
+      0: 上海信谊药厂有限公司
+      1: 上海信谊药厂有限公司
+    City:
+      0: 四平市
+      1: 四平市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Code:
+      0: 2203001
+      1: 2203001
+    Hospital Degree:
+      0: 三级
+      1: 三级
+    Hospital Name:
+      0: 吉林省四平市中心人民医院
+      1: 吉林省四平市中心人民医院
+    Molecule Name:
+      0: 地高辛
+      1: 地高辛
+    Pack:
+      0: 0.25mg
+      1: 0.25mg
+    PackNumber:
+      0: 100
+      1: 100
+    Period:
+      0: 201906
+      1: 201805
+    Product Name:
+      0: .nan
+      1: .nan
+    Province:
+      0: 吉林省
+      1: 吉林省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 780
+      1: 900
+    金额:
+      0: 19.5
+      1: 22.5
+  file: GYC/Servier/2019M6新增心衰通用名自定义数据.xlsx
+  length: 72936
+  sheet: Sheet1
+  source: GYC
+- company: Servier
+  data:
+    ATC3编码:
+      0: C09A
+      1: C09A
+    ATC4编码:
+      0: C09AA
+      1: C09AA
+    CORPORATION:
+      0: 成都地奥制药集团有限公司
+      1: 深圳信立泰药业股份有限公司
+    City:
+      0: 蚌埠市
+      1: 蚌埠市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Code:
+      0: 3403001
+      1: 3403001
+    Hospital Degree:
+      0: 三级
+      1: 三级
+    Hospital Name:
+      0: 蚌埠医学院附属医院
+      1: 蚌埠医学院附属医院
+    Molecule Name:
+      0: 贝那普利
+      1: 贝那普利
+    Pack:
+      0: 10mg
+      1: 10mg
+    PackNumber:
+      0: 10
+      1: 14
+    Period:
+      0: 201901
+      1: 201901
+    Product Name:
+      0: 敌亚平
+      1: 信达怡
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 3600
+      1: 16800
+    通用名ATC编码:
+      0: C09AA07
+      1: C09AA07
+    金额:
+      0: 5702.4
+      1: 27000.0
+  file: GYC/Servier/20200217发送--施维雅2019M12产品信息.xlsx
+  length: 594890
+  sheet: 施维雅58个通用名含心衰
+  source: GYC
+- company: Servier
+  data:
+    ATC3编码:
+      0: C08C
+      1: A10B
+    ATC4编码:
+      0: C08CA
+      1: A10BA
+    CORPORATION:
+      0: 上海医药集团股份有限公司
+      1: 江苏正大天晴药业股份有限公司
+    City:
+      0: 合肥市
+      1: 合肥市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Degree:
+      0: 三甲
+      1: 三甲
+    Hospital Name:
+      0: 安徽省第二人民医院
+      1: 安徽省第二人民医院
+    Molecule Name:
+      0: 硝苯地平
+      1: 二甲双胍
+    Pack:
+      0: 10 MG
+      1: 500 MG
+    PackNumber:
+      0: 100
+      1: 20
+    Period:
+      0: 201901
+      1: 201901
+    Product Name:
+      0: 硝苯地平
+      1: 泰白
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 7000
+      1: 300
+    通用名ATC编码:
+      0: C08CA05
+      1: A10BA02
+    金额:
+      0: 203
+      1: 240
+  file: GYC/Servier/20200217发送--施维雅2019M12产品信息.xlsx
+  length: 305444
+  sheet: 补充样本数据
+  source: GYC
+- company: Servier
+  data:
+    ATC3名称:
+      0: β-受体阻滞剂
+      1: 血管紧张素转换酶抑制剂的复方药
+    ATC3编码:
+      0: C07A
+      1: C09B
+    剂型:
+      0: 片剂
+      1: 片剂
+    医院名称:
+      0: 蚌埠医学院附属医院
+      1: 蚌埠医学院附属医院
+    医院等级:
+      0: 三级
+      1: 三级
+    医院编码:
+      0: 3403001
+      1: 3403001
+    城市:
+      0: 蚌埠市
+      1: 蚌埠市
+    季度:
+      0: 4
+      1: 4
+    年:
+      0: 2019
+      1: 2019
+    月:
+      0: 12
+      1: 12
+    省/自治区/直辖市:
+      0: 安徽省
+      1: 安徽省
+    给药途径:
+      0: 口服
+      1: 口服
+    通用名:
+      0: 索他洛尔
+      1: 复方卡托普利
+    金额:
+      0: 16416
+      1: 3800
+  file: GYC/Servier/20200217发送--施维雅2019M12产品信息.xlsx
+  length: 139512
+  sheet: ATC分类数据
+  source: GYC
+- company: Servier
+  data:
+    2019年12月后补数据医院名单:
+      0: 序号
+      1: 1
+    'Unnamed: 1':
+      0: 省份
+      1: 北京市
+    'Unnamed: 2':
+      0: 城市
+      1: 北京市
+    'Unnamed: 3':
+      0: 机构编码
+      1: '1100043'
+    'Unnamed: 4':
+      0: 月份
+      1: '201910'
+  file: GYC/Servier/20200217发送--施维雅2019M12产品信息.xlsx
+  length: 133
+  sheet: 说明附表
+  source: GYC
+- company: Servier
+  data:
+    ATC3名称:
+      0: 单方调节血脂药
+      1: 口服降血糖药，不含胰岛素类
+    ATC3编码:
+      0: C10A
+      1: A10B
+    剂型:
+      0: 分散片
+      1: 片剂
+    医院名称:
+      0: 蚌埠医学院附属医院
+      1: 蚌埠医学院附属医院
+    医院编码:
+      0: 3403001
+      1: 3403001
+    城市:
+      0: 蚌埠市
+      1: 蚌埠市
+    季度:
+      0: 1
+      1: 1
+    年:
+      0: 2020
+      1: 2020
+    月:
+      0: 2
+      1: 2
+    省份:
+      0: 安徽省
+      1: 安徽省
+    等级:
+      0: 三级
+      1: 三级
+    给药途径:
+      0: 口服
+      1: 口服
+    通用名:
+      0: 苯扎贝特
+      1: 吡格列酮
+    金额:
+      0: 11949
+      1: 13400
+  file: GYC/Servier/20200416发送--更正--2020M2产品数据.xlsx
+  length: 24504
+  sheet: ATC自定义
+  source: GYC
+- company: Servier
+  data:
+    ATC3编码:
+      0: A10B
+      1: C10A
+    ATC4编码:
+      0: A10BF
+      1: C10AA
+    CORPORATION:
+      0: 杭州中美华东制药有限公司
+      1: 北京嘉林药业股份有限公司
+    City:
+      0: 蚌埠市
+      1: 蚌埠市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Code:
+      0: 3403001
+      1: 3403001
+    Hospital Degree:
+      0: 三级
+      1: 三级
+    Hospital Name:
+      0: 蚌埠医学院附属医院
+      1: 蚌埠医学院附属医院
+    Molecule Name:
+      0: 阿卡波糖
+      1: 阿托伐他汀
+    Pack:
+      0: 50mg
+      1: 10mg
+    PackNumber:
+      0: 30
+      1: 7
+    Period:
+      0: 202001
+      1: 202001
+    Product Name:
+      0: 卡博平
+      1: 阿乐
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 18000
+      1: 16800
+    通用名ATC编码:
+      0: A10BF01
+      1: C10AA05
+    金额:
+      0: 24600
+      1: 55776
+  file: GYC/Servier/20200416发送--更正--2020M2产品数据.xlsx
+  length: 91030
+  sheet: 2020M2更正-产品数据
+  source: GYC
+- company: Servier
+  data:
+    ATC3编码:
+      0: A10B
+      1: A10B
+    ATC4编码:
+      0: A10BF
+      1: A10BF
+    CORPORATION:
+      0: 拜耳-先灵集团
+      1: 杭州华东医药集团有限公司
+    City:
+      0: 蚌埠市
+      1: 蚌埠市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Degree:
+      0: 三甲
+      1: 三甲
+    Hospital Name:
+      0: 蚌埠医学院第一附属医院
+      1: 蚌埠医学院第一附属医院
+    Molecule Name:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    Pack:
+      0: 50 MG
+      1: 50 MG
+    PackNumber:
+      0: 30
+      1: 30
+    Period:
+      0: 202001
+      1: 202001
+    Product Name:
+      0: 拜唐苹
+      1: 卡博平
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 81000
+      1: 18000
+    通用名ATC编码:
+      0: A10BF01
+      1: A10BF01
+    金额:
+      0: 174204
+      1: 24600
+  file: GYC/Servier/20200416发送--更正--2020M2产品数据.xlsx
+  length: 30944
+  sheet: 2020M2补充样本数据
+  source: GYC
+- company: Servier
+  data:
+    ATC3编码:
+      0: C01D
+      1: C01D
+    ATC4编码:
+      0: C01DA
+      1: C01DA
+    CORPORATION:
+      0: 山东鲁南贝特制药有限公司
+      1: 阿斯利康制药有限公司
+    City:
+      0: 北京市
+      1: 北京市
+    Dosage:
+      0: 片剂
+      1: 缓释片
+    Hospital Code:
+      0: 1100001
+      1: 1100001
+    Hospital Degree:
+      0: 二级
+      1: 二级
+    Hospital Name:
+      0: 北京协和医院
+      1: 北京协和医院
+    Molecule Name:
+      0: 单硝酸异山梨酯
+      1: 单硝酸异山梨酯
+    Pack:
+      0: 20mg
+      1: 60mg
+    PackNumber:
+      0: 48
+      1: 7
+    Period:
+      0: 201701
+      1: 201701
+    Product Name:
+      0: 欣康
+      1: 依姆多
+    Province:
+      0: 北京市
+      1: 北京市
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 100800
+      1: 38640
+    通用名ATC编码:
+      0: C01DA14
+      1: C01DA14
+    金额:
+      0: 82530.0
+      1: 116692.8
+  file: GYC/Servier/SWY2017M1-12.xlsx
+  length: 549766
+  sheet: 2017年50个通用名
+  source: GYC

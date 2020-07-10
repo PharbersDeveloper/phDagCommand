@@ -1,0 +1,5611 @@
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 溶液剂（注射剂）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 石嘴山市
+      1: 广州市
+    CORP_NAME:
+      0: 上海中信国健药业有限公司
+      1: 中国医药集团总公司
+    HOSPITAL_CODE:
+      0: 750051
+      1: 510031
+    MOLE_NAME:
+      0: 重组人Ⅱ型肿瘤坏死因子受体-抗体融合蛋白
+      1: 奥曲肽
+    MONTH:
+      0: 9
+      1: 10
+    PACK_DES:
+      0: 12.5 MG
+      1: 150 UG 1 ML
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 益赛普
+      1: 力尔宁
+    STANDARD_UNIT:
+      0: 60
+      1: 3200
+    VALUE:
+      0: 22616
+      1: 149331
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/200213辉瑞-12月检索.xlsx
+  length: 530
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    2017年出版:
+      0: 是
+      1: 是
+    2018年出版:
+      0: 是
+      1: 是
+    2019年出版:
+      0: 是
+      1: 是
+    医院名称:
+      0: 北京广外社区卫生服务中心
+      1: 内蒙古医学院第三附属医院
+    医院编码:
+      0: 100782
+      1: 10011
+    参考级别:
+      0: 二级
+      1: 三甲
+    地区:
+      0: 北京
+      1: 内蒙古
+    城市:
+      0: 北京市
+      1: 包头市
+    省:
+      0: 北京市
+      1: 内蒙古自治区
+  file: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
+  length: 1413
+  sheet: 2017-2019年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 巴彦淖尔市
+      1: 巴彦淖尔市
+    CORP_NAME:
+      0: 新和成控股集团有限公司
+      1: 新和成控股集团有限公司
+    HOSPITAL_CODE:
+      0: 10081
+      1: 10081
+    MOLE_NAME:
+      0: 氯沙坦钾氢氯噻嗪
+      1: 氯沙坦钾氢氯噻嗪
+    MONTH:
+      0: 3
+      1: 5
+    PACK_DES:
+      0: ' CO 62.5 MG'
+      1: ' CO 62.5 MG'
+    PACK_NUMBER:
+      0: 7
+      1: 7
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 奈迪亚
+      1: 奈迪亚
+    STANDARD_UNIT:
+      0: 4200
+      1: 1750
+    VALUE:
+      0: 16380
+      1: 6825
+    YEAR:
+      0: 2013
+      1: 2013
+  file: CPA/Pfizer/170117补充13个.xlsx
+  length: 130543
+  sheet: 辉瑞新增13个药品1301-1611
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10071
+      1: 10121
+    月份:
+      0: 6、7、8、9、10、11
+      1: 11
+  file: CPA/Pfizer/180111辉瑞临时检索.xlsx
+  length: 101
+  sheet: 1-11月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    1、未到医院：以下为2019年1-9月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010031'
+    'Unnamed: 1':
+      0: 月份
+      1: 2、6、7、8、9
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+  file: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+  length: 98
+  sheet: 1-9月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    1、替换数据说明:
+      0: 医院编码
+      1: '250181'
+    'Unnamed: 1':
+      0: 年
+      1: 2018
+    'Unnamed: 2':
+      0: 月份
+      1: 4
+    'Unnamed: 3':
+      0: 备注
+      1: 医院系统调整，重新上报数据，请删除历史数据，以本次提供数据为准
+  file: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
+  length: 15
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: YEAR
+      1: '2018'
+    'Unnamed: 10':
+      0: APP2_COD
+      1: 粉剂（粉剂针）
+    'Unnamed: 11':
+      0: APP1_COD
+      1: 注射
+    'Unnamed: 12':
+      0: CORP_NAME
+      1: 上海莱士血液制品股份有限公司
+    'Unnamed: 13':
+      0: PRODUCT_MKT
+      1: .nan
+    'Unnamed: 14':
+      0: BRAND_MKT
+      1: .nan
+    'Unnamed: 2':
+      0: MONTH
+      1: '12'
+    'Unnamed: 3':
+      0: HOSPITAL_CODE
+      1: '100741'
+    'Unnamed: 4':
+      0: MOLE_NAME
+      1: 冻干人凝血因子Ⅷ
+    'Unnamed: 5':
+      0: PRODUCT_NAME
+      1: 海莫莱士
+    'Unnamed: 6':
+      0: PACK_DES
+      1: 200 IU
+    'Unnamed: 7':
+      0: PACK_NUMBER
+      1: '1'
+    'Unnamed: 8':
+      0: VALUE
+      1: 11642
+    'Unnamed: 9':
+      0: STANDARD_UNIT
+      1: 30
+    注：本表内包含2018年替换数据，请参照“1-3月未到医院名单及说明”删除相关数据后再追加。:
+      0: CITY
+      1: 北京市
+  file: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
+  length: 5645
+  sheet: 2018年替换及补充数据
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 黑河市
+      1: 黑河市
+    CORP_NAME:
+      0: 百时美施贵宝集团
+      1: 赛诺菲-安万特集团
+    HOSPITAL_CODE:
+      0: 150621
+      1: 150621
+    MOLE_NAME:
+      0: 二甲双胍
+      1: 格列美脲
+    MONTH:
+      0: 6
+      1: 6
+    PACK_DES:
+      0: 500 MG
+      1: 2 MG
+    PACK_NUMBER:
+      0: 20
+      1: 15
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 格华止
+      1: 亚莫利
+    STANDARD_UNIT:
+      0: 16280
+      1: 300
+    VALUE:
+      0: 18828
+      1: 1286
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+  length: 140
+  sheet: 2017年未到医院补充数据
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 海口市
+      1: 海口市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 上海中信国健药业有限公司
+    HOSPITAL_CODE:
+      0: 570051
+      1: 570051
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 重组人Ⅱ型肿瘤坏死因子受体-抗体融合蛋白
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 200 IU
+      1: 12.5 MG
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 益赛普
+    STANDARD_UNIT:
+      0: 20
+      1: 240
+    VALUE:
+      0: 7920
+      1: 98042
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
+  length: 1285
+  sheet: 2019年替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 鞍山市
+      1: 巴彦淖尔市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 山东泰邦生物制品有限公司
+    HOSPITAL_CODE:
+      0: 110411
+      1: 10081
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    STANDARD_UNIT:
+      0: 50
+      1: 150
+    VALUE:
+      0: 19800
+      1: 59250
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+  length: 217942
+  sheet: 辉瑞1901
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 鞍山市
+      1: 巴彦淖尔市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 山东泰邦生物制品有限公司
+    HOSPITAL_CODE:
+      0: 110411
+      1: 10081
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 4
+      1: 4
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    STANDARD_UNIT:
+      0: 50
+      1: 200
+    VALUE:
+      0: 19800
+      1: 79000
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190613辉瑞1904底层检索.xlsx
+  length: 209745
+  sheet: 辉瑞1904
+  source: CPA
+- company: Pfizer
+  data:
+    医院名称:
+      0: 内蒙古医学院第三附属医院
+      1: 乌海市人民医院
+    医院编码:
+      0: 10011
+      1: 10021
+    参考级别:
+      0: 三甲
+      1: 三级
+    地区:
+      0: 内蒙古
+      1: 内蒙古
+    城市:
+      0: 包头市
+      1: 乌海市
+    备注:
+      0: Y
+      1: Y
+    是否新增:
+      0: .nan
+      1: .nan
+    省:
+      0: 内蒙古自治区
+      1: 内蒙古自治区
+  file: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
+  length: 1235
+  sheet: 2017年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: CORP_NAME
+    'Unnamed: 2':
+      0: .nan
+      1: PACK_DES
+    'Unnamed: 3':
+      0: .nan
+      1: 原PRODUCT_NAME
+    'Unnamed: 4':
+      0: .nan
+      1: 变更后PRODUCT_NAME
+    说明：此次检索根据最新标准库对部分药品的商品名称和生产企业名称进行了更新，请企业对照此表更新历史数据。:
+      0: 商品名变更
+      1: MOLE_NAME
+  file: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
+  length: 60
+  sheet: 商品名和生产企业变更说明
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    'Unnamed: 4':
+      0: .nan
+      1: .nan
+    'Unnamed: 5':
+      0: .nan
+      1: .nan
+    'Unnamed: 6':
+      0: .nan
+      1: .nan
+    'Unnamed: 7':
+      0: .nan
+      1: .nan
+    说明：本月检索对以下药品信息进行了更新，请您对照修改历史数据，由此给您带来的不便敬请谅解！:
+      0: .nan
+      1: 1.MOLE_NAME和PRODUCT_NAME更新
+  file: CPA/Pfizer/190813辉瑞-6月检索.xlsx
+  length: 257
+  sheet: 药品信息更新对照表
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 上海市
+      1: 上海市
+    CORP_NAME:
+      0: 上海中信国健药业有限公司
+      1: 上海中信国健药业有限公司
+    HOSPITAL_CODE:
+      0: 200341
+      1: 200341
+    MOLE_NAME:
+      0: 重组人Ⅱ型肿瘤坏死因子受体-抗体融合蛋白
+      1: 重组人Ⅱ型肿瘤坏死因子受体-抗体融合蛋白
+    MONTH:
+      0: 10
+      1: 11
+    PACK_DES:
+      0: 25 MG
+      1: 25 MG
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 益赛普
+      1: 益赛普
+    STANDARD_UNIT:
+      0: 1400
+      1: 1200
+    VALUE:
+      0: 900662
+      1: 771996
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/200213辉瑞-12月检索.xlsx
+  length: 1361
+  sheet: 2018年补报数据
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 海口市
+      1: 海口市
+    CORP_NAME:
+      0: 勃林格殷格翰集团
+      1: 勃林格殷格翰集团
+    HOSPITAL_CODE:
+      0: 570051
+      1: 570051
+    MOLE_NAME:
+      0: 阿法替尼
+      1: 阿法替尼
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 30 MG
+      1: 40 MG
+    PACK_NUMBER:
+      0: 7
+      1: 7
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 吉泰瑞
+      1: 吉泰瑞
+    STANDARD_UNIT:
+      0: 70
+      1: 140
+    VALUE:
+      0: 11235
+      1: 28000
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx
+  length: 17
+  sheet: 2019年替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10111
+      1: 30051
+    是否补数:
+      0: .nan
+      1: .nan
+    月份:
+      0: 1
+      1: 3
+  file: CPA/Pfizer/180615辉瑞1804底层检索.xlsx
+  length: 61
+  sheet: 1-4月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10031
+    是否补数:
+      0: .nan
+      1: .nan
+    月份:
+      0: 3
+      1: 2
+  file: CPA/Pfizer/190712辉瑞-5月检索.xlsx
+  length: 71
+  sheet: 1-5月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    注：以上为2018年1-8月未提供数据的医院名单，数据将于上报后提供:
+      0: .nan
+      1: 1、特殊医院说明
+  file: CPA/Pfizer/181015辉瑞1808底层检索.xlsx
+  length: 4
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    医院编码:
+      0: 30581
+      1: 50061
+    月份:
+      0: 12
+      1: 7、8、9、10、11、12
+  file: CPA/Pfizer/190215辉瑞临时检索.xlsx
+  length: 72
+  sheet: 1-12月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10071
+    是否补数:
+      0: 1
+      1: 1
+    月份:
+      0: 5、7、8
+      1: 6、7、8
+  file: CPA/Pfizer/171016辉瑞1708底层检索.xlsx
+  length: 85
+  sheet: 1-8月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿克苏市
+      1: 阿克苏市
+    CORP_NAME:
+      0: Abraxis BioScience, LLC （US）
+      1: Abraxis BioScience, LLC （US）
+    HOSPITAL_CODE:
+      0: 830051
+      1: 830051
+    MOLE_NAME:
+      0: 紫杉醇(白蛋白结合型)
+      1: 紫杉醇(白蛋白结合型)
+    MONTH:
+      0: 7
+      1: 8
+    PACK_DES:
+      0: 100 MG
+      1: 100 MG
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 紫杉醇(白蛋白结合型)
+      1: 紫杉醇(白蛋白结合型)
+    STANDARD_UNIT:
+      0: 30
+      1: 12
+    VALUE:
+      0: 175500
+      1: 70200
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/171128辉瑞-紫杉醇(白蛋白结合型)1707-1709底层检索(反馈).xlsx
+  length: 242
+  sheet: 紫杉醇(白蛋白结合型)1707-1709
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 鞍山市
+      1: 蚌埠市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 山东泰邦生物制品有限公司
+    HOSPITAL_CODE:
+      0: 110411
+      1: 230461
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 10
+      1: 10
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    STANDARD_UNIT:
+      0: 50
+      1: 1200
+    VALUE:
+      0: 19800
+      1: 456000
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/191212辉瑞-10月检索.xlsx
+  length: 189201
+  sheet: 辉瑞-10月
+  source: CPA
+- company: Pfizer
+  data:
+    1、未到医院：以下为2019年1-10月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010031'
+    'Unnamed: 1':
+      0: 月份
+      1: 2、6、7、8、9、10
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+  file: CPA/Pfizer/191212辉瑞-10月检索.xlsx
+  length: 123
+  sheet: 1-10月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 自贡市
+      1: 自贡市
+    CORP_NAME:
+      0: 山东力诺科峰制药有限公司
+      1: 悦康药业集团有限公司
+    HOSPITAL_CODE:
+      0: 610311
+      1: 610311
+    MOLE_NAME:
+      0: 二甲双胍
+      1: 二甲双胍
+    MONTH:
+      0: 2
+      1: 2
+    PACK_DES:
+      0: 250 MG
+      1: 500 MG
+    PACK_NUMBER:
+      0: 48
+      1: 30
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 二甲双胍
+      1: 二甲双胍
+    STANDARD_UNIT:
+      0: 4800
+      1: 48000
+    VALUE:
+      0: 210
+      1: 26848
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+  length: 1832
+  sheet: 2018年替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10111
+      1: 30081
+    是否补数:
+      0: 1
+      1: 1
+    月份:
+      0: 1
+      1: 1
+  file: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
+  length: 34
+  sheet: 1月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    2、替换数据说明:
+      0: 医院编码
+      1: '260161'
+    'Unnamed: 1':
+      0: 年
+      1: 2019
+    'Unnamed: 2':
+      0: 月份
+      1: 1
+    'Unnamed: 3':
+      0: 备注
+      1: 医院系统调整，重新上报数据，请删除历史数据，以本次提供数据为准
+  file: CPA/Pfizer/190813辉瑞-6月检索.xlsx
+  length: 15
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 北京市
+      1: 北京市
+    CORP_NAME:
+      0: 上海医药集团股份有限公司
+      1: 上海医药集团股份有限公司
+    HOSPITAL_CODE:
+      0: 100441
+      1: 100441
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 1
+      1: 3
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 4500
+      1: 13000
+    VALUE:
+      0: 1278
+      1: 3692
+    YEAR:
+      0: 2016
+      1: 2016
+  file: CPA/Pfizer/170515辉瑞1703底层检索.xlsx
+  length: 4489
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10071
+    月份:
+      0: 11
+      1: 9
+  file: CPA/Pfizer/170117补充13个.xlsx
+  length: 81
+  sheet: 1-11月未到医院说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450731
+      1: 450901
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 11
+      1: 11
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 3000
+      1: 17000
+    VALUE:
+      0: 641
+      1: 5313
+    YEAR:
+      0: 2016
+      1: 2016
+  file: CPA/Pfizer/201611 CPA.xlsx
+  length: 160775
+  sheet: 辉瑞1611
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 830151
+      1: 450721
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 1000
+      1: 2000
+    VALUE:
+      0: 210
+      1: 427
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
+  length: 180185
+  sheet: 辉瑞1701
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿克苏市
+      1: 阿克苏市
+    CORP_NAME:
+      0: 勃林格殷格翰集团
+      1: 阿斯利康集团
+    HOSPITAL_CODE:
+      0: 830051
+      1: 830051
+    MOLE_NAME:
+      0: 阿法替尼
+      1: 奥希替尼
+    MONTH:
+      0: 3
+      1: 3
+    PACK_DES:
+      0: 30 MG
+      1: 80 MG
+    PACK_NUMBER:
+      0: 7
+      1: 30
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 吉泰瑞
+      1: 泰瑞沙
+    STANDARD_UNIT:
+      0: 28
+      1: 60
+    VALUE:
+      0: 4494
+      1: 30600
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx
+  length: 1540
+  sheet: 辉瑞1903（2）
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10111
+      1: 30171
+    是否补数:
+      0: .nan
+      1: 1.0
+    月份:
+      0: 1、6、7
+      1: 9
+  file: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
+  length: 63
+  sheet: 1-9月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    注：以上为2017年1-12月未提供数据的医院名单，数据将于上报后提供:
+      0: .nan
+      1: 1、替换数据说明：
+  file: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
+  length: 24
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10071
+    是否补数:
+      0: 1
+      1: 1
+    月份:
+      0: 5、7
+      1: 6、7
+  file: CPA/Pfizer/170915辉瑞1707底层检索.xlsx
+  length: 59
+  sheet: 1-7月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450241
+      1: 450661
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 4
+      1: 4
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 2000
+      1: 500
+    VALUE:
+      0: 524
+      1: 135
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/170615辉瑞1704底层检索.xlsx
+  length: 170742
+  sheet: 辉瑞1704
+  source: CPA
+- company: Pfizer
+  data:
+    1、下列16家医院暂停出版：:
+      0: 医院编码
+      1: '050061'
+    'Unnamed: 1':
+      0: 旧医院编码
+      1: '0506'
+    'Unnamed: 2':
+      0: 医院名称
+      1: 河北省辛集市第二医院
+    'Unnamed: 3':
+      0: 地区
+      1: 石家庄
+    'Unnamed: 4':
+      0: 省
+      1: 河北省
+    'Unnamed: 5':
+      0: 城市
+      1: 辛集市
+    'Unnamed: 6':
+      0: 参考级别
+      1: 二甲
+    'Unnamed: 7':
+      0: .nan
+      1: .nan
+  file: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+  length: 24
+  sheet: 变更说明
+  source: CPA
+- company: Pfizer
+  data:
+    医院名称:
+      0: 北京广外社区卫生服务中心
+      1: 内蒙古医学院第三附属医院
+    医院编码:
+      0: 100782
+      1: 10011
+    参考级别:
+      0: 二级
+      1: 三甲
+    地区:
+      0: 北京
+      1: 内蒙古
+    城市:
+      0: 北京市
+      1: 包头市
+    是否为2014年出版医院:
+      0: 是
+      1: 是
+    是否为2015年出版医院:
+      0: 是
+      1: 是
+    是否为2016年出版医院:
+      0: 是
+      1: 是
+    省:
+      0: 北京市
+      1: 内蒙古自治区
+  file: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
+  length: 1191
+  sheet: 2014年-2016年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    1、未到医院：以下为2019年1月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010011'
+    'Unnamed: 1':
+      0: 月份
+      1: 1
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+  file: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
+  length: 47
+  sheet: 2019年1月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450721
+      1: 450731
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 10
+      1: 10
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 1000
+      1: 7000
+    VALUE:
+      0: 214
+      1: 1496
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/171215辉瑞1710底层检索.xlsx
+  length: 157780
+  sheet: 辉瑞1710
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿克苏市
+      1: 阿克苏市
+    CORP_NAME:
+      0: 瑞阳制药有限公司
+      1: 瑞阳制药有限公司
+    HOSPITAL_CODE:
+      0: 830051
+      1: 830051
+    MOLE_NAME:
+      0: 哌拉西林钠他唑巴坦钠
+      1: 哌拉西林钠他唑巴坦钠
+    MONTH:
+      0: 8
+      1: 8
+    PACK_DES:
+      0: ' CO 1.125 GM'
+      1: ' CO 2.25 GM'
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 哌拉西林钠他唑巴坦钠
+      1: 哌拉西林钠他唑巴坦钠
+    STANDARD_UNIT:
+      0: 1200
+      1: 1200
+    VALUE:
+      0: 22860
+      1: 33912
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+  length: 11488
+  sheet: 哌拉西林钠他唑巴坦钠1-8月更新数据
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 巴彦淖尔市
+      1: 蚌埠市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 山东泰邦生物制品有限公司
+    HOSPITAL_CODE:
+      0: 10081
+      1: 230461
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 11
+      1: 11
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    STANDARD_UNIT:
+      0: 450
+      1: 600
+    VALUE:
+      0: 175500
+      1: 228000
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/200110辉瑞-11月检索.xlsx
+  length: 205710
+  sheet: 辉瑞-11月
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 鞍山市
+      1: 白山市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 上海莱士血液制品股份有限公司
+    HOSPITAL_CODE:
+      0: 110411
+      1: 130361
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 7
+      1: 7
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 海莫莱士
+    STANDARD_UNIT:
+      0: 80
+      1: 100
+    VALUE:
+      0: 31680
+      1: 41800
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190912辉瑞-7月检索.xlsx
+  length: 206490
+  sheet: 辉瑞-7月
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10071
+      1: 50131
+    是否补数:
+      0: 1
+      1: 1
+    月份:
+      0: 1
+      1: 1
+  file: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
+  length: 31
+  sheet: 1月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 溶液剂（注射剂）
+      1: 溶液剂（注射剂）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿克苏市
+      1: 阿克苏市
+    CORP_NAME:
+      0: 河北天成药业有限公司
+      1: 河北天成药业有限公司
+    HOSPITAL_CODE:
+      0: 830051
+      1: 830051
+    MOLE_NAME:
+      0: 硫酸镁
+      1: 硫酸镁
+    MONTH:
+      0: 11
+      1: 1
+    PACK_DES:
+      0: 2.5 GM 10 ML
+      1: 2.5 GM 10 ML
+    PACK_NUMBER:
+      0: 5
+      1: 5
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 硫酸镁
+      1: 硫酸镁
+    STANDARD_UNIT:
+      0: 7000
+      1: 3000
+    VALUE:
+      0: 65870
+      1: 7920
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/190215补充历史数据.xlsx
+  length: 65223
+  sheet: 辉瑞新增1701-1812
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10111
+      1: 30081
+    是否补数:
+      0: .nan
+      1: .nan
+    月份:
+      0: 1
+      1: 1
+  file: CPA/Pfizer/180413辉瑞1802底层检索.xlsx
+  length: 67
+  sheet: 1-2月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 鞍山市
+      1: 巴彦淖尔市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 山东泰邦生物制品有限公司
+    HOSPITAL_CODE:
+      0: 110411
+      1: 10081
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 2
+      1: 2
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    STANDARD_UNIT:
+      0: 50
+      1: 400
+    VALUE:
+      0: 19800
+      1: 158000
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190412辉瑞1902底层检索.xlsx
+  length: 152572
+  sheet: 辉瑞1902
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: 月份
+      1: 2、6、7、8、9
+    未到医院：以下为2019年1-9月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010031'
+  file: CPA/Pfizer/191114辉瑞-临时检索.xlsx
+  length: 92
+  sheet: 2019年1-9月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 淮南市
+      1: 淮南市
+    CORP_NAME:
+      0: 四环医药集团
+      1: 四环医药集团
+    HOSPITAL_CODE:
+      0: 230291
+      1: 230311
+    MOLE_NAME:
+      0: 脑蛋白水解物
+      1: 脑蛋白水解物
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 205 MG
+      1: 205 MG
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 韦司平
+      1: 韦司平
+    STANDARD_UNIT:
+      0: 100
+      1: 100
+    VALUE:
+      0: 1120
+      1: 1120
+    YEAR:
+      0: 2014
+      1: 2014
+  file: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
+  length: 1007554
+  sheet: 底层2
+  source: CPA
+- company: Pfizer
+  data:
+    1、替换数据说明：:
+      0: 医院编码
+      1: '230181'
+    'Unnamed: 1':
+      0: 年
+      1: '2015'
+    'Unnamed: 2':
+      0: 月份
+      1: 6月
+    'Unnamed: 3':
+      0: 备注
+      1: 医院系统调整，重新上报数据，请删除历史数据，以本次提供数据为准
+  file: CPA/Pfizer/170515辉瑞1703底层检索.xlsx
+  length: 11
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450731
+      1: 450901
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 5
+      1: 5
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 2000
+      1: 5000
+    VALUE:
+      0: 427
+      1: 1174
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/180713辉瑞1805底层检索.xlsx
+  length: 181268
+  sheet: 辉瑞1805
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: 生产企业
+    'Unnamed: 2':
+      0: .nan
+      1: 原药品名称
+    'Unnamed: 3':
+      0: .nan
+      1: 更新后药品名称
+    说明：本月检索更新了以下内容，请企业对照修改历史数据，谢谢！:
+      0: .nan
+      1: 商品名
+  file: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
+  length: 8
+  sheet: 药品信息更新对照表
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    'Unnamed: 4':
+      0: .nan
+      1: .nan
+    'Unnamed: 5':
+      0: .nan
+      1: .nan
+    'Unnamed: 6':
+      0: .nan
+      1: .nan
+    'Unnamed: 7':
+      0: .nan
+      1: .nan
+    医院变更情况说明：:
+      0: .nan
+      1: 1、下列20家医院暂停出版：
+  file: CPA/Pfizer/170323辉瑞1701底层检索.xlsx
+  length: 35
+  sheet: 医院变更情况说明
+  source: CPA
+- company: Pfizer
+  data:
+    医院名称:
+      0: 北京广外社区卫生服务中心
+      1: 内蒙古医学院第三附属医院
+    医院编码:
+      0: 100782
+      1: 10011
+    参考级别:
+      0: 二级
+      1: 三甲
+    地区:
+      0: 北京
+      1: 内蒙古
+    城市:
+      0: 北京市
+      1: 包头市
+    是否为2013年出版医院:
+      0: .nan
+      1: 是
+    是否为2014年出版医院:
+      0: 是
+      1: 是
+    是否为2015年出版医院:
+      0: 是
+      1: 是
+    是否为2016年出版医院:
+      0: 是
+      1: 是
+    省:
+      0: 北京市
+      1: 内蒙古自治区
+  file: CPA/Pfizer/170117补充13个.xlsx
+  length: 1196
+  sheet: 2013年-2016年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    2、特殊医院说明:
+      0: 医院编码
+      1: '050131'
+    'Unnamed: 1':
+      0: 年
+      1: 2019
+    'Unnamed: 2':
+      0: 月份
+      1: 7
+    'Unnamed: 3':
+      0: 备注
+      1: 7月无销售数据
+  file: CPA/Pfizer/190912辉瑞-7月检索.xlsx
+  length: 2
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    注：以上为2018年1-5月未提供数据的医院名单，数据将于上报后提供: {}
+  file: CPA/Pfizer/180713辉瑞1805底层检索.xlsx
+  length: 0
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10031
+    是否补数:
+      0: .nan
+      1: .nan
+    月份:
+      0: 3
+      1: 2
+  file: CPA/Pfizer/190613辉瑞1904底层检索.xlsx
+  length: 59
+  sheet: 1-4月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 巴彦淖尔市
+      1: 白山市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 上海莱士血液制品股份有限公司
+    HOSPITAL_CODE:
+      0: 10081
+      1: 130361
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 5
+      1: 5
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 海莫莱士
+    STANDARD_UNIT:
+      0: 107
+      1: 60
+    VALUE:
+      0: 41730
+      1: 25080
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190712辉瑞-5月检索.xlsx
+  length: 201628
+  sheet: 辉瑞-5月
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 830151
+      1: 450241
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 7
+      1: 7
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 1000
+      1: 2000
+    VALUE:
+      0: 210
+      1: 524
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/180914辉瑞1807底层检索.xlsx
+  length: 181657
+  sheet: 辉瑞1807
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10111
+    是否补数:
+      0: 1.0
+      1: .nan
+    月份:
+      0: 7、8
+      1: 1、6、7
+  file: CPA/Pfizer/181015辉瑞1808底层检索.xlsx
+  length: 71
+  sheet: 1-8月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450241
+      1: 450681
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 7
+      1: 7
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 2000
+      1: 500
+    VALUE:
+      0: 524
+      1: 131
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/170915辉瑞1707底层检索.xlsx
+  length: 171172
+  sheet: 辉瑞1707
+  source: CPA
+- company: Pfizer
+  data:
+    1、未到医院：以下为2019年1-2月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010011'
+    'Unnamed: 1':
+      0: 月份
+      1: 1
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+  file: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
+  length: 65
+  sheet: 2019年1-2月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 安阳市
+    CORP_NAME:
+      0: 上海医药集团股份有限公司
+      1: 上海医药集团股份有限公司
+    HOSPITAL_CODE:
+      0: 830151
+      1: 450721
+    MOLE_NAME:
+      0: 柳氮磺吡啶
+      1: 柳氮磺吡啶
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 250 MG
+      1: 250 MG
+    PACK_NUMBER:
+      0: 100
+      1: 60
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 柳氮磺吡啶
+      1: 柳氮磺吡啶
+    STANDARD_UNIT:
+      0: 1000
+      1: 6000
+    VALUE:
+      0: 270
+      1: 1318
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/190422辉瑞-15个药品1701-1812检索.xlsx
+  length: 111212
+  sheet: 辉瑞-15个药品1701-1812
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: PRODUCT_NAME
+    'Unnamed: 2':
+      0: .nan
+      1: 原CORP_NAME
+    'Unnamed: 3':
+      0: .nan
+      1: 更新后CORP_NAME
+    说明：本次检索更新以下内容，请依照修改历史数据，谢谢！:
+      0: .nan
+      1: MOLE_NAME
+  file: CPA/Pfizer/171215辉瑞1710底层检索.xlsx
+  length: 3
+  sheet: 药品信息变更说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450661
+      1: 450681
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 3
+      1: 3
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 500
+      1: 500
+    VALUE:
+      0: 122
+      1: 128
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
+  length: 177097
+  sheet: 辉瑞1803
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10111
+    是否补数:
+      0: 1.0
+      1: .nan
+    月份:
+      0: 5
+      1: 1
+  file: CPA/Pfizer/180713辉瑞1805底层检索.xlsx
+  length: 69
+  sheet: 1-5月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    'Unnamed: 4':
+      0: .nan
+      1: .nan
+    'Unnamed: 5':
+      0: .nan
+      1: .nan
+    'Unnamed: 6':
+      0: .nan
+      1: .nan
+    'Unnamed: 7':
+      0: .nan
+      1: .nan
+    医院变更情况说明：:
+      0: .nan
+      1: 1、下列18家医院暂停出版：
+  file: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
+  length: 26
+  sheet: 变更说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 阿勒泰市
+    CORP_NAME:
+      0: 勃林格殷格翰集团
+      1: 阿斯利康集团
+    HOSPITAL_CODE:
+      0: 830151
+      1: 830151
+    MOLE_NAME:
+      0: 阿法替尼
+      1: 奥希替尼
+    MONTH:
+      0: 4
+      1: 4
+    PACK_DES:
+      0: 30 MG
+      1: 80 MG
+    PACK_NUMBER:
+      0: 7
+      1: 30
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 吉泰瑞
+      1: 泰瑞沙
+    STANDARD_UNIT:
+      0: -84
+      1: 270
+    VALUE:
+      0: -14927
+      1: 137700
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190613辉瑞1904底层检索（2）.xlsx
+  length: 1646
+  sheet: 辉瑞1904（2）
+  source: CPA
+- company: Pfizer
+  data:
+    医院名称:
+      0: 北京广外社区卫生服务中心
+      1: 内蒙古医学院第三附属医院
+    医院编码:
+      0: 100782
+      1: 10011
+    参考级别:
+      0: 二级
+      1: 三甲
+    地区:
+      0: 北京
+      1: 内蒙古
+    城市:
+      0: 北京市
+      1: 包头市
+    是否为2017年出版医院:
+      0: 是
+      1: 是
+    是否为2018年出版医院:
+      0: 是
+      1: 是
+    省:
+      0: 北京市
+      1: 内蒙古自治区
+  file: CPA/Pfizer/190215辉瑞临时检索.xlsx
+  length: 1328
+  sheet: 2017-2018年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: YEAR
+      1: '2019'
+    'Unnamed: 10':
+      0: APP2_COD
+      1: 溶液剂（注射剂）
+    'Unnamed: 11':
+      0: APP1_COD
+      1: 注射
+    'Unnamed: 12':
+      0: CORP_NAME
+      1: 常州金远药业制造有限公司
+    'Unnamed: 13':
+      0: PRODUCT_MKT
+      1: .nan
+    'Unnamed: 14':
+      0: BRAND_MKT
+      1: .nan
+    'Unnamed: 2':
+      0: MONTH
+      1: '1'
+    'Unnamed: 3':
+      0: HOSPITAL_CODE
+      1: '050361'
+    'Unnamed: 4':
+      0: MOLE_NAME
+      1: 多柔比星脂质体
+    'Unnamed: 5':
+      0: PRODUCT_NAME
+      1: 立幸
+    'Unnamed: 6':
+      0: PACK_DES
+      1: 20 MG 10 ML
+    'Unnamed: 7':
+      0: PACK_NUMBER
+      1: '1'
+    'Unnamed: 8':
+      0: VALUE
+      1: 224710
+    'Unnamed: 9':
+      0: STANDARD_UNIT
+      1: 46
+    说明：050361医院重新上报“多柔比星脂质体”2019年1-10月数据。请删除历史数据，追入替换数据。:
+      0: CITY
+      1: 沧州市
+  file: CPA/Pfizer/200110辉瑞-11月检索.xlsx
+  length: 14
+  sheet: 替换数据说明
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: PRODUCT_NAME
+    'Unnamed: 2':
+      0: .nan
+      1: PACK_DES
+    'Unnamed: 3':
+      0: .nan
+      1: APP2_COD
+    'Unnamed: 4':
+      0: .nan
+      1: CORP_NAME
+    'Unnamed: 5':
+      0: .nan
+      1: 原APP1_COD
+    'Unnamed: 6':
+      0: .nan
+      1: 更新后APP1_COD
+    'Unnamed: 7':
+      0: .nan
+      1: .nan
+    说明：本月检索更新了以下内容，请企业对照修改历史数据，谢谢！:
+      0: .nan
+      1: MOLE_NAME
+  file: CPA/Pfizer/181213辉瑞1810底层检索.xlsx
+  length: 19
+  sheet: 药品信息更新对照表
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450681
+      1: 450721
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 6
+      1: 6
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 500
+      1: 2000
+    VALUE:
+      0: 128
+      1: 427
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+  length: 190192
+  sheet: 辉瑞1806
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10071
+      1: 10111
+    月份:
+      0: 9
+      1: 7
+  file: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
+  length: 58
+  sheet: 1-10月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    2017年出版:
+      0: 是
+      1: 是
+    2018年出版:
+      0: 是
+      1: 是
+    2019年出版:
+      0: 是
+      1: 是
+    医院名称:
+      0: 北京广外社区卫生服务中心
+      1: 内蒙古医学院第三附属医院
+    医院编码:
+      0: 100782
+      1: 10011
+    参考级别:
+      0: 二级
+      1: 三甲
+    地区:
+      0: 北京
+      1: 内蒙古
+    城市:
+      0: 北京市
+      1: 包头市
+    省:
+      0: 北京市
+      1: 内蒙古自治区
+  file: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
+  length: 1413
+  sheet: 2017-2019年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10031
+      1: 10071
+    是否补数:
+      0: 1.0
+      1: .nan
+    月份:
+      0: 2、6
+      1: 1、2、3
+  file: CPA/Pfizer/190813辉瑞-6月检索.xlsx
+  length: 65
+  sheet: 1-6月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    1、未到医院：以下为2019年1-11月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010031'
+    'Unnamed: 1':
+      0: 月份
+      1: 2、6、7、8、9、10、11
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+  file: CPA/Pfizer/200110辉瑞-11月检索.xlsx
+  length: 145
+  sheet: 1-11月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10031
+      1: 10071
+    是否补数:
+      0: 1
+      1: 0
+    月份:
+      0: 2、6、7、8
+      1: 1、2、3
+  file: CPA/Pfizer/191014辉瑞-8月检索.xlsx
+  length: 104
+  sheet: 1-8月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    2017年出版医院:
+      0: 是
+      1: 是
+    2018年出版医院:
+      0: 是
+      1: 是
+    2019年出版医院:
+      0: 是
+      1: 是
+    医院名称:
+      0: 北京广外社区卫生服务中心
+      1: 内蒙古医学院第三附属医院
+    医院编码:
+      0: 100782
+      1: 10011
+    参考级别:
+      0: 二级
+      1: 三甲
+    地区:
+      0: 北京
+      1: 内蒙古
+    城市:
+      0: 北京市
+      1: 包头市
+    省:
+      0: 北京市
+      1: 内蒙古自治区
+  file: CPA/Pfizer/191114辉瑞-临时检索.xlsx
+  length: 1413
+  sheet: 2017年-2019年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    1、未到医院：以下为2019年1-12月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010031'
+    'Unnamed: 1':
+      0: 月份
+      1: 2、6、7、8、9、10、11、12
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+  file: CPA/Pfizer/200213辉瑞-12月检索.xlsx
+  length: 125
+  sheet: 1-12月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    医院名称:
+      0: 内蒙古医学院第三附属医院
+      1: 乌海市人民医院
+    医院编码:
+      0: 10011
+      1: 10021
+    参考级别:
+      0: 三甲
+      1: 三级
+    地区:
+      0: 内蒙古
+      1: 内蒙古
+    城市:
+      0: 包头市
+      1: 乌海市
+    省:
+      0: 内蒙古自治区
+      1: 内蒙古自治区
+  file: CPA/Pfizer/161223辉瑞新增药品2013年历史数据检索.xlsx
+  length: 958
+  sheet: 2013年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450661
+      1: 450721
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 6
+      1: 6
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 1000
+      1: 2000
+    VALUE:
+      0: 269
+      1: 427
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+  length: 177912
+  sheet: 辉瑞1706
+  source: CPA
+- company: Pfizer
+  data:
+    医院名称:
+      0: 北京广外社区卫生服务中心
+      1: 内蒙古医学院第三附属医院
+    医院编码:
+      0: 100782
+      1: 10011
+    参考级别:
+      0: 二级
+      1: 三甲
+    地区:
+      0: 北京
+      1: 内蒙古
+    城市:
+      0: 北京市
+      1: 包头市
+    备注:
+      0: .nan
+      1: .nan
+    是否新增:
+      0: 否
+      1: 否
+    省:
+      0: 北京市
+      1: 内蒙古自治区
+  file: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
+  length: 1309
+  sheet: 2018年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: YEAR
+      1: '2018'
+    'Unnamed: 10':
+      0: APP2_COD
+      1: 片剂
+    'Unnamed: 11':
+      0: APP1_COD
+      1: 口服
+    'Unnamed: 12':
+      0: CORP_NAME
+      1: 中国远大集团有限责任公司
+    'Unnamed: 13':
+      0: PRODUCT_MKT
+      1: .nan
+    'Unnamed: 14':
+      0: BRAND_MKT
+      1: .nan
+    'Unnamed: 2':
+      0: MONTH
+      1: '12'
+    'Unnamed: 3':
+      0: HOSPITAL_CODE
+      1: '100641'
+    'Unnamed: 4':
+      0: MOLE_NAME
+      1: 雷公藤多甙
+    'Unnamed: 5':
+      0: PRODUCT_NAME
+      1: 雷公藤多甙
+    'Unnamed: 6':
+      0: PACK_DES
+      1: ' CO 10 MG'
+    'Unnamed: 7':
+      0: PACK_NUMBER
+      1: '50'
+    'Unnamed: 8':
+      0: VALUE
+      1: 7150
+    'Unnamed: 9':
+      0: STANDARD_UNIT
+      1: 27500
+    注：本表内包含2018年替换数据，请参照“1-3月未到医院名单及说明”删除相关数据后再追加。:
+      0: CITY
+      1: 北京市
+  file: CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx
+  length: 29
+  sheet: 2018年替换及补充数据
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10111
+    是否补数:
+      0: 1.0
+      1: .nan
+    月份:
+      0: 10
+      1: 1、6、7
+  file: CPA/Pfizer/181213辉瑞1810底层检索.xlsx
+  length: 93
+  sheet: 1-10月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 四环医药集团
+      1: 四环医药集团
+    HOSPITAL_CODE:
+      0: 450361
+      1: 450361
+    MOLE_NAME:
+      0: 甲钴胺
+      1: 甲钴胺
+    MONTH:
+      0: 11
+      1: 1
+    PACK_DES:
+      0: 500 UG
+      1: 500 UG
+    PACK_NUMBER:
+      0: 20
+      1: 20
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 卓和
+      1: 卓和
+    STANDARD_UNIT:
+      0: 12000
+      1: 12000
+    VALUE:
+      0: 15000
+      1: 15000
+    YEAR:
+      0: 2011
+      1: 2011
+  file: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+  length: 15730
+  sheet: 甲钴胺-四环医药1101-1705历史数据更新
+  source: CPA
+- company: Pfizer
+  data:
+    1、未到医院：以下为2019年1-2月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010011'
+    'Unnamed: 1':
+      0: 月份
+      1: 1
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+  file: CPA/Pfizer/190412辉瑞1902底层检索.xlsx
+  length: 65
+  sheet: 1-2月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 0':
+      0: 2、特殊医院说明
+      1: 医院编码
+    'Unnamed: 1':
+      0: .nan
+      1: 年
+    'Unnamed: 2':
+      0: .nan
+      1: 月份
+    'Unnamed: 3':
+      0: .nan
+      1: 备注
+  file: CPA/Pfizer/191014辉瑞-8月检索.xlsx
+  length: 3
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 沈阳市
+      1: 沈阳市
+    CORP_NAME:
+      0: 青岛国风集团
+      1: 辉瑞制药集团
+    HOSPITAL_CODE:
+      0: 110221
+      1: 110221
+    MOLE_NAME:
+      0: 二甲双胍
+      1: 格列吡嗪
+    MONTH:
+      0: 5
+      1: 5
+    PACK_DES:
+      0: 500 MG
+      1: 5 MG
+    PACK_NUMBER:
+      0: 30
+      1: 14
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 麦特美
+      1: 瑞易宁
+    STANDARD_UNIT:
+      0: 9000
+      1: 420
+    VALUE:
+      0: 3960
+      1: 916
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
+  length: 558
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10071
+    是否补数:
+      0: 1
+      1: 0
+    月份:
+      0: 5
+      1: 3、4
+  file: CPA/Pfizer/170714辉瑞1705底层检索.xlsx
+  length: 69
+  sheet: 1-5月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 胶囊剂（胶丸、滴丸）
+      1: 胶囊剂（胶丸、滴丸）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 阿勒泰市
+    CORP_NAME:
+      0: 阿根廷TRB药厂
+      1: 阿根廷TRB药厂
+    HOSPITAL_CODE:
+      0: 830151
+      1: 830151
+    MOLE_NAME:
+      0: 双醋瑞因
+      1: 双醋瑞因
+    MONTH:
+      0: 11
+      1: 12
+    PACK_DES:
+      0: 50 MG
+      1: 50 MG
+    PACK_NUMBER:
+      0: 10
+      1: 10
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 安必丁
+      1: 安必丁
+    STANDARD_UNIT:
+      0: 30
+      1: 100
+    VALUE:
+      0: 148
+      1: 493
+    YEAR:
+      0: 2013
+      1: 2013
+  file: CPA/Pfizer/180111辉瑞临时检索.xlsx
+  length: 11189
+  sheet: 新增药品1201-1711
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450241
+      1: 450661
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 4
+      1: 4
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 3600
+      1: 1000
+    VALUE:
+      0: 943
+      1: 305
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/180615辉瑞1804底层检索.xlsx
+  length: 178485
+  sheet: 辉瑞1804
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 胶囊剂（胶丸、滴丸）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿克苏市
+      1: 阿克苏市
+    CORP_NAME:
+      0: 上海复旦复华药业有限公司
+      1: 宁波立华制药有限公司
+    HOSPITAL_CODE:
+      0: 830051
+      1: 830051
+    MOLE_NAME:
+      0: 雷公藤多甙
+      1: 白芍总苷
+    MONTH:
+      0: 1
+      1: 10
+    PACK_DES:
+      0: ' CO 10 MG'
+      1: 300 MG
+    PACK_NUMBER:
+      0: 50
+      1: 60
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 雷公藤多甙
+      1: 帕夫林
+    STANDARD_UNIT:
+      0: 3000
+      1: 3000
+    VALUE:
+      0: 1110
+      1: 3360
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/190416辉瑞1902底层检索-2新增通用名数据含历史.xlsx
+  length: 22042
+  sheet: 辉瑞临时检索
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 巴彦淖尔市
+    CORP_NAME:
+      0: 上海莱士血液制品股份有限公司
+      1: 山东泰邦生物制品有限公司
+    HOSPITAL_CODE:
+      0: 450721
+      1: 10081
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 12
+      1: 12
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 海莫莱士
+      1: 冻干人凝血因子Ⅷ
+    STANDARD_UNIT:
+      0: 78
+      1: 173
+    'Unnamed: 4':
+      0: 45072112
+      1: 1008112
+    VALUE:
+      0: 29460
+      1: 67470
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/200213辉瑞-12月检索.xlsx
+  length: 229586
+  sheet: 辉瑞-12月
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 巴彦淖尔市
+      1: 白山市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 上海莱士血液制品股份有限公司
+    HOSPITAL_CODE:
+      0: 10081
+      1: 130361
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 3
+      1: 2
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 海莫莱士
+    STANDARD_UNIT:
+      0: 300
+      1: 30
+    VALUE:
+      0: 118500
+      1: 12540
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
+  length: 199954
+  sheet: 辉瑞1903
+  source: CPA
+- company: Pfizer
+  data:
+    医院名称:
+      0: 安庆市立医院
+      1: 合肥市第一人民医院
+    医院编码:
+      0: 230151
+      1: 230011
+    参考级别:
+      0: 三甲
+      1: 三甲
+    地区:
+      0: 安徽
+      1: 安徽
+    城市:
+      0: 安庆市
+      1: 合肥市
+    是否为2012年出版医院:
+      0: 是
+      1: 是
+    是否为2013年出版医院:
+      0: 是
+      1: 是
+    是否为2014年出版医院:
+      0: 是
+      1: 是
+    是否为2015年出版医院:
+      0: 是
+      1: 是
+    是否为2016年出版医院:
+      0: 是
+      1: 是
+    是否为2017年出版医院:
+      0: 是
+      1: 是
+    省:
+      0: 安徽省
+      1: 安徽省
+  file: CPA/Pfizer/180111辉瑞临时检索.xlsx
+  length: 1286
+  sheet: 2012-2017年医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    1、未到医院：以下为2019年1-3月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010011'
+    'Unnamed: 1':
+      0: 月份
+      1: 3
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+  file: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
+  length: 62
+  sheet: 1-3月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: PRODUCT_NAME
+    'Unnamed: 2':
+      0: .nan
+      1: 更新后CORP_NAME
+    'Unnamed: 3':
+      0: .nan
+      1: 原CORP_NAME
+    'Unnamed: 4':
+      0: .nan
+      1: .nan
+    'Unnamed: 5':
+      0: .nan
+      1: .nan
+    'Unnamed: 6':
+      0: .nan
+      1: .nan
+    说明：本月检索对以下药品信息进行了更新，请您对照修改历史数据，由此给您带来的不便敬请谅解！:
+      0: 1.CORP_NAME更新
+      1: MOLE_NAME
+  file: CPA/Pfizer/190513辉瑞1903底层检索.xlsx
+  length: 107
+  sheet: 药品信息更新对照表
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10071
+      1: 30251
+    是否补数:
+      0: 1.0
+      1: .nan
+    月份:
+      0: 3、4
+      1: 2
+  file: CPA/Pfizer/170615辉瑞1704底层检索.xlsx
+  length: 58
+  sheet: 1-4月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 830151
+      1: 450731
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 1000
+      1: 2000
+    VALUE:
+      0: 210
+      1: 427
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
+  length: 190953
+  sheet: 辉瑞1801
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 830151
+      1: 450721
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 8
+      1: 8
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 1000
+      1: 3000
+    VALUE:
+      0: 210
+      1: 641
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/171016辉瑞1708底层检索.xlsx
+  length: 172410
+  sheet: 辉瑞1708
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10111
+      1: 30481
+    是否补数:
+      0: 1.0
+      1: .nan
+    月份:
+      0: 1、6
+      1: 3、4、5
+  file: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+  length: 37
+  sheet: 1-6月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450721
+      1: 450731
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 8
+      1: 8
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 2000
+      1: 3000
+    VALUE:
+      0: 427
+      1: 641
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/181015辉瑞1808底层检索.xlsx
+  length: 184907
+  sheet: 辉瑞1808
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 重庆市
+      1: 重庆市
+    CORP_NAME:
+      0: 上海医药集团股份有限公司
+      1: 重庆科瑞制药（集团）有限公司
+    HOSPITAL_CODE:
+      0: 400421
+      1: 400421
+    MOLE_NAME:
+      0: 柳氮磺吡啶
+      1: 二甲双胍
+    MONTH:
+      0: 4
+      1: 1
+    PACK_DES:
+      0: 250 MG
+      1: 500 MG
+    PACK_NUMBER:
+      0: 100
+      1: 30
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 柳氮磺吡啶
+      1: 德艾欣
+    STANDARD_UNIT:
+      0: 3000
+      1: 6000
+    VALUE:
+      0: 848
+      1: 5180
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
+  length: 1076
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    注：以上为2018年1-9月未提供数据的医院名单，数据将于上报后提供:
+      0: .nan
+      1: 1、替换数据说明
+  file: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
+  length: 16
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: 原CORP_NAME
+    'Unnamed: 2':
+      0: .nan
+      1: 更新后CORP_NAME
+    'Unnamed: 3':
+      0: .nan
+      1: 原PRODUCT_NAME
+    'Unnamed: 4':
+      0: .nan
+      1: 更新后PRODUCT_NAME
+    'Unnamed: 5':
+      0: .nan
+      1: APP2_COD
+    'Unnamed: 6':
+      0: .nan
+      1: APP1_COD
+    说明：本月检索更新了以下内容，请企业对照修改历史数据，谢谢！:
+      0: .nan
+      1: MOLE_NAME
+  file: CPA/Pfizer/180321辉瑞1801底层检索.xlsx
+  length: 82
+  sheet: 药品信息更新对照表
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 北京市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450731
+      1: 100101
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 2
+      1: 2
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 3000
+      1: 4000
+    VALUE:
+      0: 641
+      1: 1188
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/180413辉瑞1802底层检索.xlsx
+  length: 161320
+  sheet: 辉瑞1802
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: CORP_NAME
+    'Unnamed: 2':
+      0: .nan
+      1: 原PRODUCT_NAME
+    'Unnamed: 3':
+      0: .nan
+      1: 更新后PRODUCT_NAME
+    说明：检索过程中更新了部分药品商品名，请企业根据以下内容修改历史数据，谢谢！:
+      0: .nan
+      1: MOLE_NAME
+  file: CPA/Pfizer/171016辉瑞1708底层检索.xlsx
+  length: 3
+  sheet: 商品名更新对照表
+  source: CPA
+- company: Pfizer
+  data:
+    1、特殊医院说明:
+      0: 医院编码
+      1: '150281'
+    'Unnamed: 1':
+      0: 年
+      1: 2018
+    'Unnamed: 2':
+      0: 月份
+      1: 11
+    'Unnamed: 3':
+      0: 备注
+      1: 该医院本月无药品采购记录
+  file: CPA/Pfizer/190114辉瑞1811底层检索.xlsx
+  length: 4
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 口服
+    APP2_COD:
+      0: 溶液剂（注射剂）
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 青岛市
+      1: 青岛市
+    CORP_NAME:
+      0: 中国医药集团总公司
+      1: 汕头金石制药总厂
+    HOSPITAL_CODE:
+      0: 260161
+      1: 260161
+    MOLE_NAME:
+      0: 奥曲肽
+      1: 普萘洛尔
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 200 UG 1 ML
+      1: 10 MG
+    PACK_NUMBER:
+      0: 1
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 力尔宁
+      1: 普萘洛尔
+    STANDARD_UNIT:
+      0: 1200
+      1: 30000
+    VALUE:
+      0: 75276
+      1: 8940
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190813辉瑞-6月检索.xlsx
+  length: 533
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450241
+      1: 450731
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 9
+      1: 9
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 3000
+      1: 3000
+    VALUE:
+      0: 765
+      1: 870
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/181115辉瑞1809底层检索.xlsx
+  length: 196816
+  sheet: 辉瑞1809
+  source: CPA
+- company: Pfizer
+  data:
+    医院名称:
+      0: 内蒙古医学院第三附属医院
+      1: 乌海市人民医院
+    医院编码:
+      0: 10011
+      1: 10021
+    参考级别:
+      0: 三甲
+      1: 三丙
+    地区:
+      0: 内蒙古
+      1: 内蒙古
+    城市:
+      0: 包头市
+      1: 乌海市
+    备注:
+      0: .nan
+      1: 级别变更，原级别：三级
+    是否新增:
+      0: .nan
+      1: .nan
+    省:
+      0: 内蒙古自治区
+      1: 内蒙古自治区
+  file: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+  length: 1380
+  sheet: 2019年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: YEAR
+    'Unnamed: 10':
+      0: .nan
+      1: APP2_COD
+    'Unnamed: 11':
+      0: .nan
+      1: APP1_COD
+    'Unnamed: 12':
+      0: .nan
+      1: CORP_NAME
+    'Unnamed: 13':
+      0: .nan
+      1: PRODUCT_MKT
+    'Unnamed: 14':
+      0: .nan
+      1: BRAND_MKT
+    'Unnamed: 2':
+      0: .nan
+      1: MONTH
+    'Unnamed: 3':
+      0: .nan
+      1: HOSPITAL_CODE
+    'Unnamed: 4':
+      0: .nan
+      1: MOLE_NAME
+    'Unnamed: 5':
+      0: .nan
+      1: PRODUCT_NAME
+    'Unnamed: 6':
+      0: .nan
+      1: 原PACK_DES
+    'Unnamed: 7':
+      0: .nan
+      1: pack
+    'Unnamed: 8':
+      0: .nan
+      1: VALUE
+    'Unnamed: 9':
+      0: .nan
+      1: STANDARD_UNIT
+    说明：数据核查发现150531医院“氨曲南”药品7-9月数据上报有误，现将正确数据更新如下。请删除对应历史数据，并追入以下更新数据。:
+      0: .nan
+      1: CITY
+  file: CPA/Pfizer/181213辉瑞1810底层检索.xlsx
+  length: 8
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: 统一后CORP_NAME
+      1: 联邦集团
+    说明：本月检索对以下药厂名称进行了统一，请对照更新历史数据。（替换数据和2018年补报数据已更新）:
+      0: 原CORP_NAME
+      1: 珠海联邦制药股份有限公司
+  file: CPA/Pfizer/200213辉瑞-12月检索.xlsx
+  length: 3
+  sheet: 药厂名称统一说明
+  source: CPA
+- company: Pfizer
+  data:
+    PRODUCT_MKT:
+      0: Zithromax IV_MKT:IV(G+F)
+      1: Zithromax IV_MKT:IV(G+F)
+    TA:
+      0: AI
+      1: AI
+    医院编码:
+      0: 10021
+      1: 10031
+    城市:
+      0: 乌海市
+      1: 乌海市
+    年:
+      0: 2016
+      1: 2016
+    数量（支/片）:
+      0: 1160
+      1: 180
+    月:
+      0: 10
+      1: 10
+    金额（元）:
+      0: 4467
+      1: 7099
+  file: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
+  length: 10188
+  sheet: Product-others1610
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 溶液剂（注射剂）
+      1: 溶液剂（注射剂）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 乌海市
+      1: 乌海市
+    CORP_NAME:
+      0: 中国医药集团总公司
+      1: 中国医药集团总公司
+    HOSPITAL_CODE:
+      0: 10021
+      1: 10021
+    MOLE_NAME:
+      0: 奥曲肽
+      1: 奥曲肽
+    MONTH:
+      0: 1
+      1: 3
+    PACK_DES:
+      0: 200 UG 1 ML
+      1: 200 UG 1 ML
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 力尔宁
+      1: 力尔宁
+    STANDARD_UNIT:
+      0: 2001
+      1: 1502
+    VALUE:
+      0: 157279
+      1: 118057
+    YEAR:
+      0: 2013
+      1: 2013
+  file: CPA/Pfizer/161223辉瑞新增药品2013年历史数据检索.xlsx
+  length: 491418
+  sheet: 辉瑞新增13年
+  source: CPA
+- company: Pfizer
+  data:
+    APP2_COD:
+      0: .nan
+      1: .nan
+    CORP_NAME:
+      0: 山东绿叶制药集团有限公司
+      1: 昆明源瑞制药有限公司
+    MOLE_NAME:
+      0: 阿卡波糖
+      1: 阿莫西林克拉维酸钾
+    PACK_DES:
+      0: .nan
+      1: .nan
+    PACK_NUMBER:
+      0: .nan
+      1: .nan
+    原PRODUCT_NAME:
+      0: 阿卡波糖
+      1: 阿莫西林克拉维酸钾
+    更新后CORP_NAME:
+      0: .nan
+      1: .nan
+    更新后PRODUCT_NAME:
+      0: 贝希
+      1: 阿克诺
+  file: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+  length: 212
+  sheet: 商品名更新对照表
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10071
+    是否补数:
+      0: 1
+      1: 1
+    月份:
+      0: 1
+      1: 1
+  file: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+  length: 44
+  sheet: 1月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 巴彦淖尔市
+      1: 蚌埠市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 山东泰邦生物制品有限公司
+    HOSPITAL_CODE:
+      0: 10081
+      1: 230461
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 6
+      1: 6
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    STANDARD_UNIT:
+      0: 200
+      1: 1000
+    VALUE:
+      0: 78000
+      1: 380000
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/190813辉瑞-6月检索.xlsx
+  length: 204474
+  sheet: 辉瑞-6月
+  source: CPA
+- company: Pfizer
+  data:
+    1、特殊医院说明:
+      0: 医院编码
+      1: '150281'
+    'Unnamed: 1':
+      0: 年
+      1: 2019
+    'Unnamed: 2':
+      0: 月份
+      1: 1
+    'Unnamed: 3':
+      0: 备注
+      1: 该医院本月无药品采购记录
+  file: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+  length: 2
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450241
+      1: 450731
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 12
+      1: 12
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 2000
+      1: 3000
+    VALUE:
+      0: 510
+      1: 870
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
+  length: 201006
+  sheet: 辉瑞1812
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10111
+    是否补数:
+      0: .nan
+      1: .nan
+    月份:
+      0: 10
+      1: 1、6、7
+  file: CPA/Pfizer/190114辉瑞1811底层检索.xlsx
+  length: 96
+  sheet: 1-11月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 襄阳市
+      1: 襄阳市
+    CORP_NAME:
+      0: 阿斯利康集团
+      1: 常州四药制药有限公司
+    HOSPITAL_CODE:
+      0: 430741
+      1: 430741
+    MOLE_NAME:
+      0: 美托洛尔
+      1: 美托洛尔
+    MONTH:
+      0: 5
+      1: 5
+    PACK_DES:
+      0: 47.5 MG
+      1: 25 MG
+    PACK_NUMBER:
+      0: 7
+      1: 20
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 倍他乐克
+      1: 美托洛尔
+    STANDARD_UNIT:
+      0: 16800
+      1: 24000
+    VALUE:
+      0: 35568
+      1: 5400
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+  length: 671
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    2017年出版医院:
+      0: 是
+      1: 是
+    2018年出版医院:
+      0: 是
+      1: 是
+    PHAcode:
+      0: PHA0024749
+      1: PHA0000593
+    'Unnamed: 9':
+      0: .nan
+      1: .nan
+    医院名称:
+      0: 北京广外社区卫生服务中心
+      1: 内蒙古医学院第三附属医院
+    医院编码:
+      0: 100782
+      1: 10011
+    参考级别:
+      0: 二级
+      1: 三甲
+    地区:
+      0: 北京
+      1: 内蒙古
+    城市:
+      0: 北京市
+      1: 包头市
+    省:
+      0: 北京市
+      1: 内蒙古自治区
+  file: CPA/Pfizer/190422辉瑞-15个药品1701-1812检索.xlsx
+  length: 1325
+  sheet: 2017-2018年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 胶囊剂（胶丸、滴丸）
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安宁市
+      1: 安庆市
+    CORP_NAME:
+      0: 重庆市庆余堂制药有限公司
+      1: 昆山龙灯瑞迪制药有限公司
+    Date:
+      0: 201701
+      1: 201701
+    HOSPITAL_CODE:
+      0: 650131
+      1: 230151
+    MOLE_NAME:
+      0: 尼麦角林
+      1: 尼麦角林
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 15 MG
+      1: 10 MG
+    PACK_NUMBER:
+      0: 10
+      1: 24
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 庆迈
+      1: 乐喜林
+    STANDARD_UNIT:
+      0: 3000
+      1: 93120
+    VALUE:
+      0: 10500
+      1: 123462
+    YEAR:
+      0: 2017
+      1: 2017
+    min1:
+      0: 庆迈胶囊剂（胶丸、滴丸）15 MG10重庆市庆余堂制药有限公司
+      1: 乐喜林片剂10 MG24昆山龙灯瑞迪制药有限公司
+  file: CPA/Pfizer/cpa新增分子v1.xlsx
+  length: 102795
+  sheet: Sheet 1
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10071
+      1: 10111
+    月份:
+      0: 9
+      1: 7
+  file: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
+  length: 47
+  sheet: 未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 保定市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 山东鲁抗医药股份有限公司
+    HOSPITAL_CODE:
+      0: 830151
+      1: 50341
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 3
+      1: 3
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 2000
+      1: 500
+    VALUE:
+      0: 540
+      1: 128
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/170515辉瑞1703底层检索.xlsx
+  length: 176529
+  sheet: 辉瑞1703
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 溶液剂（注射剂）
+      1: 溶液剂（注射剂）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安庆市
+      1: 安庆市
+    CORP_NAME:
+      0: 北京泰德制药有限公司
+      1: 哈药集团有限公司
+    HOSPITAL_CODE:
+      0: 230151
+      1: 230151
+    MOLE_NAME:
+      0: 前列地尔
+      1: 前列地尔
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 10 UG 2 ML
+      1: 10 UG 2 ML
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 凯时
+      1: 曼新妥
+    STANDARD_UNIT:
+      0: 900
+      1: 1600
+    VALUE:
+      0: 96264
+      1: 165728
+    YEAR:
+      0: 2015
+      1: 2015
+  file: CPA/Pfizer/161209辉瑞新增药品1401-1609历史数据检索.xlsx
+  length: 562365
+  sheet: 底层1
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450241
+      1: 450661
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 12
+      1: 12
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 5000
+      1: 500
+    VALUE:
+      0: 1310
+      1: 120
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
+  length: 190209
+  sheet: 辉瑞1712
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 直肠
+      1: 口服
+    APP2_COD:
+      0: 栓剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 上海市
+      1: 上海市
+    CORP_NAME:
+      0: 同药集团有限公司
+      1: 百时美施贵宝集团
+    HOSPITAL_CODE:
+      0: 200321
+      1: 200321
+    MOLE_NAME:
+      0: 柳氮磺吡啶
+      1: 二甲双胍
+    MONTH:
+      0: 7
+      1: 6
+    PACK_DES:
+      0: 500 MG
+      1: 500 MG
+    PACK_NUMBER:
+      0: 6
+      1: 20
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 常态宁
+      1: 格华止
+    STANDARD_UNIT:
+      0: 660
+      1: 50400
+    VALUE:
+      0: 2035
+      1: 63982
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
+  length: 1706
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 胶囊剂（胶丸、滴丸）
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 潍坊市
+      1: 潍坊市
+    CORP_NAME:
+      0: 山东新华医药集团有限责任公司
+      1: 施维雅集团
+    HOSPITAL_CODE:
+      0: 250181
+      1: 250181
+    MOLE_NAME:
+      0: 格列吡嗪
+      1: 格列齐特
+    MONTH:
+      0: 4
+      1: 4
+    PACK_DES:
+      0: 5 MG
+      1: 30 MG
+    PACK_NUMBER:
+      0: 24
+      1: 30
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 格列吡嗪
+      1: 达美康
+    STANDARD_UNIT:
+      0: 19200
+      1: 10800
+    VALUE:
+      0: 4000
+      1: 17806
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
+  length: 310
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10071
+      1: 30191
+    是否补数:
+      0: 1
+      1: 1
+    月份:
+      0: 6、7、8、9、10、11、12
+      1: 12
+  file: CPA/Pfizer/180211辉瑞1712指定检索.xlsx
+  length: 101
+  sheet: 1-12月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 北京市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450901
+      1: 100021
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 11
+      1: 11
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 20000
+      1: 1000
+    VALUE:
+      0: 4696
+      1: 297
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/190114辉瑞1811底层检索.xlsx
+  length: 186806
+  sheet: 辉瑞1811
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10071
+    月份:
+      0: 11
+      1: 9
+  file: CPA/Pfizer/201611 CPA.xlsx
+  length: 81
+  sheet: 1-11月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿克苏市
+      1: 阿克苏市
+    CORP_NAME:
+      0: 百时美施贵宝集团
+      1: 辉瑞制药集团
+    HOSPITAL_CODE:
+      0: 830051
+      1: 830051
+    MOLE_NAME:
+      0: 二甲双胍
+      1: 格列吡嗪
+    MONTH:
+      0: 9
+      1: 9
+    PACK_DES:
+      0: 500 MG
+      1: 5 MG
+    PACK_NUMBER:
+      0: 20
+      1: 14
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 格华止
+      1: 瑞易宁
+    STANDARD_UNIT:
+      0: 36000
+      1: 2520
+    VALUE:
+      0: 45702
+      1: 6089
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
+  length: 185356
+  sheet: 辉瑞1709
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10071
+      1: 30181
+    是否补数:
+      0: 1
+      1: 1
+    月份:
+      0: 6、7、8、9
+      1: 9
+  file: CPA/Pfizer/171115辉瑞1709底层检索.xlsx
+  length: 96
+  sheet: 1-9月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10071
+      1: 30181
+    是否补数:
+      0: 1.0
+      1: .nan
+    月份:
+      0: 6、7、8、9、10
+      1: 9
+  file: CPA/Pfizer/171215辉瑞1710底层检索.xlsx
+  length: 90
+  sheet: 1-10月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 鞍山市
+      1: 巴彦淖尔市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 山东泰邦生物制品有限公司
+    HOSPITAL_CODE:
+      0: 110411
+      1: 10081
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 8
+      1: 8
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    STANDARD_UNIT:
+      0: 30
+      1: 200
+    VALUE:
+      0: 11880
+      1: 78000
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/191014辉瑞-8月检索.xlsx
+  length: 204378
+  sheet: 辉瑞-8月
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: CORP_NAME
+      1: 浙江尖峰集团股份有限公司
+    'Unnamed: 2':
+      0: 原MOLE_NAME
+      1: 氨氯地平
+    'Unnamed: 3':
+      0: 调整后MOLE_NAME
+      1: 左旋氨氯地平
+    说明：本次检索对以下药品名称进行了调整，请企业根据对照表修改历史数据，谢谢！:
+      0: PRODUCT_NAME
+      1: 力斯得
+  file: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
+  length: 5
+  sheet: 药品名称调整说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 阴道
+      1: 阴道
+    APP2_COD:
+      0: 栓剂
+      1: 栓剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 晋城市
+      1: 晋城市
+    CORP_NAME:
+      0: 东北制药集团有限责任公司
+      1: 东北制药集团有限责任公司
+    HOSPITAL_CODE:
+      0: 30421
+      1: 30421
+    MOLE_NAME:
+      0: 卡前列甲酯
+      1: 卡前列甲酯
+    MONTH:
+      0: 11
+      1: 12
+    PACK_DES:
+      0: 500 UG
+      1: 500 UG
+    PACK_NUMBER:
+      0: 5
+      1: 5
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 卡孕
+      1: 卡孕
+    STANDARD_UNIT:
+      0: 550
+      1: 1150
+    VALUE:
+      0: 19206
+      1: 40158
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/CPA缺失3分子2017.xlsx
+  length: 7149
+  sheet: 查询2
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10071
+      1: 30251
+    是否补数:
+      0: 1.0
+      1: .nan
+    月份:
+      0: 3
+      1: 2
+  file: CPA/Pfizer/170515辉瑞1703底层检索.xlsx
+  length: 49
+  sheet: 1-3月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 30581
+      1: 50061
+    是否补数:
+      0: 1
+      1: 1
+    月份:
+      0: 12
+      1: 7、8、9、10、11、12
+  file: CPA/Pfizer/190215辉瑞1812底层检索.xlsx
+  length: 64
+  sheet: 1-12月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    TA:
+      0: AI
+      1: AI
+    医院编码:
+      0: 100782
+      1: 10011
+    城市:
+      0: 北京市
+      1: 包头市
+    年:
+      0: 2016
+      1: 2016
+    数量（支/片）:
+      0: 2340
+      1: 104885
+    月:
+      0: 10
+      1: 10
+    金额（元）:
+      0: 6963
+      1: 303557
+  file: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
+  length: 3288
+  sheet: TA-others1610
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 鞍山市
+      1: 巴彦淖尔市
+    CORP_NAME:
+      0: 山东泰邦生物制品有限公司
+      1: 山东泰邦生物制品有限公司
+    HOSPITAL_CODE:
+      0: 110411
+      1: 10081
+    MOLE_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    MONTH:
+      0: 9
+      1: 9
+    PACK_DES:
+      0: 200 IU
+      1: 200 IU
+    PACK_NUMBER:
+      0: 1
+      1: 1
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 冻干人凝血因子Ⅷ
+      1: 冻干人凝血因子Ⅷ
+    STANDARD_UNIT:
+      0: 50
+      1: 400
+    VALUE:
+      0: 19800
+      1: 156000
+    YEAR:
+      0: 2019
+      1: 2019
+  file: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+  length: 225830
+  sheet: 辉瑞-9月
+  source: CPA
+- company: Pfizer
+  data:
+    医院名称:
+      0: 北京广外社区卫生服务中心
+      1: 内蒙古医学院第三附属医院
+    医院编码:
+      0: 100782
+      1: 10011
+    参考级别:
+      0: 二级
+      1: 三甲
+    地区:
+      0: 北京
+      1: 内蒙古
+    城市:
+      0: 北京市
+      1: 包头市
+    是否为2017年出版医院:
+      0: 是
+      1: 是
+    是否为2018年出版医院:
+      0: 是
+      1: 是
+    省:
+      0: 北京市
+      1: 内蒙古自治区
+  file: CPA/Pfizer/190215补充历史数据.xlsx
+  length: 1328
+  sheet: 2017-2018年出版医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    注：以上为2018年1-6月未提供数据的医院名单，数据将于上报后提供:
+      0: .nan
+      1: 1、替换数据说明：
+  file: CPA/Pfizer/180815辉瑞1806底层检索.xlsx
+  length: 25
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 晋城市
+      1: 晋城市
+    CORP_NAME:
+      0: 同药集团有限公司
+      1: 百时美施贵宝集团
+    HOSPITAL_CODE:
+      0: 30421
+      1: 30421
+    MOLE_NAME:
+      0: 柳氮磺吡啶
+      1: 二甲双胍
+    MONTH:
+      0: 12
+      1: 11
+    PACK_DES:
+      0: 250 MG
+      1: 500 MG
+    PACK_NUMBER:
+      0: 100
+      1: 20
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 常态宁
+      1: 格华止
+    STANDARD_UNIT:
+      0: 10000
+      1: 7200
+    VALUE:
+      0: 3250
+      1: 8327
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
+  length: 1034
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: 更新后CORP_NAME
+    说明：本次检索更新以下内容，请依照修改历史数据，谢谢！:
+      0: .nan
+      1: 原CORP_NAME
+  file: CPA/Pfizer/180115辉瑞1711底层检索.xlsx
+  length: 4
+  sheet: 药厂名变更说明
+  source: CPA
+- company: Pfizer
+  data:
+    1、替换数据说明：:
+      0: 医院编码
+      1: '030351'
+    'Unnamed: 1':
+      0: 月份
+      1: 5
+    'Unnamed: 2':
+      0: 备注
+      1: 医院系统调整，重新上报数据，请删除历史数据，以本次提供数据为准
+  file: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+  length: 22
+  sheet: Sheet1
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+    医院编码:
+      0: 30581
+      1: 50061
+    月份:
+      0: 12
+      1: 7、8、9、10、11、12
+  file: CPA/Pfizer/190215补充历史数据.xlsx
+  length: 72
+  sheet: 1-12月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 830151
+      1: 450681
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 11
+      1: 11
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 1000
+      1: 1000
+    VALUE:
+      0: 210
+      1: 255
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/180115辉瑞1711底层检索.xlsx
+  length: 171631
+  sheet: 辉瑞1711
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 胶囊剂（胶丸、滴丸）
+      1: 胶囊剂（胶丸、滴丸）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿克苏市
+      1: 阿克苏市
+    CORP_NAME:
+      0: 广州医药集团有限公司
+      1: 广州医药集团有限公司
+    HOSPITAL_CODE:
+      0: 830051
+      1: 830051
+    MOLE_NAME:
+      0: 阿莫西林
+      1: 阿莫西林
+    MONTH:
+      0: 10
+      1: 12
+    PACK_DES:
+      0: 500 MG
+      1: 500 MG
+    PACK_NUMBER:
+      0: 20
+      1: 20
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 阿莫西林
+      1: 阿莫西林
+    STANDARD_UNIT:
+      0: 10000
+      1: 10000
+    VALUE:
+      0: 4200
+      1: 4200
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/191114辉瑞-临时检索.xlsx
+  length: 46190
+  sheet: 辉瑞新增1701-1909
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 淮南市
+      1: 辛集市
+    CORP_NAME:
+      0: 上海医药集团股份有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 230311
+      1: 50061
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 3
+      1: 3
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 3000
+      1: 1000
+    VALUE:
+      0: 660
+      1: 253
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+  length: 2418
+  sheet: 替换数据
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿克苏市
+      1: 阿克苏市
+    CORP_NAME:
+      0: 勃林格殷格翰集团
+      1: 阿斯利康集团
+    HOSPITAL_CODE:
+      0: 830051
+      1: 830051
+    MOLE_NAME:
+      0: 阿法替尼
+      1: 奥希替尼
+    MONTH:
+      0: 12
+      1: 12
+    PACK_DES:
+      0: 30 MG
+      1: 80 MG
+    PACK_NUMBER:
+      0: 7
+      1: 30
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 吉泰瑞
+      1: 泰瑞沙
+    STANDARD_UNIT:
+      0: 28
+      1: 120
+    VALUE:
+      0: 4494
+      1: 61200
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/190409辉瑞1901底层检索-4新增通用名数据.xlsx
+  length: 1506
+  sheet: 辉瑞（2）1901
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 粉剂（粉剂针）
+      1: 粉剂（粉剂针）
+    CORP_NAME:
+      0: 广东省药物研究所制药厂
+      1: 哈尔滨三联药业有限公司
+    MOLE_NAME:
+      0: 脑蛋白水解物
+      1: 脑蛋白水解物
+    PRODUCT_NAME:
+      0: 舒瑞泰
+      1: 曲奥
+    原PACK_DES:
+      0: 206.05 MG
+      1: 410 MG
+    更新后PACK_DES:
+      0: 30.5 MG
+      1: 60 MG
+  file: CPA/Pfizer/190313辉瑞1901底层检索.xlsx
+  length: 146
+  sheet: 药品信息更新对照表
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 注射
+      1: 注射
+    APP2_COD:
+      0: 溶液剂（注射剂）
+      1: 溶液剂（注射剂）
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿克苏市
+      1: 阿克苏市
+    CORP_NAME:
+      0: 河北天成药业有限公司
+      1: 河北天成药业有限公司
+    HOSPITAL_CODE:
+      0: 830051
+      1: 830051
+    MOLE_NAME:
+      0: 硫酸镁
+      1: 硫酸镁
+    MONTH:
+      0: 11
+      1: 1
+    PACK_DES:
+      0: 2.5 GM 10 ML
+      1: 2.5 GM 10 ML
+    PACK_NUMBER:
+      0: 5
+      1: 5
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 硫酸镁
+      1: 硫酸镁
+    STANDARD_UNIT:
+      0: 7000
+      1: 3000
+    VALUE:
+      0: 65870
+      1: 7920
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/190215辉瑞临时检索.xlsx
+  length: 65223
+  sheet: 辉瑞新增1701-1812
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: 年
+    'Unnamed: 2':
+      0: .nan
+      1: 月份
+    'Unnamed: 3':
+      0: .nan
+      1: 备注
+    'Unnamed: 4':
+      0: .nan
+      1: .nan
+    'Unnamed: 5':
+      0: .nan
+      1: .nan
+    说明：本月对以下数据进行了更新，请按此说明修改历史数据，由此给您带来的不便敬请谅解！:
+      0: 1、请删除以下医院相应月份历史数据，追入“替换数据”
+      1: 医院编码
+  file: CPA/Pfizer/191114辉瑞-9月检索.xlsx
+  length: 13
+  sheet: 数据更新说明
+  source: CPA
+- company: Pfizer
+  data:
+    1、未到医院：以下为2019年1-3月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010011'
+    'Unnamed: 1':
+      0: 月份
+      1: 3
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    'Unnamed: 3':
+      0: .nan
+      1: .nan
+  file: CPA/Pfizer/190513辉瑞1903底层检索（2）.xlsx
+  length: 61
+  sheet: 1-3月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10031
+      1: 10071
+    是否补数:
+      0: 1.0
+      1: .nan
+    月份:
+      0: 2、6、7
+      1: 1、2、3
+  file: CPA/Pfizer/190912辉瑞-7月检索.xlsx
+  length: 88
+  sheet: 1-7月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 北京市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450241
+      1: 100041
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 10
+      1: 10
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 5000
+      1: 20000
+    VALUE:
+      0: 1310
+      1: 5680
+    YEAR:
+      0: 2016
+      1: 2016
+  file: CPA/Pfizer/161221辉瑞1610指定检索.xlsx
+  length: 149379
+  sheet: 辉瑞1610
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10071
+      1: 10121
+    是否补数:
+      0: 1
+      1: 1
+    月份:
+      0: 6、7、8、9、10、11
+      1: 11
+  file: CPA/Pfizer/180115辉瑞1711底层检索.xlsx
+  length: 101
+  sheet: 1-11月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 830151
+      1: 450241
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 5
+      1: 5
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 1000
+      1: 2000
+    VALUE:
+      0: 210
+      1: 524
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA/Pfizer/170714辉瑞1705底层检索.xlsx
+  length: 173519
+  sheet: 辉瑞1705
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: 更新后MOLE_NAME
+      1: 紫杉醇(白蛋白结合型)
+    'Unnamed: 2':
+      0: PACK_DES
+      1: 100 MG
+    'Unnamed: 3':
+      0: CORP_NAME
+      1: Abraxis BioScience, LLC （US）
+    说明：请企业根据以下内容修改历史数据，谢谢！:
+      0: 原MOLE_NAME
+      1: 紫杉醇
+  file: CPA/Pfizer/171128辉瑞-紫杉醇(白蛋白结合型)1707-1709底层检索(反馈).xlsx
+  length: 5
+  sheet: 药品名称更新说明
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10111
+    是否补数:
+      0: 1
+      1: 1
+    月份:
+      0: 7
+      1: 1、6、7
+  file: CPA/Pfizer/180914辉瑞1807底层检索.xlsx
+  length: 59
+  sheet: 1-7月未到医院名单
+  source: CPA
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 阿勒泰市
+      1: 安宁市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 山东鲁抗医药股份有限公司
+    HOSPITAL_CODE:
+      0: 830151
+      1: 650131
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 10
+      1: 10
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 1000
+      1: 1000
+    VALUE:
+      0: 310
+      1: 302
+    YEAR:
+      0: 2018
+      1: 2018
+  file: CPA/Pfizer/181213辉瑞1810底层检索.xlsx
+  length: 168855
+  sheet: 辉瑞1810
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10111
+      1: 30051
+    是否补数:
+      0: .nan
+      1: 1.0
+    月份:
+      0: 1
+      1: 3
+  file: CPA/Pfizer/180515辉瑞1803底层检索.xlsx
+  length: 47
+  sheet: 1-3月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    医院编码:
+      0: 10011
+      1: 10071
+    是否补数:
+      0: .nan
+      1: 1.0
+    月份:
+      0: 5
+      1: 6
+  file: CPA/Pfizer/170815辉瑞1706底层检索.xlsx
+  length: 50
+  sheet: 1-6月未到医院名单及说明
+  source: CPA
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: 月份
+      1: 3
+    未到医院：以下为2019年1-4月未提供数据的医院名单，数据将于上报后提供:
+      0: 医院编码
+      1: '010011'
+  file: CPA/Pfizer/190613辉瑞1904底层检索（2）.xlsx
+  length: 60
+  sheet: 1-4月未到医院名单
+  source: CPA

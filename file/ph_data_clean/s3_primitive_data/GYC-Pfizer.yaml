@@ -1,0 +1,1947 @@
+- company: Pfizer
+  data:
+    2013-2017年辉瑞2个通用名补充历史数据:
+      0: 省/自治区/直辖市
+      1: 安徽省
+    'Unnamed: 1':
+      0: 城市
+      1: 合肥市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: 56
+    'Unnamed: 11':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 生产企业
+      1: Pfizer Manufacturing Deutschland GmbH
+    'Unnamed: 2':
+      0: 年
+      1: '2016'
+    'Unnamed: 3':
+      0: 月
+      1: '9'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '3401001'
+    'Unnamed: 5':
+      0: 通用名
+      1: 阿昔替尼
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 英立达
+    'Unnamed: 7':
+      0: 规格
+      1: 5mg
+    'Unnamed: 8':
+      0: 包装规格
+      1: '28'
+    'Unnamed: 9':
+      0: 金额
+      1: 39600
+  file: GYC/Pfizer/2013-2017年辉瑞2个通用名补充历史数据.xlsx
+  length: 11254
+  sheet: 2013-2017年辉瑞2个通用名补充历史数据
+  source: GYC
+- company: Pfizer
+  data:
+    2013年1月-2016年10月辉瑞爱普列特产品数据:
+      0: 省/自治区/直辖市
+      1: 北京市
+    'Unnamed: 1':
+      0: 城市
+      1: 北京市
+    'Unnamed: 10':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 11':
+      0: 包装规格
+      1: 10
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 最小制剂单位数量
+      1: 1000
+    'Unnamed: 14':
+      0: 金额(元)
+      1: 3561
+    'Unnamed: 15':
+      0: 生产企业
+      1: 江苏联环药业股份有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2013'
+    'Unnamed: 3':
+      0: 季度
+      1: '1'
+    'Unnamed: 4':
+      0: 月份
+      1: '1'
+    'Unnamed: 5':
+      0: 医院编码
+      1: '1100018'
+    'Unnamed: 6':
+      0: 医院等级
+      1: 三级
+    'Unnamed: 7':
+      0: 通用名
+      1: 爱普列特
+    'Unnamed: 8':
+      0: 商品名
+      1: 川流
+    'Unnamed: 9':
+      0: 规格
+      1: 5mg
+  file: GYC/Pfizer/2013年1月-2016年10月辉瑞爱普列特产品数据.xlsx
+  length: 4231
+  sheet: 2013年1月-2016年10月辉瑞爱普列特产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2013年1月-2016年10月辉瑞血脂康产品数据:
+      0: 省/自治区/直辖市
+      1: 北京市
+    'Unnamed: 1':
+      0: 城市
+      1: 北京市
+    'Unnamed: 10':
+      0: 剂型
+      1: 胶囊剂
+    'Unnamed: 11':
+      0: 包装规格
+      1: 12
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 最小制剂单位数量
+      1: 23160
+    'Unnamed: 14':
+      0: 金额(元)
+      1: 25879.6
+    'Unnamed: 15':
+      0: 生产企业
+      1: 北京北大维信生物科技有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2013'
+    'Unnamed: 3':
+      0: 季度
+      1: '1'
+    'Unnamed: 4':
+      0: 月份
+      1: '1'
+    'Unnamed: 5':
+      0: 医院编码
+      1: '1100018'
+    'Unnamed: 6':
+      0: 医院等级
+      1: 三级
+    'Unnamed: 7':
+      0: 通用名
+      1: 血脂康胶囊
+    'Unnamed: 8':
+      0: 商品名
+      1: 血脂康胶囊
+    'Unnamed: 9':
+      0: 规格
+      1: 0.3g
+  file: GYC/Pfizer/2013年1月-2016年10月辉瑞血脂康产品数据.xlsx
+  length: 7668
+  sheet: 2013年1月-2016年10月辉瑞血脂康产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2013年辉瑞337个通用名产品数据:
+      0: 省/自治区/直辖市
+      1: 北京市
+    'Unnamed: 1':
+      0: 城市
+      1: 北京市
+    'Unnamed: 10':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 11':
+      0: 包装规格
+      1: 30
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 最小制剂单位数量
+      1: 226800
+    'Unnamed: 14':
+      0: 金额(元)
+      1: 487846.8
+    'Unnamed: 15':
+      0: 生产企业
+      1: 拜耳医药保健有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2013'
+    'Unnamed: 3':
+      0: 季度
+      1: '1'
+    'Unnamed: 4':
+      0: 月份
+      1: '1'
+    'Unnamed: 5':
+      0: 医院编码
+      1: '1100001'
+    'Unnamed: 6':
+      0: 医院等级
+      1: 三级
+    'Unnamed: 7':
+      0: 通用名
+      1: 阿卡波糖
+    'Unnamed: 8':
+      0: 商品名
+      1: 拜唐苹
+    'Unnamed: 9':
+      0: 规格
+      1: 50mg
+  file: GYC/Pfizer/2013年辉瑞337个通用名产品数据.xlsx
+  length: 737639
+  sheet: 2013年辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: .nan
+      1: .nan
+    通用名:
+      0: 阿卡波糖
+      1: 阿莫西林/克拉维酸
+  file: GYC/Pfizer/2013年辉瑞337个通用名产品数据.xlsx
+  length: 330
+  sheet: Sheet1
+  source: GYC
+- company: Pfizer
+  data:
+    2014年辉瑞337个通用名产品数据:
+      0: 省/自治区/直辖市
+      1: 北京市
+    'Unnamed: 1':
+      0: 城市
+      1: 北京市
+    'Unnamed: 10':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 11':
+      0: 包装规格
+      1: 30
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 最小制剂单位数量
+      1: 251100
+    'Unnamed: 14':
+      0: 金额(元)
+      1: 518270.4
+    'Unnamed: 15':
+      0: 生产企业
+      1: Bayer Health Care AG
+    'Unnamed: 2':
+      0: 年
+      1: '2014'
+    'Unnamed: 3':
+      0: 季度
+      1: '1'
+    'Unnamed: 4':
+      0: 月份
+      1: '1'
+    'Unnamed: 5':
+      0: 医院编码
+      1: '1100001'
+    'Unnamed: 6':
+      0: 医院等级
+      1: 三级
+    'Unnamed: 7':
+      0: 通用名
+      1: 阿卡波糖
+    'Unnamed: 8':
+      0: 商品名
+      1: 拜唐苹
+    'Unnamed: 9':
+      0: 规格
+      1: 50mg
+  file: GYC/Pfizer/2014年辉瑞337个通用名产品数据.xlsx
+  length: 809089
+  sheet: 2014年辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2015年1月-2017年4月湖北省百普乐产品数据:
+      0: 省/自治区/直辖市
+      1: 湖北省
+    'Unnamed: 1':
+      0: 城市
+      1: 鄂州市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: 200
+    'Unnamed: 11':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 生产企业
+      1: 施维雅(天津)制药有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2015'
+    'Unnamed: 3':
+      0: 月
+      1: '9'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '4207002'
+    'Unnamed: 5':
+      0: 通用名
+      1: 培哚普利/吲达帕胺
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 百普乐
+    'Unnamed: 7':
+      0: 规格
+      1: 培哚普利叔丁胺盐2mg,吲达帕胺0.625g
+    'Unnamed: 8':
+      0: 包装规格
+      1: 20
+    'Unnamed: 9':
+      0: 金额
+      1: 824.1
+  file: GYC/Pfizer/2015年1月-2017年4月湖北省百普乐产品数据.xlsx
+  length: 324
+  sheet: 2015年1月-2017年4月湖北省百普乐产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2015年辉瑞337个通用名产品数据:
+      0: 省/自治区/直辖市
+      1: 北京市
+    'Unnamed: 1':
+      0: 城市
+      1: 北京市
+    'Unnamed: 10':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 11':
+      0: 包装规格
+      1: 30
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 最小制剂单位数量
+      1: 267300
+    'Unnamed: 14':
+      0: 金额(元)
+      1: 551707.2
+    'Unnamed: 15':
+      0: 生产企业
+      1: Bayer Health Care AG
+    'Unnamed: 2':
+      0: 年
+      1: '2015'
+    'Unnamed: 3':
+      0: 季度
+      1: '1'
+    'Unnamed: 4':
+      0: 月份
+      1: '1'
+    'Unnamed: 5':
+      0: 医院编码
+      1: '1100001'
+    'Unnamed: 6':
+      0: 医院等级
+      1: 三级
+    'Unnamed: 7':
+      0: 通用名
+      1: 阿卡波糖
+    'Unnamed: 8':
+      0: 商品名
+      1: 拜唐苹
+    'Unnamed: 9':
+      0: 规格
+      1: 50mg
+  file: GYC/Pfizer/2015年辉瑞337个通用名产品数据.xlsx
+  length: 924480
+  sheet: 2015年辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    'Unnamed: 0':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: .nan
+      1: .nan
+    通用名:
+      0: 阿卡波糖
+      1: 阿那曲唑
+  file: GYC/Pfizer/2015年辉瑞337个通用名产品数据.xlsx
+  length: 334
+  sheet: Sheet2
+  source: GYC
+- company: Pfizer
+  data:
+    DOI:
+      0: Sulperazon_1M
+      1: Sulperazon_1M
+    DOIE:
+      0: Sulperazon_1M
+      1: Sulperazon_1M
+    Date:
+      0: 201501
+      1: 201501
+    HOSP_ID:
+      0: PHA0020185
+      1: PHA0000804
+    Hosp_name:
+      0: 中国医学科学院阜外心血管病医院
+      1: 北京电力医院
+    ID:
+      0: 1100004
+      1: 1100019
+    Prod_CNAME:
+      0: 特治星粉针剂CO4.5G1惠氏制药集团
+      1: 北元哌强粉针剂CO2.5G1华北制药集团
+    Prod_Name:
+      0: 特治星粉针剂CO4.5G1惠氏制药集团
+      1: 北元哌强粉针剂CO2.5G1华北制药集团
+    Sales:
+      0: 43044
+      1: 346500
+    Strength:
+      0: 特治星粉针剂CO4.5G1惠氏制药集团
+      1: 北元哌强粉针剂CO2.5G1华北制药集团
+    Units:
+      0: 300
+      1: 3300
+  file: GYC/Pfizer/2015年辉瑞337个通用名产品数据.xlsx
+  length: 3576
+  sheet: Sheet1
+  source: GYC
+- company: Pfizer
+  data:
+    剂型:
+      0: 注射剂
+      1: 片剂
+    包装规格:
+      0: 1
+      1: 30
+    医院编码:
+      0: 3401002
+      1: 3401002
+    城市:
+      0: 合肥市
+      1: 合肥市
+    年:
+      0: 2016
+      1: 2016
+    最小制剂单位数量:
+      0: 2
+      1: 330000
+    月:
+      0: 11
+      1: 11
+    生产企业:
+      0: Abbott Laboratories Inc.
+      1: 杭州中美华东制药有限公司
+    给药途径:
+      0: 注射
+      1: 口服
+    药品商品名:
+      0: 修美乐
+      1: 卡博平
+    规格:
+      0: 0.8ml∶40mg
+      1: 50mg
+    通用名:
+      0: 阿达木单抗
+      1: 阿卡波糖
+    金额:
+      0: 15800
+      1: 489500
+  file: GYC/Pfizer/201611 GYCX.xlsx
+  length: 84968
+  sheet: 2016年11月辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2016年辉瑞337个通用名产品数据:
+      0: 省/自治区/直辖市
+      1: 北京市
+    'Unnamed: 1':
+      0: 城市
+      1: 北京市
+    'Unnamed: 10':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 11':
+      0: 包装规格
+      1: 30
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 最小制剂单位数量
+      1: 202500
+    'Unnamed: 14':
+      0: 金额(元)
+      1: 417960
+    'Unnamed: 15':
+      0: 生产企业
+      1: Bayer Health Care AG
+    'Unnamed: 16':
+      0: .nan
+      1: .nan
+    'Unnamed: 2':
+      0: 年
+      1: '2016'
+    'Unnamed: 3':
+      0: 季度
+      1: '1'
+    'Unnamed: 4':
+      0: 月份
+      1: '1'
+    'Unnamed: 5':
+      0: 医院编码
+      1: '1100001'
+    'Unnamed: 6':
+      0: 医院等级
+      1: 三级
+    'Unnamed: 7':
+      0: 通用名
+      1: 阿卡波糖
+    'Unnamed: 8':
+      0: 商品名
+      1: 拜唐苹
+    'Unnamed: 9':
+      0: 规格
+      1: 50mg
+  file: GYC/Pfizer/2016年辉瑞337个通用名产品数据.xlsx
+  length: 807373
+  sheet: 2016年辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    Market:
+      0: LD
+      1: LD
+    Market2:
+      0: LD
+      1: LD
+    min1:
+      0: 阿乐片剂10mg7北京嘉林药业股份有限公司
+      1: 立普妥片剂20mg7辉瑞制药有限公司
+    min2:
+      0: 阿乐片剂10MG7北京嘉林药业股份有限公司
+      1: 立普妥片剂20MG7辉瑞制药有限公司
+    剂型:
+      0: 片剂
+      1: 片剂
+    包装规格:
+      0: 7
+      1: 7
+    商品名:
+      0: 阿乐
+      1: 立普妥
+    生产企业:
+      0: 北京嘉林药业股份有限公司
+      1: 辉瑞制药有限公司
+    规格:
+      0: 10mg
+      1: 20mg
+    通用名:
+      0: 阿托伐他汀
+      1: 阿托伐他汀
+  file: GYC/Pfizer/2016年辉瑞337个通用名产品数据.xlsx
+  length: 858
+  sheet: 16年GYC31个问题分子
+  source: GYC
+- company: Pfizer
+  data: {}
+  file: GYC/Pfizer/2016年辉瑞337个通用名产品数据.xlsx
+  length: 0
+  sheet: Sheet1
+  source: GYC
+- company: Pfizer
+  data:
+    剂型:
+      0: 片剂
+      1: 片剂
+    包装规格:
+      0: 100
+      1: 100
+    医院编码:
+      0: 3606001
+      1: 3606001
+    城市:
+      0: 鹰潭市
+      1: 鹰潭市
+    年:
+      0: 2017
+      1: 2018
+    最小制剂单位数量:
+      0: 6000
+      1: 3000
+    月:
+      0: 12
+      1: 11
+    生产企业:
+      0: 湖南千金协力药业有限公司
+      1: 湖南千金协力药业有限公司
+    省/自治区/直辖市:
+      0: 江西省
+      1: 江西省
+    给药途径:
+      0: 口服
+      1: 口服
+    药品商品名:
+      0: 雷公藤总甙
+      1: 雷公藤总甙
+    规格:
+      0: 10mg
+      1: 10mg
+    通用名:
+      0: 雷公藤总甙
+      1: 雷公藤总甙
+    金额:
+      0: 672
+      1: 336
+  file: GYC/Pfizer/2017-2018辉瑞15个通用名产品数据.xlsx
+  length: 128030
+  sheet: 2017-2018辉瑞15个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    201701-201902辉瑞新增2个通用名补充历史:
+      0: 省/自治区/直辖市
+      1: 安徽省
+    'Unnamed: 1':
+      0: 城市
+      1: 蚌埠市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: 1500
+    'Unnamed: 11':
+      0: 剂型
+      1: 胶囊剂
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 生产企业
+      1: 宁波立华制药有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2017'
+    'Unnamed: 3':
+      0: 月
+      1: '2017'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '3403001'
+    'Unnamed: 5':
+      0: 通用名
+      1: 白芍总苷
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 帕夫林
+    'Unnamed: 7':
+      0: 规格
+      1: 0.3g
+    'Unnamed: 8':
+      0: 包装规格
+      1: '60'
+    'Unnamed: 9':
+      0: 金额
+      1: 95685
+  file: GYC/Pfizer/201701-20192辉瑞新增2个通用名补充历史.xlsx
+  length: 25290
+  sheet: 201701-201902辉瑞新增2个通用名补充历史
+  source: GYC
+- company: Pfizer
+  data:
+    2017年-2018年14个通用名辉瑞产品数据:
+      0: 省/自治区/直辖市
+      1: 北京市
+    'Unnamed: 1':
+      0: 城市
+      1: 北京市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: -600
+    'Unnamed: 11':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 生产企业
+      1: 山东齐都药业有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2017'
+    'Unnamed: 3':
+      0: 月
+      1: '4'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '1100052'
+    'Unnamed: 5':
+      0: 通用名
+      1: 尼麦角林
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 尼麦角林
+    'Unnamed: 7':
+      0: 规格
+      1: 10mg
+    'Unnamed: 8':
+      0: 包装规格
+      1: 30
+    'Unnamed: 9':
+      0: 金额
+      1: -800
+  file: GYC/Pfizer/2017年-2018年14个通用名辉瑞产品数据.xlsx
+  length: 97475
+  sheet: 2017年-2018年14个通用名辉瑞产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    剂型:
+      0: 注射剂
+      1: 注射剂
+    包装规格:
+      0: 1
+      1: 1
+    医院编码:
+      0: 3402002
+      1: 1100001
+    城市:
+      0: 芜湖市
+      1: 北京市
+    年:
+      0: 2017
+      1: 2017
+    最小制剂单位数量:
+      0: 1
+      1: 20
+    月:
+      0: 10
+      1: 10
+    生产企业:
+      0: Abbott Laboratories Inc.
+      1: Abbott Laboratories Inc.
+    省/自治区/直辖市:
+      0: 安徽省
+      1: 北京市
+    给药途径:
+      0: 注射
+      1: 注射
+    药品商品名:
+      0: 修美乐
+      1: 修美乐
+    规格:
+      0: 0.8ml∶40mg
+      1: 0.8ml∶40mg
+    通用名:
+      0: 阿达木单抗
+      1: 阿达木单抗
+    金额:
+      0: 7900
+      1: 152000
+  file: GYC/Pfizer/2017年10-12月辉瑞339个通用名产品数据.xlsx
+  length: 569124
+  sheet: 2017年10-12月辉瑞339个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    剂型:
+      0: 片剂
+      1: 片剂
+    包装规格:
+      0: 30
+      1: 30
+    医院编码:
+      0: 3401002
+      1: 3401002
+    城市:
+      0: 合肥市
+      1: 合肥市
+    年:
+      0: 2017
+      1: 2017
+    最小制剂单位数量:
+      0: 6000
+      1: 16200
+    月:
+      0: 1
+      1: 1
+    生产企业:
+      0: 山东鲁南贝特制药有限公司
+      1: Bayer Health Care AG
+    省/自治区/直辖市:
+      0: 安徽省
+      1: 安徽省
+    给药途径:
+      0: 口服
+      1: 口服
+    药品商品名:
+      0: 维平
+      1: 拜唐苹
+    规格:
+      0: 2.5mg
+      1: 50mg
+    通用名:
+      0: 阿夫唑嗪
+      1: 阿卡波糖
+    金额:
+      0: 8006.0
+      1: 34840.8
+  file: GYC/Pfizer/2017年1月辉瑞337个通用名产品数据.xlsx
+  length: 98103
+  sheet: 2017年1月辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2017年1月辉瑞头孢孟多产品数据:
+      0: 省/自治区/直辖市
+      1: 广东省
+    'Unnamed: 1':
+      0: 城市
+      1: 韶关市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: 1200
+    'Unnamed: 11':
+      0: 剂型
+      1: 注射剂
+    'Unnamed: 12':
+      0: 给药途径
+      1: 注射
+    'Unnamed: 13':
+      0: 生产企业
+      1: 海南葫芦娃制药有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2017'
+    'Unnamed: 3':
+      0: 月
+      1: '1'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '4402012'
+    'Unnamed: 5':
+      0: 通用名
+      1: 头孢孟多
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 头孢孟多
+    'Unnamed: 7':
+      0: 统一规格
+      1: 0.5g
+    'Unnamed: 8':
+      0: 包装规格
+      1: 1
+    'Unnamed: 9':
+      0: 金额
+      1: 18960
+  file: GYC/Pfizer/2017年1月辉瑞头孢孟多产品数据.xlsx
+  length: 146
+  sheet: 2017年1月辉瑞头孢孟多产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    剂型:
+      0: 片剂
+      1: 片剂
+    包装规格:
+      0: 30
+      1: 30
+    医院编码:
+      0: 3403001
+      1: 3403001
+    城市:
+      0: 蚌埠市
+      1: 蚌埠市
+    年:
+      0: 2017
+      1: 2017
+    最小制剂单位数量:
+      0: 24300
+      1: 18000
+    月:
+      0: 3
+      1: 3
+    生产企业:
+      0: Bayer Health Care AG
+      1: 杭州中美华东制药有限公司
+    给药途径:
+      0: 口服
+      1: 口服
+    药品商品名:
+      0: 拜唐苹
+      1: 卡博平
+    规格:
+      0: 0.1g
+      1: 50mg
+    通用名:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    金额:
+      0: 52261.2
+      1: 26700.0
+  file: GYC/Pfizer/2017年3月辉瑞337个通用名产品数据.xlsx
+  length: 93912
+  sheet: 2017年3月辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2017年4月辉瑞30个通用名产品数据:
+      0: 省/自治区/直辖市
+      1: 上海市
+    'Unnamed: 1':
+      0: 城市
+      1: 上海市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: 7560
+    'Unnamed: 11':
+      0: 剂型
+      1: 控释片
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 生产企业
+      1: Pfizer Pharmaceuticals LLC (PPLLC)
+    'Unnamed: 2':
+      0: 年
+      1: '2017'
+    'Unnamed: 3':
+      0: 月
+      1: '1'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '3101046'
+    'Unnamed: 5':
+      0: 通用名
+      1: 格列吡嗪
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 瑞易宁
+    'Unnamed: 7':
+      0: 规格
+      1: 5mg
+    'Unnamed: 8':
+      0: 包装规格
+      1: 14
+    'Unnamed: 9':
+      0: 金额
+      1: 18268.2
+  file: GYC/Pfizer/2017年4月辉瑞30个通用名产品数据.xlsx
+  length: 31629
+  sheet: 2017年4月辉瑞30个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2017年4月辉瑞337个通用名产品数据:
+      0: 省/自治区/直辖市
+      1: 安徽省
+    'Unnamed: 1':
+      0: 城市
+      1: 蚌埠市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: 24300
+    'Unnamed: 11':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 生产企业
+      1: 拜耳医药保健有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2017'
+    'Unnamed: 3':
+      0: 月
+      1: '4'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '3403001'
+    'Unnamed: 5':
+      0: 通用名
+      1: 阿卡波糖
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 拜唐苹
+    'Unnamed: 7':
+      0: 规格
+      1: 50mg
+    'Unnamed: 8':
+      0: 包装规格
+      1: 30
+    'Unnamed: 9':
+      0: 金额
+      1: 52261.2
+  file: GYC/Pfizer/2017年4月辉瑞337个通用名产品数据.xlsx
+  length: 93528
+  sheet: 2017年4月辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2017年4月辉瑞7个通用名产品数据:
+      0: 省/自治区/直辖市
+      1: 上海市
+    'Unnamed: 1':
+      0: 城市
+      1: 上海市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: 4000
+    'Unnamed: 11':
+      0: 剂型
+      1: 注射剂
+    'Unnamed: 12':
+      0: 给药途径
+      1: 注射
+    'Unnamed: 13':
+      0: 生产企业
+      1: 成都天台山制药有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2017'
+    'Unnamed: 3':
+      0: 月
+      1: '1'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '3101046'
+    'Unnamed: 5':
+      0: 通用名
+      1: 多烯磷脂酰胆碱
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 易必生
+    'Unnamed: 7':
+      0: 规格
+      1: 5ml∶0.2325g
+    'Unnamed: 8':
+      0: 包装规格
+      1: 1
+    'Unnamed: 9':
+      0: 金额
+      1: 83200
+  file: GYC/Pfizer/2017年4月辉瑞7个通用名产品数据.xlsx
+  length: 8003
+  sheet: 2017年4月辉瑞7个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 干混悬剂
+      1: 肠溶片
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 蚌埠市
+      1: 蚌埠市
+    CORP_NAME:
+      0: 上海现代制药股份有限公司
+      1: 华北制药股份有限公司
+    HOSPITAL_CODE:
+      0: 3403001
+      1: 3403001
+    MOLE_NAME:
+      0: 阿奇霉素
+      1: 阿奇霉素
+    MONTH:
+      0: 5
+      1: 5
+    PACK_DES:
+      0: 0.1g
+      1: 0.25g
+    PACK_NUMBER:
+      0: 6
+      1: 12
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 阿奇霉素
+      1: 华必达
+    STANDARD_UNIT:
+      0: 3600
+      1: 6480
+    VALUE:
+      0: 3336.0
+      1: 13386.6
+    YEAR:
+      0: 2017
+      1: 2017
+  file: GYC/Pfizer/2017年5月辉瑞337个通用名产品数据.xlsx
+  length: 93738
+  sheet: 2017年5月辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    CITY:
+      0: 蚌埠市
+      1: 蚌埠市
+    CORP_NAME:
+      0: Bayer Health Care AG
+      1: 杭州中美华东制药有限公司
+    HOSPITAL_CODE:
+      0: 3403001
+      1: 3403001
+    MOLE_NAME:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    MONTH:
+      0: 6
+      1: 6
+    PACK_DES:
+      0: 50mg
+      1: 50mg
+    PACK_NUMBER:
+      0: 30
+      1: 30
+    PRODUCT_NAME:
+      0: 拜唐苹
+      1: 卡博平
+    STANDARD_UNIT:
+      0: 32400
+      1: 24000
+    VALUE:
+      0: 69681.6
+      1: 35600.0
+    YEAR:
+      0: 2017
+      1: 2017
+  file: GYC/Pfizer/2017年6月辉瑞337个通用名产品数据.xlsx
+  length: 95163
+  sheet: 2017年6月辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    剂型:
+      0: 片剂
+      1: 片剂
+    包装规格:
+      0: 30
+      1: 30
+    医院编码:
+      0: 3403001
+      1: 3403001
+    城市:
+      0: 蚌埠市
+      1: 蚌埠市
+    年:
+      0: 2017
+      1: 2017
+    最小制剂单位数量:
+      0: 40500
+      1: 24000
+    月:
+      0: 7
+      1: 7
+    生产企业:
+      0: Bayer Health Care AG
+      1: 杭州中美华东制药有限公司
+    省/自治区/直辖市:
+      0: 安徽省
+      1: 安徽省
+    给药途径:
+      0: 口服
+      1: 口服
+    药品商品名:
+      0: 拜唐苹
+      1: 卡博平
+    规格:
+      0: 50mg
+      1: 50mg
+    通用名:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    金额:
+      0: 87102
+      1: 35600
+  file: GYC/Pfizer/2017年7月辉瑞337个通用名产品数据.xlsx
+  length: 95955
+  sheet: 2017年7月辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    剂型:
+      0: 片剂
+      1: 片剂
+    包装规格:
+      0: 30
+      1: 30
+    医院编码:
+      0: 3403001
+      1: 3403001
+    城市:
+      0: 蚌埠市
+      1: 蚌埠市
+    年:
+      0: 2017
+      1: 2017
+    最小制剂单位数量:
+      0: 32400
+      1: 6000
+    月:
+      0: 8
+      1: 8
+    生产企业:
+      0: Bayer Health Care AG
+      1: 杭州中美华东制药有限公司
+    省/自治区/直辖市:
+      0: 安徽省
+      1: 安徽省
+    给药途径:
+      0: 口服
+      1: 口服
+    药品商品名:
+      0: 拜唐苹
+      1: 卡博平
+    规格:
+      0: 50mg
+      1: 50mg
+    通用名:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    金额:
+      0: 69681.6
+      1: 8900.0
+  file: GYC/Pfizer/2017年8月辉瑞337个通用名产品数据.xlsx
+  length: 96174
+  sheet: 2017年8月辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: 省份
+      1: 北京市
+    'Unnamed: 2':
+      0: 城市
+      1: 北京市
+    'Unnamed: 3':
+      0: 医院编码
+      1: '1100011'
+    'Unnamed: 4':
+      0: 等级
+      1: 三级
+    附表1：数据上报时间晚与下月产品一起补发送:
+      0: 序号
+      1: 1
+  file: GYC/Pfizer/2017年9月数据_337通用名.xlsx
+  length: 18
+  sheet: 附表1  数据上报晚与下月产品一起补发送
+  source: GYC
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: 省份
+      1: 河南省
+    'Unnamed: 2':
+      0: 城市
+      1: 郑州市
+    'Unnamed: 3':
+      0: 医院编码
+      1: '4101001'
+    'Unnamed: 4':
+      0: 等级
+      1: 三级
+    'Unnamed: 5':
+      0: 原因说明
+      1: 医院整顿
+    附表2：系统更新与医院整顿，待医院上报数据后即补:
+      0: 序号
+      1: 1
+  file: GYC/Pfizer/2017年9月数据_337通用名.xlsx
+  length: 6
+  sheet: 附表2 系统更新与医院整顿
+  source: GYC
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: 省份
+      1: 上海市
+    'Unnamed: 2':
+      0: 城市
+      1: 上海市
+    'Unnamed: 3':
+      0: 医院编码
+      1: '3101068'
+    'Unnamed: 4':
+      0: 月份
+      1: '201708'
+    附表3 2017年9月后补6-8月数据医院名单:
+      0: 序号
+      1: 1
+  file: GYC/Pfizer/2017年9月数据_337通用名.xlsx
+  length: 10
+  sheet: 附表3 2017年9月后补4-8月数据医院名单
+  source: GYC
+- company: Pfizer
+  data:
+    'Unnamed: 1':
+      0: 省份
+      1: 北京市
+    'Unnamed: 2':
+      0: 城市
+      1: 北京市
+    'Unnamed: 3':
+      0: 医院编码
+      1: '1100002'
+    'Unnamed: 4':
+      0: 月份
+      1: '201708'
+    'Unnamed: 5':
+      0: .nan
+      1: .nan
+    'Unnamed: 6':
+      0: .nan
+      1: .nan
+    'Unnamed: 7':
+      0: .nan
+      1: .nan
+    'Unnamed: 8':
+      0: .nan
+      1: .nan
+    附表4：2017年1-8月需替换数据医院名单:
+      0: 序号
+      1: 1
+  file: GYC/Pfizer/2017年9月数据_337通用名.xlsx
+  length: 127
+  sheet: 附表4 2017年1-8月需替换数据医院名单
+  source: GYC
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 蚌埠市
+      1: 蚌埠市
+    CORP_NAME:
+      0: Bayer Health Care AG
+      1: 杭州中美华东制药有限公司
+    HOSPITAL_CODE:
+      0: 3403001
+      1: 3403001
+    MOLE_NAME:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    MONTH:
+      0: 9
+      1: 9
+    PACK_DES:
+      0: 50mg
+      1: 50mg
+    PACK_NUMBER:
+      0: 30
+      1: 30
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 拜唐苹
+      1: 卡博平
+    STANDARD_UNIT:
+      0: 40500
+      1: 24000
+    VALUE:
+      0: 87102
+      1: 35600
+    YEAR:
+      0: 2017
+      1: 2017
+  file: GYC/Pfizer/2017年9月数据_337通用名.xlsx
+  length: 106925
+  sheet: 2017年9月辉瑞337个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2018年1-5月辉瑞346个通用名产品数据:
+      0: 省/自治区/直辖市
+      1: 北京市
+    'Unnamed: 1':
+      0: 城市
+      1: 北京市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: 60
+    'Unnamed: 11':
+      0: 剂型
+      1: 注射剂
+    'Unnamed: 12':
+      0: 给药途径
+      1: 注射
+    'Unnamed: 13':
+      0: 生产企业
+      1: Abbott Laboratories Inc.
+    'Unnamed: 2':
+      0: 年
+      1: '2018'
+    'Unnamed: 3':
+      0: 月
+      1: '1'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '1100001'
+    'Unnamed: 5':
+      0: 通用名
+      1: 阿达木单抗
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 修美乐
+    'Unnamed: 7':
+      0: 规格
+      1: 0.8ml∶40mg
+    'Unnamed: 8':
+      0: 包装规格
+      1: 1
+    'Unnamed: 9':
+      0: 金额
+      1: 456000
+  file: GYC/Pfizer/2018年1-5月辉瑞346个通用名产品数据.xlsx
+  length: 1009529
+  sheet: 2018年1-5月辉瑞346个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    2018年11-12月辉瑞346个通用名产品数据:
+      0: 省/自治区/直辖市
+      1: 安徽省
+    'Unnamed: 1':
+      0: 城市
+      1: 淮南市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: 630
+    'Unnamed: 11':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 生产企业
+      1: 四川海思科制药有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2018'
+    'Unnamed: 3':
+      0: 月
+      1: '11'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '3404003'
+    'Unnamed: 5':
+      0: 通用名
+      1: 氟哌噻吨/美利曲辛
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 乐盼
+    'Unnamed: 7':
+      0: 规格
+      1: 氟哌噻吨0.5mg,美利曲辛10mg
+    'Unnamed: 8':
+      0: 包装规格
+      1: 21
+    'Unnamed: 9':
+      0: 金额
+      1: 960
+  file: GYC/Pfizer/2018年11-12月辉瑞346个通用名产品数据.xlsx
+  length: 429396
+  sheet: 2018年11月辉瑞346个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data: {}
+  file: GYC/Pfizer/2018年11-12月辉瑞346个通用名产品数据.xlsx
+  length: 0
+  sheet: Sheet1
+  source: GYC
+- company: Pfizer
+  data:
+    2018年6-10月辉瑞346个通用名产品数据:
+      0: 省/自治区/直辖市
+      1: 安徽省
+    'Unnamed: 1':
+      0: 城市
+      1: 淮南市
+    'Unnamed: 10':
+      0: 最小制剂单位数量
+      1: 630
+    'Unnamed: 11':
+      0: 剂型
+      1: 片剂
+    'Unnamed: 12':
+      0: 给药途径
+      1: 口服
+    'Unnamed: 13':
+      0: 生产企业
+      1: 四川海思科制药有限公司
+    'Unnamed: 2':
+      0: 年
+      1: '2018'
+    'Unnamed: 3':
+      0: 月
+      1: '9'
+    'Unnamed: 4':
+      0: 医院编码
+      1: '3404003'
+    'Unnamed: 5':
+      0: 通用名
+      1: 氟哌噻吨/美利曲辛
+    'Unnamed: 6':
+      0: 药品商品名
+      1: 乐盼
+    'Unnamed: 7':
+      0: 规格
+      1: 氟哌噻吨0.5mg,美利曲辛10mg
+    'Unnamed: 8':
+      0: 包装规格
+      1: 21
+    'Unnamed: 9':
+      0: 金额
+      1: 960
+  file: GYC/Pfizer/2018年6-10月辉瑞346个通用名产品数据.xlsx
+  length: 1044805
+  sheet: 2018年6-10月辉瑞346个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    剂型:
+      0: 注射剂
+      1: 注射剂
+    包装规格:
+      0: 1
+      1: 1
+    医院编码:
+      0: 1100002
+      1: 1100005
+    城市:
+      0: 北京市
+      1: 北京市
+    年:
+      0: 2019
+      1: 2019
+    最小制剂单位数量:
+      0: 6
+      1: 20
+    月:
+      0: 1
+      1: 1
+    生产企业:
+      0: Abbott Laboratories Inc.
+      1: Abbott Laboratories Inc.
+    省/自治区/直辖市:
+      0: 北京市
+      1: 北京市
+    给药途径:
+      0: 注射
+      1: 注射
+    药品商品名:
+      0: 修美乐
+      1: 修美乐
+    规格:
+      0: 0.8ml∶40mg
+      1: 0.8ml∶40mg
+    通用名:
+      0: 阿达木单抗
+      1: 阿达木单抗
+    金额:
+      0: 45600
+      1: 152000
+  file: GYC/Pfizer/2019年1-4月辉瑞381个通用名4个商品名产品数据.xlsx
+  length: 919928
+  sheet: 2019年1-4月辉瑞381个通用名4个商品名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    剂型:
+      0: 片剂
+      1: 片剂
+    包装规格:
+      0: 30
+      1: 30
+    医院编码:
+      0: 3403001
+      1: 3403001
+    城市:
+      0: 蚌埠市
+      1: 蚌埠市
+    年:
+      0: 2019
+      1: 2019
+    最小制剂单位数量:
+      0: 40500
+      1: 24000
+    月:
+      0: 5
+      1: 5
+    生产企业:
+      0: 拜耳医药保健有限公司
+      1: 杭州中美华东制药有限公司
+    省/自治区/直辖市:
+      0: 安徽省
+      1: 安徽省
+    给药途径:
+      0: 口服
+      1: 口服
+    药品商品名:
+      0: 拜唐苹
+      1: 卡博平
+    规格:
+      0: 50mg
+      1: 50mg
+    通用名:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    金额:
+      0: 87102
+      1: 32800
+  file: GYC/Pfizer/2019年5-8月辉瑞381个通用名4个商品名产品数据.xlsx
+  length: 953907
+  sheet: 2019年5-8月辉瑞381个通用名4个商品名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 蚌埠市
+      1: 蚌埠市
+    CORP_NAME:
+      0: 上海勃林格殷格翰药业有限公司
+      1: 拜耳医药保健有限公司
+    HOSPITAL_CODE:
+      0: 3403001
+      1: 3403001
+    MOLE_NAME:
+      0: 阿法替尼
+      1: 阿卡波糖
+    MONTH:
+      0: 9
+      1: 9
+    PACK_DES:
+      0: 40mg
+      1: 50mg
+    PACK_NUMBER:
+      0: 7
+      1: 30
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 吉泰瑞
+      1: 拜唐苹
+    Province:
+      0: .nan
+      1: .nan
+    STANDARD_UNIT:
+      0: 140
+      1: 48600
+    VALUE:
+      0: 28000.0
+      1: 104522.4
+    YEAR:
+      0: 2019
+      1: 2019
+  file: GYC/Pfizer/2019年9-12月辉瑞382个通用名4个商品名产品数据.xlsx
+  length: 975018
+  sheet: sheet
+  source: GYC
+- company: Pfizer
+  data:
+    剂型:
+      0: 片剂
+      1: 片剂
+    包装规格:
+      0: 7
+      1: 30
+    医院编码:
+      0: 3403001
+      1: 3403001
+    城市:
+      0: 蚌埠市
+      1: 蚌埠市
+    年:
+      0: 2019
+      1: 2019
+    最小制剂单位数量:
+      0: 140
+      1: 48600
+    月:
+      0: 9
+      1: 9
+    生产企业:
+      0: 上海勃林格殷格翰药业有限公司
+      1: 拜耳医药保健有限公司
+    省/自治区/直辖市:
+      0: 安徽省
+      1: 安徽省
+    给药途径:
+      0: 口服
+      1: 口服
+    药品商品名:
+      0: 吉泰瑞
+      1: 拜唐苹
+    规格:
+      0: 40mg
+      1: 50mg
+    通用名:
+      0: 阿法替尼
+      1: 阿卡波糖
+    金额:
+      0: 28000.0
+      1: 104522.4
+  file: GYC/Pfizer/2019年9月辉瑞381个通用名4个商品名产品数据.xlsx
+  length: 252460
+  sheet: 2019年9月辉瑞381个通用名4个商品名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 蚌埠市
+      1: 蚌埠市
+    CORP_NAME:
+      0: 拜耳医药保健有限公司
+      1: 杭州中美华东制药有限公司
+    HOSPITAL_CODE:
+      0: 3403001
+      1: 3403001
+    MOLE_NAME:
+      0: 阿卡波糖
+      1: 阿卡波糖
+    MONTH:
+      0: 1
+      1: 1
+    PACK_DES:
+      0: 50mg
+      1: 50mg
+    PACK_NUMBER:
+      0: 30
+      1: 30
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 拜唐苹
+      1: 卡博平
+    STANDARD_UNIT:
+      0: 16200
+      1: 24000
+    VALUE:
+      0: 34840.8
+      1: 32800.0
+    YEAR:
+      0: 2019
+      1: 2019
+  file: GYC/Pfizer/GYCX_201901-201902YTD_0424UPDATE 四个替尼.xlsx
+  length: 415999
+  sheet: 2019年1-2月辉瑞346个通用名产品数据
+  source: GYC
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 北京市
+      1: 牡丹江市
+    CORP_NAME:
+      0: 山东齐都药业有限公司
+      1: 常州四药制药有限公司
+    HOSPITAL_CODE:
+      0: 1100052
+      1: 2310008
+    MOLE_NAME:
+      0: 尼麦角林
+      1: 普萘洛尔
+    MONTH:
+      0: 4
+      1: 3
+    PACK_DES:
+      0: 10mg
+      1: 10mg
+    PACK_NUMBER:
+      0: 30
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 尼麦角林
+      1: 普萘洛尔
+    STANDARD_UNIT:
+      0: -600
+      1: 500
+    VALUE:
+      0: -800.0
+      1: 74.75
+    YEAR:
+      0: 2017
+      1: 2017
+  file: GYC/Pfizer/GYCX_201901_14Molecule(201701-201812).xlsx
+  length: 97474
+  sheet: Data
+  source: GYC
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 合肥市
+      1: 合肥市
+    CORP_NAME:
+      0: AstraZeneca AB
+      1: AstraZeneca AB
+    HOSPITAL_CODE:
+      0: 3401001
+      1: 3401001
+    MOLE_NAME:
+      0: 奥希替尼
+      1: 奥希替尼
+    MONTH:
+      0: 10
+      1: 11
+    PACK_DES:
+      0: 80mg
+      1: 80mg
+    PACK_NUMBER:
+      0: 30
+      1: 30
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 泰瑞沙
+      1: 泰瑞沙
+    STANDARD_UNIT:
+      0: 90
+      1: 120
+    VALUE:
+      0: 45900
+      1: 61200
+    YEAR:
+      0: 2018
+      1: 2018
+  file: GYC/Pfizer/GYCX_201902_4Molecule(201705-201812).xlsx
+  length: 976
+  sheet: Data
+  source: GYC
+- company: Pfizer
+  data:
+    Date:
+      0: 201701
+      1: 201701
+    min1:
+      0: 达菲林注射剂3.75mg1Ipsen Pharma Biotech
+      1: 达必佳注射剂3.75mg1Ferring GmbH
+    剂型:
+      0: 注射剂
+      1: 注射剂
+    包装规格:
+      0: 1
+      1: 1
+    医院编码:
+      0: 3401002
+      1: 3401004
+    城市:
+      0: 合肥市
+      1: 合肥市
+    年:
+      0: 2017
+      1: 2017
+    最小制剂单位数量:
+      0: 100
+      1: 10
+    月:
+      0: 1
+      1: 1
+    生产企业:
+      0: Ipsen Pharma Biotech
+      1: Ferring GmbH
+    给药途径:
+      0: 注射
+      1: 注射
+    药品商品名:
+      0: 达菲林
+      1: 达必佳
+    规格:
+      0: 3.75mg
+      1: 3.75mg
+    通用名:
+      0: 曲普瑞林
+      1: 曲普瑞林
+    金额:
+      0: 177400
+      1: 17890
+  file: GYC/Pfizer/gyc新增分子v1.xlsx
+  length: 106593
+  sheet: Sheet 1
+  source: GYC

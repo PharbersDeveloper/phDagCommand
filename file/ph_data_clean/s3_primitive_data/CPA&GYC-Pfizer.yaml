@@ -1,0 +1,117 @@
+- company: Pfizer
+  data:
+    1、替换数据说明：:
+      0: 医院编码
+      1: '110471'
+    'Unnamed: 1':
+      0: 月份
+      1: 8、9
+    'Unnamed: 2':
+      0: 备注
+      1: 医院系统调整，重新上报数据，请删除历史数据，以本次提供数据为准
+  file: CPA&GYC/Pfizer/201612 CPA&GYCX.xlsx
+  length: 8
+  sheet: 说明
+  source: CPA&GYC
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 安阳市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450731
+      1: 450901
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 12
+      1: 12
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 2000
+      1: 20000
+    VALUE:
+      0: 427
+      1: 6250
+    YEAR:
+      0: 2016
+      1: 2016
+  file: CPA&GYC/Pfizer/201612 CPA&GYCX.xlsx
+  length: 267283
+  sheet: Data
+  source: CPA&GYC
+- company: Pfizer
+  data:
+    APP1_COD:
+      0: 口服
+      1: 口服
+    APP2_COD:
+      0: 片剂
+      1: 片剂
+    BRAND_MKT:
+      0: .nan
+      1: .nan
+    CITY:
+      0: 安阳市
+      1: 北京市
+    CORP_NAME:
+      0: 浙江震元制药有限公司
+      1: 浙江震元制药有限公司
+    HOSPITAL_CODE:
+      0: 450731
+      1: 100041
+    MOLE_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    MONTH:
+      0: 2
+      1: 2
+    PACK_DES:
+      0: 0.5 MIU
+      1: 0.5 MIU
+    PACK_NUMBER:
+      0: 100
+      1: 100
+    PRODUCT_MKT:
+      0: .nan
+      1: .nan
+    PRODUCT_NAME:
+      0: 制霉菌素
+      1: 制霉菌素
+    STANDARD_UNIT:
+      0: 3000
+      1: 20000
+    VALUE:
+      0: 641
+      1: 5680
+    YEAR:
+      0: 2017
+      1: 2017
+  file: CPA&GYC/Pfizer/CPA_GYCX_201702.xlsx
+  length: 211452
+  sheet: Data
+  source: CPA&GYC

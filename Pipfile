@@ -12,9 +12,10 @@ setuptools = "==44.0.0"
 [packages]
 click = "*"
 boto3 = "*"
+pyyaml = "*"
 pandas = "*"
 xlrd = "*"
-pyyaml = "*"
+pypinyin = "*"
 
 [requires]
 python_version = "3.8"

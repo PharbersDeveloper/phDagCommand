@@ -1,6 +1,7 @@
 import boto3
 from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil
+from pherrs.ph_err import PhError
 
 
 class PhLayer(AWSOperator):

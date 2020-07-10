@@ -1,0 +1,45 @@
+- data: '{"veeva ID": "VEEVA_CUSTOMER_ID", "剂型": "CONTENT_TYPE", "包装数量":
+    "PACKAGE_QTY", "医院名称": "LILLY_HSPTL_NAME", "品规": "PRODUCT_NAME", "商品名":
+    "KEY_BRAND", "城市": "CITY_NAME", "市场定义": "TEAM", "市场定义.1": "TCIII",
+    "年": "YEARID", "年月": "YYYYMM", "生产厂家": "MANUFACTUER_NAME", "省份":
+    "PROVINCE_NAME", "规格": "SKU", "通用名": "MCL_NAME", "销售数量": "SALES_QTY",
+    "销售金额": "SALES_VALUE", "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC&CPA/Lilly/CPA+PHT2015.xlsx", "providers": ["Lilly",
+    "GYC&CPA"], "sheetName": "2015"}'
+- data: '{"veeva ID": 1069652, "剂型": "SOLN", "包装数量": 1, "医院名称": "中国人民武装警察部队江西省总队医院",
+    "品规": "优泌乐25", "商品名": "优泌乐", "城市": "南昌市", "市场定义": "Insulin", "市场定义.1":
+    "Mealtime Analog", "年": 2015, "年月": "201501", "生产厂家": "礼来集团", "省份":
+    "江西省", "规格": "300", "通用名": "赖脯胰岛素", "销售数量": 40, "销售金额": 2964, "_Tag":
+    "yes"}'
+  metadata: '{"fileName": "GYC&CPA/Lilly/CPA+PHT2015.xlsx", "providers": ["Lilly",
+    "GYC&CPA"], "sheetName": "2015"}'
+- data: '{"veeva ID": "VEEVA_CUSTOMER_ID", "剂型": "CONTENT_TYPE", "包装数量":
+    "PACKAGE_QTY", "医院名称": "LILLY_HSPTL_NAME", "品规": "PRODUCT_NAME", "商品名":
+    "KEY_BRAND", "城市": "CITY_NAME", "市场定义": "TEAM", "市场定义.1": "TCIII",
+    "年": "YEARID", "年月": "YYYYMM", "生产厂家": "MANUFACTUER_NAME", "省份":
+    "PROVINCE_NAME", "规格": "SKU", "通用名": "MCL_NAME", "销售数量": "SALES_QTY",
+    "销售金额": "SALES_VALUE", "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC&CPA/Lilly/CPA+PHT2016.xlsx", "providers": ["Lilly",
+    "GYC&CPA"], "sheetName": "2016"}'
+- data: '{"veeva ID": 1131907, "剂型": "SOLN", "包装数量": 1, "医院名称": "黑龙江三精肾脏病专科医院",
+    "品规": "来得时", "商品名": "来得时", "城市": "哈尔滨市", "市场定义": "Insulin", "市场定义.1":
+    "Basal Analog", "年": 2016, "年月": "201601", "生产厂家": "赛诺菲-安万特集团", "省份":
+    "黑龙江省", "规格": "300", "通用名": "甘精胰岛素", "销售数量": 15, "销售金额": 3091, "_Tag":
+    "yes"}'
+  metadata: '{"fileName": "GYC&CPA/Lilly/CPA+PHT2016.xlsx", "providers": ["Lilly",
+    "GYC&CPA"], "sheetName": "2016"}'
+- data: '{"veeva ID": "VEEVA_CUSTOMER_ID", "剂型": "CONTENT_TYPE", "包装数量":
+    "PACKAGE_QTY", "医院名称": "LILLY_HSPTL_NAME", "品规": "PRODUCT_NAME", "商品名":
+    "KEY_BRAND", "城市": "CITY_NAME", "市场定义": "TEAM", "市场定义.1": "TCIII",
+    "年": "YEARID", "年月": "YYYYMM", "生产厂家": "MANUFACTUER_NAME", "省份":
+    "PROVINCE_NAME", "规格": "SKU", "通用名": "MCL_NAME", "销售数量": "SALES_QTY",
+    "销售金额": "SALES_VALUE", "_Tag": "yes"}'
+  metadata: '{"fileName": "GYC&CPA/Lilly/CPA+PHT2017.xlsx", "providers": ["Lilly",
+    "GYC&CPA"], "sheetName": "2017"}'
+- data: '{"veeva ID": 1068966, "剂型": "SOLN", "包装数量": 1, "医院名称": "深圳华侨城医院",
+    "品规": "长秀霖", "商品名": "长秀霖", "城市": "深圳市", "市场定义": "Insulin", "市场定义.1":
+    "Basal Analog", "年": 2017, "年月": "201701", "生产厂家": "北京甘李", "省份":
+    "广东省", "规格": "300", "通用名": "甘精胰岛素", "销售数量": 40, "销售金额": 6145, "_Tag":
+    "yes"}'
+  metadata: '{"fileName": "GYC&CPA/Lilly/CPA+PHT2017.xlsx", "providers": ["Lilly",
+    "GYC&CPA"], "sheetName": "2017"}'

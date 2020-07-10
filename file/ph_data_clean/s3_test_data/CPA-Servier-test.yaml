@@ -1,0 +1,31 @@
+- data: '{"ATC3编码": "C10A", "ATC4编码": "C10AA", "CORPORATION": "辉瑞制药集团",
+    "City": "阿克苏市", "Dosage": "片剂", "Hospital Code": 830051, "Hospital
+    Degree": "二甲", "Hospital Name": "新疆建设兵团农一师医院", "Molecule Name": "阿托伐他汀",
+    "Pack": "20 MG", "PackNumber": 7, "Period": 201712, "Product Name":
+    "立普妥", "Province": "新疆维吾尔族自治区", "ROAD": "口服", "最小制剂单位数量": 33411, "通用名ATC编码":
+    "C10AA05", "金额": 316593, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Servier/20180228发送-201712补充样本数据.xlsx", "providers":
+    ["Servier", "CPA"], "sheetName": "201712补充"}'
+- data: '{"ATC3编码": "C10A", "ATC4编码": "C10AA", "CORPORATION": "斯洛文尼亚莱柯药品及化学制品有限公司",
+    "City": "阿克苏市", "Dosage": "片剂", "Hospital Code": 830051, "Hospital
+    Degree": "二甲", "Hospital Name": "新疆建设兵团农一师医院", "Molecule Name": "阿托伐他汀",
+    "Pack": "10 MG", "PackNumber": 7, "Period": 201712, "Product Name":
+    "山乐汀", "Province": "新疆维吾尔族自治区", "ROAD": "口服", "最小制剂单位数量": 10752, "通用名ATC编码":
+    "C10AA05", "金额": 37417, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Servier/20180228发送-201712补充样本数据.xlsx", "providers":
+    ["Servier", "CPA"], "sheetName": "201712补充"}'
+- data: '{"ATC3编码": "C08C", "ATC4编码": "C08CA", "CORPORATION": "上海医药集团股份有限公司",
+    "City": "合肥市", "Dosage": "片剂", "Hospital Degree": "三甲", "Hospital
+    Name": "安徽省第二人民医院", "Molecule Name": "硝苯地平", "Pack": "10 MG", "PackNumber":
+    100, "Period": 201901, "Product Name": "硝苯地平", "Province": "安徽省", "ROAD":
+    "口服", "最小制剂单位数量": 7000, "通用名ATC编码": "C08CA05", "金额": 203, "_Tag":
+    "yes"}'
+  metadata: '{"fileName": "CPA/Servier/201909 施维雅补充样本.xlsx", "providers": ["Servier",
+    "CPA"], "sheetName": "201909"}'
+- data: '{"ATC3编码": "A10B", "ATC4编码": "A10BA", "CORPORATION": "江苏正大天晴药业股份有限公司",
+    "City": "合肥市", "Dosage": "片剂", "Hospital Degree": "三甲", "Hospital
+    Name": "安徽省第二人民医院", "Molecule Name": "二甲双胍", "Pack": "500 MG", "PackNumber":
+    20, "Period": 201901, "Product Name": "泰白", "Province": "安徽省", "ROAD":
+    "口服", "最小制剂单位数量": 300, "通用名ATC编码": "A10BA02", "金额": 240, "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Servier/201909 施维雅补充样本.xlsx", "providers": ["Servier",
+    "CPA"], "sheetName": "201909"}'

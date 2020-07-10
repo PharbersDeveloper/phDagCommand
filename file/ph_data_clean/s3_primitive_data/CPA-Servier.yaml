@@ -1,0 +1,117 @@
+- company: Servier
+  data:
+    ATC3编码:
+      0: C10A
+      1: C10A
+    ATC4编码:
+      0: C10AA
+      1: C10AA
+    CORPORATION:
+      0: 辉瑞制药集团
+      1: 斯洛文尼亚莱柯药品及化学制品有限公司
+    City:
+      0: 阿克苏市
+      1: 阿克苏市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Code:
+      0: 830051
+      1: 830051
+    Hospital Degree:
+      0: 二甲
+      1: 二甲
+    Hospital Name:
+      0: 新疆建设兵团农一师医院
+      1: 新疆建设兵团农一师医院
+    Molecule Name:
+      0: 阿托伐他汀
+      1: 阿托伐他汀
+    Pack:
+      0: 20 MG
+      1: 10 MG
+    PackNumber:
+      0: 7
+      1: 7
+    Period:
+      0: 201712
+      1: 201712
+    Product Name:
+      0: 立普妥
+      1: 山乐汀
+    Province:
+      0: 新疆维吾尔族自治区
+      1: 新疆维吾尔族自治区
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 33411
+      1: 10752
+    通用名ATC编码:
+      0: C10AA05
+      1: C10AA05
+    金额:
+      0: 316593
+      1: 37417
+  file: CPA/Servier/20180228发送-201712补充样本数据.xlsx
+  length: 41409
+  sheet: 201712补充
+  source: CPA
+- company: Servier
+  data:
+    ATC3编码:
+      0: C08C
+      1: A10B
+    ATC4编码:
+      0: C08CA
+      1: A10BA
+    CORPORATION:
+      0: 上海医药集团股份有限公司
+      1: 江苏正大天晴药业股份有限公司
+    City:
+      0: 合肥市
+      1: 合肥市
+    Dosage:
+      0: 片剂
+      1: 片剂
+    Hospital Degree:
+      0: 三甲
+      1: 三甲
+    Hospital Name:
+      0: 安徽省第二人民医院
+      1: 安徽省第二人民医院
+    Molecule Name:
+      0: 硝苯地平
+      1: 二甲双胍
+    Pack:
+      0: 10 MG
+      1: 500 MG
+    PackNumber:
+      0: 100
+      1: 20
+    Period:
+      0: 201901
+      1: 201901
+    Product Name:
+      0: 硝苯地平
+      1: 泰白
+    Province:
+      0: 安徽省
+      1: 安徽省
+    ROAD:
+      0: 口服
+      1: 口服
+    最小制剂单位数量:
+      0: 7000
+      1: 300
+    通用名ATC编码:
+      0: C08CA05
+      1: A10BA02
+    金额:
+      0: 203
+      1: 240
+  file: CPA/Servier/201909 施维雅补充样本.xlsx
+  length: 227915
+  sheet: '201909'
+  source: CPA

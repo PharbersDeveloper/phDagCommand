@@ -1,4 +1,4 @@
-# aws_lambda_deploy
+# phDagCommand/lmd
 用于快捷部署 AWS Lambda 的工具脚本
 
 # 一、安装方式

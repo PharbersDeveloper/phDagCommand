@@ -2,6 +2,7 @@ import boto3
 from phlmd.runtime import python_rt
 from phlmd.runtime import nodejs_rt
 from phlmd.runtime import go_rt
+from pherrs.ph_err import PhError
 
 
 class AWSUtil(object):
@@ -19,7 +20,7 @@ class AWSUtil(object):
             elif "go" in runtime:
                 return go_rt.GoRT()
         else:
-            raise Exception("Invalid runtime")
+            raise PhError("Invalid runtime")
 
     def put_s3_object(self, file, bucket_name, object_name):
         """
@@ -44,7 +45,7 @@ class AWSUtil(object):
         :return: [bucket_name, file_path]
         """
         if not isinstance(path, str):
-            raise TypeError('Expected an str')
+            raise PhError('Expected an str')
 
         if path.startswith("https://") or path.startswith("http://"):
             url = path.split("://")[1]
@@ -57,7 +58,7 @@ class AWSUtil(object):
             file_path = "/".join(url.split("/")[1:])
             return [bucket_name, file_path]
         else:
-            raise Exception("The url is wrong")
+            raise PhError("The url is wrong")
 
     def sync_local_s3_file(self, path: str, bucket_name: str, dir_name: str, version: str) -> [str, str]:
         """

@@ -1,0 +1,48 @@
+- data: '{"ADMINST": "OR", "ATC": "A10BA02", "CITY": "包头市", "CODE":
+    10011, "CORPORATIO": "百时美施贵宝集团", "FORM": "TAB", "HOSPITAL": "", "LEVEL":
+    "", "MARKET": "中央市场", "MOLECULE": "二甲双胍", "MONTH": 10, "PACK": "H",
+    "PRODUCT": "格华止", "PROVINCE": "内蒙古自治区", "QUANTITY": 6000, "QUARTER":
+    4, "SIZE": 20, "SPECIFICAT": "500 MG", "TA I": "DIA", "TA II": "OAD",
+    "VALUE": 7542, "YEAR": 2017, "药品是否在大类中": "是", "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Bayer/OAD cpa PDT.xlsx", "providers": ["Bayer",
+    "CPA"], "sheetName": "OAD_cpa_PDT"}'
+- data: '{"ADMINST": "OR", "ATC": "A10BF01", "CITY": "包头市", "CODE":
+    10011, "CORPORATIO": "拜耳-先灵集团", "FORM": "TAB", "HOSPITAL": "", "LEVEL":
+    "", "MARKET": "中央市场", "MOLECULE": "阿卡波糖", "MONTH": 10, "PACK": "H",
+    "PRODUCT": "拜唐苹", "PROVINCE": "内蒙古自治区", "QUANTITY": 8100, "QUARTER":
+    4, "SIZE": 30, "SPECIFICAT": "50 MG", "TA I": "DIA", "TA II": "OAD",
+    "VALUE": 16902, "YEAR": 2017, "药品是否在大类中": "是", "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Bayer/OAD cpa PDT.xlsx", "providers": ["Bayer",
+    "CPA"], "sheetName": "OAD_cpa_PDT"}'
+- data: '{"ADMINST": "", "ATC": "", "CITY": "太原市", "CODE": 30021, "CORPORATIO":
+    "", "FORM": "", "HOSPITAL": "", "LEVEL": "", "MARKET": "中央市场", "MOLECULE":
+    "Total", "MONTH": 10, "PACK": "", "PRODUCT": "", "PROVINCE": "山西省",
+    "QUANTITY": 183050, "QUARTER": 4, "SIZE": "", "SPECIFICAT": "", "TA
+    I": "DIA", "TA II": "OAD", "VALUE": 272386, "YEAR": 2017, "_Tag":
+    "yes"}'
+  metadata: '{"fileName": "CPA/Bayer/oad 12 cpa mkt.xlsx", "providers": ["Bayer",
+    "CPA"], "sheetName": "oad_12_cpa_mkt"}'
+- data: '{"ADMINST": "", "ATC": "", "CITY": "忻州市", "CODE": 30031, "CORPORATIO":
+    "", "FORM": "", "HOSPITAL": "", "LEVEL": "", "MARKET": "中央市场", "MOLECULE":
+    "Total", "MONTH": 10, "PACK": "", "PRODUCT": "", "PROVINCE": "山西省",
+    "QUANTITY": 31780, "QUARTER": 4, "SIZE": "", "SPECIFICAT": "", "TA
+    I": "DIA", "TA II": "OAD", "VALUE": 30053, "YEAR": 2017, "_Tag":
+    "yes"}'
+  metadata: '{"fileName": "CPA/Bayer/oad 12 cpa mkt.xlsx", "providers": ["Bayer",
+    "CPA"], "sheetName": "oad_12_cpa_mkt"}'
+- data: '{"ADMINST": "OR", "ATC": "A10BA02", "CITY": "包头市", "CODE":
+    10011, "CORPORATIO": "百时美施贵宝集团", "FORM": "TAB", "HOSPITAL": "", "LEVEL":
+    "", "MARKET": "中央市场", "MOLECULE": "二甲双胍", "MONTH": 10, "PACK": "H",
+    "PRODUCT": "格华止", "PROVINCE": "内蒙古自治区", "QUANTITY": 6000, "QUARTER":
+    4, "SIZE": 20, "SPECIFICAT": "500 MG", "TA I": "DIA", "TA II": "OAD",
+    "VALUE": 7542, "YEAR": 2017, "药品是否在大类中": "是", "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Bayer/oad 12 cpa pdt.xlsx", "providers": ["Bayer",
+    "CPA"], "sheetName": "oad_12_cpa_pdt"}'
+- data: '{"ADMINST": "OR", "ATC": "A10BF01", "CITY": "包头市", "CODE":
+    10011, "CORPORATIO": "拜耳-先灵集团", "FORM": "TAB", "HOSPITAL": "", "LEVEL":
+    "", "MARKET": "中央市场", "MOLECULE": "阿卡波糖", "MONTH": 10, "PACK": "H",
+    "PRODUCT": "拜唐苹", "PROVINCE": "内蒙古自治区", "QUANTITY": 8100, "QUARTER":
+    4, "SIZE": 30, "SPECIFICAT": "50 MG", "TA I": "DIA", "TA II": "OAD",
+    "VALUE": 16902, "YEAR": 2017, "药品是否在大类中": "是", "_Tag": "yes"}'
+  metadata: '{"fileName": "CPA/Bayer/oad 12 cpa pdt.xlsx", "providers": ["Bayer",
+    "CPA"], "sheetName": "oad_12_cpa_pdt"}'
