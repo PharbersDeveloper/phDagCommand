@@ -76,9 +76,10 @@ class PhGateway(AWSOperator):
                     # authorizerId='string',
                     # apiKeyRequired=True|False,
                     # operationName='string',
-                    # requestParameters={
-                    #     'string': True|False
-                    # },
+                    requestParameters={
+                        'method.request.header.Accept': True,
+                        'method.request.header.Content-Type': True,
+                    },
                     # requestModels={
                     #     'string': 'string'
                     # },

@@ -1,4 +1,7 @@
 import boto3
+from phlmd.runtime import python_rt
+from phlmd.runtime import nodejs_rt
+from phlmd.runtime import go_rt
 from pherrs.ph_err import PhError
 
 
@@ -6,6 +9,18 @@ class AWSUtil(object):
     """
     AWS 的常用操作
     """
+
+    def get_rt_inst(self, runtime):
+        runtimes = [rt.lower() for rt in runtime.split(",")]
+        for runtime in runtimes:
+            if "python" in runtime:
+                return python_rt.PythonRT()
+            elif "nodejs" in runtime:
+                return nodejs_rt.NodejsRT()
+            elif "go" in runtime:
+                return go_rt.GoRT()
+        else:
+            raise PhError("Invalid runtime")
 
     def put_s3_object(self, file, bucket_name, object_name):
         """

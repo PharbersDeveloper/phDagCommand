@@ -27,7 +27,14 @@
     lambda_layers: #name#
     lambda_desc: #desc#
     lambda_timeout: 30
-    lambda_memory_size: 192
+    lambda_memory_size: 128
+    vpc_config:
+      SubnetIds:
+      - 'subnet-0260eab5acd58bc53'
+      - 'subnet-0e3daa88acef9b136'
+      SecurityGroupIds:
+      - 'sg-058404c2ad02dcbb9'
+      - 'sg-09f5205a1194149ab'
   gateway:
     rest_api_id: 2t69b7x032
     api_template: s3://ph-api-lambda/template/gateway/jsonapi-openapi-template.yaml

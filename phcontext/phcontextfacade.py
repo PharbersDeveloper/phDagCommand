@@ -288,8 +288,8 @@ class PhContextFacade(object):
                    "--conf", "spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
                    "--conf", "spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
                    "--conf", "spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem",
-                   # "--conf", "spark.hadoop.fs.s3a.access.key=" + access_key,
-                   # "--conf", "spark.hadoop.fs.s3a.secret.key=" + secret_key,
+                   "--conf", "spark.hadoop.fs.s3a.access.key=" + access_key,
+                   "--conf", "spark.hadoop.fs.s3a.secret.key=" + secret_key,
                    "--conf", "spark.hadoop.fs.s3a.endpoint=s3.cn-northwest-1.amazonaws.com.cn",
                    "--num-executors", "2",
                    "--jars",
@@ -318,9 +318,15 @@ class PhContextFacade(object):
         phlogger.info(config.spec.containers.args)
 
         f = open(path + "/args.properties", "a")
-        tmp = config.spec.containers.args
         for arg in config.spec.containers.args:
             if arg.value != "":
                 f.write("--" + arg.key + "\n")
-                f.write(str(arg.value) + "\n")
+                if sys.version_info > (3, 0):
+                    f.write(str(arg.value) + "\n")
+                else:
+                    if type(arg.value) is unicode:
+                        f.write(arg.value.encode("utf-8") + "\n")
+                    else:
+                        f.write(str(arg.value) + "\n")
+                # f.write(str(arg.value) + "\n")
         f.close()

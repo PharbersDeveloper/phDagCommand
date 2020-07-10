@@ -1,7 +1,4 @@
 import boto3
-from phlmd.runtime import python_rt
-from phlmd.runtime import nodejs_rt
-from phlmd.runtime import go_rt
 from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil
 from phlmd.model.ph_role import PhRole
@@ -25,16 +22,7 @@ class PhLambda(AWSOperator):
             :arg code_path: lambda 代码位置
             :arg package_name 打包的名称
         """
-
-        if "python" in data["runtime"]:
-            runtime_inst = python_rt.PythonRT()
-        elif "nodejs" in data["runtime"]:
-            runtime_inst = nodejs_rt.NodejsRT()
-        elif "go" in data["runtime"]:
-            runtime_inst = go_rt.GoRT()
-        else:
-            raise PhError("Invalid runtime")
-
+        runtime_inst = self.aws_util.get_rt_inst(data['runtime'])
         return runtime_inst.pkg_code(data)
 
     def create(self, data):
@@ -55,6 +43,7 @@ class PhLambda(AWSOperator):
             :arg lambda_memory_size: [int] lambda 的使用内存，默认128
             :arg lambda_env: [dict] lambda 的环境变量
             :arg lambda_tag: [dict] lambda 的标签
+            :arg vpc_config: [dict] lambda VPC 配置
         """
         bucket_name, object_name = self.aws_util.sync_local_s3_file(
             data["lambda_path"],
@@ -69,6 +58,8 @@ class PhLambda(AWSOperator):
         for layer_name in data["lambda_layers"].split(","):
             layers_arn.append(PhLayer().get({"name": layer_name})["LayerVersions"][0]["LayerVersionArn"])
 
+        vpc_config = data['vpc_config'] if 'vpc_config' in data.keys() else {}
+
         lambda_response = self.lambda_client.create_function(
             FunctionName=data["name"],
             Runtime=data["runtime"].split(",")[0],
@@ -82,14 +73,7 @@ class PhLambda(AWSOperator):
             Timeout=data.get("lambda_timeout", 30),
             MemorySize=data.get("lambda_memory_size", 128),
             # Publish=True|False,
-            # VpcConfig={
-            #     'SubnetIds': [
-            #         'string',
-            #     ],
-            #     'SecurityGroupIds': [
-            #         'string',
-            #     ]
-            # },
+            VpcConfig=vpc_config,
             # DeadLetterConfig={
             #     'TargetArn': 'string'
             # },
@@ -185,6 +169,7 @@ class PhLambda(AWSOperator):
             :arg lambda_timeout: [int] lambda 的超时时间，默认30s（官方是3s）
             :arg lambda_memory_size: [int] lambda 的使用内存，默认128
             :arg lambda_env: [dict] lambda 的环境变量
+            :arg vpc_config: [dict] lambda VPC 配置
         """
 
         # 更新代码
@@ -226,6 +211,8 @@ class PhLambda(AWSOperator):
                 for layer_name in response["Configuration"]["Layers"]:
                     layers_arn.append(layer_name["Arn"])
 
+            vpc_config = data['vpc_config'] if 'vpc_config' in data.keys() else {}
+
             lambda_response = self.lambda_client.update_function_configuration(
                 FunctionName=data["name"],
                 Role=role_arn,
@@ -233,14 +220,7 @@ class PhLambda(AWSOperator):
                 Description=data.get("lambda_desc", response["Configuration"]["Description"]),
                 Timeout=data.get("lambda_timeout", response["Configuration"]["Timeout"]),
                 MemorySize=data.get("lambda_memory_size", response["Configuration"]["MemorySize"]),
-                # VpcConfig={
-                #     'SubnetIds': [
-                #         'string',
-                #     ],
-                #     'SecurityGroupIds': [
-                #         'string',
-                #     ]
-                # },
+                VpcConfig=vpc_config,
                 Environment={
                     'Variables': data.get("lambda_env", response["Configuration"].get("Environment", {}).get("Variables", {})),
                 },

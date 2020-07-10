@@ -26,7 +26,7 @@ __DEFAULT_MAX_INST = 100
 @deploy.command("init")
 @click.option('-n', '--name', prompt='项目名称', help='项目名称')
 @click.option('-R', '--runtime', prompt='项目使用的运行时', help='项目使用的运行时',
-              type=click.Choice(['Python3.6', 'Python3.8', 'Node.js 10.x', 'Go 1.x']))
+              type=click.Choice(['python3.6', 'python3.8', 'nodejs10.x', 'go1.x']))
 @click.option('-D', '--desc', prompt='项目描述', help='项目描述')
 @click.option('-L', '--lib_path', prompt='layer 依赖目录'
                                          '(Python 如".venv/lib/python3.8/site-packages", Nodejs 如"node_modules")',
@@ -86,7 +86,7 @@ def __write_conf(all_conf):
 
 def __apply(deploy_conf):
     if "role" in deploy_conf.keys():
-        role = ph_role.Ph_Role()
+        role = ph_role.PhRole()
         try:
             role.apply(dict(**{"name": deploy_conf["metadata"]["name"] + "-lambda-role"}, **deploy_conf["role"]))
             click.secho(f"Role 更新完成", fg='green', blink=True, bold=True)
