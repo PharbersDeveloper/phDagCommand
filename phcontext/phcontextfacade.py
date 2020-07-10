@@ -4,6 +4,7 @@
 This module document the usage of class pharbers command context,
 """
 import os
+import sys
 from phexceptions.phexceptions import exception_file_already_exist, PhException, exception_file_not_exist, \
     exception_function_not_implement
 from phconfig.phconfig import PhYAMLConfig
@@ -11,7 +12,6 @@ import subprocess
 from phs3.phs3 import s3
 from phlogs.phlogs import phlogger
 import ast
-import string
 
 
 class PhContextFacade(object):
@@ -198,7 +198,14 @@ class PhContextFacade(object):
                 entry_point = self.path + "/" + entry_point
                 cb = ["python", entry_point]
                 for arg in config.spec.containers.args:
-                    cb.append("--" + arg.key + "=" + str(arg.value))
+                    if sys.version_info > (3, 0):
+                        cb.append("--" + arg.key + "=" + str(arg.value))
+                    else:
+                        cb.append("--" + arg.key)
+                        if type(arg.value) is unicode:
+                            cb.append(arg.value.encode("utf-8"))
+                        else:
+                            cb.append(str(arg.value))
                 subprocess.call(cb)
         else:
             raise exception_function_not_implement
@@ -259,7 +266,7 @@ class PhContextFacade(object):
         phlogger.info("submit command with Job name " + self.path)
         phlogger.info("submit command with context " + self.context)
         udags = {}
-        if self.context is not "":
+        if self.context != "":
             udags = ast.literal_eval(self.context.replace(" ", ""))
         phlogger.info(udags)
         submit_prefix = "s3a://s3fs-ph-storage/airflow/dags/phjobs/" + self.path + "/"
@@ -281,8 +288,8 @@ class PhContextFacade(object):
                    "--conf", "spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
                    "--conf", "spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
                    "--conf", "spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem",
-                   # "--conf", "spark.hadoop.fs.s3a.access.key=" + access_key,
-                   # "--conf", "spark.hadoop.fs.s3a.secret.key=" + secret_key,
+                   "--conf", "spark.hadoop.fs.s3a.access.key=" + access_key,
+                   "--conf", "spark.hadoop.fs.s3a.secret.key=" + secret_key,
                    "--conf", "spark.hadoop.fs.s3a.endpoint=s3.cn-northwest-1.amazonaws.com.cn",
                    "--num-executors", "2",
                    "--jars",
@@ -311,9 +318,15 @@ class PhContextFacade(object):
         phlogger.info(config.spec.containers.args)
 
         f = open(path + "/args.properties", "a")
-        tmp = config.spec.containers.args
         for arg in config.spec.containers.args:
-            if arg.value is not "":
+            if arg.value != "":
                 f.write("--" + arg.key + "\n")
-                f.write(str(arg.value) + "\n")
+                if sys.version_info > (3, 0):
+                    f.write(str(arg.value) + "\n")
+                else:
+                    if type(arg.value) is unicode:
+                        f.write(arg.value.encode("utf-8") + "\n")
+                    else:
+                        f.write(str(arg.value) + "\n")
+                # f.write(str(arg.value) + "\n")
         f.close()
