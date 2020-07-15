@@ -231,7 +231,7 @@
 - data: '{"ATC3编码": "C01D", "ATC4编码": "C01DA", "CORPORATION": "阿斯利康制药有限公司",
     "City": "北京市", "Dosage": "缓释片", "Hospital Code": 1100001, "Hospital
     Degree": "二级", "Hospital Name": "北京协和医院", "Molecule Name": "单硝酸异山梨酯",
-    "Pack": "60mg", "PackNumber": 7, "Period": 201701, "Product Name": "依姆多",
+    "Pack": "60mg", "PackNumber": 7, "Period": 201701.123, "Product Name": "依姆多",
     "Province": "北京市", "ROAD": "口服", "最小制剂单位数量": 38640, "通用名ATC编码": "C01DA14",
     "金额": 116692.8, "_Tag": "yes"}'
   metadata: '{"fileName": "GYC/Servier/SWY2017M1-12.xlsx", "providers": ["Servier",

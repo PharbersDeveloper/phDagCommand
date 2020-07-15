@@ -45,7 +45,7 @@ def mapping():
         {
             "col_name": "YEAR",
             "col_desc": "年份",
-            "candidate": ['YYYYMM', '年月'],
+            "candidate": ['YEARID', '年'],
             "type": "String",
             "not_null": True,
         },
@@ -59,7 +59,7 @@ def mapping():
         {
             "col_name": "MONTH",
             "col_desc": "月份",
-            "candidate": [],
+            "candidate": ['YYYYMM', '年月'],
             "type": "String",
             "not_null": True,
         },
@@ -73,7 +73,7 @@ def mapping():
         {
             "col_name": "HOSP_CODE",
             "col_desc": "医院编码",
-            "candidate": ['veeva ID', 'VEEVA_CUSTOMER_ID'],
+            "candidate": ['veeva ID', 'VEEVA_CUSTOMER_ID', 'veeva_ID'],
             "type": "String",
             "not_null": True,
         },

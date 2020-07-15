@@ -20,6 +20,8 @@ class CleanerFactory(object):
         :param company: 清洗的公司名称
 
         :return: [DataClean] 特定清洗算法
+
+
         """
 
         finded = [clean for clean in self.all_clean.items()

@@ -73,14 +73,14 @@ def mapping():
         {
             "col_name": "HOSP_CODE",
             "col_desc": "医院编码",
-            "candidate": ["Hospital Code", "医院编码"],
+            "candidate": ["Hospital Code", "Hospital_Code", "医院编码"],
             "type": "String",
             "not_null": True,
         },
         {
             "col_name": "HOSP_LEVEL",
             "col_desc": "医院等级",
-            "candidate": ["Hospital Degree"],
+            "candidate": ["Hospital Degree", "Hospital_Degree"],
             "type": "String",
             "not_null": False,
         },
@@ -94,14 +94,14 @@ def mapping():
         {
             "col_name": "MOLE_NAME",
             "col_desc": "分子名",
-            "candidate": ["Molecule Name", "通用名"],
+            "candidate": ["Molecule Name", "Molecule_Name", "通用名"],
             "type": "String",
             "not_null": True,
         },
         {
             "col_name": "PRODUCT_NAME",
             "col_desc": "商品名",
-            "candidate": ["Product Name"],
+            "candidate": ["Product Name", "Product_Name"],
             "type": "String",
             "not_null": True,
         },

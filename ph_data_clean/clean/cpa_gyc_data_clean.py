@@ -16,13 +16,15 @@ class CpaGycDataClean(DataClean):
 
     def cleaning_process(self, mapping: list, raw_data: dict) -> CleanResult:
         # standardise colunm name
+        global tag_value
         new_key_name = {}
         for raw_data_key in raw_data.keys():
             old_key = raw_data_key.split("#")[-1].replace('\n', '').strip()  # remove unwanted symbols
             for m in mapping:
                 if old_key.lower() in [key.lower() for key in m["candidate"]]:
                     new_key = m["col_name"]
-                    new_key_name[new_key] = raw_data[raw_data_key]  # write new key name into dict
+                    if new_key not in new_key_name:
+                        new_key_name[new_key] = raw_data[raw_data_key]  # write new key name into dict
 
         # create ordered new dict
         final_data = {}
@@ -35,7 +37,7 @@ class CpaGycDataClean(DataClean):
 
         # 当字典不为空时 change year and month
         try:
-            final_data_year = int(final_data['YEAR'])
+            final_data_year = int(float(final_data['YEAR']))
         except:
             # isinstance(final_data['YEAR'], str) and final_data == {}
             final_data_year = None
