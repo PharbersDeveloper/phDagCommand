@@ -1,5 +1,6 @@
 from ph_data_clean.clean.data_clean import DataClean
 from ph_data_clean.clean.cpa_gyc_data_clean import CpaGycDataClean
+from ph_data_clean.clean.chc_data_clean import ChcDataClean
 from pherrs.ph_err import PhError
 
 
@@ -10,6 +11,7 @@ class CleanerFactory(object):
 
     all_clean = {
         ('CPA', 'GYC', 'CPA&GYC', 'GYC&CPA'): CpaGycDataClean,
+        ('CHC',): ChcDataClean,
     }
 
     def get_specific_cleaner(self, source, company='') -> DataClean:

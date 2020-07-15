@@ -9,9 +9,9 @@ class SalesQtyTag(Enum):
     FULL = 'FULL'
 
 
-class CpaGycDataClean(DataClean):
+class ChcDataClean(DataClean):
     """
-    CPA & GYC 等元数据的清洗规则
+    CHC 元数据的清洗规则
     """
 
     def reformat_null(self, data_type):
@@ -21,12 +21,6 @@ class CpaGycDataClean(DataClean):
             return 0.0
         elif data_type == "Integer":
             return 0
-
-    def reformat_int(self, input_data):
-        try:
-            return int(float(input_data))
-        except ValueError:
-            return input_data
 
     def cleaning_process(self, mapping: list, raw_data: dict) -> CleanResult:
         # standardise colunm name
@@ -86,8 +80,7 @@ class CpaGycDataClean(DataClean):
                     final_data[maps['col_name']] = self.reformat_null(data_type=maps['type'])
                     continue
 
-                elif (maps['not_null']) and (final_data[maps['col_name']] == '') and (
-                        maps['col_name'] != 'PRODUCT_NAME'):
+                elif (maps['not_null']) and (final_data[maps['col_name']] == ''):
                     error_msg_flag = True
                     tag_value = Tag.MISSING_COL
                     error_msg += ' / rd_err: ' + maps['col_name']
@@ -99,11 +92,6 @@ class CpaGycDataClean(DataClean):
             if not error_msg_flag:
                 tag_value = Tag.SUCCESS
                 error_msg = 'Success'
-
-        # 年月改为int格式
-        for m in mapping:
-            if (m['type'] == "Integer") and (final_data[m['col_name']] not in [None, ""]):
-                final_data[m['col_name']] = self.reformat_int(input_data=final_data[m['col_name']])
 
         return CleanResult(data=final_data,
                            metadata={},
