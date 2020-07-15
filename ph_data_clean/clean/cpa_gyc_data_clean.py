@@ -82,4 +82,8 @@ class CpaGycDataClean(DataClean):
                 tag_value = Tag.SUCCESS
                 error_msg = 'Success'
 
-        return CleanResult(final_data, {}, tag_value, error_msg)
+        return CleanResult(data=final_data,
+                           metadata={},
+                           raw_data=raw_data,
+                           tag=tag_value,
+                           err_msg=error_msg)

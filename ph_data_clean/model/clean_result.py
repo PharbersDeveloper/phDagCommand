@@ -14,9 +14,10 @@ class CleanResult(object):
     清洗结果
     """
 
-    def __init__(self, data: dict, metadata: dict, tag: Tag, err_msg: str = ''):
+    def __init__(self, data: dict, metadata: dict, raw_data: dict, tag: Tag, err_msg: str = ''):
         self.data = data
         self.metadata = metadata
+        self.raw_data = raw_data
         self.tag = tag
         self.err_msg = err_msg
 
@@ -24,6 +25,7 @@ class CleanResult(object):
         result = {
             "data": self.data,
             "metadata": self.metadata,
+            "raw_data": self.raw_data,
             "tag": self.tag.value,
             "errMsg": self.err_msg
         }

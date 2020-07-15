@@ -49,7 +49,8 @@ def main(raw_data):
         result = clean(json.loads(raw_data))
         enable_print()
     except PhError as err:
-        result = CleanResult(data={}, metadata={}, tag=Tag.PH_ERR, err_msg=str(err))
+        rd = json.loads(raw_data)
+        result = CleanResult(data={}, metadata={}, raw_data=json.loads(rd['data']), tag=Tag.PH_ERR, err_msg=str(err))
 
     sys.stdout.write(str(result))
     sys.stdout.flush()
