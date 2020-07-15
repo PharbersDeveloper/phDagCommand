@@ -25,7 +25,7 @@ def test_all():
         if result.tag != Tag.SUCCESS:
             print(str(result))
         else:
-            print('success')
+            print('success      ', result)
 
 
 test_all()
