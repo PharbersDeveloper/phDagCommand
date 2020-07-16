@@ -272,6 +272,26 @@ paths:
                 $ref: "#/components/schemas/Empty"
       security:
         - sigv4: []
+    post:
+      parameters:
+        - name: "type"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "Accept"
+          in: "header"
+          schema:
+            type: "string"
+      responses:
+        200:
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+      security:
+        - sigv4: []
   /{project_name}/{type}/{id}:
     get:
       parameters:
