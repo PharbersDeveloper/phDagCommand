@@ -57,12 +57,22 @@ def get_test_data(s3_valid_data):
     test_data_lst = []
     for data in s3_valid_data:
         for i in (0, 1):
-            test_data = [{},
-                         {'fileName': data['file'],
-                          'providers': [data['company'], data['source']],
-                          'sheetName': data['sheet']}]
+            test_data = {'data': {},
+                         'metadata': {'fileName': data['file'],
+                                      'providers': [data['company'], data['source']],
+                                      'sheetName': data['sheet']}}
             for key in data['data'].keys():
-                test_data[0][key] = data['data'][key][i]
+                test_data['data'][key] = data['data'][key][i]
+
+            # 加上tag
+            test_data['data']['_Tag'] = 'yes'
+
+            test_data_str = str(test_data['data'])
+            test_data['data'] = test_data_str
+
+            meta_data_str = str(test_data['metadata'])
+            test_data['metadata'] = meta_data_str
+
             test_data_lst.append(test_data)
     return test_data_lst
 
@@ -80,14 +90,16 @@ def append_test_data(test_data_lst):
 
 
 if __name__ == '__main__':
-    for sub in os.listdir(LOCAL_CACHE_DIR):
-        file = LOCAL_CACHE_DIR + sub
-        print('筛选：')
-        print(file)
-        test_file = TEST_CACHE_DIR + sub.split('.')[0] + '-test.yaml'
-        print('存入：')
-        print(test_file)
-        file_lst = load_by_file(file)
-        s3_valid_data, null_data_name = get_s3_valid_data(file_lst)
-        test_data_lst = get_test_data(s3_valid_data)
-        append_test_data(test_data_lst)
+    #     for sub in os.listdir(LOCAL_CACHE_DIR):
+    sub = 'CHC-Servier.yaml'
+    file = LOCAL_CACHE_DIR + sub
+    print('筛选：')
+    print(file)
+    test_file = TEST_CACHE_DIR + sub.split('.')[0] + '-test.yaml'
+    print('存入：')
+    print(test_file)
+    file_lst = load_by_file(file)
+    s3_valid_data, null_data_name = get_s3_valid_data(file_lst)
+    test_data_lst = get_test_data(s3_valid_data)
+    append_test_data(test_data_lst)
+    print('finish')
