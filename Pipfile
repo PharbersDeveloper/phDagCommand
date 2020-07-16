@@ -8,6 +8,7 @@ pytest = "*"
 pipenv = "*"
 pyinstaller = "*"
 setuptools = "==44.0.0"
+gitpython = "*"
 
 [packages]
 click = "*"
