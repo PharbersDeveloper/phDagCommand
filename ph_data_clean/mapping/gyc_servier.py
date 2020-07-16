@@ -59,7 +59,7 @@ def mapping():
         {
             "col_name": "MONTH",
             "col_desc": "月份",
-            "candidate": ["月"],
+            "candidate": ["月", "年月"],
             "type": "Integer",
             "not_null": True,
         },
@@ -157,7 +157,7 @@ def mapping():
         {
             "col_name": "DELIVERY_WAY",
             "col_desc": "给药途径",
-            "candidate": ["ROAD"],
+            "candidate": ["ROAD", "给药途径"],
             "type": "String",
             "not_null": False,
         },

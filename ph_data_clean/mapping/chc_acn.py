@@ -73,7 +73,7 @@ def mapping():
         {
             "col_name": "HOSP_CODE",
             "col_desc": "医院编码",
-            "candidate": [],
+            "candidate": ["医院编码"],
             "type": "String",
             "not_null": True,
         },
@@ -137,7 +137,7 @@ def mapping():
             "col_name": "PACK_QTY",
             "col_desc": "包装数量/价格转换比",
             "candidate": ["价格转换比"],
-            "type": "String",
+            "type": "Integer",
             "not_null": True,
         },
         {
@@ -145,7 +145,7 @@ def mapping():
             "col_desc": "包装单位",
             "candidate": ["包装"],
             "type": "String",
-            "not_null": True,
+            "not_null": False,
         },
         {
             "col_name": "SALES_QTY_GRAIN",

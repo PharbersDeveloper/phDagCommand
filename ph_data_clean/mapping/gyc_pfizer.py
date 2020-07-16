@@ -61,7 +61,7 @@ def mapping():
         {
             "col_name": "MONTH",
             "col_desc": "月份",
-            "candidate": ["月", "MONTH"],
+            "candidate": ["月", "MONTH", "月份"],
             "type": "Integer",
             "not_null": True,
         },
@@ -103,14 +103,14 @@ def mapping():
         {
             "col_name": "PRODUCT_NAME",
             "col_desc": "商品名",
-            "candidate": ["药品商品名", "PRODUCT_NAME", "Prod_Name"],
+            "candidate": ["药品商品名", "PRODUCT_NAME", "Prod_Name", "商品名"],
             "type": "String",
             "not_null": True,
         },
         {
             "col_name": "SPEC",
             "col_desc": "规格",
-            "candidate": ["规格", "PACK_DES"],
+            "candidate": ["规格", "PACK_DES", "统一规格"],
             "type": "String",
             "not_null": True,
         },

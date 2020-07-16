@@ -18,14 +18,14 @@ chdir()
 
 
 def test_all():
-    test_file = r'file/ph_data_clean/s3_test_data/GYC-倍特-test.yaml'
+    test_file = r'file/ph_data_clean/s3_test_data/CHC-Pfizer-test.yaml'
     test_datas = load_by_file(test_file)
     for test_data in test_datas:
         result = clean(test_data)
         if result.tag != Tag.SUCCESS:
             print(str(result))
         else:
-            print('success      ', result)
+            print('success')
 
 
 test_all()
