@@ -46,7 +46,7 @@ def mapping():
             "col_name": "YEAR",
             "col_desc": "年份",
             "candidate": ['年'],
-            "type": "String",
+            "type": "Integer",
             "not_null": True,
         },
         {
@@ -59,8 +59,8 @@ def mapping():
         {
             "col_name": "MONTH",
             "col_desc": "月份",
-            "candidate": ['月'],
-            "type": "String",
+            "candidate": ['月', "月份"],
+            "type": "Integer",
             "not_null": True,
         },
         {
@@ -108,7 +108,7 @@ def mapping():
         {
             "col_name": "SPEC",
             "col_desc": "规格",
-            "candidate": ['规格'],
+            "candidate": ['规格', "统一规格"],
             "type": "String",
             "not_null": True,
         },
@@ -150,7 +150,7 @@ def mapping():
         {
             "col_name": "SALES_VALUE",
             "col_desc": "销售额",
-            "candidate": ['金额（元）', '金额'],
+            "candidate": ['金额（元）', '金额', "金额(元)", "金额_元_"],
             "type": "Double",
             "not_null": True,
         },

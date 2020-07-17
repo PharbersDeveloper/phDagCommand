@@ -46,13 +46,13 @@ def mapping():
             "col_name": "YEAR",
             "col_desc": "年份",
             "candidate": ['年'],
-            "type": "String",
+            "type": "Integer",
             "not_null": True,
         },
         {
             "col_name": "QUARTER",
             "col_desc": "季度",
-            "candidate": ['季度'],
+            "candidate": ['季度', '季_度'],
             "type": "String",
             "not_null": False,
         },
@@ -60,7 +60,7 @@ def mapping():
             "col_name": "MONTH",
             "col_desc": "月份",
             "candidate": ['月', '月份'],
-            "type": "String",
+            "type": "Integer",
             "not_null": True,
         },
         {
@@ -73,7 +73,7 @@ def mapping():
         {
             "col_name": "HOSP_CODE",
             "col_desc": "医院编码",
-            "candidate": ['医院编码', '医院代码'],
+            "candidate": ['医院编码', '医院代码', '医院_编码', '医院_代码'],
             "type": "String",
             "not_null": True,
         },
@@ -122,7 +122,7 @@ def mapping():
         {
             "col_name": "PACK_QTY",
             "col_desc": "包装数量",
-            "candidate": ['包装数量', '最小制剂单位数量'],
+            "candidate": ['包装数量', '包装规格', '包装_数量', '包装_规格'],
             "type": "String",
             "not_null": True,
         },
@@ -157,7 +157,7 @@ def mapping():
         {
             "col_name": "DELIVERY_WAY",
             "col_desc": "给药途径",
-            "candidate": ['给药途径'],
+            "candidate": ['给药途径', '给药_途径'],
             "type": "String",
             "not_null": False,
         },

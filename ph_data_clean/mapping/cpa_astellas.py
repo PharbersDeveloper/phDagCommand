@@ -46,7 +46,7 @@ def mapping():
             "col_name": "YEAR",
             "col_desc": "年份",
             "candidate": ["年月"],
-            "type": "String",
+            "type": "Integer",
             "not_null": True,
         },
         {
@@ -60,7 +60,7 @@ def mapping():
             "col_name": "MONTH",
             "col_desc": "月份",
             "candidate": [],
-            "type": "String",
+            "type": "Integer",
             "not_null": True,
         },
         {
@@ -73,7 +73,7 @@ def mapping():
         {
             "col_name": "HOSP_CODE",
             "col_desc": "医院编码",
-            "candidate": ["医院编码"],
+            "candidate": ["医院编码", "医院_编码"],
             "type": "String",
             "not_null": True,
         },
@@ -122,14 +122,14 @@ def mapping():
         {
             "col_name": "PACK_QTY",
             "col_desc": "包装数量",
-            "candidate": ["包装数量"],
+            "candidate": ["包装数量", "包装_数量"],
             "type": "String",
             "not_null": True,
         },
         {
             "col_name": "SALES_QTY_GRAIN",
             "col_desc": "粒度销量",
-            "candidate": ["数量(支/片)", "数量（支/片）", "数量_支/片_"],
+            "candidate": ["数量(支/片)", "数量（支/片）", "数量__支/片_", "数量_支/片_", "数量_（支/片）"],
             "type": "String",
             "not_null": True,
         },
@@ -150,7 +150,7 @@ def mapping():
         {
             "col_name": "SALES_VALUE",
             "col_desc": "销售额",
-            "candidate": ["金额(元)", "金额（元）", "金额_元_"],
+            "candidate": ["金额(元)", "金额（元）", "金额_元_", "金额_（元）","金额__元_"],
             "type": "String",
             "not_null": True,
         },

@@ -7,7 +7,7 @@ from ph_data_clean.util.yaml_utils import append_to_file, load_by_dir
 
 BUCKER_NAME = 'ph-origin-files'
 LOCAL_CACHE_DIR = r'../../file/ph_data_clean/s3_primitive_data/'
-filter_dir = ['OTHERS', 'CHC']
+filter_dir = ['OTHERS']
 
 KEEP_ROW_COUNT = 2
 
@@ -117,6 +117,7 @@ def get_s3_increment(cache_data_lst, s3_all_file_lst):
             continue
 
         increment_file_lst.append(s3_file)
+    return increment_file_lst
 
 
 def parse_s3_execl(obj):
@@ -158,24 +159,22 @@ if __name__ == '__main__':
     print()
 
     filter_file_lst, s3_all_file_lst, err_file_lst = get_all_file_path()
-    # if filter_file_lst_len := len(filter_file_lst):
-    #     print(f"存在过滤掉的文件 {filter_file_lst_len} 个，信息如下：")
-    #     # print(filter_file_lst)
-    #     print()
+    if len(filter_file_lst):
+        print(f"存在过滤掉的文件 {len(filter_file_lst)} 个，信息如下：")
+        print()
     #
-    # if err_file_lst_len := len(err_file_lst):
-    #     print(f"存在无法解析路径或后缀的文件 {err_file_lst_len} 个，信息如下：")
-    #     # print(err_file_lst)
-    #     print()
-    #
-    # increment_lst = get_s3_increment(cache_data_lst, s3_all_file_lst)
-    # if increment_lst_len := len(increment_lst):
-    #     print(f"存在增量文件 {increment_lst_len} 个，信息如下：")
-    #     # print(increment_lst)
-    #     print()
-    # else:
-    #     print(f"不存在新增文件")
-    #
-    # for index, obj in enumerate(increment_lst, 1):
-    #     print(f"{index}/{increment_lst_len} 开始解析 {obj['file']}")
-    #     append_cache_data(parse_s3_execl(obj))
+    if len(err_file_lst):
+        print(f"存在无法解析路径或后缀的文件 {len(err_file_lst)} 个，信息如下：")
+        print()
+
+    increment_lst = get_s3_increment(cache_data_lst, s3_all_file_lst)
+    print(increment_lst)
+    if len(increment_lst):
+        print(f"存在增量文件 {len(increment_lst)} 个，信息如下：")
+        print()
+    else:
+        print(f"不存在新增文件")
+
+    for index, obj in enumerate(increment_lst, 1):
+        print(f"{index}/{len(increment_lst)} 开始解析 {obj['file']}")
+        append_cache_data(parse_s3_execl(obj))

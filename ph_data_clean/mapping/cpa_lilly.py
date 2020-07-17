@@ -45,8 +45,8 @@ def mapping():
         {
             "col_name": "YEAR",
             "col_desc": "年份",
-            "candidate": ["YYYYMM"],
-            "type": "String",
+            "candidate": ["YEARID"],
+            "type": "Integer",
             "not_null": True,
         },
         {
@@ -59,8 +59,8 @@ def mapping():
         {
             "col_name": "MONTH",
             "col_desc": "月份",
-            "candidate": [],
-            "type": "String",
+            "candidate": ["YYYYMM"],
+            "type": "Integer",
             "not_null": True,
         },
         {
