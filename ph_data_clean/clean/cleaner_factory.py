@@ -10,7 +10,7 @@ class CleanerFactory(object):
     """
 
     all_clean = {
-        ('CPA', 'GYC', 'CPA&GYC', 'GYC&CPA'): CpaGycDataClean,
+        ('CPA', 'GYC', 'CPA&GYC', 'GYC&CPA', 'CPA&PTI&DDD&HH'): CpaGycDataClean,
         ('CHC',): ChcDataClean,
     }
 

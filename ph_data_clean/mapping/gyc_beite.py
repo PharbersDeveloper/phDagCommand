@@ -59,7 +59,7 @@ def mapping():
         {
             "col_name": "MONTH",
             "col_desc": "月份",
-            "candidate": ['月'],
+            "candidate": ['月', "年月"],
             "type": "Integer",
             "not_null": True,
         },

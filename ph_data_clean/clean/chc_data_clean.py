@@ -15,20 +15,76 @@ class ChcDataClean(DataClean):
     CHC 元数据的清洗规则
     """
 
+    def change_year_month(self, input_year, input_month):
+        """
+        将年月值计算为4位/2位格式
+
+        :param input_year: 原数据年份值
+        :param input_month: 原数据月份值
+
+        :return: output_year:4位年
+        :return: output_month:2位月
+
+        """
+
+        # global output_month, output_year
+        flag = True
+        if input_year not in [None, ""]:
+            try:
+                input_year = int(float(input_year))
+                if len(str(input_year)) == 6:
+                    output_month = input_year % 100  # month
+                    output_year = (input_year - output_month) // 100  # year
+                    flag = False
+                elif len(str(input_year)) == 8:
+                    date = input_year % 100  # date
+                    year_month = (input_year - date) // 100  # year+month
+                    output_month = year_month % 100  # month
+                    output_year = (year_month - output_month) // 100  # year
+                    flag = False
+            except ValueError:
+                output_year = ""
+        else:
+            output_year = ""
+
+        if flag is True:
+            if input_month not in [None, ""]:
+                try:
+                    input_month = int(float(input_month))
+                    if len(str(input_month)) == 6:
+                        output_month = input_month % 100  # month
+                        output_year = (input_month - output_month) // 100  # year
+                    elif len(str(input_month)) == 8:
+                        date = input_month % 100  # date
+                        year_month = (input_month - date) // 100  # year+month
+                        output_month = year_month % 100  # month
+                        output_year = (year_month - output_month) // 100  # year
+                    else:
+                        output_month = input_month
+                        output_year = input_year
+                except ValueError:
+                    output_month = ""
+            else:
+                output_month = ""
+        return output_year, output_month
+
     def pack_qty_unit(self, final_data_pack_unit):
         """
         将包装单位（数字+单位）转化成纯数字的价格转换比（pack_qty）
 
         :param final_data_pack_unit: 清洗后的包装单位数值
 
-        :return: 纯数字价格转换比
+        :return: pack_qty_int:纯数字价格转换比
+        :return: pack_unit_str:纯单位
 
         """
         pack_qty = re.findall(r"\d+", final_data_pack_unit)
         try:
-            return int(pack_qty[0])
+            pack_qty_int = int(pack_qty[0])
+            pack_unit_str = final_data_pack_unit.replace(pack_qty[0], "", 1)
+            return pack_qty_int, pack_unit_str
         except IndexError:
-            return 0
+            return 0, final_data_pack_unit
 
     def reformat_null(self, data_type):
         """
@@ -62,7 +118,7 @@ class ChcDataClean(DataClean):
 
     def cleaning_process(self, mapping: list, raw_data: dict) -> CleanResult:
         # standardise colunm name
-        global tag_value
+        # global tag_value
         new_key_name = {}
         for raw_data_key in raw_data.keys():
             old_key = raw_data_key.split("#")[-1].replace('\n', '').strip()  # remove unwanted symbols
@@ -82,16 +138,9 @@ class ChcDataClean(DataClean):
                     final_data[m["col_name"]] = None
 
         # 当字典不为空时 change year and month
-        try:
-            final_data_year = int(float(final_data['YEAR']))
-        except:
-            # isinstance(final_data['YEAR'], str) and final_data == {}
-            final_data_year = None
-
-        if final_data and isinstance(final_data_year, int):
-            if len(str(final_data_year)) == 6:
-                final_data['MONTH'] = final_data_year % 100  # month
-                final_data['YEAR'] = (final_data_year - final_data['MONTH']) // 100  # year
+        if final_data:
+            final_data['YEAR'], final_data['MONTH'] = \
+                self.change_year_month(input_year=final_data['YEAR'], input_month=final_data['MONTH'])
 
         # TODO 整理销量情况
         if final_data['SALES_QTY_GRAIN'] not in [None, ""]:
@@ -103,14 +152,15 @@ class ChcDataClean(DataClean):
 
         # 价格转换比和包装单位整理
         if final_data['PACK_QTY'] in [None, ""] and final_data['PACK_UNIT'] not in [None, ""]:
-            print(1)
-            final_data['PACK_QTY'] = self.pack_qty_unit(final_data_pack_unit=final_data['PACK_UNIT'])
+            final_data['PACK_QTY'], final_data['PACK_UNIT'] = self.pack_qty_unit(
+                final_data_pack_unit=final_data['PACK_UNIT'])
+        elif final_data['PACK_QTY'] not in [None, ""] and final_data['PACK_UNIT'] not in [None, ""]:
+            final_data['PACK_UNIT'] = self.pack_qty_unit(final_data_pack_unit=final_data['PACK_UNIT'])[1]
 
         # 医院编码和医院名称存在一个即可
         if final_data['HOSP_CODE'] is None and final_data['HOSP_NAME'] not in [None, ""]:
             final_data['HOSP_CODE'] = "无"
         elif final_data['HOSP_NAME'] is None and final_data['HOSP_CODE'] not in [None, ""]:
-            # print(final_data['HOSP_NAME'])
             final_data['HOSP_NAME'] = "无"
 
         # define tag and error message
@@ -147,7 +197,7 @@ class ChcDataClean(DataClean):
                 tag_value = Tag.SUCCESS
                 error_msg = 'Success'
 
-        # 年月改为int格式
+        # 规定为int类型的数据改为int格式
         for m in mapping:
             if (m['type'] == "Integer") and (final_data[m['col_name']] not in [None, ""]):
                 final_data[m['col_name']] = self.reformat_int(input_data=final_data[m['col_name']])
