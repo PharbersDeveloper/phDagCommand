@@ -11,7 +11,7 @@ class SalesQtyTag(Enum):
 
 class CpaGycDataClean(DataClean):
     """
-    CPA & GYC 等元数据的清洗规则
+    CPA & GYC 等源数据的清洗规则
     """
 
     # def reformat_null(self, data_type):

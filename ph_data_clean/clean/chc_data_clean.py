@@ -12,7 +12,7 @@ class SalesQtyTag(Enum):
 
 class ChcDataClean(DataClean):
     """
-    CHC 元数据的清洗规则
+    CHC 源数据的清洗规则
     """
 
     def change_year_month(self, input_year, input_month):
