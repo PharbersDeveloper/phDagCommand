@@ -18,7 +18,7 @@ chdir()
 
 
 def test_all():
-    test_file = r'file/ph_data_clean/s3_test_data/CPA-倍特-test.yaml'
+    test_file = r'file/ph_data_clean/s3_test_data/CPA-Pfizer-test.yaml'
     test_datas = load_by_file(test_file)
     for test_data in test_datas[0:1]:
         result = clean(test_data)

@@ -2,7 +2,7 @@
     "石嘴山市", "CORP_NAME": "上海中信国健药业有限公司", "HOSPITAL_CODE": 750051, "MOLE_NAME":
     "重组人Ⅱ型肿瘤坏死因子受体-抗体融合蛋白", "MONTH": 9, "PACK_DES": "12.5 MG", "PACK_NUMBER":
     1, "PRODUCT_MKT": "", "PRODUCT_NAME": "益赛普", "STANDARD_UNIT": 60, "VALUE":
-    22616, "YEAR": 2019, "_Tag": "yes"}'
+    22616, "_Tag": "yes"}'
   metadata: '{"fileName": "CPA/Pfizer/200213辉瑞-12月检索.xlsx", "providers": ["Pfizer",
     "CPA"], "sheetName": "替换数据"}'
 - data: '{"APP1_COD": "注射", "APP2_COD": "溶液剂（注射剂）", "BRAND_MKT": "", "CITY":

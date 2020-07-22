@@ -8,18 +8,6 @@ class SalesQtyTag(Enum):
     FULL = 'FULL'
 
 
-def result_validation(*args, **kwargs):
-    print('result_validation:mapping:' + str(args[0]))
-    print('result_validation:raw_data:' + str(args[1]))
-    print('result_validation:previou_data:' + str(kwargs))
-
-    return CleanResult(data={},
-                       metadata={},
-                       raw_data={},
-                       tag=Tag.SUCCESS,
-                       err_msg='')
-
-
 def check_format(*args, **kwargs):
     mapping = args[0]
     raw_data = args[1]
@@ -55,11 +43,13 @@ def change_key(*args, **kwargs):
 def change_year_month(*args, **kwargs):
     final_data = kwargs['prev']
     if final_data:
-        input_year = kwargs['change_key']['YEAR']
-        input_month = kwargs['change_key']['MONTH']
+        input_year = final_data['YEAR']
+        input_month = final_data['MONTH']
+        output_month = input_month
+        output_year = input_year
 
         flag = True
-        if input_year not in [None, ""]:
+        if input_year:
             try:
                 input_year = int(float(input_year))
                 if len(str(input_year)) == 6:
@@ -76,11 +66,9 @@ def change_year_month(*args, **kwargs):
                     output_year = input_year
             except ValueError:
                 output_year = input_year
-        else:
-            output_year = input_year
 
         if flag is True:
-            if input_month not in [None, ""]:
+            if input_month:
                 try:
                     input_month = int(float(input_month))
                     if len(str(input_month)) == 6:
@@ -96,9 +84,6 @@ def change_year_month(*args, **kwargs):
                         output_year = input_year
                 except ValueError:
                     output_month = input_month
-            else:
-                output_month = input_month
-                output_year = input_year
 
         final_data['YEAR'] = output_year
         final_data['MONTH'] = output_month
@@ -111,12 +96,26 @@ def change_sales_tag(*args, **kwargs):
 
     if final_data:
         # TODO 整理销量情况
-        if final_data['SALES_QTY_GRAIN'] not in [None, ""]:
+        if final_data['SALES_QTY_GRAIN']:
             final_data['SALES_QTY_BOX'] = final_data['SALES_QTY_GRAIN']
             final_data['SALES_QTY_TAG'] = SalesQtyTag.GRAIN.value
-        elif final_data['SALES_QTY_BOX'] not in [None, ""]:
+        elif final_data['SALES_QTY_BOX']:
             final_data['SALES_QTY_GRAIN'] = final_data['SALES_QTY_BOX']
             final_data['SALES_QTY_TAG'] = SalesQtyTag.BOX.value
+
+    return final_data
+
+
+def reformat_int(*args, **kwargs):
+    mapping = args[0]
+    final_data = kwargs['prev']
+    if final_data:
+        for m in mapping:
+            if (m['type'] == "Integer") and (final_data[m['col_name']]):
+                try:
+                    final_data[m['col_name']] = int(float(final_data[m['col_name']]))
+                except ValueError:
+                    final_data[m['col_name']] = final_data[m['col_name']]
 
     return final_data
 
@@ -133,19 +132,8 @@ def reformat_null(data_type):
 def define_tag_err(*args, **kwargs):
     mapping = args[0]
     raw_data = args[1]
-    final_data = kwargs['change_sales_tag']
-    # print(mapping)
-    i = kwargs['change_key']['SALES_QTY_TAG']
-    print(kwargs['change_key'])
-    print(kwargs['change_year_month'])
-    print(kwargs['change_sales_tag'])
-    j = kwargs['change_year_month']['SALES_QTY_TAG']
-    k = kwargs['change_sales_tag']['SALES_QTY_TAG']
-    print(i)
-    print(j)
-    print(k)
-    for k in kwargs:
-        print(k)
+    final_data = kwargs['prev']
+    tag_value = Tag.UNDEFINED
 
     if raw_data == {}:  # 若原始数据为空
         tag_value = Tag.EMPTY_DICT
@@ -180,35 +168,8 @@ def define_tag_err(*args, **kwargs):
             tag_value = Tag.SUCCESS
             error_msg = 'Success'
 
-    # return tag_value, error_msg
-    print(tag_value)
-    return CleanResult(data={},
+    return CleanResult(data=final_data,
                        metadata={},
-                       raw_data={},
+                       raw_data=raw_data,
                        tag=tag_value,
                        err_msg=error_msg)
-
-
-#
-# def reformat_int(*args, **kwargs):
-#     mapping = args[0]
-#     raw_data = args[1]
-#     final_data = kwargs['change_sales_tag']
-#     tag_value = kwargs['define_tag_err'][0]
-#     print(tag_value)
-#     error_msg = kwargs['define_tag_err'][1]
-#     # if final_data:
-#     #     for m in mapping:
-#     #         if (m['type'] == "Integer") and (final_data[m['col_name']] not in [None, ""]):
-#     #             final_data[m['col_name']] = reformat_int(input_data=final_data[m['col_name']])
-#
-#     # return CleanResult(data=final_data,
-#     #                    metadata={},
-#     #                    raw_data=raw_data,
-#     #                    tag=Tag.SUCCESS,
-#     #                    err_msg=error_msg)
-#     return CleanResult(data={},
-#                        metadata={},
-#                        raw_data={},
-#                        tag=Tag.SUCCESS,
-#                        err_msg='')
