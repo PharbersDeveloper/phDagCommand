@@ -4,7 +4,7 @@ from ph_data_clean.__main__ import clean
 from ph_data_clean.util.yaml_utils import load_by_file
 from ph_data_clean.model.clean_result import Tag
 
-PROJECT_NAME = 'phDagCommand'
+PROJECT_NAME = 'phdagcommand'
 
 
 @pytest.mark.skip("util")
