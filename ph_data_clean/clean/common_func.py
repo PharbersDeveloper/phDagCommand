@@ -1,5 +1,6 @@
-from ph_data_clean.model.clean_result import CleanResult, Tag
 from enum import Enum
+
+from ph_data_clean.model.clean_result import CleanResult, Tag
 
 
 class SalesQtyTag(Enum):
@@ -9,14 +10,12 @@ class SalesQtyTag(Enum):
 
 
 def check_format(*args, **kwargs):
-    mapping = args[0]
-    raw_data = args[1]
-    return mapping, raw_data
+    return None
 
 
 def change_key(*args, **kwargs):
-    raw_data = kwargs['prev'][1]
     mapping = args[0]
+    raw_data = args[1]
 
     # standardise column name
     new_key_name = {}
