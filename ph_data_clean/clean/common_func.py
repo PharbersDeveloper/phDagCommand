@@ -27,7 +27,7 @@ def check_format(*args, **kwargs):
 
 
 def change_key(*args, **kwargs):
-    raw_data = kwargs['check_format'][1]
+    raw_data = kwargs['prev'][1]
     mapping = args[0]
 
     # standardise column name
@@ -53,7 +53,7 @@ def change_key(*args, **kwargs):
 
 
 def change_year_month(*args, **kwargs):
-    final_data = kwargs['change_key']
+    final_data = kwargs['prev']
     if final_data:
         input_year = kwargs['change_key']['YEAR']
         input_month = kwargs['change_key']['MONTH']
@@ -107,7 +107,8 @@ def change_year_month(*args, **kwargs):
 
 
 def change_sales_tag(*args, **kwargs):
-    final_data = kwargs['change_year_month']
+    final_data = kwargs['prev']
+
     if final_data:
         # TODO 整理销量情况
         if final_data['SALES_QTY_GRAIN'] not in [None, ""]:
@@ -135,6 +136,9 @@ def define_tag_err(*args, **kwargs):
     final_data = kwargs['change_sales_tag']
     # print(mapping)
     i = kwargs['change_key']['SALES_QTY_TAG']
+    print(kwargs['change_key'])
+    print(kwargs['change_year_month'])
+    print(kwargs['change_sales_tag'])
     j = kwargs['change_year_month']['SALES_QTY_TAG']
     k = kwargs['change_sales_tag']['SALES_QTY_TAG']
     print(i)

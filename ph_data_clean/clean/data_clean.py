@@ -1,4 +1,6 @@
 from abc import ABCMeta
+import copy
+
 from ph_data_clean.model.clean_result import CleanResult
 
 
@@ -22,6 +24,6 @@ class DataClean(object, metaclass=ABCMeta):
                 func_result = func(*args, **kwargs)
 
             if func_result:
-                kwargs[func.__name__] = func_result
+                kwargs[func.__name__] = copy.deepcopy(func_result)
                 kwargs['prev'] = func_result
         return func_result
