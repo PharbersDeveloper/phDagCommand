@@ -23,4 +23,5 @@ class DataClean(object, metaclass=ABCMeta):
 
             if func_result:
                 kwargs[func.__name__] = func_result
+                kwargs['prev'] = func_result
         return func_result

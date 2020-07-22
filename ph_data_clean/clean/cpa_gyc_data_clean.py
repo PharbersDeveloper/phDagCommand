@@ -120,7 +120,7 @@ class CpaGycDataClean(DataClean):
     def print_two(self, *args, **kwargs):
         print('print_two:mapping:' + str(args[0]))
         print('print_two:raw_data:' + str(args[1]))
-        print('print_two:previou_data:' + str(kwargs))
+        print('print_two:previous_data:' + str(kwargs))
         return 'print_two'
 
     process = [

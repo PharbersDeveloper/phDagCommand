@@ -4,12 +4,12 @@ from ph_data_clean.__main__ import clean
 from ph_data_clean.util.yaml_utils import load_by_file
 from ph_data_clean.model.clean_result import Tag
 
-PROJEDT_NAME = 'phDagCommand'
+PROJECT_NAME = 'phDagCommand'
 
 
 @pytest.mark.skip("util")
 def chdir():
-    if not os.getcwd().endswith(PROJEDT_NAME):
+    if not os.getcwd().endswith(PROJECT_NAME):
         os.chdir('..')
         chdir()
 
