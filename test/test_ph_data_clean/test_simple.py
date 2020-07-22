@@ -4,7 +4,7 @@ from ph_data_clean.__main__ import clean
 from ph_data_clean.util.yaml_utils import load_by_file
 from ph_data_clean.model.clean_result import Tag
 
-PROJEDT_NAME = 'phdagcommand'
+PROJEDT_NAME = 'phDagCommand'
 
 
 @pytest.mark.skip("util")
@@ -18,9 +18,9 @@ chdir()
 
 
 def test_all():
-    test_file = r'file/ph_data_clean/s3_test_data/CHC-Servier-test.yaml'
+    test_file = r'file/ph_data_clean/s3_test_data/CPA-倍特-test.yaml'
     test_datas = load_by_file(test_file)
-    for test_data in test_datas:
+    for test_data in test_datas[0:1]:
         result = clean(test_data)
         if result.tag != Tag.SUCCESS:
             print(str(result))

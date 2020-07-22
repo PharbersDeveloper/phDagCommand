@@ -1,7 +1,7 @@
 from enum import Enum
 from ph_data_clean.clean.data_clean import DataClean
 from ph_data_clean.model.clean_result import CleanResult, Tag
-
+from ph_data_clean.clean.common_func import *
 
 class SalesQtyTag(Enum):
     GRAIN = 'GRAIN'
@@ -28,7 +28,7 @@ class CpaGycDataClean(DataClean):
         except ValueError:
             return input_data
 
-    def cleaning_process(self, mapping: list, raw_data: dict) -> CleanResult:
+    def cleaning_process_old(self, mapping: list, raw_data: dict) -> CleanResult:
         # standardise colunm name
         global tag_value
         new_key_name = {}
@@ -110,3 +110,23 @@ class CpaGycDataClean(DataClean):
                            raw_data=raw_data,
                            tag=tag_value,
                            err_msg=error_msg)
+
+    def print_one(self, *args, **kwargs):
+        print('print_one:mapping:' + str(args[0]))
+        print('print_one:raw_data:' + str(args[1]))
+        print('print_one:previou_data:' + str(kwargs))
+        return 'print_one'
+
+    def print_two(self, *args, **kwargs):
+        print('print_two:mapping:' + str(args[0]))
+        print('print_two:raw_data:' + str(args[1]))
+        print('print_two:previou_data:' + str(kwargs))
+        return 'print_two'
+
+    process = [
+        print_one,
+        print_two,
+        print_two,
+        result_validation,
+        result_validation,
+    ]
