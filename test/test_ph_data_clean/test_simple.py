@@ -18,7 +18,7 @@ chdir()
 
 
 def test_all():
-    test_file = r'file/ph_data_clean/s3_test_data/CHC-Servier-test.yaml'
+    test_file = r'file/ph_data_clean/s3_test_data/CHC-ACN-test.yaml'
     test_datas = load_by_file(test_file)
     for test_data in test_datas:
         result = clean(test_data)
@@ -27,7 +27,7 @@ def test_all():
             print(str(result))
         else:
             print()
-            print('success  ', result)
+            print('success')
 
 
 test_all()
