@@ -108,7 +108,7 @@ def mapping():
         {
             "col_name": "MOLE_NAME",
             "col_desc": "分子名",
-            "candidate": ["药品名称", "通用名"],
+            "candidate": ["化学名", "匹配名", "通用名"],
             "type": "String",
             "not_null": True,
         },
@@ -143,7 +143,7 @@ def mapping():
         {
             "col_name": "PACK_UNIT",
             "col_desc": "包装单位",
-            "candidate": ["包装单位"],
+            "candidate": ["包装单位", "包装"],
             "type": "String",
             "not_null": False,
         },
@@ -178,7 +178,7 @@ def mapping():
         {
             "col_name": "PRICE",
             "col_desc": "片盒单价",
-            "candidate": [],
+            "candidate": ["采购价"],
             "type": "String",
             "not_null": False,
         },

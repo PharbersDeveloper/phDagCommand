@@ -7,6 +7,7 @@ class Tag(Enum):
     EMPTY_DICT = 0
     MISSING_COL = -1
     PH_ERR = -9999
+    UNDEFINED = -888
 
 
 class CleanResult(object):
