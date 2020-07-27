@@ -60,7 +60,9 @@ class ChcDataClean(DataClean):
         将规格列根据*拆开，前面的写入spec，后面的内容写入pack_unit
         """
         final_data = kwargs['prev']
-        if final_data:
+        if final_data and final_data['SPEC'] \
+                and not final_data['PACK_UNIT']\
+                and not final_data['PACK_QTY']:
             split_result = final_data['SPEC'].split("*")
             if len(split_result) == 2:
                 final_data['PACK_UNIT'] = split_result[1]

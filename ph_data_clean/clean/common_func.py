@@ -10,12 +10,17 @@ class SalesQtyTag(Enum):
 
 
 def check_format(*args, **kwargs):
-    return None
+    mapping = args[0]
+    raw_data = args[1]
+    for k, v in raw_data.items():
+        if isinstance(v, str):
+            raw_data[k] = v.strip()
+    return raw_data
 
 
 def change_key(*args, **kwargs):
     mapping = args[0]
-    raw_data = args[1]
+    raw_data = kwargs['prev']
 
     # standardise column name
     new_key_name = {}
