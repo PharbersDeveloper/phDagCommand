@@ -1,8 +1,6 @@
 from abc import ABCMeta
 import copy
 
-from ph_data_clean.model.clean_result import CleanResult
-
 
 class DataClean(object, metaclass=ABCMeta):
     """
