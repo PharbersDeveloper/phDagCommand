@@ -11,7 +11,7 @@ class DataClean(object, metaclass=ABCMeta):
 
     process = []
 
-    def cleaning_process(self, *args, **kwargs) -> CleanResult:
+    def cleaning_process(self, *args, **kwargs):
         runtime_class_name = self.__class__.__name__
 
         func_result = None

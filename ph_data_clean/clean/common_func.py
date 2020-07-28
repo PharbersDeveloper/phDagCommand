@@ -176,4 +176,4 @@ def define_tag_err(*args, **kwargs):
                        metadata={},
                        raw_data=raw_data,
                        tag=tag_value,
-                       err_msg=error_msg)
+                       err_msg=error_msg),
