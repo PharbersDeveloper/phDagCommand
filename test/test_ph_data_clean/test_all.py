@@ -22,10 +22,16 @@ def test_all():
     test_datas = load_by_dir(test_files)
     for test_data in test_datas:
         result = clean(test_data)
-        if result.tag != Tag.SUCCESS:
-            print(str(result))
-        else:
-            print('success')
+        for res in result:
+            if res.tag == Tag.SUCCESS:
+                print()
+                print('success  ')
+            elif res.tag == Tag.WARNING:
+                print()
+                print('warning  ', res.data["UPDATE_LABEL"], "    ", res.data["PHA_ID"], "    ", res.err_msg)
+            else:
+                print()
+                print(str(res))
 
 
 test_all()
