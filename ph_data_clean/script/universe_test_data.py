@@ -14,7 +14,7 @@ def get_universe_test_data():
 
     test_data_lst = []
 
-    for i in (1, 3):
+    for i in range(1, 100):
         value = sheet.row_values(i)
         test_data = {'data': {},
                      'metadata': {'fileName': 'Book1',

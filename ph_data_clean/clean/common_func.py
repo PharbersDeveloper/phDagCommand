@@ -131,6 +131,8 @@ def reformat_null(data_type):
         return 0.0
     elif data_type == "Integer":
         return 0
+    elif data_type == "Boolean":
+        return False
 
 
 def define_tag_err(*args, **kwargs):

@@ -6,6 +6,7 @@ class Tag(Enum):
     SUCCESS = 1
     EMPTY_DICT = 0
     MISSING_COL = -1
+    WARNING = 2
     PH_ERR = -9999
     UNDEFINED = -888
 
