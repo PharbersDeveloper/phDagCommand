@@ -1,8 +1,10 @@
 import xlrd
 import yaml
 
-test_file = r'../../file/ph_data_clean/s3_test_data/universe-universe-test.yaml'
-readbook = xlrd.open_workbook(r'..\..\file\ph_data_clean\s3_primitive_data\Book1.xlsx')
+test_file = r'../../file/ph_data_clean/s3_test_data/product-product-test.yaml'
+# test_file = r'../../file/ph_data_clean/s3_test_data/universe-universe-test.yaml'
+readbook = xlrd.open_workbook(r'..\..\file\ph_data_clean\s3_primitive_data\Product_origin_file.xlsx')
+# readbook = xlrd.open_workbook(r'..\..\file\ph_data_clean\s3_primitive_data\Universe_origin_file.xlsx')
 sheet = readbook.sheet_by_index(0)
 nrows = sheet.nrows
 ncols = sheet.ncols
@@ -14,11 +16,12 @@ def get_universe_test_data():
 
     test_data_lst = []
 
-    for i in range(1, 100):
+    for i in range(1, 10):
         value = sheet.row_values(i)
         test_data = {'data': {},
                      'metadata': {'fileName': 'Book1',
-                                  'providers': ['universe', 'universe'],
+                                  # 'providers': ['universe', 'universe'],
+                                  'providers': ['product', 'product'],
                                   'sheetName': 'sheet1'}}
         for j in range(0, ncols-1):
             real_key = str(j) + '#' + str(test_data_key[j])

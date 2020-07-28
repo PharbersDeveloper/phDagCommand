@@ -100,14 +100,16 @@ class UniverseDataClean(DataClean):
 
         # 基于蓝色数据改2011年（灰色）数据
         for m in blue_grey_mapping:
-            if m["blue_col_name"] in final_data_gery and m['grey_col_name'] in raw_data:
-                final_data_gery[m["blue_col_name"]] = raw_data[m['grey_col_name']]
+            for name in m['grey_col_name']:
+                if m["blue_col_name"] in final_data_gery and name in raw_data:
+                    final_data_gery[m["blue_col_name"]] = raw_data[name]
         final_data_gery["UPDATE_LABEL"] = '2011_initial'
 
         # 基于蓝色数据改2019年（橙色）数据
         for m in blue_orange_mapping:
-            if m["blue_col_name"] in final_data_orange and m['orange_col_name'] in raw_data:
-                final_data_orange[m["blue_col_name"]] = raw_data[m['orange_col_name']]
+            for name in m['orange_col_name']:
+                if m["blue_col_name"] in final_data_orange and name in raw_data:
+                    final_data_orange[m["blue_col_name"]] = raw_data[name]
         final_data_orange["UPDATE_LABEL"] = '2019_updated'
 
         final_data_for_three.append(final_data_blue)  # 2013
@@ -126,7 +128,6 @@ class UniverseDataClean(DataClean):
                     final_data[m["col_name"]] = True
 
         return final_data_for_three
-
 
     def define_tag_err_for_three(self, *args, **kwargs):
         mapping = args[0]

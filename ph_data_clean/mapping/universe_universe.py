@@ -51,7 +51,7 @@ def mapping():
         {
             "col_name": "REGION",
             "col_desc": "地区",
-            "candidate": ["12#Region"],
+            "candidate": ["12#Region", "9#Region"],
             "type": "String",
             "not_null": False,
             "msg_type": '',
@@ -59,7 +59,7 @@ def mapping():
         {
             "col_name": "PROVINCE",
             "col_desc": "省份名",
-            "candidate": ["14#Province"],
+            "candidate": ["14#Province", "11#Province"],
             "type": "String",
             "not_null": True,
             "msg_type": 'err',
@@ -67,7 +67,7 @@ def mapping():
         {
             "col_name": "CITY",
             "col_desc": "城市名",
-            "candidate": ["15#City"],
+            "candidate": ["15#City", "12#City"],
             "type": "String",
             "not_null": True,
             "msg_type": 'err',
