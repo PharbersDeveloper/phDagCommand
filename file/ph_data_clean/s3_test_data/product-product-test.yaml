@@ -1,162 +1,1731 @@
-- data: '{"0#PACK_ID": "0729102", "1#MOLE_NAME_EN": "ASCORBIC ACID+CALCIUM+CHOLINE+ERGOCALCIFEROL+INOSITOL+IRON
-    FERROUS+LYSINE+NICOTINAMIDE+POTASSIUM+RETINOL", "2#MOLE_NAME_CH": "多维元素(21)",
-    "3#PROD_DESC": "21-SUPER VITA      S3M", "4#PROD_NAME_CH": "21-金维他", "5#CORP_NAME_EN":
-    "SANOFI GROUP", "6#CORP_NAME_CH": "赛诺菲集团", "7#MNF_NAME_EN": "HZ.SANOFI
-    MINSHENG", "8#MNF_NAME_CH": "杭州民生健康药业有限公司", "9#PCK_DESC": "TAB FLM CTD
-    398MG    100", "10#DOSAGE": "薄膜衣片", "11#SPEC": "CO 389MG", "12#PACK":
-    100.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
-    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
-    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
-    "5937", "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
-    "MNC", "25#MNF_ID": "5590", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
-    T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS",
-    "30#ATC3_CODE": "A11A", "31#ATC3_DESC": "A11A  MULTIVITAMINS + MINERALS",
-    "32#ATC4_CODE": "A11A4", "33#ATC4_DESC": "A11A4 MVIT + MIN OTHERS", "34#ATC1":
-    "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "含矿物质的多种维生素", "37#ATC4":
-    "含矿物质的多种维生素，其他", "38#REMARK": "", "_Tag": "yes"}'
+- data: '{"0#PACK_ID": "5928402", "1#MOLE_NAME_EN": "N-ACETYLGLUTAMIC ACID",
+    "2#MOLE_NAME_CH": "N-乙酰谷氨酸", "3#PROD_DESC": "ACETYLGLUTAMINE    ZEO",
+    "4#PROD_NAME_CH": "N-乙酰谷氨酸注射液", "5#CORP_NAME_EN": "SX.ZHENDONG PHARM",
+    "6#CORP_NAME_CH": "山西振东制药股份有限公司", "7#MNF_NAME_EN": "SX.ZHENDONG PHARM",
+    "8#MNF_NAME_CH": "山西振东制药股份有限公司", "9#PCK_DESC": "AMP 250MG 5ML   1", "10#DOSAGE":
+    "注射液", "11#SPEC": "250MG", "12#PACK": 1.0, "13#NFC1": "F--", "14#NFC1_NAME":
+    "PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12": "FM-", "17#NFC12_NAME":
+    "AMPOULES", "18#NFC12_NAME_CH": "安瓶用药", "19#NFC123": "FMA", "20#NFC123_NAME":
+    "AMPOULES INJ.", "21#CORP_ID": "0553", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME":
+    "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID": "0553", "26#ATC1_CODE":
+    "N", "27#ATC1_DESC": "N     NERVOUS SYSTEM", "28#ATC2_CODE": "N06",
+    "29#ATC2_DESC": "N06   PSYCHOANALEPTICS", "30#ATC3_CODE": "N06E", "31#ATC3_DESC":
+    "N06E  NEUROTONIC & MISCELL", "32#ATC4_CODE": "N06E0", "33#ATC4_DESC":
+    "N06E0 NEUROTONIC & MISCELL", "34#ATC1": "神经系统药物", "35#ATC2": "精神兴奋药，抗肥胖制剂除外",
+    "36#ATC3": "神经营养剂及其他神经药物", "37#ATC4": "神经营养剂及其他神经药物", "38#REMARK": "",
+    "_TAG": "yes"}'
   metadata: '{"fileName": "Book1", "providers": ["product", "product"],
     "sheetName": "sheet1"}'
-- data: '{"0#PACK_ID": "0729104", "1#MOLE_NAME_EN": "ASCORBIC ACID+CALCIUM+CHOLINE+ERGOCALCIFEROL+INOSITOL+IRON
-    FERROUS+LYSINE+NICOTINAMIDE+POTASSIUM+RETINOL", "2#MOLE_NAME_CH": "多维元素(21)",
-    "3#PROD_DESC": "21-SUPER VITA      S3M", "4#PROD_NAME_CH": "21-金维他", "5#CORP_NAME_EN":
-    "SANOFI GROUP", "6#CORP_NAME_CH": "赛诺菲集团", "7#MNF_NAME_EN": "HZ.SANOFI
-    MINSHENG", "8#MNF_NAME_CH": "杭州民生健康药业有限公司", "9#PCK_DESC": "TAB FLM CTD
-    398MG    60", "10#DOSAGE": "薄膜衣片", "11#SPEC": "CO 398MG", "12#PACK":
-    60.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
-    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
-    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
-    "5937", "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
-    "MNC", "25#MNF_ID": "5590", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
-    T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS",
-    "30#ATC3_CODE": "A11A", "31#ATC3_DESC": "A11A  MULTIVITAMINS + MINERALS",
-    "32#ATC4_CODE": "A11A4", "33#ATC4_DESC": "A11A4 MVIT + MIN OTHERS", "34#ATC1":
-    "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "含矿物质的多种维生素", "37#ATC4":
-    "含矿物质的多种维生素，其他", "38#REMARK": "", "_Tag": "yes"}'
+- data: '{"0#PACK_ID": "8782602", "1#MOLE_NAME_EN": "DISPOSABLE MEDICAL DEVICES",
+    "2#MOLE_NAME_CH": "胰岛素笔注射针头", "3#PROD_DESC": "OMNICAN NEEDLE INS BME",
+    "4#PROD_NAME_CH": "OMNICAN一次性使用无菌胰岛素注射器", "5#CORP_NAME_EN": "B.BRAUN",
+    "6#CORP_NAME_CH": "德国贝朗公司", "7#MNF_NAME_EN": "B.BRAUN", "8#MNF_NAME_CH":
+    "德国贝朗公司", "9#PCK_DESC": "SYRINGE  1ML   10", "10#DOSAGE": "预充注射器", "11#SPEC":
+    "1ML", "12#PACK": 10.0, "13#NFC1": "V--", "14#NFC1_NAME": "VARIOUS
+    FORMS", "15#NFC1_NAME_CH": "非人用及其他例如试验（实验室）制剂", "16#NFC12": "VZ-", "17#NFC12_NAME":
+    "N-H USE M-AID", "18#NFC12_NAME_CH": "非人用医用敷料", "19#NFC123": "VZY",
+    "20#NFC123_NAME": "N-H USE M-AIDS", "21#CORP_ID": "4606", "22#MNF_TYPE":
+    "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID":
+    "4606", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY T.& METABOLISM",
+    "28#ATC2_CODE": "A10", "29#ATC2_DESC": "A10   DRUGS USED IN DIABETES",
+    "30#ATC3_CODE": "A10E", "31#ATC3_DESC": "A10E  INSULIN DEVICES", "32#ATC4_CODE":
+    "A10E0", "33#ATC4_DESC": "A10E0 INSULIN DEVICES", "34#ATC1": "消化系统及代谢药",
+    "35#ATC2": "糖尿病用药", "36#ATC3": "胰岛素设备", "37#ATC4": "胰岛素设备", "38#REMARK":
+    "", "_TAG": "yes"}'
   metadata: '{"fileName": "Book1", "providers": ["product", "product"],
     "sheetName": "sheet1"}'
-- data: '{"0#PACK_ID": "0729106", "1#MOLE_NAME_EN": "ASCORBIC ACID+CALCIUM+CHOLINE+ERGOCALCIFEROL+INOSITOL+IRON
-    FERROUS+LYSINE+NICOTINAMIDE+POTASSIUM+RETINOL", "2#MOLE_NAME_CH": "多维元素(21)",
-    "3#PROD_DESC": "21-SUPER VITA      S3M", "4#PROD_NAME_CH": "21-金维他", "5#CORP_NAME_EN":
-    "SANOFI GROUP", "6#CORP_NAME_CH": "赛诺菲集团", "7#MNF_NAME_EN": "HZ.SANOFI
-    MINSHENG", "8#MNF_NAME_CH": "杭州民生健康药业有限公司", "9#PCK_DESC": "TAB FLM CTD
-    398MG    30", "10#DOSAGE": "薄膜衣片", "11#SPEC": "CO 398MG", "12#PACK":
-    30.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
-    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
-    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
-    "5937", "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
-    "MNC", "25#MNF_ID": "5590", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
-    T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS",
-    "30#ATC3_CODE": "A11A", "31#ATC3_DESC": "A11A  MULTIVITAMINS + MINERALS",
-    "32#ATC4_CODE": "A11A4", "33#ATC4_DESC": "A11A4 MVIT + MIN OTHERS", "34#ATC1":
-    "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "含矿物质的多种维生素", "37#ATC4":
-    "含矿物质的多种维生素，其他", "38#REMARK": "", "_Tag": "yes"}'
+- data: '{"0#PACK_ID": "0347502", "1#MOLE_NAME_EN": "CITRIC ACID+GLUCOSE+POTASSIUM+SODIUM",
+    "2#MOLE_NAME_CH": "补液盐(钠,钾,葡萄糖,枸橼酸)", "3#PROD_DESC": "ORAL REHYDRATE     SG9",
+    "4#PROD_NAME_CH": "ORS口服补液盐散", "5#CORP_NAME_EN": "SANOFI GROUP", "6#CORP_NAME_CH":
+    "赛诺菲集团", "7#MNF_NAME_EN": "SANOFI-SYN.M-SHENG", "8#MNF_NAME_CH": "杭州赛诺菲民生制药有限公司",
+    "9#PCK_DESC": "PWD UNIT DOS  13.9G   1", "10#DOSAGE": "散剂", "11#SPEC":
+    "CO 13.95G", "12#PACK": 1.0, "13#NFC1": "D--", "14#NFC1_NAME": "ORAL
+    LIQUID", "15#NFC1_NAME_CH": "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME":
+    "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH": "散剂/颗粒 口服液体", "19#NFC123": "DEP",
+    "20#NFC123_NAME": "ORAL U-D PWDR", "21#CORP_ID": "5937", "22#MNF_TYPE":
+    "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH": "MNC",
+    "25#MNF_ID": "5548", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A07", "29#ATC2_DESC": "A07   INTESTINAL
+    DISORDER PROD", "30#ATC3_CODE": "A07G", "31#ATC3_DESC": "A07G  ORAL ELECTROLYTE
+    REPLACER", "32#ATC4_CODE": "A07G0", "33#ATC4_DESC": "A07G0 ORAL ELECTROLYTE
+    REPLACER", "34#ATC1": "消化系统及代谢药", "35#ATC2": "止泻药，口服电解质代用品和肠道消炎药", "36#ATC3":
+    "口服电解质代用品", "37#ATC4": "口服电解质代用品", "38#REMARK": "PROD_NAME_CH列由“ORS口服补液盐”改为“ORS口服补液盐散”",
+    "_TAG": "yes"}'
   metadata: '{"fileName": "Book1", "providers": ["product", "product"],
     "sheetName": "sheet1"}'
-- data: '{"0#PACK_ID": "0729110", "1#MOLE_NAME_EN": "ASCORBIC ACID+CALCIUM+CHOLINE+ERGOCALCIFEROL+INOSITOL+IRON
-    FERROUS+LYSINE+NICOTINAMIDE+POTASSIUM+RETINOL", "2#MOLE_NAME_CH": "多维元素(21)",
-    "3#PROD_DESC": "21-SUPER VITA      S3M", "4#PROD_NAME_CH": "21-金维他", "5#CORP_NAME_EN":
-    "SANOFI GROUP", "6#CORP_NAME_CH": "赛诺菲集团", "7#MNF_NAME_EN": "HZ.SANOFI
-    MINSHENG", "8#MNF_NAME_CH": "杭州民生健康药业有限公司", "9#PCK_DESC": "TAB FLM CTD
-    398MG  PROM  120", "10#DOSAGE": "薄膜衣片", "11#SPEC": "CO 398", "12#PACK":
-    120.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
-    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
-    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
-    "5937", "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
-    "MNC", "25#MNF_ID": "5590", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
-    T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS",
-    "30#ATC3_CODE": "A11A", "31#ATC3_DESC": "A11A  MULTIVITAMINS + MINERALS",
-    "32#ATC4_CODE": "A11A4", "33#ATC4_DESC": "A11A4 MVIT + MIN OTHERS", "34#ATC1":
-    "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "含矿物质的多种维生素", "37#ATC4":
-    "含矿物质的多种维生素，其他", "38#REMARK": "", "_Tag": "yes"}'
-  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
-    "sheetName": "sheet1"}'
-- data: '{"0#PACK_ID": "0729108", "1#MOLE_NAME_EN": "ASCORBIC ACID+CALCIUM+CHOLINE+ERGOCALCIFEROL+INOSITOL+IRON
-    FERROUS+LYSINE+NICOTINAMIDE+POTASSIUM+RETINOL", "2#MOLE_NAME_CH": "多维元素(21)",
-    "3#PROD_DESC": "21-SUPER VITA      S3M", "4#PROD_NAME_CH": "21-金维他", "5#CORP_NAME_EN":
-    "SANOFI GROUP", "6#CORP_NAME_CH": "赛诺菲集团", "7#MNF_NAME_EN": "HZ.SANOFI
-    MINSHENG", "8#MNF_NAME_CH": "杭州民生健康药业有限公司", "9#PCK_DESC": "TAB FLM CTD
-    398MG  PROM  240", "10#DOSAGE": "薄膜衣片", "11#SPEC": "398MG", "12#PACK":
-    240.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
-    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
-    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
-    "5937", "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
-    "MNC", "25#MNF_ID": "5590", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
-    T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS",
-    "30#ATC3_CODE": "A11A", "31#ATC3_DESC": "A11A  MULTIVITAMINS + MINERALS",
-    "32#ATC4_CODE": "A11A4", "33#ATC4_DESC": "A11A4 MVIT + MIN OTHERS", "34#ATC1":
-    "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "含矿物质的多种维生素", "37#ATC4":
-    "含矿物质的多种维生素，其他", "38#REMARK": "", "_Tag": "yes"}'
-  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
-    "sheetName": "sheet1"}'
-- data: '{"0#PACK_ID": "1937802", "1#MOLE_NAME_EN": "ADENOSINE 3",5"-PHOSPHATE",
-    "2#MOLE_NAME_CH": "3",5"-磷酸腺苷 ", "3#PROD_DESC": "XI MAI SHU         HJI",
-    "4#PROD_NAME_CH": "3",5"-磷酸腺苷粉针剂", "5#CORP_NAME_EN": "HLJ.JIANGSHI PHARM",
-    "6#CORP_NAME_CH": "黑龙江江世药业有限公司", "7#MNF_NAME_EN": "HLJ.JIANGSHI PHARM",
-    "8#MNF_NAME_CH": "黑龙江江世药业有限公司", "9#PCK_DESC": "VIAL DRY IV 60MG    1",
-    "10#DOSAGE": "粉针剂", "11#SPEC": "60MG", "12#PACK": 1.0, "13#NFC1":
-    "F--", "14#NFC1_NAME": "PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12":
-    "FP-", "17#NFC12_NAME": "VIAL", "18#NFC12_NAME_CH": "小瓶用药", "19#NFC123":
-    "FPB", "20#NFC123_NAME": "VIAL DRY", "21#CORP_ID": "0948", "22#MNF_TYPE":
+- data: '{"0#PACK_ID": "7031102", "1#MOLE_NAME_EN": "CITRIC ACID+GLUCOSE+POTASSIUM+SODIUM",
+    "2#MOLE_NAME_CH": "补液盐(钠,钾,葡萄糖,枸橼酸)", "3#PROD_DESC": "ORAL REHYDRATION
+    S Z2J", "4#PROD_NAME_CH": "ORS口服补液盐散", "5#CORP_NAME_EN": "ZJ.JIUXU PHARM",
+    "6#CORP_NAME_CH": "浙江九旭药业有限公司", "7#MNF_NAME_EN": "ZJ.JIUXU PHARM", "8#MNF_NAME_CH":
+    "浙江九旭药业有限公司", "9#PCK_DESC": "PWD UNIT DOS  10.2G   6", "10#DOSAGE": "散剂",
+    "11#SPEC": "10.2G", "12#PACK": 6.0, "13#NFC1": "D--", "14#NFC1_NAME":
+    " ORAL LIQUID", "15#NFC1_NAME_CH": "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME":
+    "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH": "散剂/颗粒 口服液体", "19#NFC123": "DEP",
+    "20#NFC123_NAME": "ORAL U-D PWDR", "21#CORP_ID": "2941", "22#MNF_TYPE":
     "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID":
-    "0948", "26#ATC1_CODE": "C", "27#ATC1_DESC": "C     CARDIOVASCULAR SYSTEM",
-    "28#ATC2_CODE": "C01", "29#ATC2_DESC": "C01   CARDIAC THERAPY", "30#ATC3_CODE":
-    "C01X", "31#ATC3_DESC": "C01X  ALL OTHER CARDIAC PREPS", "32#ATC4_CODE":
-    "C01X0", "33#ATC4_DESC": "C01X0 ALL OTHER CARDIAC PREPS", "34#ATC1": "心血管系统药物",
-    "35#ATC2": "强心药治疗", "36#ATC3": "所有其他治疗心脏药物", "37#ATC4": "所有其他治疗心脏药物",
-    "38#REMARK": "", "_Tag": "yes"}'
+    "2941", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY T.& METABOLISM",
+    "28#ATC2_CODE": "A07", "29#ATC2_DESC": "A07   INTESTINAL DISORDER PROD",
+    "30#ATC3_CODE": "A07G", "31#ATC3_DESC": "A07G  ORAL ELECTROLYTE REPLACER",
+    "32#ATC4_CODE": "A07G0", "33#ATC4_DESC": "A07G0 ORAL ELECTROLYTE REPLACER",
+    "34#ATC1": "消化系统及代谢药", "35#ATC2": "止泻药，口服电解质代用品和肠道消炎药", "36#ATC3": "口服电解质代用品",
+    "37#ATC4": "口服电解质代用品", "38#REMARK": "", "_TAG": "yes"}'
   metadata: '{"fileName": "Book1", "providers": ["product", "product"],
     "sheetName": "sheet1"}'
-- data: '{"0#PACK_ID": "3985202", "1#MOLE_NAME_EN": "ADENOSINE 3",5"-PHOSPHATE",
-    "2#MOLE_NAME_CH": "3",5"-磷酸腺苷 ", "3#PROD_DESC": "ADENOSINE CYCLOPHO HAB",
-    "4#PROD_NAME_CH": "3",5"-磷酸腺苷粉针剂", "5#CORP_NAME_EN": "HANGZHOU AUSIA BIO",
-    "6#CORP_NAME_CH": "杭州澳亚生物技术有限公司", "7#MNF_NAME_EN": "HANGZHOU AUSIA BIO",
-    "8#MNF_NAME_CH": "杭州澳亚生物技术有限公司", "9#PCK_DESC": "VIAL DRY 20MG    1", "10#DOSAGE":
-    "粉针剂", "11#SPEC": "20MG", "12#PACK": 1.0, "13#NFC1": "F--", "14#NFC1_NAME":
-    "PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12": "FP-", "17#NFC12_NAME":
-    "VIAL", "18#NFC12_NAME_CH": "小瓶用药", "19#NFC123": "FPB", "20#NFC123_NAME":
-    "VIAL DRY", "21#CORP_ID": "1708", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME":
-    "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID": "1708", "26#ATC1_CODE":
-    "C", "27#ATC1_DESC": "C     CARDIOVASCULAR SYSTEM", "28#ATC2_CODE": "C01",
-    "29#ATC2_DESC": "C01   CARDIAC THERAPY", "30#ATC3_CODE": "C01X", "31#ATC3_DESC":
-    "C01X  ALL OTHER CARDIAC PREPS", "32#ATC4_CODE": "C01X0", "33#ATC4_DESC":
-    "C01X0 ALL OTHER CARDIAC PREPS", "34#ATC1": "心血管系统药物", "35#ATC2": "强心药治疗",
-    "36#ATC3": "所有其他治疗心脏药物", "37#ATC4": "所有其他治疗心脏药物", "38#REMARK": "",
-    "_Tag": "yes"}'
+- data: '{"0#PACK_ID": "0347504", "1#MOLE_NAME_EN": "CITRIC ACID+GLUCOSE+POTASSIUM+SODIUM",
+    "2#MOLE_NAME_CH": "补液盐(钠,钾,葡萄糖,枸橼酸)", "3#PROD_DESC": "ORAL REHYDRATE     SG9",
+    "4#PROD_NAME_CH": "ORS口服补液盐散", "5#CORP_NAME_EN": "SANOFI GROUP", "6#CORP_NAME_CH":
+    "赛诺菲集团", "7#MNF_NAME_EN": "SANOFI-SYN.M-SHENG", "8#MNF_NAME_CH": "杭州赛诺菲民生制药有限公司",
+    "9#PCK_DESC": "PWD UNIT DOS  13.9G   50", "10#DOSAGE": "散剂", "11#SPEC":
+    "CO 13.95G", "12#PACK": 50.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL
+    LIQUID", "15#NFC1_NAME_CH": "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME":
+    "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH": "散剂/颗粒 口服液体", "19#NFC123": "DEP",
+    "20#NFC123_NAME": "ORAL U-D PWDR", "21#CORP_ID": "5937", "22#MNF_TYPE":
+    "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH": "MNC",
+    "25#MNF_ID": "5548", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A07", "29#ATC2_DESC": "A07   INTESTINAL
+    DISORDER PROD", "30#ATC3_CODE": "A07G", "31#ATC3_DESC": "A07G  ORAL ELECTROLYTE
+    REPLACER", "32#ATC4_CODE": "A07G0", "33#ATC4_DESC": "A07G0 ORAL ELECTROLYTE
+    REPLACER", "34#ATC1": "消化系统及代谢药", "35#ATC2": "止泻药，口服电解质代用品和肠道消炎药", "36#ATC3":
+    "口服电解质代用品", "37#ATC4": "口服电解质代用品", "38#REMARK": "", "_TAG": "yes"}'
   metadata: '{"fileName": "Book1", "providers": ["product", "product"],
     "sheetName": "sheet1"}'
-- data: '{"0#PACK_ID": "4020202", "1#MOLE_NAME_EN": "ADENOSINE 3",5"-PHOSPHATE",
-    "2#MOLE_NAME_CH": "3",5"-磷酸腺苷 ", "3#PROD_DESC": "ADENOSINE CYCLPHOS ZZO",
-    "4#PROD_NAME_CH": "3",5"-磷酸腺苷粉针剂", "5#CORP_NAME_EN": "ZJ.ZOLLY PHARM",
-    "6#CORP_NAME_CH": "浙江佐力药业股份有限公司", "7#MNF_NAME_EN": "ZJ.ZOLLY PHARM", "8#MNF_NAME_CH":
-    "浙江佐力药业股份有限公司", "9#PCK_DESC": "VIAL DRY 40MG    1", "10#DOSAGE": "粉针剂",
-    "11#SPEC": "40MG", "12#PACK": 1.0, "13#NFC1": "F--", "14#NFC1_NAME":
-    "PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12": "FP-", "17#NFC12_NAME":
-    "VIAL", "18#NFC12_NAME_CH": "小瓶用药", "19#NFC123": "FPB", "20#NFC123_NAME":
-    "VIAL DRY", "21#CORP_ID": "2920", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME":
-    "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID": "2920", "26#ATC1_CODE":
-    "C", "27#ATC1_DESC": "C     CARDIOVASCULAR SYSTEM", "28#ATC2_CODE": "C01",
-    "29#ATC2_DESC": "C01   CARDIAC THERAPY", "30#ATC3_CODE": "C01X", "31#ATC3_DESC":
-    "C01X  ALL OTHER CARDIAC PREPS", "32#ATC4_CODE": "C01X0", "33#ATC4_DESC":
-    "C01X0 ALL OTHER CARDIAC PREPS", "34#ATC1": "心血管系统药物", "35#ATC2": "强心药治疗",
-    "36#ATC3": "所有其他治疗心脏药物", "37#ATC4": "所有其他治疗心脏药物", "38#REMARK": "",
-    "_Tag": "yes"}'
+- data: '{"0#PACK_ID": "0347506", "1#MOLE_NAME_EN": "CITRIC ACID+GLUCOSE+POTASSIUM+SODIUM",
+    "2#MOLE_NAME_CH": "补液盐(钠,钾,葡萄糖,枸橼酸)", "3#PROD_DESC": "ORAL REHYDRATE     SG9",
+    "4#PROD_NAME_CH": "ORS口服补液盐散", "5#CORP_NAME_EN": "SANOFI GROUP", "6#CORP_NAME_CH":
+    "赛诺菲集团", "7#MNF_NAME_EN": "SANOFI-SYN.M-SHENG", "8#MNF_NAME_CH": "杭州赛诺菲民生制药有限公司",
+    "9#PCK_DESC": "PWD UNIT DOS  13.9G   4", "10#DOSAGE": "散剂", "11#SPEC":
+    "CO 13.95G", "12#PACK": 4.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL
+    LIQUID", "15#NFC1_NAME_CH": "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME":
+    "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH": "散剂/颗粒 口服液体", "19#NFC123": "DEP",
+    "20#NFC123_NAME": "ORAL U-D PWDR", "21#CORP_ID": "5937", "22#MNF_TYPE":
+    "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH": "MNC",
+    "25#MNF_ID": "5548", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A07", "29#ATC2_DESC": "A07   INTESTINAL
+    DISORDER PROD", "30#ATC3_CODE": "A07G", "31#ATC3_DESC": "A07G  ORAL ELECTROLYTE
+    REPLACER", "32#ATC4_CODE": "A07G0", "33#ATC4_DESC": "A07G0 ORAL ELECTROLYTE
+    REPLACER", "34#ATC1": "消化系统及代谢药", "35#ATC2": "止泻药，口服电解质代用品和肠道消炎药", "36#ATC3":
+    "口服电解质代用品", "37#ATC4": "口服电解质代用品", "38#REMARK": "", "_TAG": "yes"}'
   metadata: '{"fileName": "Book1", "providers": ["product", "product"],
     "sheetName": "sheet1"}'
-- data: '{"0#PACK_ID": "4146402", "1#MOLE_NAME_EN": "ADENOSINE 3",5"-PHOSPHATE",
-    "2#MOLE_NAME_CH": "3",5"-磷酸腺苷 ", "3#PROD_DESC": "ADENOSINE CYCLPHOS LG2",
-    "4#PROD_NAME_CH": "3",5"-磷酸腺苷粉针剂", "5#CORP_NAME_EN": "LN.GUANGDA PHARM",
-    "6#CORP_NAME_CH": "沈阳光大制药有限公司", "7#MNF_NAME_EN": "LN.GUANGDA PHARM", "8#MNF_NAME_CH":
-    "沈阳光大制药有限公司", "9#PCK_DESC": "VIAL DRY 40MG    1", "10#DOSAGE": "粉针剂",
-    "11#SPEC": "40MG", "12#PACK": 1.0, "13#NFC1": "F--", "14#NFC1_NAME":
-    "PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12": "FP-", "17#NFC12_NAME":
-    "VIAL", "18#NFC12_NAME_CH": "小瓶用药", "19#NFC123": "FPB", "20#NFC123_NAME":
-    "VIAL DRY", "21#CORP_ID": "0753", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME":
-    "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID": "0753", "26#ATC1_CODE":
-    "C", "27#ATC1_DESC": "C     CARDIOVASCULAR SYSTEM", "28#ATC2_CODE": "C01",
-    "29#ATC2_DESC": "C01   CARDIAC THERAPY", "30#ATC3_CODE": "C01X", "31#ATC3_DESC":
-    "C01X  ALL OTHER CARDIAC PREPS", "32#ATC4_CODE": "C01X0", "33#ATC4_DESC":
-    "C01X0 ALL OTHER CARDIAC PREPS", "34#ATC1": "心血管系统药物", "35#ATC2": "强心药治疗",
-    "36#ATC3": "所有其他治疗心脏药物", "37#ATC4": "所有其他治疗心脏药物", "38#REMARK": "",
-    "_Tag": "yes"}'
+- data: '{"0#PACK_ID": "8780202", "1#MOLE_NAME_EN": "DISPOSABLE MEDICAL DEVICES",
+    "2#MOLE_NAME_CH": "胰岛素笔注射针头", "3#PROD_DESC": "UNIFINE PENTIPS    O.M",
+    "4#PROD_NAME_CH": "Unifine一次性使用注射笔用针头", "5#CORP_NAME_EN": "OWEN MUMFORD
+    LTD", "6#CORP_NAME_CH": "英国欧曼福德公司", "7#MNF_NAME_EN": "OWEN MUMFORD LTD",
+    "8#MNF_NAME_CH": "英国欧曼福德公司", "9#PCK_DESC": "MEDICAL INST 6MM    10", "10#DOSAGE":
+    "注射笔", "11#SPEC": "31G 0.25MM x 6MM", "12#PACK": 10.0, "13#NFC1": "V--",
+    "14#NFC1_NAME": "VARIOUS FORMS", "15#NFC1_NAME_CH": "非人用及其他例如试验（实验室）制剂",
+    "16#NFC12": "VZ-", "17#NFC12_NAME": "N-H USE M-AID", "18#NFC12_NAME_CH":
+    "非人用医用敷料", "19#NFC123": "VZY", "20#NFC123_NAME": "N-H USE M-AIDS", "21#CORP_ID":
+    "5067", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "5067", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A10", "29#ATC2_DESC": "A10   DRUGS USED
+    IN DIABETES", "30#ATC3_CODE": "A10E", "31#ATC3_DESC": "A10E  INSULIN DEVICES",
+    "32#ATC4_CODE": "A10E0", "33#ATC4_DESC": "A10E0 INSULIN DEVICES", "34#ATC1":
+    "消化系统及代谢药", "35#ATC2": "糖尿病用药", "36#ATC3": "胰岛素设备", "37#ATC4": "胰岛素设备",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "8780206", "1#MOLE_NAME_EN": "DISPOSABLE MEDICAL DEVICES",
+    "2#MOLE_NAME_CH": "胰岛素笔注射针头", "3#PROD_DESC": "UNIFINE PENTIPS    O.M",
+    "4#PROD_NAME_CH": "Unifine一次性使用注射笔用针头", "5#CORP_NAME_EN": "OWEN MUMFORD
+    LTD", "6#CORP_NAME_CH": "英国欧曼福德公司", "7#MNF_NAME_EN": "OWEN MUMFORD LTD",
+    "8#MNF_NAME_CH": "英国欧曼福德公司", "9#PCK_DESC": "MEDICAL INST 4MM    10", "10#DOSAGE":
+    "注射笔", "11#SPEC": "32G 0.23MM x 4MM", "12#PACK": 10.0, "13#NFC1": "V--",
+    "14#NFC1_NAME": "VARIOUS FORMS", "15#NFC1_NAME_CH": "非人用及其他例如试验（实验室）制剂",
+    "16#NFC12": "VZ-", "17#NFC12_NAME": "N-H USE M-AID", "18#NFC12_NAME_CH":
+    "非人用医用敷料", "19#NFC123": "VZY", "20#NFC123_NAME": "N-H USE M-AIDS", "21#CORP_ID":
+    "5067", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "5067", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A10", "29#ATC2_DESC": "A10   DRUGS USED
+    IN DIABETES", "30#ATC3_CODE": "A10E", "31#ATC3_DESC": "A10E  INSULIN DEVICES",
+    "32#ATC4_CODE": "A10E0", "33#ATC4_DESC": "A10E0 INSULIN DEVICES", "34#ATC1":
+    "消化系统及代谢药", "35#ATC2": "糖尿病用药", "36#ATC3": "胰岛素设备", "37#ATC4": "胰岛素设备",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "8780208", "1#MOLE_NAME_EN": "DISPOSABLE MEDICAL DEVICES",
+    "2#MOLE_NAME_CH": "胰岛素笔注射针头", "3#PROD_DESC": "UNIFINE PENTIPS    O.M",
+    "4#PROD_NAME_CH": "Unifine一次性使用注射笔用针头", "5#CORP_NAME_EN": "OWEN MUMFORD
+    LTD", "6#CORP_NAME_CH": "英国欧曼福德公司", "7#MNF_NAME_EN": "OWEN MUMFORD LTD",
+    "8#MNF_NAME_CH": "英国欧曼福德公司", "9#PCK_DESC": "MEDICAL INST 8MM    10", "10#DOSAGE":
+    "注射笔", "11#SPEC": "31G 0.25MM x 8MM", "12#PACK": 10.0, "13#NFC1": "V--",
+    "14#NFC1_NAME": "VARIOUS FORMS", "15#NFC1_NAME_CH": "非人用及其他例如试验（实验室）制剂",
+    "16#NFC12": "VZ-", "17#NFC12_NAME": "N-H USE M-AID", "18#NFC12_NAME_CH":
+    "非人用医用敷料", "19#NFC123": "VZY", "20#NFC123_NAME": "N-H USE M-AIDS", "21#CORP_ID":
+    "5067", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "5067", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A10", "29#ATC2_DESC": "A10   DRUGS USED
+    IN DIABETES", "30#ATC3_CODE": "A10E", "31#ATC3_DESC": "A10E  INSULIN DEVICES",
+    "32#ATC4_CODE": "A10E0", "33#ATC4_DESC": "A10E0 INSULIN DEVICES", "34#ATC1":
+    "消化系统及代谢药", "35#ATC2": "糖尿病用药", "36#ATC3": "胰岛素设备", "37#ATC4": "胰岛素设备",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "8780210", "1#MOLE_NAME_EN": "DISPOSABLE MEDICAL DEVICES",
+    "2#MOLE_NAME_CH": "胰岛素笔注射针头", "3#PROD_DESC": "UNIFINE PENTIPS    O.M",
+    "4#PROD_NAME_CH": "Unifine一次性使用注射笔用针头", "5#CORP_NAME_EN": "OWEN MUMFORD
+    LTD", "6#CORP_NAME_CH": "英国欧曼福德公司", "7#MNF_NAME_EN": "OWEN MUMFORD LTD",
+    "8#MNF_NAME_CH": "英国欧曼福德公司", "9#PCK_DESC": "MEDICAL INST 0.25MM    10",
+    "10#DOSAGE": "注射笔", "11#SPEC": "31G 0.25MM x 5MM ", "12#PACK": 10.0,
+    "13#NFC1": "V--", "14#NFC1_NAME": "VARIOUS FORMS", "15#NFC1_NAME_CH":
+    "非人用及其他例如试验（实验室）制剂", "16#NFC12": "VZ-", "17#NFC12_NAME": "N-H USE M-AID",
+    "18#NFC12_NAME_CH": "非人用医用敷料", "19#NFC123": "VZY", "20#NFC123_NAME":
+    "N-H USE M-AIDS", "21#CORP_ID": "5067", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME":
+    "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID": "5067", "26#ATC1_CODE":
+    "A", "27#ATC1_DESC": "A     ALIMENTARY T.& METABOLISM", "28#ATC2_CODE":
+    "A10", "29#ATC2_DESC": "A10   DRUGS USED IN DIABETES", "30#ATC3_CODE":
+    "A10E", "31#ATC3_DESC": "A10E  INSULIN DEVICES", "32#ATC4_CODE": "A10E0",
+    "33#ATC4_DESC": "A10E0 INSULIN DEVICES", "34#ATC1": "消化系统及代谢药", "35#ATC2":
+    "糖尿病用药", "36#ATC3": "胰岛素设备", "37#ATC4": "胰岛素设备", "38#REMARK": "",
+    "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "8780212", "1#MOLE_NAME_EN": "DISPOSABLE MEDICAL DEVICES",
+    "2#MOLE_NAME_CH": "胰岛素笔注射针头", "3#PROD_DESC": "UNIFINE PENTIPS    O.M",
+    "4#PROD_NAME_CH": "Unifine一次性使用注射笔用针头", "5#CORP_NAME_EN": "OWEN MUMFORD
+    LTD", "6#CORP_NAME_CH": "英国欧曼福德公司", "7#MNF_NAME_EN": "OWEN MUMFORD LTD",
+    "8#MNF_NAME_CH": "英国欧曼福德公司", "9#PCK_DESC": "MEDICAL INST 6MM    7", "10#DOSAGE":
+    "注射笔", "11#SPEC": "32G 0.25 x 6MM", "12#PACK": 7.0, "13#NFC1": "V--",
+    "14#NFC1_NAME": " VARIOUS FORMS", "15#NFC1_NAME_CH": "非人用及其他例如试验（实验室）制剂",
+    "16#NFC12": "VZ-", "17#NFC12_NAME": "N-H USE M-AID", "18#NFC12_NAME_CH":
+    "非人用医用敷料", "19#NFC123": "VZY", "20#NFC123_NAME": "N-H USE M-AIDS", "21#CORP_ID":
+    "5067", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "5067", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A10", "29#ATC2_DESC": "A10   DRUGS USED
+    IN DIABETES", "30#ATC3_CODE": "A10E", "31#ATC3_DESC": "A10E  INSULIN DEVICES",
+    "32#ATC4_CODE": "A10E0", "33#ATC4_DESC": "A10E0 INSULIN DEVICES", "34#ATC1":
+    "消化系统及代谢药", "35#ATC2": "糖尿病用药", "36#ATC3": "胰岛素设备", "37#ATC4": "胰岛素设备",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3083702", "1#MOLE_NAME_EN": "BISMUTH", "2#MOLE_NAME_CH":
+    "胶体果胶铋", "3#PROD_DESC": "U BI LE            H3U", "4#PROD_NAME_CH": "U比乐",
+    "5#CORP_NAME_EN": "HN.WARRANT PHARM", "6#CORP_NAME_CH": "湖南华纳大药厂股份有限公司",
+    "7#MNF_NAME_EN": "HN.WARRANT PHARM", "8#MNF_NAME_CH": "湖南华纳大药厂股份有限公司",
+    "9#PCK_DESC": "CAP 100MG    36", "10#DOSAGE": "胶囊", "11#SPEC": "100MG",
+    "12#PACK": 36.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    2367.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2367.0, "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A02", "29#ATC2_DESC": "A02   A-ACID
+    A-FLAT A-ULCERANTS", "30#ATC3_CODE": "A02B", "31#ATC3_DESC": "A02B  ANTIULCERANTS",
+    "32#ATC4_CODE": "A02B4", "33#ATC4_DESC": "A02B4 BISMUTH ANTIULCERANTS",
+    "34#ATC1": "消化系统及代谢药", "35#ATC2": "抗酸药，抗肠胃气胀药和抗溃疡药", "36#ATC3": "抗溃疡药",
+    "37#ATC4": "铋类抗溃疡药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3083704", "1#MOLE_NAME_EN": "BISMUTH", "2#MOLE_NAME_CH":
+    "胶体果胶铋", "3#PROD_DESC": "U BI LE            H3U", "4#PROD_NAME_CH": "U比乐",
+    "5#CORP_NAME_EN": "HN.WARRANT PHARM", "6#CORP_NAME_CH": "湖南华纳大药厂股份有限公司",
+    "7#MNF_NAME_EN": "HN.WARRANT PHARM", "8#MNF_NAME_CH": "湖南华纳大药厂股份有限公司",
+    "9#PCK_DESC": "CAP 50MG    24", "10#DOSAGE": "胶囊", "11#SPEC": "50MG",
+    "12#PACK": 24.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    2367.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2367.0, "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A02", "29#ATC2_DESC": "A02   A-ACID
+    A-FLAT A-ULCERANTS", "30#ATC3_CODE": "A02B", "31#ATC3_DESC": "A02B  ANTIULCERANTS",
+    "32#ATC4_CODE": "A02B4", "33#ATC4_DESC": "A02B4 BISMUTH ANTIULCERANTS",
+    "34#ATC1": "消化系统及代谢药", "35#ATC2": "抗酸药，抗肠胃气胀药和抗溃疡药", "36#ATC3": "抗溃疡药",
+    "37#ATC4": "铋类抗溃疡药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3083706", "1#MOLE_NAME_EN": "BISMUTH", "2#MOLE_NAME_CH":
+    "胶体果胶铋", "3#PROD_DESC": "U BI LE            H3U", "4#PROD_NAME_CH": "U比乐",
+    "5#CORP_NAME_EN": "HN.WARRANT PHARM", "6#CORP_NAME_CH": "湖南华纳大药厂股份有限公司",
+    "7#MNF_NAME_EN": "HN.WARRANT PHARM", "8#MNF_NAME_CH": "湖南华纳大药厂股份有限公司",
+    "9#PCK_DESC": "CAP 100MG    24", "10#DOSAGE": "胶囊", "11#SPEC": "100MG",
+    "12#PACK": 24.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    2367.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2367.0, "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A02", "29#ATC2_DESC": "A02   A-ACID
+    A-FLAT A-ULCERANTS", "30#ATC3_CODE": "A02B", "31#ATC3_DESC": "A02B  ANTIULCERANTS",
+    "32#ATC4_CODE": "A02B4", "33#ATC4_DESC": "A02B4 BISMUTH ANTIULCERANTS",
+    "34#ATC1": "消化系统及代谢药", "35#ATC2": "抗酸药，抗肠胃气胀药和抗溃疡药", "36#ATC3": "抗溃疡药",
+    "37#ATC4": "铋类抗溃疡药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3083708", "1#MOLE_NAME_EN": "BISMUTH", "2#MOLE_NAME_CH":
+    "胶体果胶铋", "3#PROD_DESC": "U BI LE            H3U", "4#PROD_NAME_CH": "U比乐",
+    "5#CORP_NAME_EN": "HN.WARRANT PHARM", "6#CORP_NAME_CH": "湖南华纳大药厂股份有限公司",
+    "7#MNF_NAME_EN": "HN.WARRANT PHARM", "8#MNF_NAME_CH": "湖南华纳大药厂股份有限公司",
+    "9#PCK_DESC": "CAP 50MG    12", "10#DOSAGE": "胶囊", "11#SPEC": "50MG",
+    "12#PACK": 12.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    2367.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2367.0, "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A02", "29#ATC2_DESC": "A02   A-ACID
+    A-FLAT A-ULCERANTS", "30#ATC3_CODE": "A02B", "31#ATC3_DESC": "A02B  ANTIULCERANTS",
+    "32#ATC4_CODE": "A02B4", "33#ATC4_DESC": "A02B4 BISMUTH ANTIULCERANTS",
+    "34#ATC1": "消化系统及代谢药", "35#ATC2": "抗酸药，抗肠胃气胀药和抗溃疡药", "36#ATC3": "抗溃疡药",
+    "37#ATC4": "铋类抗溃疡药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3083710", "1#MOLE_NAME_EN": "BISMUTH", "2#MOLE_NAME_CH":
+    "胶体果胶铋", "3#PROD_DESC": "U BI LE            H3U", "4#PROD_NAME_CH": "U比乐",
+    "5#CORP_NAME_EN": "HN.WARRANT PHARM", "6#CORP_NAME_CH": "湖南华纳大药厂股份有限公司",
+    "7#MNF_NAME_EN": "HN.WARRANT PHARM", "8#MNF_NAME_CH": "湖南华纳大药厂股份有限公司",
+    "9#PCK_DESC": "CAP 100MG    60", "10#DOSAGE": "胶囊", "11#SPEC": "100MG",
+    "12#PACK": 60.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    2367.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2367.0, "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A02", "29#ATC2_DESC": "A02   A-ACID
+    A-FLAT A-ULCERANTS", "30#ATC3_CODE": "A02B", "31#ATC3_DESC": "A02B  ANTIULCERANTS",
+    "32#ATC4_CODE": "A02B4", "33#ATC4_DESC": "A02B4 BISMUTH ANTIULCERANTS",
+    "34#ATC1": "消化系统及代谢药", "35#ATC2": "抗酸药，抗肠胃气胀药和抗溃疡药", "36#ATC3": "抗溃疡药",
+    "37#ATC4": "铋类抗溃疡药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1425702", "1#MOLE_NAME_EN": "ASCORBIC ACID+BIOTIN+CYANOCOBALAMIN+FOLIC
+    ACID+GLYCINE+NICOTINAMIDE+PANTOTHENIC ACID+PYRIDOXINE+RIBOFLAVIN+THIAMINE", "2#MOLE_NAME_CH":
+    "水溶性维生素", "3#PROD_DESC": "V-JIA LIN          CQY", "4#PROD_NAME_CH": "V佳林",
+    "5#CORP_NAME_EN": "SHANGHAI FOSUN PH", "6#CORP_NAME_CH": "上海复星药业", "7#MNF_NAME_EN":
+    "CHONGQING YAOYOU", "8#MNF_NAME_CH": "重庆药友制药有限责任公司", "9#PCK_DESC": "INF
+    VIAL DRY     1", "10#DOSAGE": "粉针剂", "11#SPEC": "CO", "12#PACK": 1.0,
+    "13#NFC1": "F--", "14#NFC1_NAME": "PARENTERAL", "15#NFC1_NAME_CH": "注射用药",
+    "16#NFC12": "FQ-", "17#NFC12_NAME": "INFUSIONS", "18#NFC12_NAME_CH":
+    "输液用药", "19#NFC123": "FQD", "20#NFC123_NAME": "INF DRY BOTTLE", "21#CORP_ID":
+    "5959", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2636", "26#ATC1_CODE": "A", "27#ATC1_DESC":
+    "A     ALIMENTARY T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC":
+    "A11   VITAMINS", "30#ATC3_CODE": "A11E", "31#ATC3_DESC": "A11E  VITAMIN
+    B COMPLEX", "32#ATC4_CODE": "A11E2", "33#ATC4_DESC": "A11E2 VITAMIN B
+    COMPLEX + VIT C", "34#ATC1": "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3":
+    "维生素B及复合物", "37#ATC4": "含有维生素C的维生素B复合物", "38#REMARK": "", "_TAG":
+    "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1425704", "1#MOLE_NAME_EN": "ASCORBIC ACID+BIOTIN+CYANOCOBALAMIN+FOLIC
+    ACID+GLYCINE+NICOTINAMIDE+PANTOTHENIC ACID+PYRIDOXINE+RIBOFLAVIN+THIAMINE", "2#MOLE_NAME_CH":
+    "水溶性维生素", "3#PROD_DESC": "V-JIA LIN          CQY", "4#PROD_NAME_CH": "V佳林",
+    "5#CORP_NAME_EN": "SHANGHAI FOSUN PH", "6#CORP_NAME_CH": "上海复星药业", "7#MNF_NAME_EN":
+    "CHONGQING YAOYOU", "8#MNF_NAME_CH": "重庆药友制药有限责任公司", "9#PCK_DESC": "INF
+    VIAL DRY     10", "10#DOSAGE": "粉针剂", "11#SPEC": "CO", "12#PACK": 10.0,
+    "13#NFC1": "F--", "14#NFC1_NAME": "PARENTERAL", "15#NFC1_NAME_CH": "注射用药",
+    "16#NFC12": "FQ-", "17#NFC12_NAME": "INFUSIONS", "18#NFC12_NAME_CH":
+    "输液用药", "19#NFC123": "FQD", "20#NFC123_NAME": "INF DRY BOTTLE", "21#CORP_ID":
+    "5959", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2636", "26#ATC1_CODE": "A", "27#ATC1_DESC":
+    "A     ALIMENTARY T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC":
+    "A11   VITAMINS", "30#ATC3_CODE": "A11E", "31#ATC3_DESC": "A11E  VITAMIN
+    B COMPLEX", "32#ATC4_CODE": "A11E2", "33#ATC4_DESC": "A11E2 VITAMIN B
+    COMPLEX + VIT C", "34#ATC1": "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3":
+    "维生素B及复合物", "37#ATC4": "含有维生素C的维生素B复合物", "38#REMARK": "", "_TAG":
+    "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "6986202", "1#MOLE_NAME_EN": "DEXTROMETHORPHAN+GUAIFENESIN+PSEUDOEPHEDRINE",
+    "2#MOLE_NAME_CH": "美愈伪麻", "3#PROD_DESC": "A BEI SAI          JSX", "4#PROD_NAME_CH":
+    "阿贝赛", "5#CORP_NAME_EN": "JS.YUEXING PHARM", "6#CORP_NAME_CH": "江苏悦兴药业有限公司",
+    "7#MNF_NAME_EN": "JS.YUEXING PHARM", "8#MNF_NAME_CH": "江苏悦兴药业有限公司", "9#PCK_DESC":
+    "SOL UNIT DOS 140MG 10ML   6", "10#DOSAGE": "口服液", "11#SPEC": "10ML",
+    "12#PACK": 6.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL LIQUID", "15#NFC1_NAME_CH":
+    "口服液体", "16#NFC12": "DG-", "17#NFC12_NAME": "ORAL LIQUID", "18#NFC12_NAME_CH":
+    "口服液体", "19#NFC123": "DGN", "20#NFC123_NAME": "ORAL U-D LIQ", "21#CORP_ID":
+    "1694", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "1694", "26#ATC1_CODE": "R", "27#ATC1_DESC":
+    "R     RESPIRATORY SYSTEM", "28#ATC2_CODE": "R05", "29#ATC2_DESC": "R05   COUGH
+    & COLD PREPARATIONS", "30#ATC3_CODE": "R05D", "31#ATC3_DESC": "R05D  ANTITUSSIVES",
+    "32#ATC4_CODE": "R05D2", "33#ATC4_DESC": "R05D2 ANTITUSSIVES COMB", "34#ATC1":
+    "呼吸系统用药", "35#ATC2": "止咳和治感冒药物", "36#ATC3": "镇咳药", "37#ATC4": "联合用药的镇咳药",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1472202", "1#MOLE_NAME_EN": "BEZAFIBRATE", "2#MOLE_NAME_CH":
+    "苯扎贝特", "3#PROD_DESC": "A BEI TA           JHU", "4#PROD_NAME_CH": "阿贝他",
+    "5#CORP_NAME_EN": "TASLY GROUP", "6#CORP_NAME_CH": "天士力集团", "7#MNF_NAME_EN":
+    "JS.TASLY DIYI PHAR", "8#MNF_NAME_CH": "江苏天士力帝益药业有限公司", "9#PCK_DESC":
+    "TAB FLM CTD 200MG    20", "10#DOSAGE": "薄膜衣片", "11#SPEC": "200MG",
+    "12#PACK": 20.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    "6057", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "1611", "26#ATC1_CODE": "C", "27#ATC1_DESC":
+    "C     CARDIOVASCULAR SYSTEM", "28#ATC2_CODE": "C10", "29#ATC2_DESC":
+    "C10   LIPID-REG/ANTI-ATHEROMA", "30#ATC3_CODE": "C10A", "31#ATC3_DESC":
+    "C10A  CHOLEST&TRIGLY.REGULATOR", "32#ATC4_CODE": "C10A2", "33#ATC4_DESC":
+    "C10A2 FIBRATES", "34#ATC1": "心血管系统药物", "35#ATC2": "血脂调节剂联合用药（包含两种或以上的血脂调节剂）",
+    "36#ATC3": "调节胆固醇和甘油三酯的药物（C04 药物中的化合物属于此类）", "37#ATC4": "纤维类制剂", "38#REMARK":
+    "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430102", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        FJP", "4#PROD_NAME_CH": "阿苯达唑胶囊",
+    "5#CORP_NAME_EN": "FUJIAN PACIFIC PH", "6#CORP_NAME_CH": "福建太平洋制药有限公司",
+    "7#MNF_NAME_EN": "FUJIAN PACIFIC PH", "8#MNF_NAME_CH": "福建太平洋制药有限公司",
+    "9#PCK_DESC": "CAP 100MG    12", "10#DOSAGE": "胶囊", "11#SPEC": "100MG",
+    "12#PACK": 12.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "2030", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2030", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430602", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HT9", "4#PROD_NAME_CH": "阿苯达唑胶囊",
+    "5#CORP_NAME_EN": "HB.WH TUNGSHUN MED", "6#CORP_NAME_CH": "武汉东信医药科技有限责任公司",
+    "7#MNF_NAME_EN": "HB.WH TUNGSHUN MED", "8#MNF_NAME_CH": "武汉东信医药科技有限责任公司",
+    "9#PCK_DESC": "CAP 100MG    10", "10#DOSAGE": "胶囊", "11#SPEC": "100MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "1243", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "1243", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4457502", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HW1", "4#PROD_NAME_CH": "阿苯达唑胶囊",
+    "5#CORP_NAME_EN": "NEPTUNUS GROUP", "6#CORP_NAME_CH": "海王集团", "7#MNF_NAME_EN":
+    "HAIWANGFUYAO PHARM", "8#MNF_NAME_CH": "福州海王福药制药有限公司", "9#PCK_DESC": "CAP
+    200MG    10", "10#DOSAGE": "胶囊", "11#SPEC": "200MG", "12#PACK": 10.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "5941", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2002", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4602302", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HF5", "4#PROD_NAME_CH": "阿苯达唑胶囊",
+    "5#CORP_NAME_EN": "HN.FUREN PHAR CORP", "6#CORP_NAME_CH": "辅仁药业集团有限公司",
+    "7#MNF_NAME_EN": "HN.FUREN PHAR CORP", "8#MNF_NAME_CH": "辅仁药业集团有限公司",
+    "9#PCK_DESC": "CAP 200MG    12", "10#DOSAGE": "胶囊", "11#SPEC": "200MG",
+    "12#PACK": 12.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "3829", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "3829", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430006", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        ZYS", "4#PROD_NAME_CH": "阿苯达唑颗粒",
+    "5#CORP_NAME_EN": "ZJ.YOSEMADE TCM", "6#CORP_NAME_CH": "浙江普洛康裕天然药物有限公司",
+    "7#MNF_NAME_EN": "ZJ.YOSEMADE TCM", "8#MNF_NAME_CH": "浙江普洛康裕天然药物有限公司",
+    "9#PCK_DESC": "GRANULES UNI 100MG 1G   4", "10#DOSAGE": "颗粒剂", "11#SPEC":
+    "100MG 1G", "12#PACK": 4.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL
+    LIQUID", "15#NFC1_NAME_CH": "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME":
+    "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH": "散剂/颗粒 口服液体", "19#NFC123": "DEP",
+    "20#NFC123_NAME": "ORAL U-D PWDR", "21#CORP_ID": "3000", "22#MNF_TYPE":
+    "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID":
+    "3000", "26#ATC1_CODE": "P", "27#ATC1_DESC": "P     PARASITOLOGY", "28#ATC2_CODE":
+    "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.& ANTHELMINT.", "30#ATC3_CODE":
+    "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS", "32#ATC4_CODE": "P01B0",
+    "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1": "寄性物学", "35#ATC2":
+    "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4": "驱肠早药", "38#REMARK":
+    "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430704", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        JO+", "4#PROD_NAME_CH": "阿苯达唑颗粒",
+    "5#CORP_NAME_EN": "HB.JINLONG PHARM", "6#CORP_NAME_CH": "湖北金龙药业有限公司",
+    "7#MNF_NAME_EN": "HB.JINLONG PHARM", "8#MNF_NAME_CH": "湖北金龙药业有限公司", "9#PCK_DESC":
+    "GRANULES UNI 100MG 1G   4", "10#DOSAGE": "颗粒剂", "11#SPEC": "100MG 1G",
+    "12#PACK": 4.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL LIQUID", "15#NFC1_NAME_CH":
+    "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME": "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH":
+    "散剂/颗粒 口服液体", "19#NFC123": "DEP", "20#NFC123_NAME": "ORAL U-D PWDR",
+    "21#CORP_ID": "2250", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL",
+    "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID": "2250", "26#ATC1_CODE":
+    "P", "27#ATC1_DESC": "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC":
+    "P01   ANTIPROTOZ.& ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC":
+    "P01B  ANTHELMINTICS", "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0
+    ANTHELMINTICS", "34#ATC1": "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3":
+    "驱肠早药，杀血吸虫药除外", "37#ATC4": "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430002", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        AYU", "4#PROD_NAME_CH": "阿苯达唑颗粒",
+    "5#CORP_NAME_EN": "ZJ.YOSEMADE TCM", "6#CORP_NAME_CH": "浙江普洛康裕天然药物有限公司",
+    "7#MNF_NAME_EN": "ZJ.YOSEMADE TCM", "8#MNF_NAME_CH": "浙江普洛康裕天然药物有限公司",
+    "9#PCK_DESC": "GRANULES UNI 100MG 1G   2", "10#DOSAGE": "颗粒剂", "11#SPEC":
+    "100MG 1G", "12#PACK": 2.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL
+    LIQUID", "15#NFC1_NAME_CH": "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME":
+    "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH": "散剂/颗粒 口服液体", "19#NFC123": "DEP",
+    "20#NFC123_NAME": "ORAL U-D PWDR", "21#CORP_ID": "3000", "22#MNF_TYPE":
+    "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID":
+    "3000", "26#ATC1_CODE": "P", "27#ATC1_DESC": "P     PARASITOLOGY", "28#ATC2_CODE":
+    "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.& ANTHELMINT.", "30#ATC3_CODE":
+    "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS", "32#ATC4_CODE": "P01B0",
+    "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1": "寄性物学", "35#ATC2":
+    "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4": "驱肠早药", "38#REMARK":
+    "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430004", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        AYU", "4#PROD_NAME_CH": "阿苯达唑颗粒",
+    "5#CORP_NAME_EN": "ZJ.YOSEMADE TCM", "6#CORP_NAME_CH": "浙江普洛康裕天然药物有限公司",
+    "7#MNF_NAME_EN": "ZJ.YOSEMADE TCM", "8#MNF_NAME_CH": "浙江普洛康裕天然药物有限公司",
+    "9#PCK_DESC": "GRANULES UNI 100MG 1G   12", "10#DOSAGE": "颗粒剂", "11#SPEC":
+    "100MG 1G", "12#PACK": 12.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL
+    LIQUID", "15#NFC1_NAME_CH": "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME":
+    "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH": "散剂/颗粒 口服液体", "19#NFC123": "DEP",
+    "20#NFC123_NAME": "ORAL U-D PWDR", "21#CORP_ID": "3000", "22#MNF_TYPE":
+    "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID":
+    "3000", "26#ATC1_CODE": "P", "27#ATC1_DESC": "P     PARASITOLOGY", "28#ATC2_CODE":
+    "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.& ANTHELMINT.", "30#ATC3_CODE":
+    "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS", "32#ATC4_CODE": "P01B0",
+    "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1": "寄性物学", "35#ATC2":
+    "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4": "驱肠早药", "38#REMARK":
+    "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430008", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        AYU", "4#PROD_NAME_CH": "阿苯达唑颗粒",
+    "5#CORP_NAME_EN": "ZJ.YOSEMADE TCM", "6#CORP_NAME_CH": "浙江普洛康裕天然药物有限公司",
+    "7#MNF_NAME_EN": "ZJ.YOSEMADE TCM", "8#MNF_NAME_CH": "浙江普洛康裕天然药物有限公司",
+    "9#PCK_DESC": "GRAN U/DOSE 100MG 1G   8", "10#DOSAGE": "颗粒剂", "11#SPEC":
+    "100MG 1G", "12#PACK": 8.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL
+    LIQUID", "15#NFC1_NAME_CH": "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME":
+    "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH": "散剂/颗粒 口服液体", "19#NFC123": "DEP",
+    "20#NFC123_NAME": "ORAL U-D PWDR", "21#CORP_ID": "3000", "22#MNF_TYPE":
+    "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID":
+    "3000", "26#ATC1_CODE": "P", "27#ATC1_DESC": "P     PARASITOLOGY", "28#ATC2_CODE":
+    "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.& ANTHELMINT.", "30#ATC3_CODE":
+    "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS", "32#ATC4_CODE": "P01B0",
+    "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1": "寄性物学", "35#ATC2":
+    "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4": "驱肠早药", "38#REMARK":
+    "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430702", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        JO+", "4#PROD_NAME_CH": "阿苯达唑颗粒",
+    "5#CORP_NAME_EN": "HB.JINLONG PHARM", "6#CORP_NAME_CH": "湖北金龙药业有限公司",
+    "7#MNF_NAME_EN": "HB.JINLONG PHARM", "8#MNF_NAME_CH": "湖北金龙药业有限公司", "9#PCK_DESC":
+    "GRANULES UNI 100MG 1G   10", "10#DOSAGE": "颗粒剂", "11#SPEC": "100MG 1G",
+    "12#PACK": 10.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL LIQUID", "15#NFC1_NAME_CH":
+    "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME": "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH":
+    "散剂/颗粒 口服液体", "19#NFC123": "DEP", "20#NFC123_NAME": "ORAL U-D PWDR",
+    "21#CORP_ID": "2250", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL",
+    "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID": "2250", "26#ATC1_CODE":
+    "P", "27#ATC1_DESC": "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC":
+    "P01   ANTIPROTOZ.& ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC":
+    "P01B  ANTHELMINTICS", "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0
+    ANTHELMINTICS", "34#ATC1": "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3":
+    "驱肠早药，杀血吸虫药除外", "37#ATC4": "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430706", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        JO+", "4#PROD_NAME_CH": "阿苯达唑颗粒",
+    "5#CORP_NAME_EN": "HB.JINLONG PHARM", "6#CORP_NAME_CH": "湖北金龙药业有限公司",
+    "7#MNF_NAME_EN": "HB.JINLONG PHARM", "8#MNF_NAME_CH": "湖北金龙药业有限公司", "9#PCK_DESC":
+    "GRANULES UNI 100MG 1G   8", "10#DOSAGE": "颗粒剂", "11#SPEC": "100MG 1G",
+    "12#PACK": 8.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL LIQUID", "15#NFC1_NAME_CH":
+    "口服液体", "16#NFC12": "DE-", "17#NFC12_NAME": "PDR/GRN OR.LIQ", "18#NFC12_NAME_CH":
+    "散剂/颗粒 口服液体", "19#NFC123": "DEP", "20#NFC123_NAME": "ORAL U-D PWDR",
+    "21#CORP_ID": "2250", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL",
+    "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID": "2250", "26#ATC1_CODE":
+    "P", "27#ATC1_DESC": "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC":
+    "P01   ANTIPROTOZ.& ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC":
+    "P01B  ANTHELMINTICS", "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0
+    ANTHELMINTICS", "34#ATC1": "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3":
+    "驱肠早药，杀血吸虫药除外", "37#ATC4": "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "6469602", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        S+W", "4#PROD_NAME_CH": "阿苯达唑口服乳剂",
+    "5#CORP_NAME_EN": "SX.HANWANG PHARM", "6#CORP_NAME_CH": "陕西汉王药业有限公司",
+    "7#MNF_NAME_EN": "SX.HANWANG PHARM", "8#MNF_NAME_CH": "陕西汉王药业有限公司", "9#PCK_DESC":
+    "EMUL 1.25% 250ML   1", "10#DOSAGE": "口服乳剂", "11#SPEC": "1.25% 250ML",
+    "12#PACK": 1.0, "13#NFC1": "D--", "14#NFC1_NAME": " ORAL LIQUID", "15#NFC1_NAME_CH":
+    "口服液体", "16#NFC12": "DG-", "17#NFC12_NAME": "ORAL LIQUID", "18#NFC12_NAME_CH":
+    "口服液体", "19#NFC123": "DGL", "20#NFC123_NAME": "EMULSION", "21#CORP_ID":
+    "6800", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "6800", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1205202", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        CQK", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "CQ.KERUI PHARM", "6#CORP_NAME_CH": "重庆科瑞制药(集团)有限公司",
+    "7#MNF_NAME_EN": "CQ.KERUI PHARM", "8#MNF_NAME_CH": "重庆科瑞制药(集团)有限公司",
+    "9#PCK_DESC": "TAB 200MG    10", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "2639", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2639", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3343402", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        H7U", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.NUODESHENG PHAR", "6#CORP_NAME_CH": "湖北诺得胜制药有限公司",
+    "7#MNF_NAME_EN": "HB.NUODESHENG PHAR", "8#MNF_NAME_CH": "湖北诺得胜制药有限公司",
+    "9#PCK_DESC": "TAB 200MG    10", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "6631", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "6631", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3897702", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HJ9", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.ZHONGJIA PHARM", "6#CORP_NAME_CH": "湖北中佳药业有限公司",
+    "7#MNF_NAME_EN": "HB.ZHONGJIA PHARM", "8#MNF_NAME_CH": "湖北中佳药业有限公司", "9#PCK_DESC":
+    "TAB 200MG    10", "10#DOSAGE": "片剂", "11#SPEC": "200MG", "12#PACK":
+    10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "2217", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2217", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4373502", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HM/", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.MEIBAO PHARM", "6#CORP_NAME_CH": "湖北美宝药业有限公司", "7#MNF_NAME_EN":
+    "HB.MEIBAO PHARM", "8#MNF_NAME_CH": "湖北美宝药业有限公司", "9#PCK_DESC": "TAB
+    200MG    10", "10#DOSAGE": "片剂", "11#SPEC": "200MG", "12#PACK": 10.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "6649", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "6649", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4429702", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        JO-", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "JS.SZ HONGSEN PH", "6#CORP_NAME_CH": "苏州弘森药业股份有限公司",
+    "7#MNF_NAME_EN": "JS.SZ HONGSEN PH", "8#MNF_NAME_CH": "苏州弘森药业股份有限公司",
+    "9#PCK_DESC": "TAB 200MG    12", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 12.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "1634", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "1634", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4429704", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        JO-", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "JS.SZ HONGSEN PH", "6#CORP_NAME_CH": "苏州弘森药业股份有限公司",
+    "7#MNF_NAME_EN": "JS.SZ HONGSEN PH", "8#MNF_NAME_CH": "苏州弘森药业股份有限公司",
+    "9#PCK_DESC": "TAB 200MG    10", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "1634", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "1634", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430402", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HZN", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HUAZHONG PHARM", "6#CORP_NAME_CH": "华中药业股份有限公司", "7#MNF_NAME_EN":
+    "HUAZHONG PHARM", "8#MNF_NAME_CH": "华中药业股份有限公司", "9#PCK_DESC": "TAB 200MG    10",
+    "10#DOSAGE": "片剂", "11#SPEC": "200MG", "12#PACK": 10.0, "13#NFC1":
+    "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH": "口服固体", "16#NFC12":
+    "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH": "片剂", "19#NFC123":
+    "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID": "2227", "22#MNF_TYPE":
+    "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID":
+    "2227", "26#ATC1_CODE": "P", "27#ATC1_DESC": "P     PARASITOLOGY", "28#ATC2_CODE":
+    "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.& ANTHELMINT.", "30#ATC3_CODE":
+    "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS", "32#ATC4_CODE": "P01B0",
+    "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1": "寄性物学", "35#ATC2":
+    "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4": "驱肠早药", "38#REMARK":
+    "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430404", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HZN", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HUAZHONG PHARM", "6#CORP_NAME_CH": "华中药业股份有限公司", "7#MNF_NAME_EN":
+    "HUAZHONG PHARM", "8#MNF_NAME_CH": "华中药业股份有限公司", "9#PCK_DESC": "TAB 200MG    2",
+    "10#DOSAGE": "片剂", "11#SPEC": "200MG", "12#PACK": 2.0, "13#NFC1":
+    "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH": "口服固体", "16#NFC12":
+    "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH": "片剂", "19#NFC123":
+    "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID": "2227", "22#MNF_TYPE":
+    "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID":
+    "2227", "26#ATC1_CODE": "P", "27#ATC1_DESC": "P     PARASITOLOGY", "28#ATC2_CODE":
+    "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.& ANTHELMINT.", "30#ATC3_CODE":
+    "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS", "32#ATC4_CODE": "P01B0",
+    "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1": "寄性物学", "35#ATC2":
+    "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4": "驱肠早药", "38#REMARK":
+    "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430502", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HGJ", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.GUANGJI PHARM", "6#CORP_NAME_CH": "湖北广济药业股份有限公司",
+    "7#MNF_NAME_EN": "HB.GUANGJI PHARM", "8#MNF_NAME_CH": "湖北广济药业股份有限公司",
+    "9#PCK_DESC": "TAB 200MG    10", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "2226", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2226", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4431002", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        GBY", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "GD.BAIYUNSHAN FTY", "6#CORP_NAME_CH": "广州白云山医药集团股份有限公司白云山制药总厂",
+    "7#MNF_NAME_EN": "GD.BAIYUNSHAN FTY", "8#MNF_NAME_CH": "广州白云山医药集团股份有限公司白云山制药总厂",
+    "9#PCK_DESC": "TAB 200MG    10", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "2402", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2402", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4431202", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HQY", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HN.QUANYU PHARM", "6#CORP_NAME_CH": "河南全宇制药股份有限公司",
+    "7#MNF_NAME_EN": "HN.QUANYU PHARM", "8#MNF_NAME_CH": "河南全宇制药股份有限公司", "9#PCK_DESC":
+    "TAB 100MG    10", "10#DOSAGE": "片剂", "11#SPEC": "100MG", "12#PACK":
+    10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "3956", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "3956", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4457604", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        RYU", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.RENYUE PHARMA", "6#CORP_NAME_CH": "湖北仁悦药业股份有限公司",
+    "7#MNF_NAME_EN": "HB.RENYUE PHARMA", "8#MNF_NAME_CH": "湖北仁悦药业股份有限公司",
+    "9#PCK_DESC": "TAB 200MG    12", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 12.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "3175", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "3175", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4602202", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        AH6", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "AH.SHENGYING PHARM", "6#CORP_NAME_CH": "安徽圣鹰药业有限公司",
+    "7#MNF_NAME_EN": "AH.SHENGYING PHARM", "8#MNF_NAME_CH": "安徽圣鹰药业有限公司",
+    "9#PCK_DESC": "TAB 200MG    10", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "1806", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "1806", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "5624802", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "HU CHANG NING      MY&", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "MNG.MYSUN PHARM", "6#CORP_NAME_CH": "赤峰蒙欣药业有限公司", "7#MNF_NAME_EN":
+    "MNG.MYSUN PHARM", "8#MNF_NAME_CH": "赤峰蒙欣药业有限公司", "9#PCK_DESC": "TAB
+    FLM CTD 200MG    10", "10#DOSAGE": "薄膜衣片", "11#SPEC": "200MG", "12#PACK":
+    10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    "0633", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "0633", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3343404", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        H7U", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.NUODESHENG PHAR", "6#CORP_NAME_CH": "湖北诺得胜制药有限公司",
+    "7#MNF_NAME_EN": "HB.NUODESHENG PHAR", "8#MNF_NAME_CH": "湖北诺得胜制药有限公司",
+    "9#PCK_DESC": "TAB 200MG    2", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 2.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "6631", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "6631", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3897704", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HJ9", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.ZHONGJIA PHARM", "6#CORP_NAME_CH": "湖北中佳药业有限公司",
+    "7#MNF_NAME_EN": "HB.ZHONGJIA PHARM", "8#MNF_NAME_CH": "湖北中佳药业有限公司", "9#PCK_DESC":
+    "TAB 200MG    30", "10#DOSAGE": "片剂", "11#SPEC": "200MG", "12#PACK":
+    30.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "2217", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2217", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3897706", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HJ9", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.ZHONGJIA PHARM", "6#CORP_NAME_CH": "湖北中佳药业有限公司",
+    "7#MNF_NAME_EN": "HB.ZHONGJIA PHARM", "8#MNF_NAME_CH": "湖北中佳药业有限公司", "9#PCK_DESC":
+    "TAB 200MG    12", "10#DOSAGE": "片剂", "11#SPEC": "200MG", "12#PACK":
+    12.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "2217", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2217", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4373504", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HM/", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.MEIBAO PHARM", "6#CORP_NAME_CH": "湖北美宝药业有限公司", "7#MNF_NAME_EN":
+    "HB.MEIBAO PHARM", "8#MNF_NAME_CH": "湖北美宝药业有限公司", "9#PCK_DESC": "TAB
+    200MG    12", "10#DOSAGE": "片剂", "11#SPEC": "200MG", "12#PACK": 12.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "6649", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "6649", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4373506", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HM/", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.MEIBAO PHARM", "6#CORP_NAME_CH": "湖北美宝药业有限公司", "7#MNF_NAME_EN":
+    "HB.MEIBAO PHARM", "8#MNF_NAME_CH": "湖北美宝药业有限公司", "9#PCK_DESC": "TAB
+    200MG    20", "10#DOSAGE": "片剂", "11#SPEC": "200MG", "12#PACK": 20.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "6649", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "6649", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4373508", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HM/", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.MEIBAO PHARM", "6#CORP_NAME_CH": "湖北美宝药业有限公司", "7#MNF_NAME_EN":
+    "HB.MEIBAO PHARM", "8#MNF_NAME_CH": "湖北美宝药业有限公司", "9#PCK_DESC": "TAB
+    200MG    24", "10#DOSAGE": "片剂", "11#SPEC": "200MG", "12#PACK": 24.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "6649", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "6649", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4373510", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HM/", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.MEIBAO PHARM", "6#CORP_NAME_CH": "湖北美宝药业有限公司", "7#MNF_NAME_EN":
+    "HB.MEIBAO PHARM", "8#MNF_NAME_CH": "湖北美宝药业有限公司", "9#PCK_DESC": "TAB
+    200MG    2", "10#DOSAGE": "片剂", "11#SPEC": "200MG", "12#PACK": 2.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "6649", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "6649", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4430504", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        HGJ", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.GUANGJI PHARM", "6#CORP_NAME_CH": "湖北广济药业股份有限公司",
+    "7#MNF_NAME_EN": "HB.GUANGJI PHARM", "8#MNF_NAME_CH": "湖北广济药业股份有限公司",
+    "9#PCK_DESC": "TAB 200MG    2", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 2.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "2226", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2226", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4457602", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        RYU", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "HB.RENYUE PHARMA", "6#CORP_NAME_CH": "湖北仁悦药业股份有限公司",
+    "7#MNF_NAME_EN": "HB.RENYUE PHARMA", "8#MNF_NAME_CH": "湖北仁悦药业股份有限公司",
+    "9#PCK_DESC": "TAB 200MG    10", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "3175", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "3175", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4602204", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "ALBENDAZOLE        AH6", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "AH.SHENGYING PHARM", "6#CORP_NAME_CH": "安徽圣鹰药业有限公司",
+    "7#MNF_NAME_EN": "AH.SHENGYING PHARM", "8#MNF_NAME_CH": "安徽圣鹰药业有限公司",
+    "9#PCK_DESC": "TAB 200MG    2", "10#DOSAGE": "片剂", "11#SPEC": "200MG",
+    "12#PACK": 2.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "1806", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "1806", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "5624804", "1#MOLE_NAME_EN": "ALBENDAZOLE", "2#MOLE_NAME_CH":
+    "阿苯达唑", "3#PROD_DESC": "HU CHANG NING      MY&", "4#PROD_NAME_CH": "阿苯达唑片",
+    "5#CORP_NAME_EN": "MNG.MYSUN PHARM", "6#CORP_NAME_CH": "赤峰蒙欣药业有限公司", "7#MNF_NAME_EN":
+    "MNG.MYSUN PHARM", "8#MNF_NAME_CH": "赤峰蒙欣药业有限公司", "9#PCK_DESC": "TAB
+    FLM CTD 200MG    2", "10#DOSAGE": "薄膜衣片", "11#SPEC": "200MG", "12#PACK":
+    2.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    "0633", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "0633", "26#ATC1_CODE": "P", "27#ATC1_DESC":
+    "P     PARASITOLOGY", "28#ATC2_CODE": "P01", "29#ATC2_DESC": "P01   ANTIPROTOZ.&
+    ANTHELMINT.", "30#ATC3_CODE": "P01B", "31#ATC3_DESC": "P01B  ANTHELMINTICS",
+    "32#ATC4_CODE": "P01B0", "33#ATC4_DESC": "P01B0 ANTHELMINTICS", "34#ATC1":
+    "寄性物学", "35#ATC2": "抗原生动物药和驱肠虫药", "36#ATC3": "驱肠早药，杀血吸虫药除外", "37#ATC4":
+    "驱肠早药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "6137310", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "ADEFOVIR DIPIVOXIL HN6", "4#PROD_NAME_CH":
+    "阿德福韦酯分散片", "5#CORP_NAME_EN": "HN.FANGSHENG PH", "6#CORP_NAME_CH": "湖南方盛制药股份有限公司",
+    "7#MNF_NAME_EN": "HN.FANGSHENG PH", "8#MNF_NAME_CH": "湖南方盛制药股份有限公司", "9#PCK_DESC":
+    "TAB DISP 10MG    14", "10#DOSAGE": "分散片", "11#SPEC": "10MG", "12#PACK":
+    14.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAK", "20#NFC123_NAME": "SOLUBLE TABS.", "21#CORP_ID":
+    2355.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2355.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "6137312", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "ADEFOVIR DIPIVOXIL HN6", "4#PROD_NAME_CH":
+    "阿德福韦酯分散片", "5#CORP_NAME_EN": "HN.FANGSHENG PH", "6#CORP_NAME_CH": "湖南方盛制药股份有限公司",
+    "7#MNF_NAME_EN": "HN.FANGSHENG PH", "8#MNF_NAME_CH": "湖南方盛制药股份有限公司", "9#PCK_DESC":
+    "TAB DISP 10MG    10", "10#DOSAGE": "分散片", "11#SPEC": "10MG", "12#PACK":
+    10.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAK", "20#NFC123_NAME": "SOLUBLE TABS.", "21#CORP_ID":
+    2355.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2355.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "6137304", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "ADEFOVIR DIPIVOXIL HN6", "4#PROD_NAME_CH":
+    "阿德福韦酯胶囊", "5#CORP_NAME_EN": "HN.FANGSHENG PH", "6#CORP_NAME_CH": "湖南方盛制药股份有限公司",
+    "7#MNF_NAME_EN": "HN.FANGSHENG PH", "8#MNF_NAME_CH": "湖南方盛制药股份有限公司", "9#PCK_DESC":
+    "CAP 10MG    12", "10#DOSAGE": "胶囊", "11#SPEC": "10MG", "12#PACK":
+    12.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    2355.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2355.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "6137314", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "ADEFOVIR DIPIVOXIL HN6", "4#PROD_NAME_CH":
+    "阿德福韦酯胶囊", "5#CORP_NAME_EN": "HN.FANGSHENG PH", "6#CORP_NAME_CH": "湖南方盛制药股份有限公司",
+    "7#MNF_NAME_EN": "HN.FANGSHENG PH", "8#MNF_NAME_CH": "湖南方盛制药股份有限公司", "9#PCK_DESC":
+    "CAP 10MG    14", "10#DOSAGE": "胶囊", "11#SPEC": "10MG", "12#PACK":
+    14.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "2355", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2355", "26#ATC1_CODE": "J", "27#ATC1_DESC":
+    "J     SYSTEMIC ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC":
+    "J05   ANTIVIRALS SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC":
+    "J05D  HEPATITIS ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC":
+    "J05D2 HEPATITIS B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药",
+    "36#ATC3": "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG":
+    "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "6137302", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "ADEFOVIR DIPIVOXIL HN6", "4#PROD_NAME_CH":
+    "阿德福韦酯片", "5#CORP_NAME_EN": "HN.FANGSHENG PH", "6#CORP_NAME_CH": "湖南方盛制药股份有限公司",
+    "7#MNF_NAME_EN": "HN.FANGSHENG PH", "8#MNF_NAME_CH": "湖南方盛制药股份有限公司", "9#PCK_DESC":
+    "TAB FLM CTD 10MG    24", "10#DOSAGE": "薄膜衣片", "11#SPEC": "10MG", "12#PACK":
+    24.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "包衣片剂", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    2355.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2355.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "6137306", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "ADEFOVIR DIPIVOXIL HN6", "4#PROD_NAME_CH":
+    "阿德福韦酯片", "5#CORP_NAME_EN": "HN.FANGSHENG PH", "6#CORP_NAME_CH": "湖南方盛制药股份有限公司",
+    "7#MNF_NAME_EN": "HN.FANGSHENG PH", "8#MNF_NAME_CH": "湖南方盛制药股份有限公司", "9#PCK_DESC":
+    "TAB FLM CTD 10MG    10", "10#DOSAGE": "薄膜衣片", "11#SPEC": "10MG", "12#PACK":
+    10.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "包衣片剂", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    2355.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2355.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "6137308", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "ADEFOVIR DIPIVOXIL HN6", "4#PROD_NAME_CH":
+    "阿德福韦酯片", "5#CORP_NAME_EN": "HN.FANGSHENG PH", "6#CORP_NAME_CH": "湖南方盛制药股份有限公司",
+    "7#MNF_NAME_EN": "HN.FANGSHENG PH", "8#MNF_NAME_CH": "湖南方盛制药股份有限公司", "9#PCK_DESC":
+    "TAB FLM CTD 10MG    14", "10#DOSAGE": "薄膜衣片", "11#SPEC": "10MG", "12#PACK":
+    14.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "包衣片剂", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    2355.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2355.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3601702", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "A DI XIAN          ZUI", "4#PROD_NAME_CH":
+    "阿迪仙", "5#CORP_NAME_EN": "ZHUHAI UNITED LAB", "6#CORP_NAME_CH": "珠海联邦制药股份有限公司中山分公司",
+    "7#MNF_NAME_EN": "ZHUHAI UNITED LAB", "8#MNF_NAME_CH": "珠海联邦制药股份有限公司中山分公司",
+    "9#PCK_DESC": "CAP 10MG    10", "10#DOSAGE": "胶囊", "11#SPEC": "10MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    2280.0, "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": 2280.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3601704", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "A DI XIAN          ZUI", "4#PROD_NAME_CH":
+    "阿迪仙", "5#CORP_NAME_EN": "ZHUHAI UNITED LAB", "6#CORP_NAME_CH": "珠海联邦制药股份有限公司中山分公司",
+    "7#MNF_NAME_EN": "ZHUHAI UNITED LAB", "8#MNF_NAME_CH": "珠海联邦制药股份有限公司中山分公司",
+    "9#PCK_DESC": "CAP 10MG    20", "10#DOSAGE": "胶囊", "11#SPEC": "10MG",
+    "12#PACK": 20.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    2280.0, "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": 2280.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0621302", "1#MOLE_NAME_EN": "PIPECURONIUM", "2#MOLE_NAME_CH":
+    "哌库溴铵", "3#PROD_DESC": "ARDUAN             G.R", "4#PROD_NAME_CH": "阿端",
+    "5#CORP_NAME_EN": "GEDEON RICHTER", "6#CORP_NAME_CH": "匈牙利吉瑞大药厂", "7#MNF_NAME_EN":
+    "GEDEON RICHTER", "8#MNF_NAME_CH": "匈牙利吉瑞大药厂", "9#PCK_DESC": "VIAL DRY
+    4MG    1", "10#DOSAGE": "粉针剂", "11#SPEC": "4MG", "12#PACK": 1.0, "13#NFC1":
+    "F--", "14#NFC1_NAME": " PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12":
+    "FP-", "17#NFC12_NAME": "VIAL", "18#NFC12_NAME_CH": "小瓶用药", "19#NFC123":
+    "FPB", "20#NFC123_NAME": "VIAL DRY", "21#CORP_ID": "4428", "22#MNF_TYPE":
+    "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID":
+    "4428", "26#ATC1_CODE": "M", "27#ATC1_DESC": "M     MUSCULO-SKELETAL
+    SYSTEM", "28#ATC2_CODE": "M03", "29#ATC2_DESC": "M03   MUSCLE RELAXANTS",
+    "30#ATC3_CODE": "M03A", "31#ATC3_DESC": "M03A  MUSCLE RELAXANTS,PERIPHER",
+    "32#ATC4_CODE": "M03A0", "33#ATC4_DESC": "M03A0 MUSCLE RELAXANTS,PERIPHER",
+    "34#ATC1": "肌肉-骨骼系统", "35#ATC2": "肌肉松弛药", "36#ATC3": "肌肉松弛药，作用于外用",
+    "37#ATC4": "肌肉松弛药，作用于外用", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0621306", "1#MOLE_NAME_EN": "PIPECURONIUM", "2#MOLE_NAME_CH":
+    "哌库溴铵", "3#PROD_DESC": "ARDUAN             G.R", "4#PROD_NAME_CH": "阿端",
+    "5#CORP_NAME_EN": "GEDEON RICHTER", "6#CORP_NAME_CH": "匈牙利吉瑞大药厂", "7#MNF_NAME_EN":
+    "GEDEON RICHTER", "8#MNF_NAME_CH": "匈牙利吉瑞大药厂", "9#PCK_DESC": "VIAL DRY
+    4MG    5", "10#DOSAGE": "粉针剂", "11#SPEC": "4MG", "12#PACK": 5.0, "13#NFC1":
+    "F--", "14#NFC1_NAME": " PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12":
+    "FP-", "17#NFC12_NAME": "VIAL", "18#NFC12_NAME_CH": "小瓶用药", "19#NFC123":
+    "FPB", "20#NFC123_NAME": "VIAL DRY", "21#CORP_ID": "4428", "22#MNF_TYPE":
+    "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID":
+    "4428", "26#ATC1_CODE": "M", "27#ATC1_DESC": "M     MUSCULO-SKELETAL
+    SYSTEM", "28#ATC2_CODE": "M03", "29#ATC2_DESC": "M03   MUSCLE RELAXANTS",
+    "30#ATC3_CODE": "M03A", "31#ATC3_DESC": "M03A  MUSCLE RELAXANTS,PERIPHER",
+    "32#ATC4_CODE": "M03A0", "33#ATC4_DESC": "M03A0 MUSCLE RELAXANTS,PERIPHER",
+    "34#ATC1": "肌肉-骨骼系统", "35#ATC2": "肌肉松弛药", "36#ATC3": "肌肉松弛药，作用于外用",
+    "37#ATC4": "肌肉松弛药，作用于外用", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0621304", "1#MOLE_NAME_EN": "PIPECURONIUM", "2#MOLE_NAME_CH":
+    "哌库溴铵", "3#PROD_DESC": "ARDUAN             G.R", "4#PROD_NAME_CH": "阿端",
+    "5#CORP_NAME_EN": "GEDEON RICHTER", "6#CORP_NAME_CH": "匈牙利吉瑞大药厂", "7#MNF_NAME_EN":
+    "GEDEON RICHTER", "8#MNF_NAME_CH": "匈牙利吉瑞大药厂", "9#PCK_DESC": "VIAL DRY
+    4MG    10", "10#DOSAGE": "粉针剂", "11#SPEC": "4MG", "12#PACK": 10.0,
+    "13#NFC1": "F--", "14#NFC1_NAME": " PARENTERAL", "15#NFC1_NAME_CH":
+    "注射用药", "16#NFC12": "FP-", "17#NFC12_NAME": "VIAL", "18#NFC12_NAME_CH":
+    "小瓶用药", "19#NFC123": "FPB", "20#NFC123_NAME": "VIAL DRY", "21#CORP_ID":
+    "4428", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "4428", "26#ATC1_CODE": "M", "27#ATC1_DESC": "M     MUSCULO-SKELETAL
+    SYSTEM", "28#ATC2_CODE": "M03", "29#ATC2_DESC": "M03   MUSCLE RELAXANTS",
+    "30#ATC3_CODE": "M03A", "31#ATC3_DESC": "M03A  MUSCLE RELAXANTS,PERIPHER",
+    "32#ATC4_CODE": "M03A0", "33#ATC4_DESC": "M03A0 MUSCLE RELAXANTS,PERIPHER",
+    "34#ATC1": "肌肉-骨骼系统", "35#ATC2": "肌肉松弛药", "36#ATC3": "肌肉松弛药，作用于外用",
+    "37#ATC4": "肌肉松弛药，作用于外用", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1598304", "1#MOLE_NAME_EN": "ERDOSTEINE", "2#MOLE_NAME_CH":
+    "厄多司坦", "3#PROD_DESC": "A DUO TING         S2P", "4#PROD_NAME_CH": "阿多停",
+    "5#CORP_NAME_EN": "SH.PUKANG PHARM", "6#CORP_NAME_CH": "上海普康药业有限公司", "7#MNF_NAME_EN":
+    "SH.PUKANG PHARM", "8#MNF_NAME_CH": "上海普康药业有限公司", "9#PCK_DESC": "CAP
+    300MG    12", "10#DOSAGE": "胶囊", "11#SPEC": "300MG", "12#PACK": 12.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "0205", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "0205", "26#ATC1_CODE": "R", "27#ATC1_DESC":
+    "R     RESPIRATORY SYSTEM", "28#ATC2_CODE": "R05", "29#ATC2_DESC": "R05   COUGH
+    & COLD PREPARATIONS", "30#ATC3_CODE": "R05C", "31#ATC3_DESC": "R05C  EXPECTORANTS",
+    "32#ATC4_CODE": "R05C0", "33#ATC4_DESC": "R05C0 EXPECTORANTS", "34#ATC1":
+    "呼吸系统用药", "35#ATC2": "止咳和治感冒药物", "36#ATC3": "祛痰药", "37#ATC4": "祛痰药",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1598302", "1#MOLE_NAME_EN": "ERDOSTEINE", "2#MOLE_NAME_CH":
+    "厄多司坦", "3#PROD_DESC": "A DUO TING         S2P", "4#PROD_NAME_CH": "阿多停",
+    "5#CORP_NAME_EN": "SH.PUKANG PHARM", "6#CORP_NAME_CH": "上海普康药业有限公司", "7#MNF_NAME_EN":
+    "SH.PUKANG PHARM", "8#MNF_NAME_CH": "上海普康药业有限公司", "9#PCK_DESC": "CAP
+    300MG    6", "10#DOSAGE": "胶囊", "11#SPEC": "300MG", "12#PACK": 6.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "0205", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "0205", "26#ATC1_CODE": "R", "27#ATC1_DESC":
+    "R     RESPIRATORY SYSTEM", "28#ATC2_CODE": "R05", "29#ATC2_DESC": "R05   COUGH
+    & COLD PREPARATIONS", "30#ATC3_CODE": "R05C", "31#ATC3_DESC": "R05C  EXPECTORANTS",
+    "32#ATC4_CODE": "R05C0", "33#ATC4_DESC": "R05C0 EXPECTORANTS", "34#ATC1":
+    "呼吸系统用药", "35#ATC2": "止咳和治感冒药物", "36#ATC3": "祛痰药", "37#ATC4": "祛痰药",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0749902", "1#MOLE_NAME_EN": "AROTINOLOL", "2#MOLE_NAME_CH":
+    "阿罗洛尔", "3#PROD_DESC": "ALMARL             SUO", "4#PROD_NAME_CH": "阿尔马尔",
+    "5#CORP_NAME_EN": "SUMITOMO DAINIPPON", "6#CORP_NAME_CH": "日本住友制药株式会社",
+    "7#MNF_NAME_EN": "SUMITOMO DAINIPPON", "8#MNF_NAME_CH": "日本住友制药株式会社",
+    "9#PCK_DESC": "TAB 10MG    10", "10#DOSAGE": "片剂", "11#SPEC": "10MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    6026.0, "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": 6026.0, "26#ATC1_CODE": "C", "27#ATC1_DESC": "C     CARDIOVASCULAR
+    SYSTEM", "28#ATC2_CODE": "C07", "29#ATC2_DESC": "C07   BETA BLOCKING AGENTS",
+    "30#ATC3_CODE": "C07A", "31#ATC3_DESC": "C07A  BETA BLOCKING AGENT PLN",
+    "32#ATC4_CODE": "C07A0", "33#ATC4_DESC": "C07A0 BETA BLOCKING AGENT PLN",
+    "34#ATC1": "心血管系统药物", "35#ATC2": "β受体阻断剂", "36#ATC3": "β受体阻断剂，单一用药",
+    "37#ATC4": "β受体阻断剂，单一用药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0749904", "1#MOLE_NAME_EN": "AROTINOLOL", "2#MOLE_NAME_CH":
+    "阿罗洛尔", "3#PROD_DESC": "ALMARL             SUO", "4#PROD_NAME_CH": "阿尔马尔",
+    "5#CORP_NAME_EN": "SUMITOMO DAINIPPON", "6#CORP_NAME_CH": "日本住友制药株式会社",
+    "7#MNF_NAME_EN": "SUMITOMO DAINIPPON", "8#MNF_NAME_CH": "日本住友制药株式会社",
+    "9#PCK_DESC": "TAB 10MG    100", "10#DOSAGE": "片剂", "11#SPEC": "10MG",
+    "12#PACK": 100.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "6026", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "6026", "26#ATC1_CODE": "C", "27#ATC1_DESC": "C     CARDIOVASCULAR
+    SYSTEM", "28#ATC2_CODE": "C07", "29#ATC2_DESC": "C07   BETA BLOCKING AGENTS",
+    "30#ATC3_CODE": "C07A", "31#ATC3_DESC": "C07A  BETA BLOCKING AGENT PLN",
+    "32#ATC4_CODE": "C07A0", "33#ATC4_DESC": "C07A0 BETA BLOCKING AGENT PLN",
+    "34#ATC1": "心血管系统药物", "35#ATC2": "β受体阻断剂", "36#ATC3": "β受体阻断剂，单一用药",
+    "37#ATC4": "β受体阻断剂，单一用药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0749906", "1#MOLE_NAME_EN": "AROTINOLOL", "2#MOLE_NAME_CH":
+    "阿罗洛尔", "3#PROD_DESC": "ALMARL             SUO", "4#PROD_NAME_CH": "阿尔马尔",
+    "5#CORP_NAME_EN": "SUMITOMO DAINIPPON", "6#CORP_NAME_CH": "日本住友制药株式会社",
+    "7#MNF_NAME_EN": "SUMITOMO DAINIPPON", "8#MNF_NAME_CH": "日本住友制药株式会社",
+    "9#PCK_DESC": "TAB 10MG    1000", "10#DOSAGE": "片剂", "11#SPEC": "10MG",
+    "12#PACK": 1000.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID",
+    "15#NFC1_NAME_CH": "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS",
+    "18#NFC12_NAME_CH": "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS",
+    "21#CORP_ID": "6026", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED",
+    "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID": "6026", "26#ATC1_CODE": "C",
+    "27#ATC1_DESC": "C     CARDIOVASCULAR SYSTEM", "28#ATC2_CODE": "C07",
+    "29#ATC2_DESC": "C07   BETA BLOCKING AGENTS", "30#ATC3_CODE": "C07A",
+    "31#ATC3_DESC": "C07A  BETA BLOCKING AGENT PLN", "32#ATC4_CODE": "C07A0",
+    "33#ATC4_DESC": "C07A0 BETA BLOCKING AGENT PLN", "34#ATC1": "心血管系统药物",
+    "35#ATC2": "β受体阻断剂", "36#ATC3": "β受体阻断剂，单一用药", "37#ATC4": "β受体阻断剂，单一用药",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0749908", "1#MOLE_NAME_EN": "AROTINOLOL", "2#MOLE_NAME_CH":
+    "阿罗洛尔", "3#PROD_DESC": "ALMARL             SUO", "4#PROD_NAME_CH": "阿尔马尔",
+    "5#CORP_NAME_EN": "SUMITOMO DAINIPPON", "6#CORP_NAME_CH": "日本住友制药株式会社",
+    "7#MNF_NAME_EN": "SUMITOMO DAINIPPON", "8#MNF_NAME_CH": "日本住友制药株式会社",
+    "9#PCK_DESC": "TAB 10MG    500", "10#DOSAGE": "片剂", "11#SPEC": "10MG",
+    "12#PACK": 500.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "6026", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "6026", "26#ATC1_CODE": "C", "27#ATC1_DESC": "C     CARDIOVASCULAR
+    SYSTEM", "28#ATC2_CODE": "C07", "29#ATC2_DESC": "C07   BETA BLOCKING AGENTS",
+    "30#ATC3_CODE": "C07A", "31#ATC3_DESC": "C07A  BETA BLOCKING AGENT PLN",
+    "32#ATC4_CODE": "C07A0", "33#ATC4_DESC": "C07A0 BETA BLOCKING AGENT PLN",
+    "34#ATC1": "心血管系统药物", "35#ATC2": "β受体阻断剂", "36#ATC3": "β受体阻断剂，单一用药",
+    "37#ATC4": "β受体阻断剂，单一用药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1322204", "1#MOLE_NAME_EN": "HYALURONIC ACID", "2#MOLE_NAME_CH":
+    "玻璃酸钠", "3#PROD_DESC": "ARTZ               K.K", "4#PROD_NAME_CH": "阿尔治",
+    "5#CORP_NAME_EN": "KAKEN PHARM", "6#CORP_NAME_CH": "日本生化学工业株式会社", "7#MNF_NAME_EN":
+    "KAKEN PHARM", "8#MNF_NAME_CH": "日本生化学工业株式会社", "9#PCK_DESC": "SYRINGE
+    1% 2.5ML   1", "10#DOSAGE": "预充注射器", "11#SPEC": "1% 2.5ML", "12#PACK":
+    1.0, "13#NFC1": "F--", "14#NFC1_NAME": "PARENTERAL", "15#NFC1_NAME_CH":
+    "注射用药", "16#NFC12": "FN-", "17#NFC12_NAME": "PF SYR/PEN ORD", "18#NFC12_NAME_CH":
+    "注射用药注射器（预装）", "19#NFC123": "FNY", "20#NFC123_NAME": "OTH P-FILL SYR",
+    "21#CORP_ID": "4782", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED",
+    "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID": "4782", "26#ATC1_CODE": "M",
+    "27#ATC1_DESC": "M     MUSCULO-SKELETAL SYSTEM", "28#ATC2_CODE": "M05",
+    "29#ATC2_DESC": "M05   OTHER MUSCULO-SKELETAL", "30#ATC3_CODE": "M05X",
+    "31#ATC3_DESC": "M05X  OTH MUSCULO-SKELETAL PRDS", "32#ATC4_CODE": "M05X0",
+    "33#ATC4_DESC": "M05X0 OTH MUSCULO-SKELETAL PRDS", "34#ATC1": "肌肉-骨骼系统",
+    "35#ATC2": "其他的用于骨骼肌肉系统疾患的药物", "36#ATC3": "所有其他的骨骼肌肉用药，局部用含软骨素和葡萄糖胺的药品分类在M02A。",
+    "37#ATC4": "所有其他的骨骼肌肉用药，局部用含软骨素和葡萄糖胺的药品分类在M03A。", "38#REMARK": "", "_TAG":
+    "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1322202", "1#MOLE_NAME_EN": "HYALURONIC ACID", "2#MOLE_NAME_CH":
+    "玻璃酸钠", "3#PROD_DESC": "ARTZ               K.K", "4#PROD_NAME_CH": "阿尔治",
+    "5#CORP_NAME_EN": "KAKEN PHARM", "6#CORP_NAME_CH": "日本生化学工业株式会社", "7#MNF_NAME_EN":
+    "KAKEN PHARM", "8#MNF_NAME_CH": "日本生化学工业株式会社", "9#PCK_DESC": "SYRINGE
+    1% 2.5ML   10", "10#DOSAGE": "预充注射器", "11#SPEC": "1% 2.5ML", "12#PACK":
+    10.0, "13#NFC1": "F--", "14#NFC1_NAME": " PARENTERAL", "15#NFC1_NAME_CH":
+    "注射用药", "16#NFC12": "FN-", "17#NFC12_NAME": "PF SYR/PEN ORD", "18#NFC12_NAME_CH":
+    "注射用药注射器（预装）", "19#NFC123": "FNY", "20#NFC123_NAME": "OTH P-FILL SYR",
+    "21#CORP_ID": "4782", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED",
+    "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID": "4782", "26#ATC1_CODE": "M",
+    "27#ATC1_DESC": "M     MUSCULO-SKELETAL SYSTEM", "28#ATC2_CODE": "M05",
+    "29#ATC2_DESC": "M05   OTHER MUSCULO-SKELETAL", "30#ATC3_CODE": "M05X",
+    "31#ATC3_DESC": "M05X  OTH MUSCULO-SKELETAL PRDS", "32#ATC4_CODE": "M05X0",
+    "33#ATC4_DESC": "M05X0 OTH MUSCULO-SKELETAL PRDS", "34#ATC1": "肌肉-骨骼系统",
+    "35#ATC2": "其他的用于骨骼肌肉系统疾患的药物", "36#ATC3": "所有其他的骨骼肌肉用药，局部用含软骨素和葡萄糖胺的药品分类在M02A。",
+    "37#ATC4": "所有其他的骨骼肌肉用药，局部用含软骨素和葡萄糖胺的药品分类在M03A。", "38#REMARK": "", "_TAG":
+    "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4875002", "1#MOLE_NAME_EN": "ACRIVASTINE", "2#MOLE_NAME_CH":
+    "阿伐斯汀", "3#PROD_DESC": "ACRIVASTINE        H2O", "4#PROD_NAME_CH": "阿伐斯汀胶囊",
+    "5#CORP_NAME_EN": "HUAPONT PHARM", "6#CORP_NAME_CH": "重庆华邦制药有限公司", "7#MNF_NAME_EN":
+    "HUAPONT PHARM", "8#MNF_NAME_CH": "重庆华邦制药有限公司", "9#PCK_DESC": "CAP 8MG    20",
+    "10#DOSAGE": "胶囊", "11#SPEC": "8MG", "12#PACK": 20.0, "13#NFC1": "A--",
+    "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH": "口服固体", "16#NFC12":
+    "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH": "胶囊", "19#NFC123":
+    "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID": "2676", "22#MNF_TYPE":
+    "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID":
+    "2676", "26#ATC1_CODE": "R", "27#ATC1_DESC": "R     RESPIRATORY SYSTEM",
+    "28#ATC2_CODE": "R06", "29#ATC2_DESC": "R06   ANTIHISTAMINES SYSTEMIC",
+    "30#ATC3_CODE": "R06A", "31#ATC3_DESC": "R06A  ANTIHISTAMINES SYSTEMIC",
+    "32#ATC4_CODE": "R06A0", "33#ATC4_DESC": "R06A0 ANTIHISTAMINES SYSTEMIC",
+    "34#ATC1": "呼吸系统用药", "35#ATC2": "全身性抗组胺药", "36#ATC3": "全身性抗组胺药", "37#ATC4":
+    "全身性抗组胺药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0537206", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALPHA D3           TEV", "4#PROD_NAME_CH": "阿法迪三",
+    "5#CORP_NAME_EN": "TEVA PHARM", "6#CORP_NAME_CH": "以色列梯瓦制药", "7#MNF_NAME_EN":
+    "TEVA PHARM", "8#MNF_NAME_CH": "以色列梯瓦制药", "9#PCK_DESC": "CAP 0.25Y    20",
+    "10#DOSAGE": "胶囊", "11#SPEC": "0.25UG", "12#PACK": 20.0, "13#NFC1":
+    "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH": "口服固体", "16#NFC12":
+    "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH": "胶囊", "19#NFC123":
+    "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID": "4626", "22#MNF_TYPE":
+    "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID":
+    "4626", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY T.& METABOLISM",
+    "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS", "30#ATC3_CODE":
+    "A11C", "31#ATC3_DESC": "A11C  VIT A & D INC. COMBS", "32#ATC4_CODE":
+    "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN D PLAIN", "34#ATC1": "消化系统及代谢药",
+    "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物", "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0537208", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALPHA D3           TEV", "4#PROD_NAME_CH": "阿法迪三",
+    "5#CORP_NAME_EN": "TEVA PHARM", "6#CORP_NAME_CH": "以色列梯瓦制药", "7#MNF_NAME_EN":
+    "TEVA PHARM", "8#MNF_NAME_CH": "以色列梯瓦制药", "9#PCK_DESC": "CAP 0.25Y    30",
+    "10#DOSAGE": "胶囊", "11#SPEC": "0.25UG", "12#PACK": 30.0, "13#NFC1":
+    "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH": "口服固体", "16#NFC12":
+    "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH": "胶囊", "19#NFC123":
+    "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID": "4626", "22#MNF_TYPE":
+    "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID":
+    "4626", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY T.& METABOLISM",
+    "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS", "30#ATC3_CODE":
+    "A11C", "31#ATC3_DESC": "A11C  VIT A & D INC. COMBS", "32#ATC4_CODE":
+    "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN D PLAIN", "34#ATC1": "消化系统及代谢药",
+    "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物", "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0537210", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALPHA D3           TEV", "4#PROD_NAME_CH": "阿法迪三",
+    "5#CORP_NAME_EN": "TEVA PHARM", "6#CORP_NAME_CH": "以色列梯瓦制药", "7#MNF_NAME_EN":
+    "TEVA PHARM", "8#MNF_NAME_CH": "以色列梯瓦制药", "9#PCK_DESC": "CAP 0.25Y    10",
+    "10#DOSAGE": "胶囊", "11#SPEC": "0.25UG", "12#PACK": 10.0, "13#NFC1":
+    "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH": "口服固体", "16#NFC12":
+    "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH": "胶囊", "19#NFC123":
+    "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID": "4626", "22#MNF_TYPE":
+    "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID":
+    "4626", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY T.& METABOLISM",
+    "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS", "30#ATC3_CODE":
+    "A11C", "31#ATC3_DESC": "A11C  VIT A & D INC. COMBS", "32#ATC4_CODE":
+    "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN D PLAIN", "34#ATC1": "消化系统及代谢药",
+    "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物", "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0537212", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALPHA D3           TEV", "4#PROD_NAME_CH": "阿法迪三",
+    "5#CORP_NAME_EN": "TEVA PHARM", "6#CORP_NAME_CH": "以色列梯瓦制药", "7#MNF_NAME_EN":
+    "TEVA PHARM", "8#MNF_NAME_CH": "以色列梯瓦制药", "9#PCK_DESC": "CAP 1Y    10",
+    "10#DOSAGE": "胶囊", "11#SPEC": "1UG", "12#PACK": 10.0, "13#NFC1": "A--",
+    "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH": "口服固体", "16#NFC12":
+    "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH": "胶囊", "19#NFC123":
+    "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID": "4626", "22#MNF_TYPE":
+    "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID":
+    "4626", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY T.& METABOLISM",
+    "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS", "30#ATC3_CODE":
+    "A11C", "31#ATC3_DESC": "A11C  VIT A & D INC. COMBS", "32#ATC4_CODE":
+    "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN D PLAIN", "34#ATC1": "消化系统及代谢药",
+    "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物", "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0537202", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALPHA D3           TEV", "4#PROD_NAME_CH": "阿法迪三",
+    "5#CORP_NAME_EN": "TEVA PHARM", "6#CORP_NAME_CH": "以色列梯瓦制药", "7#MNF_NAME_EN":
+    "TEVA PHARM", "8#MNF_NAME_CH": "以色列梯瓦制药", "9#PCK_DESC": "CAP 0.25Y    100",
+    "10#DOSAGE": "胶囊", "11#SPEC": "0.25UG", "12#PACK": 100.0, "13#NFC1":
+    "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH": "口服固体", "16#NFC12":
+    "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH": "胶囊", "19#NFC123":
+    "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID": "4626", "22#MNF_TYPE":
+    "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID":
+    "4626", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY T.& METABOLISM",
+    "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS", "30#ATC3_CODE":
+    "A11C", "31#ATC3_DESC": "A11C  VIT A & D INC. COMBS", "32#ATC4_CODE":
+    "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN D PLAIN", "34#ATC1": "消化系统及代谢药",
+    "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物", "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0537204", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALPHA D3           TEV", "4#PROD_NAME_CH": "阿法迪三",
+    "5#CORP_NAME_EN": "TEVA PHARM", "6#CORP_NAME_CH": "以色列梯瓦制药", "7#MNF_NAME_EN":
+    "TEVA PHARM", "8#MNF_NAME_CH": "以色列梯瓦制药", "9#PCK_DESC": "CAP 0.1Y    100",
+    "10#DOSAGE": "胶囊", "11#SPEC": "0.1UG", "12#PACK": 100.0, "13#NFC1":
+    "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH": "口服固体", "16#NFC12":
+    "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH": "胶囊", "19#NFC123":
+    "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID": "4626", "22#MNF_TYPE":
+    "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID":
+    "4626", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY T.& METABOLISM",
+    "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS", "30#ATC3_CODE":
+    "A11C", "31#ATC3_DESC": "A11C  VIT A & D INC. COMBS", "32#ATC4_CODE":
+    "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN D PLAIN", "34#ATC1": "消化系统及代谢药",
+    "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物", "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0537214", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALPHA D3           TEV", "4#PROD_NAME_CH": "阿法迪三",
+    "5#CORP_NAME_EN": "TEVA PHARM", "6#CORP_NAME_CH": "以色列梯瓦制药", "7#MNF_NAME_EN":
+    "TEVA PHARM", "8#MNF_NAME_CH": "以色列梯瓦制药", "9#PCK_DESC": "CAP 0.5Y    10",
+    "10#DOSAGE": "胶囊", "11#SPEC": "0.5UG", "12#PACK": 10.0, "13#NFC1":
+    "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH": "口服固体", "16#NFC12":
+    "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH": "胶囊", "19#NFC123":
+    "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID": "4626", "22#MNF_TYPE":
+    "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH": "MNC", "25#MNF_ID":
+    "4626", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY T.& METABOLISM",
+    "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS", "30#ATC3_CODE":
+    "A11C", "31#ATC3_DESC": "A11C  VIT A & D INC. COMBS", "32#ATC4_CODE":
+    "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN D PLAIN", "34#ATC1": "消化系统及代谢药",
+    "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物", "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）",
+    "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1426402", "1#MOLE_NAME_EN": "BRIMONIDINE", "2#MOLE_NAME_CH":
+    "溴莫尼定", "3#PROD_DESC": "ALPHAGAN           ALL", "4#PROD_NAME_CH": "阿法根",
+    "5#CORP_NAME_EN": "ALLERGAN", "6#CORP_NAME_CH": "美国眼力健公司", "7#MNF_NAME_EN":
+    "ALLERGAN", "8#MNF_NAME_CH": "美国眼力健公司", "9#PCK_DESC": "EYE DRP 0.2% 5ML   1",
+    "10#DOSAGE": "滴眼剂", "11#SPEC": "0.20% 5ML", "12#PACK": 1.0, "13#NFC1":
+    "N--", "14#NFC1_NAME": " OPHTHALMICS", "15#NFC1_NAME_CH": "眼部用药", "16#NFC12":
+    "NG-", "17#NFC12_NAME": "OPHTHALM.LIQ", "18#NFC12_NAME_CH": "眼部用药液体",
+    "19#NFC123": "NGB", "20#NFC123_NAME": "DROPS EYE", "21#CORP_ID": "4607",
+    "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "4607", "26#ATC1_CODE": "S", "27#ATC1_DESC": "S     SENSORY
+    ORGANS", "28#ATC2_CODE": "S01", "29#ATC2_DESC": "S01   OPHTHALMOLOGICALS",
+    "30#ATC3_CODE": "S01E", "31#ATC3_DESC": "S01E  MIOTICS+ANTIGLAUCOMA PREP",
+    "32#ATC4_CODE": "S01E2", "33#ATC4_DESC": "S01E2 MIOTICS+ANTIGLAUCOMA TOP",
+    "34#ATC1": "感觉器官药物", "35#ATC2": "眼科用药", "36#ATC3": "缩瞳药和治青光眼用药", "37#ATC4":
+    "缩瞳药和治青光眼用药，局部的", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0296304", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALFACALCIDOL       BJP", "4#PROD_NAME_CH": "阿法骨化醇胶囊",
+    "5#CORP_NAME_EN": "SHUANGHE GROUP", "6#CORP_NAME_CH": "双鹤集团", "7#MNF_NAME_EN":
+    "BJ.SHUANGHE PHARM", "8#MNF_NAME_CH": "华润双鹤药业股份有限公司", "9#PCK_DESC": "CAP
+    0.25Y    30", "10#DOSAGE": "胶囊", "11#SPEC": "0.25UG", "12#PACK": 30.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH": "口服固体",
+    "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "5943", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "0110", "26#ATC1_CODE": "A", "27#ATC1_DESC":
+    "A     ALIMENTARY T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC":
+    "A11   VITAMINS", "30#ATC3_CODE": "A11C", "31#ATC3_DESC": "A11C  VIT
+    A & D INC. COMBS", "32#ATC4_CODE": "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN
+    D PLAIN", "34#ATC1": "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物",
+    "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0296306", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALFACALCIDOL       BJP", "4#PROD_NAME_CH": "阿法骨化醇胶囊",
+    "5#CORP_NAME_EN": "SHUANGHE GROUP", "6#CORP_NAME_CH": "双鹤集团", "7#MNF_NAME_EN":
+    "BJ.SHUANGHE PHARM", "8#MNF_NAME_CH": "华润双鹤药业股份有限公司", "9#PCK_DESC": "CAP
+    0.25Y    20", "10#DOSAGE": "胶囊", "11#SPEC": "0.25UG", "12#PACK": 20.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH": "口服固体",
+    "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "5943", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "0110", "26#ATC1_CODE": "A", "27#ATC1_DESC":
+    "A     ALIMENTARY T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC":
+    "A11   VITAMINS", "30#ATC3_CODE": "A11C", "31#ATC3_DESC": "A11C  VIT
+    A & D INC. COMBS", "32#ATC4_CODE": "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN
+    D PLAIN", "34#ATC1": "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物",
+    "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3756302", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALFACALCIDOL       LDA", "4#PROD_NAME_CH": "阿法骨化醇胶囊",
+    "5#CORP_NAME_EN": "LN.DL.TIANYUAOSEN", "6#CORP_NAME_CH": "大连天宇奥森制药有限公司",
+    "7#MNF_NAME_EN": "LN.DL.TIANYUAOSEN", "8#MNF_NAME_CH": "大连天宇奥森制药有限公司",
+    "9#PCK_DESC": "CAP 0.25Y    20", "10#DOSAGE": "胶囊", "11#SPEC": "0.25UG",
+    "12#PACK": 20.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "0774", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "0774", "26#ATC1_CODE": "A", "27#ATC1_DESC":
+    "A     ALIMENTARY T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC":
+    "A11   VITAMINS", "30#ATC3_CODE": "A11C", "31#ATC3_DESC": "A11C  VIT
+    A & D INC. COMBS", "32#ATC4_CODE": "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN
+    D PLAIN", "34#ATC1": "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物",
+    "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3756304", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALFACALCIDOL       LDA", "4#PROD_NAME_CH": "阿法骨化醇胶囊",
+    "5#CORP_NAME_EN": "LN.DL.TIANYUAOSEN", "6#CORP_NAME_CH": "大连天宇奥森制药有限公司",
+    "7#MNF_NAME_EN": "LN.DL.TIANYUAOSEN", "8#MNF_NAME_CH": "大连天宇奥森制药有限公司",
+    "9#PCK_DESC": "CAP 0.25Y    40", "10#DOSAGE": "胶囊", "11#SPEC": "0.25UG",
+    "12#PACK": 40.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "0774", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "0774", "26#ATC1_CODE": "A", "27#ATC1_DESC":
+    "A     ALIMENTARY T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC":
+    "A11   VITAMINS", "30#ATC3_CODE": "A11C", "31#ATC3_DESC": "A11C  VIT
+    A & D INC. COMBS", "32#ATC4_CODE": "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN
+    D PLAIN", "34#ATC1": "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物",
+    "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0296302", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALFACALCIDOL       BJP", "4#PROD_NAME_CH": "阿法骨化醇胶囊",
+    "5#CORP_NAME_EN": "SHUANGHE GROUP", "6#CORP_NAME_CH": "双鹤集团", "7#MNF_NAME_EN":
+    "BJ.SHUANGHE PHARM", "8#MNF_NAME_CH": "华润双鹤药业股份有限公司", "9#PCK_DESC": "CAP
+    0.25Y    100", "10#DOSAGE": "胶囊", "11#SPEC": "0.25UG", "12#PACK": 100.0,
+    "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "5943", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "0110", "26#ATC1_CODE": "A", "27#ATC1_DESC":
+    "A     ALIMENTARY T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC":
+    "A11   VITAMINS", "30#ATC3_CODE": "A11C", "31#ATC3_DESC": "A11C  VIT
+    A & D INC. COMBS", "32#ATC4_CODE": "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN
+    D PLAIN", "34#ATC1": "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物",
+    "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3756306", "1#MOLE_NAME_EN": "ALFACALCIDOL", "2#MOLE_NAME_CH":
+    "阿法骨化醇", "3#PROD_DESC": "ALFACALCIDOL       LDA", "4#PROD_NAME_CH": "阿法骨化醇胶囊",
+    "5#CORP_NAME_EN": "LN.DL.TIANYUAOSEN", "6#CORP_NAME_CH": "大连天宇奥森制药有限公司",
+    "7#MNF_NAME_EN": "LN.DL.TIANYUAOSEN", "8#MNF_NAME_CH": "大连天宇奥森制药有限公司",
+    "9#PCK_DESC": "CAP 0.25Y    24", "10#DOSAGE": "胶囊", "11#SPEC": "0.25UG",
+    "12#PACK": 24.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AC-", "17#NFC12_NAME": "CAPSULES", "18#NFC12_NAME_CH":
+    "胶囊", "19#NFC123": "ACA", "20#NFC123_NAME": "CAPSULES", "21#CORP_ID":
+    "0774", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "0774", "26#ATC1_CODE": "A", "27#ATC1_DESC":
+    "A     ALIMENTARY T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC":
+    "A11   VITAMINS", "30#ATC3_CODE": "A11C", "31#ATC3_DESC": "A11C  VIT
+    A & D INC. COMBS", "32#ATC4_CODE": "A11C2", "33#ATC4_DESC": "A11C2 VITAMIN
+    D PLAIN", "34#ATC1": "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "维生素A和D，包括两者的并用药物",
+    "37#ATC4": "维生素D（包括甲亢治疗药物拟钙剂）", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1424602", "1#MOLE_NAME_EN": "CEFOTAXIME", "2#MOLE_NAME_CH":
+    "头孢噻肟", "3#PROD_DESC": "A FA LANG          YKJ", "4#PROD_NAME_CH": "阿法郎",
+    "5#CORP_NAME_EN": "YN.KUNMING JIDA", "6#CORP_NAME_CH": "昆明积大制药股份有限公司",
+    "7#MNF_NAME_EN": "YN.KUNMING JIDA", "8#MNF_NAME_CH": "昆明积大制药股份有限公司", "9#PCK_DESC":
+    "VIAL DRY 1G    1", "10#DOSAGE": "粉针剂", "11#SPEC": "1G", "12#PACK":
+    1.0, "13#NFC1": "F--", "14#NFC1_NAME": "PARENTERAL", "15#NFC1_NAME_CH":
+    "注射用药", "16#NFC12": "FP-", "17#NFC12_NAME": "VIAL", "18#NFC12_NAME_CH":
+    "小瓶用药", "19#NFC123": "FPB", "20#NFC123_NAME": "VIAL DRY", "21#CORP_ID":
+    "2801", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2801", "26#ATC1_CODE": "J", "27#ATC1_DESC":
+    "J     SYSTEMIC ANTI-INFECTIVES", "28#ATC2_CODE": "J01", "29#ATC2_DESC":
+    "J01   SYSTEMIC ANTIBACTERIALS", "30#ATC3_CODE": "J01D", "31#ATC3_DESC":
+    "J01D  CEPHALOSPORINS & COMBS", "32#ATC4_CODE": "J01D2", "33#ATC4_DESC":
+    "J01D2 INJECTABLE CEPHALOSPORINS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗生素",
+    "36#ATC3": "先锋霉素", "37#ATC4": "注射先锋霉素", "38#REMARK": "", "_TAG":
+    "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1424604", "1#MOLE_NAME_EN": "CEFOTAXIME", "2#MOLE_NAME_CH":
+    "头孢噻肟", "3#PROD_DESC": "A FA LANG          YKJ", "4#PROD_NAME_CH": "阿法郎",
+    "5#CORP_NAME_EN": "YN.KUNMING JIDA", "6#CORP_NAME_CH": "昆明积大制药股份有限公司",
+    "7#MNF_NAME_EN": "YN.KUNMING JIDA", "8#MNF_NAME_CH": "昆明积大制药股份有限公司", "9#PCK_DESC":
+    "VIAL DRY 2G    1", "10#DOSAGE": "粉针剂", "11#SPEC": "2G", "12#PACK":
+    1.0, "13#NFC1": "F--", "14#NFC1_NAME": " PARENTERAL", "15#NFC1_NAME_CH":
+    "注射用药", "16#NFC12": "FP-", "17#NFC12_NAME": "VIAL", "18#NFC12_NAME_CH":
+    "小瓶用药", "19#NFC123": "FPB", "20#NFC123_NAME": "VIAL DRY", "21#CORP_ID":
+    "2801", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2801", "26#ATC1_CODE": "J", "27#ATC1_DESC":
+    "J     SYSTEMIC ANTI-INFECTIVES", "28#ATC2_CODE": "J01", "29#ATC2_DESC":
+    "J01   SYSTEMIC ANTIBACTERIALS", "30#ATC3_CODE": "J01D", "31#ATC3_DESC":
+    "J01D  CEPHALOSPORINS & COMBS", "32#ATC4_CODE": "J01D2", "33#ATC4_DESC":
+    "J01D2 INJECTABLE CEPHALOSPORINS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗生素",
+    "36#ATC3": "先锋霉素", "37#ATC4": "注射先锋霉素", "38#REMARK": "", "_TAG":
+    "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "5780402", "1#MOLE_NAME_EN": "BRIMONIDINE", "2#MOLE_NAME_CH":
+    "溴莫尼定", "3#PROD_DESC": "ALPHAGAN P         ALL", "4#PROD_NAME_CH": "阿法舒",
+    "5#CORP_NAME_EN": "ALLERGAN", "6#CORP_NAME_CH": "美国眼力健公司", "7#MNF_NAME_EN":
+    "ALLERGAN", "8#MNF_NAME_CH": "美国眼力健公司", "9#PCK_DESC": "EYE DRP 0.15%
+    5ML   1", "10#DOSAGE": "滴眼剂", "11#SPEC": "0.15% 5ML", "12#PACK": 1.0,
+    "13#NFC1": "N--", "14#NFC1_NAME": " OPHTHALMICS", "15#NFC1_NAME_CH":
+    "眼部用药", "16#NFC12": "NG-", "17#NFC12_NAME": "OPHTHALM.LIQ", "18#NFC12_NAME_CH":
+    "眼部用药液体", "19#NFC123": "NGB", "20#NFC123_NAME": "DROPS EYE", "21#CORP_ID":
+    "4607", "22#MNF_TYPE": "I", "23#MNF_TYPE_NAME": "IMPORTED", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "4607", "26#ATC1_CODE": "S", "27#ATC1_DESC": "S     SENSORY
+    ORGANS", "28#ATC2_CODE": "S01", "29#ATC2_DESC": "S01   OPHTHALMOLOGICALS",
+    "30#ATC3_CODE": "S01E", "31#ATC3_DESC": "S01E  MIOTICS+ANTIGLAUCOMA PREP",
+    "32#ATC4_CODE": "S01E2", "33#ATC4_DESC": "S01E2 MIOTICS+ANTIGLAUCOMA TOP",
+    "34#ATC1": "感觉器官药物", "35#ATC2": "眼科用药", "36#ATC3": "缩瞳药和治青光眼用药", "37#ATC4":
+    "缩瞳药和治青光眼用药，局部的", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3750602", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "A GAN DING         FSU", "4#PROD_NAME_CH":
+    "阿甘定", "5#CORP_NAME_EN": "FJ.COSUNTER PHARM", "6#CORP_NAME_CH": "福建广生堂药业股份有限公司",
+    "7#MNF_NAME_EN": "FJ.COSUNTER PHARM", "8#MNF_NAME_CH": "福建广生堂药业股份有限公司",
+    "9#PCK_DESC": "TAB 10MG    10", "10#DOSAGE": "片剂", "11#SPEC": "10MG",
+    "12#PACK": 10.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    2072.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2072.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3750604", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "A GAN DING         FSU", "4#PROD_NAME_CH":
+    "阿甘定", "5#CORP_NAME_EN": "FJ.COSUNTER PHARM", "6#CORP_NAME_CH": "福建广生堂药业股份有限公司",
+    "7#MNF_NAME_EN": "FJ.COSUNTER PHARM", "8#MNF_NAME_CH": "福建广生堂药业股份有限公司",
+    "9#PCK_DESC": "TAB 10MG    14", "10#DOSAGE": "片剂", "11#SPEC": "10MG",
+    "12#PACK": 14.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    2072.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2072.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3750606", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "A GAN DING         FSU", "4#PROD_NAME_CH":
+    "阿甘定", "5#CORP_NAME_EN": "FJ.COSUNTER PHARM", "6#CORP_NAME_CH": "福建广生堂药业股份有限公司",
+    "7#MNF_NAME_EN": "FJ.COSUNTER PHARM", "8#MNF_NAME_CH": "福建广生堂药业股份有限公司",
+    "9#PCK_DESC": "TAB 10MG    20", "10#DOSAGE": "片剂", "11#SPEC": "10MG",
+    "12#PACK": 20.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    2072.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2072.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3750608", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "A GAN DING         FSU", "4#PROD_NAME_CH":
+    "阿甘定", "5#CORP_NAME_EN": "FJ.COSUNTER PHARM", "6#CORP_NAME_CH": "福建广生堂药业股份有限公司",
+    "7#MNF_NAME_EN": "FJ.COSUNTER PHARM", "8#MNF_NAME_CH": "福建广生堂药业股份有限公司",
+    "9#PCK_DESC": "TAB 10MG    28", "10#DOSAGE": "片剂", "11#SPEC": "10MG",
+    "12#PACK": 28.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    2072.0, "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": 2072.0, "26#ATC1_CODE": "J", "27#ATC1_DESC": "J     SYSTEMIC
+    ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC": "J05   ANTIVIRALS
+    SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC": "J05D  HEPATITIS
+    ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC": "J05D2 HEPATITIS
+    B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药", "36#ATC3":
+    "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3750610", "1#MOLE_NAME_EN": "ADEFOVIR DIPIVOXIL",
+    "2#MOLE_NAME_CH": "阿德福韦酯", "3#PROD_DESC": "A GAN DING         FSU", "4#PROD_NAME_CH":
+    "阿甘定", "5#CORP_NAME_EN": "FJ.COSUNTER PHARM", "6#CORP_NAME_CH": "福建广生堂药业股份有限公司",
+    "7#MNF_NAME_EN": "FJ.COSUNTER PHARM", "8#MNF_NAME_CH": "福建广生堂药业股份有限公司",
+    "9#PCK_DESC": "TAB 10MG    7", "10#DOSAGE": "片剂", "11#SPEC": "10MG",
+    "12#PACK": 7.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AA-", "17#NFC12_NAME": "TABLETS", "18#NFC12_NAME_CH":
+    "片剂", "19#NFC123": "AAA", "20#NFC123_NAME": "TABLETS", "21#CORP_ID":
+    "2072", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH":
+    "LOCAL", "25#MNF_ID": "2072", "26#ATC1_CODE": "J", "27#ATC1_DESC":
+    "J     SYSTEMIC ANTI-INFECTIVES", "28#ATC2_CODE": "J05", "29#ATC2_DESC":
+    "J05   ANTIVIRALS SYSTEMIC USE", "30#ATC3_CODE": "J05D", "31#ATC3_DESC":
+    "J05D  HEPATITIS ANTIVIRALS", "32#ATC4_CODE": "J05D2", "33#ATC4_DESC":
+    "J05D2 HEPATITIS B ANTIVIRALS", "34#ATC1": "全身用抗感染药物", "35#ATC2": "全身性抗病毒药",
+    "36#ATC3": "肝炎抗病毒药物", "37#ATC4": "乙型肝炎抗病毒药", "38#REMARK": "", "_TAG":
+    "yes"}'
   metadata: '{"fileName": "Book1", "providers": ["product", "product"],
     "sheetName": "sheet1"}'
