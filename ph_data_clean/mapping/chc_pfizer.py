@@ -108,7 +108,7 @@ def mapping():
         {
             "col_name": "MOLE_NAME",
             "col_desc": "分子名",
-            "candidate": ["药品名", "通用名", "TONGYONGMING"],
+            "candidate": ["化学名", "匹配名", "TONGYONGMING"],
             "type": "String",
             "not_null": True,
         },

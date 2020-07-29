@@ -31,9 +31,10 @@ def clean(rd):
     mapping = MappingFactory().get_specific_mapping(source, company)
 
     result = cleaner.cleaning_process(mapping, json.loads(rd['data']))
-    if result.tag.value > 0:
-        result.data['SOURCE'] = source
-        result.data['COMPANY'] = company
+    for res in result:
+        if res.tag.value > 0:
+            res.data['SOURCE'] = source
+            res.data['COMPANY'] = company
 
     return result
 

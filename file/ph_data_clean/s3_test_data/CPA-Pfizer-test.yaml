@@ -14,9 +14,9 @@
     "CPA"], "sheetName": "替换数据"}'
 - data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":
     "巴彦淖尔市", "CORP_NAME": "新和成控股集团有限公司", "HOSPITAL_CODE": 10081, "MOLE_NAME":
-    "氯沙坦钾氢氯噻嗪", "MONTH": 3, "PACK_DES": " CO 62.5 MG", "PACK_NUMBER": 7,
+    "氯沙坦钾氢氯噻嗪", "MONTH": "", "PACK_NUMBER": 7,
     "PRODUCT_MKT": "", "PRODUCT_NAME": "奈迪亚", "STANDARD_UNIT": 4200, "VALUE":
-    16380, "YEAR": 2013, "_Tag": "yes"}'
+    16380, "_Tag": "yes"}'
   metadata: '{"fileName": "CPA/Pfizer/170117补充13个.xlsx", "providers": ["Pfizer",
     "CPA"], "sheetName": "辉瑞新增13个药品1301-1611"}'
 - data: '{"APP1_COD": "口服", "APP2_COD": "片剂", "BRAND_MKT": "", "CITY":

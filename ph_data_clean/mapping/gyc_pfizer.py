@@ -152,7 +152,7 @@ def mapping():
         {
             "col_name": "SALES_VALUE",
             "col_desc": "销售额",
-            "candidate": ["金额", "Sales", "VALUE"],
+            "candidate": ["金额", "Sales", "VALUE", "金额_元_", "金额(元)"],
             "type": "String",
             "not_null": True,
         },

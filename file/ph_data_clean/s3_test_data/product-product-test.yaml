@@ -1,0 +1,162 @@
+- data: '{"0#PACK_ID": "0729102", "1#MOLE_NAME_EN": "ASCORBIC ACID+CALCIUM+CHOLINE+ERGOCALCIFEROL+INOSITOL+IRON
+    FERROUS+LYSINE+NICOTINAMIDE+POTASSIUM+RETINOL", "2#MOLE_NAME_CH": "多维元素(21)",
+    "3#PROD_DESC": "21-SUPER VITA      S3M", "4#PROD_NAME_CH": "21-金维他", "5#CORP_NAME_EN":
+    "SANOFI GROUP", "6#CORP_NAME_CH": "赛诺菲集团", "7#MNF_NAME_EN": "HZ.SANOFI
+    MINSHENG", "8#MNF_NAME_CH": "杭州民生健康药业有限公司", "9#PCK_DESC": "TAB FLM CTD
+    398MG    100", "10#DOSAGE": "薄膜衣片", "11#SPEC": "CO 389MG", "12#PACK":
+    100.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    "5937", "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "5590", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS",
+    "30#ATC3_CODE": "A11A", "31#ATC3_DESC": "A11A  MULTIVITAMINS + MINERALS",
+    "32#ATC4_CODE": "A11A4", "33#ATC4_DESC": "A11A4 MVIT + MIN OTHERS", "34#ATC1":
+    "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "含矿物质的多种维生素", "37#ATC4":
+    "含矿物质的多种维生素，其他", "38#REMARK": "", "_Tag": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0729104", "1#MOLE_NAME_EN": "ASCORBIC ACID+CALCIUM+CHOLINE+ERGOCALCIFEROL+INOSITOL+IRON
+    FERROUS+LYSINE+NICOTINAMIDE+POTASSIUM+RETINOL", "2#MOLE_NAME_CH": "多维元素(21)",
+    "3#PROD_DESC": "21-SUPER VITA      S3M", "4#PROD_NAME_CH": "21-金维他", "5#CORP_NAME_EN":
+    "SANOFI GROUP", "6#CORP_NAME_CH": "赛诺菲集团", "7#MNF_NAME_EN": "HZ.SANOFI
+    MINSHENG", "8#MNF_NAME_CH": "杭州民生健康药业有限公司", "9#PCK_DESC": "TAB FLM CTD
+    398MG    60", "10#DOSAGE": "薄膜衣片", "11#SPEC": "CO 398MG", "12#PACK":
+    60.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    "5937", "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "5590", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS",
+    "30#ATC3_CODE": "A11A", "31#ATC3_DESC": "A11A  MULTIVITAMINS + MINERALS",
+    "32#ATC4_CODE": "A11A4", "33#ATC4_DESC": "A11A4 MVIT + MIN OTHERS", "34#ATC1":
+    "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "含矿物质的多种维生素", "37#ATC4":
+    "含矿物质的多种维生素，其他", "38#REMARK": "", "_Tag": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0729106", "1#MOLE_NAME_EN": "ASCORBIC ACID+CALCIUM+CHOLINE+ERGOCALCIFEROL+INOSITOL+IRON
+    FERROUS+LYSINE+NICOTINAMIDE+POTASSIUM+RETINOL", "2#MOLE_NAME_CH": "多维元素(21)",
+    "3#PROD_DESC": "21-SUPER VITA      S3M", "4#PROD_NAME_CH": "21-金维他", "5#CORP_NAME_EN":
+    "SANOFI GROUP", "6#CORP_NAME_CH": "赛诺菲集团", "7#MNF_NAME_EN": "HZ.SANOFI
+    MINSHENG", "8#MNF_NAME_CH": "杭州民生健康药业有限公司", "9#PCK_DESC": "TAB FLM CTD
+    398MG    30", "10#DOSAGE": "薄膜衣片", "11#SPEC": "CO 398MG", "12#PACK":
+    30.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    "5937", "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "5590", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS",
+    "30#ATC3_CODE": "A11A", "31#ATC3_DESC": "A11A  MULTIVITAMINS + MINERALS",
+    "32#ATC4_CODE": "A11A4", "33#ATC4_DESC": "A11A4 MVIT + MIN OTHERS", "34#ATC1":
+    "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "含矿物质的多种维生素", "37#ATC4":
+    "含矿物质的多种维生素，其他", "38#REMARK": "", "_Tag": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0729110", "1#MOLE_NAME_EN": "ASCORBIC ACID+CALCIUM+CHOLINE+ERGOCALCIFEROL+INOSITOL+IRON
+    FERROUS+LYSINE+NICOTINAMIDE+POTASSIUM+RETINOL", "2#MOLE_NAME_CH": "多维元素(21)",
+    "3#PROD_DESC": "21-SUPER VITA      S3M", "4#PROD_NAME_CH": "21-金维他", "5#CORP_NAME_EN":
+    "SANOFI GROUP", "6#CORP_NAME_CH": "赛诺菲集团", "7#MNF_NAME_EN": "HZ.SANOFI
+    MINSHENG", "8#MNF_NAME_CH": "杭州民生健康药业有限公司", "9#PCK_DESC": "TAB FLM CTD
+    398MG  PROM  120", "10#DOSAGE": "薄膜衣片", "11#SPEC": "CO 398", "12#PACK":
+    120.0, "13#NFC1": "A--", "14#NFC1_NAME": "ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    "5937", "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "5590", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS",
+    "30#ATC3_CODE": "A11A", "31#ATC3_DESC": "A11A  MULTIVITAMINS + MINERALS",
+    "32#ATC4_CODE": "A11A4", "33#ATC4_DESC": "A11A4 MVIT + MIN OTHERS", "34#ATC1":
+    "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "含矿物质的多种维生素", "37#ATC4":
+    "含矿物质的多种维生素，其他", "38#REMARK": "", "_Tag": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "0729108", "1#MOLE_NAME_EN": "ASCORBIC ACID+CALCIUM+CHOLINE+ERGOCALCIFEROL+INOSITOL+IRON
+    FERROUS+LYSINE+NICOTINAMIDE+POTASSIUM+RETINOL", "2#MOLE_NAME_CH": "多维元素(21)",
+    "3#PROD_DESC": "21-SUPER VITA      S3M", "4#PROD_NAME_CH": "21-金维他", "5#CORP_NAME_EN":
+    "SANOFI GROUP", "6#CORP_NAME_CH": "赛诺菲集团", "7#MNF_NAME_EN": "HZ.SANOFI
+    MINSHENG", "8#MNF_NAME_CH": "杭州民生健康药业有限公司", "9#PCK_DESC": "TAB FLM CTD
+    398MG  PROM  240", "10#DOSAGE": "薄膜衣片", "11#SPEC": "398MG", "12#PACK":
+    240.0, "13#NFC1": "A--", "14#NFC1_NAME": " ORAL SOLID", "15#NFC1_NAME_CH":
+    "口服固体", "16#NFC12": "AB-", "17#NFC12_NAME": "COATED TABLET", "18#NFC12_NAME_CH":
+    "薄膜衣片", "19#NFC123": "ABC", "20#NFC123_NAME": "FILM-CTD TABS", "21#CORP_ID":
+    "5937", "22#MNF_TYPE": "J", "23#MNF_TYPE_NAME": "JOINT VENTURE", "24#MNF_TYPE_NAME_CH":
+    "MNC", "25#MNF_ID": "5590", "26#ATC1_CODE": "A", "27#ATC1_DESC": "A     ALIMENTARY
+    T.& METABOLISM", "28#ATC2_CODE": "A11", "29#ATC2_DESC": "A11   VITAMINS",
+    "30#ATC3_CODE": "A11A", "31#ATC3_DESC": "A11A  MULTIVITAMINS + MINERALS",
+    "32#ATC4_CODE": "A11A4", "33#ATC4_DESC": "A11A4 MVIT + MIN OTHERS", "34#ATC1":
+    "消化系统及代谢药", "35#ATC2": "维生素", "36#ATC3": "含矿物质的多种维生素", "37#ATC4":
+    "含矿物质的多种维生素，其他", "38#REMARK": "", "_Tag": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "1937802", "1#MOLE_NAME_EN": "ADENOSINE 3",5"-PHOSPHATE",
+    "2#MOLE_NAME_CH": "3",5"-磷酸腺苷 ", "3#PROD_DESC": "XI MAI SHU         HJI",
+    "4#PROD_NAME_CH": "3",5"-磷酸腺苷粉针剂", "5#CORP_NAME_EN": "HLJ.JIANGSHI PHARM",
+    "6#CORP_NAME_CH": "黑龙江江世药业有限公司", "7#MNF_NAME_EN": "HLJ.JIANGSHI PHARM",
+    "8#MNF_NAME_CH": "黑龙江江世药业有限公司", "9#PCK_DESC": "VIAL DRY IV 60MG    1",
+    "10#DOSAGE": "粉针剂", "11#SPEC": "60MG", "12#PACK": 1.0, "13#NFC1":
+    "F--", "14#NFC1_NAME": "PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12":
+    "FP-", "17#NFC12_NAME": "VIAL", "18#NFC12_NAME_CH": "小瓶用药", "19#NFC123":
+    "FPB", "20#NFC123_NAME": "VIAL DRY", "21#CORP_ID": "0948", "22#MNF_TYPE":
+    "L", "23#MNF_TYPE_NAME": "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID":
+    "0948", "26#ATC1_CODE": "C", "27#ATC1_DESC": "C     CARDIOVASCULAR SYSTEM",
+    "28#ATC2_CODE": "C01", "29#ATC2_DESC": "C01   CARDIAC THERAPY", "30#ATC3_CODE":
+    "C01X", "31#ATC3_DESC": "C01X  ALL OTHER CARDIAC PREPS", "32#ATC4_CODE":
+    "C01X0", "33#ATC4_DESC": "C01X0 ALL OTHER CARDIAC PREPS", "34#ATC1": "心血管系统药物",
+    "35#ATC2": "强心药治疗", "36#ATC3": "所有其他治疗心脏药物", "37#ATC4": "所有其他治疗心脏药物",
+    "38#REMARK": "", "_Tag": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "3985202", "1#MOLE_NAME_EN": "ADENOSINE 3",5"-PHOSPHATE",
+    "2#MOLE_NAME_CH": "3",5"-磷酸腺苷 ", "3#PROD_DESC": "ADENOSINE CYCLOPHO HAB",
+    "4#PROD_NAME_CH": "3",5"-磷酸腺苷粉针剂", "5#CORP_NAME_EN": "HANGZHOU AUSIA BIO",
+    "6#CORP_NAME_CH": "杭州澳亚生物技术有限公司", "7#MNF_NAME_EN": "HANGZHOU AUSIA BIO",
+    "8#MNF_NAME_CH": "杭州澳亚生物技术有限公司", "9#PCK_DESC": "VIAL DRY 20MG    1", "10#DOSAGE":
+    "粉针剂", "11#SPEC": "20MG", "12#PACK": 1.0, "13#NFC1": "F--", "14#NFC1_NAME":
+    "PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12": "FP-", "17#NFC12_NAME":
+    "VIAL", "18#NFC12_NAME_CH": "小瓶用药", "19#NFC123": "FPB", "20#NFC123_NAME":
+    "VIAL DRY", "21#CORP_ID": "1708", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME":
+    "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID": "1708", "26#ATC1_CODE":
+    "C", "27#ATC1_DESC": "C     CARDIOVASCULAR SYSTEM", "28#ATC2_CODE": "C01",
+    "29#ATC2_DESC": "C01   CARDIAC THERAPY", "30#ATC3_CODE": "C01X", "31#ATC3_DESC":
+    "C01X  ALL OTHER CARDIAC PREPS", "32#ATC4_CODE": "C01X0", "33#ATC4_DESC":
+    "C01X0 ALL OTHER CARDIAC PREPS", "34#ATC1": "心血管系统药物", "35#ATC2": "强心药治疗",
+    "36#ATC3": "所有其他治疗心脏药物", "37#ATC4": "所有其他治疗心脏药物", "38#REMARK": "",
+    "_Tag": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4020202", "1#MOLE_NAME_EN": "ADENOSINE 3",5"-PHOSPHATE",
+    "2#MOLE_NAME_CH": "3",5"-磷酸腺苷 ", "3#PROD_DESC": "ADENOSINE CYCLPHOS ZZO",
+    "4#PROD_NAME_CH": "3",5"-磷酸腺苷粉针剂", "5#CORP_NAME_EN": "ZJ.ZOLLY PHARM",
+    "6#CORP_NAME_CH": "浙江佐力药业股份有限公司", "7#MNF_NAME_EN": "ZJ.ZOLLY PHARM", "8#MNF_NAME_CH":
+    "浙江佐力药业股份有限公司", "9#PCK_DESC": "VIAL DRY 40MG    1", "10#DOSAGE": "粉针剂",
+    "11#SPEC": "40MG", "12#PACK": 1.0, "13#NFC1": "F--", "14#NFC1_NAME":
+    "PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12": "FP-", "17#NFC12_NAME":
+    "VIAL", "18#NFC12_NAME_CH": "小瓶用药", "19#NFC123": "FPB", "20#NFC123_NAME":
+    "VIAL DRY", "21#CORP_ID": "2920", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME":
+    "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID": "2920", "26#ATC1_CODE":
+    "C", "27#ATC1_DESC": "C     CARDIOVASCULAR SYSTEM", "28#ATC2_CODE": "C01",
+    "29#ATC2_DESC": "C01   CARDIAC THERAPY", "30#ATC3_CODE": "C01X", "31#ATC3_DESC":
+    "C01X  ALL OTHER CARDIAC PREPS", "32#ATC4_CODE": "C01X0", "33#ATC4_DESC":
+    "C01X0 ALL OTHER CARDIAC PREPS", "34#ATC1": "心血管系统药物", "35#ATC2": "强心药治疗",
+    "36#ATC3": "所有其他治疗心脏药物", "37#ATC4": "所有其他治疗心脏药物", "38#REMARK": "",
+    "_Tag": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
+- data: '{"0#PACK_ID": "4146402", "1#MOLE_NAME_EN": "ADENOSINE 3",5"-PHOSPHATE",
+    "2#MOLE_NAME_CH": "3",5"-磷酸腺苷 ", "3#PROD_DESC": "ADENOSINE CYCLPHOS LG2",
+    "4#PROD_NAME_CH": "3",5"-磷酸腺苷粉针剂", "5#CORP_NAME_EN": "LN.GUANGDA PHARM",
+    "6#CORP_NAME_CH": "沈阳光大制药有限公司", "7#MNF_NAME_EN": "LN.GUANGDA PHARM", "8#MNF_NAME_CH":
+    "沈阳光大制药有限公司", "9#PCK_DESC": "VIAL DRY 40MG    1", "10#DOSAGE": "粉针剂",
+    "11#SPEC": "40MG", "12#PACK": 1.0, "13#NFC1": "F--", "14#NFC1_NAME":
+    "PARENTERAL", "15#NFC1_NAME_CH": "注射用药", "16#NFC12": "FP-", "17#NFC12_NAME":
+    "VIAL", "18#NFC12_NAME_CH": "小瓶用药", "19#NFC123": "FPB", "20#NFC123_NAME":
+    "VIAL DRY", "21#CORP_ID": "0753", "22#MNF_TYPE": "L", "23#MNF_TYPE_NAME":
+    "LOCAL", "24#MNF_TYPE_NAME_CH": "LOCAL", "25#MNF_ID": "0753", "26#ATC1_CODE":
+    "C", "27#ATC1_DESC": "C     CARDIOVASCULAR SYSTEM", "28#ATC2_CODE": "C01",
+    "29#ATC2_DESC": "C01   CARDIAC THERAPY", "30#ATC3_CODE": "C01X", "31#ATC3_DESC":
+    "C01X  ALL OTHER CARDIAC PREPS", "32#ATC4_CODE": "C01X0", "33#ATC4_DESC":
+    "C01X0 ALL OTHER CARDIAC PREPS", "34#ATC1": "心血管系统药物", "35#ATC2": "强心药治疗",
+    "36#ATC3": "所有其他治疗心脏药物", "37#ATC4": "所有其他治疗心脏药物", "38#REMARK": "",
+    "_Tag": "yes"}'
+  metadata: '{"fileName": "Book1", "providers": ["product", "product"],
+    "sheetName": "sheet1"}'
