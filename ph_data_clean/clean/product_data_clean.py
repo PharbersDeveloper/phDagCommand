@@ -15,8 +15,8 @@ class ProductDataClean(DataClean):
             final_data_key = raw_data_key.split("#")[-1].replace('\n', '').strip()
             final_data[final_data_key] = raw_data[raw_data_key]
 
-        if "_TAG" in final_data:
-            final_data["TAG"] = final_data.pop("_TAG")
+        if "_tag" in final_data:
+            final_data["TAG"] = final_data.pop("_tag")
 
         return final_data
 
