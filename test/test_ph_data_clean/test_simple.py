@@ -18,17 +18,17 @@ chdir()
 
 
 def test_all():
-    test_file = r'file/ph_data_clean/s3_test_data/universe-universe-test.yaml'
+    test_file = r'file/ph_data_clean/s3_test_data/product-product-test.yaml'
     test_datas = load_by_file(test_file)
-    for test_data in test_datas[0:1]:
+    for test_data in test_datas:
         result = clean(test_data)
         for res in result:
             if res.tag == Tag.SUCCESS:
                 print()
-                print('success  ')
+                print('success  ', res.data)
             elif res.tag == Tag.WARNING:
                 print()
-                print('warning  ', res.data["UPDATE_LABEL"], "    ", res.data["PHA_ID"], "    ", res.err_msg)
+                print('warning  ', res.err_msg, res.data)
             else:
                 print()
                 print(str(res))
