@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from enum import Enum
 
 from ph_data_clean.model.clean_result import CleanResult, Tag
@@ -150,7 +152,7 @@ def define_tag_err(*args, **kwargs):
 
     else:
         error_msg_flag = False
-        error_msg = f'Error message: column missing-- '
+        error_msg = 'Error message: column missing-- '
         for maps in mapping:
             # 若某些必须有的列缺失数据
             if (maps['not_null']) and (final_data[maps['col_name']] is None):

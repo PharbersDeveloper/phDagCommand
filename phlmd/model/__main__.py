@@ -1,10 +1,9 @@
+# -*- coding: utf-8 -*-
+
 import sys
 import getopt
 import click
-from phlmd.model import ph_role
-from phlmd.model import ph_layer
-from phlmd.model import ph_lambda
-from phlmd.model import ph_gateway
+from phlmd.model import ph_role, ph_layer, ph_lambda, ph_gateway
 from pherrs.ph_err import PhError
 
 

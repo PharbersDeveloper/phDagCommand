@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from ph_data_clean.clean.data_clean import DataClean
 from ph_data_clean.clean.cpa_gyc_data_clean import CpaGycDataClean
 from ph_data_clean.clean.chc_data_clean import ChcDataClean
@@ -18,7 +20,7 @@ class CleanerFactory(object):
         ('product',): ProductDataClean,
     }
 
-    def get_specific_cleaner(self, source, company='') -> DataClean:
+    def get_specific_cleaner(self, source, company=''):
         """
         根据源和公司获取特定的清洗算法
 
@@ -38,5 +40,5 @@ class CleanerFactory(object):
         elif len(finded) > 1:
             raise PhError("Find more Cleaner" + str(finded))
         else:
-            raise PhError(f"Not find Cleaner, source={source}, company={company}")
+            raise PhError("Not find Cleaner, source=%s, company=%s" % (source, company))
 

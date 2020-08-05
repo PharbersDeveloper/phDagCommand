@@ -1,8 +1,9 @@
-from abc import ABCMeta
+# -*- coding: utf-8 -*-
+
 import copy
 
 
-class DataClean(object, metaclass=ABCMeta):
+class DataClean(object):
     """
     清洗方法的父类
     """

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import boto3
 from phlmd.runtime import python_rt
 from phlmd.runtime import nodejs_rt
@@ -38,7 +40,7 @@ class AWSUtil(object):
             Body=file_buf,
         )
 
-    def url_get_bucket_file(self, path: str) -> [str, str]:
+    def url_get_bucket_file(self, path):
         """
         根据 S3 URL 分析出 S3 Bucket 和文件的具体路径
         :param path: S3 URL
@@ -60,7 +62,7 @@ class AWSUtil(object):
         else:
             raise PhError("The url is wrong")
 
-    def sync_local_s3_file(self, path: str, bucket_name: str, dir_name: str, version: str) -> [str, str]:
+    def sync_local_s3_file(self, path, bucket_name, dir_name, version):
         """
         如果上传的是本地文件，则自动同步到 S3, 然后返回桶名和文件路径
         如果上传的是 S3 的文件，则直接返回桶名和文件路径

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import click
 from phlmd.model.__main__ import model
 from phlmd.ph_deploy import deploy

@@ -9,6 +9,7 @@ pipenv = "*"
 pyinstaller = "*"
 setuptools = "==44.0.0"
 gitpython = "*"
+twine = "*"
 
 [packages]
 click = "*"

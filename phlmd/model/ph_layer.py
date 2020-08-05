@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
+
 import boto3
 from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil
-from pherrs.ph_err import PhError
 
 
 class PhLayer(AWSOperator):
@@ -10,7 +11,6 @@ class PhLayer(AWSOperator):
     """
 
     aws_util = AWSUtil()
-    lambda_client = boto3.client('lambda')
 
     def package(self, data):
         """
@@ -36,6 +36,7 @@ class PhLayer(AWSOperator):
             :arg runtime: layer 适用的运行时，如果多个请使用 “,” 分割
             :arg layer_desc: layer 的描述
         """
+        lambda_client = boto3.client('lambda')
 
         bucket_name, object_name = self.aws_util.sync_local_s3_file(
             path=data["layer_path"],
@@ -44,7 +45,7 @@ class PhLayer(AWSOperator):
             version=data.get("version", ""),
         )
 
-        response = self.lambda_client.publish_layer_version(
+        response = lambda_client.publish_layer_version(
             LayerName=data["name"],
             Description=data.get("layer_desc", "aws_lambda_deploy create layer"),
             Content={
@@ -64,16 +65,18 @@ class PhLayer(AWSOperator):
             :arg runtime: layer 适用的运行时，只可指定一个【不强制】
             :arg name: layer 名字
         """
+        lambda_client = boto3.client('lambda')
+
         if "name" in data.keys():
-            response = self.lambda_client.list_layer_versions(
+            response = lambda_client.list_layer_versions(
                 LayerName=data["name"],
             )
         elif "runtime" in data.keys():
-            response = self.lambda_client.list_layers(
+            response = lambda_client.list_layers(
                 CompatibleRuntime=data["runtime"],
             )
         else:
-            response = self.lambda_client.list_layers()
+            response = lambda_client.list_layers()
 
         return response
 
@@ -83,10 +86,12 @@ class PhLayer(AWSOperator):
         :param data:
             :arg name: layer 名字可加版本
         """
-        response = self.lambda_client.list_layer_versions(
+        lambda_client = boto3.client('lambda')
+
+        response = lambda_client.list_layer_versions(
             LayerName=data["name"].split(":")[0],
         )
-        if not len(response["LayerVersions"]):
+        if response["LayerVersions"]:
             return {}
 
         version = data["name"].split(":")[1:2]
@@ -132,7 +137,9 @@ class PhLayer(AWSOperator):
             :arg name: 要删除的 layer 名字
             :arg version: 要删除的 layer 版本
         """
-        response = self.lambda_client.delete_layer_version(
+        lambda_client = boto3.client('lambda')
+
+        response = lambda_client.delete_layer_version(
             LayerName=data["name"],
             VersionNumber=data["version"],
         )

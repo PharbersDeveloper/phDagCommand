@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import json
 from enum import Enum
 
@@ -16,7 +18,7 @@ class CleanResult(object):
     清洗结果
     """
 
-    def __init__(self, data: dict, metadata: dict, raw_data: dict, tag: Tag, err_msg: str = ''):
+    def __init__(self, data, metadata, raw_data, tag, err_msg = ''):
         self.data = data
         self.metadata = metadata
         self.raw_data = raw_data

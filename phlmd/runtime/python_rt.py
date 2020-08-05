@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from phlmd.runtime.lambda_rt import LambdaRuntime
 
 

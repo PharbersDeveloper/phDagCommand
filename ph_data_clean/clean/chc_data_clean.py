@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from ph_data_clean.clean.data_clean import DataClean
 from ph_data_clean.clean.common_func import *
 import re

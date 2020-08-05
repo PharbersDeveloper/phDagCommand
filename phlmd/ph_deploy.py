@@ -1,12 +1,11 @@
+# -*- coding: utf-8 -*-
+
 import os
 import sys
 import boto3
 import yaml
 import click
-from phlmd.model import ph_role
-from phlmd.model import ph_layer
-from phlmd.model import ph_lambda
-from phlmd.model import ph_gateway
+from phlmd.model import ph_role, ph_layer, ph_lambda, ph_gateway
 
 
 @click.group("deploy")
@@ -51,23 +50,23 @@ def init(name, runtime, desc, lib_path, code_path, handler):
         with open(__DEFAULT_CONF_FILE) as f:
             deploy_conf = yaml.safe_load(f)
         if name in deploy_conf.keys():
-            click.secho(f"Init Error，name '{name}' is exists", fg='red', blink=True, bold=True)
+            click.secho("Init Error，name '%s' is exists" % name, fg='red', blink=True, bold=True)
             return
 
         with open(__DEFAULT_CONF_FILE, "at") as at:
             at.write(buf)
 
-        click.secho(f"Append Init Success", fg='green', blink=True, bold=True)
+        click.secho("Append Init Success", fg='green', blink=True, bold=True)
         return
     else:
         with open(__DEFAULT_CONF_FILE, "wt") as wt:
             wt.write(buf)
-        click.secho(f"Download Init Success", fg='green', blink=True, bold=True)
+        click.secho("Download Init Success", fg='green', blink=True, bold=True)
         return
 
 
-def __check_max_version(deploy_conf) -> (dict, str):
-    def max_version(cur, max) -> str:
+def __check_max_version(deploy_conf):
+    def max_version(cur, max):
         return cur if int(cur[1:]) > int(max[1:]) else max
 
     function_info = ph_lambda.PhLambda().get(deploy_conf["metadata"])
@@ -88,11 +87,11 @@ def __apply(deploy_conf):
     if "role" in deploy_conf.keys():
         role = ph_role.PhRole()
         try:
-            role.apply(dict(**{"name": deploy_conf["metadata"]["name"] + "-lambda-role"}, **deploy_conf["role"]))
-            click.secho(f"Role 更新完成", fg='green', blink=True, bold=True)
+            role.apply(dict({"name": deploy_conf["metadata"]["name"] + "-lambda-role"}.items() + deploy_conf["role"].items()))
+            click.secho("Role 更新完成", fg='green', blink=True, bold=True)
         except:
             if role.get(deploy_conf["metadata"]) == {}:
-                click.secho(f"Role 不存在，请联系管理员创建", fg='red', blink=True, bold=True)
+                click.secho("Role 不存在，请联系管理员创建", fg='red', blink=True, bold=True)
                 sys.exit(2)
         click.secho()
 
@@ -102,10 +101,10 @@ def __apply(deploy_conf):
         if "lib_path" in deploy_conf["layer"]:
             click.secho("开始打包本地依赖: " + deploy_conf["layer"]["lib_path"] + "\t->\t" + deploy_conf["layer"][
                 "package_name"], blink=True, bold=True)
-            layer.package(dict(**deploy_conf["metadata"], **deploy_conf["layer"]))
+            layer.package(dict(deploy_conf["metadata"].items() + deploy_conf["layer"].items()))
             click.secho("本地依赖打包完成", fg='green', blink=True, bold=True)
 
-        response = layer.apply(dict(**deploy_conf["metadata"], **deploy_conf["layer"]))
+        response = layer.apply(dict(deploy_conf["metadata"].items() + deploy_conf["layer"].items()))
         click.secho("layer 更新完成: " + response["LayerVersionArn"], fg='green', blink=True, bold=True)
         click.secho()
 
@@ -115,16 +114,16 @@ def __apply(deploy_conf):
         if "code_path" in deploy_conf["lambda"]:
             click.secho("开始打包本地代码: " + deploy_conf["lambda"]["code_path"] + "\t->\t" + deploy_conf["lambda"][
                 "package_name"], blink=True, bold=True)
-            lambda_function.package(dict(**deploy_conf["metadata"], **deploy_conf["lambda"]))
+            lambda_function.package(dict(deploy_conf["metadata"].items() + deploy_conf["lambda"].items()))
             click.secho("本地代码打包完成", fg='green', blink=True, bold=True)
 
-        response = lambda_function.apply(dict(**deploy_conf["metadata"], **deploy_conf["lambda"]))
+        response = lambda_function.apply(dict(deploy_conf["metadata"].items() + deploy_conf["lambda"].items()))
         click.secho("lambda 更新完成: " + response["AliasArn"], fg='green', blink=True, bold=True)
         click.secho()
 
     if "gateway" in deploy_conf.keys():
         gateway = ph_gateway.PhGateway()
-        response = gateway.apply(dict(**deploy_conf["metadata"], **deploy_conf["gateway"]))
+        response = gateway.apply(dict(deploy_conf["metadata"].items() + deploy_conf["gateway"].items()))
         click.secho("gateway 更新完成: " + response, fg='green', blink=True, bold=True)
         click.secho()
 
@@ -193,10 +192,10 @@ def push(name, oper):
     elif name in all_conf.keys():
         project_name = name
     else:
-        click.secho(f"name '{name}' is not exists", fg='red', blink=True, bold=True)
+        click.secho("name '%s' is not exists" % name, fg='red', blink=True, bold=True)
         return
 
-    click.secho(f"开始部署 '{project_name}'", fg='green', blink=True, bold=True)
+    click.secho("开始部署 '%s'" % project_name, fg='green', blink=True, bold=True)
 
     # check version and write back, tut the version is not updated when `api` is only released
     deploy_conf, max_version = __check_max_version(all_conf[project_name])
@@ -205,7 +204,8 @@ def push(name, oper):
         all_conf[project_name] = deploy_conf
         __write_conf(all_conf)
     else:
-        deploy_conf["metadata"]["version"] = f"v{int(max_version[1:]) + 1}"
+        v = int(max_version[1:]) + 1
+        deploy_conf["metadata"]["version"] = "v" + str(v)
         all_conf[project_name] = deploy_conf
         __write_conf(all_conf)
 
@@ -224,4 +224,4 @@ def push(name, oper):
     __apply(deploy_conf)
     __clean_cache(deploy_conf)
 
-    click.secho(f"部署成功 '{project_name}'", fg='green', blink=True, bold=True)
+    click.secho("部署成功 '%s'" % project_name, fg='green', blink=True, bold=True)
