@@ -29,7 +29,7 @@ class PhS3(object):
             return str.split(response["Body"].read().decode(), "\n")
         else:
             res = response["Body"].read()
-            return string.split(res, "\n")
+            return filter(lambda x: x != "", string.split(res, "\n"))
 
     def copy_object_2_file(self, bk_name, s3_path, local_path):
         f = open(local_path, "w")
