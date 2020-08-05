@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
+
 import os
-from abc import ABCMeta, abstractmethod
+from abc import abstractmethod
 import click
 from pherrs.ph_err import PhError
 
 
-class LambdaRuntime(metaclass=ABCMeta):
+class LambdaRuntime(object):
     """
     封装 AWS Lambda 各个运行时的的常规操作和抽象方法
     """
@@ -35,7 +37,7 @@ class LambdaRuntime(metaclass=ABCMeta):
 
         try:
             for cmd in self._package_cmds:
-                click.secho(f"正在执行: {cmd} ", fg='green', blink=True, bold=True)
+                click.secho("正在执行: " + cmd + " ", fg='green', blink=True, bold=True)
                 os.system(cmd)
         except Exception as ex:
             print(ex)

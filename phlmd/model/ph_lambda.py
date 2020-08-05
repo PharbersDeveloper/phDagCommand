@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import boto3
 from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil
@@ -12,7 +14,6 @@ class PhLambda(AWSOperator):
     """
 
     aws_util = AWSUtil()
-    lambda_client = boto3.client('lambda')
 
     def package(self, data):
         """
@@ -45,6 +46,8 @@ class PhLambda(AWSOperator):
             :arg lambda_tag: [dict] lambda 的标签
             :arg vpc_config: [dict] lambda VPC 配置
         """
+        lambda_client = boto3.client('lambda')
+
         bucket_name, object_name = self.aws_util.sync_local_s3_file(
             data["lambda_path"],
             bucket_name=data.get("bucket", self._DEFAULT_BUCKET),
@@ -60,7 +63,7 @@ class PhLambda(AWSOperator):
 
         vpc_config = data['vpc_config'] if 'vpc_config' in data.keys() else {}
 
-        lambda_response = self.lambda_client.create_function(
+        lambda_response = lambda_client.create_function(
             FunctionName=data["name"],
             Runtime=data["runtime"].split(",")[0],
             Role=role_arn,
@@ -88,14 +91,14 @@ class PhLambda(AWSOperator):
             Layers=layers_arn,
         )
 
-        response = self.lambda_client.publish_version(
+        response = lambda_client.publish_version(
             FunctionName=data["name"],
             # CodeSha256='string',
             # Description='string',
             # RevisionId='string'
         )
 
-        response = self.lambda_client.create_alias(
+        response = lambda_client.create_alias(
             FunctionName=data["name"],
             Name=data["version"],
             FunctionVersion=response["Version"],
@@ -113,7 +116,9 @@ class PhLambda(AWSOperator):
         """
         获取所有 lambda 实例
         """
-        response = self.lambda_client.list_functions(
+        lambda_client = boto3.client('lambda')
+
+        response = lambda_client.list_functions(
             # MasterRegion='string',
             FunctionVersion='ALL',
             # Marker='string',
@@ -128,13 +133,15 @@ class PhLambda(AWSOperator):
         :param data:
             :arg name: 创建的 lambda 函数的名字
         """
+        lambda_client = boto3.client('lambda')
+
         try:
-            response = self.lambda_client.get_function(
+            response = lambda_client.get_function(
                 FunctionName=data["name"],
                 # Qualifier='string',
             )
 
-            versions = self.lambda_client.list_versions_by_function(
+            versions = lambda_client.list_versions_by_function(
                 FunctionName=data["name"],
                 # Marker='string',
                 # MaxItems=123
@@ -142,7 +149,7 @@ class PhLambda(AWSOperator):
             versions.reverse()
             response["Versions"] = versions
 
-            aliases = self.lambda_client.list_aliases(
+            aliases = lambda_client.list_aliases(
                 FunctionName=data["name"],
             )["Aliases"]
             aliases.reverse()
@@ -171,6 +178,7 @@ class PhLambda(AWSOperator):
             :arg lambda_env: [dict] lambda 的环境变量
             :arg vpc_config: [dict] lambda VPC 配置
         """
+        lambda_client = boto3.client('lambda')
 
         # 更新代码
         if "lambda_path" in data.keys():
@@ -181,7 +189,7 @@ class PhLambda(AWSOperator):
                 version=data.get("version", ""),
             )
 
-            response = self.lambda_client.update_function_code(
+            response = lambda_client.update_function_code(
                 FunctionName=data["name"],
                 # ZipFile=b'bytes',
                 S3Bucket=bucket_name,
@@ -213,7 +221,7 @@ class PhLambda(AWSOperator):
 
             vpc_config = data['vpc_config'] if 'vpc_config' in data.keys() else {}
 
-            lambda_response = self.lambda_client.update_function_configuration(
+            lambda_response = lambda_client.update_function_configuration(
                 FunctionName=data["name"],
                 Role=role_arn,
                 Handler=data.get("lambda_handler", response["Configuration"]["Handler"]),
@@ -236,14 +244,14 @@ class PhLambda(AWSOperator):
                 Layers=layers_arn
             )
 
-        response = self.lambda_client.publish_version(
+        response = lambda_client.publish_version(
             FunctionName=data["name"],
             # CodeSha256='string',
             # Description='string',
             # RevisionId='string'
         )
 
-        response = self.lambda_client.create_alias(
+        response = lambda_client.create_alias(
             FunctionName=data["name"],
             Name=data["version"],
             FunctionVersion=response["Version"],
@@ -297,14 +305,15 @@ class PhLambda(AWSOperator):
             :arg name: 创建的 lambda 函数的名字 【必需】
             :arg lambda_concurrent: 分配给别名的预留并发值, 不指定则使用非预留账户并发
         """
+        lambda_client = boto3.client('lambda')
 
         if "lambda_concurrent" in data.keys():
-            response = self.lambda_client.put_function_concurrency(
+            response = lambda_client.put_function_concurrency(
                 FunctionName=data["name"],
                 ReservedConcurrentExecutions=data["lambda_concurrent"],
             )
         else:
-            response = self.lambda_client.delete_function_concurrency(
+            response = lambda_client.delete_function_concurrency(
                 FunctionName=data["name"],
             )
 
@@ -317,23 +326,24 @@ class PhLambda(AWSOperator):
             :arg name: 创建的 lambda 函数的名字 【必需】
             :arg version: lambda 函数别名版本, 不传或 #ALL# 则删除整个 lambda 函数
         """
+        lambda_client = boto3.client('lambda')
 
         if "version" not in data.keys() or data["version"] == "#ALL#":
-            response = self.lambda_client.delete_function(
+            response = lambda_client.delete_function(
                 FunctionName=data["name"],
             )
         else:
-            func_version = self.lambda_client.get_alias(
+            func_version = lambda_client.get_alias(
                 FunctionName=data["name"],
                 Name=data["version"],
             )["FunctionVersion"]
 
-            response = self.lambda_client.delete_alias(
+            response = lambda_client.delete_alias(
                 FunctionName=data["name"],
                 Name=data["version"],
             )
 
-            response = self.lambda_client.delete_function(
+            response = lambda_client.delete_function(
                 FunctionName=data["name"],
                 Qualifier=func_version,
             )

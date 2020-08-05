@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 def universe_blue_grey_mapping():
     return [
         {

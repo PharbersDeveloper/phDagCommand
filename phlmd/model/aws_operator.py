@@ -1,7 +1,9 @@
-from abc import ABCMeta, abstractmethod
+# -*- coding: utf-8 -*-
+
+from abc import abstractmethod
 
 
-class AWSOperator(metaclass=ABCMeta):
+class AWSOperator(object):
     """
     封装 AWS 的常规操作和抽象方法
     """

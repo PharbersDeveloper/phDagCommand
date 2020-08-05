@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from ph_data_clean.clean.data_clean import DataClean
 from ph_data_clean.clean.common_func import *
 import copy
@@ -18,7 +20,7 @@ def define_tag_err_for_each(raw_data, mapping, final_data):
     else:
         error_msg_flag = False
         warning_msg_flag = False
-        error_msg = f'Col_missing:'
+        error_msg = 'Col_missing:'
         warning_lst = []
         for maps in mapping:
             null_data_lst = ["#N/A", "-", "#########", "", "0", "0.0", 0, None]

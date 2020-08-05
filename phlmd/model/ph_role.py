@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import boto3
 from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil

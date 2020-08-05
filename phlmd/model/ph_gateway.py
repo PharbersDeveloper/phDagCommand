@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import boto3
 import yaml
 from phlmd.model.aws_operator import AWSOperator
@@ -12,11 +14,12 @@ class PhGateway(AWSOperator):
     """
 
     aws_util = AWSUtil()
-    api_gateway_client = boto3.client('apigateway')
 
-    def __put_resource_by_template(self, *, rest_api_id, project_name, paths, lambda_arn, role_arn):
+    def __put_resource_by_template(self, rest_api_id, project_name, paths, lambda_arn, role_arn):
+        api_gateway_client = boto3.client('apigateway')
+
         def put_integration(rest_api_id, resource_id, method, lambda_arn, role_arn):
-            response = self.api_gateway_client.put_integration(
+            response = api_gateway_client.put_integration(
                 restApiId=rest_api_id,
                 resourceId=resource_id,
                 httpMethod=method.upper(),
@@ -46,7 +49,7 @@ class PhGateway(AWSOperator):
             return response
 
         path_id_dict = {}
-        for reso in self.api_gateway_client.get_resources(restApiId=rest_api_id, limit=500)["items"]:
+        for reso in api_gateway_client.get_resources(restApiId=rest_api_id, limit=500)["items"]:
             path_id_dict[reso["path"]] = reso["id"]
 
         for path, methods in sorted(paths.items()):
@@ -59,7 +62,7 @@ class PhGateway(AWSOperator):
                 prefix.append(sub_path)
                 path = "/" + "/".join(prefix)
                 if path not in path_id_dict.keys():
-                    resource_id = self.api_gateway_client.create_resource(
+                    resource_id = api_gateway_client.create_resource(
                         restApiId=rest_api_id,
                         parentId=parent_id,
                         pathPart=sub_path,
@@ -68,7 +71,7 @@ class PhGateway(AWSOperator):
 
             # 为资源添加方法并集成 lambda
             for method, params in methods.items():
-                self.api_gateway_client.put_method(
+                api_gateway_client.put_method(
                     restApiId=rest_api_id,
                     resourceId=path_id_dict.get(path),
                     httpMethod=method,
@@ -98,7 +101,8 @@ class PhGateway(AWSOperator):
                 )
 
     def __create_deployment(self, rest_api_id, version, gateway_desc):
-        response = self.api_gateway_client.create_deployment(
+        api_gateway_client = boto3.client('apigateway')
+        response = api_gateway_client.create_deployment(
             restApiId=rest_api_id,
             stageName=version,
             stageDescription=gateway_desc,
@@ -167,12 +171,14 @@ class PhGateway(AWSOperator):
         :param data:
             :arg rest_api_id: rest API Gateway 的 ID
         """
+        api_gateway_client = boto3.client('apigateway')
+
         if "rest_api_id" in data.keys():
-            response = self.api_gateway_client.get_rest_api(
+            response = api_gateway_client.get_rest_api(
                 restApiId=data["rest_api_id"]
             )
         else:
-            response = self.api_gateway_client.get_rest_apis(
+            response = api_gateway_client.get_rest_apis(
                 # position='string',
                 # limit=123
             )
@@ -185,8 +191,9 @@ class PhGateway(AWSOperator):
             :arg name: API Gateway 的名称【可能会查出多个】
             :arg rest_api_id: rest API Gateway 的 ID
         """
+        api_gateway_client = boto3.client('apigateway')
 
-        response = self.api_gateway_client.get_resources(
+        response = api_gateway_client.get_resources(
             restApiId=data["rest_api_id"],
             # position='string',
             # limit=123,
@@ -258,10 +265,12 @@ class PhGateway(AWSOperator):
             :arg name: API Gateway 根资源名称
             :arg rest_api_id: rest API Gateway 的 ID
         """
+        api_gateway_client = boto3.client('apigateway')
+
         response = {}
         for item in self.get(data)["items"]:
             if "/" + data["name"] == item["path"]:
-                response = self.api_gateway_client.delete_resource(
+                response = api_gateway_client.delete_resource(
                     restApiId=data['rest_api_id'],
                     resourceId=item["id"]
                 )

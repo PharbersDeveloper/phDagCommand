@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from phlmd.runtime.lambda_rt import LambdaRuntime
 
 
@@ -42,8 +44,8 @@ class NodejsRT(LambdaRuntime):
 
         if "name" in data.keys():
             self._package_cmds.extend([
-                f"mv {self._package_root}/{self.__runtime_name}/config/project/{data['name']}.yml {self._package_root}/{self.__runtime_name}/config/server.yml",
-                f"rm -rf {self._package_root}/{self.__runtime_name}/config/project/"
+                "mv %s/%s/config/project/%s.yml %s/%s/config/server.yml" % (self._package_root, self.__runtime_name, data['name'], self._package_root, self.__runtime_name),
+                "rm -rf %s/%s/config/project/" % (self._package_root, self.__runtime_name)
             ])
 
         self._package_cmds.extend([

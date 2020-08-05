@@ -61,8 +61,7 @@ class PhContextFacade(object):
         return os.getenv('PH_WORKSPACE')
 
     def get_current_project_dir(self):
-        # return os.getenv('BP_Max_AutoJob')
-        return 'BP_Max_AutoJob'
+        return os.getenv('PH_CUR_PROJ', 'BP_Max_AutoJob')
 
     def get_destination_path(self):
         self.job_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
