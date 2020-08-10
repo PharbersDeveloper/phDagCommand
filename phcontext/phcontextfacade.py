@@ -176,16 +176,16 @@ class PhContextFacade(object):
         for _, dirs, _ in os.walk(self.dag_path):
             for key in dirs:
                 if (not key.startswith(".")) & (not key.startswith("__pycache__")):
-                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phmain.py",
+                    s3.put_object("s3fs-ph-airflow", "airflow/dags/phjobs/" + key + "/phmain.py",
                                   self.dag_path + key + "/phmain.py")
-                    # s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phjob.zip", self.dag_path + key + "/phjob.zip")
-                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/phjob.py",
+                    # s3.put_object("s3fs-ph-airflow", "airflow/dags/phjobs/" + key + "/phjob.zip", self.dag_path + key + "/phjob.zip")
+                    s3.put_object("s3fs-ph-airflow", "airflow/dags/phjobs/" + key + "/phjob.py",
                                   self.dag_path + key + "/phjob.py")
-                    s3.put_object("s3fs-ph-storage", "airflow/dags/phjobs/" + key + "/args.properties",
+                    s3.put_object("s3fs-ph-airflow", "airflow/dags/phjobs/" + key + "/args.properties",
                                   self.dag_path + key + "/args.properties")
         for key in os.listdir(self.dag_path):
             if os.path.isfile(self.dag_path + key):
-                s3.put_object("s3fs-ph-storage", "airflow/dags/" + key, self.dag_path + key)
+                s3.put_object("s3fs-ph-airflow", "airflow/dags/" + key, self.dag_path + key)
 
     def command_run_exec(self):
         phlogger.info("run")
@@ -268,8 +268,8 @@ class PhContextFacade(object):
         if self.context != "":
             udags = ast.literal_eval(self.context.replace(" ", ""))
         phlogger.info(udags)
-        submit_prefix = "s3a://s3fs-ph-storage/airflow/dags/phjobs/" + self.path + "/"
-        args = s3.get_object_lines("s3fs-ph-storage", "airflow/dags/phjobs/" + self.path + "/args.properties")
+        submit_prefix = "s3a://s3fs-ph-airflow/airflow/dags/phjobs/" + self.path + "/"
+        args = s3.get_object_lines("s3fs-ph-airflow", "airflow/dags/phjobs/" + self.path + "/args.properties")
         access_key = os.getenv("AWS_ACCESS_KEY_ID")
         secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
         current_user = os.getenv("HADOOP_PROXY_USER")
@@ -294,7 +294,7 @@ class PhContextFacade(object):
                    "--jars",
                    "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
                    "--py-files",
-                   "s3a://s3fs-ph-storage/airflow/dags/phjobs/common/click.zip,s3a://s3fs-ph-storage/airflow/dags/phjobs/common/phcli.zip," + submit_prefix + "phjob.py",
+                   "s3a://s3fs-ph-airflow/airflow/dags/phjobs/common/click.zip,s3a://s3fs-ph-airflow/airflow/dags/phjobs/common/phcli.zip," + submit_prefix + "phjob.py",
                    submit_prefix + "phmain.py"]
 
         cur_key = ""
