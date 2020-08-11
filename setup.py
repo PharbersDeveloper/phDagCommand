@@ -8,7 +8,7 @@ with io.open("./README.md", "r", encoding='utf-8') as fh:
 
 setuptools.setup(
     name="phcli",
-    version="0.1.5",
+    version="0.1.6",
     author="Alfred Yang",
     author_email="alfredyang@pharbers.com",
     maintainer="ClockQ",
