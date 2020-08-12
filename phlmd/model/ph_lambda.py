@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import boto3
+import base64
+import time
+
 from phlmd.model.aws_operator import AWSOperator
 from phlmd.model.aws_util import AWSUtil
-from phlmd.model.ph_role import PhRole
 from phlmd.model.ph_layer import PhLayer
-from pherrs.ph_err import PhError
+from phlmd import define_value as dv
 
 
 class PhLambda(AWSOperator):
@@ -15,53 +17,29 @@ class PhLambda(AWSOperator):
 
     aws_util = AWSUtil()
 
-    def package(self, data):
-        """
-        对 lambda 源代码打包
-        :param data:
-            :arg runtime 运行时字符串，“python” 或者 “nodejs” 或者 “go”
-            :arg code_path: lambda 代码位置
-            :arg package_name 打包的名称
-        """
-        runtime_inst = self.aws_util.get_rt_inst(data['runtime'])
-        return runtime_inst.pkg_code(data)
-
-    def create(self, data):
-        """
-        创建 lambda, 并发布一个新版本，然后使用 version 定义一个别名
-        :param data:
-            :arg name: 创建的 lambda 函数的名字
-            :arg version: lambda 函数别名版本
-            :arg runtime: lambda 函数适用的运行时，如果多个请使用 “,” 分割, 但是实际使用以第一个为准
-            :arg lambda_path: lambda zip 的位置
-                            可以是本地（file/python-lambda-example-code.zip，会先被传到 S3）或
-                            s3 上的文件（s3://ph-api-lambda/test_ph_lambda_create_local/lambda/python-lambda-example-code-v1.zip）
-            :arg role_name: lambda 的代理角色名称
-            :arg lambda_handler: lambda 的入口函数
-            :arg lambda_layers: lambda 函数依赖的层名称，如果多个请使用 “,” 分割
-            :arg lambda_desc: lambda 函数的描述
-            :arg lambda_timeout: [int] lambda 的超时时间，默认30s（官方是3s）
-            :arg lambda_memory_size: [int] lambda 的使用内存，默认128
-            :arg lambda_env: [dict] lambda 的环境变量
-            :arg lambda_tag: [dict] lambda 的标签
-            :arg vpc_config: [dict] lambda VPC 配置
-        """
-        lambda_client = boto3.client('lambda')
-
+    def __sync_file(self, data, credentials=None):
         bucket_name, object_name = self.aws_util.sync_local_s3_file(
             data["lambda_path"],
-            bucket_name=data.get("bucket", self._DEFAULT_BUCKET),
-            dir_name=self._DEFAULT_LAMBDA_DIR.replace("#name#", data["name"]),
+            bucket_name=data.get("bucket", dv.DEFAULT_BUCKET),
+            dir_name=dv.CLI_VERSION + dv.DEFAULT_LAMBDA_DIR
+                .replace("#runtime#", self.aws_util.get_short_rt(data["runtime"]))
+                .replace("#name#", data["name"]),
             version=data.get("version", ""),
+            credentials=credentials,
         )
+        return bucket_name, object_name
 
-        role_arn = PhRole().get({"name": data["role_name"]})["Role"]["Arn"]
+    def __create_func(self, data, lambda_client, credentials=None):
+        bucket_name, object_name = self.__sync_file(data, credentials)
 
-        layers_arn = []
-        for layer_name in data["lambda_layers"].split(","):
-            layers_arn.append(PhLayer().get({"name": layer_name})["LayerVersions"][0]["LayerVersionArn"])
+        role_arn = base64.b64decode(dv.ASSUME_ROLE_ARN).decode()
 
         vpc_config = data['vpc_config'] if 'vpc_config' in data.keys() else {}
+
+        layers_arn = []
+        ph_layer = PhLayer()
+        for layer_name in data["lambda_layers"].split(","):
+            layers_arn.append(ph_layer.get({"name": layer_name})["LayerVersions"][0]["LayerVersionArn"])
 
         lambda_response = lambda_client.create_function(
             FunctionName=data["name"],
@@ -72,7 +50,7 @@ class PhLambda(AWSOperator):
                 'S3Bucket': bucket_name,
                 'S3Key': object_name,
             },
-            Description=data.get("lambda_desc", "aws_lambda_deploy create lambda function"),
+            Description=data.get("lambda_desc", "phcli create " + data['name'] + " lambda function"),
             Timeout=data.get("lambda_timeout", 30),
             MemorySize=data.get("lambda_memory_size", 128),
             # Publish=True|False,
@@ -90,25 +68,134 @@ class PhLambda(AWSOperator):
             Tags=data.get("lambda_tag", {}),
             Layers=layers_arn,
         )
+        return lambda_response
 
-        response = lambda_client.publish_version(
-            FunctionName=data["name"],
-            # CodeSha256='string',
-            # Description='string',
-            # RevisionId='string'
+    def __apply_version(self, data, lambda_client):
+        def create_version():
+            response = lambda_client.publish_version(
+                FunctionName=data["name"],
+                # CodeSha256='string',
+                # Description='string',
+                # RevisionId='string'
+            )
+            return response
+
+        def delete_version(version):
+            response = lambda_client.delete_function(
+                FunctionName=data["name"],
+                Qualifier=version,
+            )
+            return response
+
+        def keep_num():
+            resp = self.get(data)
+            versions = resp['Versions'] if resp else []
+            versions = [version['Version'] for version in versions]
+            versions.remove('$LATEST')
+
+            if len(versions) > dv.LAMBDA_FUNCTION_MAX_VERSION_NUM:
+                for ver in versions[dv.LAMBDA_FUNCTION_MAX_VERSION_NUM:]:
+                    delete_version(ver)
+
+        response = create_version()
+        keep_num()
+
+        return response
+
+    def __apply_alias(self, data, lambda_client, create_version_response):
+
+        def create_alias(name, function_version):
+            response = lambda_client.create_alias(
+                FunctionName=data["name"],
+                Name=name,
+                FunctionVersion=function_version,
+                Description=data.get("lambda_desc", "phcli create " + data['name'] + " lambda function alias"),
+                # RoutingConfig={
+                #     'AdditionalVersionWeights': {
+                #         'string': 123.0
+                #     }
+                # }
+            )
+            return response
+
+        def delete_alias(name):
+            response = lambda_client.delete_alias(
+                FunctionName=data["name"],
+                Name=name,
+            )
+            return response
+
+        def cur2prev(aliases):
+            if dv.LAMBDA_FUNCTION_ALIAS_NAME_PREV in aliases.keys():
+                delete_alias(dv.LAMBDA_FUNCTION_ALIAS_NAME_PREV)
+
+            version = aliases[dv.LAMBDA_FUNCTION_ALIAS_NAME_CUR]['FunctionVersion']
+            create_alias(dv.LAMBDA_FUNCTION_ALIAS_NAME_PREV, version)
+            return delete_alias(dv.LAMBDA_FUNCTION_ALIAS_NAME_CUR)
+
+        resp = self.get(data)
+        aliases = resp['Aliases'] if resp else []
+        aliases = dict([(alias['Name'], alias) for alias in aliases])
+
+        # 如果版本没变化
+        if aliases and aliases[dv.LAMBDA_FUNCTION_ALIAS_NAME_CUR]['FunctionVersion'] == create_version_response["Version"]:
+            return aliases[dv.LAMBDA_FUNCTION_ALIAS_NAME_CUR]['FunctionVersion']
+
+        if aliases:
+            cur2prev(aliases)
+
+        return create_alias(dv.LAMBDA_FUNCTION_ALIAS_NAME_CUR, create_version_response["Version"])
+
+    def package(self, data):
+        """
+        对 lambda 源代码打包
+        :param data:
+            :arg runtime 运行时字符串，“python” 或者 “nodejs” 或者 “go”
+            :arg code_path: lambda 代码位置
+            :arg package_name 打包的名称
+        """
+        runtime_inst = self.aws_util.get_rt_inst(data['runtime'])
+        return runtime_inst.pkg_code(data)
+
+    def create(self, data):
+        """
+        创建 lambda, 并发布一个新版本，然后使用 version 定义一个别名
+        :param data:
+            :arg name: 创建的 lambda 函数的名字
+            :arg version: lambda 函数别名版本，默认为 alpha
+            :arg runtime: lambda 函数适用的运行时，如果多个请使用 “,” 分割, 但是实际使用以第一个为准
+            :arg lambda_path: lambda zip 的位置
+                            可以是本地（file/phlmd/python-lambda-example-code.zip，会先被传到 S3）或
+                            s3 上的文件（s3://ph-platform/2020-08-10/functions/python/test_ph_lambda_create/python-lambda-example-code.zip）
+            :arg lambda_handler: lambda 的入口函数
+            :arg lambda_layers: lambda 函数依赖的层名称，如果多个请使用 “,” 分割
+            :arg lambda_desc: lambda 函数的描述
+            :arg lambda_timeout: [int] lambda 的超时时间，默认30s（官方是3s）
+            :arg lambda_memory_size: [int] lambda 的使用内存，默认128
+            :arg lambda_env: [dict] lambda 的环境变量
+            :arg lambda_tag: [dict] lambda 的标签
+            :arg vpc_config: [dict] lambda VPC 配置
+        """
+        credentials = self.aws_util.assume_role(
+            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+            dv.ASSUME_ROLE_EXTERNAL_ID,
         )
 
-        response = lambda_client.create_alias(
-            FunctionName=data["name"],
-            Name=data["version"],
-            FunctionVersion=response["Version"],
-            Description=data.get("lambda_desc", "aws_lambda_deploy create lambda function"),
-            # RoutingConfig={
-            #     'AdditionalVersionWeights': {
-            #         'string': 123.0
-            #     }
-            # }
-        )
+        lambda_client = boto3.client('lambda', **credentials)
+
+        self.__create_func(data, lambda_client, credentials)
+
+        # 首次创建并且配置 VPC 的情况下，function 会有一段 pending 时间，因此等待 30 s
+        if 'vpc_config' in data.keys():
+            print('lambda 配置 vpc: ', end='')
+            for i in range(30):
+                print('*', end='')
+                time.sleep(1)
+            print()
+
+        response = self.__apply_version(data, lambda_client)
+
+        response = self.__apply_alias(data, lambda_client, response)
 
         return response
 
@@ -116,7 +203,12 @@ class PhLambda(AWSOperator):
         """
         获取所有 lambda 实例
         """
-        lambda_client = boto3.client('lambda')
+        credentials = self.aws_util.assume_role(
+            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+            dv.ASSUME_ROLE_EXTERNAL_ID,
+        )
+
+        lambda_client = boto3.client('lambda', **credentials)
 
         response = lambda_client.list_functions(
             # MasterRegion='string',
@@ -131,9 +223,14 @@ class PhLambda(AWSOperator):
         """
         获取指定 lambda 实例
         :param data:
-            :arg name: 创建的 lambda 函数的名字
+            :arg name: 要查询的 lambda 函数的名字
         """
-        lambda_client = boto3.client('lambda')
+        credentials = self.aws_util.assume_role(
+            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+            dv.ASSUME_ROLE_EXTERNAL_ID,
+        )
+
+        lambda_client = boto3.client('lambda', **credentials)
 
         try:
             response = lambda_client.get_function(
@@ -154,7 +251,8 @@ class PhLambda(AWSOperator):
             )["Aliases"]
             aliases.reverse()
             response["Aliases"] = aliases
-        except:
+        except Exception as ex:
+            print(ex)
             response = {}
 
         return response
@@ -167,9 +265,8 @@ class PhLambda(AWSOperator):
             :arg version: lambda 函数别名版本
             :arg runtime: lambda 函数适用的运行时，如果多个请使用 “,” 分割, 但是实际使用以第一个为准
             :arg lambda_path: lambda zip 的位置
-                            可以是本地（file/python-lambda-example-code.zip，会先被传到 S3）或
-                            s3 上的文件（s3://ph-api-lambda/test_ph_lambda_create_local/lambda/python-lambda-example-code-v1.zip）
-            :arg role_name: lambda 的代理角色名称
+                            可以是本地（file/phlmd/python-lambda-example-code.zip，会先被传到 S3）或
+                            s3 上的文件（s3://ph-platform/2020-08-10/functions/python/test_ph_lambda_create/python-lambda-example-code.zip)
             :arg lambda_handler: lambda 的入口函数
             :arg lambda_layers: lambda 函数依赖的层名称，如果多个请使用 “,” 分割
             :arg lambda_desc: lambda 函数的描述
@@ -178,18 +275,18 @@ class PhLambda(AWSOperator):
             :arg lambda_env: [dict] lambda 的环境变量
             :arg vpc_config: [dict] lambda VPC 配置
         """
-        lambda_client = boto3.client('lambda')
+        credentials = self.aws_util.assume_role(
+            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+            dv.ASSUME_ROLE_EXTERNAL_ID,
+        )
+
+        lambda_client = boto3.client('lambda', **credentials)
 
         # 更新代码
         if "lambda_path" in data.keys():
-            bucket_name, object_name = self.aws_util.sync_local_s3_file(
-                data["lambda_path"],
-                bucket_name=data.get("bucket", self._DEFAULT_BUCKET),
-                dir_name=self._DEFAULT_LAMBDA_DIR.replace("#name#", data["name"]),
-                version=data.get("version", ""),
-            )
+            bucket_name, object_name = self.__sync_file(data, credentials)
 
-            response = lambda_client.update_function_code(
+            lambda_client.update_function_code(
                 FunctionName=data["name"],
                 # ZipFile=b'bytes',
                 S3Bucket=bucket_name,
@@ -206,15 +303,13 @@ class PhLambda(AWSOperator):
         else:
             response = self.get(data)
 
-            if "role_name" in data.keys():
-                role_arn = PhRole().get({"name": data["role_name"]})["Role"]["Arn"]
-            else:
-                role_arn = response["Configuration"]["Role"]
+            role_arn = base64.b64decode(dv.ASSUME_ROLE_ARN).decode()
 
             layers_arn = []
             if "lambda_layers" in data.keys():
+                ph_layer = PhLayer()
                 for layer_name in data["lambda_layers"].split(","):
-                    layers_arn.append(PhLayer().get({"name": layer_name})["LayerVersions"][0]["LayerVersionArn"])
+                    layers_arn.append(ph_layer.get({"name": layer_name})["LayerVersions"][0]["LayerVersionArn"])
             else:
                 for layer_name in response["Configuration"]["Layers"]:
                     layers_arn.append(layer_name["Arn"])
@@ -244,24 +339,9 @@ class PhLambda(AWSOperator):
                 Layers=layers_arn
             )
 
-        response = lambda_client.publish_version(
-            FunctionName=data["name"],
-            # CodeSha256='string',
-            # Description='string',
-            # RevisionId='string'
-        )
+        response = self.__apply_version(data, lambda_client)
 
-        response = lambda_client.create_alias(
-            FunctionName=data["name"],
-            Name=data["version"],
-            FunctionVersion=response["Version"],
-            Description=data.get("lambda_desc", "aws_lambda_deploy create lambda function"),
-            # RoutingConfig={
-            #     'AdditionalVersionWeights': {
-            #         'string': 123.0
-            #     }
-            # }
-        )
+        response = self.__apply_alias(data, lambda_client, response)
 
         return response
 
@@ -273,9 +353,8 @@ class PhLambda(AWSOperator):
             :arg version: lambda 函数别名版本
             :arg runtime: lambda 函数适用的运行时，如果多个请使用 “,” 分割, 但是实际使用以第一个为准
             :arg lambda_path: lambda zip 的位置
-                            可以是本地（file/python-lambda-example-code.zip，会先被传到 S3）或
-                            s3 上的文件（s3://ph-api-lambda/test_ph_lambda_create_local/lambda/python-lambda-example-code-v1.zip）
-            :arg role_name: lambda 的代理角色名称
+                            可以是本地（file/phlmd/python-lambda-example-code.zip，会先被传到 S3）或
+                            s3 上的文件（s3://ph-platform/2020-08-10/functions/python/test_ph_lambda_create/python-lambda-example-code.zip）
             :arg lambda_handler: lambda 的入口函数
             :arg lambda_layers: lambda 函数依赖的层名称，如果多个请使用 “,” 分割
             :arg lambda_desc: lambda 函数的描述
@@ -305,7 +384,12 @@ class PhLambda(AWSOperator):
             :arg name: 创建的 lambda 函数的名字 【必需】
             :arg lambda_concurrent: 分配给别名的预留并发值, 不指定则使用非预留账户并发
         """
-        lambda_client = boto3.client('lambda')
+        credentials = self.aws_util.assume_role(
+            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+            dv.ASSUME_ROLE_EXTERNAL_ID,
+        )
+
+        lambda_client = boto3.client('lambda', **credentials)
 
         if "lambda_concurrent" in data.keys():
             response = lambda_client.put_function_concurrency(
@@ -324,28 +408,23 @@ class PhLambda(AWSOperator):
         删除 lambda, 版本 或 别名
         :param data:
             :arg name: 创建的 lambda 函数的名字 【必需】
-            :arg version: lambda 函数别名版本, 不传或 #ALL# 则删除整个 lambda 函数
+            :arg version: lambda 函数版本, 不传或传 #ALL# 则删除整个 lambda 函数
         """
-        lambda_client = boto3.client('lambda')
+        credentials = self.aws_util.assume_role(
+            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+            dv.ASSUME_ROLE_EXTERNAL_ID,
+        )
+
+        lambda_client = boto3.client('lambda', **credentials)
 
         if "version" not in data.keys() or data["version"] == "#ALL#":
             response = lambda_client.delete_function(
                 FunctionName=data["name"],
             )
         else:
-            func_version = lambda_client.get_alias(
-                FunctionName=data["name"],
-                Name=data["version"],
-            )["FunctionVersion"]
-
-            response = lambda_client.delete_alias(
-                FunctionName=data["name"],
-                Name=data["version"],
-            )
-
             response = lambda_client.delete_function(
                 FunctionName=data["name"],
-                Qualifier=func_version,
+                Qualifier=data["version"],
             )
 
         return response

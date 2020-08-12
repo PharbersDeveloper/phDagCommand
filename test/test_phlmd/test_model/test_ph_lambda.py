@@ -3,6 +3,7 @@ import pytest
 from phlmd.model.ph_lambda import PhLambda
 
 
+@pytest.mark.skip("skip")
 def test_ph_lambda_package_python():
     args = {
         "runtime": "python",
@@ -15,7 +16,7 @@ def test_ph_lambda_package_python():
     os.remove("test_ph_lambda_package_python.zip")
 
 
-@pytest.mark.skip("nodejs unrealized")
+@pytest.mark.skip("skip")
 def test_ph_lambda_package_nodejs():
     pass
 
@@ -23,14 +24,23 @@ def test_ph_lambda_package_nodejs():
 @pytest.mark.skip(reason='Deprecation')
 def test_ph_lambda_create_local():
     args = {
-        "name": "test_ph_lambda_create_local",
-        "version": "v1",
+        "name": "test_ph_lambda_create",
+        "version": "",
         "runtime": "python3.8,python3.6",
-        "lambda_path": "file/python-lambda-example-code.zip",
-        "role_name": "test_ph_role_create_s3",
+        "lambda_path": "file/phlmd/python-lambda-example-code.zip",
         "lambda_handler": "hello_world.app.lambda_handler",
-        "lambda_layers": "test_ph_layer_create_s3",
+        "lambda_layers": "test_ph_layer_create",
         "lambda_desc": "test_ph_lambda_create_local 单元测试",
+        "vpc_config": {
+            "SubnetIds": [
+                'subnet-0260eab5acd58bc53',
+                'subnet-0e3daa88acef9b136',
+            ],
+            "SecurityGroupIds": [
+                'sg-058404c2ad02dcbb9',
+                'sg-09f5205a1194149ab'
+            ]
+        },
         "lambda_timeout": 50,
         "lambda_memory_size": 128,
         "lambda_env": {'TEST': 'test'},
@@ -41,14 +51,23 @@ def test_ph_lambda_create_local():
 
 def test_ph_lambda_create_s3():
     args = {
-        "name": "test_ph_lambda_create_s3",
-        "version": "v1",
+        "name": "test_ph_lambda_create",
+        "version": "",
         "runtime": "python3.8,python3.6",
-        "lambda_path": "s3://ph-api-lambda/example/lambda/example-code-v10.zip",
-        "role_name": "test_ph_role_create_s3",
+        "lambda_path": "s3://ph-platform/2020-08-10/functions/python/test_ph_lambda_create/python-lambda-example-code.zip",
         "lambda_handler": "hello_world.app.lambda_handler",
-        "lambda_layers": "test_ph_layer_create_s3",
-        "lambda_desc": "test_ph_lambda_create_s3 单元测试",
+        "lambda_layers": "test_ph_layer_create",
+        "lambda_desc": "test_ph_lambda_create_local 单元测试",
+        "vpc_config": {
+            "SubnetIds": [
+                'subnet-0260eab5acd58bc53',
+                'subnet-0e3daa88acef9b136',
+            ],
+            "SecurityGroupIds": [
+                'sg-058404c2ad02dcbb9',
+                'sg-09f5205a1194149ab'
+            ]
+        },
         "lambda_timeout": 50,
         "lambda_memory_size": 128,
         "lambda_env": {'TEST': 'test'},
@@ -64,36 +83,48 @@ def test_ph_lambda_lists():
 
 def test_ph_lambda_get():
     args = {
-        "name": "test_ph_lambda_create_s3",
+        "name": "test_ph_lambda_create",
     }
     assert PhLambda().get(args) != {}
 
 
 def test_ph_lambda_update():
     args = {
-        "name": "test_ph_lambda_create_s3",
-        "version": "v2",
-        "runtime": "python3.8",
+        "name": "test_ph_lambda_create",
+        "version": "",
+        "runtime": "python3.8,python3.6",
+        "lambda_path": "s3://ph-platform/2020-08-10/functions/python/test_ph_lambda_create/python-lambda-example-code.zip",
         "lambda_handler": "hello_world.app.lambda_handler",
-        "lambda_layers": "test_ph_layer_create_s3",
-        "lambda_desc": "test_ph_lambda_update 单元测试",
-        "lambda_timeout": 30,
-        "lambda_memory_size": 138,
+        "lambda_layers": "test_ph_layer_create:12",
+        "lambda_desc": "test_ph_lambda_create_local 单元测试",
+        "vpc_config": {
+            "SubnetIds": [
+                'subnet-0260eab5acd58bc53',
+                'subnet-0e3daa88acef9b136',
+            ],
+            "SecurityGroupIds": [
+                'sg-058404c2ad02dcbb9',
+                'sg-09f5205a1194149ab'
+            ]
+        },
+        "lambda_timeout": 55,
+        "lambda_memory_size": 149,
         "lambda_env": {'TEST': 'test'},
+        "lambda_tag": {"language": "python"},
     }
     assert PhLambda().update(args) != {}
 
 
 def test_ph_lambda_stop():
     args = {
-        "name": "test_ph_lambda_create_s3",
+        "name": "test_ph_lambda_create",
     }
     assert PhLambda().stop(args) != {}
 
 
 def test_ph_lambda_start():
     args = {
-        "name": "test_ph_lambda_create_s3",
+        "name": "test_ph_lambda_create",
     }
     assert PhLambda().start(args) != {}
 
@@ -109,6 +140,6 @@ def test_ph_lambda_delete_local():
 @pytest.mark.skip(reason='Used for test_ph_gateway Test')
 def test_ph_lambda_delete_s3():
     args = {
-        "name": "test_ph_lambda_create_s3",
+        "name": "test_ph_lambda_create",
     }
     assert PhLambda().delete(args) != {}
