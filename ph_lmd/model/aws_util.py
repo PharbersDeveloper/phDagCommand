@@ -93,7 +93,7 @@ class AWSUtil(object):
         else:
             raise PhError("The url is wrong")
 
-    def sync_local_s3_file(self, path, bucket_name, dir_name, version, credentials=None):
+    def sync_local_s3_file(self, path, bucket_name, dir_name, version='', credentials=None):
         """
         如果上传的是本地文件，则自动同步到 S3, 然后返回桶名和文件路径
         如果上传的是 S3 的文件，则直接返回桶名和文件路径

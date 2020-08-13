@@ -1,6 +1,6 @@
 import os
 import pytest
-from phlmd.model.ph_lambda import PhLambda
+from ph_lmd.model.ph_lambda import PhLambda
 
 
 @pytest.mark.skip("skip")

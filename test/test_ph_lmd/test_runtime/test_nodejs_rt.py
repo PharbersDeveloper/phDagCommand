@@ -1,6 +1,6 @@
 import os
 import pytest
-from phlmd.runtime.nodejs_rt import NodejsRT
+from ph_lmd.runtime.nodejs_rt import NodejsRT
 
 
 nodejs_rt = NodejsRT()

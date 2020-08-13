@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from phlmd.runtime.lambda_rt import LambdaRuntime
+from ph_lmd.runtime.lambda_rt import LambdaRuntime
 
 
 class PythonRT(LambdaRuntime):

@@ -141,7 +141,7 @@ class PhGateway(AWSOperator):
                         可以是本地（file/phlmd/jsonapi-openapi-template.yaml，会先被传到 S3）或
                         s3 上的文件（s3://ph-platform/2020-08-10/template/python/phcli/lmd/jsonapi-openapi-template.yaml）
             :arg lambda_name: API Gateway 调用的 Lambda 函数
-            :arg version: 代理的 lambda function 的别名版本
+            :arg alias_version: 代理的 lambda function 的别名版本
         """
         rest_api_id = data["rest_api_id"]
         project_name = data["name"]
@@ -155,7 +155,6 @@ class PhGateway(AWSOperator):
             data["api_template"],
             bucket_name=data.get("bucket", dv.DEFAULT_BUCKET),
             dir_name=dv.CLI_VERSION + dv.DEFAULT_TEMPLATE_DIR,
-            version="",
             credentials=credentials,
         )
 
@@ -166,7 +165,7 @@ class PhGateway(AWSOperator):
             rest_api_id=rest_api_id,
             project_name=project_name,
             paths=gateway_conf["paths"],
-            lambda_arn=PhLambda().get({"name": data["lambda_name"]})["Configuration"]["FunctionArn"] + ":" + data["version"],
+            lambda_arn=PhLambda().get({"name": data["lambda_name"]})["Configuration"]["FunctionArn"] + ":" + data["alias_version"],
             role_arn=base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
             credentials=credentials,
         )
@@ -241,7 +240,7 @@ class PhGateway(AWSOperator):
                         可以是本地（file/phlmd/jsonapi-openapi-template.yaml，会先被传到 S3）或
                         s3 上的文件（s3://ph-platform/2020-08-10/template/python/phcli/lmd/jsonapi-openapi-template.yaml）
             :arg lambda_name: API Gateway 调用的 Lambda 函数
-            :arg version: 代理的 lambda function 的别名版本
+            :arg alias_version: 代理的 lambda function 的别名版本
         """
         return self.create(data)
 
@@ -255,7 +254,7 @@ class PhGateway(AWSOperator):
                         可以是本地（file/phlmd/jsonapi-openapi-template.yaml，会先被传到 S3）或
                         s3 上的文件（s3://ph-platform/2020-08-10/template/python/phcli/lmd/jsonapi-openapi-template.yaml）
             :arg lambda_name: API Gateway 调用的 Lambda 函数
-            :arg version: 代理的 lambda function 的别名版本
+            :arg alias_version: 代理的 lambda function 的别名版本
         """
         if self.get(data) == {}:
             return self.create(data)
