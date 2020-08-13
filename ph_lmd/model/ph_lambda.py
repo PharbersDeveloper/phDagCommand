@@ -145,7 +145,7 @@ class PhLambda(AWSOperator):
             :arg version: lambda 函数别名版本，默认为 alpha
             :arg runtime: lambda 函数适用的运行时，如果多个请使用 “,” 分割, 但是实际使用以第一个为准
             :arg lambda_path: lambda zip 的位置
-                            可以是本地（file/phlmd/python-lambda-example-code.zip，会先被传到 S3）或
+                            可以是本地（file/ph_lmd/python-lambda-example-code.zip，会先被传到 S3）或
                             s3 上的文件（s3://ph-platform/2020-08-10/functions/python/test_ph_lambda_create/python-lambda-example-code.zip）
             :arg lambda_handler: lambda 的入口函数
             :arg lambda_layers: lambda 函数依赖的层名称，如果多个请使用 “,” 分割
@@ -244,7 +244,7 @@ class PhLambda(AWSOperator):
             :arg version: lambda 函数别名版本
             :arg runtime: lambda 函数适用的运行时，如果多个请使用 “,” 分割, 但是实际使用以第一个为准
             :arg lambda_path: lambda zip 的位置
-                            可以是本地（file/phlmd/python-lambda-example-code.zip，会先被传到 S3）或
+                            可以是本地（file/ph_lmd/python-lambda-example-code.zip，会先被传到 S3）或
                             s3 上的文件（s3://ph-platform/2020-08-10/functions/python/test_ph_lambda_create/python-lambda-example-code.zip)
             :arg lambda_handler: lambda 的入口函数
             :arg lambda_layers: lambda 函数依赖的层名称，如果多个请使用 “,” 分割
@@ -332,7 +332,7 @@ class PhLambda(AWSOperator):
             :arg version: lambda 函数别名版本
             :arg runtime: lambda 函数适用的运行时，如果多个请使用 “,” 分割, 但是实际使用以第一个为准
             :arg lambda_path: lambda zip 的位置
-                            可以是本地（file/phlmd/python-lambda-example-code.zip，会先被传到 S3）或
+                            可以是本地（file/ph_lmd/python-lambda-example-code.zip，会先被传到 S3）或
                             s3 上的文件（s3://ph-platform/2020-08-10/functions/python/test_ph_lambda_create/python-lambda-example-code.zip）
             :arg lambda_handler: lambda 的入口函数
             :arg lambda_layers: lambda 函数依赖的层名称，如果多个请使用 “,” 分割

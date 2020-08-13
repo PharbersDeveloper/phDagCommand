@@ -27,7 +27,7 @@ def test_ph_lambda_create_local():
         "name": "test_ph_lambda_create",
         "version": "",
         "runtime": "python3.8,python3.6",
-        "lambda_path": "file/phlmd/python-lambda-example-code.zip",
+        "lambda_path": "file/ph_lmd/python-lambda-example-code.zip",
         "lambda_handler": "hello_world.app.lambda_handler",
         "lambda_layers": "test_ph_layer_create",
         "lambda_desc": "test_ph_lambda_create_local 单元测试",

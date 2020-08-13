@@ -138,7 +138,7 @@ class PhGateway(AWSOperator):
             :arg name: API Gateway 的根资源名称
             :arg rest_api_id: rest API Gateway 的 ID
             :arg api_template: API Gateway 定义的符合 OpenAPI 规范的模板文档位置
-                        可以是本地（file/phlmd/jsonapi-openapi-template.yaml，会先被传到 S3）或
+                        可以是本地（file/ph_lmd/jsonapi-openapi-template.yaml，会先被传到 S3）或
                         s3 上的文件（s3://ph-platform/2020-08-10/template/python/phcli/lmd/jsonapi-openapi-template.yaml）
             :arg lambda_name: API Gateway 调用的 Lambda 函数
             :arg alias_version: 代理的 lambda function 的别名版本
@@ -237,7 +237,7 @@ class PhGateway(AWSOperator):
             :arg name: API Gateway 的根资源名称
             :arg rest_api_id: rest API Gateway 的 ID
             :arg api_template: API Gateway 定义的符合 OpenAPI 规范的模板文档位置
-                        可以是本地（file/phlmd/jsonapi-openapi-template.yaml，会先被传到 S3）或
+                        可以是本地（file/ph_lmd/jsonapi-openapi-template.yaml，会先被传到 S3）或
                         s3 上的文件（s3://ph-platform/2020-08-10/template/python/phcli/lmd/jsonapi-openapi-template.yaml）
             :arg lambda_name: API Gateway 调用的 Lambda 函数
             :arg alias_version: 代理的 lambda function 的别名版本
@@ -251,7 +251,7 @@ class PhGateway(AWSOperator):
             :arg name: API Gateway 的根资源名称
             :arg rest_api_id: rest API Gateway 的 ID
             :arg api_template: API Gateway 定义的符合 OpenAPI 规范的模板文档位置
-                        可以是本地（file/phlmd/jsonapi-openapi-template.yaml，会先被传到 S3）或
+                        可以是本地（file/ph_lmd/jsonapi-openapi-template.yaml，会先被传到 S3）或
                         s3 上的文件（s3://ph-platform/2020-08-10/template/python/phcli/lmd/jsonapi-openapi-template.yaml）
             :arg lambda_name: API Gateway 调用的 Lambda 函数
             :arg alias_version: 代理的 lambda function 的别名版本

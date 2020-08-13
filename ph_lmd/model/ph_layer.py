@@ -34,7 +34,7 @@ class PhLayer(AWSOperator):
             :arg name: layer 名字
             :arg version: layer 版本
             :arg layer_path: layer zip 的位置
-                            可以是本地（file/phlmd/python-lambda-example-layer.zip，会先被传到 S3）或
+                            可以是本地（file/ph_lmd/python-lambda-example-layer.zip，会先被传到 S3）或
                             s3 上的文件（s3://ph-platform/2020-08-10/layers/python/test_ph_layer_create/python-lambda-example-layer.zip）
             :arg runtime: layer 适用的运行时，如果多个请使用 “,” 分割
             :arg layer_desc: layer 的描述

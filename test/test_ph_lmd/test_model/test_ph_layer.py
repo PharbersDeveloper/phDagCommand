@@ -33,7 +33,7 @@ def test_ph_layer_create_local():
     args = {
         "name": "test_ph_layer_create",
         "version": "",
-        "layer_path": "file/phlmd/python-lambda-example-layer.zip",
+        "layer_path": "file/ph_lmd/python-lambda-example-layer.zip",
         "runtime": "python3.8,python3.6",
     }
     assert PhLayer().create(args) != {}
