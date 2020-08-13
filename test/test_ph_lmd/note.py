@@ -39,7 +39,7 @@ def s3_part():
     #     print(bucket.name)
 
     # 上传文件
-    data = open('../../file/phlmd/trust-policy.json', 'rb')
+    data = open('../../file/ph_lmd/trust-policy.json', 'rb')
     s3.Bucket(s3_bucket_name).put_object(Key=s3_file_path, Body=data)
 # s3_part()
 

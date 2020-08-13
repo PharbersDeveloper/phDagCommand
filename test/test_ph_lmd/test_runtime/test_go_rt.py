@@ -1,5 +1,5 @@
 import os
-from phlmd.runtime.python_rt import PythonRT
+from ph_lmd.runtime.python_rt import PythonRT
 
 
 go_rt = PythonRT()

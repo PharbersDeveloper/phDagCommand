@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import click
-from phlmd.model.__main__ import model
-from phlmd.ph_deploy import deploy
+from ph_lmd.model.__main__ import model
+from ph_lmd.ph_deploy import deploy
 
 
 @click.group("lmd", short_help='自动化部署一系列 Lambda 技术栈')

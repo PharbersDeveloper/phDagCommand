@@ -8,12 +8,6 @@ class AWSOperator(object):
     封装 AWS 的常规操作和抽象方法
     """
 
-    _DEFAULT_BUCKET = "ph-api-lambda"
-    _DEFAULT_ROLE_DIR = "#name#/role/"
-    _DEFAULT_LAYER_DIR = "#name#/layer/"
-    _DEFAULT_LAMBDA_DIR = "#name#/lambda/"
-    _DEFAULT_GATEWAY_DIR = "#name#/gateway/"
-
     @abstractmethod
     def package(self, data):
         """

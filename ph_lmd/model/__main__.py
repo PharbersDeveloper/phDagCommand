@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import getopt
 import click
-from phlmd.model import ph_role, ph_layer, ph_lambda, ph_gateway
+from ph_lmd.model import ph_layer, ph_lambda, ph_gateway
 from pherrs.ph_err import PhError
 
 
-@click.group('model', short_help='专项部署特定资源[功能关闭]')
-def model():
+@click.command('model', short_help='专项部署特定资源')
+@click.option('-o', '--operation', required=True, help='执行行为',
+              type=click.Choice(['package', 'create', 'lists', 'get',
+                                 'update', 'apply', 'stop', 'start', 'delete']))
+@click.option('-m', '--model', required=True, help='操作行为',
+              type=click.Choice(['layer', 'lambda', 'gateway']))
+@click.argument('argv', nargs=-1)
+def model(operation, model, argv):
     """
     用于快速打包和部署 AWS Lambda 和 API Gateway
 
@@ -26,12 +31,11 @@ def model():
 
 \b
 资源名有如下：
-    role    : lambda 代理角色
     layer   : lambda 的依赖层
     lambda  : lambda 的源代码
     gateway : lambda 的触发器 API Gateway
     """
-    pass
+    return fineness_func(operation, model, argv)
 
 
 def fineness_func(operator, model, argv):
@@ -42,12 +46,11 @@ def fineness_func(operator, model, argv):
 
     def get_model_inst(model):
         model_switcher = {
-            "role": ph_role.Ph_Role(),
-            "layer": ph_layer.Ph_Layer(),
-            "lambda": ph_lambda.Ph_Lambda(),
-            "gateway": ph_gateway.Ph_Gateway(),
+            "layer": ph_layer.PhLayer,
+            "lambda": ph_lambda.PhLambda,
+            "gateway": ph_gateway.PhGateway,
         }
-        return model_switcher.get(model, "Invalid model")
+        return model_switcher.get(model, "Invalid model")()
 
     def get_oper_inst(model_inst, oper):
         if oper == "package":
@@ -71,31 +74,21 @@ def fineness_func(operator, model, argv):
         else:
             raise PhError("Invalid operator")
 
-    try:
-        opts, args = getopt.getopt(argv, "h",
-                                   ["help", "name=", "version=",
-                                    "runtime=", "package_name=", "lib_path=", "is_pipenv=", "code_path=", # runtime package args
-                                    "arpd_path=", "policys_arn="# role oper args
-                                                  "layer_path=",  # layer oper args
-                                    "lambda_path=", "lambda_handler=", "lambda_layers=", # lambda oper args
-                                    "lambda_timeout=", "lambda_memory_size=", "lambda_concurrent=", # lambda oper args
-                                    "lambda_desc=", "lambda_env=", "lambda_tag=", "vpc_config=", # lambda oper args
-                                    "rest_api_id=", "api_template=", "lambda_name=", "role_name=", # apigateway oper args
-                                    ])
-    except getopt.GetoptError:
-        print('请注意调用格式： aws_lambda_deploy operator model [opt arg]')
-        sys.exit(2)
-    except:
-        sys.exit(2)
+    def argv2map(argv):
+        for arg in argv:
+            arr = arg.split('=', 1)
+
+            if len(arr) == 1:
+                yield arr[0], ''
+            else:
+                yield arr[0], arr[1]
+
+    argv = dict(argv2map(argv))
 
     inst = get_oper_inst(get_model_inst(model), operator)
 
-    inst_args = {}
-    for opt, arg in opts:
-        if opt == '-h' or opt == "--help":
-            print(inst.__doc__)
-            sys.exit(2)
-        else:
-            inst_args[opt.split("-")[-1]] = arg
+    if 'h' in argv.keys() or 'help' in argv.keys():
+        print(inst.__doc__)
+        sys.exit(2)
 
-    print(inst(inst_args))
+    print(inst(argv))

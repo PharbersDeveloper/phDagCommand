@@ -1,18 +1,9 @@
 #name#:
   metadata:
     name: #name#
-    version: v1
-    bucket: ph-api-lambda
+    bucket: ph-platform
     runtime: #runtime# # lambda funciton 会按照第一个使用， layer 全使用
     desc: #desc#
-  role:
-    arpd_path: s3://ph-api-lambda/template/role/trust-policy-template.json
-    policys_arn:
-      - arn:aws-cn:iam::aws:policy/service-role/AWSLambdaRole
-      - arn:aws-cn:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
-      - arn:aws-cn:iam::aws:policy/AWSLambdaExecute
-      - arn:aws-cn:iam::aws:policy/AmazonAPIGatewayInvokeFullAccess
-      - arn:aws-cn:iam::444603803904:policy/AWSKmsDecrypt
   layer:
     lib_path: #lib_path#
     package_name: #name#-layer.zip
@@ -22,7 +13,6 @@
     code_path: #code_path#
     package_name: #name#-code.zip
     lambda_path: #name#-code.zip
-    role_name: #name#-lambda-role
     lambda_handler: #handler#
     lambda_layers: #name#
     lambda_desc: #desc#
@@ -35,8 +25,12 @@
       SecurityGroupIds:
       - 'sg-058404c2ad02dcbb9'
       - 'sg-09f5205a1194149ab'
+    lambda_env:
+      TEST: test
+    lambda_tag:
+      language: #runtime#
   gateway:
     rest_api_id: 2t69b7x032
-    api_template: s3://ph-api-lambda/template/gateway/jsonapi-openapi-template.yaml
+    api_template: s3://ph-platform/2020-08-10/template/python/phcli/lmd/jsonapi-openapi-template.yaml
     lambda_name: #name#
-    role_name: #name#-lambda-role
+    alias_version: current

@@ -138,6 +138,5 @@ phcombines
 template
 phjobs
 
-file/phlmd/python-lambda-example-code.zip
-file/phlmd/python-lambda-example-layer.zip
-.ph-lambda-deploy.yaml
+file/ph_lmd/python-lambda-example-layer.zip
+file/ph_lmd/python-lambda-example-code.zip
