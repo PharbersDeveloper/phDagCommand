@@ -2,7 +2,7 @@
 
 import sys
 import click
-from phlmd.model import ph_layer, ph_lambda, ph_gateway
+from ph_lmd.model import ph_layer, ph_lambda, ph_gateway
 from pherrs.ph_err import PhError
 
 

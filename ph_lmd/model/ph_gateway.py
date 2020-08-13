@@ -4,10 +4,10 @@ import boto3
 import yaml
 import base64
 
-from phlmd.model.aws_operator import AWSOperator
-from phlmd.model.aws_util import AWSUtil
-from phlmd.model.ph_lambda import PhLambda
-from phlmd import define_value as dv
+from ph_lmd.model.aws_operator import AWSOperator
+from ph_lmd.model.aws_util import AWSUtil
+from ph_lmd.model.ph_lambda import PhLambda
+from ph_lmd import define_value as dv
 
 
 class PhGateway(AWSOperator):

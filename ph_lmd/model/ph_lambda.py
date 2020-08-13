@@ -4,10 +4,10 @@ import boto3
 import base64
 import time
 
-from phlmd.model.aws_operator import AWSOperator
-from phlmd.model.aws_util import AWSUtil
-from phlmd.model.ph_layer import PhLayer
-from phlmd import define_value as dv
+from ph_lmd.model.aws_operator import AWSOperator
+from ph_lmd.model.aws_util import AWSUtil
+from ph_lmd.model.ph_layer import PhLayer
+from ph_lmd import define_value as dv
 
 
 class PhLambda(AWSOperator):
@@ -80,27 +80,7 @@ class PhLambda(AWSOperator):
             )
             return response
 
-        def delete_version(version):
-            response = lambda_client.delete_function(
-                FunctionName=data["name"],
-                Qualifier=version,
-            )
-            return response
-
-        def keep_num():
-            resp = self.get(data)
-            versions = resp['Versions'] if resp else []
-            versions = [version['Version'] for version in versions]
-            versions.remove('$LATEST')
-
-            if len(versions) > dv.LAMBDA_FUNCTION_MAX_VERSION_NUM:
-                for ver in versions[dv.LAMBDA_FUNCTION_MAX_VERSION_NUM:]:
-                    delete_version(ver)
-
-        response = create_version()
-        keep_num()
-
-        return response
+        return create_version()
 
     def __apply_alias(self, data, lambda_client, create_version_response):
 
@@ -251,8 +231,7 @@ class PhLambda(AWSOperator):
             )["Aliases"]
             aliases.reverse()
             response["Aliases"] = aliases
-        except Exception as ex:
-            print(ex)
+        except:
             response = {}
 
         return response

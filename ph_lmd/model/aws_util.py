@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import boto3
-from phlmd.runtime import python_rt
-from phlmd.runtime import nodejs_rt
-from phlmd.runtime import go_rt
+from ph_lmd.runtime import python_rt
+from ph_lmd.runtime import nodejs_rt
+from ph_lmd.runtime import go_rt
 from pherrs.ph_err import PhError
 
 

@@ -8,11 +8,11 @@ import click
 import base64
 import time
 
-from phlmd import define_value as dv
-from phlmd.model import aws_util
-from phlmd.model import ph_layer
-from phlmd.model import ph_lambda
-from phlmd.model import ph_gateway
+from ph_lmd import define_value as dv
+from ph_lmd.model import aws_util
+from ph_lmd.model import ph_layer
+from ph_lmd.model import ph_lambda
+from ph_lmd.model import ph_gateway
 
 
 @click.group("deploy")
@@ -128,31 +128,49 @@ def push(name, oper):
     def clean_cache(deploy_conf):
         click.secho("开始清理执行缓存", blink=True, bold=True)
 
+        credentials = aws_util.AWSUtil().assume_role(
+            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+            dv.ASSUME_ROLE_EXTERNAL_ID,
+        )
+
+        project_name = deploy_conf['metadata']['name']
+
         if "layer" in deploy_conf.keys():
             if os.path.exists(deploy_conf["layer"]["package_name"]):
                 os.remove(deploy_conf["layer"]["package_name"])
 
-            layer = ph_layer.PhLayer()
-            layer_versions = layer.get({"name": deploy_conf["metadata"]["name"]})["LayerVersions"]
-            if len(layer_versions) > __DEFAULT_MAX_INST:
-                for lv in layer_versions[__DEFAULT_MAX_INST:]:
-                    layer.delete({
-                        "name": deploy_conf["metadata"]["name"],
-                        "version": lv["Version"],
-                    })
+            def keep_num():
+                phlayer = ph_layer.PhLayer()
+                resp = phlayer.get({'name': project_name})
+                versions = resp['LayerVersions'] if resp else []
+                versions = [version['Version'] for version in versions]
+
+                if len(versions) > dv.LAMBDA_LAYER_MAX_VERSION_NUM:
+                    for version in versions[dv.LAMBDA_LAYER_MAX_VERSION_NUM:]:
+                        phlayer.delete({'name': project_name, 'version': version})
+
+            keep_num()
 
         if "lambda" in deploy_conf.keys():
             if os.path.exists(deploy_conf["lambda"]["package_name"]):
                 os.remove(deploy_conf["lambda"]["package_name"])
 
-            lambda_function = ph_lambda.PhLambda()
-            lambda_aliases = lambda_function.get({"name": deploy_conf["metadata"]["name"]})["Aliases"]
-            if len(lambda_aliases) > __DEFAULT_MAX_INST:
-                for la in lambda_aliases[__DEFAULT_MAX_INST:]:
-                    lambda_function.delete({
-                        "name": deploy_conf["metadata"]["name"],
-                        "version": la["Name"],
-                    })
+            def keep_num():
+                lambda_client = boto3.client('lambda', **credentials)
+
+                resp = ph_lambda.PhLambda().get({'name': project_name})
+                versions = resp['Versions'] if resp else []
+                versions = [version['Version'] for version in versions]
+
+                if len(versions) > dv.LAMBDA_FUNCTION_MAX_VERSION_NUM:
+                    versions.remove('$LATEST')
+                    for version in versions[dv.LAMBDA_FUNCTION_MAX_VERSION_NUM:]:
+                        lambda_client.delete_function(
+                            FunctionName=project_name,
+                            Qualifier=version,
+                        )
+
+            keep_num()
 
         click.secho("执行缓存清理完成", fg='green', blink=True, bold=True)
         click.secho()

@@ -3,9 +3,9 @@
 import boto3
 import base64
 
-from phlmd.model.aws_operator import AWSOperator
-from phlmd.model.aws_util import AWSUtil
-from phlmd import define_value as dv
+from ph_lmd.model.aws_operator import AWSOperator
+from ph_lmd.model.aws_util import AWSUtil
+from ph_lmd import define_value as dv
 
 
 class PhLayer(AWSOperator):
@@ -14,15 +14,6 @@ class PhLayer(AWSOperator):
     """
 
     aws_util = AWSUtil()
-
-    def __keep_num(self, data):
-        resp = self.get(data)
-        versions = resp['LayerVersions'] if resp else []
-        versions = [version['Version'] for version in versions]
-
-        if len(versions) > dv.LAMBDA_LAYER_MAX_VERSION_NUM:
-            for ver in versions[dv.LAMBDA_LAYER_MAX_VERSION_NUM:]:
-                self.delete({'name': data["name"], 'version': ver})
 
     def package(self, data):
         """
@@ -75,8 +66,6 @@ class PhLayer(AWSOperator):
             CompatibleRuntimes=data["runtime"].split(","),
             LicenseInfo='MIT'
         )
-
-        self.__keep_num(data)
 
         return response
 
