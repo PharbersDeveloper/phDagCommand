@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/python
+
 import click
 from command.phcommand import maxauto
 from ph_lmd.__main__ import main as phlam_main

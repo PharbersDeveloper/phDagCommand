@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class ColCharactor(object):
     """
     对于每个单元格的匹配规则

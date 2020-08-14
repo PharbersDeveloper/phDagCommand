@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 CLI_VERSION = "2020-08-10"
 
 ASSUME_ROLE_ARN = 'YXJuOmF3cy1jbjppYW06OjQ0NDYwMzgwMzkwNDpyb2xlL1BoLUNsaS1MbWQ='
