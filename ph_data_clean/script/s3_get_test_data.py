@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from ph_data_clean.util.yaml_utils import load_by_file
 import yaml
 import os

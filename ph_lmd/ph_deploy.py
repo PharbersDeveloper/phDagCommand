@@ -92,7 +92,8 @@ def push(name, oper):
     def apply(deploy_conf):
         if "layer" in deploy_conf.keys():
             layer = ph_layer.PhLayer()
-            args = {**deploy_conf["metadata"], **deploy_conf["layer"]}
+            args = deploy_conf["metadata"]
+            args.update(deploy_conf["layer"])
 
             if "lib_path" in deploy_conf["layer"]:
                 click.secho("开始打包本地依赖: " + deploy_conf["layer"]["lib_path"] + "\t->\t" +
@@ -106,7 +107,8 @@ def push(name, oper):
 
         if "lambda" in deploy_conf.keys():
             lambda_function = ph_lambda.PhLambda()
-            args = {**deploy_conf["metadata"], **deploy_conf["lambda"]}
+            args = deploy_conf["metadata"]
+            args.update(deploy_conf["lambda"])
 
             if "code_path" in deploy_conf["lambda"]:
                 click.secho("开始打包本地代码: " + deploy_conf["lambda"]["code_path"] + "\t->\t" +
@@ -120,7 +122,8 @@ def push(name, oper):
 
         if "gateway" in deploy_conf.keys():
             gateway = ph_gateway.PhGateway()
-            args = {**deploy_conf["metadata"], **deploy_conf["gateway"]}
+            args = deploy_conf["metadata"]
+            args.update(deploy_conf["gateway"])
             response = gateway.apply(args)
             click.secho("gateway 更新完成: " + response, fg='green', blink=True, bold=True)
             click.secho()
