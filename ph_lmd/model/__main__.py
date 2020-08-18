@@ -3,7 +3,7 @@
 import sys
 import click
 from ph_lmd.model import ph_layer, ph_lambda, ph_gateway
-from pherrs.ph_err import PhError
+from ph_errs.ph_err import PhError
 
 
 @click.command('model', short_help='专项部署特定资源')

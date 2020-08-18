@@ -3,7 +3,7 @@
 import os
 from abc import abstractmethod
 import click
-from pherrs.ph_err import PhError
+from ph_errs.ph_err import PhError
 
 
 class LambdaRuntime(object):

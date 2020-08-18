@@ -3,7 +3,7 @@
 
 This module document the YAML Config container for Pharbers jobs
 """
-from phcontainer.phcontainer import PhYAMLContainer
+from ph_max_auto.phcontainer.phcontainer import PhYAMLContainer
 
 
 class PhYAMLSpec(object):

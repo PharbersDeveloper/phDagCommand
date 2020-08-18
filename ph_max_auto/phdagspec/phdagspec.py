@@ -3,7 +3,7 @@
 
 This module document the YAML Job Args for Pharbers jobs
 """
-from phdagjobs.phdagjobs import PhYAMLDAGJobs
+from ph_max_auto.phdagjobs.phdagjobs import PhYAMLDAGJobs
 
 
 class PhYAMLDAGSpec(object):

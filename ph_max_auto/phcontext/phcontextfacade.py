@@ -5,13 +5,14 @@ This module document the usage of class pharbers command context,
 """
 import os
 import sys
-from phexceptions.phexceptions import exception_file_already_exist, PhException, exception_file_not_exist, \
-    exception_function_not_implement
-from phconfig.phconfig import PhYAMLConfig
-import subprocess
-from phs3.phs3 import s3
-from phlogs.phlogs import phlogger
 import ast
+import subprocess
+
+from ph_max_auto.phs3.phs3 import s3
+from ph_logs.ph_logs import phlogger
+from ph_max_auto.phconfig.phconfig import PhYAMLConfig
+from ph_max_auto.phexceptions.phexceptions import exception_file_already_exist, PhException, exception_file_not_exist, \
+    exception_function_not_implement
 
 
 DAGS_S3_PATH = 's3fs-ph-airflow'
