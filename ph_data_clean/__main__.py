@@ -4,7 +4,7 @@ import sys
 import os
 import json
 import click
-from pherrs.ph_err import PhError
+from ph_errs.ph_err import PhError
 from ph_data_clean.clean.cleaner_factory import CleanerFactory
 from ph_data_clean.model.mapping_factory import MappingFactory
 from ph_data_clean.model.clean_result import CleanResult, Tag

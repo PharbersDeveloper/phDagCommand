@@ -34,13 +34,14 @@ class NodejsRT(LambdaRuntime):
 
         self._package_cmds = [
             "mkdir -p %s/%s" % (self._package_root, self.__runtime_name),
+            "npm i",
             "npm run build",
         ]
 
-        for cmd in data["code_path"].split(","):
-            if cmd.endswith("/"):
-                cmd = cmd[:-1]
-            self._package_cmds.append("cp -r %s %s/%s/" % (cmd, self._package_root, self.__runtime_name))
+        for path in data["code_path"].split(","):
+            if path.endswith("/"):
+                path = path[:-1]
+            self._package_cmds.append("cp -r %s %s/%s/" % (path, self._package_root, self.__runtime_name))
 
         if "name" in data.keys():
             self._package_cmds.extend([

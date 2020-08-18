@@ -2,7 +2,7 @@
 #!/usr/bin/python
 
 import click
-from command.phcommand import maxauto
+from ph_max_auto.phcommand import maxauto
 from ph_lmd.__main__ import main as phlam_main
 from ph_data_clean.__main__ import main as clean_main
 

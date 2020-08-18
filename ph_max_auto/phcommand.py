@@ -5,7 +5,7 @@ This module document the usage of class phCommand,
 which help users to create, update, and publish the jobs they created.
 """
 import click
-from phcontext.phcontextfacade import PhContextFacade
+from ph_max_auto.phcontext.phcontextfacade import PhContextFacade
 
 
 @click.command()

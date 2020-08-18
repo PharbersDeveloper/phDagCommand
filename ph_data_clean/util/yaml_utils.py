@@ -2,7 +2,7 @@
 
 import os
 import yaml
-from pherrs.ph_err import PhError
+from ph_errs.ph_err import PhError
 
 
 def load_by_file(file):
