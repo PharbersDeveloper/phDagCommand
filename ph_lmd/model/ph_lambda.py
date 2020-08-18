@@ -4,10 +4,12 @@ import boto3
 import base64
 import time
 
+from ph_aws.ph_sts import PhSts
+from ph_aws.ph_s3 import PhS3
 from ph_lmd.model.aws_operator import AWSOperator
-from ph_lmd.model.aws_util import AWSUtil
 from ph_lmd.model.ph_layer import PhLayer
 from ph_lmd import define_value as dv
+from ph_lmd.runtime.rt_util import get_short_rt, get_rt_inst
 
 
 class PhLambda(AWSOperator):
@@ -15,22 +17,25 @@ class PhLambda(AWSOperator):
     lambda 的源代码
     """
 
-    aws_util = AWSUtil()
+    phsts = PhSts().assume_role(
+        base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+        dv.ASSUME_ROLE_EXTERNAL_ID,
+    )
+    phs3 = PhS3(phsts=phsts)
 
-    def __sync_file(self, data, credentials=None):
-        bucket_name, object_name = self.aws_util.sync_local_s3_file(
+    def __sync_file(self, data):
+        bucket_name, object_name = self.phs3.sync_file_local_to_s3(
             data["lambda_path"],
             bucket_name=data.get("bucket", dv.DEFAULT_BUCKET),
             dir_name=dv.CLI_VERSION + dv.DEFAULT_LAMBDA_DIR
-                .replace("#runtime#", self.aws_util.get_short_rt(data["runtime"]))
+                .replace("#runtime#", get_short_rt(data["runtime"]))
                 .replace("#name#", data["name"]),
             version=data.get("version", ""),
-            credentials=credentials,
         )
         return bucket_name, object_name
 
-    def __create_func(self, data, lambda_client, credentials=None):
-        bucket_name, object_name = self.__sync_file(data, credentials)
+    def __create_func(self, data, lambda_client):
+        bucket_name, object_name = self.__sync_file(data)
 
         role_arn = base64.b64decode(dv.ASSUME_ROLE_ARN).decode()
 
@@ -134,7 +139,7 @@ class PhLambda(AWSOperator):
             :arg code_path: lambda 代码位置
             :arg package_name 打包的名称
         """
-        runtime_inst = self.aws_util.get_rt_inst(data['runtime'])
+        runtime_inst = get_rt_inst(data['runtime'])
         return runtime_inst.pkg_code(data)
 
     def create(self, data):
@@ -156,14 +161,9 @@ class PhLambda(AWSOperator):
             :arg lambda_tag: [dict] lambda 的标签
             :arg vpc_config: [dict] lambda VPC 配置
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
+        lambda_client = boto3.client('lambda', **self.phsts.get_cred())
 
-        lambda_client = boto3.client('lambda', **credentials)
-
-        self.__create_func(data, lambda_client, credentials)
+        self.__create_func(data, lambda_client)
 
         # 首次创建并且配置 VPC 的情况下，function 会有一段 pending 时间，因此等待 30 s
         if 'vpc_config' in data.keys():
@@ -183,12 +183,7 @@ class PhLambda(AWSOperator):
         """
         获取所有 lambda 实例
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        lambda_client = boto3.client('lambda', **credentials)
+        lambda_client = boto3.client('lambda', **self.phsts.get_cred())
 
         response = lambda_client.list_functions(
             # MasterRegion='string',
@@ -205,12 +200,7 @@ class PhLambda(AWSOperator):
         :param data:
             :arg name: 要查询的 lambda 函数的名字
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        lambda_client = boto3.client('lambda', **credentials)
+        lambda_client = boto3.client('lambda', **self.phsts.get_cred())
 
         try:
             response = lambda_client.get_function(
@@ -254,16 +244,11 @@ class PhLambda(AWSOperator):
             :arg lambda_env: [dict] lambda 的环境变量
             :arg vpc_config: [dict] lambda VPC 配置
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        lambda_client = boto3.client('lambda', **credentials)
+        lambda_client = boto3.client('lambda', **self.phsts.get_cred())
 
         # 更新代码
         if "lambda_path" in data.keys():
-            bucket_name, object_name = self.__sync_file(data, credentials)
+            bucket_name, object_name = self.__sync_file(data)
 
             lambda_client.update_function_code(
                 FunctionName=data["name"],
@@ -363,12 +348,7 @@ class PhLambda(AWSOperator):
             :arg name: 创建的 lambda 函数的名字 【必需】
             :arg lambda_concurrent: 分配给别名的预留并发值, 不指定则使用非预留账户并发
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        lambda_client = boto3.client('lambda', **credentials)
+        lambda_client = boto3.client('lambda', **self.phsts.get_cred())
 
         if "lambda_concurrent" in data.keys():
             response = lambda_client.put_function_concurrency(
@@ -389,12 +369,7 @@ class PhLambda(AWSOperator):
             :arg name: 创建的 lambda 函数的名字 【必需】
             :arg version: lambda 函数版本, 不传或传 #ALL# 则删除整个 lambda 函数
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        lambda_client = boto3.client('lambda', **credentials)
+        lambda_client = boto3.client('lambda', **self.phsts.get_cred())
 
         if "version" not in data.keys() or data["version"] == "#ALL#":
             response = lambda_client.delete_function(

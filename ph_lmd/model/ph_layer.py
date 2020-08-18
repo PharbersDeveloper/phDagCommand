@@ -3,17 +3,22 @@
 import boto3
 import base64
 
+from ph_aws.ph_sts import PhSts
+from ph_aws.ph_s3 import PhS3
 from ph_lmd.model.aws_operator import AWSOperator
-from ph_lmd.model.aws_util import AWSUtil
 from ph_lmd import define_value as dv
+from ph_lmd.runtime.rt_util import get_short_rt, get_rt_inst
 
 
 class PhLayer(AWSOperator):
     """
     lambda 的依赖层
     """
-
-    aws_util = AWSUtil()
+    phsts = PhSts().assume_role(
+        base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+        dv.ASSUME_ROLE_EXTERNAL_ID,
+    )
+    phs3 = PhS3(phsts=phsts)
 
     def package(self, data):
         """
@@ -24,7 +29,7 @@ class PhLayer(AWSOperator):
             :arg package_name 打包的名称
             :arg is_pipenv: 是否使用的 pipenv 构建的项目，默认为 True
         """
-        runtime_inst = self.aws_util.get_rt_inst(data['runtime'])
+        runtime_inst = get_rt_inst(data['runtime'])
         return runtime_inst.pkg_layer(data)
 
     def create(self, data):
@@ -39,21 +44,15 @@ class PhLayer(AWSOperator):
             :arg runtime: layer 适用的运行时，如果多个请使用 “,” 分割
             :arg layer_desc: layer 的描述
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
+        lambda_client = boto3.client('lambda', **self.phsts.get_cred())
 
-        lambda_client = boto3.client('lambda', **credentials)
-
-        bucket_name, object_name = self.aws_util.sync_local_s3_file(
+        bucket_name, object_name = self.phs3.sync_file_local_to_s3(
             path=data["layer_path"],
             bucket_name=data.get("bucket", dv.DEFAULT_BUCKET),
             dir_name=dv.CLI_VERSION + dv.DEFAULT_LAYER_DIR
-                .replace("#runtime#", self.aws_util.get_short_rt(data["runtime"]))
+                .replace("#runtime#", get_short_rt(data["runtime"]))
                 .replace("#name#", data["name"]),
             version=data.get("version", ""),
-            credentials=credentials,
         )
 
         response = lambda_client.publish_layer_version(
@@ -76,12 +75,7 @@ class PhLayer(AWSOperator):
             :arg runtime: layer 适用的运行时，只可指定一个【不强制】
             :arg name: layer 名字
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        lambda_client = boto3.client('lambda', **credentials)
+        lambda_client = boto3.client('lambda', **self.phsts.get_cred())
 
         if "name" in data.keys():
             response = lambda_client.list_layer_versions(
@@ -102,12 +96,7 @@ class PhLayer(AWSOperator):
         :param data:
             :arg name: layer 名字可加版本
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        lambda_client = boto3.client('lambda', **credentials)
+        lambda_client = boto3.client('lambda', **self.phsts.get_cred())
 
         response = lambda_client.list_layer_versions(
             LayerName=data["name"].split(":")[0],
@@ -159,12 +148,7 @@ class PhLayer(AWSOperator):
             :arg name: 要删除的 layer 名字
             :arg version: 要删除的 layer 版本
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        lambda_client = boto3.client('lambda', **credentials)
+        lambda_client = boto3.client('lambda', **self.phsts.get_cred())
 
         response = lambda_client.delete_layer_version(
             LayerName=data["name"],
