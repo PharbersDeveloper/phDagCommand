@@ -4,7 +4,7 @@ import sys
 import string
 import boto3
 
-from ph_errs.ph_err import PhError
+from ph_errs.ph_err import PhException
 from ph_aws.aws_root import PhAWS
 
 
@@ -87,7 +87,7 @@ class PhS3(PhAWS):
         :return: [bucket_name, file_path]
         """
         if not isinstance(path, str):
-            raise PhError('Expected an str')
+            raise PhException('Expected an str')
 
         if path.startswith("https://") or path.startswith("http://"):
             url = path.split("://")[1]
@@ -100,7 +100,7 @@ class PhS3(PhAWS):
             file_path = "/".join(url.split("/")[1:])
             return [bucket_name, file_path]
         else:
-            raise PhError("The url is wrong")
+            raise PhException("The url is wrong")
 
     def sync_file_local_to_s3(self, path, bucket_name, dir_name, version=''):
         """

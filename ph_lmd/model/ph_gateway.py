@@ -134,7 +134,7 @@ class PhGateway(AWSOperator):
         """
         API Gateway 代理 不可打包
         """
-        print(self.package.__doc__)
+        return self.package.__doc__
 
     def create(self, data):
         """
@@ -252,13 +252,13 @@ class PhGateway(AWSOperator):
         """
         API Gateway 代理实例不可停止
         """
-        print(self.stop.__doc__)
+        return self.stop.__doc__
 
     def start(self, data):
         """
         API Gateway 代理实例不可启动
         """
-        print(self.start.__doc__)
+        return self.start.__doc__
 
     def delete(self, data):
         """
@@ -270,7 +270,6 @@ class PhGateway(AWSOperator):
         api_gateway_client = boto3.client('apigateway', **self.phsts.get_cred())
 
         response = {}
-        print(self.get(data))
         for item in self.get(data)["items"]:
             if "/" + data["name"] == item["path"]:
                 response = api_gateway_client.delete_resource(

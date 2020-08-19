@@ -4,7 +4,7 @@ import sys
 import os
 import json
 import click
-from ph_errs.ph_err import PhError
+from ph_errs.ph_err import PhException
 from ph_data_clean.clean.cleaner_factory import CleanerFactory
 from ph_data_clean.model.mapping_factory import MappingFactory
 from ph_data_clean.model.clean_result import CleanResult, Tag
@@ -50,7 +50,7 @@ def main(raw_data):
     try:
         result = clean(json.loads(raw_data))
         enable_print()
-    except PhError as err:
+    except PhException as err:
         rd = json.loads(raw_data)
         result = CleanResult(data={}, metadata={}, raw_data=json.loads(rd['data']), tag=Tag.PH_ERR, err_msg=str(err))
 

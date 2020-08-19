@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from ph_errs.ph_err import PhError
+from ph_errs.ph_err import PhException
 from ph_lmd.runtime import python_rt
 from ph_lmd.runtime import nodejs_rt
 from ph_lmd.runtime import go_rt
@@ -13,7 +13,7 @@ def get_short_rt(runtime):
         return "nodejs"
     elif "go" in runtime:
         return "go"
-    raise PhError("Invalid runtime")
+    raise PhException("Invalid runtime")
 
 
 def get_rt_inst(runtime):

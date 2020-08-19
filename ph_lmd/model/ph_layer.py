@@ -133,13 +133,13 @@ class PhLayer(AWSOperator):
         """
         lambda 的 layer 不可停止
         """
-        print(self.stop.__doc__)
+        return self.stop.__doc__
 
     def start(self, data):
         """
         lambda 的 layer 不可启动
         """
-        print(self.start.__doc__)
+        return self.start.__doc__
 
     def delete(self, data):
         """
