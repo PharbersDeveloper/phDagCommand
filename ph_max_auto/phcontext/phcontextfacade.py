@@ -3,21 +3,27 @@
 
 This module document the usage of class pharbers command context,
 """
+
 import os
 import sys
 import ast
+import base64
 import subprocess
 
-from ph_max_auto.phs3.phs3 import s3
+from ph_aws.ph_sts import PhSts
+from ph_aws.ph_s3 import PhS3
 from ph_logs.ph_logs import phlogger
+from ph_errs.ph_err import PhException, PhRuntimeError
+from ph_errs.ph_err import exception_file_already_exist, exception_file_not_exist, exception_function_not_implement
+from ph_max_auto import define_value as dv
 from ph_max_auto.phconfig.phconfig import PhYAMLConfig
-from ph_max_auto.phexceptions.phexceptions import exception_file_already_exist, PhException, exception_file_not_exist, \
-    exception_function_not_implement
 
 
-DAGS_S3_PATH = 's3fs-ph-airflow'
-TEMPLATE_BUCKET = 'ph-platform'
-TEMPLATE_VERSION = '2020-08-10'
+phsts = PhSts().assume_role(
+    base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+    dv.ASSUME_ROLE_EXTERNAL_ID,
+)
+phs3 = PhS3(phsts=phsts)
 
 
 class PhContextFacade(object):
@@ -63,11 +69,13 @@ class PhContextFacade(object):
 
         return ret
 
-    def get_workspace_dir(self):
-        return os.getenv('PH_WORKSPACE')
+    @staticmethod
+    def get_workspace_dir():
+        return os.getenv(dv.ENV_WORKSPACE_KEY, dv.ENV_WORKSPACE_DEFAULT)
 
-    def get_current_project_dir(self):
-        return os.getenv('PH_CUR_PROJ', 'BP_Max_AutoJob')
+    @staticmethod
+    def get_current_project_dir():
+        return os.getenv(dv.ENV_CUR_PROJ_KEY, dv.ENV_CUR_PROJ_DEFAULT)
 
     def get_destination_path(self):
         self.job_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
@@ -87,7 +95,7 @@ class PhContextFacade(object):
         elif self.cmd == "submit":
             return self.path
         else:
-            raise Exception("Something goes wrong!!!")
+            raise PhException("Something goes wrong!!!")
 
     def check_dag_dir(self, dag_id):
         if os.path.exists(self.dag_path + "/" + dag_id):
@@ -112,91 +120,99 @@ class PhContextFacade(object):
             else:
                 if not os.path.exists(self.path):
                     raise exception_file_not_exist
-        except PhException as e:
+        except PhRuntimeError as e:
             phlogger.info(e.msg)
             raise e
 
     def command_create_exec(self):
         phlogger.info("command create")
-        config = PhYAMLConfig(self.path)
         subprocess.call(["mkdir", "-p", self.path])
         subprocess.call(["touch", self.path + "/__init__.py"])
-        s3.copy_object_2_file(TEMPLATE_BUCKET, TEMPLATE_VERSION+"/template/python/phcli/maxauto/phjob.tmp", self.path + "/phjob.py")
-        s3.copy_object_2_file(TEMPLATE_BUCKET, TEMPLATE_VERSION+"/template/python/phcli/maxauto/phconf.yaml", self.path + "/phconf.yaml")
+
+        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHJOB_FILE, self.path + "/phjob.py")
+        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHCONF_FILE, self.path + "/phconf.yaml")
+
+        config = PhYAMLConfig(self.path)
         config.load_yaml()
-        w = open(self.path + "/phjob.py", "a")
-        w.write("def execute(")
-        for arg_index in range(len(config.spec.containers.args)):
-            arg = config.spec.containers.args[arg_index]
-            if arg_index == len(config.spec.containers.args) - 1:
-                w.write(arg.key)
-            else:
-                w.write(arg.key + ", ")
-        w.write("):\n")
-        w.write('\t"""\n')
-        w.write('\t\tplease input your code below\n')
-        w.write('\t"""\n')
-        w.close()
 
-        e = open(self.path + "/phmain.py", "w")
-        f_lines = s3.get_object_lines(TEMPLATE_BUCKET, TEMPLATE_VERSION+"/template/python/phcli/maxauto/phmain.tmp")
+        with open(self.path + "/phjob.py", "a") as file:
+            file.write("def execute(")
+            for arg_index in range(len(config.spec.containers.args)):
+                arg = config.spec.containers.args[arg_index]
+                if arg_index == len(config.spec.containers.args) - 1:
+                    file.write(arg.key)
+                else:
+                    file.write(arg.key + ", ")
+            file.write("):\n")
+            file.write('\t"""\n')
+            file.write('\t\tplease input your code below\n')
+            file.write('\t"""\n')
 
-        s = []
-        for arg in config.spec.containers.args:
-            s.append(arg.key)
-        for line in f_lines:
-            line = line + "\n"
-            if line == "$alfred_debug_execute\n":
-                e.write("@click.command()\n")
-                for arg in config.spec.containers.args:
-                    e.write("@click.option('--" + arg.key + "')\n")
-                # e.write("def debug_execute():\n")
-                e.write("def debug_execute(")
-                for arg_index in range(len(config.spec.containers.args)):
-                    arg = config.spec.containers.args[arg_index]
-                    if arg_index == len(config.spec.containers.args) - 1:
-                        e.write(arg.key)
-                    else:
-                        e.write(arg.key + ", ")
-                e.write("):\n")
-                e.write("\texecute(")
-                for arg_index in range(len(config.spec.containers.args)):
-                    arg = config.spec.containers.args[arg_index]
-                    if arg_index == len(config.spec.containers.args) - 1:
-                        e.write(arg.key)
-                    else:
-                        e.write(arg.key + ", ")
-                e.write(")\n")
-            else:
-                e.write(line)
+        with open(self.path + "/phmain.py", "w") as file:
+            f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHMAIN_FILE)
 
-        e.close()
+            s = []
+            for arg in config.spec.containers.args:
+                s.append(arg.key)
+
+            for line in f_lines:
+                line = line + "\n"
+                if line == "$alfred_debug_execute\n":
+                    file.write("@click.command()\n")
+                    for arg in config.spec.containers.args:
+                        file.write("@click.option('--" + arg.key + "')\n")
+                    # e.write("def debug_execute():\n")
+                    file.write("def debug_execute(")
+                    for arg_index in range(len(config.spec.containers.args)):
+                        arg = config.spec.containers.args[arg_index]
+                        if arg_index == len(config.spec.containers.args) - 1:
+                            file.write(arg.key)
+                        else:
+                            file.write(arg.key + ", ")
+                    file.write("):\n")
+                    file.write("\texecute(")
+                    for arg_index in range(len(config.spec.containers.args)):
+                        arg = config.spec.containers.args[arg_index]
+                        if arg_index == len(config.spec.containers.args) - 1:
+                            file.write(arg.key)
+                        else:
+                            file.write(arg.key + ", ")
+                    file.write(")\n")
+                else:
+                    file.write(line)
 
     def command_combine_exec(self):
         phlogger.info("command combine")
         subprocess.call(["mkdir", "-p", self.path])
-        s3.copy_object_2_file(TEMPLATE_BUCKET, TEMPLATE_VERSION+"/template/python/phcli/maxauto/phdag.yaml", self.path + "/phdag.yaml")
+
+        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+"/template/python/phcli/maxauto/phdag.yaml", self.path + "/phdag.yaml")
 
     def command_publish_exec(self):
         phlogger.info("command publish")
+
         for _, dirs, _ in os.walk(self.dag_path):
             for key in dirs:
-                if (not key.startswith(".")) & (not key.startswith("__pycache__")):
-                    s3.put_object(DAGS_S3_PATH, "airflow/dags/phjobs/" + key + "/phmain.py",
-                                  self.dag_path + key + "/phmain.py")
-                    # s3.put_object(DAGS_S3_PATH, "airflow/dags/phjobs/" + key + "/phjob.zip", self.dag_path + key + "/phjob.zip")
-                    s3.put_object(DAGS_S3_PATH, "airflow/dags/phjobs/" + key + "/phjob.py",
-                                  self.dag_path + key + "/phjob.py")
-                    s3.put_object(DAGS_S3_PATH, "airflow/dags/phjobs/" + key + "/args.properties",
-                                  self.dag_path + key + "/args.properties")
+                if (not key.startswith(".")) and (not key.startswith("__pycache__")):
+                    phs3.upload(self.dag_path + key + "/phmain.py",
+                                dv.DAGS_S3_BUCKET,
+                                dv.DAGS_S3_PHJOBS_PATH + key + "/phmain.py")
+                    phs3.upload(self.dag_path + key + "/phjob.py",
+                                dv.DAGS_S3_BUCKET,
+                                dv.DAGS_S3_PHJOBS_PATH + key + "/phjob.py")
+                    phs3.upload(self.dag_path + key + "/args.properties",
+                                dv.DAGS_S3_BUCKET,
+                                dv.DAGS_S3_PHJOBS_PATH + key + "/args.properties")
+
         for key in os.listdir(self.dag_path):
             if os.path.isfile(self.dag_path + key):
-                s3.put_object(DAGS_S3_PATH, "airflow/dags/" + key, self.dag_path + key)
+                phs3.upload(self.dag_path+key, dv.DAGS_S3_BUCKET, dv.DAGS_S3_PREV_PATH+key)
 
     def command_run_exec(self):
         phlogger.info("run")
+
         config = PhYAMLConfig(self.job_path)
         config.load_yaml()
+
         if config.spec.containers.repository == "local":
             entry_point = config.spec.containers.code
             if "/" not in entry_point:
@@ -217,14 +233,17 @@ class PhContextFacade(object):
 
     def command_dag_exec(self):
         phlogger.info("command dag")
+
         self.clean_dag_dir()
+
         config = PhYAMLConfig(self.combine_path, "/phdag.yaml")
         config.load_yaml()
         self.check_dag_dir(config.spec.dag_id)
 
         subprocess.call(["mkdir", "-p", self.dag_path])
+
         w = open(self.dag_path + "/ph_dag_" + config.spec.dag_id + ".py", "a")
-        f_lines = s3.get_object_lines(TEMPLATE_BUCKET, TEMPLATE_VERSION+"/template/python/phcli/maxauto/phgraphtemp.tmp")
+        f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHGRAPHTEMP_FILE)
         for line in f_lines:
             line = line + "\n"
             if line == "$alfred_import_jobs\n":
@@ -245,7 +264,27 @@ class PhContextFacade(object):
                         .replace("$alfred_dag_timeout", str(config.spec.dag_timeout)) \
                         .replace("$alfred_start_date", str(config.spec.start_date))
                 )
-        jf = s3.get_object_lines(TEMPLATE_BUCKET, TEMPLATE_VERSION+"/template/python/phcli/maxauto/phDagJob.tmp")
+
+        def yaml2args(path):
+            config = PhYAMLConfig(path)
+            config.load_yaml()
+            phlogger.info(config.spec.containers.args)
+
+            f = open(path + "/args.properties", "a")
+            for arg in config.spec.containers.args:
+                if arg.value != "":
+                    f.write("--" + arg.key + "\n")
+                    if sys.version_info > (3, 0):
+                        f.write(str(arg.value) + "\n")
+                    else:
+                        if type(arg.value) is unicode:
+                            f.write(arg.value.encode("utf-8") + "\n")
+                        else:
+                            f.write(str(arg.value) + "\n")
+                    # f.write(str(arg.value) + "\n")
+            f.close()
+
+        jf = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHDAGJOB_FILE)
         for jt in config.spec.jobs:
             # jf.seek(0)
             for line in jf:
@@ -260,7 +299,7 @@ class PhContextFacade(object):
                              self.job_path[0:self.job_path.rindex("/") + 1] + jt.name,
                              self.dag_path + jt.name])
             # subprocess.call(["zip", self.dag_path + jt.name + "/phjob.zip", self.dag_path + jt.name + "/phjob.py"])
-            self.yaml2args(self.dag_path + jt.name)
+            yaml2args(self.dag_path + jt.name)
 
         w.write(config.spec.linkage)
         w.write("\n")
@@ -270,17 +309,26 @@ class PhContextFacade(object):
         phlogger.info("submit command exec")
         phlogger.info("submit command with Job name " + self.path)
         phlogger.info("submit command with context " + self.context)
+
         udags = {}
         if self.context != "":
             udags = ast.literal_eval(self.context.replace(" ", ""))
         phlogger.info(udags)
-        submit_prefix = "s3a://"+DAGS_S3_PATH+"/airflow/dags/phjobs/" + self.path + "/"
-        args = s3.get_object_lines(DAGS_S3_PATH, "airflow/dags/phjobs/" + self.path + "/args.properties")
-        access_key = os.getenv("AWS_ACCESS_KEY_ID")
-        secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+
+        submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + self.path + "/"
+        # args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PHJOBS_PATH + self.path + "/args.properties")
+        args = [
+            '--a',
+            '123',
+            '--b',
+            '456',
+        ]
+        access_key = '' #$os.getenv("AWS_ACCESS_KEY_ID")
+        secret_key = '' #os.getenv("AWS_SECRET_ACCESS_KEY")
         current_user = os.getenv("HADOOP_PROXY_USER")
         if current_user is None:
             current_user = "airflow"
+
         cmd_arr = ["spark-submit",
                    "--master", "yarn",
                    "--deploy-mode", "cluster",
@@ -298,9 +346,14 @@ class PhContextFacade(object):
                    "--conf", "spark.hadoop.fs.s3a.endpoint=s3.cn-northwest-1.amazonaws.com.cn",
                    "--num-executors", "2",
                    "--jars",
-                   "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
+                   "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,"
+                   "s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,"
+                   "s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,"
+                   "s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
                    "--py-files",
-                   "s3a://"+DAGS_S3_PATH+"/airflow/dags/phjobs/common/click.zip,s3a://"+DAGS_S3_PATH+"/airflow/dags/phjobs/common/phcli.zip," + submit_prefix + "phjob.py",
+                   "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/click.zip," +
+                   "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/phcli.zip," +
+                   submit_prefix + "phjob.py",
                    submit_prefix + "phmain.py"]
 
         cur_key = ""
@@ -315,23 +368,4 @@ class PhContextFacade(object):
                 cmd_arr.append(it)
 
         phlogger.info(cmd_arr)
-        return subprocess.call(cmd_arr)
-
-    def yaml2args(self, path):
-        config = PhYAMLConfig(path)
-        config.load_yaml()
-        phlogger.info(config.spec.containers.args)
-
-        f = open(path + "/args.properties", "a")
-        for arg in config.spec.containers.args:
-            if arg.value != "":
-                f.write("--" + arg.key + "\n")
-                if sys.version_info > (3, 0):
-                    f.write(str(arg.value) + "\n")
-                else:
-                    if type(arg.value) is unicode:
-                        f.write(arg.value.encode("utf-8") + "\n")
-                    else:
-                        f.write(str(arg.value) + "\n")
-                # f.write(str(arg.value) + "\n")
-        f.close()
+        # return subprocess.call(cmd_arr)

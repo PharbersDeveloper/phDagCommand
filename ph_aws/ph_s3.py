@@ -32,7 +32,7 @@ class PhS3(PhAWS):
         :param object_name: S3 文件路径
         :return:
         """
-        self.s3_client.put_object(
+        self.s3_client.upload_file(
             Bucket=bucket_name,
             Key=object_name,
             Filename=file
@@ -80,7 +80,7 @@ class PhS3(PhAWS):
             f.write(line + "\n")
         f.close()
 
-    def __url_get_bucket_file(self, path):
+    def __url_get_bucket_info(self, path):
         """
         根据 S3 URL 分析出 S3 Bucket 和文件的具体路径
         :param path: S3 URL
@@ -115,7 +115,7 @@ class PhS3(PhAWS):
         """
 
         if path.startswith("https://") or path.startswith("http://") or path.startswith("s3://"):
-            return self.__url_get_bucket_file(path)
+            return self.__url_get_bucket_info(path)
         else:
             object_name = path.split("/")[-1]
             if version != "":

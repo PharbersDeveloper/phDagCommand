@@ -23,7 +23,7 @@ class PhRuntimeError(RuntimeError):
         self.msg = msg
 
 
-exception_file_already_exist = PhRuntimeError(-1, "the dict already exists")
-exception_file_not_exist = PhRuntimeError(-2, "the dict is not exists")
+exception_file_already_exist = PhRuntimeError(-1, "The File Is Already Exists")
+exception_file_not_exist = PhRuntimeError(-2, "The File Is Not Exists")
 exception_function_not_implement = PhRuntimeError(-3, "the function is not implement, please contact "
                                                       "alfredyang@pharbers.com")
