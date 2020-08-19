@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
-import os
 from abc import abstractmethod
 import click
-from ph_errs.ph_err import PhError
+import os
+
+from ph_logs.ph_logs import phlogger
+from ph_errs.ph_err import PhException
 
 
 class LambdaRuntime(object):
@@ -29,7 +31,7 @@ class LambdaRuntime(object):
         """
 
         if not isinstance(self._package_cmds, list):
-            raise PhError('Expected an list')
+            raise PhException('Expected an list')
 
         self._package_cmds.extend([
             "mv package.zip %s" % package_name,
@@ -37,7 +39,7 @@ class LambdaRuntime(object):
 
         try:
             for cmd in self._package_cmds:
-                click.secho("正在执行: " + cmd + " ", fg='green', blink=True, bold=True)
+                phlogger.info("正在执行: " + cmd + " ")
                 os.system(cmd)
         except Exception as ex:
-            print(ex)
+            phlogger.error(ex)

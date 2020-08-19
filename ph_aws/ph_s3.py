@@ -4,7 +4,7 @@ import sys
 import string
 import boto3
 
-from ph_errs.ph_err import PhError
+from ph_errs.ph_err import PhException
 from ph_aws.aws_root import PhAWS
 
 
@@ -32,7 +32,7 @@ class PhS3(PhAWS):
         :param object_name: S3 文件路径
         :return:
         """
-        self.s3_client.put_object(
+        self.s3_client.upload_file(
             Bucket=bucket_name,
             Key=object_name,
             Filename=file
@@ -80,14 +80,14 @@ class PhS3(PhAWS):
             f.write(line + "\n")
         f.close()
 
-    def __url_get_bucket_file(self, path):
+    def __url_get_bucket_info(self, path):
         """
         根据 S3 URL 分析出 S3 Bucket 和文件的具体路径
         :param path: S3 URL
         :return: [bucket_name, file_path]
         """
         if not isinstance(path, str):
-            raise PhError('Expected an str')
+            raise PhException('Expected an str')
 
         if path.startswith("https://") or path.startswith("http://"):
             url = path.split("://")[1]
@@ -100,7 +100,7 @@ class PhS3(PhAWS):
             file_path = "/".join(url.split("/")[1:])
             return [bucket_name, file_path]
         else:
-            raise PhError("The url is wrong")
+            raise PhException("The url is wrong")
 
     def sync_file_local_to_s3(self, path, bucket_name, dir_name, version=''):
         """
@@ -115,7 +115,7 @@ class PhS3(PhAWS):
         """
 
         if path.startswith("https://") or path.startswith("http://") or path.startswith("s3://"):
-            return self.__url_get_bucket_file(path)
+            return self.__url_get_bucket_info(path)
         else:
             object_name = path.split("/")[-1]
             if version != "":
@@ -126,5 +126,5 @@ class PhS3(PhAWS):
             else:
                 object_name = dir_name + "/" + object_name
 
-            self.put_object(path, bucket_name, object_name)
+            self.upload(path, bucket_name, object_name)
             return [bucket_name, object_name]

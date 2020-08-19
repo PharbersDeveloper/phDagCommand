@@ -46,7 +46,6 @@ def get_s3_valid_data(s3_data):
             s3_valid_data.append(data)
 
     return s3_valid_data, null_data_name
-    # print(s3_valid_data)
 
 
 def get_test_data(s3_valid_data):
@@ -85,7 +84,6 @@ def append_test_data(test_data_lst):
 
     :param test_data_lst: 拆开的可用数据
     """
-    # print(os.listdir(TEST_CACHE_DIR))
     if sub.split('.')[0] + '-test.yaml' not in os.listdir(TEST_CACHE_DIR):
         with open(test_file, 'a', encoding='UTF-8') as file:
             yaml.dump(test_data_lst, file, default_flow_style=False, encoding='utf-8', allow_unicode=True)

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import boto3
 import yaml
 import click
 import base64

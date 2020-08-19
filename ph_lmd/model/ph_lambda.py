@@ -167,11 +167,8 @@ class PhLambda(AWSOperator):
 
         # 首次创建并且配置 VPC 的情况下，function 会有一段 pending 时间，因此等待 30 s
         if 'vpc_config' in data.keys():
-            print('lambda 配置 vpc: ')
             for i in range(30):
-                print('*')
                 time.sleep(1)
-            print()
 
         response = self.__apply_version(data, lambda_client)
 

@@ -40,7 +40,6 @@ class ProductDataClean(DataClean):
             for m in mapping:
                 if m["not_null"] and (final_data[m["col_name"]] in [None, "", "/"]):
                     warning_col_lst.append(m["col_name"])
-                    print(warning_col_lst)
 
             # 如果是空字典（没有warning）
             if not warning_col_lst:
