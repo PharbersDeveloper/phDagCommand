@@ -9,7 +9,11 @@ class PhSts(PhAWS):
         self.credentials = None
 
     def get_cred(self):
-        return self.credentials
+        return {
+            'aws_access_key_id': self.credentials['AccessKeyId'],
+            'aws_secret_access_key': self.credentials['SecretAccessKey'],
+            'aws_session_token': self.credentials['SessionToken'],
+        }
 
     def assume_role(self, role_arn, external_id):
         sts_client = boto3.client('sts')
@@ -19,11 +23,6 @@ class PhSts(PhAWS):
             ExternalId=external_id,
         )
 
-        credentials = assumed_role_object['Credentials']
-        self.credentials = {
-            'aws_access_key_id': credentials['AccessKeyId'],
-            'aws_secret_access_key': credentials['SecretAccessKey'],
-            'aws_session_token': credentials['SessionToken'],
-        }
+        self.credentials = assumed_role_object['Credentials']
 
         return self

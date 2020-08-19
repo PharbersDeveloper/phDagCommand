@@ -126,5 +126,5 @@ class PhS3(PhAWS):
             else:
                 object_name = dir_name + "/" + object_name
 
-            self.put_object(path, bucket_name, object_name)
+            self.upload(path, bucket_name, object_name)
             return [bucket_name, object_name]
