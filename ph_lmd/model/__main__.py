@@ -3,7 +3,7 @@
 import sys
 import click
 from ph_lmd.model import ph_layer, ph_lambda, ph_gateway
-from pherrs.ph_err import PhError
+from ph_errs.ph_err import PhException
 
 
 @click.command('model', short_help='专项部署特定资源')
@@ -72,7 +72,7 @@ def fineness_func(operator, model, argv):
         elif oper == "delete":
             return model_inst.delete
         else:
-            raise PhError("Invalid operator")
+            raise PhException("Invalid operator")
 
     def argv2map(argv):
         for arg in argv:
@@ -88,7 +88,7 @@ def fineness_func(operator, model, argv):
     inst = get_oper_inst(get_model_inst(model), operator)
 
     if 'h' in argv.keys() or 'help' in argv.keys():
-        print(inst.__doc__)
+        click.secho(inst.__doc__, fg='green', blink=True, bold=True)
         sys.exit(2)
 
-    print(inst(argv))
+    click.secho(inst(argv), fg='green', blink=True, bold=True)

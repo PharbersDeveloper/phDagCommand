@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from ph_errs.ph_err import PhException
 from ph_data_clean.clean.data_clean import DataClean
 from ph_data_clean.clean.cpa_gyc_data_clean import CpaGycDataClean
 from ph_data_clean.clean.chc_data_clean import ChcDataClean
 from ph_data_clean.clean.product_data_clean import ProductDataClean
 from ph_data_clean.clean.universe_data_clean import UniverseDataClean
-from pherrs.ph_err import PhError
 
 
 class CleanerFactory(object):
@@ -38,7 +38,7 @@ class CleanerFactory(object):
         if len(finded) == 1:
             return finded[0][1]()
         elif len(finded) > 1:
-            raise PhError("Find more Cleaner" + str(finded))
+            raise PhException("Find more Cleaner" + str(finded))
         else:
-            raise PhError("Not find Cleaner, source=%s, company=%s" % (source, company))
+            raise PhException("Not find Cleaner, source=%s, company=%s" % (source, company))
 

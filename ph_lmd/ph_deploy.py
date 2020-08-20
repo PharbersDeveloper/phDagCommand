@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import os
-import sys
-import boto3
 import yaml
 import click
 import base64
 import time
 
+from ph_aws.ph_sts import PhSts
+from ph_aws.ph_s3 import PhS3
 from ph_lmd import define_value as dv
-from ph_lmd.model import aws_util
 from ph_lmd.model import ph_layer
 from ph_lmd.model import ph_lambda
 from ph_lmd.model import ph_gateway
@@ -37,14 +36,17 @@ def init(name, runtime, desc, lib_path, code_path, handler):
     """
     初始化环境，关联本地项目和 lambda function
     """
-    credentials = aws_util.AWSUtil().assume_role(
+
+    phsts = PhSts().assume_role(
         base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
         dv.ASSUME_ROLE_EXTERNAL_ID,
     )
+    phs3 = PhS3(phsts=phsts)
 
-    buf = boto3.client('s3', **credentials).get_object(
-        Bucket=dv.DEFAULT_BUCKET,
-        Key=dv.CLI_VERSION+dv.DEFAULT_TEMPLATE_DIR+dv.DEPLOY_FILE_TEMPLATE_NAME)["Body"].read().decode('utf-8') \
+    buf = phs3.open_object(
+            bucket_name=dv.DEFAULT_BUCKET,
+            object_name=dv.CLI_VERSION+dv.DEFAULT_TEMPLATE_DIR+dv.DEPLOY_FILE_TEMPLATE_NAME,
+        ) \
         .replace("#name#", name) \
         .replace("#runtime#", runtime) \
         .replace("#desc#", desc) \
@@ -131,11 +133,6 @@ def push(name, oper):
     def clean_cache(deploy_conf):
         click.secho("开始清理执行缓存", blink=True, bold=True)
 
-        credentials = aws_util.AWSUtil().assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
         project_name = deploy_conf['metadata']['name']
 
         if "layer" in deploy_conf.keys():
@@ -159,19 +156,16 @@ def push(name, oper):
                 os.remove(deploy_conf["lambda"]["package_name"])
 
             def keep_num():
-                lambda_client = boto3.client('lambda', **credentials)
+                phlambda = ph_lambda.PhLambda()
 
-                resp = ph_lambda.PhLambda().get({'name': project_name})
+                resp = phlambda.get({'name': project_name})
                 versions = resp['Versions'] if resp else []
                 versions = [version['Version'] for version in versions]
 
                 if len(versions) > dv.LAMBDA_FUNCTION_MAX_VERSION_NUM:
                     versions.remove('$LATEST')
                     for version in versions[dv.LAMBDA_FUNCTION_MAX_VERSION_NUM:]:
-                        lambda_client.delete_function(
-                            FunctionName=project_name,
-                            Qualifier=version,
-                        )
+                        phlambda.delete({'name': project_name, 'version': version})
 
             keep_num()
 

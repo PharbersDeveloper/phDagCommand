@@ -2,7 +2,7 @@
 
 import os
 import yaml
-from pherrs.ph_err import PhError
+from ph_errs.ph_err import PhException
 
 
 def load_by_file(file):
@@ -37,7 +37,7 @@ def load_by_dir(dir):
     """
     # 参数不是目录，直接返回
     if not os.path.isdir(dir):
-        raise PhError("args not is dir")
+        raise PhException("args not is dir")
 
     if not dir.endswith("/"):
         dir = dir + "/"

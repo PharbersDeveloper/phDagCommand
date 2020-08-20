@@ -4,8 +4,9 @@ import boto3
 import yaml
 import base64
 
+from ph_aws.ph_sts import PhSts
+from ph_aws.ph_s3 import PhS3
 from ph_lmd.model.aws_operator import AWSOperator
-from ph_lmd.model.aws_util import AWSUtil
 from ph_lmd.model.ph_lambda import PhLambda
 from ph_lmd import define_value as dv
 
@@ -15,10 +16,14 @@ class PhGateway(AWSOperator):
     lambda 的 API Gateway 代理
     """
 
-    aws_util = AWSUtil()
+    phsts = PhSts().assume_role(
+        base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+        dv.ASSUME_ROLE_EXTERNAL_ID,
+    )
+    phs3 = PhS3(phsts=phsts)
 
-    def __put_resource_by_template(self, rest_api_id, project_name, paths, lambda_arn, role_arn, credentials):
-        api_gateway_client = boto3.client('apigateway', **credentials)
+    def __put_resource_by_template(self, rest_api_id, project_name, paths, lambda_arn, role_arn):
+        api_gateway_client = boto3.client('apigateway', **self.phsts.get_cred())
 
         def put_integration(rest_api_id, resource_id, method, lambda_arn, role_arn):
             response = api_gateway_client.put_integration(
@@ -103,7 +108,7 @@ class PhGateway(AWSOperator):
                 )
 
     def __create_deployment(self, rest_api_id, version, gateway_desc):
-        api_gateway_client = boto3.client('apigateway')
+        api_gateway_client = boto3.client('apigateway', **self.phsts.get_cred())
         response = api_gateway_client.create_deployment(
             restApiId=rest_api_id,
             stageName=version,
@@ -129,7 +134,7 @@ class PhGateway(AWSOperator):
         """
         API Gateway 代理 不可打包
         """
-        print(self.package.__doc__)
+        return self.package.__doc__
 
     def create(self, data):
         """
@@ -146,19 +151,12 @@ class PhGateway(AWSOperator):
         rest_api_id = data["rest_api_id"]
         project_name = data["name"]
 
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        bucket_name, object_name = self.aws_util.sync_local_s3_file(
+        bucket_name, object_name = self.phs3.sync_file_local_to_s3(
             data["api_template"],
             bucket_name=data.get("bucket", dv.DEFAULT_BUCKET),
             dir_name=dv.CLI_VERSION + dv.DEFAULT_TEMPLATE_DIR,
-            credentials=credentials,
         )
-
-        buf = boto3.client('s3', **credentials).get_object(Bucket=bucket_name, Key=object_name)["Body"].read().decode('utf-8')
+        buf = self.phs3.open_object(bucket_name, object_name)
         gateway_conf = yaml.safe_load(buf)
 
         self.__put_resource_by_template(
@@ -167,7 +165,6 @@ class PhGateway(AWSOperator):
             paths=gateway_conf["paths"],
             lambda_arn=PhLambda().get({"name": data["lambda_name"]})["Configuration"]["FunctionArn"] + ":" + data["alias_version"],
             role_arn=base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            credentials=credentials,
         )
 
         return rest_api_id + "/" + project_name + " 生成成功"
@@ -178,12 +175,7 @@ class PhGateway(AWSOperator):
         :param data:
             :arg rest_api_id: rest API Gateway 的 ID
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        api_gateway_client = boto3.client('apigateway', **credentials)
+        api_gateway_client = boto3.client('apigateway', **self.phsts.get_cred())
 
         if "rest_api_id" in data.keys():
             response = api_gateway_client.get_rest_api(
@@ -203,12 +195,7 @@ class PhGateway(AWSOperator):
             :arg name: API Gateway 的名称【可能会查出多个】
             :arg rest_api_id: rest API Gateway 的 ID
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        api_gateway_client = boto3.client('apigateway', **credentials)
+        api_gateway_client = boto3.client('apigateway', **self.phsts.get_cred())
 
         response = api_gateway_client.get_resources(
             restApiId=data["rest_api_id"],
@@ -265,13 +252,13 @@ class PhGateway(AWSOperator):
         """
         API Gateway 代理实例不可停止
         """
-        print(self.stop.__doc__)
+        return self.stop.__doc__
 
     def start(self, data):
         """
         API Gateway 代理实例不可启动
         """
-        print(self.start.__doc__)
+        return self.start.__doc__
 
     def delete(self, data):
         """
@@ -280,15 +267,9 @@ class PhGateway(AWSOperator):
             :arg name: API Gateway 根资源名称
             :arg rest_api_id: rest API Gateway 的 ID
         """
-        credentials = self.aws_util.assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-
-        api_gateway_client = boto3.client('apigateway', **credentials)
+        api_gateway_client = boto3.client('apigateway', **self.phsts.get_cred())
 
         response = {}
-        print(self.get(data))
         for item in self.get(data)["items"]:
             if "/" + data["name"] == item["path"]:
                 response = api_gateway_client.delete_resource(
