@@ -10,6 +10,7 @@ from ph_max_auto.phspec.pyoutputs import PhYAMLJobOutputs
 class PhYAMLContainer(object):
     def __init__(self, dt):
         self.repository = ""
+        self.runtime = ""
         self.code = ""
         self.config = ""
         self.args = []

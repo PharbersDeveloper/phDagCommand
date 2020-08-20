@@ -226,10 +226,11 @@ class PhContextFacade(object):
         config.load_yaml()
 
         if config.spec.containers.repository == "local":
+            entry_runtime = config.spec.containers.runtime
             entry_point = config.spec.containers.code
             if "/" not in entry_point:
                 entry_point = self.path + "/" + entry_point
-                cb = ["python", entry_point]
+                cb = [entry_runtime, entry_point]
                 for arg in config.spec.containers.args:
                     if sys.version_info > (3, 0):
                         cb.append("--" + arg.key + "=" + str(arg.value))
@@ -323,6 +324,11 @@ class PhContextFacade(object):
         phlogger.info("submit command with context " + str(self.context))
         phlogger.info("submit command with args " + str(self.args))
 
+        stream = phs3.open_object(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PHJOBS_PATH + self.path + "/phconf.yaml")
+        config = PhYAMLConfig(self.path)
+        config.load_yaml(stream)
+        runtime = config.spec.containers.runtime
+
         submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + self.path + "/"
         args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PHJOBS_PATH + self.path + "/args.properties")
 
@@ -343,6 +349,7 @@ class PhContextFacade(object):
             "spark.driver.cores": "1",
             "spark.executor.memory": "2g",
             "spark.executor.cores": "1",
+            "spark.pyspark.python": "/usr/bin/"+runtime,
             "spark.driver.extraJavaOptions": "-Dcom.amazonaws.services.s3.enableV4",
             "spark.executor.extraJavaOptions": "-Dcom.amazonaws.services.s3.enableV4",
             "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem",
