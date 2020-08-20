@@ -18,7 +18,6 @@ from ph_errs.ph_err import exception_file_already_exist, exception_file_not_exis
 from ph_max_auto import define_value as dv
 from ph_max_auto.phconfig.phconfig import PhYAMLConfig
 
-
 phsts = PhSts().assume_role(
     base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
     dv.ASSUME_ROLE_EXTERNAL_ID,
@@ -32,13 +31,15 @@ class PhContextFacade(object):
         Args:
             cmd: the command that you want to process
             path: the directory that you want to process
+            context: the context that you want to submit
+            args: the args that you want to submit
     """
 
-    def __init__(self, cmd, path, context=""):
+    def __init__(self, cmd, path, context='{}', args='{}'):
         self.cmd = cmd
         self.path = path
-        # self.context = json.loads(context)
-        self.context = context
+        self.context = self.ast_parse(context)
+        self.args = self.ast_parse(args)
         self.job_path = path
         self.combine_path = path
         self.dag_path = path
@@ -124,13 +125,24 @@ class PhContextFacade(object):
             phlogger.info(e.msg)
             raise e
 
+    def ast_parse(self, string):
+        ast_dict = {}
+        if string != "":
+            ast_dict = ast.literal_eval(string.replace(" ", ""))
+            for k, v in ast_dict.items():
+                if isinstance(v, str) and v.startswith('{') and v.endswith('}'):
+                    ast_dict[k] = ast.literal_eval(v)
+            if ast_dict:
+                phlogger.info(ast_dict)
+        return ast_dict
+
     def command_create_exec(self):
         phlogger.info("command create")
         subprocess.call(["mkdir", "-p", self.path])
         subprocess.call(["touch", self.path + "/__init__.py"])
 
-        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHJOB_FILE, self.path + "/phjob.py")
-        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHCONF_FILE, self.path + "/phconf.yaml")
+        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE, self.path + "/phjob.py")
+        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE, self.path + "/phconf.yaml")
 
         config = PhYAMLConfig(self.path)
         config.load_yaml()
@@ -149,7 +161,7 @@ class PhContextFacade(object):
             file.write('\t"""\n')
 
         with open(self.path + "/phmain.py", "w") as file:
-            f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHMAIN_FILE)
+            f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHMAIN_FILE)
 
             s = []
             for arg in config.spec.containers.args:
@@ -185,7 +197,7 @@ class PhContextFacade(object):
         phlogger.info("command combine")
         subprocess.call(["mkdir", "-p", self.path])
 
-        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+"/template/python/phcli/maxauto/phdag.yaml", self.path + "/phdag.yaml")
+        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHDAG_FILE, self.path + "/phdag.yaml")
 
     def command_publish_exec(self):
         phlogger.info("command publish")
@@ -205,7 +217,7 @@ class PhContextFacade(object):
 
         for key in os.listdir(self.dag_path):
             if os.path.isfile(self.dag_path + key):
-                phs3.upload(self.dag_path+key, dv.DAGS_S3_BUCKET, dv.DAGS_S3_PREV_PATH+key)
+                phs3.upload(self.dag_path + key, dv.DAGS_S3_BUCKET, dv.DAGS_S3_PREV_PATH + key)
 
     def command_run_exec(self):
         phlogger.info("run")
@@ -243,7 +255,7 @@ class PhContextFacade(object):
         subprocess.call(["mkdir", "-p", self.dag_path])
 
         w = open(self.dag_path + "/ph_dag_" + config.spec.dag_id + ".py", "a")
-        f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHGRAPHTEMP_FILE)
+        f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHGRAPHTEMP_FILE)
         for line in f_lines:
             line = line + "\n"
             if line == "$alfred_import_jobs\n":
@@ -284,7 +296,7 @@ class PhContextFacade(object):
                     # f.write(str(arg.value) + "\n")
             f.close()
 
-        jf = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHDAGJOB_FILE)
+        jf = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHDAGJOB_FILE)
         for jt in config.spec.jobs:
             # jf.seek(0)
             for line in jf:
@@ -307,24 +319,15 @@ class PhContextFacade(object):
 
     def command_submit_exec(self):
         phlogger.info("submit command exec")
-        phlogger.info("submit command with Job name " + self.path)
-        phlogger.info("submit command with context " + self.context)
-
-        udags = {}
-        if self.context != "":
-            udags = ast.literal_eval(self.context.replace(" ", ""))
-        phlogger.info(udags)
+        phlogger.info("submit command with Job name '" + self.path + "'")
+        phlogger.info("submit command with context " + str(self.context))
+        phlogger.info("submit command with args " + str(self.args))
 
         submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + self.path + "/"
-        # args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PHJOBS_PATH + self.path + "/args.properties")
-        args = [
-            '--a',
-            '123',
-            '--b',
-            '456',
-        ]
-        access_key = '' #$os.getenv("AWS_ACCESS_KEY_ID")
-        secret_key = '' #os.getenv("AWS_SECRET_ACCESS_KEY")
+        args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PHJOBS_PATH + self.path + "/args.properties")
+
+        access_key = os.getenv("AWS_ACCESS_KEY_ID", 'NULL_AWS_ACCESS_KEY_ID')
+        secret_key = os.getenv("AWS_SECRET_ACCESS_KEY", 'NULL_AWS_SECRET_ACCESS_KEY')
         current_user = os.getenv("HADOOP_PROXY_USER")
         if current_user is None:
             current_user = "airflow"
@@ -333,39 +336,50 @@ class PhContextFacade(object):
                    "--master", "yarn",
                    "--deploy-mode", "cluster",
                    "--name", self.path,
-                   "--proxy-user", current_user,
-                   "--conf", "spark.driver.memory=1g",
-                   "--conf", "spark.driver.cores=1",
-                   "--conf", "spark.executor.memory=2g",
-                   "--conf", "spark.executor.cores=1",
-                   "--conf", "spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
-                   "--conf", "spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4",
-                   "--conf", "spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem",
-                   "--conf", "spark.hadoop.fs.s3a.access.key=" + access_key,
-                   "--conf", "spark.hadoop.fs.s3a.secret.key=" + secret_key,
-                   "--conf", "spark.hadoop.fs.s3a.endpoint=s3.cn-northwest-1.amazonaws.com.cn",
-                   "--num-executors", "2",
-                   "--jars",
-                   "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,"
-                   "s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,"
-                   "s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,"
-                   "s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
-                   "--py-files",
-                   "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/click.zip," +
-                   "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/phcli.zip," +
-                   submit_prefix + "phjob.py",
-                   submit_prefix + "phmain.py"]
+                   "--proxy-user", current_user]
+
+        conf_map = {
+            "spark.driver.memory": "1g",
+            "spark.driver.cores": "1",
+            "spark.executor.memory": "2g",
+            "spark.executor.cores": "1",
+            "spark.driver.extraJavaOptions": "-Dcom.amazonaws.services.s3.enableV4",
+            "spark.executor.extraJavaOptions": "-Dcom.amazonaws.services.s3.enableV4",
+            "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem",
+            "spark.hadoop.fs.s3a.access.key": access_key,
+            "spark.hadoop.fs.s3a.secret.key": secret_key,
+            "spark.hadoop.fs.s3a.endpoint": "s3.cn-northwest-1.amazonaws.com.cn"
+        }
+        conf_map.update(dict([(k.lstrip("CONF__"), v) for k, v in self.context.items() if k.startswith('CONF__')]))
+        conf_map = [('--conf', k + '=' + v) for k, v in conf_map.items()]
+        cmd_arr += [j for i in conf_map for j in i]
+
+        other_map = {
+            "num-executors": "2",
+            "jars": "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,"
+                    "s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,"
+                    "s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,"
+                    "s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
+            "py-files": "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/click.zip," +
+                        "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/phcli.zip," +
+                        submit_prefix + "phjob.py",
+        }
+        other_map.update(dict([(k.lstrip("OTHER__"), v) for k, v in self.context.items() if k.startswith('OTHER__')]))
+        other_map = [('--'+k, v) for k, v in other_map.items()]
+        cmd_arr += [j for i in other_map for j in i]
+
+        cmd_arr += [submit_prefix + "phmain.py"]
 
         cur_key = ""
         for it in args:
             if it[0:2] == "--":
                 cur_key = it[2:]
             else:
-                if cur_key in udags.keys():
-                    it = udags[cur_key]
+                if cur_key in self.args.keys():
+                    it = self.args[cur_key]
 
             if it != "":
                 cmd_arr.append(it)
 
         phlogger.info(cmd_arr)
-        # return subprocess.call(cmd_arr)
+        return subprocess.call(cmd_arr)
