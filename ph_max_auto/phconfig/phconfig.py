@@ -23,9 +23,11 @@ class PhYAMLConfig(object):
     def dict2obj(self, dt):
         self.__dict__.update(dt)
 
-    def load_yaml(self):
-        f = open(self.path + self.name)
-        y = yaml.safe_load(f)
+    def load_yaml(self, stream=''):
+        if not stream:
+            stream = open(self.path + self.name)
+
+        y = yaml.safe_load(stream)
         self.dict2obj(y)
         if self.kind == "PhJob":
             self.metadata = PhYAMLMetadata(self.metadata)
