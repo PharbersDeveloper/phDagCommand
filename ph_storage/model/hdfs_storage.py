@@ -51,7 +51,7 @@ class PhHdfsStorage:
                 file_name = item.split("/")[-1]
                 sub_path = "/".join(
                     [elem for elem in item.split("/")[1:-1] if elem.find(":") < 0])
-                upload_path = st.UPLOADPATH + sub_path + "/" + file_name
+                upload_path = (st.UPLOADPATH + "/" + sub_path + "/" + file_name).replace("//", "/")
                 download_path = st.createDownLoadPath(self.__local_storage, sub_path)
                 self.__down_load(item, download_path)
                 self.__s3_storage.upload(download_path + "/" + file_name, st.BUCKET, upload_path)

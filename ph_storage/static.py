@@ -10,7 +10,7 @@ BUCKET = "ph-platform"
 
 
 def createDownLoadPath(local_storage, path):
-    return local_storage.createDir(os.path.abspath('.') + "/" + path)
+    return local_storage.createDir((os.path.abspath('.') + "/" + path).replace("//", "/"))
 
 
 UPLOADPATH = CLI_VERSION + "/logs"
