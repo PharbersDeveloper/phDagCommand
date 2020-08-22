@@ -20,7 +20,7 @@ class PhHdfsStorage:
         根据传入路径，列出该目录下的所有
         return [string]
         """
-        cmd = "hdfs dfs -ls -R" + path + " | awk '{if($1!~/^d/&&!/inprogress/)print $8}'"
+        cmd = "hdfs dfs -ls -R " + path + " | awk '{if($1!~/^d/&&!/inprogress/)print $8}'"
         res = subprocess.Popen(cmd, shell=True,
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         paths = []
@@ -49,11 +49,13 @@ class PhHdfsStorage:
 
             for item in hdfs_path:
                 file_name = item.split("/")[-1]
-                upload_path = st.UPLOADPATH + "/".join(
-                    [elem for elem in item.split("/")[1:-1] if elem.find(":") < 0]) + "/" + file_name
-                self.__down_load(item, st.DOWNLOADPATH)
-                self.__s3_storage.upload(st.DOWNLOADPATH + "/" + file_name, st.BUCKET, upload_path)
-                self.__local_storage.remove(st.DOWNLOADPATH + "/" + file_name)
+                sub_path = "/".join(
+                    [elem for elem in item.split("/")[1:-1] if elem.find(":") < 0])
+                upload_path = st.UPLOADPATH + sub_path + "/" + file_name
+                download_path = st.createDownLoadPath(self.__local_storage, sub_path)
+                self.__down_load(item, download_path)
+                self.__s3_storage.upload(download_path + "/" + file_name, st.BUCKET, upload_path)
+                self.__local_storage.remove(download_path + "/" + file_name)
         except BaseException as e:
             print("Error: ", e)
             return False
