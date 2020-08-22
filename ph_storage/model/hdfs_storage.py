@@ -20,7 +20,7 @@ class PhHdfsStorage:
         根据传入路径，列出该目录下的所有
         return [string]
         """
-        cmd = "hdfs dfs -ls " + path + " | awk '!/inprogress/ {print $8}'"
+        cmd = "hdfs dfs -ls -R" + path + " | awk '{if($1!~/^d/&&!/inprogress/)print $8}'"
         res = subprocess.Popen(cmd, shell=True,
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         paths = []
