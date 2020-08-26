@@ -8,7 +8,7 @@ with io.open("./README.md", "r", encoding='utf-8') as fh:
 
 setuptools.setup(
     name="phcli",
-    version="0.2.11",
+    version="0.2.12",
     author="Alfred Yang",
     author_email="alfredyang@pharbers.com",
     maintainer="ClockQ,AlexQian",
@@ -22,6 +22,14 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=2.7',
+    install_requires=[
+        "click",
+        "boto3",
+        "pyyaml",
+        "pandas",
+        "xlrd",
+        "pypinyin",
+    ],
 
     package_data={
         '': ['template/*.yaml', 'template/*.tmp'],

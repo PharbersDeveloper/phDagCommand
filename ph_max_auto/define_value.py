@@ -13,7 +13,7 @@ DAGS_S3_PHJOBS_PATH = 'airflow/dags/phjobs/'
 ENV_WORKSPACE_KEY = 'PH_WORKSPACE'
 ENV_WORKSPACE_DEFAULT = '.'
 ENV_CUR_PROJ_KEY = 'PH_CUR_PROJ'
-ENV_CUR_PROJ_DEFAULT = 'BP_Max_AutoJob'
+ENV_CUR_PROJ_DEFAULT = '.'
 
 TEMPLATE_PHJOB_FILE = "/template/python/phcli/maxauto/phjob.tmp"
 TEMPLATE_PHCONF_FILE = "/template/python/phcli/maxauto/phconf.yaml"
