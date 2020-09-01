@@ -211,6 +211,9 @@ class PhContextFacade(object):
                     phs3.upload(self.dag_path + key + "/phjob.py",
                                 dv.DAGS_S3_BUCKET,
                                 dv.DAGS_S3_PHJOBS_PATH + key + "/phjob.py")
+                    phs3.upload(self.dag_path + key + "/phconf.yaml",
+                                dv.DAGS_S3_BUCKET,
+                                dv.DAGS_S3_PHJOBS_PATH + key + "/phconf.yaml")
                     phs3.upload(self.dag_path + key + "/args.properties",
                                 dv.DAGS_S3_BUCKET,
                                 dv.DAGS_S3_PHJOBS_PATH + key + "/args.properties")

@@ -1,0 +1,38 @@
+import os
+import subprocess
+from datetime import timedelta
+from airflow.utils.dates import days_ago
+from airflow.models import DAG, Variable
+from airflow.operators.bash_operator import BashOperator
+
+args = {
+    "owner": "$alfred_dag_owner",
+    "start_date": days_ago($alfred_start_date),
+    "email": $alfred_email,
+    "email_on_failure": $alfred_email_on_failure,
+    "email_on_retry": $alfred_email_on_retry,
+    "retries": $alfred_retries,
+    "retry_delay": timedelta($alfred_retry_delay),
+}
+
+dag = DAG(
+    dag_id="$alfred_dag_id", default_args=args,
+    schedule_interval=$alfred_schedule_interval,
+    description="$alfred_description",
+    dagrun_timeout=timedelta(minutes=$alfred_dag_timeout))
+
+var_key_lst = (subprocess.check_output("airflow variables", shell=True)).decode('utf-8').split('\n')
+var_key_lst = [key for key in var_key_lst if key.upper().startswith(dag.dag_id.upper())]
+dag_params = [(key, Variable.get(key)) for key in var_key_lst]
+common_task_params = []
+spec_task_params = {}
+for k, v in dag_params:
+    k_lst = k.split('__')
+    if len(k_lst) == 3:
+        common_task_params.append(('__'.join(k_lst[1:]), v))
+    if len(k_lst) == 4:
+        spec_params = spec_task_params.get(k_lst[1], [])
+        spec_params.append(('__'.join(k_lst[2:]), v))
+        spec_task_params[k_lst[1].lower()] = spec_params
+
+

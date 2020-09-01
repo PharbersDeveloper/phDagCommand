@@ -1,0 +1,18 @@
+
+############## == $alfred_name == ###################
+$alfred_name_cmd = """
+echo "192.168.1.28    spark.master" >> /etc/hosts
+pip install 'phcli==0.2.2'
+phcli maxauto --cmd submit --path $alfred_name --context "{{ params }}" "{{ dag_run.conf }}"
+"""
+
+$alfred_name = BashOperator(
+                    task_id="$alfred_name",
+                    bash_command=$alfred_name_cmd,
+                    dag=dag,
+                    params=dict(common_task_params +
+                                spec_task_params.get("$alfred_name".lower(), []))
+               )
+############## == $alfred_name == ###################
+
+
