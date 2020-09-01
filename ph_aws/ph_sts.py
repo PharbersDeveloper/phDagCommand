@@ -34,6 +34,7 @@ class PhSts(PhAWS):
             phlogger.warn(err)
             self.credentials = {}
         else:
+            phlogger.info('Assume Role Arn: ' + assumed_role_object['AssumedRoleUser']['Arn'])
             self.credentials = assumed_role_object['Credentials']
 
         return self
