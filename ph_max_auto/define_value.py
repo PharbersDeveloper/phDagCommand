@@ -18,7 +18,7 @@ ENV_CUR_PROJ_DEFAULT = '.'
 TEMPLATE_PHJOB_FILE = "/template/python/phcli/maxauto/phjob.tmp"
 TEMPLATE_PHCONF_FILE = "/template/python/phcli/maxauto/phconf-20200826.yaml"
 TEMPLATE_PHMAIN_FILE = "/template/python/phcli/maxauto/phmain.tmp"
-TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20200820.yaml"
+TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag.yaml"
 TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20200820.tmp"
-TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20200820.tmp"
+TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20200901.tmp"
 
