@@ -20,5 +20,5 @@ TEMPLATE_PHCONF_FILE = "/template/python/phcli/maxauto/phconf-20200909.yaml"
 TEMPLATE_PHMAIN_FILE = "/template/python/phcli/maxauto/phmain.tmp"
 TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag.yaml"
 TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20200820.tmp"
-TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20200909.tmp"
+TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20200911.tmp"
 
