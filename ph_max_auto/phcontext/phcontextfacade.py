@@ -381,13 +381,12 @@ class PhContextFacade(object):
         cmd_arr += [submit_prefix + "phmain.py"]
 
         cur_key = ""
-        for it in args:
+        for it in [arg for arg in args if arg]:
             if it[0:2] == "--":
                 cur_key = it[2:]
             else:
                 if cur_key in self.args.keys():
                     it = self.args[cur_key]
-
             if it != "":
                 cmd_arr.append(it)
 
