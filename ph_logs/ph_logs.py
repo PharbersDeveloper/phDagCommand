@@ -14,6 +14,7 @@ class PhLogs(object):
     def __init__(self):
         self.logger = logging.getLogger("ph-log")
         self.logger.setLevel(level=logging.INFO)
+        self.logger.setLevel(level=logging.ERROR)
         handler = logging.StreamHandler(stream=sys.stdout)
         formatter = logging.Formatter("{ 'Time': %(asctime)s, 'Message': %(message)s, 'File': %(filename)s, 'Func': "
                                       "%(funcName)s, 'Line': %(lineno)s, 'Level': %(levelname)s } ")

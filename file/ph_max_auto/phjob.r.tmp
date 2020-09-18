@@ -1,0 +1,11 @@
+# alfredyang@pharbers.com.
+#
+# This is job template for Pharbers Max Job
+
+Sys.setenv(SPARK_HOME="/usr/local/spark")
+Sys.setenv(YARN_CONF_DIR="/usr/local/hadoop/etc/hadoop/")
+
+credentials <- readLines("~/.aws/credentials")
+access_key <- gsub("^\\s+|\\s+$", "", strsplit(credentials[2], "=")[[1]][2])
+secret_key <- gsub("^\\s+|\\s+$", "", strsplit(credentials[3], "=")[[1]][2])
+

@@ -35,7 +35,8 @@ class PhContextFacade(object):
             args: the args that you want to submit
     """
 
-    def __init__(self, cmd, path, context='{}', args='{}'):
+    def __init__(self, runtime, cmd, path, context='{}', args='{}'):
+        self.runtime = runtime.lower()
         self.cmd = cmd
         self.path = path
         self.context = self.ast_parse(context)
@@ -136,62 +137,37 @@ class PhContextFacade(object):
                 phlogger.info(ast_dict)
         return ast_dict
 
+    def get_runtime_inst(self, runtime):
+        from ph_max_auto.ph_runtime import ph_python3
+        from ph_max_auto.ph_runtime import ph_r
+
+        table = {
+            "python3": ph_python3,
+            "r": ph_r,
+        }
+        return table[runtime]
+
     def command_create_exec(self):
+        rc_map = {
+            "python3": "phmain.py",
+            "r": "phmain.R"
+        }
+
         phlogger.info("command create")
         subprocess.call(["mkdir", "-p", self.path])
-        subprocess.call(["touch", self.path + "/__init__.py"])
 
-        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE, self.path + "/phjob.py")
-        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE, self.path + "/phconf.yaml")
-
-        config = PhYAMLConfig(self.path)
-        config.load_yaml()
-
-        with open(self.path + "/phjob.py", "a") as file:
-            file.write("def execute(")
-            for arg_index in range(len(config.spec.containers.args)):
-                arg = config.spec.containers.args[arg_index]
-                if arg_index == len(config.spec.containers.args) - 1:
-                    file.write(arg.key)
-                else:
-                    file.write(arg.key + ", ")
-            file.write("):\n")
-            file.write('\t"""\n')
-            file.write('\t\tplease input your code below\n')
-            file.write('\t"""\n')
-
-        with open(self.path + "/phmain.py", "w") as file:
-            f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHMAIN_FILE)
-
-            s = []
-            for arg in config.spec.containers.args:
-                s.append(arg.key)
-
+        f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
+        with open(self.path + "/phconf.yaml", "a") as file:
             for line in f_lines:
                 line = line + "\n"
-                if line == "$alfred_debug_execute\n":
-                    file.write("@click.command()\n")
-                    for arg in config.spec.containers.args:
-                        file.write("@click.option('--" + arg.key + "')\n")
-                    # e.write("def debug_execute():\n")
-                    file.write("def debug_execute(")
-                    for arg_index in range(len(config.spec.containers.args)):
-                        arg = config.spec.containers.args[arg_index]
-                        if arg_index == len(config.spec.containers.args) - 1:
-                            file.write(arg.key)
-                        else:
-                            file.write(arg.key + ", ")
-                    file.write("):\n")
-                    file.write("\texecute(")
-                    for arg_index in range(len(config.spec.containers.args)):
-                        arg = config.spec.containers.args[arg_index]
-                        if arg_index == len(config.spec.containers.args) - 1:
-                            file.write(arg.key)
-                        else:
-                            file.write(arg.key + ", ")
-                    file.write(")\n")
-                else:
-                    file.write(line)
+                line = line.replace("$runtime", self.runtime).replace("$code", rc_map[self.runtime])
+                file.write(line)
+
+        runtime_inst = self.get_runtime_inst(self.runtime)
+        runtime_inst.create(
+            path=self.path,
+            phs3=phs3,
+        )
 
     def command_combine_exec(self):
         phlogger.info("command combine")
