@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import subprocess
+import os
 
 from ph_max_auto import define_value as dv
 from ph_max_auto.phconfig.phconfig import PhYAMLConfig
@@ -38,3 +38,21 @@ def create(path, phs3):
             if "$options_args" in line:
                 line = line.replace("$options_args", ',\n\t'.join(options_args))
             file.write(line)
+
+
+def publish(dag_path, phs3):
+    for _, dirs, _ in os.walk(dag_path):
+        for key in dirs:
+            if not key.startswith("."):
+                phs3.upload(dag_path + key + "/phmain.R",
+                            dv.DAGS_S3_BUCKET,
+                            dv.DAGS_S3_PHJOBS_PATH + key + "/phmain.R")
+                phs3.upload(dag_path + key + "/phjob.R",
+                            dv.DAGS_S3_BUCKET,
+                            dv.DAGS_S3_PHJOBS_PATH + key + "/phjob.R")
+                phs3.upload(dag_path + key + "/phconf.yaml",
+                            dv.DAGS_S3_BUCKET,
+                            dv.DAGS_S3_PHJOBS_PATH + key + "/phconf.yaml")
+                phs3.upload(dag_path + key + "/args.properties",
+                            dv.DAGS_S3_BUCKET,
+                            dv.DAGS_S3_PHJOBS_PATH + key + "/args.properties")

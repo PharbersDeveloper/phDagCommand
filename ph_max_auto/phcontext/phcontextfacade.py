@@ -82,8 +82,8 @@ class PhContextFacade(object):
     def get_destination_path(self):
         self.job_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         self.combine_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.combine_prefix + "/" + self.name
-        self.dag_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.dag_prefix + "/"
-        self.upload_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.upload_prefix + "/"
+        self.dag_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.dag_prefix + "/" + self.name + "/"
+        self.upload_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.upload_prefix + "/" + self.name + "/"
         if self.cmd == "create":
             return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         elif self.cmd == "combine":
@@ -148,13 +148,13 @@ class PhContextFacade(object):
         return table[runtime]
 
     def command_create_exec(self):
+        phlogger.info("command create")
+        subprocess.call(["mkdir", "-p", self.path])
+
         rc_map = {
             "python3": "phmain.py",
             "r": "phmain.R"
         }
-
-        phlogger.info("command create")
-        subprocess.call(["mkdir", "-p", self.path])
 
         f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
         with open(self.path + "/phconf.yaml", "a") as file:
@@ -173,26 +173,22 @@ class PhContextFacade(object):
         phlogger.info("command combine")
         subprocess.call(["mkdir", "-p", self.path])
 
-        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHDAG_FILE, self.path + "/phdag.yaml")
+        f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHDAG_FILE)
+        with open(self.path + "/phdag.yaml", "w") as file:
+            for line in f_lines:
+                line = line + "\n"
+                if "$runtime" in line:
+                    line = line.replace("$runtime", self.runtime)
+                file.write(line)
 
     def command_publish_exec(self):
         phlogger.info("command publish")
 
-        for _, dirs, _ in os.walk(self.dag_path):
-            for key in dirs:
-                if (not key.startswith(".")) and (not key.startswith("__pycache__")):
-                    phs3.upload(self.dag_path + key + "/phmain.py",
-                                dv.DAGS_S3_BUCKET,
-                                dv.DAGS_S3_PHJOBS_PATH + key + "/phmain.py")
-                    phs3.upload(self.dag_path + key + "/phjob.py",
-                                dv.DAGS_S3_BUCKET,
-                                dv.DAGS_S3_PHJOBS_PATH + key + "/phjob.py")
-                    phs3.upload(self.dag_path + key + "/phconf.yaml",
-                                dv.DAGS_S3_BUCKET,
-                                dv.DAGS_S3_PHJOBS_PATH + key + "/phconf.yaml")
-                    phs3.upload(self.dag_path + key + "/args.properties",
-                                dv.DAGS_S3_BUCKET,
-                                dv.DAGS_S3_PHJOBS_PATH + key + "/args.properties")
+        runtime_inst = self.get_runtime_inst(self.runtime)
+        runtime_inst.publish(
+            dag_path=self.dag_path,
+            phs3=phs3,
+        )
 
         for key in os.listdir(self.dag_path):
             if os.path.isfile(self.dag_path + key):
@@ -201,11 +197,19 @@ class PhContextFacade(object):
     def command_run_exec(self):
         phlogger.info("run")
 
+        rb_map = {  # run -> bin
+            "bash": "/bin/bash",
+            "python2": "python2",
+            "python3": "python3",
+            "r": "Rscript",
+        }
+
         config = PhYAMLConfig(self.job_path)
         config.load_yaml()
 
         if config.spec.containers.repository == "local":
             entry_runtime = config.spec.containers.runtime
+            entry_runtime = rb_map[entry_runtime]
             entry_point = config.spec.containers.code
             if "/" not in entry_point:
                 entry_point = self.path + "/" + entry_point

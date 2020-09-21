@@ -7,17 +7,18 @@ options <- list(
 )
 
 find_arg <- function(args, key){
-    index <- which(args == key)
+    index <- which(startsWith(args, key))
     if(length(index) == 0){
         stop(paste("缺失必要参数！", key, sep=""))
     }
-    return(args[[min(index)+1]])
+    value <- strsplit(args[[min(index)]], "=")[[1]][2]
+    return(value)
 }
 
 (main <- function(){
     args <- commandArgs(trailingOnly=TRUE)
 
-    if(length(args) < 2 * length(options))
+    if(length(args) < length(options))
         stop("缺失必要参数！")
 
     options <- lapply(options, function(row){
@@ -27,6 +28,9 @@ find_arg <- function(args, key){
     })
     args <- lapply(options, function(row) row[["value"]])
 
-    source("phjob.R")
+    initial.options <- commandArgs(trailingOnly = FALSE)
+    script.basename <- dirname(sub("--file=", "", initial.options[grep("--file=", initial.options)]))
+    other.name <- file.path(script.basename, "phjob.R")
+    source(other.name)
     do.call(execute, args)
 })();
