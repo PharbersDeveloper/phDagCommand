@@ -5,7 +5,34 @@
 Sys.setenv(SPARK_HOME="/usr/local/spark")
 Sys.setenv(YARN_CONF_DIR="/usr/local/hadoop/etc/hadoop/")
 
-credentials <- readLines("~/.aws/credentials")
-access_key <- gsub("^\\s+|\\s+$", "", strsplit(credentials[2], "=")[[1]][2])
-secret_key <- gsub("^\\s+|\\s+$", "", strsplit(credentials[3], "=")[[1]][2])
+if(file.exists("~/.aws/credentials")){
+    credentials <- readLines("~/.aws/credentials")
+    access_key <- gsub("^\\s+|\\s+$", "", strsplit(credentials[2], "=")[[1]][2])
+    secret_key <- gsub("^\\s+|\\s+$", "", strsplit(credentials[3], "=")[[1]][2])
+    aws_list <- list(
+        spark.hadoop.fs.s3a.access.key = access_key,
+        spark.hadoop.fs.s3a.secret.key = secret_key,
+        spark.hadoop.fs.s3a.impl = "org.apache.hadoop.fs.s3a.S3AFileSystem",
+        spark.hadoop.com.amazonaws.services.s3.enableV4 = "TRUE",
+        spark.hadoop.fs.s3a.endpoint = "s3.cn-northwest-1.amazonaws.com.cn"
+    )
+}else{
+    aws_list <- list()
+}
 
+library(SparkR, lib.loc = c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib")))
+ss <- sparkR.session(master = "yarn",
+                     appName = "SparkR",
+                     spark.submit.deployMode="client",
+                     sparkHome = Sys.getenv("SPARK_HOME"),
+                     sparkConfig = append(
+                        list(
+                            spark.driver.memory = "1g",
+                            spark.executor.memory = "2g",
+                            spark.executor.cores = "4",
+                            spark.executor.instances = "1"
+                        ), aws_list
+                     ),
+                     sparkJars = c("/usr/local/spark/jars/hadoop-aws-2.9.2.jar"),
+                     enableHiveSupport=FALSE
+)

@@ -80,3 +80,25 @@ def publish(dag_path, phs3):
                 phs3.upload(dag_path + key + "/args.properties",
                             dv.DAGS_S3_BUCKET,
                             dv.DAGS_S3_PHJOBS_PATH + key + "/args.properties")
+
+
+def submit_conf(path, phs3, runtime):
+    return {
+        "spark.pyspark.python": "/usr/bin/"+runtime,
+        "jars": "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,"
+                "s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,"
+                "s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,"
+                "s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
+    }
+
+
+def submit_file(submit_prefix):
+    return {
+        "py-files": "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/click.zip," +
+                    "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/phcli.zip," +
+                    submit_prefix + "phjob.py",
+    }
+
+
+def submit_main(submit_prefix):
+    return submit_prefix + "phmain.py"

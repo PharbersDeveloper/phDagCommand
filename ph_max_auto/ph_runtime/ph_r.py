@@ -56,3 +56,18 @@ def publish(dag_path, phs3):
                 phs3.upload(dag_path + key + "/args.properties",
                             dv.DAGS_S3_BUCKET,
                             dv.DAGS_S3_PHJOBS_PATH + key + "/args.properties")
+
+
+def submit_conf(path, phs3, runtime):
+    return {}
+
+
+def submit_file(submit_prefix):
+    return {
+        "files": submit_prefix + "phjob.R",
+    }
+
+
+def submit_main(submit_prefix):
+    return submit_prefix + "phmain.R"
+

@@ -142,6 +142,8 @@ class PhContextFacade(object):
         from ph_max_auto.ph_runtime import ph_r
 
         table = {
+            "python": ph_python3,
+            "python2": ph_python3,
             "python3": ph_python3,
             "r": ph_r,
         }
@@ -184,7 +186,11 @@ class PhContextFacade(object):
     def command_publish_exec(self):
         phlogger.info("command publish")
 
-        runtime_inst = self.get_runtime_inst(self.runtime)
+        config = PhYAMLConfig(self.path)
+        config.load_yaml()
+        runtime = config.spec.containers.runtime
+
+        runtime_inst = self.get_runtime_inst(runtime)
         runtime_inst.publish(
             dag_path=self.dag_path,
             phs3=phs3,
@@ -290,6 +296,7 @@ class PhContextFacade(object):
                         .replace("$alfred_job_path", str(self.job_path[0:self.job_path.rindex("/") + 1]))
                         .replace("$alfred_dag_owner", str(config.spec.owner)) \
                         .replace("$alfred_name", str(jt.name))
+                        .replace("$runtime", str(jt.command))
                 )
             subprocess.call(["cp", "-r",
                              self.job_path[0:self.job_path.rindex("/") + 1] + jt.name,
@@ -311,7 +318,7 @@ class PhContextFacade(object):
         config = PhYAMLConfig(self.path)
         config.load_yaml(stream)
         runtime = config.spec.containers.runtime
-
+        runtime_inst = self.get_runtime_inst(runtime)
         submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + self.path + "/"
         args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PHJOBS_PATH + self.path + "/args.properties")
 
@@ -332,7 +339,6 @@ class PhContextFacade(object):
             "spark.driver.cores": "1",
             "spark.executor.memory": "2g",
             "spark.executor.cores": "1",
-            "spark.pyspark.python": "/usr/bin/"+runtime,
             "spark.driver.extraJavaOptions": "-Dcom.amazonaws.services.s3.enableV4",
             "spark.executor.extraJavaOptions": "-Dcom.amazonaws.services.s3.enableV4",
             "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem",
@@ -340,25 +346,23 @@ class PhContextFacade(object):
             "spark.hadoop.fs.s3a.secret.key": secret_key,
             "spark.hadoop.fs.s3a.endpoint": "s3.cn-northwest-1.amazonaws.com.cn"
         }
+        conf_map.update(runtime_inst.submit_conf(self.path, phs3, runtime))
         conf_map.update(dict([(k.lstrip("CONF__"), v) for k, v in self.context.items() if k.startswith('CONF__')]))
         conf_map = [('--conf', k + '=' + v) for k, v in conf_map.items()]
         cmd_arr += [j for i in conf_map for j in i]
 
         other_map = {
             "num-executors": "2",
-            "jars": "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,"
-                    "s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,"
-                    "s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,"
-                    "s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
-            "py-files": "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/click.zip," +
-                        "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/phcli.zip," +
-                        submit_prefix + "phjob.py",
         }
         other_map.update(dict([(k.lstrip("OTHER__"), v) for k, v in self.context.items() if k.startswith('OTHER__')]))
         other_map = [('--'+k, v) for k, v in other_map.items()]
         cmd_arr += [j for i in other_map for j in i]
 
-        cmd_arr += [submit_prefix + "phmain.py"]
+        file_map = runtime_inst.submit_file(submit_prefix)
+        file_map = [('--'+k, v) for k, v in file_map.items()]
+        cmd_arr += [j for i in file_map for j in i]
+
+        cmd_arr += [runtime_inst.submit_main(submit_prefix)]
 
         cur_key = ""
         for it in [arg for arg in args if arg]:
