@@ -21,18 +21,36 @@ if(file.exists("~/.aws/credentials")){
 }
 
 library(SparkR, lib.loc = c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib")))
-ss <- sparkR.session(master = "yarn",
-                     appName = "SparkR",
-                     spark.submit.deployMode="client",
-                     sparkHome = Sys.getenv("SPARK_HOME"),
-                     sparkConfig = append(
-                        list(
-                            spark.driver.memory = "1g",
-                            spark.executor.memory = "2g",
-                            spark.executor.cores = "4",
-                            spark.executor.instances = "1"
-                        ), aws_list
-                     ),
-                     sparkJars = c("/usr/local/spark/jars/hadoop-aws-2.9.2.jar"),
-                     enableHiveSupport=FALSE
-)
+if(file.exists("~/.aws/credentials")){
+    ss <- sparkR.session(master = "yarn",
+                         appName = "SparkR",
+                         spark.submit.deployMode="client",
+                         sparkHome = Sys.getenv("SPARK_HOME"),
+                         sparkConfig = append(
+                            list(
+                                spark.driver.memory = "1g",
+                                spark.executor.memory = "2g",
+                                spark.executor.cores = "4",
+                                spark.executor.instances = "1"
+                            ), aws_list
+                         ),
+                         sparkJars = c("/usr/local/spark/jars/hadoop-aws-2.9.2.jar"),
+                         enableHiveSupport=FALSE
+    )
+}else{
+    ss <- sparkR.session(master = "yarn",
+                         appName = "SparkR",
+                         spark.submit.deployMode="cluster",
+                         sparkHome = Sys.getenv("SPARK_HOME"),
+                         sparkConfig = append(
+                            list(
+                                spark.driver.memory = "1g",
+                                spark.executor.memory = "2g",
+                                spark.executor.cores = "4",
+                                spark.executor.instances = "1"
+                            ), aws_list
+                         ),
+                         sparkJars = c("/usr/local/spark/jars/hadoop-aws-2.9.2.jar"),
+                         enableHiveSupport=FALSE
+    )
+}

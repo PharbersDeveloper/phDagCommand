@@ -11,7 +11,12 @@ find_arg <- function(args, key){
     if(length(index) == 0){
         stop(paste("缺失必要参数！", key, sep=""))
     }
-    value <- strsplit(args[[min(index)]], "=")[[1]][2]
+
+    if(grepl("=", args[[min(index)]])){
+        value <- strsplit(args[[min(index)]], "=")[[1]][2]
+    }else{
+        value <- args[[min(index)+1]]
+    }
     return(value)
 }
 
