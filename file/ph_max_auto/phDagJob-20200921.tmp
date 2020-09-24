@@ -2,8 +2,8 @@
 ############## == $alfred_name == ###################
 $alfred_name_cmd = """
 echo "192.168.1.28    spark.master" >> /etc/hosts
-pip3 install 'phcli==0.3.5'
-phcli maxauto --runtime $runtime --cmd submit --path $alfred_name --context "{{ params }}" "{{ dag_run.conf }}"
+pip3 install 'phcli==0.3.6'
+phcli maxauto --runtime $runtime --cmd submit --namespace $alfred_namespace --path $alfred_name --context "{{ params }}" "{{ dag_run.conf }}"
 """
 
 $alfred_name = BashOperator(

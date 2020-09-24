@@ -40,24 +40,6 @@ def create(path, phs3):
             file.write(line)
 
 
-def publish(dag_path, phs3):
-    for _, dirs, _ in os.walk(dag_path):
-        for key in dirs:
-            if not key.startswith("."):
-                phs3.upload(dag_path + key + "/phmain.R",
-                            dv.DAGS_S3_BUCKET,
-                            dv.DAGS_S3_PHJOBS_PATH + key + "/phmain.R")
-                phs3.upload(dag_path + key + "/phjob.R",
-                            dv.DAGS_S3_BUCKET,
-                            dv.DAGS_S3_PHJOBS_PATH + key + "/phjob.R")
-                phs3.upload(dag_path + key + "/phconf.yaml",
-                            dv.DAGS_S3_BUCKET,
-                            dv.DAGS_S3_PHJOBS_PATH + key + "/phconf.yaml")
-                phs3.upload(dag_path + key + "/args.properties",
-                            dv.DAGS_S3_BUCKET,
-                            dv.DAGS_S3_PHJOBS_PATH + key + "/args.properties")
-
-
 def submit_conf(path, phs3, runtime):
     return {}
 

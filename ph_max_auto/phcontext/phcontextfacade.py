@@ -35,10 +35,11 @@ class PhContextFacade(object):
             args: the args that you want to submit
     """
 
-    def __init__(self, runtime, cmd, path, context='{}', args='{}'):
+    def __init__(self, runtime, cmd, path, namespace, context='{}', args='{}'):
         self.runtime = runtime.lower()
         self.cmd = cmd
         self.path = path
+        self.namespace = namespace
         self.context = self.ast_parse(context)
         self.args = self.ast_parse(args)
         self.job_path = path
@@ -186,19 +187,19 @@ class PhContextFacade(object):
     def command_publish_exec(self):
         phlogger.info("command publish")
 
-        config = PhYAMLConfig(self.path)
-        config.load_yaml()
-        runtime = config.spec.containers.runtime
-
-        runtime_inst = self.get_runtime_inst(runtime)
-        runtime_inst.publish(
-            dag_path=self.dag_path,
-            phs3=phs3,
-        )
-
         for key in os.listdir(self.dag_path):
             if os.path.isfile(self.dag_path + key):
-                phs3.upload(self.dag_path + key, dv.DAGS_S3_BUCKET, dv.DAGS_S3_PREV_PATH + key)
+                phs3.upload(
+                    file=self.dag_path+key,
+                    bucket_name=dv.DAGS_S3_BUCKET,
+                    object_name=dv.DAGS_S3_PREV_PATH + key
+                )
+            else:
+                phs3.upload_dir(
+                    dir=self.dag_path+key,
+                    bucket_name=dv.DAGS_S3_BUCKET,
+                    s3_dir=dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
+                )
 
     def command_run_exec(self):
         phlogger.info("run")
@@ -293,9 +294,10 @@ class PhContextFacade(object):
                 line = line + "\n"
                 w.write(
                     line.replace("$alfred_command", str(jt.command)) \
-                        .replace("$alfred_job_path", str(self.job_path[0:self.job_path.rindex("/") + 1]))
+                        .replace("$alfred_job_path", str(self.job_path[0:self.job_path.rindex("/") + 1])) \
                         .replace("$alfred_dag_owner", str(config.spec.owner)) \
-                        .replace("$alfred_name", str(jt.name))
+                        .replace("$alfred_namespace", str(self.name)) \
+                        .replace("$alfred_name", str(jt.name)) \
                         .replace("$runtime", str(jt.command))
                 )
             subprocess.call(["cp", "-r",
@@ -314,13 +316,15 @@ class PhContextFacade(object):
         phlogger.info("submit command with context " + str(self.context))
         phlogger.info("submit command with args " + str(self.args))
 
-        stream = phs3.open_object(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PHJOBS_PATH + self.path + "/phconf.yaml")
+        self.namespace = self.namespace + "/" if self.namespace else self.namespace
+        job_path = dv.DAGS_S3_PHJOBS_PATH + self.namespace + self.path
+        stream = phs3.open_object(dv.DAGS_S3_BUCKET, job_path + "/phconf.yaml")
         config = PhYAMLConfig(self.path)
         config.load_yaml(stream)
         runtime = config.spec.containers.runtime
         runtime_inst = self.get_runtime_inst(runtime)
-        submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + self.path + "/"
-        args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PHJOBS_PATH + self.path + "/args.properties")
+        submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + job_path + "/"
+        args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, job_path + "/args.properties")
 
         access_key = os.getenv("AWS_ACCESS_KEY_ID", 'NULL_AWS_ACCESS_KEY_ID')
         secret_key = os.getenv("AWS_SECRET_ACCESS_KEY", 'NULL_AWS_SECRET_ACCESS_KEY')

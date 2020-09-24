@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import sys
 import string
 import boto3
@@ -37,6 +38,23 @@ class PhS3(PhAWS):
             Key=object_name,
             Filename=file
         )
+
+    def upload_dir(self, dir, bucket_name, s3_dir):
+        """
+        上传本地目录到 S3
+        :param dir: 本地目录路径
+        :param bucket_name: S3 桶名字
+        :param s3_dir: S3 目录路径
+        :return:
+        """
+        dir = dir if dir.endswith("/") else dir+"/"
+        s3_dir = s3_dir if s3_dir.endswith("/") else s3_dir+"/"
+
+        for key in os.listdir(dir):
+            if os.path.isfile(dir+key):
+                self.upload(dir+key, bucket_name, s3_dir+key)
+            else:
+                self.upload_dir(dir+key, bucket_name, s3_dir+key)
 
     def open_object(self, bucket_name, object_name):
         """
