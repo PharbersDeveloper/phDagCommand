@@ -1,0 +1,41 @@
+# alfredyang@pharbers.com.
+#
+# This is job template for Pharbers Max Job
+
+options <- list(
+    $options_args
+)
+
+find_arg <- function(args, key){
+    index <- which(startsWith(args, key))
+    if(length(index) == 0){
+        stop(paste("缺失必要参数！", key, sep=""))
+    }
+
+    if(grepl("=", args[[min(index)]])){
+        value <- strsplit(args[[min(index)]], "=")[[1]][2]
+    }else{
+        value <- args[[min(index)+1]]
+    }
+    return(value)
+}
+
+(main <- function(){
+    args <- commandArgs(trailingOnly=TRUE)
+
+    if(length(args) < length(options))
+        stop("缺失必要参数！")
+
+    options <- lapply(options, function(row){
+        row[["key"]] <- paste("--", row[["key"]], sep="")
+        row[["value"]] <- find_arg(args, row[["key"]])
+        row
+    })
+    args <- lapply(options, function(row) row[["value"]])
+
+    initial.options <- commandArgs(trailingOnly = FALSE)
+    script.basename <- dirname(sub("--file=", "", initial.options[grep("--file=", initial.options)]))
+    other.name <- file.path(script.basename, "phjob.R")
+    source(other.name)
+    do.call(execute, args)
+})();

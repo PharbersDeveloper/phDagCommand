@@ -1,0 +1,16 @@
+$SPARK_HOME/bin/spark-submit \
+--master yarn \
+--deploy-mode cluster \
+--name test_a \
+--conf spark.driver.memory=1g --conf spark.driver.cores=1 --conf spark.executor.memory=2g --conf spark.executor.cores=1 \
+--conf spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4 \
+--conf spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4 \
+--conf spark.hadoop.fs.s3a.impl="org.apache.hadoop.fs.s3a.S3AFileSystem" \
+--conf spark.hadoop.fs.s3a.access.key=$AWS_ACCESS_KEY_ID \
+--conf spark.hadoop.fs.s3a.secret.key=$AWS_SECRET_ACCESS_KEY \
+--conf spark.hadoop.fs.s3a.endpoint="s3.cn-northwest-1.amazonaws.com.cn" \
+--num-executors 2 \
+--files s3a://s3fs-ph-airflow/airflow/dags/phjobs/test_a/phjob.R \
+s3a://s3fs-ph-airflow/airflow/dags/phjobs/test_a/phmain.R \
+--a=111111 --b=222222
+

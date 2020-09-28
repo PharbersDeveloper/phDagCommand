@@ -20,7 +20,7 @@ spec:
   dag_tag: alfred_test_tag_please_change_it
   jobs:
     - name: test1
-      command: python
+      command: $runtime
     - name: test2
-      command: python
+      command: $runtime
   linkage: "test1 >> test2"
