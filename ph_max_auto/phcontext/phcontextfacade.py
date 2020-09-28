@@ -35,9 +35,11 @@ class PhContextFacade(object):
             args: the args that you want to submit
     """
 
-    def __init__(self, cmd, path, context='{}', args='{}'):
+    def __init__(self, runtime, cmd, path, namespace, context='{}', args='{}'):
+        self.runtime = runtime.lower()
         self.cmd = cmd
         self.path = path
+        self.namespace = namespace
         self.context = self.ast_parse(context)
         self.args = self.ast_parse(args)
         self.job_path = path
@@ -81,8 +83,8 @@ class PhContextFacade(object):
     def get_destination_path(self):
         self.job_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         self.combine_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.combine_prefix + "/" + self.name
-        self.dag_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.dag_prefix + "/"
-        self.upload_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.upload_prefix + "/"
+        self.dag_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.dag_prefix + "/" + self.name + "/"
+        self.upload_path = self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.upload_prefix + "/" + self.name + "/"
         if self.cmd == "create":
             return self.get_workspace_dir() + "/" + self.get_current_project_dir() + "/" + self.job_prefix + "/" + self.name
         elif self.cmd == "combine":
@@ -136,97 +138,85 @@ class PhContextFacade(object):
                 phlogger.info(ast_dict)
         return ast_dict
 
+    def get_runtime_inst(self, runtime):
+        from ph_max_auto.ph_runtime import ph_python3
+        from ph_max_auto.ph_runtime import ph_r
+
+        table = {
+            "python": ph_python3,
+            "python2": ph_python3,
+            "python3": ph_python3,
+            "r": ph_r,
+        }
+        return table[runtime]
+
     def command_create_exec(self):
         phlogger.info("command create")
         subprocess.call(["mkdir", "-p", self.path])
-        subprocess.call(["touch", self.path + "/__init__.py"])
 
-        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE, self.path + "/phjob.py")
-        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE, self.path + "/phconf.yaml")
+        rc_map = {
+            "python3": "phmain.py",
+            "r": "phmain.R"
+        }
 
-        config = PhYAMLConfig(self.path)
-        config.load_yaml()
-
-        with open(self.path + "/phjob.py", "a") as file:
-            file.write("def execute(")
-            for arg_index in range(len(config.spec.containers.args)):
-                arg = config.spec.containers.args[arg_index]
-                if arg_index == len(config.spec.containers.args) - 1:
-                    file.write(arg.key)
-                else:
-                    file.write(arg.key + ", ")
-            file.write("):\n")
-            file.write('\t"""\n')
-            file.write('\t\tplease input your code below\n')
-            file.write('\t"""\n')
-
-        with open(self.path + "/phmain.py", "w") as file:
-            f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHMAIN_FILE)
-
-            s = []
-            for arg in config.spec.containers.args:
-                s.append(arg.key)
-
+        f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
+        with open(self.path + "/phconf.yaml", "a") as file:
             for line in f_lines:
                 line = line + "\n"
-                if line == "$alfred_debug_execute\n":
-                    file.write("@click.command()\n")
-                    for arg in config.spec.containers.args:
-                        file.write("@click.option('--" + arg.key + "')\n")
-                    # e.write("def debug_execute():\n")
-                    file.write("def debug_execute(")
-                    for arg_index in range(len(config.spec.containers.args)):
-                        arg = config.spec.containers.args[arg_index]
-                        if arg_index == len(config.spec.containers.args) - 1:
-                            file.write(arg.key)
-                        else:
-                            file.write(arg.key + ", ")
-                    file.write("):\n")
-                    file.write("\texecute(")
-                    for arg_index in range(len(config.spec.containers.args)):
-                        arg = config.spec.containers.args[arg_index]
-                        if arg_index == len(config.spec.containers.args) - 1:
-                            file.write(arg.key)
-                        else:
-                            file.write(arg.key + ", ")
-                    file.write(")\n")
-                else:
-                    file.write(line)
+                line = line.replace("$runtime", self.runtime).replace("$code", rc_map[self.runtime])
+                file.write(line)
+
+        runtime_inst = self.get_runtime_inst(self.runtime)
+        runtime_inst.create(
+            path=self.path,
+            phs3=phs3,
+        )
 
     def command_combine_exec(self):
         phlogger.info("command combine")
         subprocess.call(["mkdir", "-p", self.path])
 
-        phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION+dv.TEMPLATE_PHDAG_FILE, self.path + "/phdag.yaml")
+        f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHDAG_FILE)
+        with open(self.path + "/phdag.yaml", "w") as file:
+            for line in f_lines:
+                line = line + "\n"
+                if "$runtime" in line:
+                    line = line.replace("$runtime", self.runtime)
+                file.write(line)
 
     def command_publish_exec(self):
         phlogger.info("command publish")
 
-        for _, dirs, _ in os.walk(self.dag_path):
-            for key in dirs:
-                if (not key.startswith(".")) and (not key.startswith("__pycache__")):
-                    phs3.upload(self.dag_path + key + "/phmain.py",
-                                dv.DAGS_S3_BUCKET,
-                                dv.DAGS_S3_PHJOBS_PATH + key + "/phmain.py")
-                    phs3.upload(self.dag_path + key + "/phjob.py",
-                                dv.DAGS_S3_BUCKET,
-                                dv.DAGS_S3_PHJOBS_PATH + key + "/phjob.py")
-                    phs3.upload(self.dag_path + key + "/args.properties",
-                                dv.DAGS_S3_BUCKET,
-                                dv.DAGS_S3_PHJOBS_PATH + key + "/args.properties")
-
         for key in os.listdir(self.dag_path):
             if os.path.isfile(self.dag_path + key):
-                phs3.upload(self.dag_path + key, dv.DAGS_S3_BUCKET, dv.DAGS_S3_PREV_PATH + key)
+                phs3.upload(
+                    file=self.dag_path+key,
+                    bucket_name=dv.DAGS_S3_BUCKET,
+                    object_name=dv.DAGS_S3_PREV_PATH + key
+                )
+            else:
+                phs3.upload_dir(
+                    dir=self.dag_path+key,
+                    bucket_name=dv.DAGS_S3_BUCKET,
+                    s3_dir=dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
+                )
 
     def command_run_exec(self):
         phlogger.info("run")
+
+        rb_map = {  # run -> bin
+            "bash": "/bin/bash",
+            "python2": "python2",
+            "python3": "python3",
+            "r": "Rscript",
+        }
 
         config = PhYAMLConfig(self.job_path)
         config.load_yaml()
 
         if config.spec.containers.repository == "local":
             entry_runtime = config.spec.containers.runtime
+            entry_runtime = rb_map[entry_runtime]
             entry_point = config.spec.containers.code
             if "/" not in entry_point:
                 entry_point = self.path + "/" + entry_point
@@ -304,9 +294,11 @@ class PhContextFacade(object):
                 line = line + "\n"
                 w.write(
                     line.replace("$alfred_command", str(jt.command)) \
-                        .replace("$alfred_job_path", str(self.job_path[0:self.job_path.rindex("/") + 1]))
+                        .replace("$alfred_job_path", str(self.job_path[0:self.job_path.rindex("/") + 1])) \
                         .replace("$alfred_dag_owner", str(config.spec.owner)) \
-                        .replace("$alfred_name", str(jt.name))
+                        .replace("$alfred_namespace", str(self.name)) \
+                        .replace("$alfred_name", str(jt.name)) \
+                        .replace("$runtime", str(jt.command))
                 )
             subprocess.call(["cp", "-r",
                              self.job_path[0:self.job_path.rindex("/") + 1] + jt.name,
@@ -324,13 +316,15 @@ class PhContextFacade(object):
         phlogger.info("submit command with context " + str(self.context))
         phlogger.info("submit command with args " + str(self.args))
 
-        stream = phs3.open_object(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PHJOBS_PATH + self.path + "/phconf.yaml")
+        self.namespace = self.namespace + "/" if self.namespace else self.namespace
+        job_path = dv.DAGS_S3_PHJOBS_PATH + self.namespace + self.path
+        stream = phs3.open_object(dv.DAGS_S3_BUCKET, job_path + "/phconf.yaml")
         config = PhYAMLConfig(self.path)
         config.load_yaml(stream)
         runtime = config.spec.containers.runtime
-
-        submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + self.path + "/"
-        args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PHJOBS_PATH + self.path + "/args.properties")
+        runtime_inst = self.get_runtime_inst(runtime)
+        submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + job_path + "/"
+        args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, job_path + "/args.properties")
 
         access_key = os.getenv("AWS_ACCESS_KEY_ID", 'NULL_AWS_ACCESS_KEY_ID')
         secret_key = os.getenv("AWS_SECRET_ACCESS_KEY", 'NULL_AWS_SECRET_ACCESS_KEY')
@@ -349,7 +343,6 @@ class PhContextFacade(object):
             "spark.driver.cores": "1",
             "spark.executor.memory": "2g",
             "spark.executor.cores": "1",
-            "spark.pyspark.python": "/usr/bin/"+runtime,
             "spark.driver.extraJavaOptions": "-Dcom.amazonaws.services.s3.enableV4",
             "spark.executor.extraJavaOptions": "-Dcom.amazonaws.services.s3.enableV4",
             "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem",
@@ -357,34 +350,31 @@ class PhContextFacade(object):
             "spark.hadoop.fs.s3a.secret.key": secret_key,
             "spark.hadoop.fs.s3a.endpoint": "s3.cn-northwest-1.amazonaws.com.cn"
         }
+        conf_map.update(runtime_inst.submit_conf(self.path, phs3, runtime))
         conf_map.update(dict([(k.lstrip("CONF__"), v) for k, v in self.context.items() if k.startswith('CONF__')]))
         conf_map = [('--conf', k + '=' + v) for k, v in conf_map.items()]
         cmd_arr += [j for i in conf_map for j in i]
 
         other_map = {
             "num-executors": "2",
-            "jars": "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,"
-                    "s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,"
-                    "s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,"
-                    "s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
-            "py-files": "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/click.zip," +
-                        "s3a://" + dv.DAGS_S3_BUCKET + "/" + dv.DAGS_S3_PHJOBS_PATH + "common/phcli.zip," +
-                        submit_prefix + "phjob.py",
         }
         other_map.update(dict([(k.lstrip("OTHER__"), v) for k, v in self.context.items() if k.startswith('OTHER__')]))
         other_map = [('--'+k, v) for k, v in other_map.items()]
         cmd_arr += [j for i in other_map for j in i]
 
-        cmd_arr += [submit_prefix + "phmain.py"]
+        file_map = runtime_inst.submit_file(submit_prefix)
+        file_map = [('--'+k, v) for k, v in file_map.items()]
+        cmd_arr += [j for i in file_map for j in i]
+
+        cmd_arr += [runtime_inst.submit_main(submit_prefix)]
 
         cur_key = ""
-        for it in args:
+        for it in [arg for arg in args if arg]:
             if it[0:2] == "--":
                 cur_key = it[2:]
             else:
                 if cur_key in self.args.keys():
                     it = self.args[cur_key]
-
             if it != "":
                 cmd_arr.append(it)
 
