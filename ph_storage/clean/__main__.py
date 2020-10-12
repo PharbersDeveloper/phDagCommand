@@ -6,9 +6,8 @@ import click
 from ph_storage.model.hdfs_storage import PhHdfsStorage
 from ph_storage.model.local_storage import PhLocalStorage
 from ph_storage.model.s3_storage import PhS3Storage
-import json
 
-@click.command("hdfsbackup", short_help='HDFS数据备份到S3')
+@click.command("hdfsclean", short_help='HDFS硬删除')
 @click.argument("paths")
 def main(paths):
     if paths is None or paths == "{}":
@@ -18,7 +17,7 @@ def main(paths):
         paths = paths.replace('[', '').replace(']', '').split(',')
 
     hdfs_ins = PhHdfsStorage(PhLocalStorage(), PhS3Storage())
-    hdfs_ins.back_up(paths)
+    hdfs_ins.clean_hdfs(paths)
 
 
 if __name__ == '__main__':
