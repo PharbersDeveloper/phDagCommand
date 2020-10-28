@@ -15,6 +15,8 @@ class NodejsRT(LambdaRuntime):
         """
 
         self._package_cmds = [
+            "rm -rf %s" % (data["lib_path"]),
+            "npm install --production",
             "mkdir -p %s/%s/node_modules" % (self._package_root, self.__runtime_name),
             "cp -r %s/* %s/%s/node_modules/" % (data["lib_path"], self._package_root, self.__runtime_name),
             "cd %s && zip -r -q ../package.zip . && cd -" % self._package_root,
