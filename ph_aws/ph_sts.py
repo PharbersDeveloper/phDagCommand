@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import os
 import boto3
 import botocore.exceptions
 
@@ -12,17 +12,16 @@ class PhSts(PhAWS):
         self.credentials = None
 
     def get_cred(self):
-        if not self.credentials:
-           return {}
-
-        return {
-            'aws_access_key_id': self.credentials['AccessKeyId'],
-            'aws_secret_access_key': self.credentials['SecretAccessKey'],
-            'aws_session_token': self.credentials['SessionToken'],
-        }
+        if self.credentials:
+            return {
+                'region_name': 'cn-northwest-1',
+                'aws_access_key_id': self.credentials['AccessKeyId'],
+                'aws_secret_access_key': self.credentials['SecretAccessKey'],
+                'aws_session_token': self.credentials['SessionToken'],
+            }
 
     def assume_role(self, role_arn, external_id):
-        sts_client = boto3.client('sts')
+        sts_client = boto3.client('sts', region_name='cn-northwest-1')
 
         try:
             assumed_role_object = sts_client.assume_role(

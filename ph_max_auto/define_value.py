@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-CLI_VERSION = "2020-08-10"
+CLI_VERSION = "2020-11-11"
 
 ASSUME_ROLE_ARN = 'YXJuOmF3cy1jbjppYW06OjQ0NDYwMzgwMzkwNDpyb2xlL1BoLUNsaS1NYXhBdXRv'
 ASSUME_ROLE_EXTERNAL_ID = 'Ph-Cli-MaxAuto'
@@ -15,10 +15,10 @@ ENV_WORKSPACE_DEFAULT = '.'
 ENV_CUR_PROJ_KEY = 'PH_CUR_PROJ'
 ENV_CUR_PROJ_DEFAULT = '.'
 
-TEMPLATE_PHCONF_FILE = "/template/python/phcli/maxauto/phconf-20200918.yaml"
-TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20200918.yaml"
-TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20200820.tmp"
-TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20200921.tmp"
+TEMPLATE_PHCONF_FILE = "/template/python/phcli/maxauto/phconf-20201110.yaml"
+TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20201110.yaml"
+TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20201110.tmp"
+TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20201110.tmp"
 
 
 TEMPLATE_PHJOB_FILE_PY = "/template/python/phcli/maxauto/phjob.tmp"

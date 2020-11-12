@@ -13,7 +13,7 @@ class PhS3(PhAWS):
     def __init__(self, *args, **kwargs):
         self.phsts = kwargs.get('phsts', None)
 
-        if self.phsts:
+        if self.phsts and self.phsts.credentials:
             self.s3_client = boto3.client('s3', **self.phsts.get_cred())
         else:
             self.s3_client = boto3.client('s3')
@@ -83,7 +83,7 @@ class PhS3(PhAWS):
         if sys.version_info > (3, 0):
             return str.split(object_str, "\n")
         else:
-            return filter(lambda x: x != "", string.split(object_str, "\n"))
+            return string.split(object_str, "\n")
 
     def download(self, bucket_name, object_name, file):
         """

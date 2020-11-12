@@ -1,0 +1,22 @@
+############## == $alfred_name == ###################
+def $alfred_name_cmd(**context):
+    conf = context["dag_run"].conf
+    ti = context['task_instance']
+
+    params=dict(var_key_lst.get("common", {}).items() + var_key_lst.get("$alfred_name", {}).items())
+
+    subprocess.call('echo "192.168.1.28    spark.master" >> /etc/hosts', shell=True)
+    subprocess.call("pip install 'phcli==0.3.6'", shell=True)
+    subprocess.check_output('phcli maxauto --runtime $runtime --cmd submit --group $alfred_jobs_dir --path $alfred_name --context "{}" "{}"'.format(str(params), str(conf)), shell=True)
+
+    # runId = ti.xcom_pull(task_ids='generate_id', key='run_id').decode("UTF-8")
+    # ti.xcom_push(key="run_id", value=runId)
+
+$alfred_name = PythonOperator(
+    task_id='$alfred_name',
+    provide_context=True,
+    python_callable=$alfred_name_cmd,
+    dag=dag
+)
+############## == $alfred_name == ###################
+
