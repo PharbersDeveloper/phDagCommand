@@ -22,6 +22,7 @@ class PhLogs(object):
     """
 
     def __init__(self, *args, **kwargs):
+        self._log_path = ''
         self.logger = logging.getLogger("ph-log")
         self.logger.setLevel(level=LOG_LEVEL)
         formatter = logging.Formatter("{ 'Time': %(asctime)s, 'Message': %(message)s, 'File': %(filename)s, 'Func': "
@@ -29,11 +30,11 @@ class PhLogs(object):
 
         sys_handler = logging.StreamHandler(stream=sys.stdout)
         sys_handler.setFormatter(formatter)
+        for handler in self.logger.handlers:
+            self.logger.removeHandler(handler)
         self.logger.addHandler(sys_handler)
 
-        if 'job_id' not in kwargs.keys() or not kwargs['job_id']:
-            self._log_path = LOG_PATH.format(CLI_VERSION, 'null_id_' + str(time.time()) + '.log')
-        else:
+        if 'job_id' in kwargs.keys() and kwargs['job_id']:
             self._log_path = LOG_PATH.format(CLI_VERSION, kwargs['job_id'] + '.log')
 
         def write_s3_logs(body, bucket, key):
@@ -44,12 +45,10 @@ class PhLogs(object):
             phs3 = PhS3(phsts=phsts)
             phs3.s3_client.put_object(Body=body.getvalue(), Bucket=bucket, Key=key)
 
-        if 'storage' in kwargs.keys() and kwargs['storage'] == 's3':
+        if self._log_path and 'storage' in kwargs.keys() and kwargs['storage'] == 's3':
             log_stream = io.StringIO()
             io_handler = logging.StreamHandler(log_stream)
             io_handler.setFormatter(formatter)
-            for handler in self.logger.handlers:
-                self.logger.removeHandler(handler)
             self.logger.addHandler(io_handler)
             atexit.register(write_s3_logs, body=log_stream, bucket=CLI_BUCKET, key=self._log_path)
 
@@ -62,6 +61,13 @@ if __name__ == '__main__':
     phlogger.warning('warning')
     phlogger.error('error')
     phlogger.critical('critical')
+
+    nulllog = phs3logger('')
+    nulllog.debug('debug')
+    nulllog.info('info')
+    nulllog.warning('warning')
+    nulllog.error('error')
+    nulllog.critical('critical')
 
     joblog = phs3logger('job')
     joblog.debug('debug')
