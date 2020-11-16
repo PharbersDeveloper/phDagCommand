@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-import os
 import boto3
 import botocore.exceptions
-
 from ph_aws.aws_root import PhAWS
-from ph_logs.ph_logs import phlogger
 
 
 class PhSts(PhAWS):
@@ -30,10 +27,8 @@ class PhSts(PhAWS):
                 ExternalId=external_id,
             )
         except botocore.exceptions.ClientError as err:
-            phlogger.warn(err)
             self.credentials = {}
         else:
-            phlogger.info('Assume Role Arn: ' + assumed_role_object['AssumedRoleUser']['Arn'])
             self.credentials = assumed_role_object['Credentials']
 
         return self
