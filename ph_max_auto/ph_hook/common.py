@@ -5,7 +5,6 @@ def exec_before(*args, **kwargs):
     os.environ["PYSPARK_PYTHON"] = "python3"
 
     def spark():
-        print('abc')
         from pyspark.sql import SparkSession
         spark = SparkSession.builder \
             .master("yarn") \
