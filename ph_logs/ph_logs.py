@@ -52,8 +52,21 @@ class PhLogs(object):
             self.logger.addHandler(io_handler)
             atexit.register(write_s3_logs, body=log_stream, bucket=CLI_BUCKET, key=self._log_path)
 
+
 phlogger = PhLogs().logger
-phs3logger = lambda job_id: PhLogs(job_id=job_id, storage='s3').logger
+
+
+inst_map = {}
+
+
+def phs3logger(job_id):
+    if job_id in inst_map.keys():
+        return inst_map[job_id]
+
+    logger = PhLogs(job_id=job_id, storage='s3').logger
+    inst_map[job_id] = logger
+    return logger
+
 
 if __name__ == '__main__':
     phlogger.debug('debug')

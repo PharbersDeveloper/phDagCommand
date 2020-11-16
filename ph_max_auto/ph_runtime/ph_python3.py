@@ -17,12 +17,17 @@ def create(job_path, phs3):
     config.load_yaml()
 
     with open(job_path + "/phjob.py", "a") as file:
-        file.write("\ndef execute(**kwargs):\n")
-        file.write('\t"""\n')
-        file.write('\t\tplease input your code below\n')
-        file.write('\t"""\n')
-        file.write('\tprint(kwargs["a"])\n')
-        file.write('\tprint(kwargs["b"])\n')
+        file.write("""def execute(**kwargs):
+    \"\"\"
+        please input your code below
+        get spark session: spark = kwargs["spark"]()
+    \"\"\"
+    logger = phs3logger(kwargs["job_id"])
+    spark = kwargs["spark"]()
+    logger.info(kwargs["a"])
+    logger.info(kwargs["b"])
+    return {}
+""")
 
     # 3. /phmain.py file
     f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHMAIN_FILE_PY)
@@ -35,10 +40,23 @@ def create(job_path, phs3):
             line = line + "\n"
             if line == "$alfred_debug_execute\n":
                 file.write("@click.command()\n")
+                file.write("@click.option('--job_id')\n")
                 for arg in config.spec.containers.args:
                     file.write("@click.option('--" + arg.key + "')\n")
-                file.write("def debug_execute(**kwargs):\n")
-                file.write("\texecute(**kwargs)")
+                for output in config.spec.containers.outputs:
+                    file.write("@click.option('--out_" + output.key + "')\n")
+                file.write("""def debug_execute(**kwargs):
+	exec_after(**dict(
+        kwargs,
+        **execute(**dict(
+            kwargs,
+            **exec_before(**dict(
+                kwargs,
+                **{'name': '$alfred_name'}
+            ))
+        ))
+    ))
+""".replace("$alfred_name", config.metadata.name))
             else:
                 file.write(line)
 
