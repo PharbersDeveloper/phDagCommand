@@ -29,6 +29,7 @@ setuptools.setup(
         "pandas",
         "xlrd",
         "pypinyin",
+        "sqlalchemy",
     ],
 
     package_data={
