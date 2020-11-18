@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import os
 import subprocess
 
 from ph_max_auto import define_value as dv
-from ph_max_auto.phconfig.phconfig import PhYAMLConfig
+from ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 
 
 def create(job_path, phs3):
@@ -26,6 +25,8 @@ def create(job_path, phs3):
     spark = kwargs["spark"]()
     logger.info(kwargs["a"])
     logger.info(kwargs["b"])
+    logger.info(kwargs["c"])
+    logger.info(kwargs["d"])
     return {}
 """)
 
@@ -46,9 +47,8 @@ def create(job_path, phs3):
                 for output in config.spec.containers.outputs:
                     file.write("@click.option('--" + output.key + "')\n")
                 file.write("""def debug_execute(**kwargs):
-    logger = phs3logger(kwargs["job_id"])
     try:
-        exec_after(**dict(
+        exec_after(outputs=[$alfred_outputs], **dict(
             kwargs,
             **execute(**dict(
                 kwargs,
@@ -59,8 +59,12 @@ def create(job_path, phs3):
             ))
         ))
     except Exception:
+        logger = phs3logger(kwargs["job_id"])
         logger.error(traceback.format_exc())
-""".replace("$alfred_name", config.metadata.name))
+"""
+                           .replace('$alfred_outputs', ', '.join(['"'+output.key+'"' for output in config.spec.containers.outputs])) \
+                           .replace('$alfred_name', config.metadata.name)
+                )
             else:
                 file.write(line)
 

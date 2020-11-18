@@ -13,11 +13,11 @@ import subprocess
 from ph_aws.ph_sts import PhSts
 from ph_aws.ph_s3 import PhS3
 from ph_logs.ph_logs import phlogger
+from ph_max_auto import define_value as dv
+from ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 from ph_errs.ph_err import PhException, PhRuntimeError
 from ph_errs.ph_err import exception_file_already_exist, exception_file_not_exist, exception_function_not_implement
-from ph_max_auto import define_value as dv
-from ph_max_auto.phconfig.phconfig import PhYAMLConfig
-from ph_max_auto.ph_dag_graph.ph_dag_graph import *
+
 
 phsts = PhSts().assume_role(
     base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
@@ -109,10 +109,12 @@ class PhContextFacade(object):
             self.command_combine_exec()
         elif self.cmd == "dag":
             self.command_dag_exec()
-        elif self.cmd == "submit":
-            ret = self.command_submit_exec()
         elif self.cmd == "publish":
             self.command_publish_exec()
+        elif self.cmd == "submit":
+            ret = self.command_submit_exec()
+        elif self.cmd == "logs":
+            self.command_logs_exec()
         else:
             self.command_status_exec()
 
@@ -201,6 +203,15 @@ class PhContextFacade(object):
                             cb.append(arg.value.encode("utf-8"))
                         else:
                             cb.append(str(arg.value))
+                for output in config.spec.containers.outputs:
+                    if sys.version_info > (3, 0):
+                        cb.append("--" + output.key + "=" + str(output.value))
+                    else:
+                        cb.append("--" + output.key)
+                        if type(output.value) is unicode:
+                            cb.append(output.value.encode("utf-8"))
+                        else:
+                            cb.append(str(output.value))
                 subprocess.call(cb)
         else:
             raise exception_function_not_implement
@@ -228,7 +239,6 @@ class PhContextFacade(object):
         def yaml2args(path):
             config = PhYAMLConfig(path)
             config.load_yaml()
-            phlogger.info(config.spec.containers.args)
 
             f = open(path + "/args.properties", "a")
             for arg in config.spec.containers.args:
@@ -239,6 +249,16 @@ class PhContextFacade(object):
                     else:
                         if type(arg.value) is unicode:
                             f.write(arg.value.encode("utf-8") + "\n")
+                        else:
+                            f.write(str(arg.value) + "\n")
+            for output in config.spec.containers.outputs:
+                if output.value != "":
+                    f.write("--" + output.key + "\n")
+                    if sys.version_info > (3, 0):
+                        f.write(str(output.value) + "\n")
+                    else:
+                        if type(output.value) is unicode:
+                            f.write(output.value.encode("utf-8") + "\n")
                         else:
                             f.write(str(arg.value) + "\n")
                     # f.write(str(arg.value) + "\n")
@@ -291,30 +311,13 @@ class PhContextFacade(object):
                                  self.dag_path + job_name])
                 yaml2args(self.dag_path + job_name)
 
-            w.write(config.spec.linkage.replace('.', '_'))
-            w.write("\n")
+            for linkage in config.spec.linkage:
+                w.write(linkage.replace('.', '_'))
+                w.write("\n")
+
             w.close()
 
-        def write_dag_tree():
-            linkages = PhDagLinkage(config.spec.linkage.replace('.', '_'))
-            nodes = []
-            for job in config.spec.jobs:
-                job_conf = PhYAMLConfig(self.dag_path + job.name.replace('.', '_'))
-                job_conf.load_yaml()
-
-                func_res = PhDagFuncRes(job.name.replace('.', '_'), job.name)
-                inputs = [gen_res(arg.key, arg.value) for arg in job_conf.spec.containers.args]
-                outputs = [gen_res(arg.key, arg.value) for arg in job_conf.spec.containers.outputs]
-
-                nodes.append(PhDagNode(func_res, inputs, outputs))
-
-            tree = PhDagGraph(linkages, nodes) #.to_yaml(self.dag_path + "ph_graph_" + config.spec.dag_id + ".yaml")
-            tree.to_graph().print_graph()
-
-            return tree
-
         write_dag_pyfile()
-        write_dag_tree()
 
     def command_publish_exec(self):
         phlogger.info("command publish")
@@ -402,4 +405,10 @@ class PhContextFacade(object):
                 cmd_arr.append(it)
 
         phlogger.info(cmd_arr)
-        return subprocess.call(cmd_arr)
+        # return subprocess.call(cmd_arr)
+
+    def command_logs_exec(self):
+        pass
+
+    def command_status_exec(self):
+        pass
