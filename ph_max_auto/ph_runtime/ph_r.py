@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import os
-
 from ph_max_auto import define_value as dv
-from ph_max_auto.phconfig.phconfig import PhYAMLConfig
+from ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 
 
 def create(path, phs3):

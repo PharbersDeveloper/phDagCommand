@@ -24,4 +24,5 @@ spec:
       command: $runtime
     - name: group.test2
       command: $runtime
-  linkage: "group.test1 >> group.test2"
+  linkage:
+    - "group.test1 >> group.test2"

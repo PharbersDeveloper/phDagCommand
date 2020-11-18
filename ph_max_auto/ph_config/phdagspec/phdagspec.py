@@ -3,7 +3,7 @@
 
 This module document the YAML Job Args for Pharbers jobs
 """
-from ph_max_auto.phdagjobs.phdagjobs import PhYAMLDAGJobs
+from ph_max_auto.ph_config.phdagjobs.phdagjobs import PhYAMLDAGJobs
 
 
 class PhYAMLDAGSpec(object):
@@ -18,7 +18,7 @@ class PhYAMLDAGSpec(object):
         self.retries = 1
         self.retry_delay = "minutes=5"
         self.owner = ""
-        self.linkage = ""
+        self.linkage = []
         self.dag_id = ""
         self.dag_tag = ""
         self.jobs = ""
