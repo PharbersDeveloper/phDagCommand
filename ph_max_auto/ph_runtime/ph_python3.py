@@ -44,18 +44,22 @@ def create(job_path, phs3):
                 for arg in config.spec.containers.args:
                     file.write("@click.option('--" + arg.key + "')\n")
                 for output in config.spec.containers.outputs:
-                    file.write("@click.option('--out_" + output.key + "')\n")
+                    file.write("@click.option('--" + output.key + "')\n")
                 file.write("""def debug_execute(**kwargs):
-	exec_after(**dict(
-        kwargs,
-        **execute(**dict(
+    logger = phs3logger(kwargs["job_id"])
+    try:
+        exec_after(**dict(
             kwargs,
-            **exec_before(**dict(
+            **execute(**dict(
                 kwargs,
-                **{'name': '$alfred_name'}
+                **exec_before(**dict(
+                    kwargs,
+                    **{'name': '$alfred_name'}
+                ))
             ))
         ))
-    ))
+    except Exception:
+        logger.error(traceback.format_exc())
 """.replace("$alfred_name", config.metadata.name))
             else:
                 file.write(line)
