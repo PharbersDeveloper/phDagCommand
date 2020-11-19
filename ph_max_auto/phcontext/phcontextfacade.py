@@ -44,11 +44,12 @@ class PhContextFacade(object):
     def get_current_project_dir():
         return os.getenv(dv.ENV_CUR_PROJ_KEY, dv.ENV_CUR_PROJ_DEFAULT)
 
-    def __init__(self, runtime, cmd, path, group, context='{}', args='{}'):
+    def __init__(self, runtime, group, path, cmd, job_id='', context='{}', args='{}'):
         self.runtime = runtime.lower()
-        self.cmd = cmd
         self.name = path.replace('/', '')
         self.group = group.replace('/', '')
+        self.cmd = cmd
+        self.job_id = job_id
         self.context = self.ast_parse(context)
         self.args = self.ast_parse(args)
         self.job_prefix = "phjobs/"
@@ -192,7 +193,7 @@ class PhContextFacade(object):
             entry_runtime = rb_map[entry_runtime]
             entry_point = config.spec.containers.code
             if "/" not in entry_point:
-                entry_point = self.job_path + "/" + entry_point
+                entry_point = self.job_path + entry_point
                 cb = [entry_runtime, entry_point]
                 for arg in config.spec.containers.args:
                     if sys.version_info > (3, 0):
@@ -338,19 +339,21 @@ class PhContextFacade(object):
 
     def command_submit_exec(self):
         phlogger.info("submit command exec")
-        phlogger.info("submit command with Job name '" + self.path + "'")
+        phlogger.info("submit command with Job Group '" + self.group + "'")
+        phlogger.info("submit command with Job Name '" + self.name + "'")
         phlogger.info("submit command with context " + str(self.context))
         phlogger.info("submit command with args " + str(self.args))
 
-        self.namespace = self.namespace + "/" if self.namespace else self.namespace
-        job_path = dv.DAGS_S3_PHJOBS_PATH + self.namespace + self.path
+        self.group = self.group + "/" if self.group else ''
+        job_path = dv.DAGS_S3_PHJOBS_PATH + self.group + self.path
+        submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + job_path + "/"
+        args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, job_path + "/args.properties")
+
         stream = phs3.open_object(dv.DAGS_S3_BUCKET, job_path + "/phconf.yaml")
         config = PhYAMLConfig(self.path)
         config.load_yaml(stream)
         runtime = config.spec.containers.runtime
         runtime_inst = self.get_runtime_inst(runtime)
-        submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + job_path + "/"
-        args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, job_path + "/args.properties")
 
         access_key = os.getenv("AWS_ACCESS_KEY_ID", 'NULL_AWS_ACCESS_KEY_ID')
         secret_key = os.getenv("AWS_SECRET_ACCESS_KEY", 'NULL_AWS_SECRET_ACCESS_KEY')
@@ -361,7 +364,7 @@ class PhContextFacade(object):
         cmd_arr = ["spark-submit",
                    "--master", "yarn",
                    "--deploy-mode", "cluster",
-                   "--name", self.path,
+                   "--name", self.path+"_"+self.job_id,
                    "--proxy-user", current_user]
 
         conf_map = {
@@ -394,6 +397,8 @@ class PhContextFacade(object):
 
         cmd_arr += [runtime_inst.submit_main(submit_prefix)]
 
+        cmd_arr += ['--job_id', self.job_id]
+
         cur_key = ""
         for it in [arg for arg in args if arg]:
             if it[0:2] == "--":
@@ -405,7 +410,7 @@ class PhContextFacade(object):
                 cmd_arr.append(it)
 
         phlogger.info(cmd_arr)
-        # return subprocess.call(cmd_arr)
+        return subprocess.call(cmd_arr)
 
     def command_logs_exec(self):
         pass

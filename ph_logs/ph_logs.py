@@ -5,16 +5,16 @@ This module document the usage of class pharbers command context,
 """
 import io
 import sys
-import time
-import base64
 import atexit
 import logging
-from define_value import *
+from phcli.define_value import *
 from ph_aws.ph_s3 import PhS3
-from ph_aws.ph_sts import PhSts
 
 LOG_LEVEL = logging.DEBUG #ERROR
 LOG_PATH = '{}/logs/python/phcli/{}'
+
+PH_CLI_ACCESS_KEY = 'AKIAWPBDTVEAMVOYSOVE'
+PH_CLI_SECRET_KEY = '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'
 
 
 class PhLogs(object):
@@ -38,11 +38,7 @@ class PhLogs(object):
             self._log_path = LOG_PATH.format(CLI_VERSION, kwargs['job_id'] + '.log')
 
         def write_s3_logs(body, bucket, key):
-            phsts = PhSts().assume_role(
-                base64.b64decode(ASSUME_ROLE_ARN).decode(),
-                ASSUME_ROLE_EXTERNAL_ID,
-            )
-            phs3 = PhS3(phsts=phsts)
+            phs3 = PhS3(access_key=PH_CLI_ACCESS_KEY, secret_key=PH_CLI_SECRET_KEY)
             phs3.s3_client.put_object(Body=body.getvalue(), Bucket=bucket, Key=key)
 
         if self._log_path and 'storage' in kwargs.keys() and kwargs['storage'] == 's3':
@@ -55,7 +51,6 @@ class PhLogs(object):
 
 phlogger = PhLogs().logger
 
-
 inst_map = {}
 
 
@@ -65,6 +60,7 @@ def phs3logger(job_id):
 
     logger = PhLogs(job_id=job_id, storage='s3').logger
     inst_map[job_id] = logger
+
     return logger
 
 

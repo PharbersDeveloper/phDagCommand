@@ -11,12 +11,13 @@ from ph_max_auto.phcontext.phcontextfacade import PhContextFacade
 @click.command()
 @click.option("-r", "--runtime", prompt="Your programming language is", help="You use programming language.",
               type=click.Choice(["python3", "r"]), default="python3")
-@click.option("--cmd", prompt="Your command is", help="The command that you want to process.",
-              type=click.Choice(["create", "run", "combine", "dag", "publish", "submit", "status"]), default="status")
 @click.option("-g", "--group", prompt="Your config and python job file group",
               help="The concert job you want the process group.", default="")
 @click.option("-p", "--path", prompt="Your config and python job file directory",
               help="The concert job you want the process.")
+@click.option("--cmd", prompt="Your command is", help="The command that you want to process.",
+              type=click.Choice(["create", "run", "combine", "dag", "publish", "submit", "status"]), default="status")
+@click.option("--job_id", default="")
 @click.option("-c", "--context", help="submit context", default="{}")
 @click.argument('args', nargs=1, default="{}")
 def maxauto(**kwargs):
