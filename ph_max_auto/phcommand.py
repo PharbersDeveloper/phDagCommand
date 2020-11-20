@@ -11,8 +11,7 @@ from ph_max_auto.phcontext.phcontextfacade import PhContextFacade
 @click.command()
 @click.option("-r", "--runtime", prompt="Your programming language is", help="You use programming language.",
               type=click.Choice(["python3", "r"]), default="python3")
-@click.option("-g", "--group", prompt="Your config and python job file group",
-              help="The concert job you want the process group.", default="")
+@click.option("-g", "--group", help="The concert job you want the process group.", default="")
 @click.option("-p", "--path", prompt="Your config and python job file directory",
               help="The concert job you want the process.")
 @click.option("--cmd", prompt="Your command is", help="The command that you want to process.",

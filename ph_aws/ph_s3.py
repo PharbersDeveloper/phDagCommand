@@ -14,7 +14,7 @@ class PhS3(PhAWS):
         self.access_key = kwargs.get('access_key', None)
         self.secret_key = kwargs.get('secret_key', None)
         if self.access_key and self.secret_key:
-            self.s3_client = boto3.client('s3',
+            self.s3_client = boto3.client('s3', region_name='cn-northwest-1',
                                           aws_access_key_id=self.access_key,
                                           aws_secret_access_key=self.secret_key)
             return

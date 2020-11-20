@@ -2,15 +2,25 @@
 def $alfred_name_cmd(**context):
     conf = context["dag_run"].conf
     ti = context['task_instance']
+    run_id = context["dag_run"].run_id
+    job_id = str(uuid.uuid4())
 
     params=dict(var_key_lst.get("common", {}).items() + var_key_lst.get("$alfred_name", {}).items())
 
-    subprocess.call('echo "192.168.1.28    spark.master" >> /etc/hosts', shell=True)
-    subprocess.call("pip install 'phcli==0.3.6'", shell=True)
-    subprocess.check_output('phcli maxauto --runtime $runtime --cmd submit --group $alfred_jobs_dir --path $alfred_name --context "{}" "{}"'.format(str(params), str(conf)), shell=True)
+    write_hosts = 'echo "192.168.1.28    spark.master" >> /etc/hosts'
+    print(write_hosts)
+    print(subprocess.check_output(write_hosts, shell=True, stderr=subprocess.STDOUT))
 
-    # runId = ti.xcom_pull(task_ids='generate_id', key='run_id').decode("UTF-8")
-    # ti.xcom_push(key="run_id", value=runId)
+    install_phcli = 'apt-get update && apt install -f -y postgresql-server-dev-all && pip3 install phcli==1.0.1'
+    print(install_phcli)
+    print(subprocess.check_output(install_phcli, shell=True, stderr=subprocess.STDOUT))
+
+    exec_phcli_submit = 'phcli maxauto --runtime $runtime --group $alfred_jobs_dir --path $alfred_name --cmd submit --job_id "{}" --context "{}" "{}"'.format(str(job_id), str(params), str(conf))
+    print(exec_phcli_submit)
+    print(subprocess.check_output(exec_phcli_submit, shell=True, stderr=subprocess.STDOUT))
+
+    # key = ti.xcom_pull(task_ids='test', key='key').decode("UTF-8")
+    # ti.xcom_push(key="key", value=key)
 
 $alfred_name = PythonOperator(
     task_id='$alfred_name',

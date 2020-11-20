@@ -8,8 +8,8 @@ from sqlalchemy import Column, String, DateTime, Float
 Base = declarative_base()
 
 
-class DataSetA(Base):
-    __tablename__ = 'dataSetA'
+class DataSet(Base):
+    __tablename__ = 'dataSet'
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     parent = Column(String, default='{}')
@@ -61,8 +61,8 @@ class DataSetA(Base):
 
 
 if __name__ == '__main__':
-    ds = DataSetA(id="id", parent="{}", child="{}", blockDs="blockDs", job="job", sampleData="{}",
-                  name="name", schema="{}", source="source", storeType="storeType", size=0,
-                  created=datetime.now(), modified=datetime.now(), description="description", url="url",
-                  tabName="tabName", status="status", mart="mart", assetDs="assetDs", colNames="{}", length=0)
+    ds = DataSet(id="id", parent="{}", child="{}", blockDs="blockDs", job="job", sampleData="{}",
+                 name="name", schema="{}", source="source", storeType="storeType", size=0,
+                 created=datetime.now(), modified=datetime.now(), description="description", url="url",
+                 tabName="tabName", status="status", mart="mart", assetDs="assetDs", colNames="{}", length=0)
     print(ds)

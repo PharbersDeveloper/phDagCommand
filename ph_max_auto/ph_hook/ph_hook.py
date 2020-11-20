@@ -1,6 +1,6 @@
 import os
 from ph_db.ph_postgresql.ph_pg import PhPg
-from ph_max_auto.ph_models.phentry import DataSetA
+from ph_max_auto.ph_models.phentry import DataSet
 
 
 def exec_before(*args, **kwargs):
@@ -44,11 +44,11 @@ def exec_after(*args, **kwargs):
 
     pg = PhPg()
     for input in inputs:
-        obj = pg.insert(DataSetA(job=job_id, name=input, source=kwargs[input]))
+        obj = pg.insert(DataSet(job=job_id, name=input, source=kwargs[input]))
         kwargs[input] = obj
     inputs = [kwargs[input].id for input in inputs]
 
     for output in outputs:
-        pg.insert(DataSetA(parent=inputs, job=job_id, name=output, source=kwargs[output]))
+        pg.insert(DataSet(parent=inputs, job=job_id, name=output, source=kwargs[output]))
 
     return None
