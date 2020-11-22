@@ -58,9 +58,10 @@ def create(job_path, phs3):
                 ))
             ))
         ))
-    except Exception:
+    except Exception as e:
         logger = phs3logger(kwargs["job_id"])
         logger.error(traceback.format_exc())
+        raise e
 """
                            .replace('$alfred_outputs', ', '.join(['"'+output.key+'"' for output in config.spec.containers.outputs])) \
                            .replace('$alfred_name', config.metadata.name)
