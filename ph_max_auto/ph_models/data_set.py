@@ -1,6 +1,5 @@
 import uuid
 from datetime import datetime
-from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, DateTime, Float
 
@@ -11,7 +10,7 @@ Base = declarative_base()
 class DataSet(Base):
     __tablename__ = 'dataSet'
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    id = Column(String, primary_key=True, default=str(uuid.uuid4()))
     parent = Column(String, default='{}')
     child = Column(String, default='{}')
     blockDs = Column(String)
