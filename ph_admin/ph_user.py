@@ -1,21 +1,8 @@
 import click
-import base64
 import hashlib
+from ph_admin import pg
 from datetime import datetime
-from ph_db.ph_postgresql.ph_pg import PhPg
-from ph_admin.ph_models.accounts import Account
-from ph_admin.ph_models.role import Role
-from ph_admin.ph_models.partner import Partner
-
-
-def _pg():
-    return PhPg(
-        base64.b64decode('cGgtZGItbGFtYmRhLmNuZ2sxamV1cm1udi5yZHMuY24tbm9ydGh3ZXN0LTEuYW1hem9uYXdzLmNvbS5jbgo=').decode('utf8')[:-1],
-        base64.b64decode('NTQzMgo=').decode('utf8')[:-1],
-        base64.b64decode('cGhhcmJlcnMK').decode('utf8')[:-1],
-        base64.b64decode('QWJjZGUxOTYxMjUK').decode('utf8')[:-1],
-        db=base64.b64decode('cGhjb21tb24K').decode('utf8')[:-1],
-    )
+from ph_admin.ph_models import Account, Role, Partner
 
 
 @click.group("user", short_help='用户管理工具')
@@ -26,29 +13,40 @@ def main():
 @click.command("create", short_help='创建用户')
 @click.option("-n", "--name", help="用户名", prompt="用户名")
 @click.option("-p", "--password", help="用户密码", prompt="用户密码", hide_input=True, confirmation_prompt=True)
-@click.option("--phonenumber", help="用户电话", prompt="用户电话")
-@click.option("-r", "--defaultrole", help="默认角色", prompt="默认角色", default='test')
+@click.option("--phoneNumber", help="用户电话", prompt="用户电话")
+@click.option("-r", "--defaultRole", help="默认角色", prompt="默认角色", default='test')
 @click.option("-e", "--email", help="用户邮箱", prompt="用户邮箱")
 @click.option("--employer", help="所属公司", prompt="所属公司", default='test')
-@click.option("--firstname", help="名", prompt="名")
-@click.option("--lastname", help="姓", prompt="姓")
+@click.option("--firstName", help="名", prompt="名")
+@click.option("--lastName", help="姓", prompt="姓")
 def create_user(**kwargs):
-    pg = _pg()
+    kwargs['phoneNumber'] = kwargs.pop('phonenumber')
+    kwargs['defaultRole'] = kwargs.pop('defaultrole')
+    kwargs['firstName'] = kwargs.pop('firstname')
+    kwargs['lastName'] = kwargs.pop('lastname')
+
     sha256 = hashlib.sha256()
     sha256.update(kwargs['password'].encode('utf-8'))
     kwargs['password'] = sha256.hexdigest()
-    defaultrole = kwargs.pop('defaultrole')
+    default_role = kwargs.pop('defaultRole')
     employer = kwargs.pop('employer')
 
-    account = pg.insert(Account(**kwargs))
-
-    roles = pg.query(Role(name=defaultrole))
-    account.defaultRole = [r.id for r in roles]
+    roles = pg.query(Role(name=default_role))
+    role_id = roles[0].id if roles else None
+    role_account = roles[0].accountRole if role_id else []
 
     employers = pg.query(Partner(name=employer))
-    account.employer = [e.id for e in employers]
+    employer_id = employers[0].id if employers else None
+    employer_employee = employers[0].employee if employer_id else []
 
-    pg.update(account)
+    kwargs['defaultRole'] = role_id
+    kwargs['employer'] = employer_id
+    account = pg.insert(Account(**kwargs))
+    pg.update(Role(id=role_id, accountRole=role_account+[account.id], modified=datetime.now()))
+    pg.update(Partner(id=employer_id, employee=employer_employee+[account.id], modified=datetime.now()))
+
+    click.secho('添加成功'+str(account), fg='green', blink=True, bold=True)
+    pg.commit()
 
 
 @click.command("update", short_help='更新用户')

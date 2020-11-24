@@ -58,4 +58,5 @@ def exec_after(*args, **kwargs):
     for output in outputs:
         pg.insert(DataSet(parent=inputs, job=job_id, name=output, source=kwargs[output]))
 
+    pg.commit()
     return None
