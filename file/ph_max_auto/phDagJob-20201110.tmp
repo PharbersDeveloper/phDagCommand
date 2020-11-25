@@ -3,7 +3,7 @@ def $alfred_name_cmd(**context):
     ti = context['task_instance']
     run_id = context["dag_run"].run_id
     conf = context["dag_run"].conf
-    job_id = ti.hostname
+    job_id = ti.hostname.split("-")[-1]
 
     params=dict(var_key_lst.get("common", {}).items() + var_key_lst.get("$alfred_name", {}).items())
 
