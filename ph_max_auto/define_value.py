@@ -8,7 +8,7 @@ ASSUME_ROLE_EXTERNAL_ID = 'Ph-Cli-MaxAuto'
 TEMPLATE_BUCKET = "ph-platform"
 DAGS_S3_BUCKET = 's3fs-ph-airflow'
 DAGS_S3_PREV_PATH = 'airflow/dags/'
-DAGS_S3_PHJOBS_PATH = 'airflow/dags/phjobs/'
+DAGS_S3_PHJOBS_PATH = '/jobs/python/phcli/'
 
 ENV_WORKSPACE_KEY = 'PH_WORKSPACE'
 ENV_WORKSPACE_DEFAULT = '.'

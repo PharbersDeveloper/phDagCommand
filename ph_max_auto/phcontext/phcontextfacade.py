@@ -333,8 +333,8 @@ class PhContextFacade(object):
             else:
                 phs3.upload_dir(
                     dir=self.dag_path+key,
-                    bucket_name=dv.DAGS_S3_BUCKET,
-                    s3_dir=dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
+                    bucket_name=dv.TEMPLATE_BUCKET,
+                    s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
                 )
 
     def command_submit_exec(self):
@@ -346,10 +346,10 @@ class PhContextFacade(object):
 
         self.group = self.group + "/" if self.group else ''
         job_path = dv.DAGS_S3_PHJOBS_PATH + self.group + self.path
-        submit_prefix = "s3a://" + dv.DAGS_S3_BUCKET + "/" + job_path + "/"
-        args = phs3.open_object_by_lines(dv.DAGS_S3_BUCKET, job_path + "/args.properties")
+        submit_prefix = "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + job_path + "/"
+        args = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + job_path + "/args.properties")
 
-        stream = phs3.open_object(dv.DAGS_S3_BUCKET, job_path + "/phconf.yaml")
+        stream = phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + job_path + "/phconf.yaml")
         config = PhYAMLConfig(self.path)
         config.load_yaml(stream)
         runtime = config.spec.containers.runtime
