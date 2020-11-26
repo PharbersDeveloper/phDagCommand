@@ -17,8 +17,8 @@ def main():
 
 main.add_command(partner_main)
 main.add_command(user_main)
-main.add_command(role_main)
 main.add_command(scope_main)
+main.add_command(role_main)
 
 
 if __name__ == '__main__':

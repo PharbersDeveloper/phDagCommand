@@ -154,7 +154,11 @@ def list_user():
 
 
 @click.command("get", short_help='查找用户')
-@click.option("-n", "--name", help="用户名", prompt="用户名")
+@click.option("-n", "--name", help="用户名", default=None)
+@click.option("--phoneNumber", help="用户电话", default=None)
+@click.option("-e", "--email", help="用户邮箱", default=None)
+@click.option("--firstName", help="名", default=None)
+@click.option("--lastName", help="姓", default=None)
 def get_user(**kwargs):
     from ph_admin import pg
     for a in pg.query(Account(**kwargs)):

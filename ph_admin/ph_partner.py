@@ -35,7 +35,6 @@ def list_partner():
 
 
 @click.command("get", short_help='查找公司')
-@click.option("--id", help="公司id", default=None)
 @click.option("-n", "--name", help="公司名", default=None)
 @click.option("-a", "--address", help="公司地址", default=None)
 @click.option("-p", "--phoneNumber", help="公司电话", default=None)
@@ -47,15 +46,12 @@ def get_partner(**kwargs):
 
 
 @click.command("delete", short_help='删除公司')
-@click.option("--id", help="公司id", default=None)
 @click.option("-n", "--name", help="公司名", default=None)
-@click.option("-a", "--address", help="公司地址", default=None)
-@click.option("-p", "--phoneNumber", help="公司电话", default=None)
-@click.option("-w", "--web", help="公司官网", default=None)
 def delete_partner(**kwargs):
     kwargs['phoneNumber'] = kwargs.pop('phonenumber')
     for p in pg.delete(Partner(**kwargs)):
         click.secho(str(p), fg='green', blink=True, bold=True)
+    pg.commit()
 
 
 main.add_command(create_partner)

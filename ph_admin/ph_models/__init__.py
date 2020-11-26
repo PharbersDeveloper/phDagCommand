@@ -16,7 +16,7 @@ class Partner(Base):
     address = Column(String)
     phoneNumber = Column(String)
     web = Column(String)
-    employee = Column(String, default=[])
+    employee = Column(String, default='{}')
     accounts = relationship('Account', back_populates="partner")
     created = Column(String, default=datetime.now())
     modified = Column(String, default=datetime.now())
@@ -52,10 +52,10 @@ class Role(Base):
 
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
     name = Column(String)
-    accountRole = Column(String, default=[])
+    accountRole = Column(String, default='{}')
     accounts = relationship('Account', back_populates="role")
     description = Column(String)
-    scope = Column(String, default=[])
+    scope = Column(String, default='{}')
     created = Column(String, default=datetime.now())
     modified = Column(String, default=datetime.now())
 
@@ -70,7 +70,7 @@ class Scope(Base):
     name = Column(String)
     description = Column(String)
     scopePolicy = Column(String)
-    owner = Column(String, default=[])
+    owner = Column(String, default='{}')
     created = Column(String, default=datetime.now())
     modified = Column(String, default=datetime.now())
 
