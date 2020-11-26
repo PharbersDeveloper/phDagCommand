@@ -7,7 +7,7 @@ from ph_aws.ph_s3 import PhS3
 
 @click.command("logs", short_help='查看生产环境的运行日志')
 @click.option('--follow/--no-follow', '-f', default=False,
-              help='流式打印日志')
+              help='流式打印日志(暂不支持)')
 @click.argument('job_id', nargs=1)
 def main(follow, job_id):
     """

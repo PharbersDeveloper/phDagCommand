@@ -32,30 +32,7 @@ class DataSet(Base):
     colNames = Column(String, default='{}')
     length = Column(Float)
 
-    def __init__(self, **kwargs):
-        self.id = kwargs.get('id', None)
-        self.parent = kwargs.get('parent', None)
-        self.child = kwargs.get('child', None)
-        self.blockDs = kwargs.get('blockDs', None)
-        self.job = kwargs.get('job', None)
-        self.sampleData = kwargs.get('sampleData', None)
-        self.name = kwargs.get('name', None)
-        self.schema = kwargs.get('schema', None)
-        self.source = kwargs.get('source', None)
-        self.storeType = kwargs.get('storeType', None)
-        self.size = kwargs.get('size', None)
-        self.created = kwargs.get('created', None)
-        self.modified = kwargs.get('modified', None)
-        self.description = kwargs.get('description', None)
-        self.url = kwargs.get('url', None)
-        self.tabName = kwargs.get('tabName', None)
-        self.status = kwargs.get('status', None)
-        self.mart = kwargs.get('mart', None)
-        self.assetDs = kwargs.get('assetDs', None)
-        self.colNames = kwargs.get('colNames', None)
-        self.length = kwargs.get('length', None)
-
-    def __str__(self):
+    def __repr__(self):
         return str(self.__dict__)
 
 
