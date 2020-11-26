@@ -27,15 +27,19 @@ class PhPg(object):
         """
         return self.engine.table_names()
 
-    def query(self, obj):
+    def query(self, obj, **ext):
         """
         查询数据
+        :param obj: 要查询的实例信息
+        :param ext: 额外查询条件，如查询空值，如 name=None
         :return:
         """
         result = self.session.query(obj.__class__)
         for k, v in obj.__dict__.items():
             if k != '_sa_instance_state' and v:
                 result = result.filter(getattr(obj.__class__, k) == v)
+        for k, v in ext.items():
+            result = result.filter(getattr(obj.__class__, k) == v)
         result = result.all()
         return result
 
@@ -58,10 +62,14 @@ class PhPg(object):
         return result
 
     def update(self, obj):
-        tmp = obj.__dict__
+        """
+        更新数据
+        :param obj: 要更新的实例信息
+        :return:
+        """
+        tmp = copy.deepcopy(obj.__dict__)
         tmp.pop('_sa_instance_state', None)
         obj_id = tmp.pop('id', None)
-        tmp = dict([(t, tmp[t]) for t in tmp if tmp[t]])
 
         # 如果没有要更新的元素，直接返回
         if not obj_id or not tmp:

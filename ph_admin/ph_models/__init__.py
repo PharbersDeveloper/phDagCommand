@@ -1,7 +1,6 @@
 import uuid
 from datetime import datetime
 from sqlalchemy.orm import relationship
-from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -12,7 +11,7 @@ Base = declarative_base()
 class Partner(Base):
     __tablename__ = 'partner'
 
-    id = Column(UUID, primary_key=True, default=lambda: str(uuid.uuid4()))
+    id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
     name = Column(String)
     address = Column(String)
     phoneNumber = Column(String)
@@ -29,7 +28,7 @@ class Partner(Base):
 class Account(Base):
     __tablename__ = 'account'
 
-    id = Column(UUID, primary_key=True, default=lambda: str(uuid.uuid4()))
+    id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
     name = Column(String)
     wechatOpenId = Column(String)
     password = Column(String)
@@ -51,7 +50,7 @@ class Account(Base):
 class Role(Base):
     __tablename__ = 'role'
 
-    id = Column(String, primary_key=True, default=str(uuid.uuid4()))
+    id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
     name = Column(String)
     accountRole = Column(String, default=[])
     accounts = relationship('Account', back_populates="role")
@@ -67,7 +66,7 @@ class Role(Base):
 class Scope(Base):
     __tablename__ = 'scope'
 
-    id = Column(String, primary_key=True, default=str(uuid.uuid4()))
+    id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
     name = Column(String)
     description = Column(String)
     scopePolicy = Column(String)
