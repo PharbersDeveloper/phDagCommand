@@ -16,6 +16,8 @@ from ph_max_auto.phcontext.phcontextfacade import PhContextFacade
               help="The concert job you want the process.")
 @click.option("--cmd", prompt="Your command is", help="The command that you want to process.",
               type=click.Choice(["create", "run", "combine", "dag", "publish", "submit", "status"]), default="status")
+@click.option("--owner", default="")
+@click.option("--run_id", default="")
 @click.option("--job_id", default="")
 @click.option("-c", "--context", help="submit context", default="{}")
 @click.argument('args', nargs=1, default="{}")
@@ -36,6 +38,10 @@ def maxauto(**kwargs):
 
         --group Args: \n
             The concert job you want the process group.
+
+        --owner Args: Current Owner. \n
+        --run_id Args: Current run_id. \n
+        --job_id Args: Current job_id. \n
 
         --path Args: \n
             The dictionary that specify the py and yaml file

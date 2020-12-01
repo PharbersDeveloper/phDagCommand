@@ -22,6 +22,9 @@ def create(job_path, phs3):
         get spark session: spark = kwargs["spark"]()
     \"\"\"
     logger = phs3logger(kwargs["job_id"])
+    logger.info("当前 owner 为 " + str(kwargs["owner"]))
+    logger.info("当前 run_id 为 " + str(kwargs["run_id"]))
+    logger.info("当前 job_id 为 " + str(kwargs["job_id"]))
     spark = kwargs["spark"]()
     logger.info(kwargs["a"])
     logger.info(kwargs["b"])
@@ -41,23 +44,26 @@ def create(job_path, phs3):
             line = line + "\n"
             if line == "$alfred_debug_execute\n":
                 file.write("@click.command()\n")
-                file.write("@click.option('--job_id')\n")
+                for must in dv.PRESET_MUST_ARGS.split(","):
+                    file.write("@click.option('--{}')\n".format(must.strip()))
                 for arg in config.spec.containers.args:
                     file.write("@click.option('--" + arg.key + "')\n")
                 for output in config.spec.containers.outputs:
                     file.write("@click.option('--" + output.key + "')\n")
                 file.write("""def debug_execute(**kwargs):
     try:
-        exec_after(outputs=[$alfred_outputs], **dict(
-            kwargs,
-            **execute(**dict(
-                kwargs,
-                **exec_before(**dict(
-                    kwargs,
-                    **{'name': '$alfred_name'}
-                ))
-            ))
-        ))
+        args = {'name': '$alfred_name'}
+
+        args.update(kwargs)
+        result = exec_before(**args)
+
+        args.update(result)
+        result = execute(**args)
+
+        args.update(result)
+        result = exec_after(outputs=[], **args)
+
+        return result
     except Exception as e:
         logger = phs3logger(kwargs["job_id"])
         logger.error(traceback.format_exc())
@@ -82,7 +88,7 @@ def submit_conf(path, phs3, runtime):
 
 def submit_file(submit_prefix):
     return {
-        "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-1.0.3-py3.8.egg," +
+        "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-1.0.6-py3.8.egg," +
                     submit_prefix + "phjob.py",
     }
 

@@ -42,3 +42,16 @@ if __name__ == '__main__':
                  created=datetime.now(), modified=datetime.now(), description="description", url="url",
                  tabName="tabName", status="status", mart="mart", assetDs="assetDs", colNames="{}", length=0)
     print(ds)
+
+    import base64
+    from ph_db.ph_postgresql.ph_pg import PhPg
+
+    pg = PhPg(
+        base64.b64decode('cGgtZGItbGFtYmRhLmNuZ2sxamV1cm1udi5yZHMuY24tbm9ydGh3ZXN0LTEuYW1hem9uYXdzLmNvbS5jbgo=').decode('utf8')[:-1],
+        base64.b64decode('NTQzMgo=').decode('utf8')[:-1],
+        base64.b64decode('cGhhcmJlcnMK').decode('utf8')[:-1],
+        base64.b64decode('QWJjZGUxOTYxMjUK').decode('utf8')[:-1],
+        db=base64.b64decode('cGhlbnRyeQo=').decode('utf8')[:-1],
+    )
+    pg.insert(ds)
+    pg.commit()

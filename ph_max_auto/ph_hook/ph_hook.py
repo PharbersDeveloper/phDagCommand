@@ -1,19 +1,20 @@
 import os
 import base64
+from datetime import datetime
 from ph_db.ph_postgresql.ph_pg import PhPg
 from ph_max_auto.ph_models.data_set import DataSet
 
 
 def exec_before(*args, **kwargs):
-    name = kwargs.pop('name', '')
-    job_id = kwargs.pop('job_id', '')
-    os.environ["PYSPARK_PYTHON"] = "python3"
+    name = kwargs.pop('name', None)
+    job_id = kwargs.pop('job_id', None)
 
     def spark():
         from pyspark.sql import SparkSession
+        os.environ["PYSPARK_PYTHON"] = "python3"
         spark = SparkSession.builder \
             .master("yarn") \
-            .appName(name+'_'+job_id) \
+            .appName(str(name)+'_'+str(job_id)) \
             .config("spark.driver.memory", "2g") \
             .config("spark.executor.cores", "2") \
             .config("spark.executor.instances", "2") \
@@ -36,16 +37,20 @@ def exec_before(*args, **kwargs):
 
 
 def exec_after(*args, **kwargs):
+    owner = kwargs.pop('owner', None)
+    run_id = kwargs.pop('run_id', None)
     job_id = kwargs.pop('job_id', None)
 
-    # job_id 为空判定位测试环境，不管理血统
+    # job_id 为空判定为测试环境，不管理血统
     if not job_id:
         return
 
     outputs = kwargs.pop('outputs', [])
-    inputs = set(kwargs.keys()).difference(outputs)
-    outputs = [output for output in outputs if kwargs[output].startswith('s3a://')]
-    inputs = [input for input in inputs if kwargs[input].startswith('s3a://')]
+    inputs = list(set(kwargs.keys()).difference(outputs))
+    print(kwargs[inputs[0]])
+    print(type(kwargs[inputs[0]]))
+    outputs = [output for output in outputs if kwargs[output] and str(kwargs[output]).startswith('s3a://')]
+    inputs = [input for input in inputs if kwargs[input] and str(kwargs[input]).startswith('s3a://')]
 
     # 没有输出需要记录，直接退出
     if not outputs:
@@ -70,7 +75,14 @@ def exec_after(*args, **kwargs):
         input_ids.append(obj_id)
 
     for output in outputs:
-        pg.insert(DataSet(parent=input_ids, job=job_id, name=output, source=kwargs[output]))
+        obj = pg.query(DataSet(), source=kwargs[output])
+        if obj:
+            obj = obj[0]
+            obj.parent = input_ids
+            obj.modified = datetime.now()
+            pg.update(obj)
+        else:
+            pg.insert(DataSet(parent=input_ids, job=job_id, name=output, source=kwargs[output]))
 
     pg.commit()
-    return None
+    return kwargs

@@ -17,6 +17,7 @@ from ph_max_auto import define_value as dv
 from ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 from ph_errs.ph_err import PhException, PhRuntimeError
 from ph_errs.ph_err import exception_file_already_exist, exception_file_not_exist, exception_function_not_implement
+from ph_max_auto.ph_preset_jobs.preset_job_factory import preset_factory
 
 
 phsts = PhSts().assume_role(
@@ -44,11 +45,15 @@ class PhContextFacade(object):
     def get_current_project_dir():
         return os.getenv(dv.ENV_CUR_PROJ_KEY, dv.ENV_CUR_PROJ_DEFAULT)
 
-    def __init__(self, runtime, group, path, cmd, job_id='', context='{}', args='{}'):
+    def __init__(self, runtime, group, path, cmd,
+                 owner='', run_id='', job_id='',
+                 context='{}', args='{}'):
         self.runtime = runtime.lower()
         self.name = path.replace('/', '')
         self.group = group.replace('/', '')
         self.cmd = cmd
+        self.owner = owner
+        self.run_id = run_id
         self.job_id = job_id
         self.context = self.ast_parse(context)
         self.args = self.ast_parse(args)
@@ -237,33 +242,45 @@ class PhContextFacade(object):
         config = PhYAMLConfig(self.combine_path, "/phdag.yaml")
         config.load_yaml()
 
-        def yaml2args(path):
-            config = PhYAMLConfig(path)
-            config.load_yaml()
+        def copy_jobs():
+            def yaml2args(path):
+                config = PhYAMLConfig(path)
+                config.load_yaml()
 
-            f = open(path + "/args.properties", "a")
-            for arg in config.spec.containers.args:
-                if arg.value != "":
-                    f.write("--" + arg.key + "\n")
-                    if sys.version_info > (3, 0):
-                        f.write(str(arg.value) + "\n")
-                    else:
-                        if type(arg.value) is unicode:
-                            f.write(arg.value.encode("utf-8") + "\n")
-                        else:
+                f = open(path + "/args.properties", "a")
+                for arg in config.spec.containers.args:
+                    if arg.value != "":
+                        f.write("--" + arg.key + "\n")
+                        if sys.version_info > (3, 0):
                             f.write(str(arg.value) + "\n")
-            for output in config.spec.containers.outputs:
-                if output.value != "":
-                    f.write("--" + output.key + "\n")
-                    if sys.version_info > (3, 0):
-                        f.write(str(output.value) + "\n")
-                    else:
-                        if type(output.value) is unicode:
-                            f.write(output.value.encode("utf-8") + "\n")
                         else:
-                            f.write(str(arg.value) + "\n")
-                    # f.write(str(arg.value) + "\n")
-            f.close()
+                            if type(arg.value) is unicode:
+                                f.write(arg.value.encode("utf-8") + "\n")
+                            else:
+                                f.write(str(arg.value) + "\n")
+                for output in config.spec.containers.outputs:
+                    if output.value != "":
+                        f.write("--" + output.key + "\n")
+                        if sys.version_info > (3, 0):
+                            f.write(str(output.value) + "\n")
+                        else:
+                            if type(output.value) is unicode:
+                                f.write(output.value.encode("utf-8") + "\n")
+                            else:
+                                f.write(str(output.value) + "\n")
+                f.close()
+
+            for jt in config.spec.jobs:
+                if jt.name.startswith('preset'):
+                    continue
+
+                job_name = jt.name.replace('.', '_')
+                job_full_path = self.cur_proj_dir + self.job_prefix + jt.name.replace('.', '/')
+                if not os.path.exists(job_full_path):
+                    raise exception_file_not_exist
+
+                subprocess.call(["cp", '-r', job_full_path, self.dag_path + job_name])
+                yaml2args(self.dag_path + job_name)
 
         def write_dag_pyfile():
             w = open(self.dag_path + "ph_dag_" + config.spec.dag_id + ".py", "a")
@@ -292,9 +309,6 @@ class PhContextFacade(object):
             jf = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHDAGJOB_FILE)
             for jt in config.spec.jobs:
                 job_name = jt.name.replace('.', '_')
-                job_full_path = self.cur_proj_dir + self.job_prefix + jt.name.replace('.', '/')
-                if not os.path.exists(job_full_path):
-                    raise exception_file_not_exist
 
                 for line in jf:
                     line = line + "\n"
@@ -307,18 +321,21 @@ class PhContextFacade(object):
                             .replace("$runtime", str(jt.command))
                     )
 
-                subprocess.call(["cp", '-r',
-                                 job_full_path,
-                                 self.dag_path + job_name])
-                yaml2args(self.dag_path + job_name)
-
             for linkage in config.spec.linkage:
                 w.write(linkage.replace('.', '_'))
                 w.write("\n")
 
             w.close()
 
+        def copy_preset_jobs():
+            for jt in config.spec.jobs:
+                if not jt.name.startswith('preset'):
+                    continue
+                preset_factory(self, jt.name)
+
+        copy_jobs()
         write_dag_pyfile()
+        copy_preset_jobs()
 
     def command_publish_exec(self):
         phlogger.info("command publish")
@@ -397,6 +414,8 @@ class PhContextFacade(object):
 
         cmd_arr += [runtime_inst.submit_main(submit_prefix)]
 
+        cmd_arr += ['--owner', self.owner]
+        cmd_arr += ['--run_id', self.run_id]
         cmd_arr += ['--job_id', self.job_id]
 
         cur_key = ""

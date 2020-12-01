@@ -17,12 +17,13 @@ ENV_CUR_PROJ_DEFAULT = '.'
 
 TEMPLATE_PHCONF_FILE = "/template/python/phcli/maxauto/phconf-20201116.yaml"
 TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20201110.yaml"
-TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20201110.tmp"
-TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20201110.tmp"
-
+TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20201127.tmp"
+TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20201127.tmp"
 
 TEMPLATE_PHJOB_FILE_PY = "/template/python/phcli/maxauto/phjob-20201116.tmp"
 TEMPLATE_PHJOB_FILE_R = "/template/python/phcli/maxauto/phjob.r.tmp"
 
 TEMPLATE_PHMAIN_FILE_PY = "/template/python/phcli/maxauto/phmain-20201116.tmp"
 TEMPLATE_PHMAIN_FILE_R = "/template/python/phcli/maxauto/phmain.r.tmp"
+
+PRESET_MUST_ARGS = 'owner, job_id, run_id'
