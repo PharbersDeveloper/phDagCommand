@@ -418,15 +418,25 @@ class PhContextFacade(object):
         cmd_arr += ['--run_id', self.run_id]
         cmd_arr += ['--job_id', self.job_id]
 
+        # dag_run 优先 phconf 默认参数
+        must_args = [arg.strip() for arg in dv.PRESET_MUST_ARGS.split(",")]
         cur_key = ""
         for it in [arg for arg in args if arg]:
+            # 如果是 key，记录这个key
             if it[0:2] == "--":
                 cur_key = it[2:]
+                # 必须参数，不使用用户的配置，用系统注入的
+                if it[2:] in must_args:
+                    continue
+                cmd_arr.append(it)
             else:
+                # 必须参数的 value 不处理
+                if cur_key in must_args:
+                    continue
                 if cur_key in self.args.keys():
                     it = self.args[cur_key]
-            if it != "":
-                cmd_arr.append(it)
+                if it:
+                    cmd_arr.append(it)
 
         phlogger.info(cmd_arr)
         return subprocess.call(cmd_arr)

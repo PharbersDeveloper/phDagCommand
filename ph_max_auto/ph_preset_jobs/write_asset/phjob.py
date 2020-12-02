@@ -18,7 +18,9 @@ def execute(**kwargs):
     owner = kwargs.pop('owner', None)
     run_id = kwargs.pop('run_id', None)
     job_id = kwargs.pop('job_id', None)
+
     logger = phs3logger(job_id)
+    spark = kwargs["spark"]()
 
     phjobs = {}
 

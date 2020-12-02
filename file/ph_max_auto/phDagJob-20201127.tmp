@@ -12,7 +12,7 @@ def $alfred_name_cmd(**context):
     print(write_hosts)
     print(subprocess.check_output(write_hosts, shell=True, stderr=subprocess.STDOUT))
 
-    install_phcli = 'apt-get update && apt install -f -y postgresql-server-dev-all && pip3 install phcli==1.0.6'
+    install_phcli = 'apt-get update && apt install -f -y postgresql-server-dev-all && pip3 install phcli==1.1.0'
     print(install_phcli)
     print(subprocess.check_output(install_phcli, shell=True, stderr=subprocess.STDOUT))
 

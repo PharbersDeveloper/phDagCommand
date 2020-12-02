@@ -47,8 +47,6 @@ def exec_after(*args, **kwargs):
 
     outputs = kwargs.pop('outputs', [])
     inputs = list(set(kwargs.keys()).difference(outputs))
-    print(kwargs[inputs[0]])
-    print(type(kwargs[inputs[0]]))
     outputs = [output for output in outputs if kwargs[output] and str(kwargs[output]).startswith('s3a://')]
     inputs = [input for input in inputs if kwargs[input] and str(kwargs[input]).startswith('s3a://')]
 

@@ -26,4 +26,4 @@ TEMPLATE_PHJOB_FILE_R = "/template/python/phcli/maxauto/phjob.r.tmp"
 TEMPLATE_PHMAIN_FILE_PY = "/template/python/phcli/maxauto/phmain-20201116.tmp"
 TEMPLATE_PHMAIN_FILE_R = "/template/python/phcli/maxauto/phmain.r.tmp"
 
-PRESET_MUST_ARGS = 'owner, job_id, run_id'
+PRESET_MUST_ARGS = 'owner, run_id, job_id'

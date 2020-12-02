@@ -10,7 +10,7 @@ import logging
 from phcli.define_value import *
 from ph_aws.ph_s3 import PhS3
 
-LOG_LEVEL = logging.DEBUG #ERROR
+LOG_LEVEL = logging.WARNING #ERROR
 LOG_PATH = '{}/logs/python/phcli/{}'
 
 PH_CLI_ACCESS_KEY = 'AKIAWPBDTVEAMVOYSOVE'
