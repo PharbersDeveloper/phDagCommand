@@ -140,3 +140,5 @@ phjobs
 
 file/ph_lmd/python-lambda-example-layer.zip
 file/ph_lmd/python-lambda-example-code.zip
+
+script/write_env.sh

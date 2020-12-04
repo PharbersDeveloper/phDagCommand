@@ -1,28 +1,31 @@
 # -*- coding: utf-8 -*-
-
 import boto3
 import botocore.exceptions
-
 from ph_aws.aws_root import PhAWS
-from ph_logs.ph_logs import phlogger
 
 
 class PhSts(PhAWS):
-    def __init__(self):
+    def __init__(self, **kwargs):
         self.credentials = None
+        self.access_key = kwargs.get('access_key', None)
+        self.secret_key = kwargs.get('secret_key', None)
 
     def get_cred(self):
-        if not self.credentials:
-           return {}
-
-        return {
-            'aws_access_key_id': self.credentials['AccessKeyId'],
-            'aws_secret_access_key': self.credentials['SecretAccessKey'],
-            'aws_session_token': self.credentials['SessionToken'],
-        }
+        if self.credentials:
+            return {
+                'region_name': 'cn-northwest-1',
+                'aws_access_key_id': self.credentials['AccessKeyId'],
+                'aws_secret_access_key': self.credentials['SecretAccessKey'],
+                'aws_session_token': self.credentials['SessionToken'],
+            }
 
     def assume_role(self, role_arn, external_id):
-        sts_client = boto3.client('sts')
+        if self.access_key and self.secret_key:
+            sts_client = boto3.client('sts', region_name='cn-northwest-1',
+                                      aws_access_key_id=self.access_key,
+                                      aws_secret_access_key=self.secret_key)
+        else:
+            sts_client = boto3.client('sts', region_name='cn-northwest-1')
 
         try:
             assumed_role_object = sts_client.assume_role(
@@ -30,11 +33,9 @@ class PhSts(PhAWS):
                 RoleSessionName=external_id,
                 ExternalId=external_id,
             )
-        except botocore.exceptions.ClientError as err:
-            phlogger.warn(err)
+        except botocore.exceptions.ClientError:
             self.credentials = {}
         else:
-            phlogger.info('Assume Role Arn: ' + assumed_role_object['AssumedRoleUser']['Arn'])
             self.credentials = assumed_role_object['Credentials']
 
         return self

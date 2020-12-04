@@ -8,7 +8,7 @@ with io.open("./README.md", "r", encoding='utf-8') as fh:
 
 setuptools.setup(
     name="phcli",
-    version="0.3.16",
+    version="1.2.0",
     author="Alfred Yang",
     author_email="alfredyang@pharbers.com",
     maintainer="ClockQ,AlexQian",
@@ -29,6 +29,8 @@ setuptools.setup(
         "pandas",
         "xlrd",
         "pypinyin",
+        "psycopg2",
+        "sqlalchemy",
     ],
 
     package_data={

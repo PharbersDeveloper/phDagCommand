@@ -5,7 +5,7 @@ This module document the YAML Job Args for Pharbers jobs
 """
 
 
-class PhYAMLJobArgs(object):
+class PhYAMLJobOutputs(object):
     def __init__(self, dt):
         self.key = ""
         self.value = ""
@@ -13,3 +13,6 @@ class PhYAMLJobArgs(object):
 
     def dict2obj(self, dt):
         self.__dict__.update(dt)
+
+    def __str__(self):
+        return str(self.__dict__)

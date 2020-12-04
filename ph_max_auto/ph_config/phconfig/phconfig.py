@@ -6,9 +6,9 @@ This module document the YAML Config for Pharbers jobs
 import yaml
 
 from ph_errs.ph_err import exception_function_not_implement
-from ph_max_auto.phdagspec.phdagspec import PhYAMLDAGSpec
-from ph_max_auto.phspec.phspec import PhYAMLSpec
-from ph_max_auto.phmetadata.phmetadata import PhYAMLMetadata
+from ph_max_auto.ph_config.phdagspec.phdagspec import PhYAMLDAGSpec
+from ph_max_auto.ph_config.phspec.phspec import PhYAMLSpec
+from ph_max_auto.ph_config.phmetadata.phmetadata import PhYAMLMetadata
 
 
 class PhYAMLConfig(object):

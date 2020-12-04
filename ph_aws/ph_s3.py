@@ -11,12 +11,20 @@ from ph_aws.aws_root import PhAWS
 
 class PhS3(PhAWS):
     def __init__(self, *args, **kwargs):
-        self.phsts = kwargs.get('phsts', None)
+        self.access_key = kwargs.get('access_key', None)
+        self.secret_key = kwargs.get('secret_key', None)
+        if self.access_key and self.secret_key:
+            self.s3_client = boto3.client('s3', region_name='cn-northwest-1',
+                                          aws_access_key_id=self.access_key,
+                                          aws_secret_access_key=self.secret_key)
+            return
 
-        if self.phsts:
+        self.phsts = kwargs.get('phsts', None)
+        if self.phsts and self.phsts.credentials:
             self.s3_client = boto3.client('s3', **self.phsts.get_cred())
-        else:
-            self.s3_client = boto3.client('s3')
+            return
+
+        self.s3_client = boto3.client('s3')
 
     def list_buckets(self):
         bks = self.s3_client.list_buckets()["Buckets"]
@@ -83,7 +91,7 @@ class PhS3(PhAWS):
         if sys.version_info > (3, 0):
             return str.split(object_str, "\n")
         else:
-            return filter(lambda x: x != "", string.split(object_str, "\n"))
+            return string.split(object_str, "\n")
 
     def download(self, bucket_name, object_name, file):
         """
