@@ -88,7 +88,7 @@ def submit_conf(path, phs3, runtime):
 
 def submit_file(submit_prefix):
     return {
-        "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-1.1.0-py3.8.egg," +
+        "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-1.2.0-py3.8.egg," +
                     submit_prefix + "phjob.py",
     }
 

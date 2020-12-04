@@ -8,6 +8,7 @@ from ph_max_auto.ph_models.data_set import DataSet
 def exec_before(*args, **kwargs):
     name = kwargs.pop('name', None)
     job_id = kwargs.pop('job_id', None)
+    enable_hive = kwargs.pop('enable_hive', False)
 
     def spark():
         from pyspark.sql import SparkSession
@@ -20,8 +21,13 @@ def exec_before(*args, **kwargs):
             .config("spark.executor.instances", "2") \
             .config("spark.executor.memory", "2g") \
             .config('spark.sql.codegen.wholeStage', False) \
-            .config("spark.sql.execution.arrow.enabled", "true") \
-            .getOrCreate()
+            .config("spark.sql.execution.arrow.enabled", "true")
+
+        if enable_hive:
+            spark = spark.enableHiveSupport()
+
+        spark = spark.getOrCreate()
+
         access_key = os.getenv("AWS_ACCESS_KEY_ID")
         secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
         if access_key is not None:
