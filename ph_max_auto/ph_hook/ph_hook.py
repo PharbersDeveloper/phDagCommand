@@ -21,7 +21,7 @@ def exec_before(*args, **kwargs):
             .config("spark.executor.instances", "2") \
             .config("spark.executor.memory", "2g") \
             .config('spark.sql.codegen.wholeStage', False) \
-            .config("spark.sql.execution.arrow.enabled", "true")
+            .config("spark.sql.execution.arrow.pyspark.enabled", "true")
 
         if enable_hive:
             spark = spark.enableHiveSupport()
