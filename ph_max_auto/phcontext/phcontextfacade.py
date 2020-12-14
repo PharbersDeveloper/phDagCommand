@@ -389,8 +389,12 @@ class PhContextFacade(object):
             "spark.driver.cores": "1",
             "spark.executor.memory": "2g",
             "spark.executor.cores": "1",
-            "spark.driver.extraJavaOptions": "-Dcom.amazonaws.services.s3.enableV4",
-            "spark.executor.extraJavaOptions": "-Dcom.amazonaws.services.s3.enableV4",
+            "spark.driver.extraJavaOptions": "-Dfile.encoding=UTF-8 "
+                                             "-Dsun.jnu.encoding=UTF-8 "
+                                             "-Dcom.amazonaws.services.s3.enableV4",
+            "spark.executor.extraJavaOptions": "-Dfile.encoding=UTF-8 "
+                                               "-Dsun.jnu.encoding=UTF-8 "
+                                               "-Dcom.amazonaws.services.s3.enableV4",
             "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem",
             "spark.hadoop.fs.s3a.access.key": access_key,
             "spark.hadoop.fs.s3a.secret.key": secret_key,
