@@ -1,16 +1,15 @@
 import os
 import base64
 from datetime import datetime
-from ph_db.ph_postgresql.ph_pg import PhPg
+from ph_db.ph_pg import PhPg
 from ph_max_auto.ph_models.data_set import DataSet
 
 
 def exec_before(*args, **kwargs):
     name = kwargs.pop('name', None)
     job_id = kwargs.pop('job_id', None)
-    enable_hive = kwargs.pop('enable_hive', False)
 
-    def spark():
+    def spark(enable_hive=False):
         from pyspark.sql import SparkSession
         os.environ["PYSPARK_PYTHON"] = "python3"
         spark = SparkSession.builder \

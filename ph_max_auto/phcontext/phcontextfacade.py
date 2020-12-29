@@ -149,8 +149,6 @@ class PhContextFacade(object):
         from ph_max_auto.ph_runtime import ph_r
 
         table = {
-            "python": ph_python3,
-            "python2": ph_python3,
             "python3": ph_python3,
             "r": ph_r,
         }

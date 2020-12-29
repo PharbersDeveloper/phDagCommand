@@ -31,6 +31,7 @@ setuptools.setup(
         "pypinyin",
         "psycopg2",
         "sqlalchemy",
+        "pymysql",
     ],
 
     package_data={
