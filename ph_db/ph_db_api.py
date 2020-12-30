@@ -46,20 +46,21 @@ class PhDBAPI(object):
             self.session.delete(r)
         return result
 
-    def update(self, obj):
+    def update(self, obj, FK='id'):
         """
         更新数据
         :param obj: 要更新的实例信息
+        :param FK: 主键
         :return:
         """
         tmp = copy.deepcopy(obj.__dict__)
         tmp.pop('_sa_instance_state', None)
-        obj_id = tmp.pop('id', None)
+        obj_id = tmp.pop(FK, None)
 
         # 如果没有要更新的元素，直接返回
         if not obj_id or not tmp:
             return obj
 
-        result = self.session.query(obj.__class__).filter(getattr(obj.__class__, 'id') == obj_id)
+        result = self.session.query(obj.__class__).filter(getattr(obj.__class__, FK) == obj_id)
         result.update(tmp)
         return obj
