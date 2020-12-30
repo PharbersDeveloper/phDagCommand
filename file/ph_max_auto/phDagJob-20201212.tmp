@@ -1,0 +1,35 @@
+############## == $alfred_name == ###################
+def $alfred_name_cmd(**context):
+    ti = context['task_instance']
+    owner = default_args['owner']
+    run_id = context["dag_run"].run_id
+    job_id = ti.hostname.split("-")[-1]
+    conf = context["dag_run"].conf
+
+    params = var_key_lst.get("common", {})
+    params.update(var_key_lst.get("$alfred_name", {}))
+
+    write_hosts = 'echo "192.168.1.28    spark.master" >> /etc/hosts'
+    print(write_hosts)
+    print(subprocess.check_output(write_hosts, shell=True, stderr=subprocess.STDOUT).decode("utf-8"))
+
+    install_phcli = 'pip3 install phcli==1.2.3'
+    print(install_phcli)
+    print(subprocess.check_output(install_phcli, shell=True, stderr=subprocess.STDOUT).decode("utf-8"))
+
+    exec_phcli_submit = 'LANG=C.UTF-8 phcli maxauto --runtime $runtime --group $alfred_jobs_dir --path $alfred_name --cmd submit ' \
+                        '--owner "{}" --run_id "{}" --job_id "{}" --context "{}" "{}"'.format(str(owner), str(run_id), str(job_id), str(params), str(conf))
+    print(exec_phcli_submit)
+    print(subprocess.check_output(exec_phcli_submit, shell=True, stderr=subprocess.STDOUT).decode("utf-8"))
+
+    # key = ti.xcom_pull(task_ids='test', key='key').decode("UTF-8")
+    # ti.xcom_push(key="key", value=key)
+
+$alfred_name = PythonOperator(
+    task_id='$alfred_name',
+    provide_context=True,
+    python_callable=$alfred_name_cmd,
+    dag=dag
+)
+############## == $alfred_name == ###################
+

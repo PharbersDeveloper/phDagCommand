@@ -79,16 +79,14 @@ def create(job_path, phs3):
 def submit_conf(path, phs3, runtime):
     return {
         "spark.pyspark.python": "/usr/bin/"+runtime,
-        "jars": "s3a://ph-stream/jars/aws/aws-java-sdk-1.11.682.jar,"
-                "s3a://ph-stream/jars/aws/aws-java-sdk-core-1.11.682.jar,"
-                "s3a://ph-stream/jars/aws/aws-java-sdk-s3-1.11.682.jar,"
-                "s3a://ph-stream/jars/hadoop/hadoop-aws-2.9.2.jar",
+        "jars": "s3a://ph-platform/2020-11-11/jobs/python/phcli/common/aws-java-sdk-bundle-1.11.828.jar,"
+                "s3a://ph-platform/2020-11-11/jobs/python/phcli/common/hadoop-aws-3.2.1.jar",
     }
 
 
 def submit_file(submit_prefix):
     return {
-        "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-1.2.0-py3.8.egg," +
+        "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-1.2.3-py3.8.egg," +
                     submit_prefix + "phjob.py",
     }
 

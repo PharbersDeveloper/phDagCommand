@@ -12,6 +12,7 @@ Pharbers Python 工具集合
 5. 修改 ph_max_auto/define_value.py 中新的模板文件版本
 
 6. 打包
+$ rm build/ dist/
 $ python setup.py sdist bdist_egg bdist_wheel
 
 7. 上传

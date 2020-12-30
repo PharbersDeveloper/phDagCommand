@@ -10,6 +10,7 @@ from ph_sql.ph_hive.__main__ import main as phhive_main
 from ph_data_clean.__main__ import main as clean_main
 from ph_storage.back_up.__main__ import main as hdfs_back_up_main
 from ph_storage.clean.__main__ import main as hdfs_clean_main
+from ph_dag.__main__ import main as dag_main
 
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
@@ -18,7 +19,7 @@ CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 @click.group(context_settings=CONTEXT_SETTINGS)
 def phcli():
     """
-    Pharbers Command Line Interface v1.2.0
+    Pharbers Command Line Interface v1.2.3
     """
     pass
 
@@ -31,6 +32,7 @@ phcli.add_command(phhive_main)
 phcli.add_command(clean_main)
 phcli.add_command(hdfs_back_up_main)
 phcli.add_command(hdfs_clean_main)
+phcli.add_command(dag_main)
 
 
 if __name__ == '__main__':

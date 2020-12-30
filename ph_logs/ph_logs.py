@@ -24,7 +24,6 @@ class PhLogs(object):
     def __init__(self, *args, **kwargs):
         self._log_path = ''
         self.logger = logging.getLogger("ph-log")
-        self.logger.setLevel(level=LOG_LEVEL)
         formatter = logging.Formatter("{ 'Time': %(asctime)s, 'Message': %(message)s, 'File': %(filename)s, 'Func': "
                                       "%(funcName)s, 'Line': %(lineno)s, 'Level': %(levelname)s } ")
 
@@ -54,11 +53,12 @@ phlogger = PhLogs().logger
 inst_map = {}
 
 
-def phs3logger(job_id):
+def phs3logger(job_id, level=LOG_LEVEL):
     if job_id in inst_map.keys():
         return inst_map[job_id]
 
     logger = PhLogs(job_id=job_id, storage='s3').logger
+    logger.setLevel(level)
     inst_map[job_id] = logger
 
     return logger

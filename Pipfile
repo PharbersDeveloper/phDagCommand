@@ -20,6 +20,7 @@ pandas = "*"
 xlrd = "*"
 pypinyin = "*"
 psycopg2 = "*"
+pymysql = "*"
 
 [requires]
 python_version = "3.8"

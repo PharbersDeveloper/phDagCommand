@@ -6,7 +6,7 @@ This is job template for Pharbers Max Job
 import base64
 from datetime import datetime
 from ph_logs.ph_logs import phs3logger
-from ph_db.ph_postgresql.ph_pg import PhPg
+from ph_db.ph_pg import PhPg
 from ph_max_auto.ph_models.asset import Asset
 
 

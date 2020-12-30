@@ -1,5 +1,5 @@
 import base64
-from ph_db.ph_postgresql.ph_pg import PhPg
+from ph_db.ph_pg import PhPg
 
 
 def conn_pg():

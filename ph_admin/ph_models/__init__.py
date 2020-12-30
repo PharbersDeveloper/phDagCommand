@@ -80,7 +80,7 @@ class Scope(Base):
 
 if __name__ == '__main__':
     import base64
-    from ph_db.ph_postgresql.ph_pg import PhPg
+    from ph_db.ph_pg import PhPg
 
     pg = PhPg(
         base64.b64decode('cGgtZGItbGFtYmRhLmNuZ2sxamV1cm1udi5yZHMuY24tbm9ydGh3ZXN0LTEuYW1hem9uYXdzLmNvbS5jbgo=').decode('utf8')[:-1],
