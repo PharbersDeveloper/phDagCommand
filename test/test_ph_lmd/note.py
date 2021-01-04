@@ -1,5 +1,4 @@
 import boto3
-import json
 
 s3_bucket_name = "ph-apis"
 

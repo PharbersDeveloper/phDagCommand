@@ -1,5 +1,5 @@
-from ph_aws.ph_sts import PhSts
-from ph_aws.ph_s3 import PhS3
+from phcli.ph_aws.ph_sts import PhSts
+from phcli.ph_aws.ph_s3 import PhS3
 
 phsts = PhSts()
 phsts = phsts.assume_role('arn:aws-cn:iam::444603803904:role/Ph-Cli-Lmd', 'Ph-Cli-Lmd')

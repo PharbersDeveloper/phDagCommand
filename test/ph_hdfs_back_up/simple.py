@@ -1,5 +1,5 @@
-from ph_storage.model.s3_storage import PhS3Storage
-from ph_storage import static as st
+from phcli.ph_storage.model.s3_storage import PhS3Storage
+from phcli.ph_storage import static as st
 
 
 # 测试上传S3

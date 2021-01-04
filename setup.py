@@ -33,7 +33,6 @@ setuptools.setup(
         "sqlalchemy",
         "pymysql",
     ],
-
     package_data={
         '': ['template/*.yaml', 'template/*.tmp'],
     },

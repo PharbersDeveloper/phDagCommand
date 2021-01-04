@@ -1,6 +1,5 @@
-import os
 import pytest
-from ph_lmd.model.ph_gateway import PhGateway
+from phcli.ph_lmd.model.ph_gateway import PhGateway
 
 
 @pytest.mark.dependency(depends=['test_ph_lambda.test_ph_lambda_create_s3'])
