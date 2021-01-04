@@ -6,10 +6,12 @@ metadata:
   labels:
     name: $name
     runtime: $runtime
+    command: $command
 spec:
   containers:
     repository: local
     runtime: $runtime
+    command: $command
     code: $code
     config: phconf.yaml
     args:
@@ -19,8 +21,8 @@ spec:
         value: 456
     outputs:
       - key: c
-        value: abcde
+        value: abc
       - key: d
-        value: 6789
+        value: def
 
 

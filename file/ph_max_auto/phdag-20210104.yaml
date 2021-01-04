@@ -15,9 +15,9 @@ spec:
   email_on_retry: False
   retries: 1
   retry_delay: "minutes=5"
-  owner: phcli_defalut
+  owner: $dag_owner
   dag_id: $name
-  dag_tag: $name
+  dag_tag: $dag_tag
   jobs:
     - name: group.test1
       runtime: $runtime
