@@ -6,7 +6,7 @@ from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 
 
-def create(job_path, phs3):
+def create(job_path, phs3, command):
     # 1. /__init.py file
     subprocess.call(["touch", job_path + "/__init__.py"])
 
@@ -19,13 +19,23 @@ def create(job_path, phs3):
         file.write("""def execute(**kwargs):
     \"\"\"
         please input your code below
-        get spark session: spark = kwargs["spark"]()
+""")
+
+        if command == 'submit':
+            file.write('        get spark session: spark = kwargs["spark"]()')
+
+        file.write("""
     \"\"\"
     logger = phs3logger(kwargs["job_id"])
     logger.info("当前 owner 为 " + str(kwargs["owner"]))
     logger.info("当前 run_id 为 " + str(kwargs["run_id"]))
     logger.info("当前 job_id 为 " + str(kwargs["job_id"]))
-    spark = kwargs["spark"]()
+""")
+
+        if command == 'submit':
+            file.write('    spark = kwargs["spark"]()')
+
+        file.write("""
     logger.info(kwargs["a"])
     logger.info(kwargs["b"])
     logger.info(kwargs["c"])
@@ -52,16 +62,17 @@ def create(job_path, phs3):
                     file.write("@click.option('--" + output.key + "')\n")
                 file.write("""def debug_execute(**kwargs):
     try:
-        args = {'name': '$alfred_name'}
+        args = {"name": "$alfred_name"}
+        outputs = [$alfred_outputs]
 
         args.update(kwargs)
         result = exec_before(**args)
 
-        args.update(result)
+        args.update(result if isinstance(result, dict) else {})
         result = execute(**args)
 
-        args.update(result)
-        result = exec_after(outputs=[], **args)
+        args.update(result if isinstance(result, dict) else {})
+        result = exec_after(outputs=outputs, **args)
 
         return result
     except Exception as e:

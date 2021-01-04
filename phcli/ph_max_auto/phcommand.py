@@ -13,23 +13,16 @@ context_args = {}
 
 
 @click.group("maxauto")
-@click.option("--ide",
+@click.option("-I", "--ide",
               prompt="Your IDE is",
               help="You IDE.",
               type=click.Choice(["c9", "jupyter"]),
               default=os.getenv(dv.ENV_CUR_IDE_KEY, dv.ENV_CUR_IDE_DEFAULT))
-@click.option("-r", "--runtime",
+@click.option("-R", "--runtime",
               prompt="Your programming language is",
               help="You use programming language.",
               type=click.Choice(["python3", "r"]),
               default=os.getenv(dv.ENV_CUR_RUNTIME_KEY, dv.ENV_CUR_RUNTIME_DEFAULT))
-@click.option("-g", "--group",
-              prompt="The job group is",
-              help="The job group.",
-              default="")
-@click.option("-n", "--name",
-              prompt="The job name is",
-              help="The job name.")
 def maxauto(**kwargs):
     """
     The Pharbers Max Job Command Line Interface (CLI)
@@ -39,99 +32,118 @@ def maxauto(**kwargs):
 
 
 @maxauto.command("create")
+@click.option("-g", "--group",
+              prompt="The job group is",
+              help="The job group.",
+              default="")
+@click.option("-n", "--name",
+              prompt="The job name is",
+              help="The job name.")
+@click.option("-C", "--command",
+              prompt="The job command is",
+              help="The job command.",
+              type=click.Choice(["submit", "script"]),
+              default="submit")
 def create(**kwargs):
     """
     创建一个 Job
     """
     context_args.update(kwargs)
     PhContextFacade(**context_args).command_create_exec()
-    print(context_args)
-    print('create')
+    click.secho("创建完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("run")
-def run():
+@click.option("-g", "--group",
+              prompt="The job group is",
+              help="The job group.",
+              default="")
+@click.option("-n", "--name",
+              prompt="The job name is",
+              help="The job name.")
+def run(**kwargs):
     """
     运行一个 Job
     """
-    print(context_args)
-    print('run')
+    context_args.update(kwargs)
+    PhContextFacade(**context_args).command_run_exec()
+    click.secho("运行完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("combine")
-def combine():
+@click.option("-n", "--name",
+              prompt="The dag name is",
+              help="The dag name.")
+@click.option("-o", "--owner",
+              prompt="The dag owner is",
+              help="The dag owner.",
+              default="default")
+@click.option("-t", "--tag",
+              prompt="The dag tag is",
+              help="The dag tag.",
+              default="default")
+def combine(**kwargs):
     """
     关联一组 Job
     """
-    print(context_args)
-    print('combine')
+    context_args.update(kwargs)
+    PhContextFacade(**context_args).command_combine_exec()
+    click.secho("关联完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("dag")
-def dag():
+@click.option("-n", "--name",
+              prompt="The dag name is",
+              help="The dag name.")
+def dag(**kwargs):
     """
     通过 combine 生成一组 DAG 运行文件
     """
-    print(context_args)
-    print('dag')
+    context_args.update(kwargs)
+    PhContextFacade(**context_args).command_dag_exec()
+    click.secho("DAG完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("publish")
-def publish():
+@click.option("-n", "--name",
+              prompt="The dag name is",
+              help="The dag name.")
+def publish(**kwargs):
     """
     发布 DAG 运行文件和相关依赖
     """
-    print(context_args)
-    print('publish')
+    context_args.update(kwargs)
+    PhContextFacade(**context_args).command_publish_exec()
+    click.secho("发布完成", fg='green', blink=True, bold=True)
 
 
-@maxauto.command("submit")
+@maxauto.command("online_run")
+@click.option("-g", "--group",
+              prompt="The dag job group is",
+              help="The dag job group.",
+              default="")
+@click.option("-n", "--name",
+              prompt="The dag job name is",
+              help="The dag job name.")
 @click.option("--owner", default="")
 @click.option("--run_id", default="")
 @click.option("--job_id", default="")
-@click.option("-c", "--context", help="submit context", default="{}")
+@click.option("-c", "--context", help="online_run context", default="{}")
 @click.argument('args', nargs=1, default="{}")
-def submit():
+def online_run(**kwargs):
     """
-    通过指定 Job name 执行一个 spark submit
+    通过指定 Job name 在线上执行
     """
-    print(context_args)
-    print('submit')
+    context_args.update(kwargs)
+    PhContextFacade(**context_args).command_online_run_exec()
+    click.secho("submit完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("status")
-def status():
+def status(**kwargs):
     """
     获取执行状态（暂无）
     """
-    print(context_args)
-    print('status')
-
-
-# def maxauto(**kwargs):
-#     """The Pharbers Max Job Command Line Interface (CLI)
-#         --runtime Args: \n
-#             python: This is to see \n
-#             R: This is to see \n
-#
-#         --cmd Args: \n
-#             status: \n
-#             create: to generate a job template \n
-#             run: \n
-#             combine: to combine job into a job sequence \n
-#             dag: \n
-#             submit: \n
-#             publish: to publish job to pharbers IPaaS \n
-#
-#         --group Args: \n
-#             The concert job you want the process group.
-#
-#         --owner Args: Current Owner. \n
-#         --run_id Args: Current run_id. \n
-#         --job_id Args: Current job_id. \n
-#
-#         --path Args: \n
-#             The dictionary that specify the py and yaml file
-#     """
-#     facade = PhContextFacade(**kwargs)
-    click.get_current_context().exit(facade.execute())
+    context_args.update(kwargs)
+    PhContextFacade(**context_args).command_status_exec()
+    click.secho("查看状态完成", fg='green', blink=True, bold=True)

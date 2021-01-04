@@ -19,17 +19,18 @@ ENV_CUR_RUNTIME_DEFAULT = 'python3'
 ENV_CUR_IDE_KEY = 'PH_CUR_IDE'
 ENV_CUR_IDE_DEFAULT = 'c9'
 
-TEMPLATE_PHJOB_FILE_PY = "/template/python/phcli/maxauto/phjob-20201116.tmp"
+TEMPLATE_PHCONF_FILE = "/template/python/phcli/maxauto/phconf-20210104.yaml"
+
+TEMPLATE_PHJOB_FILE_PY = "/template/python/phcli/maxauto/phjob-20210104.tmp"
 TEMPLATE_PHJOB_FILE_R = "/template/python/phcli/maxauto/phjob.r.tmp"
 
-TEMPLATE_PHMAIN_FILE_PY = "/template/python/phcli/maxauto/phmain-20201116.tmp"
+TEMPLATE_PHMAIN_FILE_PY = "/template/python/phcli/maxauto/phmain-20210104.tmp"
 TEMPLATE_PHMAIN_FILE_R = "/template/python/phcli/maxauto/phmain.r.tmp"
 
 TEMPLATE_JUPYTER_FILE = '/template/python/phcli/maxauto/phJupyterTemp-20201231.ipynb'
 
-TEMPLATE_PHCONF_FILE = "/template/python/phcli/maxauto/phconf-20201116.yaml"
-TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20201110.yaml"
-TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20201127.tmp"
+TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20210104.yaml"
+TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20210104.tmp"
 TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20201212.tmp"
 
 PRESET_MUST_ARGS = 'owner, run_id, job_id'
