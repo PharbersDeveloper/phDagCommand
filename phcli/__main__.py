@@ -18,7 +18,7 @@ CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 @click.group(context_settings=CONTEXT_SETTINGS)
 def phcli():
     """
-    Pharbers Command Line Interface v1.2.3
+    Pharbers Command Line Interface v2.0.0
     """
     pass
 

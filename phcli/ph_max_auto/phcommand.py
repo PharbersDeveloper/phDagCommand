@@ -14,12 +14,10 @@ context_args = {}
 
 @click.group("maxauto")
 @click.option("-I", "--ide",
-              prompt="Your IDE is",
               help="You IDE.",
               type=click.Choice(["c9", "jupyter"]),
               default=os.getenv(dv.ENV_CUR_IDE_KEY, dv.ENV_CUR_IDE_DEFAULT))
 @click.option("-R", "--runtime",
-              prompt="Your programming language is",
               help="You use programming language.",
               type=click.Choice(["python3", "r"]),
               default=os.getenv(dv.ENV_CUR_RUNTIME_KEY, dv.ENV_CUR_RUNTIME_DEFAULT))
@@ -136,7 +134,7 @@ def online_run(**kwargs):
     """
     context_args.update(kwargs)
     PhContextFacade(**context_args).command_online_run_exec()
-    click.secho("submit完成", fg='green', blink=True, bold=True)
+    click.secho("online_run完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("status")

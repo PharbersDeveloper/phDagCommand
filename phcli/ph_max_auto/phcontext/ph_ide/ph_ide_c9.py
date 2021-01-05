@@ -2,11 +2,11 @@ import os
 import subprocess
 
 from phcli.ph_errs.ph_err import *
-from .ph_base import PhBase, logger, phs3, dv
+from .ph_ide_base import PhIDEBase, logger, phs3, dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 
 
-class PhC9(PhBase):
+class PhIDEC9(PhIDEBase):
     """
     针对 C9 环境的执行策略
     """
@@ -14,30 +14,6 @@ class PhC9(PhBase):
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
         self.__dict__.update(super().get_absolute_path())
-
-    def get_runtime_main_code(self, runtime):
-        table = {
-            "python3": "phmain.py",
-            "r": "phmain.R"
-        }
-        return table[runtime]
-
-    def get_runtime_inst(self, runtime):
-        from phcli.ph_max_auto.ph_runtime import ph_python3
-        from phcli.ph_max_auto.ph_runtime import ph_r
-        table = {
-            "python3": ph_python3,
-            "r": ph_r,
-        }
-        return table[runtime]
-
-    def get_runtime_command(self, runtime):
-        table = {
-            "bash": "/bin/bash",
-            "python3": "python3",
-            "r": "Rscript",
-        }
-        return table[runtime]
 
     def create(self, **kwargs):
         """
@@ -58,15 +34,15 @@ class PhC9(PhBase):
                 line = line.replace("$name", self.name) \
                     .replace("$runtime", self.runtime) \
                     .replace("$command", self.command) \
-                    .replace("$code", self.get_runtime_main_code(self.runtime))
+                    .replace("$code", self.table_driver_runtime_main_code(self.runtime))
                 file.write(line)
 
-        runtime_inst = self.get_runtime_inst(self.runtime)
-        runtime_inst.create(
+        runtime_inst = self.table_driver_runtime_inst(self.runtime)
+        runtime_inst(
             job_path=self.job_path,
             phs3=phs3,
             command=self.command,
-        )
+        ).create()
 
     def run(self, **kwargs):
         """
@@ -80,7 +56,7 @@ class PhC9(PhBase):
 
         if config.spec.containers.repository == "local":
             entry_runtime = config.spec.containers.runtime
-            entry_runtime = self.get_runtime_command(entry_runtime)
+            entry_runtime = self.table_driver_runtime_binary(entry_runtime)
             entry_point = config.spec.containers.code
             entry_point = self.job_path + '/' + entry_point
 

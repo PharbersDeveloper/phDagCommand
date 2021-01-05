@@ -11,6 +11,8 @@ from phcli.ph_max_auto.ph_hook.ph_hook import exec_before, exec_after
 
 
 @click.command()
+@click.option('--owner')
+@click.option('--run_id')
 @click.option('--job_id')
 def debug_execute(**kwargs):
     try:
@@ -18,15 +20,11 @@ def debug_execute(**kwargs):
 
         args.update(kwargs)
         result = exec_before(**args)
-        if not result:
-            result = {}
 
-        args.update(result)
+        args.update(result if isinstance(result, dict) else {})
         result = execute(**args)
-        if not result:
-            result = {}
 
-        args.update(result)
+        args.update(result if isinstance(result, dict) else {})
         result = exec_after(outputs=[], **args)
 
         return result

@@ -12,7 +12,7 @@ from phcli.ph_max_auto.ph_config.phmetadata.phmetadata import PhYAMLMetadata
 
 
 class PhYAMLConfig(object):
-    def __init__(self, path, name="/phconf.yaml"):
+    def __init__(self, path='', name="/phconf.yaml"):
         self.path = path
         self.name = name
         self.apiVersion = ""

@@ -59,7 +59,7 @@ def copy_job(context, **kwargs):
             continue
 
         job_name = jt.name.replace('.', '_')
-        job_full_path = context.cur_proj_dir + context.job_prefix + jt.name.replace('.', '/')
+        job_full_path = context.project_path + context.job_prefix + jt.name.replace('.', '/')
         args_map = job_conf_args2map(job_full_path)
 
         phjobs_tmp = ['"{}": {{'.format(job_name)]
@@ -88,7 +88,7 @@ def copy_job(context, **kwargs):
         if jt.name.startswith('preset'):
             continue
         job_name = jt.name.replace('.', '/')
-        job_full_path = context.cur_proj_dir + context.job_prefix + job_name
+        job_full_path = context.project_path + context.job_prefix + job_name
         result = job_conf_args2map(job_full_path)
         result = dict([(k, v) for scope, args in result.items() for k, v in args.items()])
         merge_job_args(all_jobs_args_map, result)
@@ -112,3 +112,12 @@ def copy_job(context, **kwargs):
         for k, v in all_jobs_args_map.items():
             f.write('--{}\n'.format(k))
             f.write('{}\n'.format(v))
+
+    # 5. copy /phconf.yaml to phdags/
+    job_phconf_abs_path = os.path.abspath(__file__).split('/')
+    job_phconf_abs_path[-1] = "phconf.yaml"
+    job_phconf_abs_path = '/'.join(job_phconf_abs_path)
+    with open(context.dag_path + DIR_NAME + "/phconf.yaml", 'w') as target:
+        with open(job_phconf_abs_path) as source:
+            data = source.read()
+            target.write(data)

@@ -3,10 +3,10 @@ import subprocess
 
 from phcli.ph_errs.ph_err import *
 
-from .ph_base import PhBase, logger, phs3
+from .ph_ide_base import PhIDEBase, logger, phs3
 
 
-class PhJupyter(PhBase):
+class PhIDEJupyter(PhIDEBase):
     """
     针对 Jupyter 环境的执行策略
     """

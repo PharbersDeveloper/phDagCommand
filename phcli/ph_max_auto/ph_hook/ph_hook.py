@@ -14,7 +14,7 @@ def exec_before(*args, **kwargs):
         os.environ["PYSPARK_PYTHON"] = "python3"
         spark = SparkSession.builder \
             .master("yarn") \
-            .appName(str(name)+'_'+str(job_id)) \
+            .appName(str(job_id)) \
             .config("spark.driver.memory", "2g") \
             .config("spark.executor.cores", "2") \
             .config("spark.executor.instances", "2") \

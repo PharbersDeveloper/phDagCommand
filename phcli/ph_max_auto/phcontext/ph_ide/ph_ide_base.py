@@ -20,7 +20,7 @@ phsts = PhSts().assume_role(
 phs3 = PhS3(phsts=phsts)
 
 
-class PhBase(object):
+class PhIDEBase(object):
     job_prefix = "/phjobs/"
     combine_prefix = "/phcombines/"
     dag_prefix = "/phdags/"
@@ -46,6 +46,30 @@ class PhBase(object):
             'dag_path': dag_path,
             'upload_path': upload_path,
         }
+
+    def table_driver_runtime_main_code(self, runtime):
+        table = {
+            "python3": "phmain.py",
+            "r": "phmain.R"
+        }
+        return table[runtime]
+
+    def table_driver_runtime_inst(self, runtime):
+        from ..ph_runtime.ph_rt_python3 import PhRTPython3
+        from ..ph_runtime.ph_rt_r import PhRTR
+        table = {
+            "python3": PhRTPython3,
+            "r": PhRTR,
+        }
+        return table[runtime]
+
+    def table_driver_runtime_binary(self, runtime):
+        table = {
+            "bash": "/bin/bash",
+            "python3": "python3",
+            "r": "Rscript",
+        }
+        return table[runtime]
 
     def create(self, **kwargs):
         """
@@ -192,95 +216,21 @@ class PhBase(object):
                         ast_dict[k] = ast.literal_eval(v)
             return ast_dict
 
-        context = ast_parse(self.context)
-        args = ast_parse(self.args)
+        self.context = ast_parse(self.context)
+        self.args = ast_parse(self.args)
 
         group = self.group + "/" if self.group else ''
-        job_path = dv.DAGS_S3_PHJOBS_PATH + group + self.name
-        submit_prefix = "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + job_path + "/"
-        args = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + job_path + "/args.properties")
+        self.job_path = dv.DAGS_S3_PHJOBS_PATH + group + self.name
+        self.submit_prefix = "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + self.job_path + "/"
 
+        stream = phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.job_path + "/phconf.yaml")
+        config = PhYAMLConfig()
+        config.load_yaml(stream)
+        self.runtime = config.spec.containers.runtime
+        self.command = config.spec.containers.command
 
-    #
-    #         stream = phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + job_path + "/phconf.yaml")
-    #         config = PhYAMLConfig(self.path)
-    #         config.load_yaml(stream)
-    #         runtime = config.spec.containers.runtime
-    #         runtime_inst = self.get_runtime_inst(runtime)
-    #
-    #         access_key = os.getenv("AWS_ACCESS_KEY_ID", 'NULL_AWS_ACCESS_KEY_ID')
-    #         secret_key = os.getenv("AWS_SECRET_ACCESS_KEY", 'NULL_AWS_SECRET_ACCESS_KEY')
-    #         current_user = os.getenv("HADOOP_PROXY_USER")
-    #         if current_user is None:
-    #             current_user = "airflow"
-    #
-    #         cmd_arr = ["spark-submit",
-    #                    "--master", "yarn",
-    #                    "--deploy-mode", "cluster",
-    #                    "--name", self.path+"_"+self.job_id,
-    #                    "--proxy-user", current_user]
-    #
-    #         conf_map = {
-    #             "spark.driver.memory": "1g",
-    #             "spark.driver.cores": "1",
-    #             "spark.executor.memory": "2g",
-    #             "spark.executor.cores": "1",
-    #             "spark.driver.extraJavaOptions": "-Dfile.encoding=UTF-8 "
-    #                                              "-Dsun.jnu.encoding=UTF-8 "
-    #                                              "-Dcom.amazonaws.services.s3.enableV4",
-    #             "spark.executor.extraJavaOptions": "-Dfile.encoding=UTF-8 "
-    #                                                "-Dsun.jnu.encoding=UTF-8 "
-    #                                                "-Dcom.amazonaws.services.s3.enableV4",
-    #             "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem",
-    #             "spark.hadoop.fs.s3a.access.key": access_key,
-    #             "spark.hadoop.fs.s3a.secret.key": secret_key,
-    #             "spark.hadoop.fs.s3a.endpoint": "s3.cn-northwest-1.amazonaws.com.cn"
-    #         }
-    #         conf_map.update(runtime_inst.submit_conf(self.path, phs3, runtime))
-    #         conf_map.update(dict([(k.lstrip("CONF__"), v) for k, v in self.context.items() if k.startswith('CONF__')]))
-    #         conf_map = [('--conf', k + '=' + v) for k, v in conf_map.items()]
-    #         cmd_arr += [j for i in conf_map for j in i]
-    #
-    #         other_map = {
-    #             "num-executors": "2",
-    #         }
-    #         other_map.update(dict([(k.lstrip("OTHER__"), v) for k, v in self.context.items() if k.startswith('OTHER__')]))
-    #         other_map = [('--'+k, v) for k, v in other_map.items()]
-    #         cmd_arr += [j for i in other_map for j in i]
-    #
-    #         file_map = runtime_inst.submit_file(submit_prefix)
-    #         file_map = [('--'+k, v) for k, v in file_map.items()]
-    #         cmd_arr += [j for i in file_map for j in i]
-    #
-    #         cmd_arr += [runtime_inst.submit_main(submit_prefix)]
-    #
-    #         cmd_arr += ['--owner', self.owner]
-    #         cmd_arr += ['--run_id', self.run_id]
-    #         cmd_arr += ['--job_id', self.job_id]
-    #
-    #         # dag_run 优先 phconf 默认参数
-    #         must_args = [arg.strip() for arg in dv.PRESET_MUST_ARGS.split(",")]
-    #         cur_key = ""
-    #         for it in [arg for arg in args if arg]:
-    #             # 如果是 key，记录这个key
-    #             if it[0:2] == "--":
-    #                 cur_key = it[2:]
-    #                 # 必须参数，不使用用户的配置，用系统注入的
-    #                 if it[2:] in must_args:
-    #                     continue
-    #                 cmd_arr.append(it)
-    #             else:
-    #                 # 必须参数的 value 不处理
-    #                 if cur_key in must_args:
-    #                     continue
-    #                 if cur_key in self.args.keys():
-    #                     it = self.args[cur_key]
-    #                 if it:
-    #                     cmd_arr.append(it)
-    #
-    #         phlogger.info(cmd_arr)
-    #         return subprocess.call(cmd_arr)
-
+        runtime_inst = self.table_driver_runtime_inst(self.runtime)
+        runtime_inst(phs3=phs3, **self.__dict__).online_run()
 
     def status(self, **kwargs):
         """

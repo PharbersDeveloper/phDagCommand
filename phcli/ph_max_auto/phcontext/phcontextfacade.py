@@ -4,14 +4,14 @@
 This module document the usage of class pharbers command context,
 """
 from phcli.ph_logs.ph_logs import phs3logger
-from phcli.ph_max_auto.phcontext.ph_ide.ph_c9 import PhC9
-from phcli.ph_max_auto.phcontext.ph_ide.ph_jupyter import PhJupyter
+from phcli.ph_max_auto.phcontext.ph_ide.ph_ide_c9 import PhIDEC9
+from phcli.ph_max_auto.phcontext.ph_ide.ph_ide_jupyter import PhIDEJupyter
 
 
 logger = phs3logger()
 ide_table = {
-    'c9': PhC9,
-    'jupyter': PhJupyter,
+    'c9': PhIDEC9,
+    'jupyter': PhIDEJupyter,
 }
 
 
@@ -45,7 +45,7 @@ class PhContextFacade(object):
         ide_inst.publish()
 
     def command_online_run_exec(self):
-        logger.debug("sub command submit")
+        logger.debug("sub command online_run")
         ide_inst = ide_table[self.ide](**self.__dict__)
         ide_inst.online_run()
 

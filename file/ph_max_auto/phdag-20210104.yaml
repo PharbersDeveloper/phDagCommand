@@ -19,11 +19,6 @@ spec:
   dag_id: $name
   dag_tag: $dag_tag
   jobs:
-    - name: group.test1
-      runtime: $runtime
-      command: $command
-    - name: group.test2
-      runtime: $runtime
-      command: $command
+    $jobs
   linkage:
-    - "group.test1 >> group.test2"
+    - $linkage
