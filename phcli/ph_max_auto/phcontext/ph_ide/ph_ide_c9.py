@@ -1,8 +1,10 @@
 import os
 import subprocess
 
-from phcli.ph_errs.ph_err import *
-from .ph_ide_base import PhIDEBase, logger, phs3, dv
+from .ph_ide_base import PhIDEBase
+from phcli.ph_max_auto import define_value as dv
+from phcli.ph_errs.ph_err import exception_file_not_exist
+from phcli.ph_errs.ph_err import exception_function_not_implement
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 
 
@@ -19,15 +21,13 @@ class PhIDEC9(PhIDEBase):
         """
         c9的创建过程
         """
-        logger.info('maxauto ide=c9 的 create 实现')
-        logger.debug(self.__dict__)
+        self.logger.info('maxauto ide=c9 的 create 实现')
+        self.logger.debug(self.__dict__)
 
-        if os.path.exists(self.job_path):
-            raise exception_file_already_exist
-        else:
-            subprocess.call(["mkdir", "-p", self.job_path])
+        self.check_path(self.job_path)
+        subprocess.call(["mkdir", "-p", self.job_path])
 
-        f_lines = phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
+        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
         with open(self.job_path + "/phconf.yaml", "a") as file:
             for line in f_lines:
                 line = line + "\n"
@@ -40,7 +40,7 @@ class PhIDEC9(PhIDEBase):
         runtime_inst = self.table_driver_runtime_inst(self.runtime)
         runtime_inst(
             job_path=self.job_path,
-            phs3=phs3,
+            phs3=self.phs3,
             command=self.command,
         ).create()
 
@@ -48,8 +48,8 @@ class PhIDEC9(PhIDEBase):
         """
         c9的运行过程
         """
-        logger.info('maxauto ide=c9 的 run 实现')
-        logger.debug(self.__dict__)
+        self.logger.info('maxauto ide=c9 的 run 实现')
+        self.logger.debug(self.__dict__)
 
         config = PhYAMLConfig(self.job_path)
         config.load_yaml()
@@ -75,8 +75,8 @@ class PhIDEC9(PhIDEBase):
         """
         c9的DAG过程
         """
-        logger.info('maxauto ide=c9 的 dag 实现')
-        logger.debug(self.__dict__)
+        self.logger.info('maxauto ide=c9 的 dag 实现')
+        self.logger.debug(self.__dict__)
 
         def copy_jobs(**kwargs):
             def yaml2args(path):

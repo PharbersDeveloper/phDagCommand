@@ -27,7 +27,7 @@ class PhRTPython3(PhRTBase):
                 file.write('        get spark session: spark = kwargs["spark"]()\n')
 
             file.write("""        \"\"\"
-    logger = phs3logger(kwargs["job_id"], DEBUG_LEVEL)
+    logger = phs3logger(kwargs["job_id"], LOG_DEBUG_LEVEL)
     logger.info("当前 owner 为 " + str(kwargs["owner"]))
     logger.info("当前 run_id 为 " + str(kwargs["run_id"]))
     logger.info("当前 job_id 为 " + str(kwargs["job_id"]))
@@ -103,6 +103,9 @@ class PhRTPython3(PhRTBase):
                            submit_main=submit_main)
 
     def script_run(self, **kwargs):
-        super().script_run()
+        self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.s3_job_path + "/phmain.py", 'phmain.py')
+        self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.s3_job_path + "/phjob.py", 'phjob.py')
+        entrypoint = ['python3', './phmain.py']
+        super().script_run(entrypoint=entrypoint)
 
 

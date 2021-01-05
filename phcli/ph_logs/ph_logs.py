@@ -10,9 +10,10 @@ import logging
 from phcli.define_value import *
 from phcli.ph_aws.ph_s3 import PhS3
 
-LOG_LEVEL = logging.ERROR
-DEBUG_LEVEL = logging.DEBUG
-ERROR_LEVEL = logging.ERROR
+LOG_DEBUG_LEVEL = logging.DEBUG
+LOG_ERROR_LEVEL = logging.ERROR
+LOG_DEFAULT_LEVEL = LOG_DEBUG_LEVEL
+
 LOG_PATH = '{}/logs/python/phcli/{}'
 
 PH_CLI_ACCESS_KEY = 'AKIAWPBDTVEAMVOYSOVE'
@@ -55,8 +56,8 @@ phlogger = PhLogs().logger
 inst_map = {}
 
 
-def phs3logger(job_id=None, level=LOG_LEVEL):
-    if job_id in inst_map.keys():
+def phs3logger(job_id=None, level=LOG_DEFAULT_LEVEL):
+    if job_id and job_id in inst_map.keys():
         return inst_map[job_id]
 
     logger = PhLogs(job_id=job_id, storage='s3').logger

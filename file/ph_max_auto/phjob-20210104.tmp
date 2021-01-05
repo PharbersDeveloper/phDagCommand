@@ -4,5 +4,5 @@
 This is job template for Pharbers Max Job
 """
 
-from phcli.ph_logs.ph_logs import phs3logger, DEBUG_LEVEL
+from phcli.ph_logs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
 

@@ -80,6 +80,10 @@ def run(**kwargs):
               prompt="The dag tag is",
               help="The dag tag.",
               default="default")
+@click.option("-j", "--jobs",
+              prompt="The dag jobs is",
+              help="The dag jobs.",
+              default="group.test1, group.test2")
 def combine(**kwargs):
     """
     关联一组 Job
@@ -123,9 +127,9 @@ def publish(**kwargs):
 @click.option("-n", "--name",
               prompt="The dag job name is",
               help="The dag job name.")
-@click.option("--owner", default="")
-@click.option("--run_id", default="")
-@click.option("--job_id", default="")
+@click.option("--owner", default="owner")
+@click.option("--run_id", default="run_id")
+@click.option("--job_id", default="job_id")
 @click.option("-c", "--context", help="online_run context", default="{}")
 @click.argument('args', nargs=1, default="{}")
 def online_run(**kwargs):

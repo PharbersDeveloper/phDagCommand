@@ -66,7 +66,7 @@ class PhRTBase(object):
         cmd_arr += ['--job_id', self.job_id]
 
         # dag_run 优先 phconf 默认参数
-        default_args = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.job_path + "/args.properties")
+        default_args = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.s3_job_path + "/args.properties")
         must_args = [arg.strip() for arg in dv.PRESET_MUST_ARGS.split(",")]
         cur_key = ""
         for it in [arg for arg in default_args if arg]:
@@ -89,7 +89,35 @@ class PhRTBase(object):
         return subprocess.call(cmd_arr)
 
     def script_run(self, **kwargs):
-        pass
+        cmd_arr = []
+        cmd_arr += kwargs['entrypoint']
+
+        cmd_arr += ['--owner', self.owner]
+        cmd_arr += ['--run_id', self.run_id]
+        cmd_arr += ['--job_id', self.job_id]
+
+        # dag_run 优先 phconf 默认参数
+        default_args = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.s3_job_path + "/args.properties")
+        must_args = [arg.strip() for arg in dv.PRESET_MUST_ARGS.split(",")]
+        cur_key = ""
+        for it in [arg for arg in default_args if arg]:
+            # 如果是 key，记录这个key
+            if it[0:2] == "--":
+                cur_key = it[2:]
+                # 必须参数，不使用用户的配置，用系统注入的
+                if it[2:] in must_args:
+                    continue
+                cmd_arr.append(it)
+            else:
+                # 必须参数的 value 不处理
+                if cur_key in must_args:
+                    continue
+                if cur_key in self.args.keys():
+                    it = self.args[cur_key]
+                if it:
+                    cmd_arr.append(it)
+
+        return subprocess.call(cmd_arr)
 
     def online_run(self, **kwargs):
         self.table_driver_command_run(self.command)()
