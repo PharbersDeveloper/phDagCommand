@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from phcli.define_value import *
 
 CLI_VERSION = "2020-11-11"
 
@@ -27,7 +28,7 @@ TEMPLATE_PHJOB_FILE_R = "/template/python/phcli/maxauto/phjob.r.tmp"
 TEMPLATE_PHMAIN_FILE_PY = "/template/python/phcli/maxauto/phmain-20210104.tmp"
 TEMPLATE_PHMAIN_FILE_R = "/template/python/phcli/maxauto/phmain.r.tmp"
 
-TEMPLATE_JUPYTER_FILE = '/template/python/phcli/maxauto/phJupyterTemp-20201231.ipynb'
+TEMPLATE_JUPYTER_FILE = '/template/python/phcli/maxauto/phJupyterTemp-20201231.json'
 
 TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20210104.yaml"
 TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20210104.tmp"

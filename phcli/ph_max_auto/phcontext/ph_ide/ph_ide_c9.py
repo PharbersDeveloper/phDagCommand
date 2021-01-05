@@ -14,8 +14,9 @@ class PhIDEC9(PhIDEBase):
     """
 
     def __init__(self, **kwargs):
-        self.__dict__.update(kwargs)
-        self.__dict__.update(super().get_absolute_path())
+        super().__init__(**kwargs)
+        self.logger.debug('maxauto PhIDEC9 init')
+        self.logger.debug(self.__dict__)
 
     def create(self, **kwargs):
         """
@@ -37,12 +38,7 @@ class PhIDEC9(PhIDEBase):
                     .replace("$code", self.table_driver_runtime_main_code(self.runtime))
                 file.write(line)
 
-        runtime_inst = self.table_driver_runtime_inst(self.runtime)
-        runtime_inst(
-            job_path=self.job_path,
-            phs3=self.phs3,
-            command=self.command,
-        ).create()
+        super().create()
 
     def run(self, **kwargs):
         """

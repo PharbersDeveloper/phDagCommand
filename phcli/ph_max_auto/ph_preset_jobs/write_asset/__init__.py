@@ -114,10 +114,21 @@ def copy_job(context, **kwargs):
             f.write('{}\n'.format(v))
 
     # 5. copy /phconf.yaml to phdags/
-    job_phconf_abs_path = os.path.abspath(__file__).split('/')
-    job_phconf_abs_path[-1] = "phconf.yaml"
-    job_phconf_abs_path = '/'.join(job_phconf_abs_path)
+    phconf_buf = """apiVersion: v1
+kind: PhJob
+metadata:
+  name: write_asset
+  description: "phcli preset job"
+  labels:
+    name: write_asset
+    runtime: python3
+    command: script
+spec:
+  containers:
+    repository: local
+    runtime: python3
+    command: script
+    code: phmain.py
+    config: phconf.yaml"""
     with open(context.dag_path + DIR_NAME + "/phconf.yaml", 'w') as target:
-        with open(job_phconf_abs_path) as source:
-            data = source.read()
-            target.write(data)
+            target.write(phconf_buf)

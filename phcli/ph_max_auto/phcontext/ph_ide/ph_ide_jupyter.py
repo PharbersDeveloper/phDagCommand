@@ -14,48 +14,31 @@ class PhIDEJupyter(PhIDEBase):
     """
 
     def __init__(self, **kwargs):
-        self.__dict__.update(kwargs)
-        self.__dict__.update(super().get_absolute_path())
+        super().__init__(**kwargs)
+        self.logger.debug('maxauto PhIDEJupyter init')
+        self.logger.debug(self.__dict__)
 
     def create(self, **kwargs):
         """
-        默认的创建过程
+        jupyter的创建过程
         """
-        self.logger.info('maxauto 默认的 create 实现')
+        self.logger.info('maxauto ide=jupyter 的 create 实现')
+        self.logger.debug(self.__dict__)
+
+        self.check_path(self.job_path)
+
+        super().create()
 
     def run(self, **kwargs):
         """
-        默认的运行过程
+        jupyter的运行过程
         """
-        self.logger.info('maxauto 默认的 run 实现')
-
-    def combine(self, **kwargs):
-        """
-        默认的关联过程
-        """
-        self.logger.info('maxauto 默认的 combine 实现')
+        self.logger.info('maxauto ide=jupyter 的 run 实现')
+        self.logger.debug(self.__dict__)
+        self.logger.error('maxauto --ide=jupyter 时，不支持 run 子命令')
 
     def dag(self, **kwargs):
         """
-        默认的DAG过程
+        jupyter的DAG过程
         """
-        self.logger.info('maxauto 默认的 dag 实现')
-
-    def publish(self, **kwargs):
-        """
-        默认的发布过程
-        """
-        self.logger.info('maxauto 默认的 publish 实现')
-
-    def submit(self, **kwargs):
-        """
-        默认的spark submit过程
-        """
-        self.logger.info('maxauto 默认的 submit 实现')
-
-    def status(self, **kwargs):
-        """
-        默认的查看运行状态
-        """
-        self.logger.info('maxauto 默认的 status 实现')
-
+        self.logger.info('maxauto ide=jupyter 的 run 实现')

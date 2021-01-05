@@ -14,6 +14,12 @@ class PhIDEBase(object):
     dag_prefix = "/phdags/"
     upload_prefix = "/upload/"
 
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
+        self.__dict__.update(self.get_absolute_path())
+        self.logger.debug('maxauto PhIDEBase init')
+        self.logger.debug(self.__dict__)
+
     def get_workspace_dir(self):
         return os.getenv(dv.ENV_WORKSPACE_KEY, dv.ENV_WORKSPACE_DEFAULT)
 
@@ -73,6 +79,9 @@ class PhIDEBase(object):
         """
         self.logger.info('maxauto 默认的 create 实现')
         self.logger.debug(self.__dict__)
+
+        runtime_inst = self.table_driver_runtime_inst(self.runtime)
+        runtime_inst(**self.__dict__).create()
 
     def run(self, **kwargs):
         """
@@ -149,12 +158,8 @@ class PhIDEBase(object):
                 for line in jf:
                     line = line + "\n"
                     w.write(
-                        line.replace("$alfred_command", str(jt.command)) \
-                            .replace("$alfred_job_path", str(self.job_path)) \
-                            .replace("$alfred_dag_owner", str(config.spec.owner)) \
-                            .replace("$alfred_jobs_dir", str(self.name)) \
-                            .replace("$alfred_name", job_name) \
-                            .replace("$runtime", str(jt.command))
+                        line.replace("$alfred_jobs_dir", str(self.name)) \
+                            .replace("$alfred_name", str(job_name))
                     )
 
             for linkage in config.spec.linkage:
@@ -229,7 +234,7 @@ class PhIDEBase(object):
         self.command = config.spec.containers.command
 
         runtime_inst = self.table_driver_runtime_inst(self.runtime)
-        runtime_inst(phs3=self.phs3, **self.__dict__).online_run()
+        runtime_inst(**self.__dict__).online_run()
 
     def status(self, **kwargs):
         """

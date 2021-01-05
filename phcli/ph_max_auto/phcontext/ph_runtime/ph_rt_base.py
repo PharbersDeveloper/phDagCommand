@@ -8,6 +8,8 @@ class PhRTBase(object):
     """
     Runtime Base Class
     """
+    def create(self, **kwargs):
+        raise NotImplementedError
 
     def table_driver_command_run(self, command):
         table = {

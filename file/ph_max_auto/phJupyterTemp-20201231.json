@@ -7,22 +7,33 @@
    "outputs": [],
    "source": [
     "# Phcli Jupyter Template\n",
+    "# \n",
     "# 使用手册：\n",
     "# 1. 请将全局变量定义在第一个输入区内\n",
     "# 2. Phcli 会自动在第二个输入区初始化 Spark Session\n",
-    "# 3. 所有 print 会在 phcli maxauto --cmd dag 后自动转为 logger.debug() 方法\n",
-    "# 4. 请在第三个输入区开始编码，phcli maxauto --cmd dag 后会全部归类为一个方法\n",
+    "# 3. 所有 print 会在 phcli maxauto dag 后自动转为 logger.debug() 方法\n",
+    "# 4. 请在第三个输入区开始编码，phcli maxauto dag 后会全部归类为一个方法\n",
+    "\n",
+    "\n",
+    "# Config defined in here\n",
+    "\n",
+    "############## == config == ###################\n",
+    "job_name = $name\n",
+    "job_runtime = $runtime\n",
+    "job_command = $command\n",
+    "############## == config == ###################\n",
+    "\n",
     "\n",
     "# Variables defined in here\n",
     "\n",
     "############## == input args == ###################\n",
-    "job_id = 123\n",
-    "input_path = 's3a://ph-stream/jobs/runId_5eec94d567331b35eb6783f8/BPSSandBoxConvertSchemaJob/jobId_schema_job_5eecfe6bc52c9c0001ccf350/id_67595a8a-2b97-4ccf-a281-32a7dfbf99c0/contents'\n",
+    "a = 123\n",
+    "b = 456\n",
     "############## == input args == ###################\n",
     "\n",
     "############## == output args == ###################\n",
-    "c = 's3a://abcde'\n",
-    "d = 6789\n",
+    "c = 'abc'\n",
+    "d = 'def'\n",
     "############## == output args == ###################"
    ]
   },
@@ -46,7 +57,7 @@
     "# prepare\n",
     "spark = SparkSession.builder \\\n",
     "    .master(\"yarn\") \\\n",
-    "    .appName(\"create_hive_table\") \\\n",
+    "    .appName(\"Jupyter Keep-Alive Session\") \\\n",
     "    .config(\"spark.driver.memory\", \"1g\") \\\n",
     "    .config(\"spark.executor.cores\", \"1\") \\\n",
     "    .config(\"spark.executor.instance\", \"1\") \\\n",
@@ -63,6 +74,24 @@
     "    spark._jsc.hadoopConfiguration().set(\"fs.s3a.impl\", \"org.apache.hadoop.fs.s3a.S3AFileSystem\")\n",
     "    spark._jsc.hadoopConfiguration().set(\"com.amazonaws.services.s3.enableV4\", \"true\")\n",
     "    spark._jsc.hadoopConfiguration().set(\"fs.s3a.endpoint\", \"s3.cn-northwest-1.amazonaws.com.cn\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "spark.sql(\"SHOW tables\").show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "spark.read.parquet(\"s3a://ph-stream/common/public/universe/0.0.1\").show()"
    ]
   },
   {

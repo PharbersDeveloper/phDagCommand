@@ -1,5 +1,6 @@
 import subprocess
 
+from phcli.ph_errs.ph_err import *
 from .ph_rt_base import PhRTBase
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
@@ -9,7 +10,7 @@ class PhRTPython3(PhRTBase):
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
-    def create(self, **kwargs):
+    def c9_create(self, **kwargs):
         # 1. /__init.py file
         subprocess.call(["touch", self.job_path + "/__init__.py"])
 
@@ -86,6 +87,22 @@ class PhRTPython3(PhRTBase):
                            )
                 else:
                     file.write(line)
+
+    def jupyter_create(self, **kwargs):
+        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_JUPYTER_FILE)
+        with open(self.job_path + ".ipynb", "w") as file:
+            for line in f_lines:
+                line = line.replace('$name', self.name).replace('$runtime', self.runtime).replace('$command', self.command)
+                file.write(line)
+
+    def create(self, **kwargs):
+        print(self.__dict__)
+        if self.ide == 'c9':
+            self.c9_create(**kwargs)
+        elif self.ide == 'jupyter':
+            self.jupyter_create(**kwargs)
+        else:
+            raise exception_function_not_implement
 
     def submit_run(self, **kwargs):
         submit_conf = {
