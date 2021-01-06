@@ -42,6 +42,14 @@ def maxauto(**kwargs):
               help="The job command.",
               type=click.Choice(["submit", "script"]),
               default="submit")
+@click.option("-i", "--inputs",
+              prompt="The job inputs is",
+              help="The job inputs.",
+              default="a,b")
+@click.option("-o", "--outputs",
+              prompt="The job outputs is",
+              help="The job outputs.",
+              default="c,d")
 def create(**kwargs):
     """
     创建一个 Job

@@ -1,5 +1,7 @@
 import os
+import sys
 import ast
+import json
 import subprocess
 
 from phcli.ph_errs.ph_err import *
@@ -42,19 +44,23 @@ class PhIDEBase(object):
         }
 
     def check_path(self, path):
-        if os.path.exists(path):
-            override = input('Job "' + path + '" already existed，want to override？(Y/*)')
-            if override.upper() == 'Y':
-                subprocess.call(["rm", "-rf", path])
-            else:
-                raise exception_file_already_exist
+        suffixs = ['', '.ipynb']
+        for suffix in suffixs:
+            tmp_path = path + suffix
+            if os.path.exists(tmp_path):
+                override = input('Job "' + tmp_path + '" already existed，want to override？(Y/*)')
+                if override.upper() == 'Y':
+                    subprocess.call(["rm", "-rf", tmp_path])
+                else:
+                    self.logger.error('Termination Create')
+                    sys.exit()
 
     def table_driver_runtime_main_code(self, runtime):
         table = {
             "python3": "phmain.py",
             "r": "phmain.R"
         }
-        return table[runtime]
+        return table[runtime.strip('\"')]
 
     def table_driver_runtime_inst(self, runtime):
         from ..ph_runtime.ph_rt_python3 import PhRTPython3
@@ -118,6 +124,45 @@ class PhIDEBase(object):
                             .replace("$jobs", jobs_str)
                 file.write(line + "\n")
 
+    def yaml2args(self, path):
+        config = PhYAMLConfig(path)
+        config.load_yaml()
+
+        f = open(path + "/args.properties", "a")
+        for arg in config.spec.containers.args:
+            if arg.value != "":
+                f.write("--" + arg.key + "\n")
+                f.write(str(arg.value) + "\n")
+
+        for output in config.spec.containers.outputs:
+            if output.value != "":
+                f.write("--" + output.key + "\n")
+                f.write(str(output.value) + "\n")
+        f.close()
+
+    def get_ipynb_map_by_key(self, source, key):
+        """
+        获取 ipynb 中定义的配置
+        :param source: ipynb 中的文本行
+        :param key: 需要获得的字典，可以是 config、input args、output args
+        :return:
+        """
+        range = []
+        for i, row in enumerate(source):
+            if "== {} ==".format(key) in row:
+                range.append(i)
+        source = source[range[0]+1: range[1]]
+
+        result = {}
+        for row in source:
+            if row and '=' in row:
+                r = row.split('=')
+                result[r[0].strip()] = r[-1].strip()
+        return result
+
+    def dag_copy_job(self, **kwargs):
+        raise NotImplementedError
+
     def dag(self, **kwargs):
         """
         默认的DAG过程
@@ -130,6 +175,74 @@ class PhIDEBase(object):
 
         config = PhYAMLConfig(self.combine_path, "/phdag.yaml")
         config.load_yaml()
+
+        def get_jobs_conf(config):
+            def get_job_conf(name):
+                job_full_path = self.project_path + self.job_prefix + name.replace('.', '/')
+                if name.startswith('preset.'):
+                    job_name = name.lstrip('preset.')
+                    ipt_module = __import__('phcli.ph_max_auto.ph_preset_jobs.%s' % (job_name.lower()))
+                    ipt_module = getattr(ipt_module, 'ph_max_auto')
+                    ipt_module = getattr(ipt_module, 'ph_preset_jobs')
+                    ipt_module = getattr(ipt_module, job_name)
+                    phconf_buf = getattr(ipt_module, 'phconf_buf')
+
+                    config = PhYAMLConfig()
+                    config.load_yaml(phconf_buf(self))
+                    return {
+                        'name': config.metadata.name,
+                        'ide': 'preset',
+                        'runtime': config.spec.containers.runtime,
+                        'command': config.spec.containers.command,
+                    }
+                elif os.path.isdir(job_full_path):
+                    config = PhYAMLConfig(job_full_path)
+                    config.load_yaml()
+                    return {
+                        'name': config.metadata.name,
+                        'ide': 'c9',
+                        'runtime': config.spec.containers.runtime,
+                        'command': config.spec.containers.command,
+                    }
+                else:
+                    if os.path.exists(job_full_path+'.ipynb') and os.path.isfile(job_full_path+'.ipynb'):
+                        with open(job_full_path+'.ipynb', 'r') as rf:
+                            load_dict = json.load(rf)
+                            source = load_dict['cells'][0]['source']
+                            cm = self.get_ipynb_map_by_key(source, 'config')
+
+                            return {
+                                'name': cm['job_name'],
+                                'ide': 'jupyter',
+                                'runtime': cm['job_runtime'],
+                                'command': cm['job_command'],
+                            }
+
+            result = {}
+            for job in config.spec.jobs:
+                result[job.name] = get_job_conf(job.name)
+            return result
+
+        def copy_jobs(jobs_conf):
+            def get_ide_dag_copy_job_func(ide):
+                table = {
+                    'c9': self.ide_table['c9'](**self.__dict__).dag_copy_job,
+                    'jupyter': self.ide_table['jupyter'](**self.__dict__).dag_copy_job,
+                    'preset': preset_factory,
+                }
+                return table[ide]
+
+            # 必须先 copy 所有非 preset 的 job
+            for name, job_info in jobs_conf.items():
+                if job_info['ide'] != 'preset':
+                    func = get_ide_dag_copy_job_func(job_info['ide'])
+                    func(job_name=name, **job_info)
+
+            # 然后在 copy 所有 preset 的 job
+            for name, job_info in jobs_conf.items():
+                if job_info['ide'] == 'preset':
+                    func = get_ide_dag_copy_job_func(job_info['ide'])
+                    func(self, job_name=name, **job_info)
 
         def write_dag_pyfile():
             w = open(self.dag_path + "ph_dag_" + config.spec.dag_id + ".py", "a")
@@ -168,15 +281,9 @@ class PhIDEBase(object):
 
             w.close()
 
-        def copy_preset_jobs():
-            for jt in config.spec.jobs:
-                if not jt.name.startswith('preset'):
-                    continue
-                preset_factory(self, jt.name)
-
-        kwargs['copy_func'](config=config)
+        jobs_conf = get_jobs_conf(config)
+        copy_jobs(jobs_conf)
         write_dag_pyfile()
-        copy_preset_jobs()
 
     def publish(self, **kwargs):
         """

@@ -11,6 +11,7 @@ from phcli.define_value import *
 from phcli.ph_aws.ph_s3 import PhS3
 
 LOG_DEBUG_LEVEL = logging.DEBUG
+LOG_WARN_LEVEL = logging.WARNING
 LOG_ERROR_LEVEL = logging.ERROR
 LOG_DEFAULT_LEVEL = LOG_DEBUG_LEVEL
 
@@ -51,8 +52,6 @@ class PhLogs(object):
             atexit.register(write_s3_logs, body=log_stream, bucket=CLI_BUCKET, key=self._log_path)
 
 
-phlogger = PhLogs().logger
-
 inst_map = {}
 
 
@@ -65,6 +64,9 @@ def phs3logger(job_id=None, level=LOG_DEFAULT_LEVEL):
     inst_map[job_id] = logger
 
     return logger
+
+
+phlogger = phs3logger()
 
 
 if __name__ == '__main__':

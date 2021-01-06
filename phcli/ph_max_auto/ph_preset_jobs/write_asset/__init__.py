@@ -5,7 +5,21 @@ from phcli.ph_logs.ph_logs import phlogger
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 
+
 DIR_NAME = 'preset_write_asset'
+
+
+def phconf_buf(context):
+    buf = context.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
+    buf = buf.replace("$name", 'write_asset') \
+        .replace("$runtime", 'python3') \
+        .replace("$command", 'script') \
+        .replace("$code", context.table_driver_runtime_main_code('python3')) \
+        .replace("args:", '') \
+        .replace("$input", '') \
+        .replace("outputs:", '') \
+        .replace("$output", '')
+    return buf
 
 
 def job_conf_args2map(path):
@@ -15,23 +29,11 @@ def job_conf_args2map(path):
     result = {'input': {}, 'output': {}}
     for arg in config.spec.containers.args:
         if arg.value != "":
-            if sys.version_info > (3, 0):
-                result['input'][arg.key] = str(arg.value)
-            else:
-                if type(arg.value) is unicode:
-                    result['input'][arg.key] = arg.value.encode("utf-8")
-                else:
-                    result['input'][arg.key] = str(arg.value)
+            result['input'][arg.key] = str(arg.value)
 
     for output in config.spec.containers.outputs:
         if output.value != "":
-            if sys.version_info > (3, 0):
-                result['output'][output.key] = str(output.value)
-            else:
-                if type(output.value) is unicode:
-                    result['output'][output.key] = str(output.value.encode("utf-8"))
-                else:
-                    result['output'][output.key] = str(output.value)
+            result['output'][output.key] = str(output.value)
 
     return result
 
@@ -54,24 +56,26 @@ def copy_job(context, **kwargs):
 
     # 2. /phjob.py file
     phjobs_lst = []
+    all_jobs_args_map = {}
     for jt in config.spec.jobs:
-        if jt.name.startswith('preset'):
+        if jt.name.startswith('preset.'):
             continue
 
         job_name = jt.name.replace('.', '_')
-        job_full_path = context.project_path + context.job_prefix + jt.name.replace('.', '/')
+        job_full_path = context.dag_path + job_name
         args_map = job_conf_args2map(job_full_path)
+        all_jobs_args_map[jt.name] = args_map
 
         phjobs_tmp = ['"{}": {{'.format(job_name)]
         for scope, args in args_map.items():
-            phjobs_tmp.append('\t"{}": {{'.format(scope))
+            phjobs_tmp.append('    "{}": {{'.format(scope))
             for k, v in args.items():
-                phjobs_tmp.append('\t\t"{}": "{}",'.format(k, v))
-            phjobs_tmp.append('\t},')
+                phjobs_tmp.append('        "{}": "{}",'.format(k, v))
+            phjobs_tmp.append('    },')
         phjobs_tmp.append('},')
 
-        phjobs_lst += ['\t'+s for s in phjobs_tmp]
-    phjobs_str = 'phjobs = {\n' + '\n'.join(['\t'+s for s in phjobs_lst]) + '\n\t}'
+        phjobs_lst += ['    '+s for s in phjobs_tmp]
+    phjobs_str = 'phjobs = {\n' + '\n'.join(['    '+s for s in phjobs_lst]) + '\n    }'
 
     job_phjob_abs_path = os.path.abspath(__file__).split('/')
     job_phjob_abs_path[-1] = "phjob.py"
@@ -83,18 +87,16 @@ def copy_job(context, **kwargs):
             target.write(data)
 
     # 3. /phmain.py file
-    all_jobs_args_map = {}
+    all_jobs_merge_args = {}
     for jt in config.spec.jobs:
-        if jt.name.startswith('preset'):
-            continue
-        job_name = jt.name.replace('.', '/')
-        job_full_path = context.project_path + context.job_prefix + job_name
-        result = job_conf_args2map(job_full_path)
-        result = dict([(k, v) for scope, args in result.items() for k, v in args.items()])
-        merge_job_args(all_jobs_args_map, result)
+        job_args = all_jobs_args_map.get(jt.name, {})
+        result = dict([(k, v) for scope, args in job_args.items() for k, v in args.items()])
+        merge_job_args(all_jobs_merge_args, result)
 
     must_args = [arg.strip() for arg in dv.PRESET_MUST_ARGS.split(',')]
-    click_option_lst = must_args + [k for k in all_jobs_args_map]
+    all_jobs_merge_args = dict([(k, v) for k, v in all_jobs_merge_args.items() if k not in must_args])
+
+    click_option_lst = must_args + [k for k in all_jobs_merge_args]
     click_option_lst = ["@click.option('--{}')".format(k) for k in click_option_lst]
     click_option_str = '\n'.join(click_option_lst)
 
@@ -109,26 +111,10 @@ def copy_job(context, **kwargs):
 
     # 4. /args.properties file
     with open(context.dag_path + DIR_NAME + "/args.properties", "w") as f:
-        for k, v in all_jobs_args_map.items():
+        for k, v in all_jobs_merge_args.items():
             f.write('--{}\n'.format(k))
             f.write('{}\n'.format(v))
 
     # 5. copy /phconf.yaml to phdags/
-    phconf_buf = """apiVersion: v1
-kind: PhJob
-metadata:
-  name: write_asset
-  description: "phcli preset job"
-  labels:
-    name: write_asset
-    runtime: python3
-    command: script
-spec:
-  containers:
-    repository: local
-    runtime: python3
-    command: script
-    code: phmain.py
-    config: phconf.yaml"""
     with open(context.dag_path + DIR_NAME + "/phconf.yaml", 'w') as target:
-            target.write(phconf_buf)
+            target.write(phconf_buf(context))

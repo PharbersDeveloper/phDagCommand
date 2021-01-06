@@ -15,14 +15,8 @@ spec:
     code: $code
     config: phconf.yaml
     args:
-      - key: a
-        value: 123
-      - key: b
-        value: 456
+      $input
     outputs:
-      - key: c
-        value: abc
-      - key: d
-        value: def
+      $output
 
 

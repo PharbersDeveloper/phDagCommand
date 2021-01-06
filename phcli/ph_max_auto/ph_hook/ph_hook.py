@@ -7,7 +7,7 @@ from phcli.ph_max_auto.ph_models.data_set import DataSet
 
 def exec_before(*args, **kwargs):
     name = kwargs.pop('name', None)
-    job_id = kwargs.pop('job_id', None)
+    job_id = kwargs.pop('job_id', name)
 
     def spark(enable_hive=False):
         from pyspark.sql import SparkSession

@@ -1,11 +1,7 @@
 import os
 import subprocess
 
-from .ph_ide_base import PhIDEBase
-from phcli.ph_max_auto import define_value as dv
-from phcli.ph_errs.ph_err import exception_file_not_exist
-from phcli.ph_errs.ph_err import exception_function_not_implement
-from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
+from .ph_ide_base import PhIDEBase, dv, exception_file_not_exist, exception_function_not_implement, PhYAMLConfig
 
 
 class PhIDEC9(PhIDEBase):
@@ -28,6 +24,13 @@ class PhIDEC9(PhIDEBase):
         self.check_path(self.job_path)
         subprocess.call(["mkdir", "-p", self.job_path])
 
+        input_str = [k.strip() for k in self.inputs.split(',')]
+        input_str = ["- key: " + i + "\n        value: \"abc\"" for i in input_str]
+        input_str = '\n      '.join(input_str)
+        output_str = [k.strip() for k in self.outputs.split(',')]
+        output_str = ["- key: " + i + "\n        value: \"abc\"" for i in output_str]
+        output_str = '\n      '.join(output_str)
+
         f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
         with open(self.job_path + "/phconf.yaml", "a") as file:
             for line in f_lines:
@@ -35,7 +38,9 @@ class PhIDEC9(PhIDEBase):
                 line = line.replace("$name", self.name) \
                     .replace("$runtime", self.runtime) \
                     .replace("$command", self.command) \
-                    .replace("$code", self.table_driver_runtime_main_code(self.runtime))
+                    .replace("$code", self.table_driver_runtime_main_code(self.runtime)) \
+                    .replace("$input", input_str) \
+                    .replace("$output", output_str)
                 file.write(line)
 
         super().create()
@@ -67,41 +72,18 @@ class PhIDEC9(PhIDEBase):
         else:
             raise exception_function_not_implement
 
-    def dag(self, **kwargs):
+    def dag_copy_job(self, **kwargs):
         """
-        c9的DAG过程
+        maxauto dag 时 copy c9 环境下生成的 job
         """
-        self.logger.info('maxauto ide=c9 的 dag 实现')
+        self.logger.info('maxauto ide=c9 的 dag_copy_job 实现')
         self.logger.debug(self.__dict__)
 
-        def copy_jobs(**kwargs):
-            def yaml2args(path):
-                config = PhYAMLConfig(path)
-                config.load_yaml()
+        job_name = kwargs['job_name'].replace('.', '_')
+        job_full_path = self.project_path + self.job_prefix + kwargs['job_name'].replace('.', '/')
 
-                f = open(path + "/args.properties", "a")
-                for arg in config.spec.containers.args:
-                    if arg.value != "":
-                        f.write("--" + arg.key + "\n")
-                        f.write(str(arg.value) + "\n")
+        if not os.path.exists(job_full_path):
+            raise exception_file_not_exist
 
-                for output in config.spec.containers.outputs:
-                    if output.value != "":
-                        f.write("--" + output.key + "\n")
-                        f.write(str(output.value) + "\n")
-                f.close()
-
-            config = kwargs['config']
-            for jt in config.spec.jobs:
-                if jt.name.startswith('preset'):
-                    continue
-
-                job_name = jt.name.replace('.', '_')
-                job_full_path = self.project_path + self.job_prefix + jt.name.replace('.', '/')
-                if not os.path.exists(job_full_path):
-                    raise exception_file_not_exist
-
-                subprocess.call(["cp", '-r', job_full_path, self.dag_path + job_name])
-                yaml2args(self.dag_path + job_name)
-
-        super().dag(copy_func=copy_jobs)
+        subprocess.call(["cp", '-r', job_full_path, self.dag_path + job_name])
+        self.yaml2args(self.dag_path + job_name)

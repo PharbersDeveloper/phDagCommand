@@ -31,7 +31,7 @@ class Asset(Base):
     isNewVersion = Column(String, default='t')
     accessibility = Column(String, default='w')
     shared = Column(String)
-    parthers = Column(String)
+    partners = Column(String)
 
     def __repr__(self):
         return str(self.__dict__)

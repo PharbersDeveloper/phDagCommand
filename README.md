@@ -9,10 +9,10 @@ Pharbers Python 工具集合
 3. 修改 phcli/ph_max_auto/phcontext/ph_runtime/ph_python3.py 中的 submit_file
 4. 修改 file/ph_max_auto/phDagJob-*.tmp 中的 install_phcli
    并将 file/ph_max_auto/phDagJob-*.tmp 上传到 s3://ph-platform/*/template/python/phcli/maxauto/ 下
-5. 修改 ph_max_auto/define_value.py 中新的模板文件版本
+5. 修改 phcli/ph_max_auto/define_value.py 中新的模板文件版本
 
 6. 打包
-$ rm build/ dist/
+$ rm -rf build/ dist/
 $ python setup.py sdist bdist_egg bdist_wheel
 
 7. 上传
