@@ -13,7 +13,7 @@ def $alfred_name_cmd(**context):
     print(write_hosts)
     print(subprocess.check_output(write_hosts, shell=True, stderr=subprocess.STDOUT).decode("utf-8"))
 
-    install_phcli = 'pip3 install phcli==2.0.1'
+    install_phcli = 'pip3 install phcli==2.0.2'
     print(install_phcli)
     print(subprocess.check_output(install_phcli, shell=True, stderr=subprocess.STDOUT).decode("utf-8"))
 

@@ -76,9 +76,9 @@ class PhRTPython3(PhRTBase):
         please input your code below\n""")
 
             if self.command == 'submit':
-                file.write('        get spark session: spark = kwargs["spark"]()\n    \"\"\"')
+                file.write('        get spark session: spark = kwargs["spark"]()\n')
 
-            file.write("""
+            file.write("""    \"\"\"
     logger = phs3logger(kwargs["job_id"], LOG_DEBUG_LEVEL)
     logger.info("当前 owner 为 " + str(kwargs["owner"]))
     logger.info("当前 run_id 为 " + str(kwargs["run_id"]))
@@ -124,7 +124,7 @@ class PhRTPython3(PhRTBase):
                     "s3a://ph-platform/2020-11-11/jobs/python/phcli/common/hadoop-aws-3.2.1.jar",
         }
         submit_file = {
-            "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-2.0.1-py3.8.egg," +
+            "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-2.0.2-py3.8.egg," +
                         self.submit_prefix + "phjob.py",
         }
         submit_main = self.submit_prefix + "phmain.py"
