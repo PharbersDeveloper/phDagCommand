@@ -10,17 +10,14 @@ def $alfred_name_cmd(**context):
     params.update(var_key_lst.get("$alfred_name", {}))
 
     write_hosts = 'echo "192.168.1.28    spark.master" >> /etc/hosts'
-    print(write_hosts)
-    print(subprocess.check_output(write_hosts, shell=True, stderr=subprocess.STDOUT).decode("utf-8"))
+    process_cmd(write_hosts)
 
-    install_phcli = 'pip3 install phcli==2.0.2'
-    print(install_phcli)
-    print(subprocess.check_output(install_phcli, shell=True, stderr=subprocess.STDOUT).decode("utf-8"))
+    install_phcli = 'pip3 install phcli==2.0.4'
+    process_cmd(install_phcli)
 
     exec_phcli_submit = 'phcli maxauto online_run --group $alfred_jobs_dir --name $alfred_name ' \
                         '--owner "{}" --run_id "{}" --job_id "{}" --context "{}" "{}"'.format(str(owner), str(run_id), str(job_id), str(params), str(args))
-    print(exec_phcli_submit)
-    print(subprocess.check_output(exec_phcli_submit, shell=True, stderr=subprocess.STDOUT).decode("utf-8"))
+    process_cmd(exec_phcli_submit)
 
     # key = ti.xcom_pull(task_ids='test', key='key').decode("UTF-8")
     # ti.xcom_push(key="key", value=key)

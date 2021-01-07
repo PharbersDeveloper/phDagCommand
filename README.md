@@ -38,6 +38,13 @@ $ pip install phcli
 ```
 
 # 更新文档
+## 2.0.4
+1. 修复 jupyter dag 时 timeout 参数的 bug
+2. 修复 preset.write_asset 的 bug
+
+## 2.0.3
+1. phcli maxauto create 新增 option [--timeout]，指定 job 运行的超时时间（min），默认为 60 min。
+
 ## 2.0.0
 1. 之前的 phcli maxauto --cmd XXX --option 改为 phcli maxauto XXX --option
 2. phcli maxauto 新增两个 option，[--ide] 可选 c9(默认)，jupyter。[--runtime] 可选 python3(默认)，r。
@@ -48,7 +55,5 @@ $ pip install phcli
 
 ## 1.2.3
 1. dag airflow list 完成
-2. dag airflow list 完成
-3. phcli 1.2.3 spark submit 中文乱码 bug 解决
-4. phcli 1.2.2 修复 submit jar 问题
-5. phcli 新平台适配
+2. phcli 1.2.3 spark submit 中文乱码 bug 解决
+3. phcli 1.2.2 修复 submit jar 问题

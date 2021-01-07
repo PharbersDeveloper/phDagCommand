@@ -74,6 +74,7 @@ class PhIDEJupyter(PhIDEBase):
                 line = line.replace("$name", kwargs['name']) \
                     .replace("$runtime", kwargs['runtime']) \
                     .replace("$command", kwargs['command']) \
+                    .replace("$timeout", kwargs['timeout']) \
                     .replace("$code", self.table_driver_runtime_main_code(kwargs['runtime'])) \
                     .replace("$input", input_str) \
                     .replace("$output", output_str)

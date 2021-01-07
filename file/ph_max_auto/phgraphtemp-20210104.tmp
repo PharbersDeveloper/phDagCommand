@@ -31,3 +31,18 @@ dag = DAG(
 
 var_key_lst = Variable.get("%s__SPARK_CONF" % (dag.dag_id), deserialize_json=True, default_var={})
 
+# subprocess Ponen CMD
+def process_cmd(cmd):
+    print("process: " + cmd)
+
+    p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    last_line = ''
+    while p.poll() is None:
+        line = p.stdout.readline().decode('utf-8').strip("\n")
+        if line:
+            last_line = line
+            print(last_line)
+    if p.returncode == 0:
+        print('Subprogram success')
+    else:
+        raise Exception(last_line)

@@ -21,6 +21,7 @@
     "job_name = \"$name\"\n",
     "job_runtime = \"$runtime\"\n",
     "job_command = \"$command\"\n",
+    "job_timeout = $timeout\n",
     "############## == config == ###################\n",
     "\n",
     "\n",

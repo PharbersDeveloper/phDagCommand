@@ -12,6 +12,7 @@ spec:
     repository: local
     runtime: $runtime
     command: $command
+    timeout: $timeout
     code: $code
     config: phconf.yaml
     args:

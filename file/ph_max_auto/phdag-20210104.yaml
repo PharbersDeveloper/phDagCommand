@@ -9,7 +9,6 @@ spec:
   description: "A Max Auto Job Example"
   start_date: 1 # if you don't understand, don't touch it
   schedule_interval: "None" # if you don't understand, don't touch it
-  dag_timeout: 60 # minutes
   email: ['airflow@example.com']
   email_on_failure: False
   email_on_retry: False
@@ -18,6 +17,7 @@ spec:
   owner: $dag_owner
   dag_id: $name
   dag_tag: $dag_tag
+  dag_timeout: $dag_timeout # minutes
   jobs:
     $jobs
   linkage:

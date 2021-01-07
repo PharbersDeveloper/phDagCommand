@@ -120,6 +120,7 @@ class PhIDEBase(object):
                 line = line.replace("$name", self.name) \
                             .replace("$dag_owner", self.owner) \
                             .replace("$dag_tag", self.tag) \
+                            .replace("$dag_timeout", self.timeout) \
                             .replace("$linkage", linkage_str) \
                             .replace("$jobs", jobs_str)
                 file.write(line + "\n")
@@ -194,6 +195,7 @@ class PhIDEBase(object):
                         'ide': 'preset',
                         'runtime': config.spec.containers.runtime,
                         'command': config.spec.containers.command,
+                        'timeout': config.spec.containers.timeout,
                     }
                 elif os.path.isdir(job_full_path):
                     config = PhYAMLConfig(job_full_path)
@@ -203,6 +205,7 @@ class PhIDEBase(object):
                         'ide': 'c9',
                         'runtime': config.spec.containers.runtime,
                         'command': config.spec.containers.command,
+                        'timeout': config.spec.containers.timeout,
                     }
                 else:
                     if os.path.exists(job_full_path+'.ipynb') and os.path.isfile(job_full_path+'.ipynb'):
@@ -216,6 +219,7 @@ class PhIDEBase(object):
                                 'ide': 'jupyter',
                                 'runtime': cm['job_runtime'],
                                 'command': cm['job_command'],
+                                'timeout': cm['job_timeout'],
                             }
 
             result = {}
@@ -244,7 +248,9 @@ class PhIDEBase(object):
                     func = get_ide_dag_copy_job_func(job_info['ide'])
                     func(self, job_name=name, **job_info)
 
-        def write_dag_pyfile():
+        def write_dag_pyfile(jobs_conf):
+            timeout = sum([float(job['timeout']) for _, job in jobs_conf.items()])
+            timeout = config.spec.dag_timeout if config.spec.dag_timeout else timeout
             w = open(self.dag_path + "ph_dag_" + config.spec.dag_id + ".py", "a")
             f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHGRAPHTEMP_FILE)
             for line in f_lines:
@@ -260,7 +266,7 @@ class PhIDEBase(object):
                         .replace("$alfred_dag_tags", str(','.join(['"'+tag+'"' for tag in config.spec.dag_tag.split(',')]))) \
                         .replace("$alfred_schedule_interval", str(config.spec.schedule_interval)) \
                         .replace("$alfred_description", str(config.spec.description)) \
-                        .replace("$alfred_dag_timeout", str(config.spec.dag_timeout)) \
+                        .replace("$alfred_dag_timeout", str(timeout)) \
                         .replace("$alfred_start_date", str(config.spec.start_date))
                 )
 
@@ -283,7 +289,7 @@ class PhIDEBase(object):
 
         jobs_conf = get_jobs_conf(config)
         copy_jobs(jobs_conf)
-        write_dag_pyfile()
+        write_dag_pyfile(jobs_conf)
 
     def publish(self, **kwargs):
         """
@@ -339,6 +345,7 @@ class PhIDEBase(object):
         config.load_yaml(stream)
         self.runtime = config.spec.containers.runtime
         self.command = config.spec.containers.command
+        self.timeout = config.spec.containers.timeout
 
         runtime_inst = self.table_driver_runtime_inst(self.runtime)
         runtime_inst(**self.__dict__).online_run()

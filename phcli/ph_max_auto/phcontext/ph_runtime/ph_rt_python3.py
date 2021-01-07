@@ -107,7 +107,10 @@ class PhRTPython3(PhRTBase):
         f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_JUPYTER_FILE)
         with open(path, "w") as file:
             for line in f_lines:
-                line = line.replace('$name', self.name).replace('$runtime', self.runtime).replace('$command', self.command)
+                line = line.replace('$name', self.name) \
+                            .replace('$runtime', self.runtime) \
+                            .replace('$command', self.command) \
+                            .replace('$timeout', str(self.timeout))
                 file.write(line)
 
     def create(self, **kwargs):
@@ -124,7 +127,7 @@ class PhRTPython3(PhRTBase):
                     "s3a://ph-platform/2020-11-11/jobs/python/phcli/common/hadoop-aws-3.2.1.jar",
         }
         submit_file = {
-            "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-2.0.2-py3.8.egg," +
+            "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-2.0.4-py3.8.egg," +
                         self.submit_prefix + "phjob.py",
         }
         submit_main = self.submit_prefix + "phmain.py"

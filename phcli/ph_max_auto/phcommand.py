@@ -9,6 +9,7 @@ import click
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.phcontext.phcontextfacade import PhContextFacade
 
+
 context_args = {}
 
 
@@ -42,6 +43,11 @@ def maxauto(**kwargs):
               help="The job command.",
               type=click.Choice(["submit", "script"]),
               default="submit")
+@click.option("-T", "--timeout",
+              prompt="The job timeout is",
+              help="The job timeout.",
+              type=click.FLOAT,
+              default="10")
 @click.option("-i", "--inputs",
               prompt="The job inputs is",
               help="The job inputs.",
@@ -88,6 +94,10 @@ def run(**kwargs):
               prompt="The dag tag is",
               help="The dag tag.",
               default="default")
+@click.option("-T", "--timeout",
+              prompt="The dag timeout is, default=$(jobs timeout total)",
+              help="The dag timeout.",
+              default="")
 @click.option("-j", "--jobs",
               prompt="The dag jobs is",
               help="The dag jobs.",

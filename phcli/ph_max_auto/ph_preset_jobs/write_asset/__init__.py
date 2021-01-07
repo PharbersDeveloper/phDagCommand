@@ -14,6 +14,7 @@ def phconf_buf(context):
     buf = buf.replace("$name", 'write_asset') \
         .replace("$runtime", 'python3') \
         .replace("$command", 'script') \
+        .replace("$timeout", str(10.0)) \
         .replace("$code", context.table_driver_runtime_main_code('python3')) \
         .replace("args:", '') \
         .replace("$input", '') \

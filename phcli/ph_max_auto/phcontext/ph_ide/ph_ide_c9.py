@@ -38,6 +38,7 @@ class PhIDEC9(PhIDEBase):
                 line = line.replace("$name", self.name) \
                     .replace("$runtime", self.runtime) \
                     .replace("$command", self.command) \
+                    .replace("$timeout", str(self.timeout)) \
                     .replace("$code", self.table_driver_runtime_main_code(self.runtime)) \
                     .replace("$input", input_str) \
                     .replace("$output", output_str)
@@ -56,6 +57,7 @@ class PhIDEC9(PhIDEBase):
         config.load_yaml()
 
         if config.spec.containers.repository == "local":
+            timeout = float(config.spec.containers.timeout) * 60
             entry_runtime = config.spec.containers.runtime
             entry_runtime = self.table_driver_runtime_binary(entry_runtime)
             entry_point = config.spec.containers.code
@@ -68,7 +70,7 @@ class PhIDEC9(PhIDEBase):
             for output in config.spec.containers.outputs:
                 cb.append("--" + output.key)
                 cb.append(str(output.value))
-            subprocess.call(cb)
+            subprocess.call(cb, timeout=timeout)
         else:
             raise exception_function_not_implement
 

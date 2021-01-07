@@ -69,11 +69,10 @@ def execute(**kwargs):
     # 取所有 asset output 的 parent
     asset_parents_lst = {}
     for cur_name, adj_lst in dag_adj_lst.items():
-        if 's3a://' not in cur_name or 'asset' not in cur_name:
+        if not cur_name.startswith('s3a://') or 'asset' not in cur_name:
             continue
         parents = list(get_latest_lst_cr(adj_lst, {cur_name}))
-        if parents:
-            asset_parents_lst[cur_name] = parents
+        asset_parents_lst[cur_name] = parents
 
     if not asset_parents_lst:
         logger.warning("没有需要写入的 asset")
@@ -104,7 +103,6 @@ def execute(**kwargs):
         if obj:
             obj = obj[0]
             obj.owner = owner
-            obj.parent = parents_id
             obj.modified = datetime.now()
             pg.update(obj)
         else:
