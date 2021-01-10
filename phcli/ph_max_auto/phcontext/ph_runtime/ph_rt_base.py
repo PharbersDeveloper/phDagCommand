@@ -27,13 +27,15 @@ class PhRTBase(object):
                    "--master", "yarn",
                    "--deploy-mode", "cluster",
                    "--name", self.job_id,
-                   "--proxy-user", current_user]
+                   "--proxy-user", current_user,
+                   "--queue", 'airflow']
 
         conf_map = {
             "spark.driver.memory": "1g",
             "spark.driver.cores": "1",
-            "spark.executor.memory": "2g",
+            "spark.executor.memory": "1g",
             "spark.executor.cores": "1",
+            "spark.executor.instances": "1",
             "spark.driver.extraJavaOptions": "-Dfile.encoding=UTF-8 "
                                              "-Dsun.jnu.encoding=UTF-8 "
                                              "-Dcom.amazonaws.services.s3.enableV4",

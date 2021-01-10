@@ -43,7 +43,7 @@ def exec_sql(sql):
 
 @click.command("hive", short_help='hive sql 工具')
 def main():
-    print("Welcome to PhCli Hive SQL REPL v2.0.4")
+    print("Welcome to PhCli Hive SQL REPL v2.0.5")
     print("Can use standard SQL query pharbers hive.\n")
 
     try:

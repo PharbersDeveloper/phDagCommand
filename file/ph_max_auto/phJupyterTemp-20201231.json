@@ -61,7 +61,7 @@
     "    .appName(\"Jupyter Keep-Alive Session\") \\\n",
     "    .config(\"spark.driver.memory\", \"1g\") \\\n",
     "    .config(\"spark.executor.cores\", \"1\") \\\n",
-    "    .config(\"spark.executor.instance\", \"1\") \\\n",
+    "    .config(\"spark.executor.instances\", \"1\") \\\n",
     "    .config(\"spark.executor.memory\", \"1g\") \\\n",
     "    .config('spark.sql.codegen.wholeStage', False) \\\n",
     "    .enableHiveSupport() \\\n",
