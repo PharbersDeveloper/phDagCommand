@@ -70,7 +70,9 @@ class PhIDEC9(PhIDEBase):
             for output in config.spec.containers.outputs:
                 cb.append("--" + output.key)
                 cb.append(str(output.value))
-            subprocess.call(cb, timeout=timeout)
+            prc = subprocess.run(cb, timeout=timeout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            if prc.returncode != 0:
+                raise Exception(prc.stderr.decode('utf-8'))
         else:
             raise exception_function_not_implement
 
