@@ -90,10 +90,10 @@ class PhRTBase(object):
                 if it:
                     cmd_arr.append(it)
 
-        prc = subprocess.run(cmd_arr, timeout=float(self.timeout) * 60, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        prc = subprocess.run(cmd_arr, timeout=float(self.timeout) * 60, stderr=subprocess.PIPE)
         if prc.returncode != 0:
             raise Exception(prc.stderr.decode('utf-8'))
-        return prc.stdout.decode('utf-8')
+        return
 
     def script_run(self, **kwargs):
         cmd_arr = []
@@ -124,10 +124,10 @@ class PhRTBase(object):
                 if it:
                     cmd_arr.append(it)
 
-        prc = subprocess.run(cmd_arr, timeout=float(self.timeout) * 60, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        prc = subprocess.run(cmd_arr, timeout=float(self.timeout) * 60, stderr=subprocess.PIPE)
         if prc.returncode != 0:
             raise Exception(prc.stderr.decode('utf-8'))
-        return prc.stdout.decode('utf-8')
+        return
 
     def online_run(self, **kwargs):
         self.table_driver_command_run(self.command)()
