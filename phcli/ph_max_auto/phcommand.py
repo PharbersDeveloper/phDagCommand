@@ -44,8 +44,8 @@ def maxauto(**kwargs):
               type=click.Choice(["submit", "script"]),
               default="submit")
 @click.option("-T", "--timeout",
-              prompt="The job timeout is",
-              help="The job timeout.",
+              prompt="The job timeout (min) is",
+              help="The job timeout (min) .",
               type=click.FLOAT,
               default="10")
 @click.option("-i", "--inputs",
@@ -95,7 +95,7 @@ def run(**kwargs):
               help="The dag tag.",
               default="default")
 @click.option("-T", "--timeout",
-              prompt="The dag timeout is, default=$(jobs timeout total)",
+              prompt="The dag timeout (min) is, default=$(jobs timeout total)",
               help="The dag timeout.",
               default="")
 @click.option("-j", "--jobs",
