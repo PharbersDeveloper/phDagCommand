@@ -3,6 +3,7 @@ import subprocess
 
 from phcli.ph_errs.ph_err import *
 from .ph_rt_base import PhRTBase
+from phcli.define_value import CLI_CLIENT_VERSION
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 
@@ -127,7 +128,7 @@ class PhRTPython3(PhRTBase):
                     "s3a://ph-platform/2020-11-11/jobs/python/phcli/common/hadoop-aws-3.2.1.jar",
         }
         submit_file = {
-            "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-2.0.6-py3.8.egg," +
+            "py-files": "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + "common/phcli-{}-py3.8.egg,".format(CLI_CLIENT_VERSION) +
                         self.submit_prefix + "phjob.py",
         }
         submit_main = self.submit_prefix + "phmain.py"

@@ -6,6 +6,7 @@ This module document the usage of class pharbers command context,
 import sys
 import time
 import click
+from phcli.define_value import CLI_CLIENT_VERSION
 from phcli.ph_max_auto.ph_hook.ph_hook import exec_before
 
 
@@ -43,7 +44,7 @@ def exec_sql(sql):
 
 @click.command("hive", short_help='hive sql 工具')
 def main():
-    print("Welcome to PhCli Hive SQL REPL v2.0.6")
+    print("Welcome to PhCli Hive SQL REPL v{}".format(CLI_CLIENT_VERSION))
     print("Can use standard SQL query pharbers hive.\n")
 
     try:

@@ -31,10 +31,10 @@ class PhRTBase(object):
                    "--queue", 'airflow']
 
         conf_map = {
-            "spark.driver.memory": "1g",
             "spark.driver.cores": "1",
-            "spark.executor.memory": "1g",
+            "spark.driver.memory": "4g",
             "spark.executor.cores": "1",
+            "spark.executor.memory": "4g",
             "spark.executor.instances": "1",
             "spark.driver.extraJavaOptions": "-Dfile.encoding=UTF-8 "
                                              "-Dsun.jnu.encoding=UTF-8 "
@@ -52,9 +52,7 @@ class PhRTBase(object):
         conf_map = [('--conf', k + '=' + v) for k, v in conf_map.items()]
         cmd_arr += [j for i in conf_map for j in i]
 
-        other_map = {
-            "num-executors": "2",
-        }
+        other_map = {}
         other_map.update(dict([(k.lstrip("OTHER__"), v) for k, v in self.context.items() if k.startswith('OTHER__')]))
         other_map = [('--'+k, v) for k, v in other_map.items()]
         cmd_arr += [j for i in other_map for j in i]

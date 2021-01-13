@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import click
+from phcli.define_value import CLI_CLIENT_VERSION
 from phcli.ph_max_auto.phcommand import maxauto
 from phcli.ph_logs.__main__ import main as logs_main
 from phcli.ph_lmd.__main__ import main as phlam_main
@@ -18,8 +19,8 @@ CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 @click.group(context_settings=CONTEXT_SETTINGS)
 def phcli():
     """
-    Pharbers Command Line Interface v2.0.6
-    """
+    Pharbers Command Line Interface v{}
+    """.format(CLI_CLIENT_VERSION)
     pass
 
 

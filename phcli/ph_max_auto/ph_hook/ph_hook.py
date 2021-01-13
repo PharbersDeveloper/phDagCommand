@@ -15,11 +15,6 @@ def exec_before(*args, **kwargs):
         spark = SparkSession.builder \
             .master("yarn") \
             .appName(str(job_id)) \
-            .config("spark.driver.cores", "1") \
-            .config("spark.driver.memory", "1g") \
-            .config("spark.executor.cores", "1") \
-            .config("spark.executor.memory", "1g") \
-            .config("spark.executor.instances", "1") \
             .config('spark.sql.codegen.wholeStage', False) \
             .config("spark.sql.execution.arrow.pyspark.enabled", "true")
 
