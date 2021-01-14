@@ -35,10 +35,10 @@ var_key_lst = Variable.get("%s__SPARK_CONF" % (dag.dag_id), deserialize_json=Tru
 def process_cmd(cmd):
     print("process: " + cmd)
 
-    p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    p = subprocess.Popen(cmd, shell=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     last_line = ''
     while p.poll() is None:
-        line = p.stdout.readline().decode('utf-8').strip("\n")
+        line = p.stdout.read().strip("\n")
         if line:
             last_line = line
             print(last_line)
