@@ -19,9 +19,13 @@ CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 @click.group(context_settings=CONTEXT_SETTINGS)
 def phcli():
     """
-    Pharbers Command Line Interface v{}
-    """.format(CLI_CLIENT_VERSION)
-    pass
+    Pharbers Command Line Interface.
+    """
+
+
+@phcli.command("version", short_help="打印版本")
+def version():
+    click.secho("v"+CLI_CLIENT_VERSION, fg='green', blink=True, bold=True)
 
 
 phcli.add_command(logs_main)
