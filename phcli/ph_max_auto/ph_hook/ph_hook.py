@@ -9,19 +9,16 @@ def exec_before(*args, **kwargs):
     name = kwargs.pop('name', None)
     job_id = kwargs.pop('job_id', name)
 
-    def spark(enable_hive=False):
+    def spark():
         from pyspark.sql import SparkSession
         os.environ["PYSPARK_PYTHON"] = "python3"
         spark = SparkSession.builder \
             .master("yarn") \
             .appName(str(job_id)) \
             .config('spark.sql.codegen.wholeStage', False) \
-            .config("spark.sql.execution.arrow.pyspark.enabled", "true")
-
-        if enable_hive:
-            spark = spark.enableHiveSupport()
-
-        spark = spark.getOrCreate()
+            .config("spark.sql.execution.arrow.pyspark.enabled", "true") \
+            .enableHiveSupport() \
+            .getOrCreate()
 
         access_key = os.getenv("AWS_ACCESS_KEY_ID")
         secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
