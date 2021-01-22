@@ -1,4 +1,5 @@
 import os
+import re
 import subprocess
 
 from phcli.ph_errs.ph_err import *
@@ -57,6 +58,7 @@ class PhRTPython3(PhRTBase):
     except Exception as e:
         logger = phs3logger(kwargs["job_id"])
         logger.error(traceback.format_exc())
+        print(traceback.format_exc())
         raise e
 """
                                .replace('$alfred_outputs', ', '.join(['"'+output.key+'"' for output in config.spec.containers.outputs])) \
@@ -65,8 +67,39 @@ class PhRTPython3(PhRTBase):
                 else:
                     file.write(line)
 
+    def jupyter_to_c9(self, dag_full_path, **kwargs):
+        im = kwargs['im']
+        om = kwargs['om']
+        ipynb_dict = kwargs['ipynb_dict']
+
+        self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE_PY, dag_full_path + "/phjob.py")
+        with open(dag_full_path + "/phjob.py", "a") as file:
+            file.write("""def execute(**kwargs):
+    \"\"\"
+        please input your code below
+        get spark session: spark = kwargs["spark"]()
+    \"\"\"
+    spark = kwargs['spark']()
+    logger = phs3logger(kwargs["job_id"], LOG_DEBUG_LEVEL)
+
+""")
+            # 取参数
+            for input in im:
+                file.write("    {key} = kwargs['{key}']\n".format(key=input))
+            for output in om:
+                file.write("    {key} = kwargs['{key}']\n".format(key=output))
+            file.write("\n")
+
+            # copy 逻辑代码
+            for cell in ipynb_dict['cells'][2:]:
+                for row in cell['source']:
+                    row = re.sub(r'(^\s*)print(\(.*)', r"\1logger.debug\2", row)
+                    file.write('    '+row)
+                file.write('\r\n')
+                file.write('\r\n')
+
     def c9_create(self, **kwargs):
-        # 1. /__init.py file
+        # 1. /__init__.py file
         self.c9_create_init()
 
         # 2. /phjob.py file
@@ -105,13 +138,16 @@ class PhRTPython3(PhRTBase):
         dir_path = "/".join(path.split('/')[:-1])
         subprocess.call(['mkdir', '-p', dir_path])
 
-        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_JUPYTER_FILE)
+        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_JUPYTER_PYTHON_FILE)
         with open(path, "w") as file:
             for line in f_lines:
                 line = line.replace('$name', self.name) \
                             .replace('$runtime', self.runtime) \
                             .replace('$command', self.command) \
-                            .replace('$timeout', str(self.timeout))
+                            .replace('$timeout', str(self.timeout)) \
+                            .replace('$user', os.getenv('USER', 'unknown')) \
+                            .replace('$group', self.group) \
+                            .replace('$ide', self.ide)
                 file.write(line)
 
     def create(self, **kwargs):

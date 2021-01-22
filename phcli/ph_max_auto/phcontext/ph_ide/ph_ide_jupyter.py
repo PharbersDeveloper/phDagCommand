@@ -67,43 +67,20 @@ class PhIDEJupyter(PhIDEBase):
         input_str = '\n      '.join(input_str)
         output_str = ["- key: {}\n        value: {}".format(k, v) for k, v in om.items()]
         output_str = '\n      '.join(output_str)
-        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
-        with open(dag_full_path + "/phconf.yaml", "a") as file:
-            for line in f_lines:
-                line = line + "\n"
-                line = line.replace("$name", kwargs['name']) \
-                    .replace("$runtime", kwargs['runtime']) \
-                    .replace("$command", kwargs['command']) \
-                    .replace("$timeout", kwargs['timeout']) \
-                    .replace("$code", self.table_driver_runtime_main_code(kwargs['runtime'])) \
-                    .replace("$input", input_str) \
-                    .replace("$output", output_str)
-                file.write(line)
+        self.create_phconf_file(dag_full_path, input_str=input_str, output_str=output_str, **kwargs)
 
-        # 5. 创建 /__init.py file
-        runtime_inst = self.table_driver_runtime_inst(self.runtime)(**self.__dict__)
-        runtime_inst.c9_create_init(dag_full_path + "/__init__.py")
+        runtime_inst = self.table_driver_runtime_inst(kwargs['runtime'])(**self.__dict__)
 
-        # 6. 生成 /phmain.py file
+        # python 需要 __init__.py 文件
+        if kwargs['runtime'] == 'python3':
+            # 5. 创建 /__init__.py file
+            runtime_inst.c9_create_init(dag_full_path + "/__init__.py")
+
+        # 6. 生成 /phmain.* file
         runtime_inst.c9_create_phmain(dag_full_path)
 
-        # 7. 根据 .ipynb 转换为 phjob.py 文件
-        self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE_PY, dag_full_path + "/phjob.py")
-        with open(dag_full_path + "/phjob.py", "a") as file:
-            file.write("""def execute(**kwargs):
-    \"\"\"
-        please input your code below
-        get spark session: spark = kwargs["spark"]()
-    \"\"\"
-    spark = kwargs['spark']()
-    logger = phs3logger(kwargs["job_id"], LOG_DEBUG_LEVEL)
+        # 7. 根据 .ipynb 转换为 phjob.* 文件
+        runtime_inst.jupyter_to_c9(dag_full_path, cm=cm, im=im, om=om, ipynb_dict=ipynb_dict)
 
-""")
-            for cell in ipynb_dict['cells'][2:]:
-                for row in cell['source']:
-                    row = re.sub(r'(^\s*)print(\(.*)', r"\1logger.debug\2", row)
-                    file.write('    '+row)
-                file.write('\r\n')
-                file.write('\r\n')
-
+        # 8. phconf 转为 args.properties
         self.yaml2args(dag_full_path)

@@ -24,25 +24,14 @@ class PhIDEC9(PhIDEBase):
         self.check_path(self.job_path)
         subprocess.call(["mkdir", "-p", self.job_path])
 
+        # 创建 /phconf.yaml file
         input_str = [k.strip() for k in self.inputs.split(',')]
         input_str = ["- key: " + i + "\n        value: \"abc\"" for i in input_str]
         input_str = '\n      '.join(input_str)
         output_str = [k.strip() for k in self.outputs.split(',')]
         output_str = ["- key: " + i + "\n        value: \"abc\"" for i in output_str]
         output_str = '\n      '.join(output_str)
-
-        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
-        with open(self.job_path + "/phconf.yaml", "a") as file:
-            for line in f_lines:
-                line = line + "\n"
-                line = line.replace("$name", self.name) \
-                    .replace("$runtime", self.runtime) \
-                    .replace("$command", self.command) \
-                    .replace("$timeout", str(self.timeout)) \
-                    .replace("$code", self.table_driver_runtime_main_code(self.runtime)) \
-                    .replace("$input", input_str) \
-                    .replace("$output", output_str)
-                file.write(line)
+        self.create_phconf_file(self.job_path, input_str=input_str, output_str=output_str, **self.__dict__)
 
         super().create()
 

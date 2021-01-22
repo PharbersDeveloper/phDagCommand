@@ -8,6 +8,12 @@ class PhRTBase(object):
     """
     Runtime Base Class
     """
+    def c9_create_phmain(self, path=None):
+        raise NotImplementedError
+
+    def jupyter_to_c9(self, dag_full_path, **kwargs):
+        raise NotImplementedError
+
     def create(self, **kwargs):
         raise NotImplementedError
 

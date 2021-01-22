@@ -79,6 +79,20 @@ class PhIDEBase(object):
         }
         return table[runtime]
 
+    def create_phconf_file(self, path, **kwargs):
+        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
+        with open(path + "/phconf.yaml", "a") as file:
+            for line in f_lines:
+                line = line + "\n"
+                line = line.replace("$name", kwargs['name']) \
+                    .replace("$runtime", kwargs['runtime']) \
+                    .replace("$command", kwargs['command']) \
+                    .replace("$timeout", str(kwargs['timeout'])) \
+                    .replace("$code", self.table_driver_runtime_main_code(kwargs['runtime'])) \
+                    .replace("$input", kwargs['input_str']) \
+                    .replace("$output", kwargs['output_str'])
+                file.write(line)
+
     def create(self, **kwargs):
         """
         默认的创建过程
@@ -158,7 +172,7 @@ class PhIDEBase(object):
         for row in source:
             if row and '=' in row:
                 r = row.split('=')
-                result[r[0].strip()] = r[-1].strip()
+                result[r[0].strip()] = eval(r[-1].strip())
         return result
 
     def dag_copy_job(self, **kwargs):
@@ -228,29 +242,26 @@ class PhIDEBase(object):
             return result
 
         def copy_jobs(jobs_conf):
-            def get_ide_dag_copy_job_func(ide):
-                table = {
-                    'c9': self.ide_table['c9'](**self.__dict__).dag_copy_job,
-                    'jupyter': self.ide_table['jupyter'](**self.__dict__).dag_copy_job,
-                    'preset': preset_factory,
-                }
-                return table[ide]
+            ide_dag_copy_job_func_table = {
+                'c9': self.ide_table['c9'](**self.__dict__).dag_copy_job,
+                'jupyter': self.ide_table['jupyter'](**self.__dict__).dag_copy_job,
+                'preset': preset_factory,
+            }
 
             # 必须先 copy 所有非 preset 的 job
             for name, job_info in jobs_conf.items():
                 if job_info['ide'] != 'preset':
-                    func = get_ide_dag_copy_job_func(job_info['ide'])
+                    func = ide_dag_copy_job_func_table[job_info['ide']]
                     func(job_name=name, **job_info)
 
-            # 然后在 copy 所有 preset 的 job
+            # 然后再 copy 所有 preset 的 job
             for name, job_info in jobs_conf.items():
                 if job_info['ide'] == 'preset':
-                    func = get_ide_dag_copy_job_func(job_info['ide'])
+                    func = ide_dag_copy_job_func_table[job_info['ide']]
                     func(self, job_name=name, **job_info)
 
         def write_dag_pyfile(jobs_conf):
-            timeout = sum([float(job['timeout']) for _, job in jobs_conf.items()])
-            timeout = config.spec.dag_timeout if config.spec.dag_timeout else timeout
+            timeout = config.spec.dag_timeout if config.spec.dag_timeout else sum([float(job['timeout']) for _, job in jobs_conf.items()])
             w = open(self.dag_path + "ph_dag_" + config.spec.dag_id + ".py", "a")
             f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHGRAPHTEMP_FILE)
             for line in f_lines:

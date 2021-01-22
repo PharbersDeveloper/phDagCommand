@@ -36,6 +36,11 @@ $ pip install phcli
 ```
 
 # 更新文档
+## 2.1.0
+1. Jupyter Spark Session 更语义化的 App Name
+2. 对 Jupyter R 的支持
+3. 修复了 phcli maxauto dag 后，无法取参的问题
+
 ## 2.0.4
 1. 修复 jupyter dag 时 timeout 参数的 bug
 2. 修复 preset.write_asset 的 bug
