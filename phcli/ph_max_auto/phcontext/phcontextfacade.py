@@ -48,6 +48,10 @@ class PhContextFacade(object):
         self.logger.debug("sub command publish")
         self.ide_inst.publish()
 
+    def command_recall_exec(self):
+        self.logger.debug("sub command recall")
+        self.ide_inst.recall()
+
     def command_online_run_exec(self):
         self.logger.debug("sub command online_run")
         self.ide_inst.online_run()

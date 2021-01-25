@@ -36,7 +36,10 @@ $ pip install phcli
 ```
 
 # 更新文档
-## 2.1.0
+## 2.2.0    2021/1/25
+1. 新增 recall 召回功能，可撤回 publish 的 dag。``phcli maxauto recall --name dag_name``
+
+## 2.1.0    2021/1/22
 1. Jupyter Spark Session 更语义化的 App Name
 2. 对 Jupyter R 的支持
 3. 修复了 phcli maxauto dag 后，无法取参的问题

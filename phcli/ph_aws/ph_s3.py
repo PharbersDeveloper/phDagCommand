@@ -17,14 +17,19 @@ class PhS3(PhAWS):
             self.s3_client = boto3.client('s3', region_name='cn-northwest-1',
                                           aws_access_key_id=self.access_key,
                                           aws_secret_access_key=self.secret_key)
+            self.s3_resource = boto3.resource('s3', region_name='cn-northwest-1',
+                                              aws_access_key_id=self.access_key,
+                                              aws_secret_access_key=self.secret_key)
             return
 
         self.phsts = kwargs.get('phsts', None)
         if self.phsts and self.phsts.credentials:
             self.s3_client = boto3.client('s3', **self.phsts.get_cred())
+            self.s3_resource = boto3.resource('s3', **self.phsts.get_cred())
             return
 
         self.s3_client = boto3.client('s3')
+        self.s3_resource = boto3.resource('s3')
 
     def list_buckets(self):
         bks = self.s3_client.list_buckets()["Buckets"]
@@ -63,6 +68,28 @@ class PhS3(PhAWS):
                 self.upload(dir+key, bucket_name, s3_dir+key)
             else:
                 self.upload_dir(dir+key, bucket_name, s3_dir+key)
+
+    def delete(self, bucket_name, object_name):
+        """
+        删除 s3 上的一个文件
+        :param bucket_name: 桶名
+        :param object_name: S3 文件路径
+        :return:
+        """
+        self.s3_client.delete_object(
+            Bucket=bucket_name,
+            Key=object_name,
+        )
+
+    def delete_dir(self, bucket_name, s3_dir):
+        """
+        删除 s3 上的一个目录
+        :param bucket_name: S3 桶名字
+        :param s3_dir: S3 目录路径
+        :return:
+        """
+        bucket = self.s3_resource.Bucket(bucket_name)
+        bucket.objects.filter(Prefix=s3_dir).delete()
 
     def open_object(self, bucket_name, object_name):
         """

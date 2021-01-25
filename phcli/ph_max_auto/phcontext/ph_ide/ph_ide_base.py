@@ -178,6 +178,9 @@ class PhIDEBase(object):
     def dag_copy_job(self, **kwargs):
         raise NotImplementedError
 
+    def get_dag_py_file_name(self, key):
+        return "ph_dag_" + key + ".py"
+
     def dag(self, **kwargs):
         """
         默认的DAG过程
@@ -262,7 +265,7 @@ class PhIDEBase(object):
 
         def write_dag_pyfile(jobs_conf):
             timeout = config.spec.dag_timeout if config.spec.dag_timeout else sum([float(job['timeout']) for _, job in jobs_conf.items()])
-            w = open(self.dag_path + "ph_dag_" + config.spec.dag_id + ".py", "a")
+            w = open(self.dag_path + self.get_dag_py_file_name(config.spec.dag_id), "a")
             f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHGRAPHTEMP_FILE)
             for line in f_lines:
                 line = line + "\n"
@@ -322,6 +325,16 @@ class PhIDEBase(object):
                     bucket_name=dv.TEMPLATE_BUCKET,
                     s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
                 )
+
+    def recall(self, **kwargs):
+        """
+        默认的召回过程
+        """
+        self.logger.info('maxauto 默认的 recall 实现')
+        self.logger.debug(self.__dict__)
+
+        self.phs3.delete_dir(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name)
+        self.phs3.delete_dir(dv.DAGS_S3_BUCKET, dv.DAGS_S3_PREV_PATH + self.get_dag_py_file_name(self.name))
 
     def online_run(self, **kwargs):
         """

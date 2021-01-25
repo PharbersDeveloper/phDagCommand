@@ -137,6 +137,19 @@ def publish(**kwargs):
     click.secho("发布完成", fg='green', blink=True, bold=True)
 
 
+@maxauto.command("recall")
+@click.option("-n", "--name",
+              prompt="The dag name is",
+              help="The dag name.")
+def recall(**kwargs):
+    """
+    召回 DAG 运行文件和相关依赖
+    """
+    context_args.update(kwargs)
+    PhContextFacade(**context_args).command_recall_exec()
+    click.secho("召回完成", fg='green', blink=True, bold=True)
+
+
 @maxauto.command("online_run")
 @click.option("-g", "--group",
               prompt="The dag job group is",
