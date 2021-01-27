@@ -1,6 +1,6 @@
 import os
 import pytest
-from ph_lmd.model.ph_layer import PhLayer
+from phcli.ph_lmd.model.ph_layer import PhLayer
 
 
 @pytest.mark.skip(reason='skip')

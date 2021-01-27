@@ -1,6 +1,7 @@
 import io
 import setuptools
 from glob import glob
+from phcli.define_value import CLI_CLIENT_VERSION
 
 
 with io.open("./README.md", "r", encoding='utf-8') as fh:
@@ -8,7 +9,7 @@ with io.open("./README.md", "r", encoding='utf-8') as fh:
 
 setuptools.setup(
     name="phcli",
-    version="1.2.4",
+    version=CLI_CLIENT_VERSION,
     author="Alfred Yang",
     author_email="alfredyang@pharbers.com",
     maintainer="ClockQ,AlexQian",
@@ -33,7 +34,6 @@ setuptools.setup(
         "sqlalchemy",
         "pymysql",
     ],
-
     package_data={
         '': ['template/*.yaml', 'template/*.tmp'],
     },

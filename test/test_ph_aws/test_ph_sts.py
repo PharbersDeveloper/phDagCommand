@@ -1,5 +1,5 @@
 import boto3
-from ph_aws.ph_sts import PhSts
+from phcli.ph_aws.ph_sts import PhSts
 
 
 def test_ph_sts_assume_role():

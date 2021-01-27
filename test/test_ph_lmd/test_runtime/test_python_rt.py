@@ -1,6 +1,6 @@
 import os
 import pytest
-from ph_lmd.runtime.python_rt import PythonRT
+from phcli.ph_lmd.runtime.python_rt import PythonRT
 
 
 python_rt = PythonRT()

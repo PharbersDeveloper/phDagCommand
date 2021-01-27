@@ -1,7 +1,7 @@
-from ph_aws.ph_sts import PhSts
-from ph_aws.ph_s3 import PhS3
-from ph_storage.model.local_storage import PhLocalStorage
-from ph_storage.model.hdfs_storage import PhHdfsStorage
+from phcli.ph_aws.ph_sts import PhSts
+from phcli.ph_aws.ph_s3 import PhS3
+from phcli.ph_storage.model.local_storage import PhLocalStorage
+from phcli.ph_storage.model.hdfs_storage import PhHdfsStorage
 
 phsts = PhSts()
 phsts = phsts.assume_role('arn:aws-cn:iam::444603803904:role/Ph-Cli-Lmd', 'Ph-Cli-Lmd')
@@ -15,7 +15,7 @@ def test_ph_clean_logs_remove_local_file():
 
 
 def test_ph_clean_logs_exec():
-    from ph_storage.model.local_storage import PhLocalStorage
-    from ph_storage.model.s3_storage import PhS3Storage
+    from phcli.ph_storage.model.local_storage import PhLocalStorage
+    from phcli.ph_storage.model.s3_storage import PhS3Storage
     ins = PhHdfsStorage(PhLocalStorage(), PhS3Storage())
     assert ins.back_up('["hdfs://backup:8020/common/public/cpa/0.0.4/YEAR=2015.0/MONTH=2.0"]') is True

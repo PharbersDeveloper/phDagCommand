@@ -1,0 +1,68 @@
+# alfredyang@pharbers.com.
+#
+# This is job template for Pharbers Max Job
+
+Sys.setenv(SPARK_HOME="/usr/local/spark")
+Sys.setenv(YARN_CONF_DIR="/usr/local/hadoop/etc/hadoop/")
+
+if(is.null(Sys.getenv("AWS_ACCESS_KEY_ID")) & is.null(Sys.getenv("AWS_SECRET_ACCESS_KEY"))){
+    access_key <- Sys.getenv("AWS_ACCESS_KEY_ID")
+    secret_key <- Sys.getenv("AWS_SECRET_ACCESS_KEY")
+    aws_list <- list(
+            spark.hadoop.fs.s3a.access.key = access_key,
+            spark.hadoop.fs.s3a.secret.key = secret_key,
+            spark.hadoop.com.amazonaws.services.s3.enableV4 = "TRUE",
+            spark.hadoop.fs.s3a.impl = "org.apache.hadoop.fs.s3a.S3AFileSystem",
+            spark.hadoop.fs.s3a.endpoint = "s3.cn-northwest-1.amazonaws.com.cn"
+        )
+} else if(file.exists("~/.aws/credentials")){
+    credentials <- readLines("~/.aws/credentials")
+    access_key <- gsub("^\\s+|\\s+$", "", strsplit(credentials[2], "=")[[1]][2])
+    secret_key <- gsub("^\\s+|\\s+$", "", strsplit(credentials[3], "=")[[1]][2])
+    aws_list <- list(
+        spark.hadoop.fs.s3a.access.key = access_key,
+        spark.hadoop.fs.s3a.secret.key = secret_key,
+        spark.hadoop.com.amazonaws.services.s3.enableV4 = "TRUE",
+        spark.hadoop.fs.s3a.impl = "org.apache.hadoop.fs.s3a.S3AFileSystem",
+        spark.hadoop.fs.s3a.endpoint = "s3.cn-northwest-1.amazonaws.com.cn"
+    )
+}else{
+    aws_list <- list()
+}
+
+library(SparkR, lib.loc = c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib")))
+if(file.exists("~/.aws/credentials")){
+    ss <- sparkR.session(master = "yarn",
+                         appName = "$user write $group.$name in $ide using $runtime",
+                         spark.submit.deployMode="client",
+                         sparkHome = Sys.getenv("SPARK_HOME"),
+                         sparkConfig = append(
+                            list(
+                                spark.driver.cores = "1",
+                                spark.driver.memory = "4g",
+                                spark.executor.cores = "1",
+                                spark.executor.memory = "4g",
+                                spark.executor.instances = "1"
+                            ), aws_list
+                         ),
+                        sparkJars = c("/usr/local/spark/jars/hadoop-aws-3.2.1.jar"),
+                         enableHiveSupport=FALSE
+    )
+}else{
+    ss <- sparkR.session(master = "yarn",
+                         appName = "$user write $group.$name in $ide using $runtime",
+                         spark.submit.deployMode="cluster",
+                         sparkHome = Sys.getenv("SPARK_HOME"),
+                         sparkConfig = append(
+                            list(
+                                spark.driver.cores = "1",
+                                spark.driver.memory = "4g",
+                                spark.executor.cores = "1",
+                                spark.executor.memory = "4g",
+                                spark.executor.instances = "1"
+                            ), aws_list
+                         ),
+                         sparkJars = c("/usr/local/spark/jars/hadoop-aws-3.2.1.jar"),
+                         enableHiveSupport=FALSE
+    )
+}

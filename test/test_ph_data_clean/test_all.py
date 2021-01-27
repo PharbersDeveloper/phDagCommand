@@ -1,8 +1,8 @@
 import os
 import pytest
-from ph_data_clean.__main__ import clean
-from ph_data_clean.util.yaml_utils import load_by_dir
-from ph_data_clean.model.clean_result import Tag
+from phcli.ph_data_clean.__main__ import clean
+from phcli.ph_data_clean.util.yaml_utils import load_by_dir
+from phcli.ph_data_clean.model.clean_result import Tag
 
 PROJECT_NAME = 'phdagcommand'
 

@@ -1,0 +1,117 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Phcli Jupyter R Template\n",
+    "# \n",
+    "# 使用手册：\n",
+    "# 1. 请将全局变量定义在第一个输入区内\n",
+    "# 2. Phcli 会自动在第二个输入区初始化 Spark Session\n",
+    "# 3. 请在第三个输入区开始编码，phcli maxauto dag 后会全部归类为一个方法\n",
+    "\n",
+    "\n",
+    "# Config defined in here\n",
+    "\n",
+    "Sys.setlocale(category = \"LC_ALL\",locale = \"C.UTF-8\")\n",
+    "############## == config == ###################\n",
+    "job_name = \"$name\"\n",
+    "job_runtime = \"$runtime\"\n",
+    "job_command = \"$command\"\n",
+    "job_timeout = $timeout\n",
+    "############## == config == ###################\n",
+    "\n",
+    "\n",
+    "# Variables defined in here\n",
+    "\n",
+    "############## == input args == ###################\n",
+    "a = 123\n",
+    "b = 456\n",
+    "############## == input args == ###################\n",
+    "\n",
+    "############## == output args == ###################\n",
+    "c = 'abc'\n",
+    "d = 'def'\n",
+    "############## == output args == ###################"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Initialize the Spark Session\n",
+    "# YARN URL: http://161.189.223.227:8088/cluster\n",
+    "library(SparkR, lib.loc = c(file.path(Sys.getenv(\"SPARK_HOME\"), \"R\", \"lib\")))\n",
+    "\n",
+    "access_key = \"$access_key\"\n",
+    "secret_key = \"$secret_key\"\n",
+    "\n",
+    "# prepare\n",
+    "ss <- sparkR.session(master = \"yarn\",\n",
+    "                     appName = \"$user write $group.$name in $ide using $runtime\",\n",
+    "                     spark.submit.deployMode=\"client\",\n",
+    "                     sparkHome = Sys.getenv(\"SPARK_HOME\"),\n",
+    "                     sparkConfig = list(spark.driver.cores = \"1\",\n",
+    "                                        spark.driver.memory = \"4g\",\n",
+    "                                        spark.executor.cores = \"1\",\n",
+    "                                        spark.executor.memory = \"4g\",\n",
+    "                                        spark.executor.instances = \"1\",\n",
+    "                                        spark.hadoop.fs.s3a.access.key = access_key,\n",
+    "                                        spark.hadoop.fs.s3a.secret.key = secret_key,\n",
+    "                                        spark.hadoop.com.amazonaws.services.s3.enableV4 = \"TRUE\",\n",
+    "                                        spark.hadoop.fs.s3a.impl = \"org.apache.hadoop.fs.s3a.S3AFileSystem\",\n",
+    "                                        spark.hadoop.fs.s3a.endpoint = \"s3.cn-northwest-1.amazonaws.com.cn\"\n",
+    "                     ),\n",
+    "                     sparkJars = c(\"/usr/local/spark/jars/hadoop-aws-3.2.1.jar\"),\n",
+    "                     enableHiveSupport=FALSE\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "require(openxlsx)\n",
+    "require(dplyr)\n",
+    "require(tidyr)\n",
+    "require(readr)\n",
+    "require(stringr)\n",
+    "require(stringi)\n",
+    "require(data.table)\n",
+    "require(readxl)\n",
+    "library(magrittr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "R",
+   "language": "R",
+   "name": "ir"
+  },
+  "language_info": {
+   "codemirror_mode": "r",
+   "file_extension": ".r",
+   "mimetype": "text/x-r-source",
+   "name": "R",
+   "pygments_lexer": "r",
+   "version": "4.0.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

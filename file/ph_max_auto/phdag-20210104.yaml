@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PhDag
+metadata:
+  name: $name
+  description: "pharbers job description"
+  labels:
+    name: $name
+spec:
+  description: "A Max Auto Job Example"
+  start_date: 1 # if you don't understand, don't touch it
+  schedule_interval: "None" # if you don't understand, don't touch it
+  email: ['airflow@example.com']
+  email_on_failure: False
+  email_on_retry: False
+  retries: 1
+  retry_delay: "minutes=5"
+  owner: $dag_owner
+  dag_id: $name
+  dag_tag: $dag_tag
+  dag_timeout: $dag_timeout # minutes
+  jobs:
+    $jobs
+  linkage:
+    - $linkage

@@ -1,0 +1,48 @@
+import os
+import uuid
+import string
+import subprocess
+from datetime import timedelta
+from airflow.utils.dates import days_ago
+from airflow.models import DAG, Variable
+from airflow.operators.bash_operator import BashOperator
+from airflow.operators.python_operator import PythonOperator
+from airflow.utils.trigger_rule import TriggerRule
+
+
+default_args = {
+    "owner": "$alfred_dag_owner",
+    "start_date": days_ago($alfred_start_date),
+    "email": $alfred_email,
+    "email_on_failure": $alfred_email_on_failure,
+    "email_on_retry": $alfred_email_on_retry,
+    "retries": $alfred_retries,
+    "retry_delay": timedelta($alfred_retry_delay),
+}
+
+dag = DAG(
+    dag_id="$alfred_dag_id",
+    tags=[$alfred_dag_tags],
+    default_args=default_args,
+    schedule_interval=$alfred_schedule_interval,
+    description="$alfred_description",
+    dagrun_timeout=timedelta(minutes=$alfred_dag_timeout)
+)
+
+var_key_lst = Variable.get("%s__SPARK_CONF" % (dag.dag_id), deserialize_json=True, default_var={})
+
+# subprocess Ponen CMD
+def process_cmd(cmd):
+    print("process: " + cmd)
+
+    p = subprocess.Popen(cmd, shell=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    last_line = ''
+    while p.poll() is None:
+        line = p.stdout.read().strip("\n")
+        if line:
+            last_line = line
+            print(last_line)
+    if p.returncode == 0:
+        print('Subprogram success')
+    else:
+        raise Exception(last_line)

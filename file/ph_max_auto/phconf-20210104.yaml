@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: PhJob
+metadata:
+  name: $name
+  description: "pharbers job description"
+  labels:
+    name: $name
+    runtime: $runtime
+    command: $command
+spec:
+  containers:
+    repository: local
+    runtime: $runtime
+    command: $command
+    timeout: $timeout
+    code: $code
+    config: phconf.yaml
+    args:
+      $input
+    outputs:
+      $output
+
+
