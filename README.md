@@ -36,6 +36,9 @@ $ pip install phcli
 ```
 
 # 更新文档
+## 2.2.1    2021/1/29
+1. 紧急修复 bug，在 .ipynb 中无法读取 ~/.profile 中的环境变量
+
 ## 2.2.0    2021/1/25
 1. 新增 recall 召回功能，可撤回 publish 的 dag。``phcli maxauto recall --name dag_name``
 

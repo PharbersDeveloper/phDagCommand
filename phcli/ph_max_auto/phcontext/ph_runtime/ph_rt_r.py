@@ -66,14 +66,14 @@ class PhRTR(PhRTBase):
         with open(path, "w") as file:
             for line in f_lines:
                 line = line.replace('$name', self.name) \
-                    .replace('$runtime', self.runtime) \
-                    .replace('$command', self.command) \
-                    .replace('$timeout', str(self.timeout)) \
-                    .replace('$user', os.getenv('USER', 'unknown')) \
-                    .replace('$group', self.group) \
-                    .replace('$ide', self.ide) \
-                    .replace('$access_key', os.getenv('AWS_ACCESS_KEY_ID', "NULL")) \
-                    .replace('$secret_key', os.getenv('AWS_SECRET_ACCESS_KEY', "NULL"))
+                            .replace('$runtime', self.runtime) \
+                            .replace('$command', self.command) \
+                            .replace('$timeout', str(self.timeout)) \
+                            .replace('$user', os.getenv('USER', 'unknown')) \
+                            .replace('$group', self.group) \
+                            .replace('$ide', self.ide) \
+                            .replace('$access_key', os.getenv('AWS_ACCESS_KEY_ID', "NULL")) \
+                            .replace('$secret_key', os.getenv('AWS_SECRET_ACCESS_KEY', "NULL"))
 
                 file.write(line)
 
