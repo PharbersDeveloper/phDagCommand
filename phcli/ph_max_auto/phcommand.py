@@ -6,8 +6,26 @@ which help users to create, update, and publish the jobs they created.
 """
 import os
 import click
+import datetime
 from phcli.ph_max_auto import define_value as dv
+from phcli.ph_max_auto.ph_metric.ph_metric import PhMetric
 from phcli.ph_max_auto.phcontext.phcontextfacade import PhContextFacade
+
+
+def put_metric(api, call_state):
+    context_args["metric"].put_call_cli_count(
+        api,
+        dag_name=context_args.get('group', ''),
+        job_name=context_args.get('name', ''),
+        call_state=call_state
+    )
+    context_args["metric"].put_call_cli_duration_time(
+        api,
+        dag_name=context_args.get('group', ''),
+        job_name=context_args.get('name', ''),
+        call_state=call_state,
+        duration_time=(datetime.datetime.now()-context_args["starttime"]).microseconds
+    )
 
 
 context_args = {}
@@ -28,6 +46,8 @@ def maxauto(**kwargs):
     """
     global context_args
     context_args = kwargs
+    context_args["metric"] = PhMetric()
+    context_args["starttime"] = datetime.datetime.now()
 
 
 @maxauto.command("create")
@@ -60,9 +80,15 @@ def create(**kwargs):
     """
     创建一个 Job
     """
-    context_args.update(kwargs)
-    PhContextFacade(**context_args).command_create_exec()
-    click.secho("创建完成", fg='green', blink=True, bold=True)
+    try:
+        context_args.update(kwargs)
+        PhContextFacade(**context_args).command_create_exec()
+    except Exception as e:
+        put_metric("maxauto.create", "failed")
+        click.secho("创建失败", fg='red', blink=True, bold=True)
+    else:
+        put_metric("maxauto.create", "success")
+        click.secho("创建完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("run")
@@ -77,9 +103,15 @@ def run(**kwargs):
     """
     运行一个 Job
     """
-    context_args.update(kwargs)
-    PhContextFacade(**context_args).command_run_exec()
-    click.secho("运行完成", fg='green', blink=True, bold=True)
+    try:
+        context_args.update(kwargs)
+        PhContextFacade(**context_args).command_run_exec()
+    except Exception as e:
+        put_metric("maxauto.run", "failed")
+        click.secho("运行失败", fg='red', blink=True, bold=True)
+    else:
+        put_metric("maxauto.run", "success")
+        click.secho("运行完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("combine")
@@ -106,9 +138,15 @@ def combine(**kwargs):
     """
     关联一组 Job
     """
-    context_args.update(kwargs)
-    PhContextFacade(**context_args).command_combine_exec()
-    click.secho("关联完成", fg='green', blink=True, bold=True)
+    try:
+        context_args.update(kwargs)
+        PhContextFacade(**context_args).command_combine_exec()
+    except Exception as e:
+        put_metric("maxauto.combine", "failed")
+        click.secho("关联失败", fg='red', blink=True, bold=True)
+    else:
+        put_metric("maxauto.combine", "success")
+        click.secho("关联完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("dag")
@@ -119,9 +157,15 @@ def dag(**kwargs):
     """
     通过 combine 生成一组 DAG 运行文件
     """
-    context_args.update(kwargs)
-    PhContextFacade(**context_args).command_dag_exec()
-    click.secho("DAG完成", fg='green', blink=True, bold=True)
+    try:
+        context_args.update(kwargs)
+        PhContextFacade(**context_args).command_dag_exec()
+    except Exception as e:
+        put_metric("maxauto.dag", "failed")
+        click.secho("DAG失败", fg='red', blink=True, bold=True)
+    else:
+        put_metric("maxauto.dag", "success")
+        click.secho("DAG完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("publish")
@@ -132,9 +176,15 @@ def publish(**kwargs):
     """
     发布 DAG 运行文件和相关依赖
     """
-    context_args.update(kwargs)
-    PhContextFacade(**context_args).command_publish_exec()
-    click.secho("发布完成", fg='green', blink=True, bold=True)
+    try:
+        context_args.update(kwargs)
+        PhContextFacade(**context_args).command_publish_exec()
+    except Exception as e:
+        put_metric("maxauto.publish", "failed")
+        click.secho("发布失败", fg='red', blink=True, bold=True)
+    else:
+        put_metric("maxauto.publish", "success")
+        click.secho("发布完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("recall")
@@ -145,9 +195,15 @@ def recall(**kwargs):
     """
     召回 DAG 运行文件和相关依赖
     """
-    context_args.update(kwargs)
-    PhContextFacade(**context_args).command_recall_exec()
-    click.secho("召回完成", fg='green', blink=True, bold=True)
+    try:
+        context_args.update(kwargs)
+        PhContextFacade(**context_args).command_recall_exec()
+    except Exception as e:
+        put_metric("maxauto.recall", "failed")
+        click.secho("召回失败", fg='red', blink=True, bold=True)
+    else:
+        put_metric("maxauto.recall", "success")
+        click.secho("召回完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("online_run")
@@ -167,9 +223,15 @@ def online_run(**kwargs):
     """
     通过指定 Job name 在线上执行
     """
-    context_args.update(kwargs)
-    PhContextFacade(**context_args).command_online_run_exec()
-    click.secho("online_run完成", fg='green', blink=True, bold=True)
+    try:
+        context_args.update(kwargs)
+        PhContextFacade(**context_args).command_online_run_exec()
+    except Exception as e:
+        put_metric("maxauto.online_run", "failed")
+        click.secho("online_run失败", fg='red', blink=True, bold=True)
+    else:
+        put_metric("maxauto.online_run", "success")
+        click.secho("online_run完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("status")
@@ -177,6 +239,12 @@ def status(**kwargs):
     """
     获取执行状态（暂无）
     """
-    context_args.update(kwargs)
-    PhContextFacade(**context_args).command_status_exec()
-    click.secho("查看状态完成", fg='green', blink=True, bold=True)
+    try:
+        context_args.update(kwargs)
+        PhContextFacade(**context_args).command_status_exec()
+    except Exception as e:
+        put_metric("maxauto.status", "failed")
+        click.secho("查看状态失败", fg='red', blink=True, bold=True)
+    else:
+        put_metric("maxauto.status", "success")
+        click.secho("查看状态完成", fg='green', blink=True, bold=True)
