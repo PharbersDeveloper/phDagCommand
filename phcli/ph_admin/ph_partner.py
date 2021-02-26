@@ -46,9 +46,8 @@ def get_partner(**kwargs):
 
 
 @click.command("delete", short_help='删除公司')
-@click.option("-n", "--name", help="公司名", default=None)
+@click.option("-n", "--name", help="公司名", prompt="公司名")
 def delete_partner(**kwargs):
-    kwargs['phoneNumber'] = kwargs.pop('phonenumber')
     for p in pg.delete(Partner(**kwargs)):
         click.secho(str(p), fg='green', blink=True, bold=True)
     pg.commit()
