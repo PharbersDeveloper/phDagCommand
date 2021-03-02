@@ -27,7 +27,7 @@ class PhLayer(AWSOperator):
             :arg runtime 运行时字符串，“python” 或者 “nodejs” 或者 “go”
             :arg lib_path: python 运行时，仅当 is_pipenv = False 时有效，指定 python 的 lib 位置
             :arg package_name 打包的名称
-            :arg is_pipenv: 是否使用的 pipenv 构建的项目，默认为 True
+            :arg is_pipenv: 是否使用的 pipenv 构建的项目，默认为 False
         """
         runtime_inst = get_rt_inst(data['runtime'])
         return runtime_inst.pkg_layer(data)

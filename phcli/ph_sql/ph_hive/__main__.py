@@ -30,7 +30,7 @@ def get_spark_session():
     if not spark_session:
         spark_session = exec_before(
             name='phcli_sql_repl',
-            job_id=time.time())['spark'](enable_hive=True)
+            job_id=time.time())['spark']()
     return spark_session
 
 
