@@ -44,7 +44,7 @@ def get_role(**kwargs):
 
 
 @click.command("delete", short_help='删除角色')
-@click.option("-n", "--name", help="角色名", default=None)
+@click.option("-n", "--name", help="角色名", prompt="角色名")
 def delete_role(**kwargs):
     for role in pg.delete(Role(**kwargs)):
         click.secho(str(role), fg='green', blink=True, bold=True)

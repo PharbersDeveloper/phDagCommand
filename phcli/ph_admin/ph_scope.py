@@ -47,7 +47,7 @@ def get_scope(**kwargs):
 
 
 @click.command("delete", short_help='删除权限')
-@click.option("-n", "--name", help="权限名", default=None)
+@click.option("-n", "--name", help="权限名", prompt="权限名")
 def delete_scope(**kwargs):
     for scope in pg.delete(Scope(**kwargs)):
         click.secho(str(scope), fg='green', blink=True, bold=True)
