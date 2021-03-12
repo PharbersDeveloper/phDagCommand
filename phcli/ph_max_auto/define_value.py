@@ -31,6 +31,10 @@ TEMPLATE_JUPYTER_R_FILE = '/template/python/phcli/maxauto/phJupyterR-20210122.js
 
 TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20210104.yaml"
 TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20210104.tmp"
-TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210205.tmp"
+TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210129.tmp"
 
-PRESET_MUST_ARGS = 'owner, run_id, job_id'
+RESULT_PATH_PREFIX = 's3://ph-max-auto/2020-08-11/data_matching/refactor/runs'
+TARGET_PATH_PREFIX = 'job_result_data'
+TARGET_BUCKET_NAME = 'ph-max-atuo'
+
+PRESET_MUST_ARGS = 'owner, dag_name, run_id, job_name, job_id'
