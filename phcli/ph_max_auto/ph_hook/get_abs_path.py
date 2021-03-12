@@ -100,8 +100,8 @@ if __name__ == '__main__':
     })
     print("prefixexist_suffixexist_depends_path = " + str(prefixexist_suffixexist_depends_path))
     assert len(prefixexist_suffixexist_depends_path) == 2
-    assert "mnf_adjust" in  prefixexist_suffixexist_depends_path
+    assert "mnf_adjust" in prefixexist_suffixexist_depends_path
     assert prefixexist_suffixexist_depends_path['mnf_adjust'] == 's3://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_mnf/mnf_adjust_result'
-    assert "spec_adjust" in  prefixexist_suffixexist_depends_path
+    assert "spec_adjust" in prefixexist_suffixexist_depends_path
     assert prefixexist_suffixexist_depends_path['spec_adjust'] == 's3://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_spec/spec_adjust_result'
 
