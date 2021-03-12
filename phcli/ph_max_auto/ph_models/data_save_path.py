@@ -26,6 +26,7 @@ def get_dag_name(kwargs):
 def get_result_path_prefix(kwargs):
     run_time = get_run_time()
     job_name = get_job_name(kwargs)
+    path_prefix = kwargs['path_prefix']
     return path_prefix + "/" + run_id + "/" + run_time + "/"
 
 def get_target_path(kwargs):
