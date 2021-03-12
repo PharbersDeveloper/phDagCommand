@@ -33,6 +33,11 @@ TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20210104.yaml"
 TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20210104.tmp"
 TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210129.tmp"
 
+DEFAULT_RESULT_PATH_FORMAT_STR = "s3://{bucket_name}/{version}/{dag_name}/"
+DEFAULT_RESULT_PATH_BUCKET = "ph-max-auto"
+DEFAULT_RESULT_PATH_VERSION = "2020-08-11"
+DEFAULT_RESULT_PATH_SUFFIX = "refactor/runs/"
+DEFAULT_ASSET_PATH_SUFFIX = "refactor/asset/"
 RESULT_PATH_PREFIX = 's3://ph-max-auto/2020-08-11/data_matching/refactor/runs'
 TARGET_PATH_PREFIX = 'job_result_data'
 TARGET_BUCKET_NAME = 'ph-max-atuo'

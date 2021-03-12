@@ -1,49 +1,28 @@
-import os
 import base64
 import boto3
-import time
 from datetime import datetime
 from phcli.ph_db.ph_pg import PhPg
-from phcli.ph_max_auto.ph_models.data_set import DataSet
 from phcli.ph_max_auto import define_value as dv
-from phcli.ph_max_auto.ph_models.data_save_path import get_result_path_prefix,get_target_path
+from phcli.ph_max_auto.ph_models.data_set import DataSet
 
+from phcli.ph_max_auto.ph_hook.get_spark_session import get_spark_session_func
+from phcli.ph_max_auto.ph_hook.get_abs_path import get_result_path
+from phcli.ph_max_auto.ph_hook.get_abs_path import get_target_path
+from phcli.ph_max_auto.ph_hook.get_abs_path import get_depends_path
 
 
 def exec_before(*args, **kwargs):
     name = kwargs.pop('name', None)
     job_id = kwargs.pop('job_id', name)
 
-
-    def spark():
-        from pyspark.sql import SparkSession
-        os.environ["PYSPARK_PYTHON"] = "python3"
-        spark = SparkSession.builder \
-            .master("yarn") \
-            .appName(str(job_id)) \
-            .config('spark.sql.codegen.wholeStage', False) \
-            .config("spark.sql.execution.arrow.pyspark.enabled", "true") \
-            .enableHiveSupport() \
-            .getOrCreate()
-
-        access_key = os.getenv("AWS_ACCESS_KEY_ID")
-        secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
-        if access_key is not None:
-            spark._jsc.hadoopConfiguration().set("fs.s3a.access.key", access_key)
-            spark._jsc.hadoopConfiguration().set("fs.s3a.secret.key", secret_key)
-            spark._jsc.hadoopConfiguration().set("com.amazonaws.services.s3.enableV4", "true")
-            spark._jsc.hadoopConfiguration().set("fs.s3a.impl","org.apache.hadoop.fs.s3a.S3AFileSystem")
-            # spark._jsc.hadoopConfiguration().set("fs.s3a.aws.credentials.provider","org.apache.hadoop.fs.s3a.BasicAWSCredentialsProvider")
-            spark._jsc.hadoopConfiguration().set("fs.s3a.endpoint", "s3.cn-northwest-1.amazonaws.com.cn")
-        return spark
-    
-    result_path_prefix = get_result_path_prefix(kwargs)
-
+    spark_func = get_spark_session_func(job_id)
+    result_path_prefix = get_result_path(kwargs)
 
     return {
-        'spark': spark,
-        'result_path_prefix': result_path_prefix
-        }
+        'spark': spark_func,
+        'result_path_prefix': result_path_prefix,
+        'get_depends_path_func': get_depends_path,
+    }
 
 
 def exec_after(*args, **kwargs):
