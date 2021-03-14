@@ -38,8 +38,8 @@ DEFAULT_RESULT_PATH_BUCKET = "ph-max-auto"
 DEFAULT_RESULT_PATH_VERSION = "2020-08-11"
 DEFAULT_RESULT_PATH_SUFFIX = "refactor/runs/"
 DEFAULT_ASSET_PATH_SUFFIX = "refactor/asset/"
-RESULT_PATH_PREFIX = 's3://ph-max-auto/2020-08-11/data_matching/refactor/runs'
-TARGET_PATH_PREFIX = 'job_result_data'
-TARGET_BUCKET_NAME = 'ph-max-atuo'
+DEFAULT_TARGET_PATH_FORMAT_STR = "s3://{bucket_name}/{version}"
+DEFAULT_TARGET_PATH_BUCKET = 'ph-max-atuo'
+DEFAULT_TARGET_PATH_PREFIX = 'result_data'
 
 PRESET_MUST_ARGS = 'owner, dag_name, run_id, job_name, job_id'

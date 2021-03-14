@@ -61,8 +61,11 @@ def get_target_path(kwargs):
     run_time = get_run_time()
     job_name = get_job_name(kwargs)
     dag_name = get_dag_name(kwargs)
-    target_path = dv.TARGET_PATH_PREFIX
-    return target_path + "/" + run_time+'/'+dag_name+'/'+job_name+'/'
+    target_path = dv.DEFAULT_TARGET_PATH_FORMAT_STR.format(
+        bucket_name=dv.DEFAULT_RESULT_PATH_BUCKET,
+        version=dv.DEFAULT_TARGET_PATH_PREFIX
+    )
+    return target_path +'/'+ run_time+'/'+dag_name+'/'+job_name+'/'
 
 
 if __name__ == '__main__':
@@ -105,3 +108,9 @@ if __name__ == '__main__':
     assert "spec_adjust" in prefixexist_suffixexist_depends_path
     assert prefixexist_suffixexist_depends_path['spec_adjust'] == 's3://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_spec/spec_adjust_result'
 
+    path_target_path = get_target_path({
+        'name': 'test_job',
+        'dag_name': 'test_dag'
+    })
+    print("path_target_path = " + path_target_path)
+    assert(path_target_path == "s3://ph-max-auto/result_data/2021-03-14_10:07:02/test_dag/test_job/")
