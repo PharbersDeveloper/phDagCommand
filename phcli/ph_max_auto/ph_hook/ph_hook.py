@@ -45,8 +45,8 @@ def exec_after(*args, **kwargs):
     if not outputs:
         return
     
-    source_bucket_name = kwargs['result_path'].split("/")[2]
-    source_path_prefix = '/'.join(kwargs['result_path'].split('/')[3:])
+    source_bucket_name = kwargs['result_path_prefix'].split("/")[2]
+    source_path_prefix = '/'.join(kwargs['result_path_prefix'].split('/')[3:])
     target_path = get_target_path(kwargs)
     
     # 在s3进行copy
@@ -105,8 +105,8 @@ if __name__ == '__main__':
         'run_id': 'test_run_id'
     }
     
-    source_bucket_name = kwargs['result_path'].split("/")[2]
-    source_path_prefix = '/'.join(kwargs['result_path'].split('/')[3:])
+    source_bucket_name = kwargs['result_path_prefix'].split("/")[2]
+    source_path_prefix = '/'.join(kwargs['result_path_prefix'].split('/')[3:])
     target_path = get_target_path(kwargs)
     
     # 在s3进行copy
