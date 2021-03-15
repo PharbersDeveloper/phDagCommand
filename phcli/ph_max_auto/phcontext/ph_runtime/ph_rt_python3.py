@@ -1,6 +1,7 @@
 import os
 import re
 import subprocess
+import json
 
 from phcli.ph_errs.ph_err import *
 from .ph_rt_base import PhRTBase
@@ -66,9 +67,9 @@ class PhRTPython3(PhRTBase):
                                )
                 else:
                     file.write(line)
-     def c9_to_jupyter(self, phs3, source_path, target_path):
+    def c9_to_jupyter(self, source_path, target_path):
         # 创建json文件
-        path = self.target_path + "/phJupyterPython.ipynb"
+        path = target_path + "/phJupyterPython.ipynb"
         subprocess.call(["touch", path])
         
         with open(target_path + "/phJupyterPython.ipynb", "w") as file:
@@ -294,3 +295,4 @@ class PhRTPython3(PhRTBase):
         super().script_run(entrypoint=entrypoint)
 
 
+    

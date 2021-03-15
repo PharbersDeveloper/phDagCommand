@@ -38,7 +38,7 @@ def get_result_path(kwargs):
             dag_name=get_dag_name(kwargs),
         ) + path_suffix
 
-    return path_prefix + run_id + "/" + job_name + "/"
+    return path_prefix + "/" +run_id + "/" + job_name + "/"
 
 
 def get_depends_file_path(kwargs, job_name, job_key):
