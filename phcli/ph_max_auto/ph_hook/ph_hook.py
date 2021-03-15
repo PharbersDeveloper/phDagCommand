@@ -99,7 +99,7 @@ if __name__ == '__main__':
     
     kwargs = {
         'path_prefix': 's3://ph-max-auto/2020-08-11/data_matching/refactor/runs',
-        'result_path': 's3://ph-max-auto/2020-08-11/data_matching/refactor/runs/manual__2021-01-18T04:49:20.117595+00:00/cleaning_data_normalization/cleaning_result/',
+        'result_path_prefix': 's3://ph-max-auto/2020-08-11/data_matching/refactor/runs/manual__2021-01-18T04:49:20.117595+00:00/cleaning_data_normalization/cleaning_result/',
         'dag_name': 'test_dag',
         'job_name': 'test_job',
         'run_id': 'test_run_id'
@@ -107,7 +107,7 @@ if __name__ == '__main__':
     
     source_bucket_name = kwargs['result_path_prefix'].split("/")[2]
     source_path_prefix = '/'.join(kwargs['result_path_prefix'].split('/')[3:])
-    target_path = get_target_path(kwargs)
+    asset_path = get_asset_path(kwargs)
     
     # 在s3进行copy
     s3_resource = boto3.resource('s3')
@@ -119,4 +119,4 @@ if __name__ == '__main__':
             'Key': item['Key']
         }
         source_filename = item['Key'].split('/')[-1]
-        s3_resource.meta.client.copy(copy_source, dv.TARGET_BUCKET_NAME, target_path + source_filename)
+        s3_resource.meta.client.copy(copy_source, dv.DEFAULT_ASSET_PATH_BUCKET, asset_path + source_filename)

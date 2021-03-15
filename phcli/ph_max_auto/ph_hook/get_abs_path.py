@@ -57,15 +57,16 @@ def get_depends_path(kwargs):
     return result
 
 
-def get_target_path(kwargs):
+def get_asset_path(kwargs):
     run_time = get_run_time()
     job_name = get_job_name(kwargs)
     dag_name = get_dag_name(kwargs)
-    target_path = dv.DEFAULT_TARGET_PATH_FORMAT_STR.format(
-        bucket_name=dv.DEFAULT_RESULT_PATH_BUCKET,
-        version=dv.DEFAULT_TARGET_PATH_PREFIX
-    )
-    return target_path +'/'+ run_time+'/'+dag_name+'/'+job_name+'/'
+    path_suffix = kwargs.get('path_suffix', dv.DEFAULT_ASSET_PATH_SUFFIX)
+    asset_path_prefix = dv.DEFAULT_ASSET_PATH_FORMAT_STR.format(
+            version=dv.DEFAULT_ASSET_PATH_VERSION,
+            dag_name=get_dag_name(kwargs),
+        ) + path_suffix
+    return asset_path_prefix +'/'+ run_time+'/'+dag_name+'/'+job_name+'/'
 
 
 if __name__ == '__main__':
@@ -74,43 +75,43 @@ if __name__ == '__main__':
         "dag_name": "test_dag"
     })
     print("path_prefix_suffix_result = " + path_prefix_suffix_result)
-    assert(path_prefix_suffix_result == "s3://ph-max-auto/2020-08-11/test_dag/refactor/runs/runid_alfred_runner_test/test_job/")
+
+    assert(path_prefix_suffix_result == "s3a://ph-max-auto/2020-08-11/test_dag/refactor/runs/runid_alfred_runner_test/test_job/")
 
     path_prefixexist_suffixexist_result = get_result_path({
         "name": "test_job",
         "dag_name": "test_dag",
-        "path_prefix": "s3://exist/",
+        "path_prefix": "s3a://exist",
         "path_suffix": "exist"
     })
     print("path_prefixexist_suffixexist_result = " + path_prefixexist_suffixexist_result)
-    assert(path_prefixexist_suffixexist_result == "s3://exist/runid_alfred_runner_test/test_job/")
+    assert(path_prefixexist_suffixexist_result == "s3a://exist/runid_alfred_runner_test/test_job/")
 
     path_prefixexist_suffixexist_depends_file_path = get_depends_file_path({
         "name": "test_job",
         "dag_name": "test_dag",
-        "path_prefix": "s3://exist/",
+        "path_prefix": "s3a://exist",
         "path_suffix": "exist"
     }, "test1", "c")
     print("path_prefixexist_suffixexist_depends_file_path = " + path_prefixexist_suffixexist_depends_file_path)
-    assert(path_prefixexist_suffixexist_depends_file_path == "s3://exist/runid_alfred_runner_test/test_job/test1/c")
+    assert(path_prefixexist_suffixexist_depends_file_path == "s3a://exist/runid_alfred_runner_test/test_job/test1/c")
 
     prefixexist_suffixexist_depends_path = get_depends_path({
         "name": "test_job",
         "dag_name": "test_dag",
-        "path_prefix": "s3://exist/",
+        "path_prefix": "s3a://exist",
         "path_suffix": "exist",
         "depend_job_names_keys": '["effectiveness_adjust_mnf#mnf_adjust_result#mnf_adjust", "effectiveness_adjust_spec#spec_adjust_result#spec_adjust"]'
     })
     print("prefixexist_suffixexist_depends_path = " + str(prefixexist_suffixexist_depends_path))
     assert len(prefixexist_suffixexist_depends_path) == 2
     assert "mnf_adjust" in prefixexist_suffixexist_depends_path
-    assert prefixexist_suffixexist_depends_path['mnf_adjust'] == 's3://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_mnf/mnf_adjust_result'
+    assert prefixexist_suffixexist_depends_path['mnf_adjust'] == 's3a://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_mnf/mnf_adjust_result'
     assert "spec_adjust" in prefixexist_suffixexist_depends_path
-    assert prefixexist_suffixexist_depends_path['spec_adjust'] == 's3://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_spec/spec_adjust_result'
+    assert prefixexist_suffixexist_depends_path['spec_adjust'] == 's3a://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_spec/spec_adjust_result'
 
-    path_target_path = get_target_path({
+    test_asset_path = get_asset_path({
         'name': 'test_job',
         'dag_name': 'test_dag'
     })
-    print("path_target_path = " + path_target_path)
-    assert(path_target_path == "s3://ph-max-auto/result_data/2021-03-14_10:07:02/test_dag/test_job/")
+    print("test_asset_path = " + test_asset_path)

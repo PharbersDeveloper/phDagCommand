@@ -140,7 +140,6 @@ class PhRTPython3(PhRTBase):
             data['cells'][second_cell_index]['source'] = empty_source2
 
             # 删除data中多余的cell
-
             del data['cells'][redundantCell_begin_index:redundantCell_end_index]
 
             # phjob的内容copyt到.ipynb下的source中
@@ -170,7 +169,6 @@ class PhRTPython3(PhRTBase):
 
                 empty_source = []
                 for execute_source_str in data['cells'][execute_index]['source']:
-
                     if len(execute_source_str) - len(execute_source_str.lstrip()) >= indentation:
                         if not execute_source_str.lstrip().startswith('spark = kwargs['):
                             empty_source.append(execute_source_str[indentation:])
