@@ -107,7 +107,7 @@ if __name__ == '__main__':
     
     source_bucket_name = kwargs['result_path_prefix'].split("/")[2]
     source_path_prefix = '/'.join(kwargs['result_path_prefix'].split('/')[3:])
-    asset_path = get_asset_path(kwgit args)
+    asset_path = get_asset_path(kwargs)
     
     # 在s3进行copy
     s3_resource = boto3.resource('s3')
