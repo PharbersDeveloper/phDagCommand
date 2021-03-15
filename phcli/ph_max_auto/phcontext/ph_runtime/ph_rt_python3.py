@@ -1,7 +1,6 @@
 import os
 import re
 import subprocess
-import json
 
 from phcli.ph_errs.ph_err import *
 from .ph_rt_base import PhRTBase
@@ -71,7 +70,7 @@ class PhRTPython3(PhRTBase):
         # 创建json文件
         path = target_path + "/phJupyterPython.ipynb"
         subprocess.call(["touch", path])
-        
+
         with open(target_path + "/phJupyterPython.ipynb", "w") as file:
             indentation = 4
             frist_cell_index = 0
@@ -90,18 +89,18 @@ class PhRTPython3(PhRTBase):
             job_runtime = config.spec.containers.runtime
             job_command = config.spec.containers.command
             job_timeout = str(config.spec.containers.timeout)
-            
+
             # 写入input_args数据
             input_index = data['cells'][frist_cell_index]['source'].index("a = 123\n")
-            del data['cells'][frist_cell_index]['source'][input_index:input_index+2]
+            del data['cells'][frist_cell_index]['source'][input_index:input_index + 2]
             for arg in config.spec.containers.args:
                 arg_key = arg.key
                 arg_value = arg.value
                 if str.isdigit(arg_value):
-                    data['cells'][frist_cell_index]['source'].insert(input_index, arg_key +" = "+arg_value + "\n")
+                    data['cells'][frist_cell_index]['source'].insert(input_index, arg_key + " = " + arg_value + "\n")
                 else:
-                    data['cells'][frist_cell_index]['source'].insert(input_index, arg_key +" = '"+arg_value + "'\n")
-            
+                    data['cells'][frist_cell_index]['source'].insert(input_index, arg_key + " = '" + arg_value + "'\n")
+
             # 写入output_args数据
             output_index = data['cells'][frist_cell_index]['source'].index("c = 'abc'\n")
             del data['cells'][frist_cell_index]['source'][output_index:output_index + 2]
@@ -109,76 +108,80 @@ class PhRTPython3(PhRTBase):
                 output_key = output.key
                 output_value = output.value
                 if str.isdigit(output_value):
-                    data['cells'][frist_cell_index]['source'].insert(output_index, output_key +" = "+output_value + "\n")
+                    data['cells'][frist_cell_index]['source'].insert(output_index,
+                                                                     output_key + " = " + output_value + "\n")
                 else:
-                    data['cells'][frist_cell_index]['source'].insert(output_index, output_key +" = '"+output_value + "'\n")
-            
+                    data['cells'][frist_cell_index]['source'].insert(output_index,
+                                                                     output_key + " = '" + output_value + "'\n")
+
             empty_source1 = []
             # 把source中内容进行遍历，替换指定内容
             for str1 in data['cells'][frist_cell_index]['source']:
                 str2 = str1.replace('$name', job_name) \
-                            .replace('$runtime', job_runtime) \
-                            .replace('$command', job_command) \
-                            .replace('$timeout', job_timeout) 
+                    .replace('$runtime', job_runtime) \
+                    .replace('$command', job_command) \
+                    .replace('$timeout', job_timeout)
                 empty_source1.append(str2)
             # 把修改后的数据写进一个空list，再把空list 写入到source中
             data['cells'][frist_cell_index]['source'] = empty_source1
-            
+
             empty_source2 = []
             for str1 in data['cells'][second_cell_index]['source']:
                 str2 = str1.replace('$name', job_name) \
-                            .replace('$runtime', job_runtime) \
-                            .replace('$command', job_command) \
-                            .replace('$timeout', job_timeout) \
-                            .replace('$user', "user") \
-                            .replace('$group', "group") \
-                            .replace('$ide', "idee") \
-                            .replace('$access_key', "AWS_ACCESS_KEY_ID") \
-                            .replace('$secret_key', "AWS_SECRET_ACCESS_KEY")
+                    .replace('$runtime', job_runtime) \
+                    .replace('$command', job_command) \
+                    .replace('$timeout', job_timeout) \
+                    .replace('$user', "user") \
+                    .replace('$group', "group") \
+                    .replace('$ide', "idee") \
+                    .replace('$access_key', "AWS_ACCESS_KEY_ID") \
+                    .replace('$secret_key', "AWS_SECRET_ACCESS_KEY")
                 empty_source2.append(str2)
             data['cells'][second_cell_index]['source'] = empty_source2
-            
+
             # 删除data中多余的cell
+
             del data['cells'][redundantCell_begin_index:redundantCell_end_index]
-            
+
             # phjob的内容copyt到.ipynb下的source中
             with open(source_path + "/phjob.py", "r") as phjob_flie:
                 line = phjob_flie.readline()
                 while line:
                     while line.startswith('def'):
                         demo = {
-                           "cell_type": "code",
-                           "execution_count": None,
-                           "metadata": {},
-                           "outputs": [],
-                           "source": []
+                            "cell_type": "code",
+                            "execution_count": None,
+                            "metadata": {},
+                            "outputs": [],
+                            "source": []
                         }
                         demo['source'].append(line)
                         line = phjob_flie.readline()
-                        while not line.startswith('def') and not line == "" :
+                        while not line.startswith('def') and not line == "":
                             demo['source'].append(line)
                             line = phjob_flie.readline()
                         data['cells'].append(demo)
                     line = phjob_flie.readline()
-                
+
                 for cell in data['cells'][:]:
                     for source in cell['source']:
-                        if source.startswith('def ex'):
+                        if source.startswith('def execute'):
                             execute_index = data['cells'].index(cell)
-                    
-                empty_source =[]
+
+                empty_source = []
                 for execute_source_str in data['cells'][execute_index]['source']:
-                    
+
                     if len(execute_source_str) - len(execute_source_str.lstrip()) >= indentation:
                         if not execute_source_str.lstrip().startswith('spark = kwargs['):
                             empty_source.append(execute_source_str[indentation:])
                     elif execute_source_str.lstrip().startswith('#'):
                         empty_source.append(execute_source_str)
                 data['cells'][execute_index]['source'] = empty_source
-                
+
             # 把data从字典转换成json格式,indent=1进行换行，ensure_ascii防止汉字转成Unicode码
             json_str = json.dumps(data, indent=1, ensure_ascii=False)
             file.write(json_str)
+
 
     def jupyter_to_c9(self, dag_full_path, **kwargs):
         im = kwargs['im']
@@ -295,4 +298,3 @@ class PhRTPython3(PhRTBase):
         super().script_run(entrypoint=entrypoint)
 
 
-    
