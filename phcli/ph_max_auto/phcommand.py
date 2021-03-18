@@ -85,7 +85,7 @@ def create(**kwargs):
         PhContextFacade(**context_args).command_create_exec()
     except Exception as e:
         put_metric("maxauto.create", "failed")
-        click.secho("创建失败", fg='red', blink=True, bold=True)
+        click.secho("创建失败" + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.create", "success")
         click.secho("创建完成", fg='green', blink=True, bold=True)
@@ -108,7 +108,7 @@ def run(**kwargs):
         PhContextFacade(**context_args).command_run_exec()
     except Exception as e:
         put_metric("maxauto.run", "failed")
-        click.secho("运行失败", fg='red', blink=True, bold=True)
+        click.secho("运行失败" + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.run", "success")
         click.secho("运行完成", fg='green', blink=True, bold=True)
@@ -143,7 +143,7 @@ def combine(**kwargs):
         PhContextFacade(**context_args).command_combine_exec()
     except Exception as e:
         put_metric("maxauto.combine", "failed")
-        click.secho("关联失败", fg='red', blink=True, bold=True)
+        click.secho("关联失败" + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.combine", "success")
         click.secho("关联完成", fg='green', blink=True, bold=True)
@@ -162,7 +162,7 @@ def dag(**kwargs):
         PhContextFacade(**context_args).command_dag_exec()
     except Exception as e:
         put_metric("maxauto.dag", "failed")
-        click.secho("DAG失败", fg='red', blink=True, bold=True)
+        click.secho("DAG失败" + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.dag", "success")
         click.secho("DAG完成", fg='green', blink=True, bold=True)
@@ -181,7 +181,7 @@ def publish(**kwargs):
         PhContextFacade(**context_args).command_publish_exec()
     except Exception as e:
         put_metric("maxauto.publish", "failed")
-        click.secho("发布失败", fg='red', blink=True, bold=True)
+        click.secho("发布失败" + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.publish", "success")
         click.secho("发布完成", fg='green', blink=True, bold=True)
@@ -200,7 +200,7 @@ def recall(**kwargs):
         PhContextFacade(**context_args).command_recall_exec()
     except Exception as e:
         put_metric("maxauto.recall", "failed")
-        click.secho("召回失败", fg='red', blink=True, bold=True)
+        click.secho("召回失败" + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.recall", "success")
         click.secho("召回完成", fg='green', blink=True, bold=True)
@@ -228,7 +228,7 @@ def online_run(**kwargs):
         PhContextFacade(**context_args).command_online_run_exec()
     except Exception as e:
         put_metric("maxauto.online_run", "failed")
-        click.secho("online_run失败", fg='red', blink=True, bold=True)
+        click.secho("online_run失败" + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.online_run", "success")
         click.secho("online_run完成", fg='green', blink=True, bold=True)
@@ -244,7 +244,7 @@ def status(**kwargs):
         PhContextFacade(**context_args).command_status_exec()
     except Exception as e:
         put_metric("maxauto.status", "failed")
-        click.secho("查看状态失败", fg='red', blink=True, bold=True)
+        click.secho("查看状态失败" + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.status", "success")
         click.secho("查看状态完成", fg='green', blink=True, bold=True)
