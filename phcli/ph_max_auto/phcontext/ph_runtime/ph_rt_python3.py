@@ -67,6 +67,68 @@ class PhRTPython3(PhRTBase):
                 else:
                     file.write(line)
 
+    def c9_create(self, **kwargs):
+        # 1. /__init__.py file
+        self.c9_create_init()
+
+        # 2. /phjob.py file
+        self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE_PY, self.job_path + "/phjob.py")
+        with open(self.job_path + "/phjob.py", "a") as file:
+            file.write("""def execute(**kwargs):
+    \"\"\"
+        please input your code below\n""")
+
+            if self.command == 'submit':
+                file.write('        get spark session: spark = kwargs["spark"]()\n')
+
+            file.write("""    \"\"\"
+    logger = phs3logger(kwargs["job_id"], LOG_DEBUG_LEVEL)
+    logger.info("当前 owner 为 " + str(kwargs["owner"]))
+    logger.info("当前 run_id 为 " + str(kwargs["run_id"]))
+    logger.info("当前 job_id 为 " + str(kwargs["job_id"]))
+""")
+
+            if self.command == 'submit':
+                file.write('    spark = kwargs["spark"]()')
+
+            file.write("""
+    logger.info(kwargs["a"])
+    logger.info(kwargs["b"])
+    logger.info(kwargs["c"])
+    logger.info(kwargs["d"])
+    return {}
+""")
+
+        # 3. /phmain.py file
+        self.c9_create_phmain()
+
+    def jupyter_create(self, **kwargs):
+        path = self.job_path + ".ipynb"
+        dir_path = "/".join(path.split('/')[:-1])
+        subprocess.call(['mkdir', '-p', dir_path])
+
+        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_JUPYTER_PYTHON_FILE)
+        with open(path, "w") as file:
+            for line in f_lines:
+                line = line.replace('$name', self.name) \
+                            .replace('$runtime', self.runtime) \
+                            .replace('$command', self.command) \
+                            .replace('$timeout', str(self.timeout)) \
+                            .replace('$user', os.getenv('USER', 'unknown')) \
+                            .replace('$group', self.group) \
+                            .replace('$ide', self.ide) \
+                            .replace('$access_key', os.getenv('AWS_ACCESS_KEY_ID', "NULL")) \
+                            .replace('$secret_key', os.getenv('AWS_SECRET_ACCESS_KEY', "NULL"))
+                file.write(line)
+
+    def create(self, **kwargs):
+        if self.ide == 'c9':
+            self.c9_create(**kwargs)
+        elif self.ide == 'jupyter':
+            self.jupyter_create(**kwargs)
+        else:
+            raise exception_function_not_implement
+
     def c9_to_jupyter(self, source_path, target_path):
         # 创建json文件
         path = target_path + "/phJupyterPython.ipynb"
@@ -211,68 +273,6 @@ class PhRTPython3(PhRTBase):
                     file.write('    '+row)
                 file.write('\r\n')
                 file.write('\r\n')
-
-    def c9_create(self, **kwargs):
-        # 1. /__init__.py file
-        self.c9_create_init()
-
-        # 2. /phjob.py file
-        self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE_PY, self.job_path + "/phjob.py")
-        with open(self.job_path + "/phjob.py", "a") as file:
-            file.write("""def execute(**kwargs):
-    \"\"\"
-        please input your code below\n""")
-
-            if self.command == 'submit':
-                file.write('        get spark session: spark = kwargs["spark"]()\n')
-
-            file.write("""    \"\"\"
-    logger = phs3logger(kwargs["job_id"], LOG_DEBUG_LEVEL)
-    logger.info("当前 owner 为 " + str(kwargs["owner"]))
-    logger.info("当前 run_id 为 " + str(kwargs["run_id"]))
-    logger.info("当前 job_id 为 " + str(kwargs["job_id"]))
-""")
-
-            if self.command == 'submit':
-                file.write('    spark = kwargs["spark"]()')
-
-            file.write("""
-    logger.info(kwargs["a"])
-    logger.info(kwargs["b"])
-    logger.info(kwargs["c"])
-    logger.info(kwargs["d"])
-    return {}
-""")
-
-        # 3. /phmain.py file
-        self.c9_create_phmain()
-
-    def jupyter_create(self, **kwargs):
-        path = self.job_path + ".ipynb"
-        dir_path = "/".join(path.split('/')[:-1])
-        subprocess.call(['mkdir', '-p', dir_path])
-
-        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_JUPYTER_PYTHON_FILE)
-        with open(path, "w") as file:
-            for line in f_lines:
-                line = line.replace('$name', self.name) \
-                            .replace('$runtime', self.runtime) \
-                            .replace('$command', self.command) \
-                            .replace('$timeout', str(self.timeout)) \
-                            .replace('$user', os.getenv('USER', 'unknown')) \
-                            .replace('$group', self.group) \
-                            .replace('$ide', self.ide) \
-                            .replace('$access_key', os.getenv('AWS_ACCESS_KEY_ID', "NULL")) \
-                            .replace('$secret_key', os.getenv('AWS_SECRET_ACCESS_KEY', "NULL"))
-                file.write(line)
-
-    def create(self, **kwargs):
-        if self.ide == 'c9':
-            self.c9_create(**kwargs)
-        elif self.ide == 'jupyter':
-            self.jupyter_create(**kwargs)
-        else:
-            raise exception_function_not_implement
 
     def submit_run(self, **kwargs):
         submit_conf = {
