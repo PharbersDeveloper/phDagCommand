@@ -66,6 +66,7 @@ class PhRTPython3(PhRTBase):
                                )
                 else:
                     file.write(line)
+
     def c9_to_jupyter(self, source_path, target_path):
         # 创建json文件
         path = target_path + "/phJupyterPython.ipynb"
@@ -179,7 +180,6 @@ class PhRTPython3(PhRTBase):
             # 把data从字典转换成json格式,indent=1进行换行，ensure_ascii防止汉字转成Unicode码
             json_str = json.dumps(data, indent=1, ensure_ascii=False)
             file.write(json_str)
-
 
     def jupyter_to_c9(self, dag_full_path, **kwargs):
         im = kwargs['im']

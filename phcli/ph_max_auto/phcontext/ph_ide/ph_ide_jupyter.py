@@ -4,8 +4,7 @@ import json
 import subprocess
 
 from .ph_ide_base import PhIDEBase, PhCompleteStrategy
-from .ph_ide_base import dv, exception_file_not_exist, exception_function_not_implement, PhYAMLConfig
-
+from .ph_ide_base import dv, exception_file_not_exist, exception_function_not_implement, table_driver_runtime_inst,PhYAMLConfig
 
 class PhIDEJupyter(PhIDEBase):
     """
@@ -40,6 +39,8 @@ class PhIDEJupyter(PhIDEBase):
             self.logger.info("S2C")
         elif cs == PhCompleteStrategy.C2S:
             self.logger.info("C2S")
+            runtime_inst = self.table_driver_runtime_inst(kwargs['runtime'])(**self.__dict__)
+            runtime_inst.c9_to_jupyter(source_path, target_path)
         else:
             self.logger.info("KEEP COMPLETE")
 
