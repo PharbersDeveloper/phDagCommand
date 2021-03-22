@@ -11,6 +11,7 @@ from phcli.define_value import *
 from phcli.ph_aws.ph_s3 import PhS3
 
 LOG_DEBUG_LEVEL = logging.DEBUG
+LOG_INFO_LEVEL = logging.INFO
 LOG_WARN_LEVEL = logging.WARNING
 LOG_ERROR_LEVEL = logging.ERROR
 LOG_DEFAULT_LEVEL = LOG_DEBUG_LEVEL

@@ -40,6 +40,10 @@ context_args = {}
               help="You use programming language.",
               type=click.Choice(["python3", "r"]),
               default=os.getenv(dv.ENV_CUR_RUNTIME_KEY, dv.ENV_CUR_RUNTIME_DEFAULT))
+@click.option("--log_level",
+              help="You log print level.",
+              type=click.Choice(["debug", "info", "warn", 'error']),
+              default="warn")
 def maxauto(**kwargs):
     """
     The Pharbers Max Job Command Line Interface (CLI)
@@ -89,6 +93,29 @@ def create(**kwargs):
     else:
         put_metric("maxauto.create", "success")
         click.secho("创建完成", fg='green', blink=True, bold=True)
+
+
+@maxauto.command("complete")
+@click.option("-g", "--group",
+              prompt="The job group is",
+              help="The job group.",
+              default="")
+@click.option("-n", "--name",
+              prompt="The job name is",
+              help="The job name.")
+def complete(**kwargs):
+    """
+    补全一个 Job
+    """
+    try:
+        context_args.update({k: str(v).strip() for k, v in kwargs.items()})
+        PhContextFacade(**context_args).command_complete_exec()
+    except Exception as e:
+        put_metric("maxauto.complete", "failed")
+        click.secho("补全失败: " + str(e), fg='red', blink=True, bold=True)
+    else:
+        put_metric("maxauto.complete", "success")
+        click.secho("补全完成", fg='green', blink=True, bold=True)
 
 
 @maxauto.command("run")

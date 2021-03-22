@@ -16,7 +16,7 @@ class PhIDEC9(PhIDEBase):
 
     def create(self, **kwargs):
         """
-        c9的创建过程
+        c9 的创建过程
         """
         self.logger.info('maxauto ide=c9 的 create 实现')
         self.logger.debug(self.__dict__)
@@ -35,36 +35,14 @@ class PhIDEC9(PhIDEBase):
 
         super().create()
 
-    def run(self, **kwargs):
+    def complete(self, **kwargs):
         """
-        c9的运行过程
+        c9 的补全过程
         """
-        self.logger.info('maxauto ide=c9 的 run 实现')
+        self.logger.info('maxauto ide=c9 的 complete 实现')
         self.logger.debug(self.__dict__)
-
-        config = PhYAMLConfig(self.job_path)
-        config.load_yaml()
-
-        if config.spec.containers.repository == "local":
-            timeout = float(config.spec.containers.timeout) * 60
-            entry_runtime = config.spec.containers.runtime
-            entry_runtime = self.table_driver_runtime_binary(entry_runtime)
-            entry_point = config.spec.containers.code
-            entry_point = self.job_path + '/' + entry_point
-
-            cb = [entry_runtime, entry_point]
-            for arg in config.spec.containers.args:
-                cb.append("--" + arg.key)
-                cb.append(str(arg.value))
-            for output in config.spec.containers.outputs:
-                cb.append("--" + output.key)
-                cb.append(str(output.value))
-            prc = subprocess.run(cb, timeout=timeout, stderr=subprocess.PIPE)
-            if prc.returncode != 0:
-                raise Exception(prc.stderr.decode('utf-8'))
-            return
-        else:
-            raise exception_function_not_implement
+        self.logger.error('maxauto --ide=c9 时，不支持 complete 子命令')
+        raise Exception("maxauto --ide=c9 时，不支持 complete 子命令")
 
     def dag_copy_job(self, **kwargs):
         """

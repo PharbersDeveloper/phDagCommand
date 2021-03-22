@@ -1,13 +1,19 @@
 import os
 import sys
 import ast
-import json
 import subprocess
+from enum import Enum
 
 from phcli.ph_errs.ph_err import *
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 from phcli.ph_max_auto.ph_preset_jobs.preset_job_factory import preset_factory
+
+
+class PhCompleteStrategy(Enum):
+    S2C = 'special to common'
+    C2S = 'common to special'
+    KEEP = 'keep still'
 
 
 class PhIDEBase(object):
@@ -103,12 +109,54 @@ class PhIDEBase(object):
         runtime_inst = self.table_driver_runtime_inst(self.runtime)
         runtime_inst(**self.__dict__).create()
 
+    def choice_complete_strategy(self, special, common):
+        special_last_modify_time = os.path.getmtime(special) if os.path.exists(special) else 0
+        common_last_modify_time = os.path.getmtime(common) if os.path.exists(common) else 0
+
+        if special_last_modify_time > common_last_modify_time:
+            return PhCompleteStrategy.S2C
+        elif special_last_modify_time < common_last_modify_time:
+            return PhCompleteStrategy.C2S
+        else:
+            return PhCompleteStrategy.KEEP
+
+    def complete(self, **kwargs):
+        """
+        默认的补全过程
+        """
+        self.logger.info('maxauto 默认的 complete 实现')
+        self.logger.debug(self.__dict__)
+
     def run(self, **kwargs):
         """
         默认的运行过程
         """
         self.logger.info('maxauto 默认的 run 实现')
         self.logger.debug(self.__dict__)
+
+        config = PhYAMLConfig(self.job_path)
+        config.load_yaml()
+
+        if config.spec.containers.repository == "local":
+            timeout = float(config.spec.containers.timeout) * 60
+            entry_runtime = config.spec.containers.runtime
+            entry_runtime = self.table_driver_runtime_binary(entry_runtime)
+            entry_point = config.spec.containers.code
+            entry_point = self.job_path + '/' + entry_point
+
+            cb = [entry_runtime, entry_point]
+            for arg in config.spec.containers.args:
+                cb.append("--" + arg.key)
+                cb.append(str(arg.value))
+            for output in config.spec.containers.outputs:
+                cb.append("--" + output.key)
+                cb.append(str(output.value))
+            prc = subprocess.run(cb, timeout=timeout, stderr=subprocess.PIPE)
+            if prc.returncode != 0:
+                raise Exception(prc.stderr.decode('utf-8'))
+            return
+        else:
+            raise exception_function_not_implement
 
     def combine(self, **kwargs):
         """
@@ -154,26 +202,6 @@ class PhIDEBase(object):
                 f.write("--" + output.key + "\n")
                 f.write(str(output.value) + "\n")
         f.close()
-
-    def get_ipynb_map_by_key(self, source, key):
-        """
-        获取 ipynb 中定义的配置
-        :param source: ipynb 中的文本行
-        :param key: 需要获得的字典，可以是 config、input args、output args
-        :return:
-        """
-        range = []
-        for i, row in enumerate(source):
-            if "== {} ==".format(key) in row:
-                range.append(i)
-        source = source[range[0]+1: range[1]]
-
-        result = {}
-        for row in source:
-            if row and '=' in row:
-                r = row.split('=')
-                result[r[0].strip()] = eval(r[-1].strip())
-        return result
 
     def dag_copy_job(self, **kwargs):
         raise NotImplementedError
@@ -224,19 +252,6 @@ class PhIDEBase(object):
                         'command': config.spec.containers.command,
                         'timeout': config.spec.containers.timeout,
                     }
-                elif os.path.exists(job_full_path+'.ipynb') and os.path.isfile(job_full_path+'.ipynb'):
-                    with open(job_full_path+'.ipynb', 'r') as rf:
-                        load_dict = json.load(rf)
-                        source = load_dict['cells'][0]['source']
-                        cm = self.get_ipynb_map_by_key(source, 'config')
-
-                        return {
-                            'name': cm['job_name'],
-                            'ide': 'jupyter',
-                            'runtime': cm['job_runtime'],
-                            'command': cm['job_command'],
-                            'timeout': cm['job_timeout'],
-                        }
                 else:
                     raise Exception("{} job not found".format(name))
 
@@ -248,7 +263,6 @@ class PhIDEBase(object):
         def copy_jobs(jobs_conf):
             ide_dag_copy_job_func_table = {
                 'c9': self.ide_table['c9'](**self.__dict__).dag_copy_job,
-                'jupyter': self.ide_table['jupyter'](**self.__dict__).dag_copy_job,
                 'preset': preset_factory,
             }
 

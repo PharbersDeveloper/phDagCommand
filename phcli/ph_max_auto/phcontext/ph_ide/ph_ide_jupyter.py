@@ -3,7 +3,8 @@ import re
 import json
 import subprocess
 
-from .ph_ide_base import PhIDEBase, dv, exception_file_not_exist, exception_function_not_implement, PhYAMLConfig
+from .ph_ide_base import PhIDEBase, PhCompleteStrategy
+from .ph_ide_base import dv, exception_file_not_exist, exception_function_not_implement, PhYAMLConfig
 
 
 class PhIDEJupyter(PhIDEBase):
@@ -18,7 +19,7 @@ class PhIDEJupyter(PhIDEBase):
 
     def create(self, **kwargs):
         """
-        jupyter的创建过程
+        jupyter 的创建过程
         """
         self.logger.info('maxauto ide=jupyter 的 create 实现')
         self.logger.debug(self.__dict__)
@@ -27,13 +28,40 @@ class PhIDEJupyter(PhIDEBase):
 
         super().create()
 
-    def run(self, **kwargs):
+    def complete(self, **kwargs):
         """
-        jupyter的运行过程
+        jupyter 的补全过程
         """
-        self.logger.info('maxauto ide=jupyter 的 run 实现')
+        self.logger.info('maxauto ide=jupyter 的 complete 实现')
         self.logger.debug(self.__dict__)
-        self.logger.error('maxauto --ide=jupyter 时，不支持 run 子命令')
+        cs = self.choice_complete_strategy(self.job_path + ".ipynb", self.job_path)
+
+        if cs == PhCompleteStrategy.S2C:
+            self.logger.info("S2C")
+        elif cs == PhCompleteStrategy.C2S:
+            self.logger.info("C2S")
+        else:
+            self.logger.info("KEEP COMPLETE")
+
+    def get_ipynb_map_by_key(self, source, key):
+        """
+        获取 ipynb 中定义的配置
+        :param source: ipynb 中的文本行
+        :param key: 需要获得的字典，可以是 config、input args、output args
+        :return:
+        """
+        range = []
+        for i, row in enumerate(source):
+            if "== {} ==".format(key) in row:
+                range.append(i)
+        source = source[range[0]+1: range[1]]
+
+        result = {}
+        for row in source:
+            if row and '=' in row:
+                r = row.split('=')
+                result[r[0].strip()] = eval(r[-1].strip())
+        return result
 
     def dag_copy_job(self, **kwargs):
         """
