@@ -45,7 +45,7 @@ def maxauto(**kwargs):
     The Pharbers Max Job Command Line Interface (CLI)
     """
     global context_args
-    context_args = kwargs
+    context_args = {k: str(v).strip() for k, v in kwargs.items()}
     context_args["metric"] = PhMetric()
     context_args["starttime"] = datetime.datetime.now()
 
@@ -81,11 +81,11 @@ def create(**kwargs):
     创建一个 Job
     """
     try:
-        context_args.update(kwargs)
+        context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_create_exec()
     except Exception as e:
         put_metric("maxauto.create", "failed")
-        click.secho("创建失败" + str(e), fg='red', blink=True, bold=True)
+        click.secho("创建失败: " + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.create", "success")
         click.secho("创建完成", fg='green', blink=True, bold=True)
@@ -104,11 +104,11 @@ def run(**kwargs):
     运行一个 Job
     """
     try:
-        context_args.update(kwargs)
+        context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_run_exec()
     except Exception as e:
         put_metric("maxauto.run", "failed")
-        click.secho("运行失败" + str(e), fg='red', blink=True, bold=True)
+        click.secho("运行失败: " + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.run", "success")
         click.secho("运行完成", fg='green', blink=True, bold=True)
@@ -139,11 +139,11 @@ def combine(**kwargs):
     关联一组 Job
     """
     try:
-        context_args.update(kwargs)
+        context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_combine_exec()
     except Exception as e:
         put_metric("maxauto.combine", "failed")
-        click.secho("关联失败" + str(e), fg='red', blink=True, bold=True)
+        click.secho("关联失败: " + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.combine", "success")
         click.secho("关联完成", fg='green', blink=True, bold=True)
@@ -158,11 +158,11 @@ def dag(**kwargs):
     通过 combine 生成一组 DAG 运行文件
     """
     try:
-        context_args.update(kwargs)
+        context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_dag_exec()
     except Exception as e:
         put_metric("maxauto.dag", "failed")
-        click.secho("DAG失败" + str(e), fg='red', blink=True, bold=True)
+        click.secho("DAG失败: " + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.dag", "success")
         click.secho("DAG完成", fg='green', blink=True, bold=True)
@@ -177,11 +177,11 @@ def publish(**kwargs):
     发布 DAG 运行文件和相关依赖
     """
     try:
-        context_args.update(kwargs)
+        context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_publish_exec()
     except Exception as e:
         put_metric("maxauto.publish", "failed")
-        click.secho("发布失败" + str(e), fg='red', blink=True, bold=True)
+        click.secho("发布失败: " + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.publish", "success")
         click.secho("发布完成", fg='green', blink=True, bold=True)
@@ -196,11 +196,11 @@ def recall(**kwargs):
     召回 DAG 运行文件和相关依赖
     """
     try:
-        context_args.update(kwargs)
+        context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_recall_exec()
     except Exception as e:
         put_metric("maxauto.recall", "failed")
-        click.secho("召回失败" + str(e), fg='red', blink=True, bold=True)
+        click.secho("召回失败: " + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.recall", "success")
         click.secho("召回完成", fg='green', blink=True, bold=True)
@@ -224,11 +224,12 @@ def online_run(**kwargs):
     通过指定 Job name 在线上执行
     """
     try:
-        context_args.update(kwargs)
+        context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_online_run_exec()
     except Exception as e:
         put_metric("maxauto.online_run", "failed")
-        click.secho("online_run失败" + str(e), fg='red', blink=True, bold=True)
+        click.secho("online_run失败: " + str(e), fg='red', blink=True, bold=True)
+        raise e
     else:
         put_metric("maxauto.online_run", "success")
         click.secho("online_run完成", fg='green', blink=True, bold=True)
@@ -240,11 +241,11 @@ def status(**kwargs):
     获取执行状态（暂无）
     """
     try:
-        context_args.update(kwargs)
+        context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_status_exec()
     except Exception as e:
         put_metric("maxauto.status", "failed")
-        click.secho("查看状态失败" + str(e), fg='red', blink=True, bold=True)
+        click.secho("查看状态失败: " + str(e), fg='red', blink=True, bold=True)
     else:
         put_metric("maxauto.status", "success")
         click.secho("查看状态完成", fg='green', blink=True, bold=True)

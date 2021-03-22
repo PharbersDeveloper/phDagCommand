@@ -1,0 +1,29 @@
+############## == $alfred_name == ###################
+def $alfred_name_cmd(**context):
+    ti = context['task_instance']
+    owner = default_args['owner']
+    run_id = context["dag_run"].run_id.replace(':', '_')
+    job_id = ti.hostname
+    args = context["dag_run"].conf
+
+    params = var_key_lst.get("common", {})
+    params.update(var_key_lst.get("$alfred_name", {}))
+
+    install_phcli = 'pip3 install phcli==2.4.1'
+    process_cmd(install_phcli)
+
+    exec_phcli_submit = 'phcli maxauto online_run --group $alfred_jobs_dir --name $alfred_name ' \
+                        '--owner "{}" --run_id "{}" --job_id "{}" --context "{}" "{}"'.format(str(owner), str(run_id), str(job_id), str(params), str(args))
+    process_cmd(exec_phcli_submit)
+
+    # key = ti.xcom_pull(task_ids='test', key='key').decode("UTF-8")
+    # ti.xcom_push(key="key", value=key)
+
+$alfred_name = PythonOperator(
+    task_id='$alfred_name',
+    provide_context=True,
+    python_callable=$alfred_name_cmd,
+    dag=dag
+)
+############## == $alfred_name == ###################
+

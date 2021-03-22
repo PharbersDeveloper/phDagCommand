@@ -2,15 +2,23 @@ import os
 
 
 def get_spark_session_func(job_id):
-    def get_spark_sessioin():
+    def get_spark_sessioin(config = None):
+        if not config:
+            config = {}
+
         from pyspark.sql import SparkSession
         os.environ["PYSPARK_PYTHON"] = "python3"
         spark = SparkSession.builder \
             .master("yarn") \
-            .appName(str(job_id)) \
-            .config('spark.sql.codegen.wholeStage', False) \
-            .config("spark.sql.execution.arrow.pyspark.enabled", "true") \
-            .enableHiveSupport() \
+            .appName(str(job_id))
+        default_config = {
+            'spark.sql.codegen.wholeStage': False,
+            "spark.sql.execution.arrow.pyspark.enabled": "true",
+        }
+        default_config.update(config)
+        for k, v in default_config.items():
+            spark = spark.config(k, v)
+        spark = spark.enableHiveSupport() \
             .getOrCreate()
 
         access_key = os.getenv("AWS_ACCESS_KEY_ID")
