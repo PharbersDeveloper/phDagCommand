@@ -111,7 +111,9 @@ class PhRTBase(object):
         cmd_arr += [kwargs['submit_main']]
 
         cmd_arr += ['--owner', self.owner]
+        cmd_arr += ['--dag_name', self.dag_name]
         cmd_arr += ['--run_id', self.run_id]
+        cmd_arr += ['--job_name', self.job_name]
         cmd_arr += ['--job_id', self.job_id]
 
         # dag_run 优先 phconf 默认参数
@@ -142,7 +144,9 @@ class PhRTBase(object):
         cmd_arr += kwargs['entrypoint']
 
         cmd_arr += ['--owner', self.owner]
+        cmd_arr += ['--dag_name', self.dag_name]
         cmd_arr += ['--run_id', self.run_id]
+        cmd_arr += ['--job_name', self.job_name]
         cmd_arr += ['--job_id', self.job_id]
 
         # dag_run 优先 phconf 默认参数
