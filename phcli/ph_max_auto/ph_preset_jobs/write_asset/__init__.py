@@ -1,5 +1,4 @@
 import os
-import sys
 import subprocess
 from phcli.ph_logs.ph_logs import phlogger
 from phcli.ph_max_auto import define_value as dv
@@ -15,7 +14,7 @@ def phconf_buf(context):
         .replace("$runtime", 'python3') \
         .replace("$command", 'script') \
         .replace("$timeout", str(10.0)) \
-        .replace("$code", context.table_driver_runtime_main_code('python3')) \
+        .replace("$code", "phmain.py") \
         .replace("args:", '') \
         .replace("$input", '') \
         .replace("outputs:", '') \

@@ -61,13 +61,6 @@ class PhIDEBase(object):
                     self.logger.error('Termination Create')
                     sys.exit()
 
-    def table_driver_runtime_main_code(self, runtime):
-        table = {
-            "python3": "phmain.py",
-            "r": "phmain.R"
-        }
-        return table[runtime.strip('\"')]
-
     def table_driver_runtime_inst(self, runtime):
         from ..ph_runtime.ph_rt_python3 import PhRTPython3
         from ..ph_runtime.ph_rt_r import PhRTR
@@ -76,28 +69,6 @@ class PhIDEBase(object):
             "r": PhRTR,
         }
         return table[runtime]
-
-    def table_driver_runtime_binary(self, runtime):
-        table = {
-            "bash": "/bin/bash",
-            "python3": "python3",
-            "r": "Rscript",
-        }
-        return table[runtime]
-
-    def create_phconf_file(self, path, **kwargs):
-        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
-        with open(path + "/phconf.yaml", "a") as file:
-            for line in f_lines:
-                line = line + "\n"
-                line = line.replace("$name", kwargs['name']) \
-                    .replace("$runtime", kwargs['runtime']) \
-                    .replace("$command", kwargs['command']) \
-                    .replace("$timeout", str(kwargs['timeout'])) \
-                    .replace("$code", self.table_driver_runtime_main_code(kwargs['runtime'])) \
-                    .replace("$input", kwargs['input_str']) \
-                    .replace("$output", kwargs['output_str'])
-                file.write(line)
 
     def create(self, **kwargs):
         """
@@ -140,7 +111,7 @@ class PhIDEBase(object):
         if config.spec.containers.repository == "local":
             timeout = float(config.spec.containers.timeout) * 60
             entry_runtime = config.spec.containers.runtime
-            entry_runtime = self.table_driver_runtime_binary(entry_runtime)
+            entry_runtime = self.table_driver_runtime_inst(self.runtime).table_driver_runtime_binary(entry_runtime)
             entry_point = config.spec.containers.code
             entry_point = self.job_path + '/' + entry_point
 
@@ -186,25 +157,6 @@ class PhIDEBase(object):
                             .replace("$linkage", linkage_str) \
                             .replace("$jobs", jobs_str)
                 file.write(line + "\n")
-
-    def yaml2args(self, path):
-        config = PhYAMLConfig(path)
-        config.load_yaml()
-
-        f = open(path + "/args.properties", "a")
-        for arg in config.spec.containers.args:
-            if arg.value != "":
-                f.write("--" + arg.key + "\n")
-                f.write(str(arg.value) + "\n")
-
-        for output in config.spec.containers.outputs:
-            if output.value != "":
-                f.write("--" + output.key + "\n")
-                f.write(str(output.value) + "\n")
-        f.close()
-
-    def dag_copy_job(self, **kwargs):
-        raise NotImplementedError
 
     def get_dag_py_file_name(self, key):
         return "ph_dag_" + key + ".py"

@@ -2,14 +2,58 @@ import os
 import subprocess
 
 from phcli.ph_max_auto import define_value as dv
+from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 
 
 class PhRTBase(object):
     """
     Runtime Base Class
     """
-    def c9_create_phmain(self, path=None):
-        raise NotImplementedError
+
+    def table_driver_runtime_main_code(self, runtime):
+        table = {
+            "python3": "phmain.py",
+            "r": "phmain.R"
+        }
+        return table[runtime.strip('\"')]
+
+    def table_driver_runtime_binary(self, runtime):
+        table = {
+            "bash": "/bin/bash",
+            "python3": "python3",
+            "r": "Rscript",
+        }
+        return table[runtime]
+
+    def create_phconf_file(self, path, **kwargs):
+        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
+        with open(path + "/phconf.yaml", "a") as file:
+            for line in f_lines:
+                line = line + "\n"
+                line = line.replace("$name", kwargs['name']) \
+                    .replace("$runtime", kwargs['runtime']) \
+                    .replace("$command", kwargs['command']) \
+                    .replace("$timeout", str(kwargs['timeout'])) \
+                    .replace("$code", self.table_driver_runtime_main_code(kwargs['runtime'])) \
+                    .replace("$input", kwargs['input_str']) \
+                    .replace("$output", kwargs['output_str'])
+                file.write(line)
+
+    def yaml2args(self, path):
+        config = PhYAMLConfig(path)
+        config.load_yaml()
+
+        f = open(path + "/args.properties", "a")
+        for arg in config.spec.containers.args:
+            if arg.value != "":
+                f.write("--" + arg.key + "\n")
+                f.write(str(arg.value) + "\n")
+
+        for output in config.spec.containers.outputs:
+            if output.value != "":
+                f.write("--" + output.key + "\n")
+                f.write(str(output.value) + "\n")
+        f.close()
 
     def create(self, **kwargs):
         raise NotImplementedError

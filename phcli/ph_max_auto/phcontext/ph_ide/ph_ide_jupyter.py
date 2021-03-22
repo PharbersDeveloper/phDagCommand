@@ -1,10 +1,5 @@
-import os
-import re
-import json
-import subprocess
-
 from .ph_ide_base import PhIDEBase, PhCompleteStrategy
-from .ph_ide_base import dv, exception_file_not_exist, exception_function_not_implement, table_driver_runtime_inst,PhYAMLConfig
+
 
 class PhIDEJupyter(PhIDEBase):
     """
@@ -37,79 +32,13 @@ class PhIDEJupyter(PhIDEBase):
 
         if cs == PhCompleteStrategy.S2C:
             self.logger.info("S2C")
+            runtime_inst = self.table_driver_runtime_inst(self.runtime)(**self.__dict__)
+            runtime_inst.jupyter_to_c9(self.job_path + ".ipynb", self.job_path)
         elif cs == PhCompleteStrategy.C2S:
             self.logger.info("C2S")
-            runtime_inst = self.table_driver_runtime_inst(kwargs['runtime'])(**self.__dict__)
-            runtime_inst.c9_to_jupyter(source_path, target_path)
+            runtime_inst = self.table_driver_runtime_inst(self.runtime)(**self.__dict__)
+            runtime_inst.c9_to_jupyter(self.job_path, self.job_path + ".ipynb")
         else:
             self.logger.info("KEEP COMPLETE")
 
-    def get_ipynb_map_by_key(self, source, key):
-        """
-        获取 ipynb 中定义的配置
-        :param source: ipynb 中的文本行
-        :param key: 需要获得的字典，可以是 config、input args、output args
-        :return:
-        """
-        range = []
-        for i, row in enumerate(source):
-            if "== {} ==".format(key) in row:
-                range.append(i)
-        source = source[range[0]+1: range[1]]
 
-        result = {}
-        for row in source:
-            if row and '=' in row:
-                r = row.split('=')
-                result[r[0].strip()] = eval(r[-1].strip())
-        return result
-
-    def dag_copy_job(self, **kwargs):
-        """
-        maxauto dag 时 copy jupyter 环境下生成的 job
-        """
-        self.logger.info('maxauto ide=jupyter 的 dag_copy_job 实现')
-        self.logger.debug(self.__dict__)
-
-        job_name = kwargs['job_name'].replace('.', '_')
-        dag_full_path = self.dag_path + job_name
-        job_full_path = self.project_path + self.job_prefix + kwargs['job_name'].replace('.', '/') + '.ipynb'
-
-        # 1. 检查是否存在
-        if not os.path.exists(job_full_path):
-            raise exception_file_not_exist
-
-        # 2. 创建目标文件夹
-        subprocess.call(["mkdir", "-p", dag_full_path])
-
-        # 3. 读取源文件的配置和输入输出参数
-        ipynb_dict, cm, im, om = {}, {}, {}, {}
-        with open(job_full_path, 'r') as rf:
-            ipynb_dict = json.load(rf)
-            source = ipynb_dict['cells'][0]['source']
-            cm = self.get_ipynb_map_by_key(source, 'config')
-            im = self.get_ipynb_map_by_key(source, 'input args')
-            om = self.get_ipynb_map_by_key(source, 'output args')
-
-        # 4. 将读取的配置和参数写到 phconf.yaml 中
-        input_str = ["- key: {}\n        value: {}".format(k, v) for k, v in im.items()]
-        input_str = '\n      '.join(input_str)
-        output_str = ["- key: {}\n        value: {}".format(k, v) for k, v in om.items()]
-        output_str = '\n      '.join(output_str)
-        self.create_phconf_file(dag_full_path, input_str=input_str, output_str=output_str, **kwargs)
-
-        runtime_inst = self.table_driver_runtime_inst(kwargs['runtime'])(**self.__dict__)
-
-        # python 需要 __init__.py 文件
-        if kwargs['runtime'] == 'python3':
-            # 5. 创建 /__init__.py file
-            runtime_inst.c9_create_init(dag_full_path + "/__init__.py")
-
-        # 6. 生成 /phmain.* file
-        runtime_inst.c9_create_phmain(dag_full_path)
-
-        # 7. 根据 .ipynb 转换为 phjob.* 文件
-        runtime_inst.jupyter_to_c9(dag_full_path, cm=cm, im=im, om=om, ipynb_dict=ipynb_dict)
-
-        # 8. phconf 转为 args.properties
-        self.yaml2args(dag_full_path)

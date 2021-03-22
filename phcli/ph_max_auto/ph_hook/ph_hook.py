@@ -11,11 +11,12 @@ def exec_before(*args, **kwargs):
 
     spark_func = get_spark_session_func(job_id)
     result_path_prefix = get_result_path(kwargs)
+    depends_path = get_depends_path(kwargs)
 
     return {
         'spark': spark_func,
         'result_path_prefix': result_path_prefix,
-        'get_depends_path_func': get_depends_path,
+        'depends_path': depends_path,
     }
 
 

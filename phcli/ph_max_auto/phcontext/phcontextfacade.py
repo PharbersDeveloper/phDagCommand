@@ -18,7 +18,7 @@ class PhContextFacade(object):
         log_level = kwargs.pop('log_level')
         if log_level == 'info':
             log_level = LOG_INFO_LEVEL
-        if log_level == 'warn':
+        elif log_level == 'warn':
             log_level = LOG_WARN_LEVEL
         elif log_level == 'error':
             log_level = LOG_ERROR_LEVEL

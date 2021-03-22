@@ -8,16 +8,16 @@ from phcli.ph_aws.ph_sts import PhSts
 
 def main():
     print("test_main方法被调用")
-    phsts1 = PhSts().assume_role(
+    phsts = PhSts().assume_role(
         base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
         dv.ASSUME_ROLE_EXTERNAL_ID,
     )
-    phs3_test = PhS3(phsts=phsts1)
+    phs3_test = PhS3(phsts=phsts)
 
-    source_path1 = "/workspace/BPBatchDAG/phjobs/test1/test1"
-    target_path1 = "/workspace/phdagcommand/test/test_ph_max_auto/test_context/test_runtime"
-    t = PhRTPython3(phs3=phs3_test, target_path=target_path1)
-    t.c9_to_jupyter(phs3_test, source_path1, target_path1)
+    source_path = "./phjobs/a/b"
+    target_path = "./phjobs/a/b.ipynb"
+    t = PhRTPython3(phs3=phs3_test, group="a", name="b", ide="jupyter")
+    t.c9_to_jupyter(source_path, target_path)
 
 
 if __name__ == '__main__':

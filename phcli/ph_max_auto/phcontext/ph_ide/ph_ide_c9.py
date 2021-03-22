@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from .ph_ide_base import PhIDEBase, dv, exception_file_not_exist, exception_function_not_implement, PhYAMLConfig
+from .ph_ide_base import PhIDEBase, exception_file_not_exist
 
 
 class PhIDEC9(PhIDEBase):
@@ -31,7 +31,7 @@ class PhIDEC9(PhIDEBase):
         output_str = [k.strip() for k in self.outputs.split(',')]
         output_str = ["- key: " + i + "\n        value: \"abc\"" for i in output_str]
         output_str = '\n      '.join(output_str)
-        self.create_phconf_file(self.job_path, input_str=input_str, output_str=output_str, **self.__dict__)
+        self.table_driver_runtime_inst(self.runtime)(**self.__dict__).create_phconf_file(self.job_path, input_str=input_str, output_str=output_str, **self.__dict__)
 
         super().create()
 
@@ -58,4 +58,4 @@ class PhIDEC9(PhIDEBase):
             raise exception_file_not_exist
 
         subprocess.call(["cp", '-r', job_full_path, self.dag_path + job_name])
-        self.yaml2args(self.dag_path + job_name)
+        self.table_driver_runtime_inst(self.runtime)(**self.__dict__).yaml2args(self.dag_path + job_name)

@@ -1,5 +1,6 @@
 import os
 import re
+import json
 import subprocess
 
 from phcli.ph_errs.ph_err import *
@@ -92,6 +93,9 @@ class PhRTPython3(PhRTBase):
                 file.write('    spark = kwargs["spark"]()')
 
             file.write("""
+    result_path_prefix = kwargs["result_path_prefix"]
+    depends_path = kwargs["depends_path"]
+    
     logger.info(kwargs["a"])
     logger.info(kwargs["b"])
     logger.info(kwargs["c"])
@@ -131,12 +135,11 @@ class PhRTPython3(PhRTBase):
 
     def c9_to_jupyter(self, source_path, target_path):
         # 创建json文件
-        path = target_path + "/phJupyterPython.ipynb"
-        subprocess.call(["touch", path])
+        subprocess.run(["touch", target_path])
 
-        with open(target_path + "/phJupyterPython.ipynb", "w") as file:
+        with open(target_path, "w") as file:
             indentation = 4
-            frist_cell_index = 0
+            first_cell_index = 0
             second_cell_index = 1
             redundantCell_begin_index = 2
             redundantCell_end_index = 5
@@ -153,59 +156,68 @@ class PhRTPython3(PhRTBase):
             job_command = config.spec.containers.command
             job_timeout = str(config.spec.containers.timeout)
 
+            ##### 处理第一个输入框 #####
+            first_cell_source = data['cells'][first_cell_index]['source']
+            # 写入基本信息
+            for index, old_str in enumerate(first_cell_source):
+                first_cell_source[index] = old_str.replace('$name', job_name) \
+                    .replace('$runtime', job_runtime) \
+                    .replace('$command', job_command) \
+                    .replace('$timeout', job_timeout)
+
             # 写入input_args数据
-            input_index = data['cells'][frist_cell_index]['source'].index("a = 123\n")
-            del data['cells'][frist_cell_index]['source'][input_index:input_index + 2]
+            input_index = first_cell_source.index("a = 123\n")
+            first_cell_input_before_row = first_cell_source[:input_index]
+            first_cell_input_after_row = first_cell_source[input_index+2:]
+            new_input_row = []
             for arg in config.spec.containers.args:
                 arg_key = arg.key
                 arg_value = arg.value
                 if str.isdigit(arg_value):
-                    data['cells'][frist_cell_index]['source'].insert(input_index, arg_key + " = " + arg_value + "\n")
+                    new_input_row.insert(input_index, arg_key + " = " + arg_value + "\n")
                 else:
-                    data['cells'][frist_cell_index]['source'].insert(input_index, arg_key + " = '" + arg_value + "'\n")
+                    new_input_row.insert(input_index, arg_key + " = '" + arg_value + "'\n")
+            first_cell_source = first_cell_input_before_row + new_input_row + first_cell_input_after_row
 
             # 写入output_args数据
-            output_index = data['cells'][frist_cell_index]['source'].index("c = 'abc'\n")
-            del data['cells'][frist_cell_index]['source'][output_index:output_index + 2]
+            output_index = first_cell_source.index("c = 'abc'\n")
+            first_cell_output_before_row = first_cell_source[:output_index]
+            first_cell_output_after_row = first_cell_source[output_index+2:]
+            new_output_row = []
             for output in config.spec.containers.outputs:
                 output_key = output.key
                 output_value = output.value
                 if str.isdigit(output_value):
-                    data['cells'][frist_cell_index]['source'].insert(output_index,
-                                                                     output_key + " = " + output_value + "\n")
+                    new_output_row.insert(output_index, output_key + " = " + output_value + "\n")
                 else:
-                    data['cells'][frist_cell_index]['source'].insert(output_index,
-                                                                     output_key + " = '" + output_value + "'\n")
+                    new_output_row.insert(output_index, output_key + " = '" + output_value + "'\n")
+            first_cell_source = first_cell_output_before_row + new_output_row + first_cell_output_after_row
+            data['cells'][first_cell_index]['source'] = first_cell_source
+            ##### 处理第一个输入框 #####
 
-            empty_source1 = []
-            # 把source中内容进行遍历，替换指定内容
-            for str1 in data['cells'][frist_cell_index]['source']:
-                str2 = str1.replace('$name', job_name) \
-                    .replace('$runtime', job_runtime) \
-                    .replace('$command', job_command) \
-                    .replace('$timeout', job_timeout)
-                empty_source1.append(str2)
-            # 把修改后的数据写进一个空list，再把空list 写入到source中
-            data['cells'][frist_cell_index]['source'] = empty_source1
 
-            empty_source2 = []
-            for str1 in data['cells'][second_cell_index]['source']:
-                str2 = str1.replace('$name', job_name) \
-                    .replace('$runtime', job_runtime) \
-                    .replace('$command', job_command) \
-                    .replace('$timeout', job_timeout) \
-                    .replace('$user', "user") \
-                    .replace('$group', "group") \
-                    .replace('$ide', "idee") \
-                    .replace('$access_key', "AWS_ACCESS_KEY_ID") \
-                    .replace('$secret_key', "AWS_SECRET_ACCESS_KEY")
-                empty_source2.append(str2)
-            data['cells'][second_cell_index]['source'] = empty_source2
+            ##### 处理第二个输入框 #####
+            second_cell_source = data['cells'][second_cell_index]['source']
+            for index, old_str in enumerate(second_cell_source):
+                second_cell_source[index] = old_str.replace('$name', job_name) \
+                                                   .replace('$runtime', job_runtime) \
+                                                   .replace('$command', job_command) \
+                                                   .replace('$timeout', job_timeout) \
+                                                   .replace('$user', os.getenv('USER', 'unknown')) \
+                                                   .replace('$group', self.group) \
+                                                   .replace('$ide', self.ide) \
+                                                   .replace('$access_key', os.getenv('AWS_ACCESS_KEY_ID', "NULL")) \
+                                                   .replace('$secret_key', os.getenv('AWS_SECRET_ACCESS_KEY', "NULL"))
+            data['cells'][second_cell_index]['source'] = second_cell_source
+            ##### 处理第二个输入框 #####
 
-            # 删除data中多余的cell
+
+            ##### 删除data中多余的cell #####
             del data['cells'][redundantCell_begin_index:redundantCell_end_index]
+            ##### 删除data中多余的cell #####
 
-            # phjob的内容copyt到.ipynb下的source中
+
+            ##### phjob 的内容 copy 到 .ipynb 下的其余 source 中 #####
             with open(source_path + "/phjob.py", "r") as phjob_flie:
                 line = phjob_flie.readline()
                 while line:
@@ -238,18 +250,70 @@ class PhRTPython3(PhRTBase):
                     elif execute_source_str.lstrip().startswith('#'):
                         empty_source.append(execute_source_str)
                 data['cells'][execute_index]['source'] = empty_source
+            ##### phjob 的内容 copy 到 .ipynb 下的其余 source 中 #####
 
-            # 把data从字典转换成json格式,indent=1进行换行，ensure_ascii防止汉字转成Unicode码
+            # 把 data 从字典转换成 json 格式, indent=1 进行换行，ensure_ascii防止汉字转成Unicode码
             json_str = json.dumps(data, indent=1, ensure_ascii=False)
             file.write(json_str)
 
-    def jupyter_to_c9(self, dag_full_path, **kwargs):
-        im = kwargs['im']
-        om = kwargs['om']
-        ipynb_dict = kwargs['ipynb_dict']
+    def jupyter_to_c9(self, source_path, target_path):
+        def get_ipynb_map_by_key(source, key):
+            """
+            获取 ipynb 中定义的配置
+            :param source: ipynb 中的文本行
+            :param key: 需要获得的字典，可以是 config、input args、output args
+            :return:
+            """
+            range = []
+            for i, row in enumerate(source):
+                if "== {} ==".format(key) in row:
+                    range.append(i)
+            source = source[range[0]+1: range[1]]
 
-        self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE_PY, dag_full_path + "/phjob.py")
-        with open(dag_full_path + "/phjob.py", "a") as file:
+            result = {}
+            for row in source:
+                if row and '=' in row:
+                    r = row.split('=')
+                    result[r[0].strip()] = eval(r[-1].strip())
+            return result
+
+        # 1. 检查是否存在
+        if not os.path.exists(source_path):
+            raise exception_file_not_exist
+
+        # 2. 创建目标文件夹
+        subprocess.call(["mkdir", "-p", target_path])
+
+        # 3. 读取源文件的配置和输入输出参数
+        with open(source_path, 'r') as rf:
+            ipynb_dict = json.load(rf)
+            source = ipynb_dict['cells'][0]['source']
+            cm = get_ipynb_map_by_key(source, 'config')
+            im = get_ipynb_map_by_key(source, 'input args')
+            om = get_ipynb_map_by_key(source, 'output args')
+
+        # 4. 将读取的配置和参数写到 phconf.yaml 中
+        input_str = ["- key: {}\n        value: {}".format(k, v) for k, v in im.items()]
+        input_str = '\n      '.join(input_str)
+        output_str = ["- key: {}\n        value: {}".format(k, v) for k, v in om.items()]
+        output_str = '\n      '.join(output_str)
+        self.create_phconf_file(path=target_path, input_str=input_str, output_str=output_str,
+                                name=cm['job_name'], runtime=cm['job_runtime'],
+                                command=cm['job_command'], timeout=cm['job_timeout'])
+
+        # python 需要 __init__.py 文件
+        if cm['job_runtime'] == 'python3':
+            # 5. 创建 /__init__.py file
+            self.c9_create_init(self.job_path + "/__init__.py")
+
+        # 6. 生成 /phmain.* file
+        self.c9_create_phmain(self.job_path)
+
+        # 8. phconf 转为 args.properties
+        self.yaml2args(self.job_path)
+
+        self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE_PY, self.job_path + "/phjob.py")
+        with open(self.job_path + "/phjob.py", "a") as file:
             file.write("""def execute(**kwargs):
     \"\"\"
         please input your code below
