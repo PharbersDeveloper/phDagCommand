@@ -224,20 +224,21 @@ class PhIDEBase(object):
                         'command': config.spec.containers.command,
                         'timeout': config.spec.containers.timeout,
                     }
-                else:
-                    if os.path.exists(job_full_path+'.ipynb') and os.path.isfile(job_full_path+'.ipynb'):
-                        with open(job_full_path+'.ipynb', 'r') as rf:
-                            load_dict = json.load(rf)
-                            source = load_dict['cells'][0]['source']
-                            cm = self.get_ipynb_map_by_key(source, 'config')
+                elif os.path.exists(job_full_path+'.ipynb') and os.path.isfile(job_full_path+'.ipynb'):
+                    with open(job_full_path+'.ipynb', 'r') as rf:
+                        load_dict = json.load(rf)
+                        source = load_dict['cells'][0]['source']
+                        cm = self.get_ipynb_map_by_key(source, 'config')
 
-                            return {
-                                'name': cm['job_name'],
-                                'ide': 'jupyter',
-                                'runtime': cm['job_runtime'],
-                                'command': cm['job_command'],
-                                'timeout': cm['job_timeout'],
-                            }
+                        return {
+                            'name': cm['job_name'],
+                            'ide': 'jupyter',
+                            'runtime': cm['job_runtime'],
+                            'command': cm['job_command'],
+                            'timeout': cm['job_timeout'],
+                        }
+                else:
+                    raise Exception("{} job not found".format(name))
 
             result = {}
             for job in config.spec.jobs:
