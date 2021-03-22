@@ -31,6 +31,6 @@ TEMPLATE_JUPYTER_R_FILE = '/template/python/phcli/maxauto/phJupyterR-20210122.js
 
 TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20210104.yaml"
 TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20210104.tmp"
-TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210319.tmp"
+TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210320.tmp"
 
 PRESET_MUST_ARGS = 'owner, run_id, job_id'
