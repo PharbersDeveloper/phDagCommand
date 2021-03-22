@@ -2,10 +2,15 @@ import boto3
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.ph_hook.get_abs_path import get_asset_path
 from phcli.ph_aws.ph_s3 import PhS3
+from phcli.ph_aws.ph_sts import PhSts
 
 
 def copy_asset_data(kwargs):
-    phs3 = PhS3()
+    phsts = PhSts().assume_role(
+        base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+        dv.ASSUME_ROLE_EXTERNAL_ID,
+    )
+    phs3 = PhS3(phsts=phsts)
     source_bucket_name = kwargs['result_path_prefix'].split("/")[2]
     source_path_prefix = '/'.join(kwargs['result_path_prefix'].split('/')[3:])
     asset_path = get_asset_path(kwargs)

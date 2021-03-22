@@ -2,7 +2,7 @@ from phcli.ph_max_auto.ph_hook.get_spark_session import get_spark_session_func
 from phcli.ph_max_auto.ph_hook.get_abs_path import get_result_path
 from phcli.ph_max_auto.ph_hook.get_abs_path import get_depends_path
 from phcli.ph_max_auto.ph_hook.lineage import lineage
-from phcli.ph_max_auto.ph_hook.copy_asset_data import copy_aset_data
+from phcli.ph_max_auto.ph_hook.copy_asset_data import copy_asset_data
 
 
 def exec_before(*args, **kwargs):
