@@ -97,12 +97,18 @@ def create(**kwargs):
 
 @maxauto.command("complete")
 @click.option("-g", "--group",
-              prompt="The job group is",
+              prompt="The job group is, [ALL] is all job complete",
               help="The job group.",
               default="")
 @click.option("-n", "--name",
-              prompt="The job name is",
-              help="The job name.")
+              prompt="The job name is, [ALL] is all job complete in group",
+              help="The job name.",
+              default="ALL")
+@click.option("-s", "--strategy",
+              prompt="The job strategy complete is [s2c = special to common, c2s = common to special]",
+              help="The job strategy complete. [s2c = special to common, c2s = common to special]",
+              type=click.Choice(["s2c", "c2s", 'auto']),
+              default="auto")
 def complete(**kwargs):
     """
     补全一个 Job
@@ -111,6 +117,7 @@ def complete(**kwargs):
         context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_complete_exec()
     except Exception as e:
+        raise e
         put_metric("maxauto.complete", "failed")
         click.secho("补全失败: " + str(e), fg='red', blink=True, bold=True)
     else:
@@ -234,13 +241,13 @@ def recall(**kwargs):
 
 
 @maxauto.command("online_run")
-@click.option("-g", "--group",
-              prompt="The dag job group is",
-              help="The dag job group.",
+@click.option("--dag_name",
+              prompt="The dag name is",
+              help="The dag name.",
               default="")
-@click.option("-n", "--name",
-              prompt="The dag job name is",
-              help="The dag job name.")
+@click.option("--job_full_name",
+              prompt="The dag job_full_name is",
+              help="The dag job_full_name.")
 @click.option("--owner", default="owner")
 @click.option("--run_id", default="run_id")
 @click.option("--job_id", default="job_id")

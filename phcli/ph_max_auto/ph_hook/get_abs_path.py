@@ -16,7 +16,7 @@ def get_run_id(kwargs):
 
 
 def get_job_full_name(kwargs):
-    job_name = kwargs["job_name"]
+    job_name = kwargs["job_full_name"]
     return job_name
 
 
@@ -38,7 +38,7 @@ def get_result_path(kwargs):
             dag_name=get_dag_name(kwargs),
         ) + path_suffix
 
-    return path_prefix + "/" +run_id + "/" + job_name + "/"
+    return path_prefix + "/" + run_id + "/" + job_name + "/"
 
 
 def get_depends_file_path(kwargs, job_name, job_key):
@@ -46,7 +46,7 @@ def get_depends_file_path(kwargs, job_name, job_key):
 
 
 def get_depends_path(kwargs):
-    depends_lst = eval(kwargs.get("depend_job_names_keys", []))
+    depends_lst = eval(kwargs.get("depend_job_names_keys", "[]"))
     result = {}
     for item in depends_lst:
         tmp_lst = item.split("#")

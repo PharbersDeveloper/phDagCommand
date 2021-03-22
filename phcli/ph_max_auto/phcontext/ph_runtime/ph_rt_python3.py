@@ -75,19 +75,9 @@ class PhRTPython3(PhRTBase):
         # 2. /phjob.py file
         self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE_PY, self.job_path + "/phjob.py")
         with open(self.job_path + "/phjob.py", "a") as file:
-            file.write("""def execute(**kwargs):
-    \"\"\"
-        please input your code below\n""")
+            file.write("""def execute(**kwargs):\n""")
 
-            if self.command == 'submit':
-                file.write('        get spark session: spark = kwargs["spark"]()\n')
-
-            file.write("""    \"\"\"
-    logger = phs3logger(kwargs["job_id"], LOG_DEBUG_LEVEL)
-    logger.info("当前 owner 为 " + str(kwargs["owner"]))
-    logger.info("当前 run_id 为 " + str(kwargs["run_id"]))
-    logger.info("当前 job_id 为 " + str(kwargs["job_id"]))
-""")
+            file.write("""    logger = phs3logger(kwargs["job_id"], LOG_DEBUG_LEVEL)\n""")
 
             if self.command == 'submit':
                 file.write('    spark = kwargs["spark"]()')
@@ -133,7 +123,7 @@ class PhRTPython3(PhRTBase):
         else:
             raise exception_function_not_implement
 
-    def c9_to_jupyter(self, source_path, target_path):
+    def c9_to_jupyter(self, source_path, target_path, exts):
         # 创建json文件
         subprocess.run(["touch", target_path])
 
@@ -173,10 +163,10 @@ class PhRTPython3(PhRTBase):
             for arg in config.spec.containers.args:
                 arg_key = arg.key
                 arg_value = arg.value
-                if str.isdigit(arg_value):
-                    new_input_row.insert(input_index, arg_key + " = " + arg_value + "\n")
+                if str.isdigit(str(arg_value)):
+                    new_input_row.insert(input_index, arg_key + " = " + str(arg_value) + "\n")
                 else:
-                    new_input_row.insert(input_index, arg_key + " = '" + arg_value + "'\n")
+                    new_input_row.insert(input_index, arg_key + " = '" + str(arg_value) + "'\n")
             first_cell_source = first_cell_input_before_row + new_input_row + first_cell_input_after_row
 
             # 写入output_args数据
@@ -204,8 +194,8 @@ class PhRTPython3(PhRTBase):
                                                    .replace('$command', job_command) \
                                                    .replace('$timeout', job_timeout) \
                                                    .replace('$user', os.getenv('USER', 'unknown')) \
-                                                   .replace('$group', self.group) \
-                                                   .replace('$ide', self.ide) \
+                                                   .replace('$group', exts['group']) \
+                                                   .replace('$ide', exts['ide']) \
                                                    .replace('$access_key', os.getenv('AWS_ACCESS_KEY_ID', "NULL")) \
                                                    .replace('$secret_key', os.getenv('AWS_SECRET_ACCESS_KEY', "NULL"))
             data['cells'][second_cell_index]['source'] = second_cell_source
@@ -237,7 +227,7 @@ class PhRTPython3(PhRTBase):
                         data['cells'].append(demo)
                     line = phjob_flie.readline()
 
-                for cell in data['cells'][:]:
+                for cell in data['cells']:
                     for source in cell['source']:
                         if source.startswith('def execute'):
                             execute_index = data['cells'].index(cell)
@@ -245,8 +235,30 @@ class PhRTPython3(PhRTBase):
                 empty_source = []
                 for execute_source_str in data['cells'][execute_index]['source']:
                     if len(execute_source_str) - len(execute_source_str.lstrip()) >= indentation:
-                        if not execute_source_str.lstrip().startswith('spark = kwargs['):
-                            empty_source.append(execute_source_str[indentation:])
+                        if execute_source_str.lstrip().startswith('logger = '):
+                            continue
+                        elif execute_source_str.lstrip().startswith('spark = '):
+                            continue
+                        if execute_source_str.lstrip().startswith('result_path_prefix = '):
+                            continue
+                        if execute_source_str.lstrip().startswith('depends_path = '):
+                            continue
+                        if execute_source_str.lstrip().startswith('### input args ###'):
+                            continue
+                        if execute_source_str.lstrip().startswith('### output args ###'):
+                            continue
+
+                        # logger 替换为 print
+                        execute_source_str = re.sub(r'\t*logger\.\w*\(([\'|\"]?.*?[\'|\"]?)\)$', r"print(\1)", execute_source_str)
+                        # 对简单 kwargs 删除，如 a = kwargs['a']
+                        kv_check = re.sub(r'\s*(.*)\s*=\s*kwargs\[[\'|\"](\w*?)[\'|\"]\]', r"\1,\2", execute_source_str)
+                        kv_check = kv_check.split(",")
+                        if len(kv_check) == 2 and kv_check[0].strip() == kv_check[1].strip():
+                            continue
+
+                        # 对复杂 kwargs 替换，如 a = kwargs['b'] + c ==> a = b + c
+                        execute_source_str = re.sub(r'^(.*)kwargs\[[\'|\"](\w*)[\'|\"]\](.*)', r"\1\2\3", execute_source_str)
+                        empty_source.append(execute_source_str[indentation:])
                     elif execute_source_str.lstrip().startswith('#'):
                         empty_source.append(execute_source_str)
                 data['cells'][execute_index]['source'] = empty_source
@@ -256,7 +268,7 @@ class PhRTPython3(PhRTBase):
             json_str = json.dumps(data, indent=1, ensure_ascii=False)
             file.write(json_str)
 
-    def jupyter_to_c9(self, source_path, target_path):
+    def jupyter_to_c9(self, source_path, target_path, exts):
         def get_ipynb_map_by_key(source, key):
             """
             获取 ipynb 中定义的配置
@@ -304,36 +316,42 @@ class PhRTPython3(PhRTBase):
         # python 需要 __init__.py 文件
         if cm['job_runtime'] == 'python3':
             # 5. 创建 /__init__.py file
-            self.c9_create_init(self.job_path + "/__init__.py")
+            self.c9_create_init(target_path + "/__init__.py")
 
         # 6. 生成 /phmain.* file
-        self.c9_create_phmain(self.job_path)
+        self.c9_create_phmain(target_path)
 
         # 8. phconf 转为 args.properties
-        self.yaml2args(self.job_path)
+        self.yaml2args(target_path)
 
-        self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE_PY, self.job_path + "/phjob.py")
-        with open(self.job_path + "/phjob.py", "a") as file:
+        self.phs3.download(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHJOB_FILE_PY, target_path + "/phjob.py")
+        with open(target_path + "/phjob.py", "a") as file:
             file.write("""def execute(**kwargs):
-    \"\"\"
-        please input your code below
-        get spark session: spark = kwargs["spark"]()
-    \"\"\"
-    spark = kwargs['spark']()
     logger = phs3logger(kwargs["job_id"], LOG_DEBUG_LEVEL)
-
+    spark = kwargs['spark']()
+    result_path_prefix = kwargs["result_path_prefix"]
+    depends_path = kwargs["depends_path"]
+    
+    ### input args ###
 """)
-            # 取参数
+            # 取入参
             for input in im:
                 file.write("    {key} = kwargs['{key}']\n".format(key=input))
+            file.write("    ### input args ###\n")
+            file.write("    \n")
+
+            # 取出参
+            file.write("    ### output args ###\n")
             for output in om:
                 file.write("    {key} = kwargs['{key}']\n".format(key=output))
+            file.write("    ### output args ###\n")
             file.write("\n")
 
             # copy 逻辑代码
             for cell in ipynb_dict['cells'][2:]:
                 for row in cell['source']:
                     row = re.sub(r'(^\s*)print(\(.*)', r"\1logger.debug\2", row)
+                    row = re.sub(r'(^.*)kwargs\[[\\"|\'](.*)[\\"|\']\](.*)', r"\1\2\3", row)
                     file.write('    '+row)
                 file.write('\r\n')
                 file.write('\r\n')

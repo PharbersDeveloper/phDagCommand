@@ -6,8 +6,8 @@ from phcli.ph_max_auto.ph_hook.copy_asset_data import copy_asset_data
 
 
 def exec_before(*args, **kwargs):
-    name = kwargs.pop('name', None)
-    job_id = kwargs.pop('job_id', name)
+    name = kwargs.get('name', None)
+    job_id = kwargs.get('job_id', name)
 
     spark_func = get_spark_session_func(job_id)
     result_path_prefix = get_result_path(kwargs)
@@ -21,12 +21,12 @@ def exec_before(*args, **kwargs):
 
 
 def exec_after(*args, **kwargs):
-    owner = kwargs.pop('owner', None)
-    run_id = kwargs.pop('run_id', None)
-    job_id = kwargs.pop('job_id', None)
+    owner = kwargs.get('owner', None)
+    run_id = kwargs.get('run_id', None)
+    job_id = kwargs.get('job_id', None)
 
     lineage(job_id, kwargs)
-    copy_asset_data(kwargs)
+    # copy_asset_data(kwargs)
 
     return kwargs
 

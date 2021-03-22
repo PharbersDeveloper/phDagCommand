@@ -35,6 +35,9 @@ class PhIDEBase(object):
         return os.getenv(dv.ENV_CUR_PROJ_KEY, dv.ENV_CUR_PROJ_DEFAULT)
 
     def get_absolute_path(self):
+        if 'name' not in self.__dict__ and 'job_full_name' in self.__dict__:
+            self.name = self.job_full_name
+
         project_path = self.get_workspace_dir() + '/' + self.get_current_project_dir()
         job_path = project_path + self.job_prefix + (self.group + '/' if 'group' in self.__dict__.keys() else '') + self.name
         combine_path = project_path + self.combine_prefix + self.name + '/'
@@ -74,15 +77,15 @@ class PhIDEBase(object):
         """
         默认的创建过程
         """
-        self.logger.info('maxauto 默认的 create 实现')
+        self.logger.debug('maxauto 默认的 create 实现')
         self.logger.debug(self.__dict__)
 
         runtime_inst = self.table_driver_runtime_inst(self.runtime)
         runtime_inst(**self.__dict__).create()
 
-    def choice_complete_strategy(self, special, common):
-        special_last_modify_time = os.path.getmtime(special) if os.path.exists(special) else 0
-        common_last_modify_time = os.path.getmtime(common) if os.path.exists(common) else 0
+    def choice_complete_strategy(self, special_path, common_path):
+        special_last_modify_time = os.path.getmtime(special_path) if os.path.exists(special_path) else 0
+        common_last_modify_time = os.path.getmtime(common_path) if os.path.exists(common_path) else 0
 
         if special_last_modify_time > common_last_modify_time:
             return PhCompleteStrategy.S2C
@@ -95,14 +98,14 @@ class PhIDEBase(object):
         """
         默认的补全过程
         """
-        self.logger.info('maxauto 默认的 complete 实现')
+        self.logger.debug('maxauto 默认的 complete 实现')
         self.logger.debug(self.__dict__)
 
     def run(self, **kwargs):
         """
         默认的运行过程
         """
-        self.logger.info('maxauto 默认的 run 实现')
+        self.logger.debug('maxauto 默认的 run 实现')
         self.logger.debug(self.__dict__)
 
         config = PhYAMLConfig(self.job_path)
@@ -133,7 +136,7 @@ class PhIDEBase(object):
         """
         默认的关联过程
         """
-        self.logger.info('maxauto 默认的 combine 实现')
+        self.logger.debug('maxauto 默认的 combine 实现')
         self.logger.debug(self.__dict__)
 
         self.check_path(self.combine_path)
@@ -165,7 +168,7 @@ class PhIDEBase(object):
         """
         默认的DAG过程
         """
-        self.logger.info('maxauto 默认的 dag 实现')
+        self.logger.debug('maxauto 默认的 dag 实现')
         self.logger.debug(self.__dict__)
 
         self.check_path(self.dag_path)
@@ -276,7 +279,7 @@ class PhIDEBase(object):
         """
         默认的发布过程
         """
-        self.logger.info('maxauto 默认的 publish 实现')
+        self.logger.debug('maxauto 默认的 publish 实现')
         self.logger.debug(self.__dict__)
 
         for key in os.listdir(self.dag_path):
@@ -297,7 +300,7 @@ class PhIDEBase(object):
         """
         默认的召回过程
         """
-        self.logger.info('maxauto 默认的 recall 实现')
+        self.logger.debug('maxauto 默认的 recall 实现')
         self.logger.debug(self.__dict__)
 
         self.phs3.delete_dir(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name)
@@ -307,7 +310,7 @@ class PhIDEBase(object):
         """
         默认的 online_run 过程
         """
-        self.logger.info('maxauto 默认的 online_run 实现')
+        self.logger.debug('maxauto 默认的 online_run 实现')
         self.logger.debug(self.__dict__)
 
         def ast_parse(string):
@@ -327,8 +330,8 @@ class PhIDEBase(object):
         self.context = ast_parse(self.context)
         self.args = ast_parse(self.args)
 
-        group = self.group + "/" if self.group else ''
-        self.s3_job_path = dv.DAGS_S3_PHJOBS_PATH + group + self.name
+        self.s3_job_path = dv.DAGS_S3_PHJOBS_PATH + self.dag_name + "/" + self.job_full_name
+        print(self.s3_job_path)
         self.submit_prefix = "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + self.s3_job_path + "/"
 
         stream = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.s3_job_path + "/phconf.yaml")
@@ -345,5 +348,5 @@ class PhIDEBase(object):
         """
         默认的查看运行状态
         """
-        self.logger.info('maxauto 默认的 status 实现')
+        self.logger.debug('maxauto 默认的 status 实现')
         self.logger.debug(self.__dict__)

@@ -18,7 +18,7 @@ class PhIDEC9(PhIDEBase):
         """
         c9 的创建过程
         """
-        self.logger.info('maxauto ide=c9 的 create 实现')
+        self.logger.debug('maxauto ide=c9 的 create 实现')
         self.logger.debug(self.__dict__)
 
         self.check_path(self.job_path)
@@ -39,7 +39,7 @@ class PhIDEC9(PhIDEBase):
         """
         c9 的补全过程
         """
-        self.logger.info('maxauto ide=c9 的 complete 实现')
+        self.logger.debug('maxauto ide=c9 的 complete 实现')
         self.logger.debug(self.__dict__)
         self.logger.error('maxauto --ide=c9 时，不支持 complete 子命令')
         raise Exception("maxauto --ide=c9 时，不支持 complete 子命令")
@@ -48,7 +48,7 @@ class PhIDEC9(PhIDEBase):
         """
         maxauto dag 时 copy c9 环境下生成的 job
         """
-        self.logger.info('maxauto ide=c9 的 dag_copy_job 实现')
+        self.logger.debug('maxauto ide=c9 的 dag_copy_job 实现')
         self.logger.debug(self.__dict__)
 
         job_name = kwargs['job_name'].replace('.', '_')

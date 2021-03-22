@@ -78,8 +78,8 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "result_path_prefix = kwargs[\"result_path_prefix\"]\n",
-    "get_depends_path_func = kwargs[\"get_depends_path_func\"]"
+    "spark.sql(\"SHOW tables\").show()\n",
+    "spark.read.parquet(\"s3a://ph-stream/common/public/universe/0.0.1\").show()"
    ]
   },
   {

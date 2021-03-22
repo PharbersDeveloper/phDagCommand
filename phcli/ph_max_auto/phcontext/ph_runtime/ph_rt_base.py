@@ -27,7 +27,7 @@ class PhRTBase(object):
 
     def create_phconf_file(self, path, **kwargs):
         f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
-        with open(path + "/phconf.yaml", "a") as file:
+        with open(path + "/phconf.yaml", "w") as file:
             for line in f_lines:
                 line = line + "\n"
                 line = line.replace("$name", kwargs['name']) \
@@ -113,7 +113,7 @@ class PhRTBase(object):
         cmd_arr += ['--owner', self.owner]
         cmd_arr += ['--dag_name', self.dag_name]
         cmd_arr += ['--run_id', self.run_id]
-        cmd_arr += ['--job_name', self.job_name]
+        cmd_arr += ['--job_full_name', self.job_full_name]
         cmd_arr += ['--job_id', self.job_id]
 
         # dag_run 优先 phconf 默认参数
@@ -146,7 +146,7 @@ class PhRTBase(object):
         cmd_arr += ['--owner', self.owner]
         cmd_arr += ['--dag_name', self.dag_name]
         cmd_arr += ['--run_id', self.run_id]
-        cmd_arr += ['--job_name', self.job_name]
+        cmd_arr += ['--job_full_name', self.job_full_name]
         cmd_arr += ['--job_id', self.job_id]
 
         # dag_run 优先 phconf 默认参数

@@ -1,4 +1,5 @@
 import boto3
+import base64
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.ph_hook.get_abs_path import get_asset_path
 from phcli.ph_aws.ph_s3 import PhS3
