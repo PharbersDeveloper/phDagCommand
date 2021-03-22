@@ -66,7 +66,7 @@ def get_asset_path(kwargs):
             version=dv.DEFAULT_ASSET_PATH_VERSION,
             dag_name=get_dag_name(kwargs),
         ) + path_suffix
-    return asset_path_prefix +'/'+ run_time+'/'+dag_name+'/'+job_name+'/'
+    return asset_path_prefix +'/'+ run_time+'/'+job_name+'/'
 
 
 if __name__ == '__main__':

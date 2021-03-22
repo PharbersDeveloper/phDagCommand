@@ -181,3 +181,29 @@ class PhS3(PhAWS):
 
             self.upload(path, bucket_name, object_name)
             return [bucket_name, object_name]
+
+    def get_bucket_files_path(self, bucket_name, path_prefix):
+        """
+            获取 S3 指定桶下指定路径下所有文件的路径
+            :param bucket_name: 桶名
+            :param path_prefix: S3 文件路径
+        """
+        file_paths = []
+        res = self.s3_client.list_objects(Bucket=bucket_name, Prefix=path_prefix)
+        for item in res['Contents']:
+            file_paths = file_paths.append(item['Key'])
+        return file_paths
+
+    def copy_file(self, source_bucket, source_file_path, target_bucket, target_file_path):
+        """
+            复制 S3 指定资源桶指定资源路径的所有内容到目标桶目标路径下
+            :param source_bucket: 资源桶名
+            :param source_file_path: 资源路径
+            :param target_bucket: 目标桶
+            :param target_file_path: 目标路径
+        """
+        copy_source = {
+            'Bucket': source_bucket,
+            'Key': source_file_path
+        }
+        self.s3_resource.meta.client.copy(copy_source, target_bucket, target_file_path)
