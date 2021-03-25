@@ -33,14 +33,14 @@ TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20210104.yaml"
 TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20210104.tmp"
 TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210322.tmp"
 
-DEFAULT_RESULT_PATH_FORMAT_STR = "s3a://{bucket_name}/{version}/{dag_name}/{suffix}/{run_id}/{job_full_name}/{job_key}"
+DEFAULT_RESULT_PATH_FORMAT_STR = "s3a://{bucket_name}/{version}/{dag_name}/"
 DEFAULT_RESULT_PATH_BUCKET = "ph-max-auto"
 DEFAULT_RESULT_PATH_VERSION = "2020-08-11"
 DEFAULT_RESULT_PATH_SUFFIX = "refactor/runs"
-DEFAULT_ASSET_PATH_FORMAT_STR = "s3a://{bucket_name}/{version}/{suffix}/{job_key}/{time}"
-DEFAULT_ASSET_PATH_BUCKET = 'ph-max-atuo'
+DEFAULT_ASSET_PATH_FORMAT_STR = "s3a://{bucket_name}/{version}/"
+DEFAULT_ASSET_PATH_BUCKET = 'ph-max-auto'
 DEFAULT_ASSET_PATH_VERSION = "2020-08-11"
-DEFAULT_ASSET_PATH_SUFFIX = "refactor/asset"
+DEFAULT_ASSET_PATH_SUFFIX = "asset"
 
 
 

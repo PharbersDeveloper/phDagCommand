@@ -25,9 +25,10 @@ def get_job_name(kwargs):
     return job_name
 
 
-def get_result_path(kwargs):
+def get_result_path(kwargs, job_name=None):
     run_id = get_run_id(kwargs)
-    job_name = get_job_name(kwargs)
+    if job_name is None:
+        job_name = get_job_name(kwargs)
     if 'path_prefix' in kwargs:
         path_prefix = kwargs['path_prefix']
     else:
@@ -42,7 +43,7 @@ def get_result_path(kwargs):
 
 
 def get_depends_file_path(kwargs, job_name, job_key):
-    return get_result_path(kwargs) + job_name + "/" + job_key
+    return get_result_path(kwargs, job_name) + job_key
 
 
 def get_depends_path(kwargs):
@@ -57,23 +58,23 @@ def get_depends_path(kwargs):
     return result
 
 
-def get_asset_path(kwargs):
+def get_asset_path_prefix(kwargs):
     run_time = get_run_time()
     job_name = get_job_name(kwargs)
-    dag_name = get_dag_name(kwargs)
     path_suffix = kwargs.get('path_suffix', dv.DEFAULT_ASSET_PATH_SUFFIX)
     asset_path_prefix = dv.DEFAULT_ASSET_PATH_FORMAT_STR.format(
+            bucket_name=dv.DEFAULT_ASSET_PATH_BUCKET,
             version=dv.DEFAULT_ASSET_PATH_VERSION,
-            dag_name=get_dag_name(kwargs),
         ) + path_suffix
-    return asset_path_prefix +'/'+ run_time+'/'+job_name+'/'
+    return asset_path_prefix + '/'
 
 
 if __name__ == '__main__':
     path_prefix_suffix_result = get_result_path({
         "name": "test_job",
-        "dag_name": "test_dag"
-    })
+        "dag_name": "test_dag",
+        "run_id": "test_run_id"
+    },job_name="depend_job")
     print("path_prefix_suffix_result = " + path_prefix_suffix_result)
 
     assert(path_prefix_suffix_result == "s3a://ph-max-auto/2020-08-11/test_dag/refactor/runs/runid_alfred_runner_test/test_job/")
