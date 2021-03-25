@@ -83,7 +83,7 @@ if __name__ == '__main__':
     })
     print("path_prefixexist_suffixexist_result = " + path_prefixexist_suffixexist_result)
     assert(path_prefixexist_suffixexist_result == "s3a://exist/runid_alfred_runner_test/test_job/")
-    #
+
     path_prefixexist_suffixexist_depends_file_path = get_depends_file_path({
         "name": "test_job",
         "dag_name": "test_dag",
