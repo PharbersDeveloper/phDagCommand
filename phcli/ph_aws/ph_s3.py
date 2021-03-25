@@ -191,7 +191,7 @@ class PhS3(PhAWS):
         file_paths = []
         res = self.s3_client.list_objects(Bucket=bucket_name, Prefix=path_prefix)
         for item in res['Contents']:
-            file_paths = file_paths.append(item['Key'])
+            file_paths.append(item['Key'])
         return file_paths
 
     def copy_file(self, source_bucket, source_file_path, target_bucket, target_file_path):
