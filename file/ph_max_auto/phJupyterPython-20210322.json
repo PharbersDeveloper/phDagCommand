@@ -27,6 +27,7 @@
     "\n",
     "# Variables defined in here\n",
     "\n",
+
     "############## == input args == ###################\n",
     "a = 123\n",
     "b = 456\n",
@@ -35,7 +36,14 @@
     "############## == output args == ###################\n",
     "c = 'abc'\n",
     "d = 'def'\n",
-    "############## == output args == ###################"
+    "############## == output args == ###################",
+    "\n",
+    "############## == preset function == ###################\n",
+    "from phcli.ph_max_auto.ph_hook.get_abs_path import get_result_path\n",
+    "from phcli.ph_max_auto.ph_hook.get_abs_path import get_depends_path\n",
+    "result_path_prefix = get_result_path({\"path_prefix\"=path_prefix,\"name\"=job_name})\n",
+    "depends_path = get_depends_path({\"path_prefix\"=path_prefix,\"depend_job_names_keys\"=depend_job_names_keys})\n",
+    "############## == preset function == ###################\n"
    ]
   },
   {

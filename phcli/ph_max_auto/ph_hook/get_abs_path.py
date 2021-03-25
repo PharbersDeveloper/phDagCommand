@@ -27,7 +27,7 @@ def get_job_name(kwargs):
 
 def get_result_path(kwargs, job_name=None):
     run_id = get_run_id(kwargs)
-    if job_name is None:
+    if not job_name:
         job_name = get_job_name(kwargs)
     if 'path_prefix' in kwargs:
         path_prefix = kwargs['path_prefix']
@@ -59,9 +59,7 @@ def get_depends_path(kwargs):
 
 
 def get_asset_path_prefix(kwargs):
-    run_time = get_run_time()
-    job_name = get_job_name(kwargs)
-    path_suffix = kwargs.get('path_suffix', dv.DEFAULT_ASSET_PATH_SUFFIX)
+    path_suffix = kwargs.get('asset_path_suffix', dv.DEFAULT_ASSET_PATH_SUFFIX)
     asset_path_prefix = dv.DEFAULT_ASSET_PATH_FORMAT_STR.format(
             bucket_name=dv.DEFAULT_ASSET_PATH_BUCKET,
             version=dv.DEFAULT_ASSET_PATH_VERSION,
