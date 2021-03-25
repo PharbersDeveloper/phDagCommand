@@ -11,7 +11,7 @@ def copy_asset_data(kwargs):
         base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
         dv.ASSUME_ROLE_EXTERNAL_ID,
     )
-    phs3 = PhS3(phsts=phsts)
+    phs3 = PhS3()
 
     source_bucket_name = kwargs['result_path_prefix'].split('/')[2]
     source_path_prefix = '/'.join(kwargs['result_path_prefix'].split('/')[3:])
