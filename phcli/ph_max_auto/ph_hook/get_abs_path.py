@@ -7,21 +7,20 @@ def get_run_time():
 
 
 def get_dag_name(kwargs):
-    dag_name = kwargs["dag_name"]
-    return dag_name
+    return kwargs.get("dag_name", "dag_name" + "hbzbao_dag_test")
 
 
 def get_run_id(kwargs):
-    return kwargs.get("run_id", "runid_" + "alfred_runner_test")
+    return kwargs.get("run_id", "run_id" + "alfred_runner_test")
 
 
 def get_job_full_name(kwargs):
-    job_name = kwargs["job_full_name"]
+    job_name = kwargs.get("job_full_name", "job_full_name" + "hbzhao_job_full_name_test")
     return job_name
 
 
 def get_job_name(kwargs):
-    job_name = kwargs["name"]
+    job_name = kwargs.get("name", "name" + "hbzhao_name_test")
     return job_name
 
 
@@ -85,7 +84,7 @@ if __name__ == '__main__':
     })
     print("path_prefixexist_suffixexist_result = " + path_prefixexist_suffixexist_result)
     assert(path_prefixexist_suffixexist_result == "s3a://exist/runid_alfred_runner_test/test_job/")
-
+    #
     path_prefixexist_suffixexist_depends_file_path = get_depends_file_path({
         "name": "test_job",
         "dag_name": "test_dag",
@@ -100,7 +99,7 @@ if __name__ == '__main__':
         "dag_name": "test_dag",
         "path_prefix": "s3a://exist",
         "path_suffix": "exist",
-        "depend_job_names_keys": '["effectiveness_adjust_mnf#mnf_adjust_result#mnf_adjust", "effectiveness_adjust_spec#spec_adjust_result#spec_adjust"]'
+        # "depend_job_names_keys": '["effectiveness_adjust_mnf#mnf_adjust_result#mnf_adjust", "effectiveness_adjust_spec#spec_adjust_result#spec_adjust"]'
     })
     print("prefixexist_suffixexist_depends_path = " + str(prefixexist_suffixexist_depends_path))
     assert len(prefixexist_suffixexist_depends_path) == 2
