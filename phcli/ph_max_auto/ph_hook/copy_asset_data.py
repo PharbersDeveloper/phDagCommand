@@ -12,6 +12,7 @@ def copy_asset_data(kwargs):
         dv.ASSUME_ROLE_EXTERNAL_ID,
     )
     phs3 = PhS3(phsts=phsts)
+
     source_bucket_name = kwargs['result_path_prefix'].split('/')[2]
     source_path_prefix = '/'.join(kwargs['result_path_prefix'].split('/')[3:])
     asset_path_prefix = get_asset_path_prefix(kwargs)
@@ -23,7 +24,7 @@ def copy_asset_data(kwargs):
     for source_file_path in files_path:
         if 'asset' in source_file_path:
             asset_file_path_suffix = source_file_path.replace(source_path_prefix, '')
-            target_file_path = asset_file_path\
+            target_file_path = asset_file_path \
                                + asset_file_path_suffix.split('/')[1] + '/' \
                                + run_time + '/' \
                                + asset_file_path_suffix.split('/')[2]
