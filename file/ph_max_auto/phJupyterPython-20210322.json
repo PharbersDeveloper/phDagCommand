@@ -85,8 +85,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "spark.sql(\"SHOW tables\").show()\n",
-    "spark.read.parquet(\"s3a://ph-stream/common/public/universe/0.0.1\").show()"
+    "spark.sql(\"SHOW tables\").show()\n"
    ]
   },
   {
@@ -95,7 +94,6 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "spark.sql(\"SHOW tables\").show()\n",
     "spark.read.parquet(\"s3a://ph-stream/common/public/universe/0.0.1\").show()"
    ]
   },

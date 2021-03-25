@@ -114,7 +114,7 @@ class PhIDEBase(object):
         if config.spec.containers.repository == "local":
             timeout = float(config.spec.containers.timeout) * 60
             entry_runtime = config.spec.containers.runtime
-            entry_runtime = self.table_driver_runtime_inst(self.runtime).table_driver_runtime_binary(entry_runtime)
+            entry_runtime = self.table_driver_runtime_inst(self.runtime)().table_driver_runtime_binary(entry_runtime)
             entry_point = config.spec.containers.code
             entry_point = self.job_path + '/' + entry_point
 

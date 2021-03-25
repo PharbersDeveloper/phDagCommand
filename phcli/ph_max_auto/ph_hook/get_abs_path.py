@@ -37,7 +37,6 @@ def get_result_path(kwargs, job_name=None):
             version=dv.DEFAULT_RESULT_PATH_VERSION,
             dag_name=get_dag_name(kwargs),
         ) + path_suffix
-
     return path_prefix + "/" + run_id + "/" + job_name + "/"
 
 
