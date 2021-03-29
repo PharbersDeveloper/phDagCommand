@@ -108,7 +108,7 @@ def create(**kwargs):
               prompt="The job strategy complete is [s2c = special to common, c2s = common to special]",
               help="The job strategy complete. [s2c = special to common, c2s = common to special]",
               type=click.Choice(["s2c", "c2s", 'auto']),
-              default="auto")
+              default="s2c")
 def complete(**kwargs):
     """
     补全一个 Job

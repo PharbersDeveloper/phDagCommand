@@ -26,7 +26,7 @@ def exec_after(*args, **kwargs):
     job_id = kwargs.get('job_id', None)
 
     lineage(job_id, kwargs)
-    copy_asset_data(kwargs)
+    # copy_asset_data(kwargs)
 
     return kwargs
 

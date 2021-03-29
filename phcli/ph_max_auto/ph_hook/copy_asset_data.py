@@ -11,6 +11,7 @@ def copy_asset_data(kwargs):
         base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
         dv.ASSUME_ROLE_EXTERNAL_ID,
     )
+    # boto3.setup_default_session(region_name="cn-northwest-1")
     phs3 = PhS3()
 
     source_bucket_name = kwargs['result_path_prefix'].split('/')[2]

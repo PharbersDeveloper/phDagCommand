@@ -15,8 +15,8 @@ def get_run_id(kwargs):
 
 
 def get_job_full_name(kwargs):
-    job_name = kwargs.get("job_full_name", "job_full_name" + "hbzhao_job_full_name_test")
-    return job_name
+    job_full_name = kwargs.get("job_full_name", "job_full_name" + "hbzhao_job_full_name_test")
+    return job_full_name
 
 
 def get_job_name(kwargs):
