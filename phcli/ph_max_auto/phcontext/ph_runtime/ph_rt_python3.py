@@ -177,10 +177,10 @@ class PhRTPython3(PhRTBase):
             for output in config.spec.containers.outputs:
                 output_key = output.key
                 output_value = output.value
-                if str.isdigit(output_value):
-                    new_output_row.insert(output_index, output_key + " = " + output_value + "\n")
+                if str.isdigit(str(output_value)):
+                    new_output_row.insert(output_index, output_key + " = " + str(output_value) + "\n")
                 else:
-                    new_output_row.insert(output_index, output_key + " = '" + output_value + "'\n")
+                    new_output_row.insert(output_index, output_key + " = '" + str(output_value) + "'\n")
             first_cell_source = first_cell_output_before_row + new_output_row + first_cell_output_after_row
             data['cells'][first_cell_index]['source'] = first_cell_source
             ##### 处理第一个输入框 #####

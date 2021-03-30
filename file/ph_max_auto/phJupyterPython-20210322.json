@@ -40,8 +40,8 @@
     "############## == preset function == ###################\n",
     "from phcli.ph_max_auto.ph_hook.get_abs_path import get_result_path\n",
     "from phcli.ph_max_auto.ph_hook.get_abs_path import get_depends_path\n",
-    "result_path_prefix = get_result_path({\"name\"=job_name})\n",
-    "depends_path = get_depends_path({\"name\"=job_name})\n",
+    "result_path_prefix = get_result_path({\"name\":job_name})\n",
+    "depends_path = get_depends_path({\"name\":job_name})\n",
     "############## == preset function == ###################\n"
    ]
   },
