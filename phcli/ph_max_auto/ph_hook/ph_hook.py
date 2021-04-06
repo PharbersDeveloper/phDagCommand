@@ -15,7 +15,7 @@ def exec_before(*args, **kwargs):
 
     return {
         'spark': spark_func,
-        'result_path_prefix': 's3://ph-max-auto/2020-08-11/data_matching/refactor/runs/manual__2021-01-18T04:49:20.117595+00:00/cleaning_data_normalization',
+        'result_path_prefix': result_path_prefix,
         'depends_path': depends_path,
     }
 
