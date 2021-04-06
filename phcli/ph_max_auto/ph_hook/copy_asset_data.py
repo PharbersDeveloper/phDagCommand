@@ -1,5 +1,6 @@
 import boto3
 import base64
+import os
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.ph_hook.get_abs_path import get_asset_path_prefix, get_run_time
 from phcli.ph_aws.ph_s3 import PhS3
@@ -11,9 +12,9 @@ def copy_asset_data(kwargs):
         base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
         dv.ASSUME_ROLE_EXTERNAL_ID,
     )
-    # boto3.setup_default_session(region_name="cn-northwest-1")
-    phs3 = PhS3()
-
+    access_key = os.getenv("AWS_ACCESS_KEY_ID")
+    secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+    phs3 = PhS3(access_key=access_key, secret_key=secret_key)
     source_bucket_name = kwargs['result_path_prefix'].split('/')[2]
     source_path_prefix = '/'.join(kwargs['result_path_prefix'].split('/')[3:])
     asset_path_prefix = get_asset_path_prefix(kwargs)
@@ -23,7 +24,7 @@ def copy_asset_data(kwargs):
 
     files_path = phs3.get_bucket_files_path(bucket_name=source_bucket_name, path_prefix=source_path_prefix)
     for source_file_path in files_path:
-        if 'asset' in source_file_path:
+        if 'result' in source_file_path:
             asset_file_path_suffix = source_file_path.replace(source_path_prefix, '')
             target_file_path = asset_file_path \
                                + asset_file_path_suffix.split('/')[1] + '/' \
