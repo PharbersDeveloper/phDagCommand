@@ -211,7 +211,7 @@ class PhRTPython3(PhRTBase):
             with open(source_path + "/phjob.py", "r") as phjob_flie:
                 line = phjob_flie.readline()
                 while line:
-                    while line.startswith('def'):
+                    while line.startswith('def') or line.startswith('@'):
                         demo = {
                             "cell_type": "code",
                             "execution_count": None,
@@ -219,9 +219,12 @@ class PhRTPython3(PhRTBase):
                             "outputs": [],
                             "source": []
                         }
+                        if line.startswith('@'):
+                            demo['source'].append(line)
+                            line = phjob_flie.readline()
                         demo['source'].append(line)
                         line = phjob_flie.readline()
-                        while not line.startswith('def') and not line == "":
+                        while not line.startswith('def') and not line.startswith('@') and not line == "":
                             demo['source'].append(line)
                             line = phjob_flie.readline()
                         data['cells'].append(demo)
