@@ -351,13 +351,16 @@ class PhRTPython3(PhRTBase):
             file.write("\n")
 
             # copy 逻辑代码
-            for cell in ipynb_dict['cells'][2:]:
+            for row in ipynb_dict['cells'][2]['source']:
+                row = re.sub(r'(^\s*)print(\(.*)', r"\1logger.debug\2", row)
+                row = re.sub(r'(^.*)kwargs\[[\\"|\'](.*)[\\"|\']\](.*)', r"\1\2\3", row)
+                file.write('    ' + row)
+            for cell in ipynb_dict['cells'][3:]:
                 for row in cell['source']:
                     row = re.sub(r'(^\s*)print(\(.*)', r"\1logger.debug\2", row)
                     row = re.sub(r'(^.*)kwargs\[[\\"|\'](.*)[\\"|\']\](.*)', r"\1\2\3", row)
-                    file.write('    '+row)
-                file.write('\r\n')
-                file.write('\r\n')
+                    file.write(row)
+
 
     def submit_run(self, **kwargs):
         submit_conf = {
