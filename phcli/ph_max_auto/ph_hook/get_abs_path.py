@@ -11,7 +11,10 @@ def get_dag_name(kwargs):
 
 
 def get_run_id(kwargs):
-    return kwargs.get("run_id", "run_id" + "alfred_runner_test")
+    run_id = kwargs["run_id"]
+    if not run_id:
+        run_id = "runid_" + "alfred_runner_test"
+    return run_id
 
 
 def get_job_full_name(kwargs):
