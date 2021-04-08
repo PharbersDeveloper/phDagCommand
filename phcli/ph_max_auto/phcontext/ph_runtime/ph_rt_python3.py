@@ -211,7 +211,7 @@ class PhRTPython3(PhRTBase):
             with open(source_path + "/phjob.py", "r") as phjob_flie:
                 line = phjob_flie.readline()
                 while line:
-                    while line.startswith('def') or line.startswith('@'):
+                    while line.startswith('def') or line.startswith('@') or line.startswith('    # %%'):
                         demo = {
                             "cell_type": "code",
                             "execution_count": None,
@@ -224,47 +224,50 @@ class PhRTPython3(PhRTBase):
                             line = phjob_flie.readline()
                         demo['source'].append(line)
                         line = phjob_flie.readline()
-                        while not line.startswith('def') and not line.startswith('@') and not line == "":
+                        while not line.startswith('def') and not line.startswith('@') and not line.startswith('    # %%') and not line == "":
                             demo['source'].append(line)
                             line = phjob_flie.readline()
                         data['cells'].append(demo)
                     line = phjob_flie.readline()
 
+                execute_indexes = []
                 for cell in data['cells']:
                     for source in cell['source']:
-                        if source.startswith('def execute'):
+                        if source.startswith('def execute') or source.startswith('    # %%'):
                             execute_index = data['cells'].index(cell)
+                            execute_indexes.append(execute_index)
 
-                empty_source = []
-                for execute_source_str in data['cells'][execute_index]['source']:
-                    if len(execute_source_str) - len(execute_source_str.lstrip()) >= indentation:
-                        if execute_source_str.lstrip().startswith('logger = '):
-                            continue
-                        elif execute_source_str.lstrip().startswith('spark = '):
-                            continue
-                        if execute_source_str.lstrip().startswith('result_path_prefix = '):
-                            continue
-                        if execute_source_str.lstrip().startswith('depends_path = '):
-                            continue
-                        if execute_source_str.lstrip().startswith('### input args ###'):
-                            continue
-                        if execute_source_str.lstrip().startswith('### output args ###'):
-                            continue
+                for execute_index in execute_indexes:
+                    empty_source = []
+                    for execute_source_str in data['cells'][execute_index]['source']:
+                        if len(execute_source_str) - len(execute_source_str.lstrip()) >= indentation:
+                            if execute_source_str.lstrip().startswith('logger = '):
+                                continue
+                            elif execute_source_str.lstrip().startswith('spark = '):
+                                continue
+                            if execute_source_str.lstrip().startswith('result_path_prefix = '):
+                                continue
+                            if execute_source_str.lstrip().startswith('depends_path = '):
+                                continue
+                            if execute_source_str.lstrip().startswith('### input args ###'):
+                                continue
+                            if execute_source_str.lstrip().startswith('### output args ###'):
+                                continue
 
-                        # logger 替换为 print
-                        execute_source_str = re.sub(r'\t*logger\.\w*\(([\'|\"]?.*?[\'|\"]?)\)$', r"print(\1)", execute_source_str)
-                        # 对简单 kwargs 删除，如 a = kwargs['a']
-                        kv_check = re.sub(r'\s*(.*)\s*=\s*kwargs\[[\'|\"](\w*?)[\'|\"]\]', r"\1,\2", execute_source_str)
-                        kv_check = kv_check.split(",")
-                        if len(kv_check) == 2 and kv_check[0].strip() == kv_check[1].strip():
-                            continue
+                            # logger 替换为 print
+                            execute_source_str = re.sub(r'\t*logger\.\w*\(([\'|\"]?.*?[\'|\"]?)\)$', r"print(\1)", execute_source_str)
+                            # 对简单 kwargs 删除，如 a = kwargs['a']
+                            kv_check = re.sub(r'\s*(.*)\s*=\s*kwargs\[[\'|\"](\w*?)[\'|\"]\]', r"\1,\2", execute_source_str)
+                            kv_check = kv_check.split(",")
+                            if len(kv_check) == 2 and kv_check[0].strip() == kv_check[1].strip():
+                                continue
 
-                        # 对复杂 kwargs 替换，如 a = kwargs['b'] + c ==> a = b + c
-                        execute_source_str = re.sub(r'^(.*)kwargs\[[\'|\"](\w*)[\'|\"]\](.*)', r"\1\2\3", execute_source_str)
-                        empty_source.append(execute_source_str[indentation:])
-                    elif execute_source_str.lstrip().startswith('#'):
-                        empty_source.append(execute_source_str)
-                data['cells'][execute_index]['source'] = empty_source
+                            # 对复杂 kwargs 替换，如 a = kwargs['b'] + c ==> a = b + c
+                            execute_source_str = re.sub(r'^(.*)kwargs\[[\'|\"](\w*)[\'|\"]\](.*)', r"\1\2\3", execute_source_str)
+                            empty_source.append(execute_source_str[indentation:])
+                        elif execute_source_str.lstrip().startswith('#'):
+                            empty_source.append(execute_source_str)
+                    data['cells'][execute_index]['source'] = empty_source
             ##### phjob 的内容 copy 到 .ipynb 下的其余 source 中 #####
 
             # 把 data 从字典转换成 json 格式, indent=1 进行换行，ensure_ascii防止汉字转成Unicode码
@@ -356,10 +359,17 @@ class PhRTPython3(PhRTBase):
                 row = re.sub(r'(^.*)kwargs\[[\\"|\'](.*)[\\"|\']\](.*)', r"\1\2\3", row)
                 file.write('    ' + row)
             for cell in ipynb_dict['cells'][3:]:
-                for row in cell['source']:
-                    row = re.sub(r'(^\s*)print(\(.*)', r"\1logger.debug\2", row)
-                    row = re.sub(r'(^.*)kwargs\[[\\"|\'](.*)[\\"|\']\](.*)', r"\1\2\3", row)
-                    file.write(row)
+                if cell['source'][0].startswith('# %%'):
+                    for row in cell['source']:
+                        row = re.sub(r'(^\s*)print(\(.*)', r"\1logger.debug\2", row)
+                        row = re.sub(r'(^.*)kwargs\[[\\"|\'](.*)[\\"|\']\](.*)', r"\1\2\3", row)
+                        file.write('    ' + row)
+                else:
+                    for row in cell['source']:
+                        row = re.sub(r'(^\s*)print(\(.*)', r"\1logger.debug\2", row)
+                        row = re.sub(r'(^.*)kwargs\[[\\"|\'](.*)[\\"|\']\](.*)', r"\1\2\3", row)
+                        file.write(row)
+                file.write('\r\n')
 
 
     def submit_run(self, **kwargs):
