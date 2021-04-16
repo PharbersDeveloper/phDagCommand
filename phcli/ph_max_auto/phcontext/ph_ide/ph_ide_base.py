@@ -361,8 +361,12 @@ class PhIDEBase(object):
         self.context = ast_parse(self.context)
         self.args = ast_parse(self.args)
 
+<<<<<<< Updated upstream
         group = self.group + "/" if self.group else ''
         self.s3_job_path = dv.DAGS_S3_PHJOBS_PATH + group + self.name
+=======
+        self.s3_job_path = dv.DAGS_S3_PHJOBS_PATH + self.dag_name + "/" + self.job_full_name
+>>>>>>> Stashed changes
         self.submit_prefix = "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + self.s3_job_path + "/"
 
         stream = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.s3_job_path + "/phconf.yaml")
