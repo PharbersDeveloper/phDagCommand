@@ -2,19 +2,14 @@ import os
 import subprocess
 
 from phcli.ph_max_auto import define_value as dv
+from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 
 
 class PhRTBase(object):
     """
     Runtime Base Class
     """
-    def c9_create_phmain(self, path=None):
-        raise NotImplementedError
 
-<<<<<<< Updated upstream
-    def jupyter_to_c9(self, dag_full_path, **kwargs):
-        raise NotImplementedError
-=======
     def table_driver_runtime_main_code(self, runtime):
         table = {
             "python3": "phmain.py",
@@ -59,7 +54,6 @@ class PhRTBase(object):
                 f.write("--" + output.key + "\n")
                 f.write(str(output.value) + "\n")
         f.close()
->>>>>>> Stashed changes
 
     def create(self, **kwargs):
         raise NotImplementedError
@@ -117,7 +111,9 @@ class PhRTBase(object):
         cmd_arr += [kwargs['submit_main']]
 
         cmd_arr += ['--owner', self.owner]
+        cmd_arr += ['--dag_name', self.dag_name]
         cmd_arr += ['--run_id', self.run_id]
+        cmd_arr += ['--job_full_name', self.job_full_name]
         cmd_arr += ['--job_id', self.job_id]
 
         # dag_run 优先 phconf 默认参数
@@ -148,7 +144,9 @@ class PhRTBase(object):
         cmd_arr += kwargs['entrypoint']
 
         cmd_arr += ['--owner', self.owner]
+        cmd_arr += ['--dag_name', self.dag_name]
         cmd_arr += ['--run_id', self.run_id]
+        cmd_arr += ['--job_full_name', self.job_full_name]
         cmd_arr += ['--job_id', self.job_id]
 
         # dag_run 优先 phconf 默认参数
