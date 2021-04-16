@@ -1,13 +1,19 @@
 import os
 import sys
 import ast
-import json
 import subprocess
+from enum import Enum
 
 from phcli.ph_errs.ph_err import *
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 from phcli.ph_max_auto.ph_preset_jobs.preset_job_factory import preset_factory
+
+
+class PhCompleteStrategy(Enum):
+    S2C = 'special to common'
+    C2S = 'common to special'
+    KEEP = 'keep still'
 
 
 class PhIDEBase(object):
@@ -29,6 +35,9 @@ class PhIDEBase(object):
         return os.getenv(dv.ENV_CUR_PROJ_KEY, dv.ENV_CUR_PROJ_DEFAULT)
 
     def get_absolute_path(self):
+        if 'name' not in self.__dict__ and 'job_full_name' in self.__dict__:
+            self.name = self.job_full_name
+
         project_path = self.get_workspace_dir() + '/' + self.get_current_project_dir()
         job_path = project_path + self.job_prefix + (self.group + '/' if 'group' in self.__dict__.keys() else '') + self.name
         combine_path = project_path + self.combine_prefix + self.name + '/'
@@ -55,13 +64,6 @@ class PhIDEBase(object):
                     self.logger.error('Termination Create')
                     sys.exit()
 
-    def table_driver_runtime_main_code(self, runtime):
-        table = {
-            "python3": "phmain.py",
-            "r": "phmain.R"
-        }
-        return table[runtime.strip('\"')]
-
     def table_driver_runtime_inst(self, runtime):
         from ..ph_runtime.ph_rt_python3 import PhRTPython3
         from ..ph_runtime.ph_rt_r import PhRTR
@@ -71,50 +73,70 @@ class PhIDEBase(object):
         }
         return table[runtime]
 
-    def table_driver_runtime_binary(self, runtime):
-        table = {
-            "bash": "/bin/bash",
-            "python3": "python3",
-            "r": "Rscript",
-        }
-        return table[runtime]
-
-    def create_phconf_file(self, path, **kwargs):
-        f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_PHCONF_FILE)
-        with open(path + "/phconf.yaml", "a") as file:
-            for line in f_lines:
-                line = line + "\n"
-                line = line.replace("$name", kwargs['name']) \
-                    .replace("$runtime", kwargs['runtime']) \
-                    .replace("$command", kwargs['command']) \
-                    .replace("$timeout", str(kwargs['timeout'])) \
-                    .replace("$code", self.table_driver_runtime_main_code(kwargs['runtime'])) \
-                    .replace("$input", kwargs['input_str']) \
-                    .replace("$output", kwargs['output_str'])
-                file.write(line)
-
     def create(self, **kwargs):
         """
         默认的创建过程
         """
-        self.logger.info('maxauto 默认的 create 实现')
+        self.logger.debug('maxauto 默认的 create 实现')
         self.logger.debug(self.__dict__)
 
         runtime_inst = self.table_driver_runtime_inst(self.runtime)
         runtime_inst(**self.__dict__).create()
 
+    def choice_complete_strategy(self, special_path, common_path):
+        special_last_modify_time = os.path.getmtime(special_path) if os.path.exists(special_path) else 0
+        common_last_modify_time = os.path.getmtime(common_path) if os.path.exists(common_path) else 0
+
+        if special_last_modify_time > common_last_modify_time:
+            return PhCompleteStrategy.S2C
+        elif special_last_modify_time < common_last_modify_time:
+            return PhCompleteStrategy.C2S
+        else:
+            return PhCompleteStrategy.KEEP
+
+    def complete(self, **kwargs):
+        """
+        默认的补全过程
+        """
+        self.logger.debug('maxauto 默认的 complete 实现')
+        self.logger.debug(self.__dict__)
+
     def run(self, **kwargs):
         """
         默认的运行过程
         """
-        self.logger.info('maxauto 默认的 run 实现')
+        self.logger.debug('maxauto 默认的 run 实现')
         self.logger.debug(self.__dict__)
+
+        config = PhYAMLConfig(self.job_path)
+        config.load_yaml()
+
+        if config.spec.containers.repository == "local":
+            timeout = float(config.spec.containers.timeout) * 60
+            entry_runtime = config.spec.containers.runtime
+            entry_runtime = self.table_driver_runtime_inst(self.runtime)().table_driver_runtime_binary(entry_runtime)
+            entry_point = config.spec.containers.code
+            entry_point = self.job_path + '/' + entry_point
+
+            cb = [entry_runtime, entry_point]
+            for arg in config.spec.containers.args:
+                cb.append("--" + arg.key)
+                cb.append(str(arg.value))
+            for output in config.spec.containers.outputs:
+                cb.append("--" + output.key)
+                cb.append(str(output.value))
+            prc = subprocess.run(cb, timeout=timeout, stderr=subprocess.PIPE)
+            if prc.returncode != 0:
+                raise Exception(prc.stderr.decode('utf-8'))
+            return
+        else:
+            raise exception_function_not_implement
 
     def combine(self, **kwargs):
         """
         默认的关联过程
         """
-        self.logger.info('maxauto 默认的 combine 实现')
+        self.logger.debug('maxauto 默认的 combine 实现')
         self.logger.debug(self.__dict__)
 
         self.check_path(self.combine_path)
@@ -139,45 +161,6 @@ class PhIDEBase(object):
                             .replace("$jobs", jobs_str)
                 file.write(line + "\n")
 
-    def yaml2args(self, path):
-        config = PhYAMLConfig(path)
-        config.load_yaml()
-
-        f = open(path + "/args.properties", "a")
-        for arg in config.spec.containers.args:
-            if arg.value != "":
-                f.write("--" + arg.key + "\n")
-                f.write(str(arg.value) + "\n")
-
-        for output in config.spec.containers.outputs:
-            if output.value != "":
-                f.write("--" + output.key + "\n")
-                f.write(str(output.value) + "\n")
-        f.close()
-
-    def get_ipynb_map_by_key(self, source, key):
-        """
-        获取 ipynb 中定义的配置
-        :param source: ipynb 中的文本行
-        :param key: 需要获得的字典，可以是 config、input args、output args
-        :return:
-        """
-        range = []
-        for i, row in enumerate(source):
-            if "== {} ==".format(key) in row:
-                range.append(i)
-        source = source[range[0]+1: range[1]]
-
-        result = {}
-        for row in source:
-            if row and '=' in row:
-                r = row.split('=')
-                result[r[0].strip()] = eval(r[-1].strip())
-        return result
-
-    def dag_copy_job(self, **kwargs):
-        raise NotImplementedError
-
     def get_dag_py_file_name(self, key):
         return "ph_dag_" + key + ".py"
 
@@ -185,7 +168,7 @@ class PhIDEBase(object):
         """
         默认的DAG过程
         """
-        self.logger.info('maxauto 默认的 dag 实现')
+        self.logger.debug('maxauto 默认的 dag 实现')
         self.logger.debug(self.__dict__)
 
         self.check_path(self.dag_path)
@@ -224,19 +207,6 @@ class PhIDEBase(object):
                         'command': config.spec.containers.command,
                         'timeout': config.spec.containers.timeout,
                     }
-                elif os.path.exists(job_full_path+'.ipynb') and os.path.isfile(job_full_path+'.ipynb'):
-                    with open(job_full_path+'.ipynb', 'r') as rf:
-                        load_dict = json.load(rf)
-                        source = load_dict['cells'][0]['source']
-                        cm = self.get_ipynb_map_by_key(source, 'config')
-
-                        return {
-                            'name': cm['job_name'],
-                            'ide': 'jupyter',
-                            'runtime': cm['job_runtime'],
-                            'command': cm['job_command'],
-                            'timeout': cm['job_timeout'],
-                        }
                 else:
                     raise Exception("{} job not found".format(name))
 
@@ -248,7 +218,6 @@ class PhIDEBase(object):
         def copy_jobs(jobs_conf):
             ide_dag_copy_job_func_table = {
                 'c9': self.ide_table['c9'](**self.__dict__).dag_copy_job,
-                'jupyter': self.ide_table['jupyter'](**self.__dict__).dag_copy_job,
                 'preset': preset_factory,
             }
 
@@ -310,7 +279,7 @@ class PhIDEBase(object):
         """
         默认的发布过程
         """
-        self.logger.info('maxauto 默认的 publish 实现')
+        self.logger.debug('maxauto 默认的 publish 实现')
         self.logger.debug(self.__dict__)
 
         for key in os.listdir(self.dag_path):
@@ -331,7 +300,7 @@ class PhIDEBase(object):
         """
         默认的召回过程
         """
-        self.logger.info('maxauto 默认的 recall 实现')
+        self.logger.debug('maxauto 默认的 recall 实现')
         self.logger.debug(self.__dict__)
 
         self.phs3.delete_dir(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name)
@@ -341,7 +310,7 @@ class PhIDEBase(object):
         """
         默认的 online_run 过程
         """
-        self.logger.info('maxauto 默认的 online_run 实现')
+        self.logger.debug('maxauto 默认的 online_run 实现')
         self.logger.debug(self.__dict__)
 
         def ast_parse(string):
@@ -361,8 +330,8 @@ class PhIDEBase(object):
         self.context = ast_parse(self.context)
         self.args = ast_parse(self.args)
 
-        group = self.group + "/" if self.group else ''
-        self.s3_job_path = dv.DAGS_S3_PHJOBS_PATH + group + self.name
+        self.s3_job_path = dv.DAGS_S3_PHJOBS_PATH + self.dag_name + "/" + self.job_full_name
+        print(self.s3_job_path)
         self.submit_prefix = "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + self.s3_job_path + "/"
 
         stream = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.s3_job_path + "/phconf.yaml")
@@ -379,5 +348,5 @@ class PhIDEBase(object):
         """
         默认的查看运行状态
         """
-        self.logger.info('maxauto 默认的 status 实现')
+        self.logger.debug('maxauto 默认的 status 实现')
         self.logger.debug(self.__dict__)
