@@ -43,7 +43,7 @@ class PhRTBase(object):
         config = PhYAMLConfig(path)
         config.load_yaml()
 
-        f = open(path + "/args.properties", "a")
+        f = open(path + "/args.properties", "w")
         for arg in config.spec.containers.args:
             if arg.value != "":
                 f.write("--" + arg.key + "\n")
