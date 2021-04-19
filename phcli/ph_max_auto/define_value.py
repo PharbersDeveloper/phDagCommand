@@ -42,6 +42,7 @@ DEFAULT_ASSET_PATH_BUCKET = 'ph-max-auto'
 DEFAULT_ASSET_PATH_VERSION = "2020-08-11"
 DEFAULT_ASSET_PATH_SUFFIX = "asset"
 
-
+DEFAULT_MACHINE_TYPE = 'STANDARD'
+DEFAULT_MACHINE_ARN_SUFFIX = 'arn:aws-cn:states:cn-northwest-1:444603803904:stateMachine:'
 
 PRESET_MUST_ARGS = 'owner, dag_name, run_id, job_full_name, job_id'

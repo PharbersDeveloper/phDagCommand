@@ -2,6 +2,7 @@ import os
 import sys
 import ast
 import subprocess
+import boto3
 from enum import Enum
 
 from phcli.ph_errs.ph_err import *
@@ -297,10 +298,26 @@ class PhIDEBase(object):
                         s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
                     )
         if self.strategy == "v3":
-             = self.get_workspace_dir() + '/' + self.get_current_project_dir() + self.dag_prefix
+            definition = {}
+            for key in os.listdir(self.dag_path):
+                if os.path.isfile(self.dag_path + key):
+                    # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
 
-            pass
+            for key in os.listdir(self.dag_path):
+                if os.path.isdir(self.dag_path + key):
+                    # 1.下载step模板
+                    # 2.替换step_name
+                    # 3.Step Args 添加 "--py-files", "phjob.py",“phmain.py”
+                    # 4.遍历 dag_path + key 目录下的 args.properties 中的 参数连接到 Step Args 后面
+                    # 5.将每一个step模板插入
 
+            client = boto3.client('stepfunctions')
+            client.client.create_state_machine(
+                name=self.name,
+                definition=definition,
+                roleArn=os.getenv("DEFAULT_ROLE_ARN"),
+                type=dv.DEFAULT_MACHINE_TYPE,
+            )
 
     def recall(self, **kwargs):
         """
