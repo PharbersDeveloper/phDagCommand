@@ -282,19 +282,25 @@ class PhIDEBase(object):
         self.logger.debug('maxauto 默认的 publish 实现')
         self.logger.debug(self.__dict__)
 
-        for key in os.listdir(self.dag_path):
-            if os.path.isfile(self.dag_path + key):
-                self.phs3.upload(
-                    file=self.dag_path+key,
-                    bucket_name=dv.DAGS_S3_BUCKET,
-                    object_name=dv.DAGS_S3_PREV_PATH + key
-                )
-            else:
-                self.phs3.upload_dir(
-                    dir=self.dag_path+key,
-                    bucket_name=dv.TEMPLATE_BUCKET,
-                    s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
-                )
+        if self.strategy == "v2":
+            for key in os.listdir(self.dag_path):
+                if os.path.isfile(self.dag_path + key):
+                    self.phs3.upload(
+                        file=self.dag_path+key,
+                        bucket_name=dv.DAGS_S3_BUCKET,
+                        object_name=dv.DAGS_S3_PREV_PATH + key
+                    )
+                else:
+                    self.phs3.upload_dir(
+                        dir=self.dag_path+key,
+                        bucket_name=dv.TEMPLATE_BUCKET,
+                        s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
+                    )
+        if self.strategy == "v3":
+             = self.get_workspace_dir() + '/' + self.get_current_project_dir() + self.dag_prefix
+
+            pass
+
 
     def recall(self, **kwargs):
         """
