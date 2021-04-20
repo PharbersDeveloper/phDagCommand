@@ -283,6 +283,42 @@ class PhIDEBase(object):
         self.logger.debug('maxauto 默认的 publish 实现')
         self.logger.debug(self.__dict__)
 
+        def create_main_branch(flow, definition):
+
+            jobs = []
+            for job_name in flow.split(' >> '):
+                if job_name.startswith('['):
+                    print(job_name)
+                    jobs.append(job_name)
+                    definition['States'][job_name] = {
+                        "Type": "Parallel",
+                        "Branches": []
+                    }
+                    for parallel_job in job_name.strip('[]').replace(' ', '').split(','):
+                        step_tmp = {
+                            "StartAt": "",
+                            "States": {}
+                        }
+                        step_tmp.update({'StartAt': parallel_job})
+                        definition['States'][job_name]['Branches'].append(step_tmp)
+                else:
+                    print(job_name)
+                    jobs.append(job_name)
+                    definition['States'][job_name] = {}
+            # 获取开始的function
+            definition['StartAt'] = next(iter(definition['States']))
+            print(jobs)
+            for job in jobs:
+                if job in definition['States'].keys():
+                    if jobs.index(job) + 1 == len(jobs):
+                        definition['States'][job]['End'] = True
+                    else:
+                        definition['States'][job]['Next'] = jobs[jobs.index(job) + 1]
+            print(definition)
+            print(json.dumps(definition))
+            return json.dumps(definition)
+
+
         if self.strategy == "v2":
             for key in os.listdir(self.dag_path):
                 if os.path.isfile(self.dag_path + key):
@@ -298,10 +334,25 @@ class PhIDEBase(object):
                         s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
                     )
         if self.strategy == "v3":
-            definition = {}
             for key in os.listdir(self.dag_path):
                 if os.path.isfile(self.dag_path + key):
                     # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
+                    flows = []
+                    with open(source_path + key, "r") as dag_file:
+                        line = dag_file.readline()
+                        while line:
+                            while ">>" in line:
+                                flows.append(line.rstrip('\n'))
+                                break
+                            line = dag_file.readline()
+                    definition = {
+                        "StartAt": "",
+                        "States": {}
+                    }
+                    definition = create_main_branch(flows[0], definition)
+                    for flow in flows:
+                        if flows.index(flow) != 0:
+                            definition = insert2main(flow, definition)
 
             for key in os.listdir(self.dag_path):
                 if os.path.isdir(self.dag_path + key):
@@ -310,7 +361,7 @@ class PhIDEBase(object):
                     # 3.Step Args 添加 "--py-files", "phjob.py",“phmain.py”
                     # 4.遍历 dag_path + key 目录下的 args.properties 中的 参数连接到 Step Args 后面
                     # 5.将每一个step模板插入
-
+                    pass
             client = boto3.client('stepfunctions')
             client.client.create_state_machine(
                 name=self.name,
