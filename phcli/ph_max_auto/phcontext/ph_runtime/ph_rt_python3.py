@@ -311,9 +311,9 @@ class PhRTPython3(PhRTBase):
             om = get_ipynb_map_by_key(source, 'output args')
 
         # 4. 将读取的配置和参数写到 phconf.yaml 中
-        input_str = ["- key: {}\n        value: {}".format(k, v) for k, v in im.items()]
+        input_str = ["- key: {}\n        value: '{}'".format(k, v) for k, v in im.items()]
         input_str = '\n      '.join(input_str)
-        output_str = ["- key: {}\n        value: {}".format(k, v) for k, v in om.items()]
+        output_str = ["- key: {}\n        value: '{}'".format(k, v) for k, v in om.items()]
         output_str = '\n      '.join(output_str)
         self.create_phconf_file(path=target_path, input_str=input_str, output_str=output_str,
                                 name=cm['job_name'], runtime=cm['job_runtime'],
@@ -370,7 +370,6 @@ class PhRTPython3(PhRTBase):
                         row = re.sub(r'(^.*)kwargs\[[\\"|\'](.*)[\\"|\']\](.*)', r"\1\2\3", row)
                         file.write(row)
                 file.write('\r\n')
-
 
     def submit_run(self, **kwargs):
         submit_conf = {
