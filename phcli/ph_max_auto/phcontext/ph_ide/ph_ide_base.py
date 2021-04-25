@@ -283,40 +283,88 @@ class PhIDEBase(object):
         self.logger.debug('maxauto 默认的 publish 实现')
         self.logger.debug(self.__dict__)
 
-        def create_main_branch(flow, definition):
-
-            jobs = []
-            for job_name in flow.split(' >> '):
-                if job_name.startswith('['):
-                    print(job_name)
-                    jobs.append(job_name)
-                    definition['States'][job_name] = {
-                        "Type": "Parallel",
-                        "Branches": []
-                    }
-                    for parallel_job in job_name.strip('[]').replace(' ', '').split(','):
-                        step_tmp = {
-                            "StartAt": "",
-                            "States": {}
-                        }
-                        step_tmp.update({'StartAt': parallel_job})
-                        definition['States'][job_name]['Branches'].append(step_tmp)
-                else:
-                    print(job_name)
-                    jobs.append(job_name)
-                    definition['States'][job_name] = {}
-            # 获取开始的function
-            definition['StartAt'] = next(iter(definition['States']))
-            print(jobs)
+        def write_data(jobs, definition):
             for job in jobs:
                 if job in definition['States'].keys():
                     if jobs.index(job) + 1 == len(jobs):
                         definition['States'][job]['End'] = True
+                        if not job.startswith('['):
+                            definition['States'][job]['Type'] = "Task"
+                            definition['States'][job]['Resource'] = Resource
+                            definition['States'][job]['Parameters'] = Parameters
+                            definition['States'][job]['ResultPath'] = "$.firstStep"
                     else:
                         definition['States'][job]['Next'] = jobs[jobs.index(job) + 1]
-            print(definition)
-            print(json.dumps(definition))
-            return json.dumps(definition)
+                        if not job.startswith('['):
+                            definition['States'][job]['Type'] = "Task"
+                            definition['States'][job]['Resource'] = Resource
+                            definition['States'][job]['Parameters'] = Parameters
+                            definition['States'][job]['ResultPath'] = "$.firstStep"
+            return definition
+
+        def create_parallel(states, job_name):
+            if job_name.startswith('['):
+                states[job_name] = {
+                    "Type": "Parallel",
+                    "Branches": []
+                }
+                # 取出[]中的并行的job
+                for parallel_job in job_name.strip('[]').replace(' ', '').split(','):
+                    step_tmp = {
+                        "StartAt": "",
+                        "States": {}
+                    }
+                    step_tmp.update({'StartAt': parallel_job})
+                    # 遍历除第一行主分支的策略
+                    for flow in flows:
+                        # 如果有一行是以并行job开头，说明并行job还有延续，如果没有则States只有本身
+                        if flow.startswith(parallel_job):
+                            flow_jobs = []
+                            # 根据 >> 进行分割
+                            for flow_job_name in flow.split(' >> '):
+                                flow_jobs.append(flow_job_name)
+                                step_tmp['States'].update({flow_job_name: {}})
+                                # 二次嵌套
+                                if flow_job_name.startswith('['):
+                                    flow_parallel_jobs = []
+                                    step_tmp['States'][flow_job_name] = {
+                                        "Type": "Parallel",
+                                        "Branches": []
+                                    }
+                                    for flow_parallel_job in flow_job_name.strip('[]').replace(' ', '').split(','):
+                                        flow_parallel_jobs.append(flow_parallel_job)
+                                        flow_step_tmp = {
+                                            "StartAt": "",
+                                            "States": {}
+                                        }
+                                        flow_step_tmp.update({'StartAt': flow_parallel_job})
+                                        for second_flow in flows:
+                                            if second_flow.startswith(flow_parallel_job):
+                                                second_flow_jobs = []
+                                                # 根据 >> 进行分割
+                                                for second_flow_job_name in second_flow.split(' >> '):
+                                                    second_flow_jobs.append(second_flow_job_name)
+                                                    flow_step_tmp['States'].update({second_flow_job_name: {}})
+                                                write_data(second_flow_jobs, flow_step_tmp)
+                                        if flow_step_tmp['States'] == {}:
+                                            flow_step_tmp['States'].update({flow_step_tmp['StartAt']: {'End': True}})
+                                            flow_step_tmp['States'][flow_step_tmp['StartAt']]['Type'] = "Task"
+                                            flow_step_tmp['States'][flow_step_tmp['StartAt']]['Resource'] = Resource
+                                            flow_step_tmp['States'][flow_step_tmp['StartAt']]['Parameters'] = Parameters
+                                            flow_step_tmp['States'][flow_step_tmp['StartAt']][
+                                                'ResultPath'] = "$.firstStep"
+                                        step_tmp['States'][flow_job_name]['Branches'].append(flow_step_tmp)
+                                    write_data(flow_parallel_jobs, flow_step_tmp)
+                            write_data(flow_jobs, step_tmp)
+                    # 判断States是否为空 如果为空 说明没有其他延续 则本身作为States
+                    if step_tmp['States'] == {}:
+                        step_tmp['States'].update({step_tmp['StartAt']: {'End': True}})
+                        step_tmp['States'][step_tmp['StartAt']]['Type'] = "Task"
+                        step_tmp['States'][step_tmp['StartAt']]['Resource'] = Resource
+                        step_tmp['States'][step_tmp['StartAt']]['Parameters'] = Parameters
+                        step_tmp['States'][step_tmp['StartAt']]['ResultPath'] = "$.firstStep"
+                    states[job_name]['Branches'].append(step_tmp)
+            return states
 
 
         if self.strategy == "v2":
@@ -336,9 +384,30 @@ class PhIDEBase(object):
         if self.strategy == "v3":
             for key in os.listdir(self.dag_path):
                 if os.path.isfile(self.dag_path + key):
+                    Parameters = {
+                        "ClusterId.$": "$.clusterId",
+                        "Step": {
+                            "Name": "My second EMR step",
+                            "ActionOnFailure": "CONTINUE",
+                            "HadoopJarStep": {
+                                "Jar": "command-runner.jar",
+                                "Args": ["spark-submit",
+                                         "--deploy-mode", "cluster",
+                                         "s3://ph-test-emr/health_violations.py",
+                                         "--data_source", "s3://ph-test-emr/food_establishment_data.csv",
+                                         "--output_uri", "s3://ph-test-emr/myOutputFolder2"]
+                            }
+                        }
+                    }
+                    Resource = "arn:aws-cn:states:::elasticmapreduce:addStep.sync"
                     # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
+                    # 策略的每一行，存放到每一个列表
                     flows = []
-                    with open(source_path + key, "r") as dag_file:
+                    # 一行中每一个job的名称
+                    jobs = []
+                    # 状态机的所有states
+                    states = {}
+                    with open(self.dag_path + key, "r") as dag_file:
                         line = dag_file.readline()
                         while line:
                             while ">>" in line:
@@ -353,6 +422,18 @@ class PhIDEBase(object):
                     for flow in flows:
                         if flows.index(flow) != 0:
                             definition = insert2main(flow, definition)
+                    for job_name in flows[0].split(' >> '):
+                        states[job_name] = {}
+                        jobs.append(job_name)
+                        # 若果是以"[" 开头的job 对并行的job进行操作
+                        states = create_parallel(states, job_name)
+                    definition = {
+                        "StartAt": "",
+                        "States": {}
+                    }
+                    definition['StartAt'] = list(states.keys())[0]
+                    definition['States'] = states
+                    write_data(jobs, definition)
 
             for key in os.listdir(self.dag_path):
                 if os.path.isdir(self.dag_path + key):
