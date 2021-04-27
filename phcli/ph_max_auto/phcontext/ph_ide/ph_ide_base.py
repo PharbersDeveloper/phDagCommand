@@ -3,12 +3,15 @@ import sys
 import ast
 import subprocess
 import boto3
+import json
+import time
 from enum import Enum
 
 from phcli.ph_errs.ph_err import *
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 from phcli.ph_max_auto.ph_preset_jobs.preset_job_factory import preset_factory
+
 
 
 class PhCompleteStrategy(Enum):
@@ -283,14 +286,40 @@ class PhIDEBase(object):
         self.logger.debug('maxauto 默认的 publish 实现')
         self.logger.debug(self.__dict__)
 
-        def write_data(jobs, definition):
+        def write_data(jobs, definition, s3_dag_path, args_path, excution_name):
             for job in jobs:
+                Parameters = {
+                    "ClusterId.$": "$.clusterId",
+                    "Step": {
+                        "Name": "My EMR step",
+                        "ActionOnFailure": "CONTINUE",
+                        "HadoopJarStep": {
+                            "Jar": "command-runner.jar",
+                            "Args": ["spark-submit",
+                                     "--deploy-mode", "cluster",
+                                     "--py-files",
+                                     "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-3.0.0-py3.8.egg," + s3_dag_path + job + "/phjob.py",
+                                     s3_dag_path + job + "/phmain.py",
+                                     "--owner", "default_owner",
+                                     "--dag_name", s3_dag_path.split('/')[-2],
+                                     "--run_id", s3_dag_path.split('/')[-2] + "_" +excution_name,
+                                     "--job_full_name", job,
+                                     "--job_id", "not_implementation",
+                                     ]
+                        }
+                    }
+                }
                 if job in definition['States'].keys():
                     if jobs.index(job) + 1 == len(jobs):
                         definition['States'][job]['End'] = True
                         if not job.startswith('['):
                             definition['States'][job]['Type'] = "Task"
                             definition['States'][job]['Resource'] = Resource
+                            with open(args_path, "r") as args_file:
+                                arg_line = args_file.readline()
+                                while arg_line:
+                                    Parameters['Step']['HadoopJarStep']['Args'].append(arg_line.rstrip('\n'))
+                                    arg_line = args_file.readline()
                             definition['States'][job]['Parameters'] = Parameters
                             definition['States'][job]['ResultPath'] = "$.firstStep"
                     else:
@@ -298,11 +327,16 @@ class PhIDEBase(object):
                         if not job.startswith('['):
                             definition['States'][job]['Type'] = "Task"
                             definition['States'][job]['Resource'] = Resource
+                            with open(args_path, "r") as args_file:
+                                arg_line = args_file.readline()
+                                while arg_line:
+                                    Parameters['Step']['HadoopJarStep']['Args'].append(arg_line.rstrip('\n'))
+                                    arg_line = args_file.readline()
                             definition['States'][job]['Parameters'] = Parameters
                             definition['States'][job]['ResultPath'] = "$.firstStep"
             return definition
 
-        def create_parallel(states, job_name):
+        def create_parallel(states, job_name, s3_dag_path, args_path, excution_name):
             if job_name.startswith('['):
                 states[job_name] = {
                     "Type": "Parallel",
@@ -345,7 +379,7 @@ class PhIDEBase(object):
                                                 for second_flow_job_name in second_flow.split(' >> '):
                                                     second_flow_jobs.append(second_flow_job_name)
                                                     flow_step_tmp['States'].update({second_flow_job_name: {}})
-                                                write_data(second_flow_jobs, flow_step_tmp)
+                                                write_data(second_flow_jobs, flow_step_tmp, s3_dag_path, args_path, excution_name)
                                         if flow_step_tmp['States'] == {}:
                                             flow_step_tmp['States'].update({flow_step_tmp['StartAt']: {'End': True}})
                                             flow_step_tmp['States'][flow_step_tmp['StartAt']]['Type'] = "Task"
@@ -354,8 +388,8 @@ class PhIDEBase(object):
                                             flow_step_tmp['States'][flow_step_tmp['StartAt']][
                                                 'ResultPath'] = "$.firstStep"
                                         step_tmp['States'][flow_job_name]['Branches'].append(flow_step_tmp)
-                                    write_data(flow_parallel_jobs, flow_step_tmp)
-                            write_data(flow_jobs, step_tmp)
+                                    write_data(flow_parallel_jobs, flow_step_tmp, s3_dag_path, args_path, excution_name)
+                            write_data(flow_jobs, step_tmp, s3_dag_path, args_path, excution_name)
                     # 判断States是否为空 如果为空 说明没有其他延续 则本身作为States
                     if step_tmp['States'] == {}:
                         step_tmp['States'].update({step_tmp['StartAt']: {'End': True}})
@@ -365,7 +399,6 @@ class PhIDEBase(object):
                         step_tmp['States'][step_tmp['StartAt']]['ResultPath'] = "$.firstStep"
                     states[job_name]['Branches'].append(step_tmp)
             return states
-
 
         if self.strategy == "v2":
             for key in os.listdir(self.dag_path):
@@ -381,24 +414,47 @@ class PhIDEBase(object):
                         bucket_name=dv.TEMPLATE_BUCKET,
                         s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
                     )
+
         if self.strategy == "v3":
+            excution_name = self.name + "_" + time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
             for key in os.listdir(self.dag_path):
                 if os.path.isfile(self.dag_path + key):
-                    Parameters = {
-                        "ClusterId.$": "$.clusterId",
-                        "Step": {
-                            "Name": "My second EMR step",
-                            "ActionOnFailure": "CONTINUE",
-                            "HadoopJarStep": {
-                                "Jar": "command-runner.jar",
-                                "Args": ["spark-submit",
-                                         "--deploy-mode", "cluster",
-                                         "s3://ph-test-emr/health_violations.py",
-                                         "--data_source", "s3://ph-test-emr/food_establishment_data.csv",
-                                         "--output_uri", "s3://ph-test-emr/myOutputFolder2"]
-                            }
-                        }
-                    }
+                    self.phs3.upload(
+                        file=self.dag_path+key,
+                        bucket_name=dv.DAGS_S3_BUCKET,
+                        object_name=dv.DAGS_S3_PREV_PATH + key
+                    )
+                else:
+                    self.phs3.upload_dir(
+                        dir=self.dag_path+key,
+                        bucket_name=dv.TEMPLATE_BUCKET,
+                        s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
+                    )
+                s3_dag_path = "s3://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/"
+                if os.path.isdir(self.dag_path + key):
+                    args_path = self.dag_path + key + "/" + "args.properties"
+                if os.path.isfile(self.dag_path + key):
+                    # Parameters = {
+                    #     "ClusterId.$": "$.clusterId",
+                    #     "Step": {
+                    #         "Name": "My second EMR step",
+                    #         "ActionOnFailure": "CONTINUE",
+                    #         "HadoopJarStep": {
+                    #             "Jar": "command-runner.jar",
+                    #             "Args": ["spark-submit",
+                    #                      "--deploy-mode", "cluster",
+                    #                      "--py-files",
+                    #                      "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-2.2.1-py3.8.egg," + s3_dag_path + "/phjob.py",
+                    #                      s3_dag_path + "/phmain.py",
+                    #                      "--owner", "$.owner",
+                    #                      "--dag_name", "$.dag_name",
+                    #                      "--run_id", "$.run_id",
+                    #                      "--job_full_name", "$.job_full_name",
+                    #                      "--job_id", "$.job_id",
+                    #                      ]
+                    #         }
+                    #     }
+                    # }
                     Resource = "arn:aws-cn:states:::elasticmapreduce:addStep.sync"
                     # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
                     # 策略的每一行，存放到每一个列表
@@ -414,42 +470,36 @@ class PhIDEBase(object):
                                 flows.append(line.rstrip('\n'))
                                 break
                             line = dag_file.readline()
-                    definition = {
-                        "StartAt": "",
-                        "States": {}
-                    }
-                    definition = create_main_branch(flows[0], definition)
-                    for flow in flows:
-                        if flows.index(flow) != 0:
-                            definition = insert2main(flow, definition)
                     for job_name in flows[0].split(' >> '):
                         states[job_name] = {}
                         jobs.append(job_name)
                         # 若果是以"[" 开头的job 对并行的job进行操作
-                        states = create_parallel(states, job_name)
+                        states = create_parallel(states, job_name, s3_dag_path, args_path, excution_name)
                     definition = {
                         "StartAt": "",
                         "States": {}
                     }
                     definition['StartAt'] = list(states.keys())[0]
                     definition['States'] = states
-                    write_data(jobs, definition)
+                    write_data(jobs, definition, s3_dag_path, args_path, excution_name)
+                    create_definition = json.dumps(definition)
+                    client = boto3.client('stepfunctions')
 
-            for key in os.listdir(self.dag_path):
-                if os.path.isdir(self.dag_path + key):
-                    # 1.下载step模板
-                    # 2.替换step_name
-                    # 3.Step Args 添加 "--py-files", "phjob.py",“phmain.py”
-                    # 4.遍历 dag_path + key 目录下的 args.properties 中的 参数连接到 Step Args 后面
-                    # 5.将每一个step模板插入
-                    pass
-            client = boto3.client('stepfunctions')
-            client.client.create_state_machine(
-                name=self.name,
-                definition=definition,
-                roleArn=os.getenv("DEFAULT_ROLE_ARN"),
-                type=dv.DEFAULT_MACHINE_TYPE,
-            )
+                    response = client.create_state_machine(
+                        name=self.name,
+                        definition=create_definition,
+                        roleArn=os.getenv("DEFAULT_ROLE_ARN"),
+                        type=dv.DEFAULT_MACHINE_TYPE,
+                    )
+                    machine_input = {
+                        'clusterId': self.cluster_id
+                    }
+                    client.start_execution(
+                        stateMachineArn=response['stateMachineArn'],
+                        name=excution_name,
+                        input=json.dumps(machine_input)
+                    )
+
 
     def recall(self, **kwargs):
         """

@@ -211,6 +211,9 @@ def dag(**kwargs):
               help="The publish strategy is [v2 = publish to airflow, v3 = publish tp step_functions]",
               type=click.Choice(["v2", "v3"]),
               default="v2")
+@click.option("-c", "--cluster_id",
+              prompt="The emr cluster_id is",
+              help="The emr cluster_id.")
 def publish(**kwargs):
     """
     发布 DAG 运行文件和相关依赖
@@ -219,6 +222,7 @@ def publish(**kwargs):
         context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_publish_exec()
     except Exception as e:
+        print()
         put_metric("maxauto.publish", "failed")
         click.secho("发布失败: " + str(e), fg='red', blink=True, bold=True)
     else:
