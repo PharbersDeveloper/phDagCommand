@@ -8,17 +8,13 @@ from phcli.ph_aws.ph_sts import PhSts
 
 
 def copy_asset_data(kwargs):
-    if 'spark' in kwargs.keys():
-        spark = kwargs['spark']()
-        access_key = spark._jsc.hadoopConfiguration().get("fs.s3a.access.key")
-        secret_key = spark._jsc.hadoopConfiguration().get("fs.s3a.secret.key")
-    else:
-        phsts = PhSts().assume_role(
-            base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
-            dv.ASSUME_ROLE_EXTERNAL_ID,
-        )
-        access_key = os.getenv("AWS_ACCESS_KEY_ID")
-        secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+
+    phsts = PhSts().assume_role(
+        base64.b64decode(dv.ASSUME_ROLE_ARN).decode(),
+        dv.ASSUME_ROLE_EXTERNAL_ID,
+    )
+    access_key = os.getenv("AWS_ACCESS_KEY_ID")
+    secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
     phs3 = PhS3(access_key=access_key, secret_key=secret_key)
     source_bucket_name = kwargs['result_path_prefix'].split('/')[2]
     source_path_prefix = '/'.join(kwargs['result_path_prefix'].split('/')[3:])

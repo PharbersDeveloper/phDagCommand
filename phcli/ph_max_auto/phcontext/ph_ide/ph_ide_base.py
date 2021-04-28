@@ -286,8 +286,9 @@ class PhIDEBase(object):
         self.logger.debug('maxauto 默认的 publish 实现')
         self.logger.debug(self.__dict__)
 
-        def write_data(jobs, definition, s3_dag_path, args_path, excution_name):
+        def write_data(jobs, definition, s3_dag_path, dag_path, excution_name):
             for job in jobs:
+                args_path = dag_path + "/" +job + "/" + "args.properties"
                 Parameters = {
                     "ClusterId.$": "$.clusterId",
                     "Step": {
@@ -298,7 +299,7 @@ class PhIDEBase(object):
                             "Args": ["spark-submit",
                                      "--deploy-mode", "cluster",
                                      "--py-files",
-                                     "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-3.0.0-py3.8.egg," + s3_dag_path + job + "/phjob.py",
+                                     "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-3.0.1-py3.8.egg," + s3_dag_path + job + "/phjob.py",
                                      s3_dag_path + job + "/phmain.py",
                                      "--owner", "default_owner",
                                      "--dag_name", s3_dag_path.split('/')[-2],
@@ -336,7 +337,7 @@ class PhIDEBase(object):
                             definition['States'][job]['ResultPath'] = "$.firstStep"
             return definition
 
-        def create_parallel(states, job_name, s3_dag_path, args_path, excution_name):
+        def create_parallel(states, job_name, s3_dag_path, dag_path, excution_name):
             if job_name.startswith('['):
                 states[job_name] = {
                     "Type": "Parallel",
@@ -379,7 +380,7 @@ class PhIDEBase(object):
                                                 for second_flow_job_name in second_flow.split(' >> '):
                                                     second_flow_jobs.append(second_flow_job_name)
                                                     flow_step_tmp['States'].update({second_flow_job_name: {}})
-                                                write_data(second_flow_jobs, flow_step_tmp, s3_dag_path, args_path, excution_name)
+                                                write_data(second_flow_jobs, flow_step_tmp, s3_dag_path, dag_path, excution_name)
                                         if flow_step_tmp['States'] == {}:
                                             flow_step_tmp['States'].update({flow_step_tmp['StartAt']: {'End': True}})
                                             flow_step_tmp['States'][flow_step_tmp['StartAt']]['Type'] = "Task"
@@ -388,8 +389,8 @@ class PhIDEBase(object):
                                             flow_step_tmp['States'][flow_step_tmp['StartAt']][
                                                 'ResultPath'] = "$.firstStep"
                                         step_tmp['States'][flow_job_name]['Branches'].append(flow_step_tmp)
-                                    write_data(flow_parallel_jobs, flow_step_tmp, s3_dag_path, args_path, excution_name)
-                            write_data(flow_jobs, step_tmp, s3_dag_path, args_path, excution_name)
+                                    write_data(flow_parallel_jobs, flow_step_tmp, s3_dag_path, dag_path, excution_name)
+                            write_data(flow_jobs, step_tmp, s3_dag_path, dag_path, excution_name)
                     # 判断States是否为空 如果为空 说明没有其他延续 则本身作为States
                     if step_tmp['States'] == {}:
                         step_tmp['States'].update({step_tmp['StartAt']: {'End': True}})
@@ -431,8 +432,7 @@ class PhIDEBase(object):
                         s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
                     )
                 s3_dag_path = "s3://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/"
-                if os.path.isdir(self.dag_path + key):
-                    args_path = self.dag_path + key + "/" + "args.properties"
+                dag_path = self.dag_path
                 if os.path.isfile(self.dag_path + key):
                     # Parameters = {
                     #     "ClusterId.$": "$.clusterId",
@@ -474,17 +474,16 @@ class PhIDEBase(object):
                         states[job_name] = {}
                         jobs.append(job_name)
                         # 若果是以"[" 开头的job 对并行的job进行操作
-                        states = create_parallel(states, job_name, s3_dag_path, args_path, excution_name)
+                        states = create_parallel(states, job_name, s3_dag_path, dag_path, excution_name)
                     definition = {
                         "StartAt": "",
                         "States": {}
                     }
                     definition['StartAt'] = list(states.keys())[0]
                     definition['States'] = states
-                    write_data(jobs, definition, s3_dag_path, args_path, excution_name)
+                    write_data(jobs, definition, s3_dag_path, dag_path, excution_name)
                     create_definition = json.dumps(definition)
                     client = boto3.client('stepfunctions')
-
                     response = client.create_state_machine(
                         name=self.name,
                         definition=create_definition,
