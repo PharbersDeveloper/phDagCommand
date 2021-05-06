@@ -288,7 +288,7 @@ class PhIDEBase(object):
 
         def write_data(jobs, definition, s3_dag_path, dag_path, excution_name):
             for job in jobs:
-                args_path = dag_path + "/" +job + "/" + "args.properties"
+                args_path = dag_path +job + "/" + "args.properties"
                 Parameters = {
                     "ClusterId.$": "$.clusterId",
                     "Step": {
@@ -323,6 +323,14 @@ class PhIDEBase(object):
                                     arg_line = args_file.readline()
                             definition['States'][job]['Parameters'] = Parameters
                             definition['States'][job]['ResultPath'] = "$.firstStep"
+                            definition['States'][job]['Retry'] = [
+                                                                    {
+                                                                      "ErrorEquals": [ "States.ALL" ],
+                                                                      "IntervalSeconds": 1,
+                                                                      "MaxAttempts": 3,
+                                                                      "BackoffRate": 2.0
+                                                                    }
+                                                                  ]
                     else:
                         definition['States'][job]['Next'] = jobs[jobs.index(job) + 1]
                         if not job.startswith('['):
@@ -335,6 +343,14 @@ class PhIDEBase(object):
                                     arg_line = args_file.readline()
                             definition['States'][job]['Parameters'] = Parameters
                             definition['States'][job]['ResultPath'] = "$.firstStep"
+                            definition['States'][job]['Retry'] = [
+                                {
+                                    "ErrorEquals": ["States.ALL"],
+                                    "IntervalSeconds": 1,
+                                    "MaxAttempts": 3,
+                                    "BackoffRate": 2.0
+                                }
+                            ]
             return definition
 
         def create_parallel(states, job_name, s3_dag_path, dag_path, excution_name):
@@ -419,18 +435,18 @@ class PhIDEBase(object):
         if self.strategy == "v3":
             excution_name = self.name + "_" + time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
             for key in os.listdir(self.dag_path):
-                if os.path.isfile(self.dag_path + key):
-                    self.phs3.upload(
-                        file=self.dag_path+key,
-                        bucket_name=dv.DAGS_S3_BUCKET,
-                        object_name=dv.DAGS_S3_PREV_PATH + key
-                    )
-                else:
-                    self.phs3.upload_dir(
-                        dir=self.dag_path+key,
-                        bucket_name=dv.TEMPLATE_BUCKET,
-                        s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
-                    )
+                # if os.path.isfile(self.dag_path + key):
+                #     self.phs3.upload(
+                #         file=self.dag_path+key,
+                #         bucket_name=dv.DAGS_S3_BUCKET,
+                #         object_name=dv.DAGS_S3_PREV_PATH + key
+                #     )
+                # else:
+                #     self.phs3.upload_dir(
+                #         dir=self.dag_path+key,
+                #         bucket_name=dv.TEMPLATE_BUCKET,
+                #         s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
+                #     )
                 s3_dag_path = "s3://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/"
                 dag_path = self.dag_path
                 if os.path.isfile(self.dag_path + key):
@@ -483,21 +499,24 @@ class PhIDEBase(object):
                     definition['States'] = states
                     write_data(jobs, definition, s3_dag_path, dag_path, excution_name)
                     create_definition = json.dumps(definition)
+                    print(create_definition)
+                    print(self.step_args)
+
                     client = boto3.client('stepfunctions')
-                    response = client.create_state_machine(
-                        name=self.name,
-                        definition=create_definition,
-                        roleArn=os.getenv("DEFAULT_ROLE_ARN"),
-                        type=dv.DEFAULT_MACHINE_TYPE,
-                    )
-                    machine_input = {
-                        'clusterId': self.cluster_id
-                    }
-                    client.start_execution(
-                        stateMachineArn=response['stateMachineArn'],
-                        name=excution_name,
-                        input=json.dumps(machine_input)
-                    )
+                    # response = client.create_state_machine(
+                    #     name=self.name,
+                    #     definition=create_definition,
+                    #     roleArn=os.getenv("DEFAULT_ROLE_ARN"),
+                    #     type=dv.DEFAULT_MACHINE_TYPE,
+                    # )
+                    # machine_input = {
+                    #     'clusterId': self.cluster_id
+                    # }
+                    # client.start_execution(
+                    #     stateMachineArn=response['stateMachineArn'],
+                    #     name=excution_name,
+                    #     input=json.dumps(machine_input)
+                    # )
 
 
     def recall(self, **kwargs):
