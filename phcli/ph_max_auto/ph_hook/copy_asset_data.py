@@ -17,7 +17,7 @@ def copy_asset_data(kwargs):
     source_file_path_keys = os.popen(ls_cmd).readlines()
     for source_file_path_key in source_file_path_keys:
         source_file_path_key = source_file_path_key.lstrip("                           PRE ").rstrip("\n")
-        if '_result' in source_file_path_key:
+        if '_asset' in source_file_path_key:
             asset_path = asset_path_prefix + source_file_path_key + run_time + "/"
             result_path = result_path_prefix + source_file_path_key
             cp_cmd = ["aws", "s3", "sync", result_path, asset_path]
