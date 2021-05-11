@@ -27,6 +27,12 @@ def get_job_name(kwargs):
     return job_name
 
 
+def get_job_id(kwargs, job_name):
+    g_flag = kwargs.get("g_flag", "")
+    job_id = job_name + g_flag
+    return job_id
+
+
 def get_result_path(kwargs, job_name=None):
     run_id = get_run_id(kwargs)
     if not job_name:
@@ -72,46 +78,47 @@ if __name__ == '__main__':
     path_prefix_suffix_result = get_result_path({
         "name": "test_job",
         "dag_name": "test_dag",
-        "run_id": "test_run_id"
-    },job_name="depend_job")
+        "run_id": "test_run_id",
+        "g_flag": "12"
+    })
     print("path_prefix_suffix_result = " + path_prefix_suffix_result)
 
-    assert(path_prefix_suffix_result == "s3a://ph-max-auto/2020-08-11/test_dag/refactor/runs/runid_alfred_runner_test/test_job/")
-
-    path_prefixexist_suffixexist_result = get_result_path({
-        "name": "test_job",
-        "dag_name": "test_dag",
-        "path_prefix": "s3a://exist",
-        "path_suffix": "exist"
-    })
-    print("path_prefixexist_suffixexist_result = " + path_prefixexist_suffixexist_result)
-    assert(path_prefixexist_suffixexist_result == "s3a://exist/runid_alfred_runner_test/test_job/")
-
+    # assert(path_prefix_suffix_result == "s3a://ph-max-auto/2020-08-11/test_dag/refactor/runs/runid_alfred_runner_test/test_job/")
+    #
+    # path_prefixexist_suffixexist_result = get_result_path({
+    #     "name": "test_job",
+    #     "dag_name": "test_dag",
+    #     "path_prefix": "s3a://exist",
+    #     "path_suffix": "exist"
+    # })
+    # print("path_prefixexist_suffixexist_result = " + path_prefixexist_suffixexist_result)
+    # assert(path_prefixexist_suffixexist_result == "s3a://exist/runid_alfred_runner_test/test_job/")
+    #
     path_prefixexist_suffixexist_depends_file_path = get_depends_file_path({
         "name": "test_job",
         "dag_name": "test_dag",
-        "path_prefix": "s3a://exist",
-        "path_suffix": "exist"
-    }, "test1", "c")
+        "run_id": "test_run_id",
+        "g_flag": "12"
+    }, "test_job", "test_key")
     print("path_prefixexist_suffixexist_depends_file_path = " + path_prefixexist_suffixexist_depends_file_path)
-    assert(path_prefixexist_suffixexist_depends_file_path == "s3a://exist/runid_alfred_runner_test/test_job/test1/c")
-
-    prefixexist_suffixexist_depends_path = get_depends_path({
-        "name": "test_job",
-        "dag_name": "test_dag",
-        "path_prefix": "s3a://exist",
-        "path_suffix": "exist",
-        # "depend_job_names_keys": '["effectiveness_adjust_mnf#mnf_adjust_result#mnf_adjust", "effectiveness_adjust_spec#spec_adjust_result#spec_adjust"]'
-    })
-    print("prefixexist_suffixexist_depends_path = " + str(prefixexist_suffixexist_depends_path))
-    assert len(prefixexist_suffixexist_depends_path) == 2
-    assert "mnf_adjust" in prefixexist_suffixexist_depends_path
-    assert prefixexist_suffixexist_depends_path['mnf_adjust'] == 's3a://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_mnf/mnf_adjust_result'
-    assert "spec_adjust" in prefixexist_suffixexist_depends_path
-    assert prefixexist_suffixexist_depends_path['spec_adjust'] == 's3a://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_spec/spec_adjust_result'
-
-    test_asset_path = get_asset_path({
-        'name': 'test_job',
-        'dag_name': 'test_dag'
-    })
-    print("test_asset_path = " + test_asset_path)
+    # assert(path_prefixexist_suffixexist_depends_file_path == "s3a://exist/runid_alfred_runner_test/test_job/test1/c")
+    #
+    # prefixexist_suffixexist_depends_path = get_depends_path({
+    #     "name": "test_job",
+    #     "dag_name": "test_dag",
+    #     "path_prefix": "s3a://exist",
+    #     "path_suffix": "exist",
+    #     # "depend_job_names_keys": '["effectiveness_adjust_mnf#mnf_adjust_result#mnf_adjust", "effectiveness_adjust_spec#spec_adjust_result#spec_adjust"]'
+    # })
+    # print("prefixexist_suffixexist_depends_path = " + str(prefixexist_suffixexist_depends_path))
+    # assert len(prefixexist_suffixexist_depends_path) == 2
+    # assert "mnf_adjust" in prefixexist_suffixexist_depends_path
+    # assert prefixexist_suffixexist_depends_path['mnf_adjust'] == 's3a://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_mnf/mnf_adjust_result'
+    # assert "spec_adjust" in prefixexist_suffixexist_depends_path
+    # assert prefixexist_suffixexist_depends_path['spec_adjust'] == 's3a://exist/runid_alfred_runner_test/test_job/effectiveness_adjust_spec/spec_adjust_result'
+    #
+    # test_asset_path = get_asset_path({
+    #     'name': 'test_job',
+    #     'dag_name': 'test_dag'
+    # })
+    # print("test_asset_path = " + test_asset_path)
