@@ -290,6 +290,7 @@ class PhIDEBase(object):
         def write_args(args_list, job_args):
             keys = []
             values = []
+            # 获取list中的参数并 生成一个dict
             for arg in args_list:
                 if args_list.index(arg) % 2 == 0:
                     keys.append(arg)
@@ -297,11 +298,13 @@ class PhIDEBase(object):
                     values.append(arg)
             args = zip(keys, values)
             args_dict = dict(args)
+            # 获取生成dict中的参数, 将传进来的dict进行替换
             for key in args_dict.keys():
                 if key in job_args.keys():
                     args_dict[key] = job_args[key]
             args_dict_keys = list(args_dict)
             args_dict_values = list(args_dict.values())
+            # 将替换好的dict转换成list
             final_args_list = []
             for i in range(len(args_dict_keys)):
                 final_args_list.append(args_dict_keys[i])
@@ -343,8 +346,8 @@ class PhIDEBase(object):
                                 arg_line = args_file.readline()
                                 while arg_line:
                                     args_list.append(arg_line.rstrip('\n'))
-                                    # Parameters['Step']['HadoopJarStep']['Args'].append(arg_line.rstrip('\n'))
                                     arg_line = args_file.readline()
+                            # 替换args.properties中的参数
                             final_args_list = write_args(args_list, job_args)
                             Parameters['Step']['HadoopJarStep']['Args'][len(Parameters['Step']['HadoopJarStep']['Args'])
                                                                         :len(Parameters['Step']['HadoopJarStep']['Args'])] = final_args_list
@@ -360,6 +363,7 @@ class PhIDEBase(object):
                                                                   ]
                             definition['States'][job+random_num] = definition['States'].pop(job)
                     else:
+
                         definition['States'][job]['Next'] = jobs[jobs.index(job) + 1] + random_num
                         if not job.startswith('['):
                             definition['States'][job]['Type'] = "Task"
@@ -370,6 +374,7 @@ class PhIDEBase(object):
                                 while arg_line:
                                     args_list.append(arg_line.rstrip('\n'))
                                     arg_line = args_file.readline()
+                            # 替换args.properties的参数
                             final_args_list = write_args(args_list, job_args)
                             Parameters['Step']['HadoopJarStep']['Args'][len(Parameters['Step']['HadoopJarStep']['Args'])
                                                                         :len(Parameters['Step']['HadoopJarStep']['Args'])] = final_args_list
@@ -393,7 +398,11 @@ class PhIDEBase(object):
                     "Branches": []
                 }
                 # 取出[]中的并行的job
+                if job_args["--g_month"]:
+                    job_args["--g_month"] = str(int(job_args["--g_month"]) - 1)
                 for parallel_job in job_name.strip('[]').replace(' ', '').split(','):
+                    if job_args["--g_month"]:
+                        job_args["--g_month"] = str(int(job_args["--g_month"]) + 1)
                     random_num = "_" + str(uuid.uuid4())
                     Parameters = {
                         "ClusterId.$": "$.clusterId",
@@ -405,7 +414,7 @@ class PhIDEBase(object):
                                 "Args": ["spark-submit",
                                          "--deploy-mode", "cluster",
                                          "--py-files",
-                                         "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-3.0.4-py3.8.egg," + s3_dag_path + parallel_job + "/phjob.py",
+                                         "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-3.0.5-py3.8.egg," + s3_dag_path + parallel_job + "/phjob.py",
                                          s3_dag_path + parallel_job + "/phmain.py",
                                          "--owner", "default_owner",
                                          "--dag_name", s3_dag_path.split('/')[-2],
@@ -420,7 +429,6 @@ class PhIDEBase(object):
                         "StartAt": "",
                         "States": {}
                     }
-                    # print(parallel_job + random_num)
                     step_tmp.update({'StartAt': parallel_job + random_num})
                     # 遍历除第一行主分支的策略
                     for flow in flows:
@@ -530,6 +538,9 @@ class PhIDEBase(object):
                         jobs.append(job_name)
                         # 若果是以"[" 开头的job 对并行的job进行操作
                         states = create_parallel(states, job_name, s3_dag_path, dag_path, excution_name)
+                        if len(job_name) > 60:
+                            states[job_name[:59]] = states.pop(job_name)
+                            jobs = [job_name[:59] if i == job_name else i for i in jobs]
                     definition = {
                         "StartAt": "",
                         "States": {}
@@ -539,24 +550,22 @@ class PhIDEBase(object):
                     write_data(jobs, definition, s3_dag_path, dag_path, excution_name, job_args)
 
                     create_definition = json.dumps(definition)
-                    print(create_definition)
 
-
-                    # client = boto3.client('stepfunctions')
-                    # response = client.create_state_machine(
-                    #     name=self.name,
-                    #     definition=create_definition,
-                    #     roleArn=os.getenv("DEFAULT_ROLE_ARN"),
-                    #     type=dv.DEFAULT_MACHINE_TYPE,
-                    # )
-                    # machine_input = {
-                    #     'clusterId': self.cluster_id
-                    # }
-                    # client.start_execution(
-                    #     stateMachineArn=response['stateMachineArn'],
-                    #     name=excution_name,
-                    #     input=json.dumps(machine_input)
-                    # )
+                    client = boto3.client('stepfunctions')
+                    response = client.create_state_machine(
+                        name=self.name,
+                        definition=create_definition,
+                        roleArn=os.getenv("DEFAULT_ROLE_ARN"),
+                        type=dv.DEFAULT_MACHINE_TYPE,
+                    )
+                    machine_input = {
+                        'clusterId': self.cluster_id
+                    }
+                    client.start_execution(
+                        stateMachineArn=response['stateMachineArn'],
+                        name=excution_name,
+                        input=json.dumps(machine_input)
+                    )
 
 
     def recall(self, **kwargs):
