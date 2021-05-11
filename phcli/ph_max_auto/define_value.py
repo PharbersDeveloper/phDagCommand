@@ -31,7 +31,7 @@ TEMPLATE_JUPYTER_R_FILE = '/template/python/phcli/maxauto/phJupyterR-20210122.js
 
 TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20210104.yaml"
 TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20210104.tmp"
-TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210419.tmp"
+TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210511.tmp"
 
 DEFAULT_RESULT_PATH_FORMAT_STR = "s3a://{bucket_name}/{version}/{dag_name}/"
 DEFAULT_RESULT_PATH_BUCKET = "ph-max-auto"
