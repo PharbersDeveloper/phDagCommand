@@ -11,8 +11,8 @@ def execute(**kwargs):
     logger = phs3logger(kwargs["job_id"], LOG_DEBUG_LEVEL)
     spark = kwargs['spark']()
     result_path_prefix = kwargs["result_path_prefix"]
-    depends_path = kwargs["depends_path"]1
-    a
+    depends_path = kwargs["depends_path"]
+    
     ### input args ###
     a = kwargs['a']
     b = kwargs['b']
