@@ -9,7 +9,7 @@ def $alfred_name_cmd(**context):
     params = var_key_lst.get("common", {})
     params.update(var_key_lst.get("$alfred_name", {}))
 
-    install_phcli = 'pip3 install phcli==3.0.5'
+    install_phcli = 'pip3 install phcli==3.0.6'
     process_cmd(install_phcli)
 
     exec_phcli_submit = 'phcli maxauto online_run --dag_name $alfred_jobs_dir --job_full_name $alfred_name ' \
