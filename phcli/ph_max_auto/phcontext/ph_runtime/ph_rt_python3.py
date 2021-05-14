@@ -369,7 +369,7 @@ class PhRTPython3(PhRTBase):
                         row = re.sub(r'(^\s*)print(\(.*)', r"\1logger.debug\2", row)
                         row = re.sub(r'(^.*)kwargs\[[\\"|\'](.*)[\\"|\']\](.*)', r"\1\2\3", row)
                         file.write(row)
-                file.write('\r\n')
+                file.write('\n')
 
     def submit_run(self, **kwargs):
         submit_conf = {
