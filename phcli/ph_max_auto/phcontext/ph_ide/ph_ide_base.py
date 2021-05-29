@@ -617,9 +617,6 @@ class PhIDEBase(object):
             definition['States'][job_name]['End'] = True
             definition['States'][job_name]['Type'] = "Task"
             definition['States'][job_name]['Resource'] = Resource
-            # 替换args.properties中的参数
-
-
             Parameters['Step']['HadoopJarStep']['Args'][len(Parameters['Step']['HadoopJarStep']['Args'])
                                                         :len(
                 Parameters['Step']['HadoopJarStep']['Args'])] = final_args_list
@@ -650,14 +647,12 @@ class PhIDEBase(object):
             for key in args_dict.keys():
                 if key in job_args.keys():
                     args_dict[key] = job_args[key]
-            args_dict_keys = list(args_dict)
-            args_dict_values = list(args_dict.values())
-            # 将替换好的dict转换成list
-            final_args_list = []
-            for i in range(len(args_dict_keys)):
-                final_args_list.append(args_dict_keys[i])
-                final_args_list.append(args_dict_values[i])
-            return final_args_list
+            new_key = []
+            for args_key in args_dict.keys():
+                new_key.append(args_key.lstrip('--'))
+            new_args = dict(zip(new_key, args_dict.values()))
+
+            return new_args
 
         def ast_parse(string):
             """
@@ -685,7 +680,7 @@ class PhIDEBase(object):
         # self.runtime = config.spec.containers.runtime
         # self.command = config.spec.containers.command
         # self.timeout = config.spec.containers.timeout
-        #
+
         # runtime_inst = self.table_driver_runtime_inst(self.runtime)
         # runtime_inst(**self.__dict__).online_run()
 
@@ -705,13 +700,7 @@ class PhIDEBase(object):
         job_args = self.context
         args_list = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET,
                                                    dv.CLI_VERSION + self.s3_job_path + "/args.properties")
-        new_args_list = []
-        for arg in args_list:
-            if arg.startswith('s3a:'):
-                arg = arg.replace('s3a:', 's3:')
-            new_args_list.append(arg)
-
-        final_args_list = write_args(new_args_list, job_args)
+        args_dict = write_args(args_list, job_args)
 
         write_data(definition, s3_dag_path, job_name, excution_name, job_args, new_args_list)
 
@@ -733,8 +722,14 @@ class PhIDEBase(object):
         machine_input = {
             'clusterId': ssm_response['Parameter']['Value']
         }
-        # 启动状态机
+        # 將kwargs写入ssm
+        ssm_args_name = 'args' + random_num
+        ssm_client.put_parameter(
+            Name=ssm_args_name,
+            Value=str(args_dict)
+        )
 
+        # 启动状态机
         start_response = step_client.start_execution(
             stateMachineArn=step_create_response['stateMachineArn'],
             name=excution_name,

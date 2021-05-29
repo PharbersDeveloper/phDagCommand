@@ -3,6 +3,8 @@ from phcli.ph_max_auto.ph_hook.get_abs_path import get_result_path
 from phcli.ph_max_auto.ph_hook.get_abs_path import get_depends_path
 from phcli.ph_max_auto.ph_hook.lineage import lineage
 from phcli.ph_max_auto.ph_hook.copy_asset_data import copy_asset_data
+from phcli.ph_max_auto.ph_hook.ssm_options import get_args_from_ssm
+from phcli.ph_max_auto.ph_hook.ssm_options import delete_args_from_ssm
 
 
 def exec_before(*args, **kwargs):
@@ -12,12 +14,13 @@ def exec_before(*args, **kwargs):
     spark_func = get_spark_session_func(job_id)
     result_path_prefix = get_result_path(kwargs)
     depends_path = get_depends_path(kwargs)
+    step_args = get_args_from_ssm(kwargs)
 
     return {
         'spark': spark_func,
         'result_path_prefix': result_path_prefix,
-        'depends_path': depends_path,
-    }
+        'depends_path': depends_path
+    }.update(step_args)
 
 
 def exec_after(*args, **kwargs):
@@ -25,6 +28,7 @@ def exec_after(*args, **kwargs):
     run_id = kwargs.get('run_id', None)
     job_id = kwargs.get('job_id', None)
 
+    delete_args_from_ssm(kwargs)
     lineage(job_id, kwargs)
     copy_asset_data(kwargs)
 
