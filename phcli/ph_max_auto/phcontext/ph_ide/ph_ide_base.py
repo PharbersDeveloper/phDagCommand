@@ -15,9 +15,9 @@ from phcli import define_value as phcli_dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 from phcli.ph_max_auto.ph_preset_jobs.preset_job_factory import preset_factory
 from phcli.ph_aws.ph_sts import PhSts
+from phcli.ph_logs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
 
-
-
+logger = phs3logger("hbzhao12345", LOG_DEBUG_LEVEL)
 class PhCompleteStrategy(Enum):
     S2C = 'special to common'
     C2S = 'common to special'
@@ -652,16 +652,17 @@ class PhIDEBase(object):
                 elif args_list.index(arg) % 2 == 1:
                     values.append(arg)
             args = zip(keys, values)
+
             args_dict = dict(args)
             # 获取生成dict中的参数, 将传进来的dict进行替换
             for key in args_dict.keys():
-                if key in job_args.keys():
-                    args_dict[key] = job_args[key]
+                if key.lstrip('--') in job_args.keys():
+                    args_dict[key] = job_args[key.lstrip('--')]
+
             new_key = []
             for args_key in args_dict.keys():
                 new_key.append(args_key.lstrip('--'))
             new_args = dict(zip(new_key, args_dict.values()))
-
             return new_args
 
         def ast_parse(string):
@@ -681,6 +682,7 @@ class PhIDEBase(object):
         # airflow 运行
         self.context = ast_parse(self.context)
         self.args = ast_parse(self.args)
+
         self.s3_job_path = dv.DAGS_S3_PHJOBS_PATH + self.dag_name + "/" + self.job_full_name
         self.submit_prefix = "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + self.s3_job_path + "/"
 
@@ -690,7 +692,7 @@ class PhIDEBase(object):
         # self.runtime = config.spec.containers.runtime
         # self.command = config.spec.containers.command
         # self.timeout = config.spec.containers.timeout
-
+        #
         # runtime_inst = self.table_driver_runtime_inst(self.runtime)
         # runtime_inst(**self.__dict__).online_run()
 
@@ -711,9 +713,11 @@ class PhIDEBase(object):
         # 将 job_args_name 写成list
         job_args_name_list = ['--job_args_name',job_args_name]
         excution_name = self.name + "_" + time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
-        job_args = self.context
+        job_args = self.args
+
         args_list = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET,
                                                    dv.CLI_VERSION + self.s3_job_path + "/args.properties")
+
         new_args_list = []
         for arg in args_list:
             if arg.startswith('s3a'):
@@ -726,7 +730,7 @@ class PhIDEBase(object):
 
         step_client = boto3.client('stepfunctions')
         # 创建状态机
-
+        print(args_dict)
         step_create_response = step_client.create_state_machine(
             name=self.name + random_num,
             definition=create_definition,
@@ -763,8 +767,15 @@ class PhIDEBase(object):
         execution_response = step_client.list_executions(
             stateMachineArn=step_create_response['stateMachineArn'],
         )
-        execution_status = execution_response['executions'][0]['status']
-        while execution_status:
+
+        while execution_response:
+            time.sleep(60)
+            if len(execution_response['executions']) == 0:
+                execution_response = step_client.list_executions(
+                    stateMachineArn=step_create_response['stateMachineArn'],
+                )
+                continue
+
             execution_response = step_client.list_executions(
                 stateMachineArn=step_create_response['stateMachineArn'],
             )
@@ -780,7 +791,8 @@ class PhIDEBase(object):
                 )
                 raise Exception("Job运行失败")
                 break
-            time.sleep(60)
+
+        return 0
 
 
     def status(self, **kwargs):

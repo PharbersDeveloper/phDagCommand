@@ -61,7 +61,13 @@ class PhRTPython3(PhRTBase):
         logger.error(traceback.format_exc())
         print(traceback.format_exc())
         raise e
-      
+        
+@click.command()
+@click.option('--owner')
+@click.option('--dag_name')
+@click.option('--run_id')
+@click.option('--job_full_name')
+@click.option('--job_id')
 @click.option('--job_args_name')
 def online_debug_execute(**kwargs):
     try:

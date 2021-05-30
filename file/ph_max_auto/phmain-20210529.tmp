@@ -15,7 +15,5 @@ $alfred_debug_execute
 
 
 if __name__ == '__main__':
-    if os.getenv("RUNNING_STATUS") = "ONLIEN_RUN":
-        online_debug_execute()
-    else:
-        debug_execute()
+    online_debug_execute()
+
