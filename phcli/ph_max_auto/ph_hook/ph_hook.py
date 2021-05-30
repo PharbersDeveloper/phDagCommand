@@ -15,12 +15,12 @@ def exec_before(*args, **kwargs):
     result_path_prefix = get_result_path(kwargs)
     depends_path = get_depends_path(kwargs)
     step_args = get_args_from_ssm(kwargs)
-
-    return {
+    step_args.update({
         'spark': spark_func,
         'result_path_prefix': result_path_prefix,
         'depends_path': depends_path
-    }.update(step_args)
+    })
+    return step_args
 
 
 def exec_after(*args, **kwargs):

@@ -62,8 +62,8 @@ class PhRTPython3(PhRTBase):
         print(traceback.format_exc())
         raise e
       
-@click.option('--ssm_args_name')
-def debug_execute(**kwargs):
+@click.option('--job_args_name')
+def online_debug_execute(**kwargs):
     try:
         args = {"name": "$alfred_name"}
         outputs = [$alfred_outputs]
