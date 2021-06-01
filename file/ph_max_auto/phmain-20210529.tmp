@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+"""alfredyang@pharbers.com.
+
+This is job template for Pharbers Max Job
+"""
+import os
+import click
+import traceback
+from phjob import execute
+from ph_logs.ph_logs import phs3logger
+from ph_max_auto.ph_hook.ph_hook import exec_before, exec_after
+
+
+$alfred_debug_execute
+
+
+if __name__ == '__main__':
+    online_debug_execute()
+

@@ -6,15 +6,18 @@ import boto3
 import json
 import time
 import uuid
+import base64
 from enum import Enum
 
 from phcli.ph_errs.ph_err import *
 from phcli.ph_max_auto import define_value as dv
+from phcli import define_value as phcli_dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 from phcli.ph_max_auto.ph_preset_jobs.preset_job_factory import preset_factory
+from phcli.ph_aws.ph_sts import PhSts
+from phcli.ph_logs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
 
-
-
+logger = phs3logger("hbzhao12345", LOG_DEBUG_LEVEL)
 class PhCompleteStrategy(Enum):
     S2C = 'special to common'
     C2S = 'common to special'
@@ -324,7 +327,7 @@ class PhIDEBase(object):
                             "Args": ["spark-submit",
                                      "--deploy-mode", "cluster",
                                      "--py-files",
-                                     "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-3.0.7-py3.8.egg," + s3_dag_path + job + "/phjob.py",
+                                     "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-"+ phcli_dv.CLI_CLIENT_VERSION +"-py3.8.egg," + s3_dag_path + job + "/phjob.py",
                                      s3_dag_path + job + "/phmain.py",
                                      "--owner", "default_owner",
                                      "--dag_name", s3_dag_path.split('/')[-2],
@@ -357,8 +360,8 @@ class PhIDEBase(object):
                                                                     {
                                                                       "ErrorEquals": [ "States.ALL" ],
                                                                       "IntervalSeconds": 1,
-                                                                      "MaxAttempts": 3,
-                                                                      "BackoffRate": 2.0
+                                                                      "MaxAttempts": 1,
+                                                                      "BackoffRate": 1.0
                                                                     }
                                                                   ]
                             definition['States'][job+random_num] = definition['States'].pop(job)
@@ -414,7 +417,7 @@ class PhIDEBase(object):
                                 "Args": ["spark-submit",
                                          "--deploy-mode", "cluster",
                                          "--py-files",
-                                         "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-3.0.7-py3.8.egg," + s3_dag_path + parallel_job + "/phjob.py",
+                                         "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-" + phcli_dv.CLI_CLIENT_VERSION + "-py3.8.egg," + s3_dag_path + parallel_job + "/phjob.py",
                                          s3_dag_path + parallel_job + "/phmain.py",
                                          "--owner", "default_owner",
                                          "--dag_name", s3_dag_path.split('/')[-2],
@@ -551,22 +554,27 @@ class PhIDEBase(object):
 
                     create_definition = json.dumps(definition)
 
-                    client = boto3.client('stepfunctions')
-                    response = client.create_state_machine(
+                    step_client = boto3.client('stepfunctions')
+                    response = step_client.create_state_machine(
                         name=self.name,
                         definition=create_definition,
                         roleArn=os.getenv("DEFAULT_ROLE_ARN"),
                         type=dv.DEFAULT_MACHINE_TYPE,
                     )
+
+                    ssm_client = boto3.client('ssm')
+                    ssm_response = ssm_client.get_parameter(
+                        Name='cluster_id'
+                    )
+
                     machine_input = {
-                        'clusterId': self.cluster_id
+                        'clusterId': ssm_response['Parameter']['Value']
                     }
-                    client.start_execution(
+                    step_client.start_execution(
                         stateMachineArn=response['stateMachineArn'],
                         name=excution_name,
                         input=json.dumps(machine_input)
                     )
-
 
     def recall(self, **kwargs):
         """
@@ -584,6 +592,78 @@ class PhIDEBase(object):
         """
         self.logger.debug('maxauto 默认的 online_run 实现')
         self.logger.debug(self.__dict__)
+        def write_data(definition, s3_dag_path, job_name, excution_name, job_args_name_list):
+            Resource = "arn:aws-cn:states:::elasticmapreduce:addStep.sync"
+            Parameters = {
+                "ClusterId.$": "$.clusterId",
+                "Step": {
+                    "Name": "My EMR step",
+                    "ActionOnFailure": "CONTINUE",
+                    "HadoopJarStep": {
+                        "Jar": "command-runner.jar",
+                        "Args": ["spark-submit",
+                                 "--deploy-mode", "cluster",
+                                 "--conf", "spark.driver.cores=1",
+                                 "--conf", "spark.driver.memory=1g",
+                                 "--conf", "spark.executor.cores=1",
+                                 "--conf", "spark.executor.memory=1g",
+                                 "--conf", "spark.executor.instances=1",
+                                 "--conf", "spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem",
+                                 "--conf", "spark.hadoop.fs.s3a.access.key=AKIAWPBDTVEANKEW2XNC",
+                                 "--conf", "spark.hadoop.fs.s3a.secret.key=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",
+                                 "--conf", "spark.hadoop.fs.s3a.endpoint=s3.cn-northwest-1.amazonaws.com.cn",
+                                 "--py-files",
+                                 "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-" + phcli_dv.CLI_CLIENT_VERSION + "-py3.8.egg," + s3_dag_path + "phjob.py",
+                                 s3_dag_path + "phmain.py",
+                                 "--owner", "default_owner",
+                                 "--dag_name", s3_dag_path.split('/')[-2],
+                                 "--run_id", s3_dag_path.split('/')[-2] + "_" + excution_name,
+                                 "--job_full_name", job_name,
+                                 "--job_id", "not_implementation"
+                                 ]
+                    }
+                }
+            }
+            definition['States'][job_name]['End'] = True
+            definition['States'][job_name]['Type'] = "Task"
+            definition['States'][job_name]['Resource'] = Resource
+            Parameters['Step']['HadoopJarStep']['Args'][len(Parameters['Step']['HadoopJarStep']['Args'])
+                                                        :len(
+                Parameters['Step']['HadoopJarStep']['Args'])] = job_args_name_list
+            definition['States'][job_name]['Parameters'] = Parameters
+            definition['States'][job_name]['ResultPath'] = "$.firstStep"
+            definition['States'][job_name]['Retry'] = [
+                {
+                    "ErrorEquals": ["States.ALL"],
+                    "IntervalSeconds": 1,
+                    "MaxAttempts": 1,
+                    "BackoffRate": 1.0
+                }
+            ]
+            definition['States'][job_name] = definition['States'].pop(job_name)
+
+        def write_args(args_list, job_args):
+            keys = []
+            values = []
+            # 获取list中的参数并 生成一个dict
+            for arg in args_list:
+                if args_list.index(arg) % 2 == 0:
+                    keys.append(arg)
+                elif args_list.index(arg) % 2 == 1:
+                    values.append(arg)
+            args = zip(keys, values)
+
+            args_dict = dict(args)
+            # 获取生成dict中的参数, 将传进来的dict进行替换
+            for key in args_dict.keys():
+                if key.lstrip('--') in job_args.keys():
+                    args_dict[key] = job_args[key.lstrip('--')]
+
+            new_key = []
+            for args_key in args_dict.keys():
+                new_key.append(args_key.lstrip('--'))
+            new_args = dict(zip(new_key, args_dict.values()))
+            return new_args
 
         def ast_parse(string):
             """
@@ -599,21 +679,121 @@ class PhIDEBase(object):
                         ast_dict[k] = ast.literal_eval(v)
             return ast_dict
 
+        # airflow 运行
         self.context = ast_parse(self.context)
         self.args = ast_parse(self.args)
 
         self.s3_job_path = dv.DAGS_S3_PHJOBS_PATH + self.dag_name + "/" + self.job_full_name
         self.submit_prefix = "s3a://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + self.s3_job_path + "/"
 
-        stream = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.s3_job_path + "/phconf.yaml")
-        config = PhYAMLConfig()
-        config.load_yaml(stream)
-        self.runtime = config.spec.containers.runtime
-        self.command = config.spec.containers.command
-        self.timeout = config.spec.containers.timeout
+        # stream = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + self.s3_job_path + "/phconf.yaml")
+        # config = PhYAMLConfig()
+        # config.load_yaml(stream)
+        # self.runtime = config.spec.containers.runtime
+        # self.command = config.spec.containers.command
+        # self.timeout = config.spec.containers.timeout
+        #
+        # runtime_inst = self.table_driver_runtime_inst(self.runtime)
+        # runtime_inst(**self.__dict__).online_run()
 
-        runtime_inst = self.table_driver_runtime_inst(self.runtime)
-        runtime_inst(**self.__dict__).online_run()
+
+        # step functions 运行
+        s3_dag_path = "s3://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + self.s3_job_path + "/"
+        job_name = self.name
+        definition = {
+            "StartAt": "",
+            "States": {}
+        }
+        states = {}
+        states[job_name] = {}
+        definition['StartAt'] = job_name
+        definition['States'] = states
+        random_num = "_" + str(uuid.uuid4())
+        job_args_name = 'args' + random_num
+        # 将 job_args_name 写成list
+        job_args_name_list = ['--job_args_name',job_args_name]
+        excution_name = self.name + "_" + time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
+        job_args = self.args
+
+        args_list = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET,
+                                                   dv.CLI_VERSION + self.s3_job_path + "/args.properties")
+
+        new_args_list = []
+        for arg in args_list:
+            if arg.startswith('s3a'):
+                arg = arg.replace('s3a:', 's3:')
+            new_args_list.append(arg)
+        args_dict = write_args(new_args_list, job_args)
+        write_data(definition, s3_dag_path, job_name, excution_name, job_args_name_list)
+
+        create_definition = json.dumps(definition)
+
+        step_client = boto3.client('stepfunctions')
+        # 创建状态机
+        print(args_dict)
+        step_create_response = step_client.create_state_machine(
+            name=self.name + random_num,
+            definition=create_definition,
+            roleArn=dv.DEFAULT_ROLE_ARN,
+            type=dv.DEFAULT_MACHINE_TYPE,
+        )
+        # 获取cluster_id
+        ssm_client = boto3.client('ssm')
+        ssm_response = ssm_client.get_parameter(
+            Name='cluster_id'
+        )
+        machine_input = {
+            'clusterId': ssm_response['Parameter']['Value']
+        }
+        ssm_response = ssm_client.get_parameter(
+            Name='cluster_id'
+        )
+
+        # 將kwargs写入ssm
+        ssm_client.put_parameter(
+            Name=job_args_name,
+            Value=str(args_dict),
+            Type='String'
+        )
+
+        # 启动状态机
+        start_response = step_client.start_execution(
+            stateMachineArn=step_create_response['stateMachineArn'],
+            name=excution_name,
+            input=json.dumps(machine_input)
+        )
+
+        # 获取状态机的执行状态 直到成功退出
+        execution_response = step_client.list_executions(
+            stateMachineArn=step_create_response['stateMachineArn'],
+        )
+
+        while execution_response:
+            time.sleep(60)
+            if len(execution_response['executions']) == 0:
+                execution_response = step_client.list_executions(
+                    stateMachineArn=step_create_response['stateMachineArn'],
+                )
+                continue
+
+            execution_response = step_client.list_executions(
+                stateMachineArn=step_create_response['stateMachineArn'],
+            )
+            execution_status = execution_response['executions'][0]['status']
+            if execution_status == 'SUCCEEDED':
+                step_client.delete_state_machine(
+                    stateMachineArn=step_create_response['stateMachineArn']
+                )
+                break
+            if execution_status == 'FAILED':
+                step_client.delete_state_machine(
+                    stateMachineArn=step_create_response['stateMachineArn']
+                )
+                raise Exception("Job运行失败")
+                break
+
+        return 0
+
 
     def status(self, **kwargs):
         """
