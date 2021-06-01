@@ -88,10 +88,10 @@ def create(**kwargs):
         context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_create_exec()
     except Exception as e:
-        put_metric("maxauto.create", "failed")
+        # put_metric("maxauto.create", "failed")
         click.secho("创建失败: " + str(e), fg='red', blink=True, bold=True)
     else:
-        put_metric("maxauto.create", "success")
+        # put_metric("maxauto.create", "success")
         click.secho("创建完成", fg='green', blink=True, bold=True)
 
 
@@ -118,10 +118,10 @@ def complete(**kwargs):
         PhContextFacade(**context_args).command_complete_exec()
     except Exception as e:
         raise e
-        put_metric("maxauto.complete", "failed")
+        # put_metric("maxauto.complete", "failed")
         click.secho("补全失败: " + str(e), fg='red', blink=True, bold=True)
     else:
-        put_metric("maxauto.complete", "success")
+        # put_metric("maxauto.complete", "success")
         click.secho("补全完成", fg='green', blink=True, bold=True)
 
 
@@ -141,10 +141,10 @@ def run(**kwargs):
         context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_run_exec()
     except Exception as e:
-        put_metric("maxauto.run", "failed")
+        # put_metric("maxauto.run", "failed")
         click.secho("运行失败: " + str(e), fg='red', blink=True, bold=True)
     else:
-        put_metric("maxauto.run", "success")
+        # put_metric("maxauto.run", "success")
         click.secho("运行完成", fg='green', blink=True, bold=True)
 
 
@@ -176,10 +176,10 @@ def combine(**kwargs):
         context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_combine_exec()
     except Exception as e:
-        put_metric("maxauto.combine", "failed")
+        # put_metric("maxauto.combine", "failed")
         click.secho("关联失败: " + str(e), fg='red', blink=True, bold=True)
     else:
-        put_metric("maxauto.combine", "success")
+        # put_metric("maxauto.combine", "success")
         click.secho("关联完成", fg='green', blink=True, bold=True)
 
 
@@ -195,10 +195,10 @@ def dag(**kwargs):
         context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_dag_exec()
     except Exception as e:
-        put_metric("maxauto.dag", "failed")
+        # put_metric("maxauto.dag", "failed")
         click.secho("DAG失败: " + str(e), fg='red', blink=True, bold=True)
     else:
-        put_metric("maxauto.dag", "success")
+        # put_metric("maxauto.dag", "success")
         click.secho("DAG完成", fg='green', blink=True, bold=True)
 
 
@@ -226,10 +226,10 @@ def publish(**kwargs):
         PhContextFacade(**context_args).command_publish_exec()
     except Exception as e:
         print()
-        put_metric("maxauto.publish", "failed")
+        # put_metric("maxauto.publish", "failed")
         click.secho("发布失败: " + str(e), fg='red', blink=True, bold=True)
     else:
-        put_metric("maxauto.publish", "success")
+        # put_metric("maxauto.publish", "success")
         click.secho("发布完成", fg='green', blink=True, bold=True)
 
 
@@ -245,10 +245,10 @@ def recall(**kwargs):
         context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_recall_exec()
     except Exception as e:
-        put_metric("maxauto.recall", "failed")
+        # put_metric("maxauto.recall", "failed")
         click.secho("召回失败: " + str(e), fg='red', blink=True, bold=True)
     else:
-        put_metric("maxauto.recall", "success")
+        # put_metric("maxauto.recall", "success")
         click.secho("召回完成", fg='green', blink=True, bold=True)
 
 
@@ -273,11 +273,11 @@ def online_run(**kwargs):
         context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_online_run_exec()
     except Exception as e:
-        put_metric("maxauto.online_run", "failed")
+        # put_metric("maxauto.online_run", "failed")
         click.secho("online_run失败: " + str(e), fg='red', blink=True, bold=True)
         raise e
     else:
-        put_metric("maxauto.online_run", "success")
+        # put_metric("maxauto.online_run", "success")
         click.secho("online_run完成", fg='green', blink=True, bold=True)
 
 
@@ -290,8 +290,8 @@ def status(**kwargs):
         context_args.update({k: str(v).strip() for k, v in kwargs.items()})
         PhContextFacade(**context_args).command_status_exec()
     except Exception as e:
-        put_metric("maxauto.status", "failed")
+        # put_metric("maxauto.status", "failed")
         click.secho("查看状态失败: " + str(e), fg='red', blink=True, bold=True)
     else:
-        put_metric("maxauto.status", "success")
+        # put_metric("maxauto.status", "success")
         click.secho("查看状态完成", fg='green', blink=True, bold=True)
