@@ -13,8 +13,8 @@ def aws_init(**kwargs):
         cluster_id = kwargs["cluster_id"]
         PhInitConf.init_conf(cluster_id=cluster_id)
     except Exception as e:
-        click.secho("创建失败: " + str(e), fg='red', blink=True, bold=True)
+        click.secho("初始化失败: " + str(e), fg='red', blink=True, bold=True)
     else:
-        click.secho("创建完成", fg='green', blink=True, bold=True)
+        click.secho("初始化完成", fg='green', blink=True, bold=True)
 
 
