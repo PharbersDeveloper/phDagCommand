@@ -6,12 +6,12 @@ from phcli.ph_auto_setup.jupyter_operation.ph_jupyter_operation import PhJupyter
               prompt="The jupyter name is",
               help="The jupyter name.")
 @click.option("-o", "--operation",
-              prompt="The operation on emr is",
+              prompt="The operation on jupyter is",
               type=click.Choice(["create", "delete"]),
-              help="The operation on emr.")
+              help="The operation on jupyter.")
 def jupyter_operation(**kwargs):
     """
-    初始化c9 hadoop和spark的conf文件
+    对jupyter的创建或删除
     """
     try:
 
