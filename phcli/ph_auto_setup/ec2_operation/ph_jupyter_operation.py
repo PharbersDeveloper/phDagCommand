@@ -5,15 +5,12 @@ import json
 class PhJupyterOperation(object):
     def __init__(self, **kwargs):
         self.jupyter_name = kwargs.get('name', None)
-        self.jupyter_operation = kwargs.get('operation', None)
-
 
     def choice_operation(self):
-        if self.jupyter_operation == "create":
-            self.create_jupyter()
-        if self.jupyter_operation == "delete":
-            self.delete_jupyter()
-
+        if self.ec2_operation == "create":
+            PhJupyterOperation.create_jupyter(self)
+        if self.ec2_operation == "delete":
+            PhJupyterOperation.delete_jupyter(self)
 
     def create_jupyter(self):
         # 4.需要创建jupyter的用户

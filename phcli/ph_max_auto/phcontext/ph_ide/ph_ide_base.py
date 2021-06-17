@@ -17,7 +17,7 @@ from phcli.ph_max_auto.ph_preset_jobs.preset_job_factory import preset_factory
 from phcli.ph_aws.ph_sts import PhSts
 from phcli.ph_logs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
 
-logger = phs3logger("hbzhao12345", LOG_DEBUG_LEVEL)
+
 class PhCompleteStrategy(Enum):
     S2C = 'special to common'
     C2S = 'common to special'
