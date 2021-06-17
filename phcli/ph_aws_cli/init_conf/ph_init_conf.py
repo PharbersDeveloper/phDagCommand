@@ -1,8 +1,18 @@
 import subprocess
+import os
+import json
 
 class PhInitConf(object):
 
-    def init_conf(cluster_id):
+    def init_conf():
+
+        # 从ssm获取cluster_id
+        cluster_id_cmd = "aws ssm get-parameter --name cluster_id"
+        cluster_id_info = os.popen(cluster_id_cmd).readlines()
+        cluster_id_str = ''.join(cluster_id_info)
+        cluster_id_dict = json.loads(cluster_id_str)
+        cluster_id = cluster_id_dict['Parameter']['Value']
+
         hadoop_cmd1 = "aws s3 cp s3://ph-platform/2020-11-11/emr/remoteConfig/" + cluster_id + "/etc/hadoop/conf/ hadoop/conf/ --recursive"
         hadoop_cmd2 = "sudo cp hadoop/conf/* /etc/hadoop/conf/"
         spark_cmd1 = "aws s3 cp s3://ph-platform/2020-11-11/emr/remoteConfig/" + cluster_id + "/etc/spark/conf/ spark/conf/ --recursive"
