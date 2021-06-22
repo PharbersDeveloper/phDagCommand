@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-CLI_CLIENT_VERSION = '3.0.25'
+CLI_CLIENT_VERSION = '3.0.26'
 
 CLI_BUCKET = 'ph-platform'
 CLI_VERSION = "2020-11-11"
