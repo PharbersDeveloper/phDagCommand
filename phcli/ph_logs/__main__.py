@@ -3,6 +3,7 @@
 import click
 from phcli.ph_logs.ph_logs import *
 from phcli.ph_aws.ph_s3 import PhS3
+from phcli.ph_logs.tmp._main_ import emr_errlogs
 
 
 @click.command("logs", short_help='查看生产环境的运行日志')
@@ -16,6 +17,7 @@ def main(follow, job_id):
     phs3 = PhS3(access_key=PH_CLI_ACCESS_KEY, secret_key=PH_CLI_SECRET_KEY)
     print(phs3.open_object(CLI_BUCKET, LOG_PATH.format(CLI_VERSION, job_id + '.log')))
 
+main.add_command(emr_errlogs)
 
 if __name__ == '__main__':
     main()
