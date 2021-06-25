@@ -33,7 +33,7 @@ class PhInitConf(object):
         rm_hadoop_cmd = "sudo rm -rf hadoop"
         rm_spark_cmd = "sudo rm -rf spark"
         rm_hive_cmd = "sudo rm -rf hive"
-        rm_hive_hcatalog_cmd = "sudo rm -rf hive_hcatalog"
+        rm_hive_hcatalog_cmd = "sudo rm -rf hive-hcatalog"
         rm_tez_cmd = "sudo rm -rf tez"
 
         rm_cmd = rm_hadoop_cmd + " && " + rm_spark_cmd + \
