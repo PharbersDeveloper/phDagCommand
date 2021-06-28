@@ -602,16 +602,14 @@ class PhIDEBase(object):
                     "HadoopJarStep": {
                         "Jar": "command-runner.jar",
                         "Args": ["spark-submit",
+                                 "--name", s3_dag_path.split('/')[-2],
                                  "--deploy-mode", "cluster",
                                  "--conf", "spark.driver.cores=1",
                                  "--conf", "spark.driver.memory=1g",
                                  "--conf", "spark.executor.cores=1",
                                  "--conf", "spark.executor.memory=4g",
                                  "--conf", "spark.executor.instances=1",
-                                 "--conf", "spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem",
-                                 "--conf", "spark.hadoop.fs.s3a.access.key=AKIAWPBDTVEANKEW2XNC",
-                                 "--conf", "spark.hadoop.fs.s3a.secret.key=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",
-                                 "--conf", "spark.hadoop.fs.s3a.endpoint=s3.cn-northwest-1.amazonaws.com.cn",
+                                 "--conf", "spark.sql.autoBroadcastJoinThreshold=-1"
                                  "--py-files",
                                  "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-" + phcli_dv.CLI_CLIENT_VERSION + "-py3.8.egg," + s3_dag_path + "phjob.py",
                                  s3_dag_path + "phmain.py",
