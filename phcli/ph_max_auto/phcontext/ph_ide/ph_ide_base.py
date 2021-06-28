@@ -15,7 +15,7 @@ from phcli import define_value as phcli_dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 from phcli.ph_max_auto.ph_preset_jobs.preset_job_factory import preset_factory
 from phcli.ph_aws.ph_sts import PhSts
-from phcli.ph_logs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
+from phcli.ph_logs.phLogs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
 
 
 class PhCompleteStrategy(Enum):

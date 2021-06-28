@@ -1,6 +1,6 @@
 import os
 import base64
-from phcli.ph_logs.ph_logs import phlogger
+from phcli.ph_logs.phLogs.ph_logs import phlogger
 from phcli import define_value as dv
 from phcli.ph_aws.ph_sts import PhSts
 from phcli.ph_aws.ph_cloud_watch import PhCloudWatch, PhMetricData, PhMetricDataUnit

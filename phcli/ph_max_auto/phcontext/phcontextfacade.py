@@ -10,7 +10,7 @@ from phcli.ph_aws.ph_sts import PhSts
 from phcli.ph_max_auto import define_value as dv
 from phcli.ph_max_auto.phcontext.ph_ide.ph_ide_c9 import PhIDEC9
 from phcli.ph_max_auto.phcontext.ph_ide.ph_ide_jupyter import PhIDEJupyter
-from phcli.ph_logs.ph_logs import phs3logger, LOG_DEBUG_LEVEL, LOG_INFO_LEVEL, LOG_WARN_LEVEL, LOG_ERROR_LEVEL
+from phcli.ph_logs.phLogs.ph_logs import phs3logger, LOG_DEBUG_LEVEL, LOG_INFO_LEVEL, LOG_WARN_LEVEL, LOG_ERROR_LEVEL
 
 
 class PhContextFacade(object):

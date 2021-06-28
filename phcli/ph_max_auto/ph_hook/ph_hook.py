@@ -5,7 +5,7 @@ from phcli.ph_max_auto.ph_hook.lineage import lineage
 from phcli.ph_max_auto.ph_hook.copy_asset_data import copy_asset_data
 from phcli.ph_max_auto.ph_hook.ssm_options import get_args_from_ssm
 from phcli.ph_max_auto.ph_hook.ssm_options import delete_args_from_ssm
-from phcli.ph_logs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
+from phcli.ph_logs.phLogs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
 
 logger = phs3logger("hbzhao12345", LOG_DEBUG_LEVEL)
 def exec_before(*args, **kwargs):
