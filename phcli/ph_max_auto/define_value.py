@@ -23,7 +23,7 @@ ENV_CUR_RUNTIME_DEFAULT = 'python3'
 TEMPLATE_PHCONF_FILE = "/template/python/phcli/maxauto/phconf-20210104.yaml"
 TEMPLATE_PHJOB_FILE_PY = "/template/python/phcli/maxauto/phjob-20210104.tmp"
 TEMPLATE_PHJOB_FILE_R = "/template/python/phcli/maxauto/phjob-r-20210122.tmp"
-TEMPLATE_PHMAIN_FILE_PY = "/template/python/phcli/maxauto/phmain-20210529.tmp"
+TEMPLATE_PHMAIN_FILE_PY = "/template/python/phcli/maxauto/phmain-20210104.tmp"
 TEMPLATE_PHMAIN_FILE_R = "/template/python/phcli/maxauto/phmain-r-20210122.tmp"
 
 TEMPLATE_JUPYTER_PYTHON_FILE = '/template/python/phcli/maxauto/phJupyterPython-20210322.json'
@@ -31,7 +31,7 @@ TEMPLATE_JUPYTER_R_FILE = '/template/python/phcli/maxauto/phJupyterR-20210122.js
 
 TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20210104.yaml"
 TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20210104.tmp"
-TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210624.tmp"
+TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210628.tmp"
 
 DEFAULT_RESULT_PATH_FORMAT_STR = "s3://{bucket_name}/{version}/{dag_name}/"
 DEFAULT_RESULT_PATH_BUCKET = "ph-max-auto"
