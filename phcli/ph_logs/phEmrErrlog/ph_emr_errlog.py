@@ -3,6 +3,8 @@ import os
 import sys
 import json
 import re
+from phcli.ph_logs.phLogs.ph_logs import phlogger
+
 
 class phErrLogs(object):
     
@@ -24,7 +26,7 @@ class phErrLogs(object):
         applicationid = re.findall('application_\d*_\d*',logs)
         state = log["Step"]["Status"]["State"]
         if state in "COMPLETED":
-            print("集群ID或者步骤ID输入有误")
+            phlogger.debug("集群ID或者步骤ID输入有误")
         else:
             log_path = "s3://ph-platform/2020-11-11/emr/yarnLogs/hadoop/logs-tfile/" + applicationid[0] + "/"
             comm_ls = "aws s3 cp --recursive " + log_path + " ./JS_log"
