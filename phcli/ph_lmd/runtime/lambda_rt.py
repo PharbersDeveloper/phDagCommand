@@ -3,7 +3,7 @@
 from abc import abstractmethod
 import os
 
-from phcli.ph_logs.ph_logs import phlogger
+from phcli.ph_logs.phLogs.ph_logs import phlogger
 from phcli.ph_errs.ph_err import PhException
 
 
