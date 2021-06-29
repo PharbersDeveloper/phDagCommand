@@ -10,6 +10,11 @@ from phcli.ph_logs.phEmrErrlog.ph_emr_errlog import *
               prompt="The step-id is",
               help="The step id"
              )
+@click.option("-n","--name",
+              prompt="The name is",
+              help="The log filename"
+             )
+
 
 def emr_errlogs(**kwargs):
     """
