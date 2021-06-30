@@ -11,7 +11,7 @@ from phcli.ph_logs.phEmrErrlog.ph_emr_errlog import *
               help="The step id"
              )
 @click.option("-n","--name",
-              default="null",
+              default=None,
               help="The log filename"
              )
 
