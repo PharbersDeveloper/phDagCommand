@@ -31,8 +31,11 @@ class phErrLogs(object):
             else:
                 log_path = "s3://ph-platform/2020-11-11/emr/yarnLogs/hadoop/logs-tfile/" + applicationid[0] + "/"
                 comm_ls = "aws s3 cp --recursive " + log_path + " ./JS_log"
-                cat_comm = "cat ./JS_log/*.compute.internal_8041 > " + self.fileName
-                os.popen(comm_ls + " && " + cat_comm + " && " + "rm -rf ./JS_log")
+                if self.fileName is None:
+                    os.popen(comm_ls + "&&" +"cat ./JS_log/*.compute.internal_8041" + " && " + "rm -rf ./JS_log",'w')   
+                else:
+                    cat_comm = "cat ./JS_log/*.compute.internal_8041 > " + self.fileName
+                    os.popen(comm_ls + " && " + cat_comm + " && " + "rm -rf ./JS_log")
         self.getLogByAppLicationId()
 
                            
@@ -40,11 +43,9 @@ class phErrLogs(object):
         stderr_path = "s3://ph-platform/2020-11-11/emr/logs/" + self.clusterId + "/" + "steps/" + self.stepId + "/"
         A_comm = "aws s3 cp --recursive " + stderr_path + " ./Application_log"
         gun_comm = "gunzip ./Application_log/stderr.gz"
-        cat_comm = "cat ./Application_log/stderr >> " + self.fileName
-        ls_comm = "cat " + self.fileName
-        if self.fileName == "null":     
-            os.popen(A_comm +" && "+ gun_comm + " && " + cat_comm + " && " + ls_comm + " && " + "rm -rf ./Application_log",'w')
-            os.popen("rm -rf stdout",'w')
+        if self.fileName is None:     
+            os.popen(A_comm +" && "+ gun_comm + " && " + "cat ./Application_log/stderr" + " && " + "rm -rf ./Application_log",'w')
         else:
+            cat_comm = "cat ./Application_log/stderr >> " + self.fileName
             os.popen(A_comm +" && "+ gun_comm + " && " + cat_comm + " && " + "rm -rf ./Application_log")
             
