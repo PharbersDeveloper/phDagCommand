@@ -41,4 +41,10 @@ class phErrLogs(object):
         A_comm = "aws s3 cp --recursive " + stderr_path + " ./Application_log"
         gun_comm = "gunzip ./Application_log/stderr.gz"
         cat_comm = "cat ./Application_log/stderr >> " + self.fileName
-        os.popen(A_comm +" && "+ gun_comm + " && " + cat_comm + " && " + "rm -rf ./Application_log")
+        ls_comm = "cat " + self.fileName
+        if self.fileName == "null":     
+            os.popen(A_comm +" && "+ gun_comm + " && " + cat_comm + " && " + ls_comm + " && " + "rm -rf ./Application_log",'w')
+            os.popen("rm -rf stdout",'w')
+        else:
+            os.popen(A_comm +" && "+ gun_comm + " && " + cat_comm + " && " + "rm -rf ./Application_log")
+            
