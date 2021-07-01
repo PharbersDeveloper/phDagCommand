@@ -1,18 +1,15 @@
 import subprocess
 import os
 import json
+from phcli.ph_auto_setup.emr_operation.ph_emr_operation import PhEmrOperation
 
-class PhInitConf(object):
+class PhEC2Init(object):
 
     def init_conf():
+        # 获取cluster_id
+        cluster_id = PhEmrOperation().get_active_clusterId()
 
-        # 从ssm获取cluster_id
-        cluster_id_cmd = "aws ssm get-parameter --name cluster_id"
-        cluster_id_info = os.popen(cluster_id_cmd).readlines()
-        cluster_id_str = ''.join(cluster_id_info)
-        cluster_id_dict = json.loads(cluster_id_str)
-        cluster_id = cluster_id_dict['Parameter']['Value']
-
+        # 下载需要初始化的文件
         hadoop_cmd1 = "aws s3 cp s3://ph-platform/2020-11-11/emr/remoteConfig/" + cluster_id + "/etc/hadoop/conf/ hadoop/conf/ --recursive"
         hadoop_cmd2 = "sudo cp hadoop/conf/* /etc/hadoop/conf/"
         spark_cmd1 = "aws s3 cp s3://ph-platform/2020-11-11/emr/remoteConfig/" + cluster_id + "/etc/spark/conf/ spark/conf/ --recursive"
@@ -30,6 +27,7 @@ class PhInitConf(object):
               " && " + tez_cmd1 + " && " + tez_cmd2
         subprocess.call(cmd, shell=True)
 
+        # 复制成功后删除当前目录下的文件
         rm_hadoop_cmd = "sudo rm -rf hadoop"
         rm_spark_cmd = "sudo rm -rf spark"
         rm_hive_cmd = "sudo rm -rf hive"
@@ -40,3 +38,7 @@ class PhInitConf(object):
               " && " + rm_hive_cmd + " && " + rm_hive_hcatalog_cmd + \
               " && " + rm_tez_cmd
         subprocess.call(rm_cmd, shell=True)
+
+        # 下载config.json文件
+        cp_configJson_cmd = "sudo curl https://ph-platform.s3.cn-northwest-1.amazonaws.com.cn/2020-11-11/emr/remoteConfig/"+ cluster_id +"/sparkmagic/config.json -o /home/hadoop/.sparkmagic/config.json"
+        subprocess.call(cp_configJson_cmd, shell=True)

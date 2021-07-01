@@ -11,7 +11,7 @@ from phcli.ph_data_clean.__main__ import main as clean_main
 from phcli.ph_storage.back_up.__main__ import main as hdfs_back_up_main
 from phcli.ph_storage.clean.__main__ import main as hdfs_clean_main
 from phcli.ph_dag.__main__ import main as dag_main
-from phcli.ph_aws_cli.__main__ import  main as awsinit_main
+from phcli.ph_ec2.__main__ import main as ec2_main
 from phcli.ph_auto_setup.__main__ import main as auto_main
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
@@ -38,7 +38,7 @@ phcli.add_command(clean_main)
 phcli.add_command(hdfs_back_up_main)
 phcli.add_command(hdfs_clean_main)
 phcli.add_command(dag_main)
-phcli.add_command(awsinit_main)
+phcli.add_command(ec2_main)
 phcli.add_command(auto_main)
 
 if __name__ == '__main__':
