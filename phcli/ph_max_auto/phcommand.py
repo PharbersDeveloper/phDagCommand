@@ -211,12 +211,6 @@ def dag(**kwargs):
               help="The publish strategy is [v2 = publish to airflow, v3 = publish tp step_functions]",
               type=click.Choice(["v2", "v3"]),
               default="v2")
-@click.option("-c", "--cluster_id",
-              prompt="The emr cluster_id is",
-              help="The emr cluster_id.")
-@click.option("-a", "--job_args",
-              prompt="The job_args is",
-              help="The job_args.")
 def publish(**kwargs):
     """
     发布 DAG 运行文件和相关依赖

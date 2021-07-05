@@ -314,7 +314,18 @@ class PhIDEBase(object):
                 final_args_list.append(args_dict_values[i])
             return final_args_list
 
-        def write_data(jobs, definition, s3_dag_path, dag_path, excution_name, job_args, random_num=""):
+        def create_args_lambda(dag_name, job_name):
+            w = open(self.dag_path + self.get_dag_py_file_name(config.spec.dag_id), "a")
+            f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_LMD_FILE)
+
+            for line in f_lines:
+                line = line + "\n"
+                w.write(
+                    line.replace("$alfred_jobs_dir", str(self.name)) \
+                        .replace("$alfred_name", str(job_name))
+                )
+
+        def write_data(jobs, definition, s3_dag_path, dag_path, excution_name, random_num=""):
             for job in jobs:
                 args_path = dag_path +job + "/" + "args.properties"
                 Parameters = {
@@ -324,17 +335,7 @@ class PhIDEBase(object):
                         "ActionOnFailure": "CONTINUE",
                         "HadoopJarStep": {
                             "Jar": "command-runner.jar",
-                            "Args": ["spark-submit",
-                                     "--deploy-mode", "cluster",
-                                     "--py-files",
-                                     "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-"+ phcli_dv.CLI_CLIENT_VERSION +"-py3.8.egg," + s3_dag_path + job + "/phjob.py",
-                                     s3_dag_path + job + "/phmain.py",
-                                     "--owner", "default_owner",
-                                     "--dag_name", s3_dag_path.split('/')[-2],
-                                     "--run_id", s3_dag_path.split('/')[-2] + "_" +excution_name,
-                                     "--job_full_name", job,
-                                     "--job_id", "not_implementation",
-                                     ]
+                            "Args": '$.parameter.args'
                         }
                     }
                 }
@@ -344,16 +345,7 @@ class PhIDEBase(object):
                         if not job.startswith('['):
                             definition['States'][job]['Type'] = "Task"
                             definition['States'][job]['Resource'] = Resource
-                            args_list = []
-                            with open(args_path, "r") as args_file:
-                                arg_line = args_file.readline()
-                                while arg_line:
-                                    args_list.append(arg_line.rstrip('\n'))
-                                    arg_line = args_file.readline()
                             # 替换args.properties中的参数
-                            final_args_list = write_args(args_list, job_args)
-                            Parameters['Step']['HadoopJarStep']['Args'][len(Parameters['Step']['HadoopJarStep']['Args'])
-                                                                        :len(Parameters['Step']['HadoopJarStep']['Args'])] = final_args_list
                             definition['States'][job]['Parameters'] = Parameters
                             definition['States'][job]['ResultPath'] = "$.firstStep"
                             definition['States'][job]['Retry'] = [
@@ -371,16 +363,7 @@ class PhIDEBase(object):
                         if not job.startswith('['):
                             definition['States'][job]['Type'] = "Task"
                             definition['States'][job]['Resource'] = Resource
-                            args_list = []
-                            with open(args_path, "r") as args_file:
-                                arg_line = args_file.readline()
-                                while arg_line:
-                                    args_list.append(arg_line.rstrip('\n'))
-                                    arg_line = args_file.readline()
                             # 替换args.properties的参数
-                            final_args_list = write_args(args_list, job_args)
-                            Parameters['Step']['HadoopJarStep']['Args'][len(Parameters['Step']['HadoopJarStep']['Args'])
-                                                                        :len(Parameters['Step']['HadoopJarStep']['Args'])] = final_args_list
                             definition['States'][job]['Parameters'] = Parameters
                             definition['States'][job]['ResultPath'] = "$.firstStep"
                             definition['States'][job]['Retry'] = [
@@ -473,7 +456,7 @@ class PhIDEBase(object):
                                 #                 'ResultPath'] = "$.firstStep"
                                 #         step_tmp['States'][flow_job_name]['Branches'].append(flow_step_tmp)
                                 #     write_data(flow_parallel_jobs, flow_step_tmp, s3_dag_path, dag_path, excution_name)
-                            write_data(flow_jobs, step_tmp, s3_dag_path, dag_path, excution_name, job_args, random_num)
+                            write_data(flow_jobs, step_tmp, s3_dag_path, dag_path, excution_name, random_num)
 
                     # 判断States是否为空 如果为空 说明没有其他延续 则本身作为States
                     if step_tmp['States'] == {}:
@@ -502,79 +485,85 @@ class PhIDEBase(object):
                     )
 
         if self.strategy == "v3":
-            job_args = eval(self.job_args)
-            excution_name = self.name + "_" + time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
+            print(self.name)
+            # print(self.dag_path)
+            # excution_name = self.name + "_" + time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
+            # print(excution_name)
             for key in os.listdir(self.dag_path):
                 if os.path.isfile(self.dag_path + key):
-                    self.phs3.upload(
-                        file=self.dag_path+key,
-                        bucket_name=dv.DAGS_S3_BUCKET,
-                        object_name=dv.DAGS_S3_PREV_PATH + key
-                    )
+                    pass
                 else:
-                    self.phs3.upload_dir(
-                        dir=self.dag_path+key,
-                        bucket_name=dv.TEMPLATE_BUCKET,
-                        s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
-                    )
-                s3_dag_path = "s3://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/"
-                dag_path = self.dag_path
-                if os.path.isfile(self.dag_path + key):
+                    print(key)
+                # if os.path.isfile(self.dag_path + key):
+                #     self.phs3.upload(
+                #         file=self.dag_path+key,
+                #         bucket_name=dv.DAGS_S3_BUCKET,
+                #         object_name=dv.DAGS_S3_PREV_PATH + key
+                #     )
+                # else:
+                #     self.phs3.upload_dir(
+                #         dir=self.dag_path+key,
+                #         bucket_name=dv.TEMPLATE_BUCKET,
+                #         s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
+                #     )
+                # s3_dag_path = "s3://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/"
+                # dag_path = self.dag_path
+                # if os.path.isfile(self.dag_path + key):
+                #     Resource = "arn:aws-cn:states:::elasticmapreduce:addStep.sync"
+                #     # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
+                #     # 策略的每一行，存放到每一个列表
+                #     flows = []
+                #     # 一行中每一个job的名称
+                #     jobs = []
+                #     # 状态机的所有states
+                #     states = {}
+                #     with open(self.dag_path + key, "r") as dag_file:
+                #         line = dag_file.readline()
+                #         while line:
+                #             while ">>" in line:
+                #                 flows.append(line.rstrip('\n'))
+                #                 break
+                #             line = dag_file.readline()
+                #     for job_name in flows[0].split(' >> '):
+                #         states[job_name] = {}
+                #         jobs.append(job_name)
+                #         # 若果是以"[" 开头的job 对并行的job进行操作
+                #         states = create_parallel(states, job_name, s3_dag_path, dag_path, excution_name)
+                #         if len(job_name) > 60:
+                #             states[job_name[:59]] = states.pop(job_name)
+                #             jobs = [job_name[:59] if i == job_name else i for i in jobs]
+                #     definition = {
+                #         "StartAt": "",
+                #         "States": {}
+                #     }
+                #     definition['StartAt'] = list(states.keys())[0]
+                #     definition['States'] = states
+                #     write_data(jobs, definition, s3_dag_path, dag_path, excution_name)
+                #
+                #     create_definition = json.dumps(definition)
+                #     print(create_definition)
 
-                    Resource = "arn:aws-cn:states:::elasticmapreduce:addStep.sync"
-                    # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
-                    # 策略的每一行，存放到每一个列表
-                    flows = []
-                    # 一行中每一个job的名称
-                    jobs = []
-                    # 状态机的所有states
-                    states = {}
-                    with open(self.dag_path + key, "r") as dag_file:
-                        line = dag_file.readline()
-                        while line:
-                            while ">>" in line:
-                                flows.append(line.rstrip('\n'))
-                                break
-                            line = dag_file.readline()
-                    for job_name in flows[0].split(' >> '):
-                        states[job_name] = {}
-                        jobs.append(job_name)
-                        # 若果是以"[" 开头的job 对并行的job进行操作
-                        states = create_parallel(states, job_name, s3_dag_path, dag_path, excution_name)
-                        if len(job_name) > 60:
-                            states[job_name[:59]] = states.pop(job_name)
-                            jobs = [job_name[:59] if i == job_name else i for i in jobs]
-                    definition = {
-                        "StartAt": "",
-                        "States": {}
-                    }
-                    definition['StartAt'] = list(states.keys())[0]
-                    definition['States'] = states
-                    write_data(jobs, definition, s3_dag_path, dag_path, excution_name, job_args)
-
-                    create_definition = json.dumps(definition)
-
-                    step_client = boto3.client('stepfunctions')
-                    response = step_client.create_state_machine(
-                        name=self.name,
-                        definition=create_definition,
-                        roleArn=os.getenv("DEFAULT_ROLE_ARN"),
-                        type=dv.DEFAULT_MACHINE_TYPE,
-                    )
-
-                    ssm_client = boto3.client('ssm')
-                    ssm_response = ssm_client.get_parameter(
-                        Name='cluster_id'
-                    )
-
-                    machine_input = {
-                        'clusterId': ssm_response['Parameter']['Value']
-                    }
-                    step_client.start_execution(
-                        stateMachineArn=response['stateMachineArn'],
-                        name=excution_name,
-                        input=json.dumps(machine_input)
-                    )
+                    # step_client = boto3.client('stepfunctions')
+                    # response = step_client.create_state_machine(
+                    #     name=self.name,
+                    #     definition=create_definition,
+                    #     roleArn=os.getenv("DEFAULT_ROLE_ARN"),
+                    #     type=dv.DEFAULT_MACHINE_TYPE,
+                    # )
+                    #
+                    # ssm_client = boto3.client('ssm')
+                    # ssm_response = ssm_client.get_parameter(
+                    #     Name='cluster_id'
+                    # )
+                    #
+                    # machine_input = {
+                    #     'clusterId': ssm_response['Parameter']['Value']
+                    # }
+                    # step_client.start_execution(
+                    #     stateMachineArn=response['stateMachineArn'],
+                    #     name=excution_name,
+                    #     input=json.dumps(machine_input)
+                    # )
 
     def recall(self, **kwargs):
         """
