@@ -1,0 +1,27 @@
+"$job_full_name": {
+  "Next": "$next_job_full_name",
+  "Type": "Task",
+  "Resource": "arn:aws-cn:states:::elasticmapreduce:addStep.sync",
+  "Parameters": {
+    "ClusterId.$": "$.clusterId",
+    "Step": {
+      "Name": "$job_full_name",
+      "ActionOnFailure": "CONTINUE",
+      "HadoopJarStep": {
+        "Jar": "command-runner.jar",
+        "Args.$": "$.parameter.args"
+      }
+    }
+  },
+  "ResultPath": "$.firstStep",
+  "Retry": [
+    {
+      "ErrorEquals": [
+        "States.ALL"
+      ],
+      "IntervalSeconds": 3,
+      "MaxAttempts": 1,
+      "BackoffRate": 1
+    }
+  ]
+ }

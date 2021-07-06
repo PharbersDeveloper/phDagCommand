@@ -1,0 +1,6 @@
+"args_$job_full_name": {
+  "Type": "Task",
+  "Resource": "arn:aws-cn:lambda:cn-northwest-1:444603803904:function:$dag_name_$job_full_name",
+  "ResultPath": "$.parameter",
+  "Next": "$job_full_name"
+}

@@ -10,6 +10,7 @@ TEMPLATE_BUCKET = "ph-platform"
 DAGS_S3_BUCKET = 's3fs-ph-airflow'
 DAGS_S3_PREV_PATH = 'airflow/dags/'
 DAGS_S3_PHJOBS_PATH = '/jobs/python/phcli/'
+DAGS_S3_LMD_PTAH = '/jobs/python/phcli/args_lmd/'
 
 ENV_WORKSPACE_KEY = 'PH_WORKSPACE'
 ENV_WORKSPACE_DEFAULT = '.'
