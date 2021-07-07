@@ -1,5 +1,5 @@
-"$job_full_name": {
-  "Next": "$next_job_full_name",
+{"$job_full_name": {
+  "$next_type": $next_job_full_name,
   "Type": "Task",
   "Resource": "arn:aws-cn:states:::elasticmapreduce:addStep.sync",
   "Parameters": {
@@ -25,3 +25,4 @@
     }
   ]
  }
+}

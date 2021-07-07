@@ -462,7 +462,7 @@ class PhIDEBase(object):
             lmd_path = dag_path + dag_name + "_" + job_name + ".py"
             lmd_zip_path = dag_path+dag_name + "_" + job_name +".zip"
             w = open(lmd_path, "a")
-            f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_LMD_FILE)
+            f_lines = self.phs3.open_object_by_lines(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_CREATE_LMD_FILE)
             for line in f_lines:
                 line = line + "\n"
                 w.write(
@@ -478,12 +478,49 @@ class PhIDEBase(object):
             os.system(rm_lmd_cmd)
             os.system(rm_lmd_zip_cmd)
 
-        def create_step(dag_name, job_full_name):
+        def create_step(dag_name, job_full_names, randoms):
             definition = {
-                "StartAt": "",
-                "States": {}
-            }
-            pass
+                        "StartAt": "",
+                        "States": {}
+                    }
+            definition['StartAt'] = "args_" + job_full_names[0] + "_" +randoms[0]
+
+            for current_index in range(len(job_full_names)):
+                # 当前索引 job_full_name
+                job_full_name = job_full_names[current_index]
+                current_random = randoms[current_index]
+
+                # 处理step的args定义
+                dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_LMD_STEP_FILE)
+                json_args = json.dumps(dag_args_step)
+                args_step = json_args.replace("$dag_name", dag_name) \
+                                    .replace("$job_full_name", job_full_name)
+                dict_args = eval(json.loads(args_step))
+                definition['States'].update(dict_args)
+
+                # 处理step的定义
+                dag_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_STEP_FILE)
+                json_step = json.dumps(dag_step)
+                # 查询下一个step，如果没有则下一步为End
+                # 如果当前job_full_name是list中最后一个元素
+                if current_index == len(job_full_names) - 1:
+                    dag_step = json_step.replace("$dag_name", dag_name)\
+                        .replace("$next_job_full_name", "True")\
+                        .replace("$next_type", "End")\
+                        .replace("$job_full_name", job_full_name + "_" + current_random)
+                else:
+                    # 如果不是获取list中下一个job_full_name
+                    next_index = current_index + 1
+                    next_job_full_name = job_full_names[next_index]
+                    next_random = randoms[next_index]
+                    dag_step = json_step.replace("$dag_name", dag_name) \
+                        .replace("$next_job_full_name", "\\\"args_" + next_job_full_name + "_" + next_random + "\\\"" ) \
+                        .replace("$next_type", "Next")\
+                        .replace("$job_full_name", job_full_name + "_" + current_random)
+                dict_dag_step = eval(json.loads(dag_step))
+                definition['States'].update(dict_dag_step)
+            print(json.dumps(definition))
+
 
         if self.strategy == "v2":
             for key in os.listdir(self.dag_path):
@@ -501,10 +538,15 @@ class PhIDEBase(object):
                     )
 
         if self.strategy == "v3":
-            print(self.name)
-            print(self.job_full_name)
+            # print(self.name)
+
             excution_name = self.name + "_" + time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
             # print(excution_name)
+            # job_full_names = []
+            # for key in os.listdir(self.dag_path):
+            #     if os.path.isdir(self.dag_path + key):
+            #         job_full_names.append(key)
+            # print(job_full_names)
             for key in os.listdir(self.dag_path):
                 # if os.path.isfile(self.dag_path + key):
                 #     pass
@@ -522,6 +564,7 @@ class PhIDEBase(object):
                 #     )
                 #     # 上传args_lmd代码
                 #     create_args_lambda(self.name, key, self.dag_path, self.owner)
+
                 s3_dag_path = "s3://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/"
                 if os.path.isfile(self.dag_path + key):
                     # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
@@ -529,6 +572,8 @@ class PhIDEBase(object):
                     flows = []
                     # 一行中每一个job的名称
                     jobs = []
+                    # 每个job对应一个随机数
+                    randoms = []
                     # 状态机的所有states
                     states = {}
                     with open(self.dag_path + key, "r") as dag_file:
@@ -542,6 +587,9 @@ class PhIDEBase(object):
                     for job_name in flows[0].split(' >> '):
                         states[job_name] = {}
                         jobs.append(job_name)
+                        randoms.append(str(uuid.uuid4()))
+                    print(flows)
+                    # create_step(self.name, jobs, randoms)
 
                     # create_step(self.name, key)
                     #     # 若果是以"[" 开头的job 对并行的job进行操作
