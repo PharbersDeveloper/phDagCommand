@@ -36,6 +36,7 @@ TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210701.tmp"
 TEMPLATE_SFN_CREATE_LMD_FILE = "/template/python/phcli/step_functions/lmd/ph-sfn-create-lmd-20210705.tmp"
 TEMPLATE_SFN_LMD_STEP_FILE = "/template/python/phcli/step_functions/step_tmp/ph-sfn-create-lmd-step-20210706.tmp"
 TEMPLATE_SFN_STEP_FILE = "/template/python/phcli/step_functions/step_tmp/ph-sfn-create-step-20210706.tmp"
+TEMPLATE_SFN_PARALLEL_STEP_FILE = "/template/python/phcli/step_functions/step_tmp/ph-sfn-create-paraller-step-20210708.tmp"
 
 DEFAULT_RESULT_PATH_FORMAT_STR = "s3://{bucket_name}/{version}/{dag_name}/"
 DEFAULT_RESULT_PATH_BUCKET = "ph-max-auto"

@@ -1,0 +1,8 @@
+{
+    "$job_full_name": {
+      "Type": "Parallel",
+      "$next_type": $next_job_full_name,
+      "Branches": [
+         ]
+    }
+}
