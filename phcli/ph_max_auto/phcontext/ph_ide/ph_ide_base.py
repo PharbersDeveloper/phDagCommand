@@ -16,6 +16,7 @@ from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 from phcli.ph_max_auto.ph_preset_jobs.preset_job_factory import preset_factory
 from phcli.ph_aws.ph_sts import PhSts
 from phcli.ph_logs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
+from phcli.ph_tools.snowflakeId.snowflake import IdWorker
 
 
 class PhCompleteStrategy(Enum):
@@ -480,9 +481,11 @@ class PhIDEBase(object):
 
         def create_parallel_step(job_full_name):
             # 通过模板创建Parallel模型
+            parallel_branches = []
             parallel_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_PARALLEL_STEP_FILE)
 
-            print(type(json.loads(parallel_step.replace("$next_job_full_name", "\"$next_job_full_name\""))))
+            # 替换模板里的字段
+            json.loads(parallel_step.replace("$next_job_full_name", "\"$next_job_full_name\""))
             # 先进行逗号分割
             parallel_task_list = job_full_name.strip('[]').replace(' ', '').split(',')
             for parallel_task in parallel_task_list:
@@ -490,11 +493,16 @@ class PhIDEBase(object):
                 randoms = []
                 flows = []
                 # 对每个 parallel_task 以 >> 分割
-                for parallel_job_name in parallel_task[0].split('>>'):
+                print(parallel_task)
+                for parallel_job_name in parallel_task.split('>>'):
+                    print(parallel_job_name)
                     flows.append(parallel_job_name)
-                    randoms.append(str(uuid.uuid4()))
-                step = create_step(self.name, flows, randoms)
-                parallel_step['Branches'].append(step)
+                    snowflake_id = IdWorker(1, 2, 0)
+                    randoms.append(str(snowflake_id.get_id()))
+                parallel_step = create_step(self.name, flows, randoms)
+                parallel_branches.append(parallel_step)
+            # print(parallel_branches)
+            return parallel_branches
 
         def create_step(dag_name, job_full_names, randoms):
             definition = {
@@ -509,12 +517,14 @@ class PhIDEBase(object):
                 current_random = randoms[current_index]
 
                 # 处理step的args定义
-                dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_LMD_STEP_FILE)
-                json_args = json.dumps(dag_args_step)
-                args_step = json_args.replace("$dag_name", dag_name) \
-                                    .replace("$job_full_name", job_full_name + "_" + current_random)
-                dict_args = eval(json.loads(args_step))
-                definition['States'].update(dict_args)
+                if not job_full_name.startswith('['):
+                    dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_LMD_STEP_FILE)
+                    json_args = json.dumps(dag_args_step)
+                    args_step = json_args.replace("$dag_name", dag_name) \
+                                        .replace("$job_full_name", job_full_name + "_" + current_random)\
+                                        .replace("$lmd_job_name", job_full_name)
+                    dict_args = eval(json.loads(args_step))
+                    definition['States'].update(dict_args)
 
                 # 处理step的定义
                 dag_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_STEP_FILE)
@@ -544,16 +554,37 @@ class PhIDEBase(object):
                     next_random = randoms[next_index]
                     if job_full_name.startswith('['):
                         print(1)
-                        # 传递进来的parallel 分割返回 parallel dag_step
-                        create_parallel_step(job_full_name)
-                    else:
+                        dag_step = self.phs3.open_object(dv.TEMPLATE_BUCKET,
+                                                         dv.CLI_VERSION + dv.TEMPLATE_SFN_PARALLEL_STEP_FILE)
+                        dag_step = json.loads(dag_step.replace("$next_job_full_name", "\"$next_job_full_name\""))
+                        parallel_branches = create_parallel_step(job_full_name)
+                        print(2)
+                        dag_step['$job_full_name']['Branches'] = parallel_branches
+                        print(3)
+                        json_step = json.dumps(dag_step)
                         dag_step = json_step.replace("$dag_name", dag_name) \
-                            .replace("$next_job_full_name", "\\\"args_" + next_job_full_name + "_" + next_random + "\\\"" ) \
-                            .replace("$next_type", "Next")\
+                            .replace("$next_job_full_name", "args_" + next_job_full_name + "_" + next_random) \
+                            .replace("$next_type", "Next") \
                             .replace("$job_full_name", job_full_name + "_" + current_random)
-                dict_dag_step = eval(json.loads(dag_step))
+                        # 传递进来的parallel 分割返回 parallel dag_step
+                    else:
+                        if next_job_full_name.startswith('['):
+                            dag_step = json_step.replace("$dag_name", dag_name) \
+                                .replace("$next_job_full_name", "\\\"" + next_job_full_name + "_" + next_random + "\\\"" ) \
+                                .replace("$next_type", "Next")\
+                                .replace("$job_full_name", job_full_name + "_" + current_random)
+                        else:
+                            dag_step = json_step.replace("$dag_name", dag_name) \
+                                .replace("$next_job_full_name", "\\\"args_" + next_job_full_name + "_" + next_random + "\\\"" ) \
+                                .replace("$next_type", "Next")\
+                                .replace("$job_full_name", job_full_name + "_" + current_random)
+
+                if type(json.loads(dag_step)) == str:
+                    dict_dag_step = eval(json.loads(dag_step))
+                else:
+                    dict_dag_step = json.loads(dag_step)
                 definition['States'].update(dict_dag_step)
-            # print(json.dumps(definition))
+            print(json.dumps(definition))
             return definition
 
 
@@ -624,11 +655,11 @@ class PhIDEBase(object):
                     for job_name in flows[0].split(' >> '):
                         first_flow.append(job_name)
                         cp_first_flow.append(job_name)
-                        randoms.append(str(uuid.uuid4()))
+                        snowflake_id = IdWorker(1, 2, 0)
+                        randoms.append(str(snowflake_id.get_id()))
                     # 处理整个dag的结构
                     # 如果 first_flow 是以'['开头 则是个并行的job， 然后遍历[]中的job_full_name, 如果flows中有以job_full_name开头的flow
                     # 则将flow替换job_full_name
-                    print(first_flow)
                     dag_flow = flows[0]
                     for first_flow_job in first_flow:
                         # 如果是以'['开始则为并行的job
@@ -640,21 +671,13 @@ class PhIDEBase(object):
                                 for flow in flows:
                                     if flow.startswith(parallel_job):
                                         cp_first_flow[parallel_job_index] = cp_first_flow[parallel_job_index].replace(parallel_job, flow)
-                    print(cp_first_flow)
+
                     create_step(self.name, cp_first_flow, randoms)
 
-                    # create_step(self.name, key)
                     #     # 若果是以"[" 开头的job 对并行的job进行操作
-                    #     states = create_parallel(states, job_name, s3_dag_path, dag_path, excution_name)
                     #     if len(job_name) > 60:
                     #         states[job_name[:59]] = states.pop(job_name)
                     #         jobs = [job_name[:59] if i == job_name else i for i in jobs]
-
-                    # definition['StartAt'] = list(states.keys())[0]
-                    # definition['States'] = states
-                    # # create_step()
-                    # create_definition = json.dumps(definition)
-                    # print(create_definition)
 
                     # step_client = boto3.client('stepfunctions')
                     # response = step_client.create_state_machine(
