@@ -485,7 +485,7 @@ class PhIDEBase(object):
             parallel_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_PARALLEL_STEP_FILE)
 
             # 替换模板里的字段
-            json.loads(parallel_step.replace("$next_job_full_name", "\"$next_job_full_name\""))
+            # json.loads(parallel_step.replace("$next_job_full_name", "\"$next_job_full_name\""))
             # 先进行逗号分割
             parallel_task_list = job_full_name.strip('[]').replace(' ', '').split(',')
             for parallel_task in parallel_task_list:
@@ -493,9 +493,7 @@ class PhIDEBase(object):
                 randoms = []
                 flows = []
                 # 对每个 parallel_task 以 >> 分割
-                print(parallel_task)
                 for parallel_job_name in parallel_task.split('>>'):
-                    print(parallel_job_name)
                     flows.append(parallel_job_name)
                     snowflake_id = IdWorker(1, 2, 0)
                     randoms.append(str(snowflake_id.get_id()))
@@ -505,42 +503,58 @@ class PhIDEBase(object):
             return parallel_branches
 
         def create_step(dag_name, job_full_names, randoms):
+
             definition = {
                         "StartAt": "",
                         "States": {}
                     }
-            definition['StartAt'] = "args_" + job_full_names[0] + "_" +randoms[0]
 
+            definition['StartAt'] = "args_" + job_full_names[0] + "_" +randoms[0]
+            # 遍历所有 job_full_name
             for current_index in range(len(job_full_names)):
                 # 当前索引 job_full_name
                 job_full_name = job_full_names[current_index]
+                # 获取当前job_full_name 对应的随机数
                 current_random = randoms[current_index]
-
                 # 处理step的args定义
                 if not job_full_name.startswith('['):
+                    # 从s3下载 lmd_step 的模板
                     dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_LMD_STEP_FILE)
+                    # 将模板转成json形式的字符串
                     json_args = json.dumps(dag_args_step)
+                    # 替换参数
                     args_step = json_args.replace("$dag_name", dag_name) \
                                         .replace("$job_full_name", job_full_name + "_" + current_random)\
                                         .replace("$lmd_job_name", job_full_name)
+                    # 将参数转成字典
                     dict_args = eval(json.loads(args_step))
+                    # 将参数更新在 definition['States'] 中
                     definition['States'].update(dict_args)
 
-                # 处理step的定义
+                # 处理step的定义 下载step的模板
                 dag_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_STEP_FILE)
                 json_step = json.dumps(dag_step)
-
                 # 查询下一个step，如果没有则下一步为End
                 # 如果当前job_full_name是list中最后一个元素
                 if current_index == len(job_full_names) - 1:
                     # 判断是不是以'[' 开头，如果不是则不是并行的
                     if job_full_name.startswith('['):
                         dag_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_PARALLEL_STEP_FILE)
+                        dag_step = json.loads(dag_step.replace("$next_job_full_name", "\"$next_job_full_name\""))
+                        parallel_branches = create_parallel_step(job_full_name)
+                        dag_step['$job_full_name']['Branches'] = parallel_branches
                         json_step = json.dumps(dag_step)
+                        print(1)
+                        print(json_step)
                         dag_step = json_step.replace("$dag_name", dag_name)\
-                            .replace("$next_job_full_name", "True")\
+                            .replace("\"$next_job_full_name\"", "true")\
                             .replace("$next_type", "End")\
                             .replace("$job_full_name", job_full_name + "_" + current_random)
+                        print("===================================")
+                        print("===================================")
+                        print("===================================")
+                        print(dag_step)
+
                     else:
                         dag_step = json_step.replace("$dag_name", dag_name)\
                             .replace("$next_job_full_name", "True")\
@@ -553,14 +567,11 @@ class PhIDEBase(object):
                     next_job_full_name = job_full_names[next_index]
                     next_random = randoms[next_index]
                     if job_full_name.startswith('['):
-                        print(1)
                         dag_step = self.phs3.open_object(dv.TEMPLATE_BUCKET,
                                                          dv.CLI_VERSION + dv.TEMPLATE_SFN_PARALLEL_STEP_FILE)
                         dag_step = json.loads(dag_step.replace("$next_job_full_name", "\"$next_job_full_name\""))
                         parallel_branches = create_parallel_step(job_full_name)
-                        print(2)
                         dag_step['$job_full_name']['Branches'] = parallel_branches
-                        print(3)
                         json_step = json.dumps(dag_step)
                         dag_step = json_step.replace("$dag_name", dag_name) \
                             .replace("$next_job_full_name", "args_" + next_job_full_name + "_" + next_random) \
@@ -853,7 +864,6 @@ class PhIDEBase(object):
 
         step_client = boto3.client('stepfunctions')
         # 创建状态机
-        print(args_dict)
         step_create_response = step_client.create_state_machine(
             name=self.name + random_num,
             definition=create_definition,
