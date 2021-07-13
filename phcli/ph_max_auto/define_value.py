@@ -33,9 +33,10 @@ TEMPLATE_JUPYTER_R_FILE = '/template/python/phcli/maxauto/phJupyterR-20210122.js
 TEMPLATE_PHDAG_FILE = "/template/python/phcli/maxauto/phdag-20210104.yaml"
 TEMPLATE_PHGRAPHTEMP_FILE = "/template/python/phcli/maxauto/phgraphtemp-20210104.tmp"
 TEMPLATE_PHDAGJOB_FILE = "/template/python/phcli/maxauto/phDagJob-20210701.tmp"
-TEMPLATE_SFN_CREATE_LMD_FILE = "/template/python/phcli/step_functions/lmd/ph-sfn-create-lmd-20210705.tmp"
-TEMPLATE_SFN_LMD_STEP_FILE = "/template/python/phcli/step_functions/step_tmp/ph-sfn-create-lmd-step-20210706.tmp"
-TEMPLATE_SFN_STEP_FILE = "/template/python/phcli/step_functions/step_tmp/ph-sfn-create-step-20210706.tmp"
+TEMPLATE_SFN_LMD_STEP_FILE = "/template/python/phcli/step_functions/step_tmp/ph-sfn-create-lmd-step-20210713.tmp"
+TEMPLATE_SFN_STEP_FILE = "/template/python/phcli/step_functions/step_tmp/ph-sfn-create-step-20210713.tmp"
+TEMPLATE_SFN_RUN_ID_STEP_FILE = "/template/python/phcli/step_functions/step_tmp/ph-sfn-create-run-id-20210713.tmp"
+TEMPLATE_SFN_DAG_ARGS_STEP_FILE = "/template/python/phcli/step_functions/step_tmp/ph-sfn-create-dag-args-step-20210713.tmp"
 TEMPLATE_SFN_PARALLEL_STEP_FILE = "/template/python/phcli/step_functions/step_tmp/ph-sfn-create-paraller-step-20210708.tmp"
 
 DEFAULT_RESULT_PATH_FORMAT_STR = "s3://{bucket_name}/{version}/{dag_name}/"

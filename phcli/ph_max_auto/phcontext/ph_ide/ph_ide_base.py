@@ -458,6 +458,46 @@ class PhIDEBase(object):
         #             states[job_name]['Branches'].append(step_tmp)
         #
         #     return states
+        def create_dag_args_step(dag_name, job_full_name, current_random):
+            dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_DAG_ARGS_STEP_FILE)
+            # 将模板转成json形式的字符串
+            json_args = json.dumps(dag_args_step)
+            # 替换参数
+            args_step = json_args.replace("$dag_name", dag_name) \
+                .replace("$job_full_name", job_full_name + "_" + current_random)
+            # 将参数转成字典
+            dict_dag_args = eval(json.loads(args_step))
+            return dict_dag_args
+
+        def create_args_step(job_full_name, current_random):
+            # 从s3下载 lmd_step 的模板
+            dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_LMD_STEP_FILE)
+            # 将模板转成json形式的字符串
+            json_args = json.dumps(dag_args_step)
+            # 替换参数
+            args_step = json_args.replace("$job_full_name", job_full_name + "_" + current_random)
+            # 将参数转成字典
+            dict_args = eval(json.loads(args_step))
+            return dict_args
+
+        def create_run_id_step(job_full_names, current_randoms):
+            definition_tmp = {
+                "StartAt": "",
+                "States": {}
+            }
+            definition_tmp['StartAt'] = "create_run_id"
+            first_job_full_name = job_full_names[0]
+            first_current_random = current_randoms[0]
+            # 从s3下载 lmd_step 的模板
+            dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_RUN_ID_STEP_FILE)
+            # 将模板转成json形式的字符串
+            json_args = json.dumps(dag_args_step)
+            # 替换参数
+            args_step = json_args.replace("$first_job_full_name", first_job_full_name + "_" + first_current_random)
+            # 将参数转成字典
+            definition_tmp_states = eval(json.loads(args_step))
+            definition_tmp['States'] = definition_tmp_states
+            return definition_tmp
 
         def create_args_lambda(dag_name, job_name, dag_path, owner):
             lmd_path = dag_path + dag_name + "_" + job_name + ".py"
@@ -509,7 +549,7 @@ class PhIDEBase(object):
                         "States": {}
                     }
 
-            definition['StartAt'] = "args_" + job_full_names[0] + "_" +randoms[0]
+            definition['StartAt'] = "dag_args_" + job_full_names[0] + "_" +randoms[0]
             # 遍历所有 job_full_name
             for current_index in range(len(job_full_names)):
                 # 当前索引 job_full_name
@@ -518,17 +558,11 @@ class PhIDEBase(object):
                 current_random = randoms[current_index]
                 # 处理step的args定义
                 if not job_full_name.startswith('['):
-                    # 从s3下载 lmd_step 的模板
-                    dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_LMD_STEP_FILE)
-                    # 将模板转成json形式的字符串
-                    json_args = json.dumps(dag_args_step)
-                    # 替换参数
-                    args_step = json_args.replace("$dag_name", dag_name) \
-                                        .replace("$job_full_name", job_full_name + "_" + current_random)\
-                                        .replace("$lmd_job_name", job_full_name)
-                    # 将参数转成字典
-                    dict_args = eval(json.loads(args_step))
-                    # 将参数更新在 definition['States'] 中
+                    # 创建传递dag_args的step
+                    dict_dag_args = create_dag_args_step(dag_name, job_full_name, current_random)
+                    # 将处理参数的step添加到definition
+                    definition['States'].update(dict_dag_args)
+                    dict_args = create_args_step(job_full_name, current_random)
                     definition['States'].update(dict_args)
 
                 # 处理step的定义 下载step的模板
@@ -544,17 +578,12 @@ class PhIDEBase(object):
                         parallel_branches = create_parallel_step(job_full_name)
                         dag_step['$job_full_name']['Branches'] = parallel_branches
                         json_step = json.dumps(dag_step)
-                        print(1)
-                        print(json_step)
+                        if len(job_full_name) > 60:
+                            job_full_name = job_full_name[:39]
                         dag_step = json_step.replace("$dag_name", dag_name)\
                             .replace("\"$next_job_full_name\"", "true")\
                             .replace("$next_type", "End")\
                             .replace("$job_full_name", job_full_name + "_" + current_random)
-                        print("===================================")
-                        print("===================================")
-                        print("===================================")
-                        print(dag_step)
-
                     else:
                         dag_step = json_step.replace("$dag_name", dag_name)\
                             .replace("$next_job_full_name", "True")\
@@ -573,6 +602,8 @@ class PhIDEBase(object):
                         parallel_branches = create_parallel_step(job_full_name)
                         dag_step['$job_full_name']['Branches'] = parallel_branches
                         json_step = json.dumps(dag_step)
+                        if len(job_full_name) > 60:
+                            job_full_name = job_full_name[:39]
                         dag_step = json_step.replace("$dag_name", dag_name) \
                             .replace("$next_job_full_name", "args_" + next_job_full_name + "_" + next_random) \
                             .replace("$next_type", "Next") \
@@ -580,13 +611,15 @@ class PhIDEBase(object):
                         # 传递进来的parallel 分割返回 parallel dag_step
                     else:
                         if next_job_full_name.startswith('['):
+                            if len(next_job_full_name) > 60:
+                                next_job_full_name = next_job_full_name[:39]
                             dag_step = json_step.replace("$dag_name", dag_name) \
                                 .replace("$next_job_full_name", "\\\"" + next_job_full_name + "_" + next_random + "\\\"" ) \
                                 .replace("$next_type", "Next")\
                                 .replace("$job_full_name", job_full_name + "_" + current_random)
                         else:
                             dag_step = json_step.replace("$dag_name", dag_name) \
-                                .replace("$next_job_full_name", "\\\"args_" + next_job_full_name + "_" + next_random + "\\\"" ) \
+                                .replace("$next_job_full_name", "\\\"dag_args_" + next_job_full_name + "_" + next_random + "\\\"" ) \
                                 .replace("$next_type", "Next")\
                                 .replace("$job_full_name", job_full_name + "_" + current_random)
 
@@ -595,7 +628,7 @@ class PhIDEBase(object):
                 else:
                     dict_dag_step = json.loads(dag_step)
                 definition['States'].update(dict_dag_step)
-            print(json.dumps(definition))
+            # print(json.dumps(definition))
             return definition
 
 
@@ -683,8 +716,12 @@ class PhIDEBase(object):
                                     if flow.startswith(parallel_job):
                                         cp_first_flow[parallel_job_index] = cp_first_flow[parallel_job_index].replace(parallel_job, flow)
 
-                    create_step(self.name, cp_first_flow, randoms)
-
+                    definition_states = create_step(self.name, cp_first_flow, randoms)
+                    definition_tmp = create_run_id_step(cp_first_flow, randoms)
+                    definition_tmp['States'].update(definition_states['States'])
+                    print(json.dumps(definition_tmp))
+                    # print(json.dumps(definition))
+                    # print(type(definition))
                     #     # 若果是以"[" 开头的job 对并行的job进行操作
                     #     if len(job_name) > 60:
                     #         states[job_name[:59]] = states.pop(job_name)
