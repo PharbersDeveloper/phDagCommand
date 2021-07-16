@@ -14,7 +14,7 @@ def get_args_from_ssm(kwargs):
         return {}
 
 def delete_args_from_ssm(kwargs):
-    if kwargs.get('job_args_name',None):
+    if kwargs.get('job_args_name', None):
         ssm_client = boto3.client('ssm', region_name='cn-northwest-1',
                                   aws_access_key_id="AKIAWPBDTVEANKEW2XNC",
                                   aws_secret_access_key="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")
@@ -26,4 +26,4 @@ def delete_args_from_ssm(kwargs):
 
 if __name__ == '__main__':
     asd = get_args_from_ssm({1:1})
-    print(asd)
+    print(delete_args_from_ssm)
