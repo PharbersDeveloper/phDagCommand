@@ -602,7 +602,6 @@ class PhIDEBase(object):
                     "HadoopJarStep": {
                         "Jar": "command-runner.jar",
                         "Args": ["spark-submit",
-                                 "--name", s3_dag_path.split('/')[-2],
                                  "--deploy-mode", "cluster",
                                  "--conf", "spark.driver.cores=1",
                                  "--conf", "spark.driver.memory=1g",
@@ -614,8 +613,8 @@ class PhIDEBase(object):
                                  "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-" + phcli_dv.CLI_CLIENT_VERSION + "-py3.8.egg," + s3_dag_path + "phjob.py",
                                  s3_dag_path + "phmain.py",
                                  "--owner", "default_owner",
-                                 "--dag_name", s3_dag_path.split('/')[-2],
-                                 "--run_id", s3_dag_path.split('/')[-2] + "_" + excution_name,
+                                 "--dag_name", s3_dag_path.split('/')[-3],
+                                 "--run_id", s3_dag_path.split('/')[-3] + "_" + excution_name,
                                  "--job_full_name", job_name,
                                  "--job_id", "not_implementation"
                                  ]
