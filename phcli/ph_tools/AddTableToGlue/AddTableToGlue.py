@@ -115,7 +115,7 @@ class AddTableToGlue(object):
         return path_of_output
 
     # --写入路径
-    def write_to_path(self ,df ,col_of_partitionBy ,path_of_write ,share_num):
+    def write_to_path(self ,df ,col_of_partitionBy ,path_of_write):
 
         try:
             df.repartition(self.share_num).write.format("parquet").mode(self.mode).partitionBy \
@@ -229,7 +229,7 @@ class AddTableToGlue(object):
         df = self.add_col_of_partition(self.df ,dict_of_partition)
 
         # ---写入路径
-        self.write_to_path(df ,col_of_partitionBy ,self.path_of_output ,self.share_num)
+        self.write_to_path(df ,col_of_partitionBy ,self.path_of_output)
 
         # ---获取location
 
