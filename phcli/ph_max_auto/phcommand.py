@@ -206,14 +206,6 @@ def dag(**kwargs):
 @click.option("-n", "--name",
               prompt="The dag name is",
               help="The dag name.")
-@click.option("-s", "--strategy",
-              prompt="The publish strategy is [v2 = publish to airflow, v3 = publish tp step_functions]",
-              help="The publish strategy is [v2 = publish to airflow, v3 = publish tp step_functions]",
-              type=click.Choice(["v2", "v3"]),
-              default="v2")
-@click.option("-o", "--owner",
-              prompt="The dag owner is",
-              help="The dag owner.")
 def publish(**kwargs):
     """
     发布 DAG 运行文件和相关依赖

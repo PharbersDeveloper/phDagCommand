@@ -452,79 +452,63 @@ class PhIDEBase(object):
             return definition
 
 
-        if self.strategy == "v2":
-            for key in os.listdir(self.dag_path):
-                if os.path.isfile(self.dag_path + key):
-                    self.phs3.upload(
-                        file=self.dag_path+key,
-                        bucket_name=dv.DAGS_S3_BUCKET,
-                        object_name=dv.DAGS_S3_PREV_PATH + key
-                    )
-                else:
-                    self.phs3.upload_dir(
-                        dir=self.dag_path+key,
-                        bucket_name=dv.TEMPLATE_BUCKET,
-                        s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
-                    )
+        for key in os.listdir(self.dag_path):
+            if os.path.isfile(self.dag_path + key):
+                pass
+                self.phs3.upload(
+                    file=self.dag_path+key,
+                    bucket_name=dv.DAGS_S3_BUCKET,
+                    object_name=dv.DAGS_S3_PREV_PATH + key
+                )
+            else:
+                # 上传dag
+                self.phs3.upload_dir(
+                    dir=self.dag_path+key,
+                    bucket_name=dv.TEMPLATE_BUCKET,
+                    s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
+                )
 
-        if self.strategy == "v3":
-            for key in os.listdir(self.dag_path):
-                # if os.path.isfile(self.dag_path + key):
-                #     pass
-                #     self.phs3.upload(
-                #         file=self.dag_path+key,
-                #         bucket_name=dv.DAGS_S3_BUCKET,
-                #         object_name=dv.DAGS_S3_PREV_PATH + key
-                #     )
-                # else:
-                #     # 上传dag
-                #     self.phs3.upload_dir(
-                #         dir=self.dag_path+key,
-                #         bucket_name=dv.TEMPLATE_BUCKET,
-                #         s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
-                #     )
+            if os.path.isfile(self.dag_path + key):
+                # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
+                # 策略的每一行，存放到每一个列表
+                whole_flows = []
+                # 第一行中每一个job的名称
+                first_flow = []
+                cp_first_flow = []
+                # 每个job对应一个随机数
+                randoms = []
 
-                if os.path.isfile(self.dag_path + key):
-                    # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
-                    # 策略的每一行，存放到每一个列表
-                    whole_flows = []
-                    # 第一行中每一个job的名称
-                    first_flow = []
-                    cp_first_flow = []
-                    # 每个job对应一个随机数
-                    randoms = []
-
-                    # 从dag文件中获取dag的策略
-                    with open(self.dag_path + key, "r") as dag_file:
+                # 从dag文件中获取dag的策略
+                with open(self.dag_path + key, "r") as dag_file:
+                    line = dag_file.readline()
+                    while line:
+                        while ">>" in line:
+                            whole_flows.append(line.rstrip('\n'))
+                            break
                         line = dag_file.readline()
-                        while line:
-                            while ">>" in line:
-                                whole_flows.append(line.rstrip('\n'))
-                                break
-                            line = dag_file.readline()
 
-                    # 生成对应的random
-                    for job_name in whole_flows[0].split(' >> '):
-                        first_flow.append(job_name)
-                        cp_first_flow.append(job_name)
-                        snowflake_id = IdWorker(1, 2, 0)
-                        randoms.append(str(snowflake_id.get_id()))
-                    # 创建step_function的definition
-                    definition_states = create_step(self.name, cp_first_flow, randoms, whole_flows)
-                    # 每个dag的第一个step为创建run_id
-                    definition_tmp = create_run_id_step(cp_first_flow, randoms)
-                    # 把dag的definition的States添加进run_id的States
-                    definition_tmp['States'].update(definition_states['States'])
-                    create_definition = json.dumps(definition_tmp)
-                    print(create_definition)
+                # 生成对应的random
+                for job_name in whole_flows[0].split(' >> '):
+                    first_flow.append(job_name)
+                    cp_first_flow.append(job_name)
+                    snowflake_id = IdWorker(1, 2, 0)
+                    randoms.append(str(snowflake_id.get_id()))
+                # 创建step_function的definition
+                definition_states = create_step(self.name, cp_first_flow, randoms, whole_flows)
+                # 每个dag的第一个step为创建run_id
+                definition_tmp = create_run_id_step(cp_first_flow, randoms)
+                # 把dag的definition的States添加进run_id的States
+                definition_tmp['States'].update(definition_states['States'])
+                create_definition = json.dumps(definition_tmp)
+                print(create_definition)
 
-                    step_client = boto3.client('stepfunctions')
-                    response = step_client.create_state_machine(
-                        name=self.name,
-                        definition=create_definition,
-                        roleArn=dv.DEFAULT_ROLE_ARN,
-                        type=dv.DEFAULT_MACHINE_TYPE,
-                    )
+                step_client = boto3.client('stepfunctions')
+                response = step_client.create_state_machine(
+                    name=self.name,
+                    definition=create_definition,
+                    roleArn=dv.DEFAULT_ROLE_ARN,
+                    type=dv.DEFAULT_MACHINE_TYPE,
+                )
 
     def recall(self, **kwargs):
         """
@@ -552,7 +536,6 @@ class PhIDEBase(object):
                     "HadoopJarStep": {
                         "Jar": "command-runner.jar",
                         "Args": ["spark-submit",
-                                 "--name", s3_dag_path.split('/')[-3],
                                  "--deploy-mode", "cluster",
                                  "--conf", "spark.driver.cores=1",
                                  "--conf", "spark.driver.memory=1g",
