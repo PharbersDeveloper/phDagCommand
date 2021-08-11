@@ -500,7 +500,6 @@ class PhIDEBase(object):
                 # 把dag的definition的States添加进run_id的States
                 definition_tmp['States'].update(definition_states['States'])
                 create_definition = json.dumps(definition_tmp)
-                print(create_definition)
 
                 step_client = boto3.client('stepfunctions')
                 response = step_client.create_state_machine(

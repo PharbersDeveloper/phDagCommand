@@ -1,7 +1,6 @@
 from  pyspark.sql.functions import lit,col
 import os
 import boto3
-import re
 from functools import reduce
 
 
