@@ -15,7 +15,8 @@ from phcli import define_value as phcli_dv
 from phcli.ph_max_auto.ph_config.phconfig.phconfig import PhYAMLConfig
 from phcli.ph_max_auto.ph_preset_jobs.preset_job_factory import preset_factory
 from phcli.ph_aws.ph_sts import PhSts
-from phcli.ph_logs.phLogs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
+from phcli.ph_logs.ph_logs import phs3logger, LOG_DEBUG_LEVEL
+from phcli.ph_tools.snowflakeId.snowflake import IdWorker
 
 
 class PhCompleteStrategy(Enum):
@@ -290,291 +291,224 @@ class PhIDEBase(object):
         self.logger.debug('maxauto 默认的 publish 实现')
         self.logger.debug(self.__dict__)
 
-        def write_args(args_list, job_args):
-            keys = []
-            values = []
-            # 获取list中的参数并 生成一个dict
-            for arg in args_list:
-                if args_list.index(arg) % 2 == 0:
-                    keys.append(arg)
-                elif args_list.index(arg) % 2 == 1:
-                    values.append(arg)
-            args = zip(keys, values)
-            args_dict = dict(args)
-            # 获取生成dict中的参数, 将传进来的dict进行替换
-            for key in args_dict.keys():
-                if key in job_args.keys():
-                    args_dict[key] = job_args[key]
-            args_dict_keys = list(args_dict)
-            args_dict_values = list(args_dict.values())
-            # 将替换好的dict转换成list
-            final_args_list = []
-            for i in range(len(args_dict_keys)):
-                final_args_list.append(args_dict_keys[i])
-                final_args_list.append(args_dict_values[i])
-            return final_args_list
+        def create_dag_args_step(dag_name, job_full_name, current_random):
+            dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_DAG_ARGS_STEP_FILE)
+            # 将模板转成json形式的字符串
+            json_args = json.dumps(dag_args_step)
+            # 替换参数
+            args_step = json_args.replace("$dag_name", dag_name) \
+                .replace("$job_full_name", job_full_name + "_" + current_random)\
+                .replace("$no_random_job_full_name", job_full_name)
+            # 将参数转成字典
+            dict_dag_args = eval(json.loads(args_step))
+            return dict_dag_args
 
-        def write_data(jobs, definition, s3_dag_path, dag_path, excution_name, job_args, random_num=""):
-            for job in jobs:
-                args_path = dag_path +job + "/" + "args.properties"
-                Parameters = {
-                    "ClusterId.$": "$.clusterId",
-                    "Step": {
-                        "Name": "My EMR step",
-                        "ActionOnFailure": "CONTINUE",
-                        "HadoopJarStep": {
-                            "Jar": "command-runner.jar",
-                            "Args": ["spark-submit",
-                                     "--deploy-mode", "cluster",
-                                     "--py-files",
-                                     "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-"+ phcli_dv.CLI_CLIENT_VERSION +"-py3.8.egg," + s3_dag_path + job + "/phjob.py",
-                                     s3_dag_path + job + "/phmain.py",
-                                     "--owner", "default_owner",
-                                     "--dag_name", s3_dag_path.split('/')[-2],
-                                     "--run_id", s3_dag_path.split('/')[-2] + "_" +excution_name,
-                                     "--job_full_name", job,
-                                     "--job_id", "not_implementation",
-                                     ]
-                        }
+        def create_args_step(job_full_name, current_random):
+            # 从s3下载 lmd_step 的模板
+            dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_LMD_STEP_FILE)
+            # 将模板转成json形式的字符串
+            json_args = json.dumps(dag_args_step)
+            # 替换参数
+            args_step = json_args.replace("$job_full_name", job_full_name + "_" + current_random)
+            # 将参数转成字典
+            dict_args = eval(json.loads(args_step))
+            return dict_args
+
+        def create_run_id_step(job_full_names, current_randoms):
+            definition_tmp = {
+                "StartAt": "",
+                "States": {}
+            }
+            definition_tmp['StartAt'] = "create_run_id"
+            first_job_full_name = job_full_names[0]
+            first_current_random = current_randoms[0]
+            # 从s3下载 lmd_step 的模板
+            dag_args_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_RUN_ID_STEP_FILE)
+            # 将模板转成json形式的字符串
+            json_args = json.dumps(dag_args_step)
+            # 替换参数
+            if first_job_full_name.startswith('['):
+                if len(first_job_full_name) > 60:
+                    first_job_full_name = first_job_full_name[:39]
+                args_step = json_args.replace("$first_job_full_name", first_job_full_name + "_" + first_current_random)
+            else:
+                args_step = json_args.replace("$first_job_full_name", "dag_args_" + first_job_full_name + "_" + first_current_random)
+            # 将参数转成字典
+            definition_tmp_states = eval(json.loads(args_step))
+            definition_tmp['States'] = definition_tmp_states
+            return definition_tmp
+
+        def create_parallel_step(job_full_name, whole_flows):
+            # 通过模板创建Parallel模型
+            parallel_branches = []
+            # 先进行逗号分割
+            parallel_task_list = job_full_name.strip(' []').replace(' ', '').split(',')
+            for parallel_task in parallel_task_list:
+                for parallel_flow in whole_flows:
+                    if parallel_flow.startswith(parallel_task):
+                        parallel_task = parallel_flow
+                # 每个parallel_task一个randoms
+                randoms = []
+                flows = []
+                # 对每个 parallel_task 以 >> 分割
+                for parallel_job_name in parallel_task.split('>>'):
+                    flows.append(parallel_job_name.strip(" "))
+                    snowflake_id = IdWorker(1, 2, 0)
+                    randoms.append(str(snowflake_id.get_id()))
+                parallel_step = create_step(self.name, flows, randoms, whole_flows)
+                parallel_branches.append(parallel_step)
+            return parallel_branches
+
+        def create_step(dag_name, job_full_names, randoms, whole_flows):
+
+            definition = {
+                        "StartAt": "",
+                        "States": {}
                     }
-                }
-                if job in definition['States'].keys():
-                    if jobs.index(job) + 1 == len(jobs):
-                        definition['States'][job]['End'] = True
-                        if not job.startswith('['):
-                            definition['States'][job]['Type'] = "Task"
-                            definition['States'][job]['Resource'] = Resource
-                            args_list = []
-                            with open(args_path, "r") as args_file:
-                                arg_line = args_file.readline()
-                                while arg_line:
-                                    args_list.append(arg_line.rstrip('\n'))
-                                    arg_line = args_file.readline()
-                            # 替换args.properties中的参数
-                            final_args_list = write_args(args_list, job_args)
-                            Parameters['Step']['HadoopJarStep']['Args'][len(Parameters['Step']['HadoopJarStep']['Args'])
-                                                                        :len(Parameters['Step']['HadoopJarStep']['Args'])] = final_args_list
-                            definition['States'][job]['Parameters'] = Parameters
-                            definition['States'][job]['ResultPath'] = "$.firstStep"
-                            definition['States'][job]['Retry'] = [
-                                                                    {
-                                                                      "ErrorEquals": [ "States.ALL" ],
-                                                                      "IntervalSeconds": 1,
-                                                                      "MaxAttempts": 1,
-                                                                      "BackoffRate": 1.0
-                                                                    }
-                                                                  ]
-                            definition['States'][job+random_num] = definition['States'].pop(job)
-                    else:
 
-                        definition['States'][job]['Next'] = jobs[jobs.index(job) + 1] + random_num
-                        if not job.startswith('['):
-                            definition['States'][job]['Type'] = "Task"
-                            definition['States'][job]['Resource'] = Resource
-                            args_list = []
-                            with open(args_path, "r") as args_file:
-                                arg_line = args_file.readline()
-                                while arg_line:
-                                    args_list.append(arg_line.rstrip('\n'))
-                                    arg_line = args_file.readline()
-                            # 替换args.properties的参数
-                            final_args_list = write_args(args_list, job_args)
-                            Parameters['Step']['HadoopJarStep']['Args'][len(Parameters['Step']['HadoopJarStep']['Args'])
-                                                                        :len(Parameters['Step']['HadoopJarStep']['Args'])] = final_args_list
-                            definition['States'][job]['Parameters'] = Parameters
-                            definition['States'][job]['ResultPath'] = "$.firstStep"
-                            definition['States'][job]['Retry'] = [
-                                {
-                                    "ErrorEquals": ["States.ALL"],
-                                    "IntervalSeconds": 1,
-                                    "MaxAttempts": 3,
-                                    "BackoffRate": 2.0
-                                }
-                            ]
-                            definition['States'][job + random_num] = definition['States'].pop(job)
+            definition['StartAt'] = "dag_args_" + job_full_names[0] + "_" +randoms[0]
+            # 遍历所有 job_full_name
+            for current_index in range(len(job_full_names)):
+                # 当前索引 job_full_name
+                job_full_name = job_full_names[current_index]
+                # 获取当前job_full_name 对应的随机数
+                current_random = randoms[current_index]
+
+                # 处理step的args定义 并行的job不需要这个step
+                if not job_full_name.startswith('['):
+                    # 创建传递dag_args的step
+                    dict_dag_args = create_dag_args_step(dag_name, job_full_name, current_random)
+                    # 将处理参数的step添加到definition
+                    definition['States'].update(dict_dag_args)
+                    dict_args = create_args_step(job_full_name, current_random)
+                    definition['States'].update(dict_args)
+
+                # 处理step的定义 下载step的模板
+                dag_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_STEP_FILE)
+                json_step = json.dumps(dag_step)
+                # 查询下一个step，如果没有则下一步为End
+                # 如果当前job_full_name是list中最后一个元素
+                if current_index == len(job_full_names) - 1:
+                    # 判断是不是以'[' 开头，如果不是则不是并行的
+                    if job_full_name.startswith('['):
+                        dag_step = self.phs3.open_object(dv.TEMPLATE_BUCKET, dv.CLI_VERSION + dv.TEMPLATE_SFN_PARALLEL_STEP_FILE)
+                        # 先将模板中 $next_job_full_name 替换成 "$next_job_full_name"
+                        dag_step = json.loads(dag_step.replace("$next_job_full_name", "\"$next_job_full_name\""))
+                        # 创建parallel分支
+                        parallel_branches = create_parallel_step(job_full_name, whole_flows)
+                        dag_step['$job_full_name']['Branches'] = parallel_branches
+                        json_step = json.dumps(dag_step)
+                        if len(job_full_name) > 60:
+                            job_full_name = job_full_name[:39]
+                        dag_step = json_step.replace("$dag_name", dag_name)\
+                            .replace("\"$next_job_full_name\"", "true")\
+                            .replace("$next_type", "End")\
+                            .replace("$job_full_name", job_full_name + "_" + current_random)
+                    else:
+                        dag_step = json_step.replace("$dag_name", dag_name)\
+                            .replace("$next_job_full_name", "True")\
+                            .replace("$next_type", "End")\
+                            .replace("$job_full_name", job_full_name + "_" + current_random)
+
+                else:
+                    # 如果不是 获取list中下一个job_full_name
+                    next_index = current_index + 1
+                    next_job_full_name = job_full_names[next_index]
+                    next_random = randoms[next_index]
+                    if job_full_name.startswith('['):
+                        dag_step = self.phs3.open_object(dv.TEMPLATE_BUCKET,
+                                                         dv.CLI_VERSION + dv.TEMPLATE_SFN_PARALLEL_STEP_FILE)
+                        dag_step = json.loads(dag_step.replace("$next_job_full_name", "\"$next_job_full_name\""))
+                        parallel_branches = create_parallel_step(job_full_name, whole_flows)
+                        dag_step['$job_full_name']['Branches'] = parallel_branches
+                        json_step = json.dumps(dag_step)
+                        if len(job_full_name) > 60:
+                            job_full_name = job_full_name[:39]
+                        dag_step = json_step.replace("$dag_name", dag_name) \
+                            .replace("$next_job_full_name", "dag_args_" + next_job_full_name + "_" + next_random) \
+                            .replace("$next_type", "Next") \
+                            .replace("$job_full_name", job_full_name + "_" + current_random)
+                        # 传递进来的parallel 分割返回 parallel dag_step
+                    else:
+                        if next_job_full_name.startswith('['):
+                            if len(next_job_full_name) > 60:
+                                next_job_full_name = next_job_full_name[:39]
+                            dag_step = json_step.replace("$dag_name", dag_name) \
+                                .replace("$next_job_full_name", "\\\"" + next_job_full_name + "_" + next_random + "\\\"" ) \
+                                .replace("$next_type", "Next")\
+                                .replace("$job_full_name", job_full_name + "_" + current_random)
+                        else:
+                            dag_step = json_step.replace("$dag_name", dag_name) \
+                                .replace("$next_job_full_name", "\\\"dag_args_" + next_job_full_name + "_" + next_random + "\\\"" ) \
+                                .replace("$next_type", "Next")\
+                                .replace("$job_full_name", job_full_name + "_" + current_random)
+
+                if type(json.loads(dag_step)) == str:
+                    dict_dag_step = eval(json.loads(dag_step))
+                else:
+                    dict_dag_step = json.loads(dag_step)
+
+                definition['States'].update(dict_dag_step)
             return definition
 
-        def create_parallel(states, job_name, s3_dag_path, dag_path, excution_name):
-            if job_name.startswith('['):
-                states[job_name] = {
-                    "Type": "Parallel",
-                    "Branches": []
-                }
-                # 取出[]中的并行的job
-                if job_args["--g_month"]:
-                    job_args["--g_month"] = str(int(job_args["--g_month"]) - 1)
-                for parallel_job in job_name.strip('[]').replace(' ', '').split(','):
-                    if job_args["--g_month"]:
-                        job_args["--g_month"] = str(int(job_args["--g_month"]) + 1)
-                    random_num = "_" + str(uuid.uuid4())
-                    Parameters = {
-                        "ClusterId.$": "$.clusterId",
-                        "Step": {
-                            "Name": "My EMR step",
-                            "ActionOnFailure": "CONTINUE",
-                            "HadoopJarStep": {
-                                "Jar": "command-runner.jar",
-                                "Args": ["spark-submit",
-                                         "--deploy-mode", "cluster",
-                                         "--py-files",
-                                         "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-" + phcli_dv.CLI_CLIENT_VERSION + "-py3.8.egg," + s3_dag_path + parallel_job + "/phjob.py",
-                                         s3_dag_path + parallel_job + "/phmain.py",
-                                         "--owner", "default_owner",
-                                         "--dag_name", s3_dag_path.split('/')[-2],
-                                         "--run_id", s3_dag_path.split('/')[-2] + "_" + excution_name,
-                                         "--job_full_name", parallel_job,
-                                         "--job_id", "not_implementation",
-                                         ]
-                            }
-                        }
-                    }
-                    step_tmp = {
-                        "StartAt": "",
-                        "States": {}
-                    }
-                    step_tmp.update({'StartAt': parallel_job + random_num})
-                    # 遍历除第一行主分支的策略
-                    for flow in flows:
-                        # 如果有一行是以并行job开头，说明并行job还有延续，如果没有则States只有本身
-                        if flow.startswith(parallel_job):
-                            flow_jobs = []
-                            # 根据 >> 进行分割
-                            for flow_job_name in flow.split(' >> '):
-                                flow_jobs.append(flow_job_name)
-                                step_tmp['States'].update({flow_job_name: {}})
-                                # 二次嵌套
-                                # if flow_job_name.startswith('['):
-                                #     flow_parallel_jobs = []
-                                #     step_tmp['States'][flow_job_name] = {
-                                #         "Type": "Parallel",
-                                #         "Branches": []
-                                #     }
-                                #     for flow_parallel_job in flow_job_name.strip('[]').replace(' ', '').split(','):
-                                #         flow_parallel_jobs.append(flow_parallel_job)
-                                #         flow_step_tmp = {
-                                #             "StartAt": "",
-                                #             "States": {}
-                                #         }
-                                #         flow_step_tmp.update({'StartAt': flow_parallel_job})
-                                #         for second_flow in flows:
-                                #             if second_flow.startswith(flow_parallel_job):
-                                #                 second_flow_jobs = []
-                                #                 # 根据 >> 进行分割
-                                #                 for second_flow_job_name in second_flow.split(' >> '):
-                                #                     second_flow_jobs.append(second_flow_job_name)
-                                #                     flow_step_tmp['States'].update({second_flow_job_name: {}})
-                                #                 write_data(second_flow_jobs, flow_step_tmp, s3_dag_path, dag_path, excution_name)
-                                #         if flow_step_tmp['States'] == {}:
-                                #             flow_step_tmp['States'].update({flow_step_tmp['StartAt']: {'End': True}})
-                                #             flow_step_tmp['States'][flow_step_tmp['StartAt']]['Type'] = "Task"
-                                #             flow_step_tmp['States'][flow_step_tmp['StartAt']]['Resource'] = Resource
-                                #             flow_step_tmp['States'][flow_step_tmp['StartAt']]['Parameters'] = Parameters
-                                #             flow_step_tmp['States'][flow_step_tmp['StartAt']][
-                                #                 'ResultPath'] = "$.firstStep"
-                                #         step_tmp['States'][flow_job_name]['Branches'].append(flow_step_tmp)
-                                #     write_data(flow_parallel_jobs, flow_step_tmp, s3_dag_path, dag_path, excution_name)
-                            write_data(flow_jobs, step_tmp, s3_dag_path, dag_path, excution_name, job_args, random_num)
 
-                    # 判断States是否为空 如果为空 说明没有其他延续 则本身作为States
-                    if step_tmp['States'] == {}:
-                        step_tmp['States'].update({step_tmp['StartAt']: {'End': True}})
-                        step_tmp['States'][step_tmp['StartAt']]['Type'] = "Task"
-                        step_tmp['States'][step_tmp['StartAt']]['Resource'] = Resource
-                        step_tmp['States'][step_tmp['StartAt']]['Parameters'] = Parameters
-                        step_tmp['States'][step_tmp['StartAt']]['ResultPath'] = "$.firstStep"
-                    states[job_name]['Branches'].append(step_tmp)
+        for key in os.listdir(self.dag_path):
+            if os.path.isfile(self.dag_path + key):
+                pass
+                self.phs3.upload(
+                    file=self.dag_path+key,
+                    bucket_name=dv.DAGS_S3_BUCKET,
+                    object_name=dv.DAGS_S3_PREV_PATH + key
+                )
+            else:
+                # 上传dag
+                self.phs3.upload_dir(
+                    dir=self.dag_path+key,
+                    bucket_name=dv.TEMPLATE_BUCKET,
+                    s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
+                )
 
-            return states
+            if os.path.isfile(self.dag_path + key):
+                # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
+                # 策略的每一行，存放到每一个列表
+                whole_flows = []
+                # 第一行中每一个job的名称
+                first_flow = []
+                cp_first_flow = []
+                # 每个job对应一个随机数
+                randoms = []
 
-        if self.strategy == "v2":
-            for key in os.listdir(self.dag_path):
-                if os.path.isfile(self.dag_path + key):
-                    self.phs3.upload(
-                        file=self.dag_path+key,
-                        bucket_name=dv.DAGS_S3_BUCKET,
-                        object_name=dv.DAGS_S3_PREV_PATH + key
-                    )
-                else:
-                    self.phs3.upload_dir(
-                        dir=self.dag_path+key,
-                        bucket_name=dv.TEMPLATE_BUCKET,
-                        s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
-                    )
-
-        if self.strategy == "v3":
-            job_args = eval(self.job_args)
-            excution_name = self.name + "_" + time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
-            for key in os.listdir(self.dag_path):
-                if os.path.isfile(self.dag_path + key):
-                    self.phs3.upload(
-                        file=self.dag_path+key,
-                        bucket_name=dv.DAGS_S3_BUCKET,
-                        object_name=dv.DAGS_S3_PREV_PATH + key
-                    )
-                else:
-                    self.phs3.upload_dir(
-                        dir=self.dag_path+key,
-                        bucket_name=dv.TEMPLATE_BUCKET,
-                        s3_dir=dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/" + key
-                    )
-                s3_dag_path = "s3://" + dv.TEMPLATE_BUCKET + "/" + dv.CLI_VERSION + dv.DAGS_S3_PHJOBS_PATH + self.name + "/"
-                dag_path = self.dag_path
-                if os.path.isfile(self.dag_path + key):
-
-                    Resource = "arn:aws-cn:states:::elasticmapreduce:addStep.sync"
-                    # 如果是 file 则为 dag 产生的 py文件， 判断文件最后一行设置的策略 创建step流程模板
-                    # 策略的每一行，存放到每一个列表
-                    flows = []
-                    # 一行中每一个job的名称
-                    jobs = []
-                    # 状态机的所有states
-                    states = {}
-                    with open(self.dag_path + key, "r") as dag_file:
+                # 从dag文件中获取dag的策略
+                with open(self.dag_path + key, "r") as dag_file:
+                    line = dag_file.readline()
+                    while line:
+                        while ">>" in line:
+                            whole_flows.append(line.rstrip('\n'))
+                            break
                         line = dag_file.readline()
-                        while line:
-                            while ">>" in line:
-                                flows.append(line.rstrip('\n'))
-                                break
-                            line = dag_file.readline()
-                    for job_name in flows[0].split(' >> '):
-                        states[job_name] = {}
-                        jobs.append(job_name)
-                        # 若果是以"[" 开头的job 对并行的job进行操作
-                        states = create_parallel(states, job_name, s3_dag_path, dag_path, excution_name)
-                        if len(job_name) > 60:
-                            states[job_name[:59]] = states.pop(job_name)
-                            jobs = [job_name[:59] if i == job_name else i for i in jobs]
-                    definition = {
-                        "StartAt": "",
-                        "States": {}
-                    }
-                    definition['StartAt'] = list(states.keys())[0]
-                    definition['States'] = states
-                    write_data(jobs, definition, s3_dag_path, dag_path, excution_name, job_args)
 
-                    create_definition = json.dumps(definition)
+                # 生成对应的random
+                for job_name in whole_flows[0].split(' >> '):
+                    first_flow.append(job_name)
+                    cp_first_flow.append(job_name)
+                    snowflake_id = IdWorker(1, 2, 0)
+                    randoms.append(str(snowflake_id.get_id()))
+                # 创建step_function的definition
+                definition_states = create_step(self.name, cp_first_flow, randoms, whole_flows)
+                # 每个dag的第一个step为创建run_id
+                definition_tmp = create_run_id_step(cp_first_flow, randoms)
+                # 把dag的definition的States添加进run_id的States
+                definition_tmp['States'].update(definition_states['States'])
+                create_definition = json.dumps(definition_tmp)
+                print(create_definition)
 
-                    step_client = boto3.client('stepfunctions')
-                    response = step_client.create_state_machine(
-                        name=self.name,
-                        definition=create_definition,
-                        roleArn=os.getenv("DEFAULT_ROLE_ARN"),
-                        type=dv.DEFAULT_MACHINE_TYPE,
-                    )
-
-                    ssm_client = boto3.client('ssm')
-                    ssm_response = ssm_client.get_parameter(
-                        Name='cluster_id'
-                    )
-
-                    machine_input = {
-                        'clusterId': ssm_response['Parameter']['Value']
-                    }
-                    step_client.start_execution(
-                        stateMachineArn=response['stateMachineArn'],
-                        name=excution_name,
-                        input=json.dumps(machine_input)
-                    )
+                step_client = boto3.client('stepfunctions')
+                response = step_client.create_state_machine(
+                    name=self.name,
+                    definition=create_definition,
+                    roleArn=dv.DEFAULT_ROLE_ARN,
+                    type=dv.DEFAULT_MACHINE_TYPE,
+                )
 
     def recall(self, **kwargs):
         """
@@ -727,7 +661,6 @@ class PhIDEBase(object):
 
         step_client = boto3.client('stepfunctions')
         # 创建状态机
-        print(args_dict)
         step_create_response = step_client.create_state_machine(
             name=self.name + random_num,
             definition=create_definition,
@@ -791,10 +724,10 @@ class PhIDEBase(object):
 
         return 0
 
-
     def status(self, **kwargs):
         """
         默认的查看运行状态
         """
         self.logger.debug('maxauto 默认的 status 实现')
         self.logger.debug(self.__dict__)
+

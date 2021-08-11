@@ -1,0 +1,11 @@
+{
+    "dag_args_$job_full_name": {
+      "Type": "Pass",
+      "Result": {
+        "job_full_name": "$no_random_job_full_name",
+        "dag_name": "$dag_name"
+      },
+      "ResultPath": "$.dag_parameters",
+      "Next": "args_$job_full_name"
+    },
+}
