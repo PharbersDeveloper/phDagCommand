@@ -319,7 +319,7 @@ def online_debug_execute(**kwargs):
             result = {}
             for row in source:
                 if row and '=' in row:
-                    r = row.split('=')
+                    r = row.split('=', 1)
                     result[r[0].strip()] = eval(r[-1].strip())
             return result
 

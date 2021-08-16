@@ -4,16 +4,19 @@ import boto3
 from functools import reduce
 
 
+
 class AddTableToGlue(object):
 
-    def __init__(self ,df ,database_name_of_output ,table_name_of_output ,path_of_output_file ,mode="overwrite"
-                 ,share_num=1):
+    def __init__(self ,df ,database_name_of_output ,table_name_of_output ,path_of_output_file="s3://ph-platform/2020-11-11/etl/temporary_files/",mode="overwrite",share_num=1):
 
         self.cmd_name = "glue"
         self.region_name = "cn-northwest-1"
+        self.client = boto3.client(self.cmd_name, self.region_name)
         self.df = df
-        self.share_num = int(share_num)
-        self.mode = mode.lower()
+        self.share_num = self.get_share_num(share_num)
+        self.mode = self.get_mode_of_write(mode)
+
+        self.path_of_output_file = self.get_path_of_output_file(path_of_output_file)
 
         self.database_name = self.get_DatabaseName(database_name_of_output)
         self.table_name = self.get_TableName(table_name_of_output)
@@ -32,12 +35,46 @@ class AddTableToGlue(object):
 
         return table_name
 
+    def get_mode_of_write(self,mode):
+        '''
+        :param mode: mode for file write
+        :return:
+        '''
+
+        if mode:
+            mode = str(mode).lower()
+        else:
+            mode = "overwrite"
+        return mode
+
+    def get_share_num(self,share_num):
+        '''
+        :param share_num: number of file partitions and default is 1
+        :return:
+        '''
+        if share_num:
+            share_num = int(share_num)
+        else:
+            share_num = 1
+        return share_num
+
+    def get_path_of_output_file(self,path_of_output_file):
+        '''
+        :param path_of_output_file: file path for writing to S3
+        :return:
+        '''
+
+        if path_of_output_file:
+            path_of_output_file = str(path_of_output_file)
+        else:
+            path_of_output_file = "s3://ph-platform/2020-11-11/etl/temporary_files/"
+        return path_of_output_file
+
+
     # --检查表名
     def exist_table_name(self ,table_name ,database_name):
 
-        client = boto3.client("glue")
-
-        response =  client.get_tables(
+        response =  self.client.get_tables(
             DatabaseName = database_name,
         )
 
@@ -60,14 +97,10 @@ class AddTableToGlue(object):
 
     # --创建表
     def create_table(self ,location ,args_of_col ,args_of_partition):
-
         print(f"在数据库:{self.database_name} 创建表-->> {self.table_name}...")
         try:
-            client = boto3.client(self.cmd_name ,self.region_name)
-
-            create_table_info = client.create_table(
+            create_table_info = self.client.create_table(
                 DatabaseName=self.database_name,
-
                 TableInput = {
                     "Name" :self.table_name,
                     "StorageDescriptor" :{
@@ -94,10 +127,9 @@ class AddTableToGlue(object):
 
         print(f"开始在数据库:{self.database_name} -->> 表:{self.table_name} 写入数据...")
         try:
-            client = boto3.client(self.cmd_name ,self.region_name)
 
-            glue_info = client.batch_create_partition(DatabaseName=self.database_name ,TableName=self.table_name
-                                                      ,PartitionInputList=partition_input_list)
+            glue_info = self.client.batch_create_partition(DatabaseName=self.database_name ,TableName=self.table_name
+                                                           ,PartitionInputList=partition_input_list)
 
             print(f"数据已写入{self.database_name} -->> {self.table_name}\n")
         except Exception as e:
