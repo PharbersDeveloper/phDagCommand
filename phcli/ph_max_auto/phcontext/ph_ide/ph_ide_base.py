@@ -502,12 +502,19 @@ class PhIDEBase(object):
                 create_definition = json.dumps(definition_tmp)
 
                 step_client = boto3.client('stepfunctions')
-                response = step_client.create_state_machine(
-                    name=self.name,
-                    definition=create_definition,
-                    roleArn=dv.DEFAULT_ROLE_ARN,
-                    type=dv.DEFAULT_MACHINE_TYPE,
-                )
+                state_machine_names=[]
+                rs = step_client.list_state_machines()
+                for stateMachine in rs['stateMachines']:
+                    name = stateMachine['name']
+                    state_machine_names.append(name)
+
+                if self.name not in state_machine_names:
+                    response = step_client.create_state_machine(
+                        name=self.name,
+                        definition=create_definition,
+                        roleArn=dv.DEFAULT_ROLE_ARN,
+                        type=dv.DEFAULT_MACHINE_TYPE,
+                    )
 
     def recall(self, **kwargs):
         """
@@ -541,7 +548,7 @@ class PhIDEBase(object):
                                  "--conf", "spark.executor.cores=1",
                                  "--conf", "spark.executor.memory=4g",
                                  "--conf", "spark.executor.instances=1",
-                                 "--conf", "spark.sql.autoBroadcastJoinThreshold=-1"
+                                 "--conf", "spark.sql.autoBroadcastJoinThreshold=-1",
                                  "--py-files",
                                  "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-" + phcli_dv.CLI_CLIENT_VERSION + "-py3.8.egg," + s3_dag_path + "phjob.py",
                                  s3_dag_path + "phmain.py",
