@@ -487,8 +487,15 @@ class PhIDEBase(object):
                             break
                         line = dag_file.readline()
 
+                # 当只有一个job时， 不需要>>
+                if not whole_flows:
+                    with open(self.dag_path + key, "r") as dag_file:
+                        lines = dag_file.readlines()
+                        last_line = lines[-1]
+                        whole_flows.append(last_line.rstrip('\n'))
+
                 # 生成对应的random
-                for job_name in whole_flows[0].split(' >> '):
+                for job_name in whole_flows[0].replace(" ", "").split('>>'):
                     first_flow.append(job_name)
                     cp_first_flow.append(job_name)
                     snowflake_id = IdWorker(1, 2, 0)
