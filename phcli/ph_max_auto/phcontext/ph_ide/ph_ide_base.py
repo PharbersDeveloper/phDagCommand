@@ -487,8 +487,15 @@ class PhIDEBase(object):
                             break
                         line = dag_file.readline()
 
+                # 当只有一个job时， 不需要>>
+                if not whole_flows:
+                    with open(self.dag_path + key, "r") as dag_file:
+                        lines = dag_file.readlines()
+                        last_line = lines[-1]
+                        whole_flows.append(last_line.rstrip('\n'))
+
                 # 生成对应的random
-                for job_name in whole_flows[0].split(' >> '):
+                for job_name in whole_flows[0].replace(" ", "").split('>>'):
                     first_flow.append(job_name)
                     cp_first_flow.append(job_name)
                     snowflake_id = IdWorker(1, 2, 0)
@@ -502,12 +509,19 @@ class PhIDEBase(object):
                 create_definition = json.dumps(definition_tmp)
 
                 step_client = boto3.client('stepfunctions')
-                response = step_client.create_state_machine(
-                    name=self.name,
-                    definition=create_definition,
-                    roleArn=dv.DEFAULT_ROLE_ARN,
-                    type=dv.DEFAULT_MACHINE_TYPE,
-                )
+                state_machine_names=[]
+                rs = step_client.list_state_machines()
+                for stateMachine in rs['stateMachines']:
+                    name = stateMachine['name']
+                    state_machine_names.append(name)
+
+                if self.name not in state_machine_names:
+                    response = step_client.create_state_machine(
+                        name=self.name,
+                        definition=create_definition,
+                        roleArn=dv.DEFAULT_ROLE_ARN,
+                        type=dv.DEFAULT_MACHINE_TYPE,
+                    )
 
     def recall(self, **kwargs):
         """
@@ -541,7 +555,7 @@ class PhIDEBase(object):
                                  "--conf", "spark.executor.cores=1",
                                  "--conf", "spark.executor.memory=4g",
                                  "--conf", "spark.executor.instances=1",
-                                 "--conf", "spark.sql.autoBroadcastJoinThreshold=-1"
+                                 "--conf", "spark.sql.autoBroadcastJoinThreshold=-1",
                                  "--py-files",
                                  "s3://ph-platform/2020-11-11/jobs/python/phcli/common/phcli-" + phcli_dv.CLI_CLIENT_VERSION + "-py3.8.egg," + s3_dag_path + "phjob.py",
                                  s3_dag_path + "phmain.py",
