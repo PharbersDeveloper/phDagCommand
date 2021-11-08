@@ -1,7 +1,7 @@
 {
     "args_$job_full_name": {
       "Type": "Task",
-      "Resource": "arn:aws-cn:lambda:cn-northwest-1:444603803904:function:Create_Step_Args",
+      "Resource": "arn:aws-cn:lambda:cn-northwest-1:444603803904:function:lmd-phcreatestepargs-V2",
       "ResultPath": "$.parameter",
       "Next": "$job_full_name"
     }
