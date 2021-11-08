@@ -1,7 +1,7 @@
 {
     "create_run_id": {
       "Type": "Task",
-      "Resource": "arn:aws-cn:lambda:cn-northwest-1:444603803904:function:Create_Step_Run_ID",
+      "Resource": "arn:aws-cn:lambda:cn-northwest-1:444603803904:function:lmd-phdagrunid-V2",
       "ResultPath": "$.parameter",
       "Next": "$first_job_full_name"
     }
